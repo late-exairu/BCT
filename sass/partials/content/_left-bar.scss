@@ -24,8 +24,9 @@ Blocks from left bar
 	bottom: 0;
 	width: 70px;
 	padding: 5px 0;
-	background: #2c232b;
+	background: var(--clr-back);
 	z-index: 10;
+	border-right: 1px solid var(--clr-separator);
 
 	&__scroll{
 		position: absolute;
@@ -48,12 +49,13 @@ Blocks from left bar
 	flex: 0 0 80px;
 	cursor: pointer;
 	margin: 0 0 10px;
+	transition: all .1s;
 
 	&:hover{
-		background: #161616;
+		background: var(--clr-accentD);
 
 		.user-btn__pic{
-			border-color: var(--clr-accent);
+			border-color: var(--clr-block);
 		}
 	}
 
@@ -74,7 +76,7 @@ Blocks from left bar
 		background: #e05475;
 		width: 27px;
 		height: 27px;
-		border: 2px solid #04080e;
+		border: 2px solid var(--clr-block);
 		color: #fff;
 		font-size: 10px;
 		font-weight: 700;
@@ -85,39 +87,46 @@ Blocks from left bar
 .nav-bar{
 
 	&__item{
-		display: block;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		padding: 7px 5px;
+		height: 73px;
 		margin: 0;
-		width: 100%;
+		width: calc(100% - 1px);
 		border: none;
 		background: transparent;
 		cursor: pointer;
 
 		&:hover{
+			background: var(--clr-accent);
+
 			.nav-bar__title{
-				color: #fff;
+				color: var(--clr-back);
 			}
 
 			.nav-bar__icon{
-				fill: #fff;
+				fill: var(--clr-back);
 			}
 		}
 	}
 
 	&__title{
 		font-size: 14px;
-		color: #666666;
+		color: var(--clr-icon);
 		text-align: center;
-		margin: 5px auto 7px;
+		margin: 0 auto;
 		transition: all .1s;
 	}
 
 	&__icon{
 		display: block;
+		flex: 1 0 22px;
 		margin: 5px auto 7px;
 		width: 22px;
-		height: 22px;
-		fill: #a6a6a6;
+		max-height: 22px;
+		fill: var(--clr-icon);
 		transition: all 0.1s;
 
 		&.ico		{ fill: #11487b; }
@@ -126,7 +135,7 @@ Blocks from left bar
 		&.trading	{ fill: #83529a; }
 		&.news		{ fill: #e63730; }
 		&.other		{ fill: #9e2021; }
-		&.reload	{ fill: #463e45; width: 34px; height: 34px; }
+		&.reload	{ fill: var(--clr-icon); width: 34px; max-height: 34px; }
 	}
 }
 
@@ -147,7 +156,7 @@ Blocks from left bar
 		&:hover{
 
 			.user-bar__icon{
-				fill: #fff;
+				fill: var(--clr-textL);
 			}
 		}
 	}
@@ -160,7 +169,7 @@ Blocks from left bar
 	&__icon{
 		width: 30px;
 		height: 30px;
-		fill: #463e45;
+		fill: var(--clr-icon);
 		transition: all 0.1s;
 
 		&.two-windows	{ width: 33px; height: 32px; }

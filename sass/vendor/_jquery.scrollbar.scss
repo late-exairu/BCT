@@ -203,14 +203,18 @@
 .scrollbar-inner > .scroll-element .scroll-element_track,
 .scrollbar-inner > .scroll-element .scroll-bar {
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-    opacity: 0.4;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+
+    &:hover{
+    	opacity: 0.8;
+    }
 }
 
-.scrollbar-inner > .scroll-element .scroll-element_track { background-color: #e0e0e0; }
-.scrollbar-inner > .scroll-element .scroll-bar { background-color: #f00; }
-.scrollbar-inner > .scroll-element:hover .scroll-bar { background-color: #f00; }
-.scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar { background-color: transparent; }
+.scrollbar-inner > .scroll-element .scroll-element_track { background-color: var(--clr-accent); }
+.scrollbar-inner > .scroll-element .scroll-bar { background-color: var(--clr-accentD); }
+.scrollbar-inner > .scroll-element:hover .scroll-bar { background-color: var(--clr-accentD); }
+.scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar { background-color: var(--clr-accentD); }
 
 
 /* update scrollbar offset if both scrolls are visible */
