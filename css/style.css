@@ -1375,7 +1375,7 @@ h6 {
 .exch-dropdown {
   position: relative;
   font-family: "Lato", sans-serif;
-  z-index: 5;
+  z-index: 6;
   display: flex;
   justify-content: space-between;
   width: 100%;
