@@ -5,7 +5,7 @@
 
 
 .exchange-slider{
-	font-family: $lato;
+	font-family: $osans;
 	
 	&__title{
 		font-size: 13px;
@@ -17,7 +17,7 @@
 		position: relative;
 		top: -2px;
 		font-size: 20px;
-		font-weight: 900;
+		font-weight: 700;
 		margin: 0 5px 0 5px;
 		color: var(--clr-textD);
 	}
@@ -97,7 +97,7 @@
 		top: 50%;
 		transform: translateY(-50%);
 		height: 2px;
-		background: var(--clr-text);
+		background: var(--clr-textL);
 	}
 
 	.irs-bar,
@@ -106,7 +106,7 @@
 		transform: translateY(-50%);
 		height: 2px;
 		width: 10px;
-		background: var(--clr-text);
+		background: var(--clr-textL);
 	}
 
 	.irs-single{
@@ -140,7 +140,7 @@
 		height: 36px;
 		border-radius: 5px;
 		background: var(--clr-block);
-		border: 2px solid var(--clr-text);
+		border: 2px solid var(--clr-textL);
 		padding: 0;
 		color: #fff;
 		text-align: center;
@@ -155,7 +155,7 @@
 			position: absolute;
 			width: 8px;
 			height: 8px;
-			border: 2px solid var(--clr-text);
+			border: 2px solid var(--clr-textL);
 			border-radius: 50%;
 			right: 4px;
 			top: 50%;

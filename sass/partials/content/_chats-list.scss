@@ -55,7 +55,7 @@
 	}
 
 	&__name{
-		font-family: $lato;
+		font-family: $osans;
 		margin: 0;
 		font-weight: 600;
 		font-size: 18px;
@@ -66,7 +66,7 @@
 	}
 
 	&__last{
-		font-family: $lato;
+		font-family: $osans;
 		font-size: 15px;
 		margin: 5px 0 0;
 		color: var(--clr-textL);
@@ -86,7 +86,7 @@
 	}
 
 	&__time{
-		font-family: $avenirC;
+		font-family: $osansC;
 		margin: 0 0 4px;
 		font-size: 14px;
 		white-space: nowrap;
@@ -95,7 +95,7 @@
 	}
 
 	&__comms{
-		font-family: $lato;
+		font-family: $osans;
 		margin: 0;
 		font-size: 13px;
 		white-space: nowrap;

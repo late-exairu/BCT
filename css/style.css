@@ -91,8 +91,6 @@ body {
     /*background color accented*/
     --clr-block:		#18202d;
     /*basic block color basic*/ }
-    body.dark-theme .left-bar {
-      background: #000; }
 
 /**
  * The following variable and function originate from the sass-mq library.
@@ -521,7 +519,7 @@ body {
   height: 100%; }
 
 html {
-  font-family: "Avenir Next", sans-serif;
+  font-family: "open_sans", sans-serif;
   font-weight: 500; }
 
 body {
@@ -561,10 +559,10 @@ a {
   width: 100%;
   flex: 1 0 auto;
   height: 100%;
-  /*min-width: 2520px;
-	min-height: 1440px;*/
-  min-width: 1440px;
-  min-height: 900px; }
+  min-width: 2520px;
+  min-height: 1440px;
+  /*min-width: 1440px;
+	min-height: 900px;*/ }
 
 b,
 h1,
@@ -573,8 +571,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Avenir Next", sans-serif;
-  font-weight: 500; }
+  font-family: "open_sans", sans-serif;
+  font-weight: 600; }
 
 /* =================================================================== */
 /* basic-select
@@ -614,7 +612,7 @@ h6 {
 /* =================================================================== */
 .basic-table {
   width: 100%;
-  font-family: "Lato", sans-serif;
+  font-family: "open_sans", sans-serif;
   font-size: 15px;
   color: var(--clr-textD);
   background: var(--clr-block); }
@@ -842,7 +840,7 @@ h6 {
 /* btn-switch
 /* =================================================================== */
 .btn-switch {
-  font-family: "Lato", sans-serif;
+  font-family: "open_sans", sans-serif;
   display: flex;
   height: 44px;
   width: 100%;
@@ -935,9 +933,9 @@ h6 {
     .c-block__col:first-child {
       border-left: none; }
   .c-block__text-sep {
-    font-family: "Lato", sans-serif;
+    font-family: "open_sans", sans-serif;
     font-size: 20px;
-    font-weight: 900;
+    font-weight: 700;
     color: var(--clr-textD);
     text-align: center;
     padding: 20px 0;
@@ -974,7 +972,7 @@ h6 {
 /* c-block-head */
 /* =================================================================== */
 .c-block-head {
-  padding: 15px 25px 2px;
+  padding: 14px 25px 3px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--clr-separator);
@@ -986,7 +984,7 @@ h6 {
   .c-block-head__right {
     margin: 0 -26px 0 10px; }
   .c-block-head__title {
-    font-size: 23px;
+    font-size: 22px;
     margin: 0;
     color: var(--clr-textD);
     font-weight: 700; }
@@ -1014,7 +1012,7 @@ h6 {
 /* c-head-menu */
 /* =================================================================== */
 .c-head-menu {
-  font-family: "Lato", sans-serif;
+  font-family: "open_sans", sans-serif;
   padding: 0;
   margin: -16px 10px -3px 5px;
   list-style: none;
@@ -1069,7 +1067,7 @@ h6 {
 .chat-head {
   position: relative;
   display: flex;
-  padding: 9px 10px 9px 34px;
+  padding: 9px 10px 9px 32px;
   height: 63px;
   background: var(--clr-backA); }
   .chat-head__back {
@@ -1122,7 +1120,7 @@ h6 {
   .chat-head__info {
     font-size: 15px;
     margin: 1px 0 0;
-    color: var(--clr-textL);
+    color: var(--clr-text);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -1172,7 +1170,7 @@ h6 {
   .chat-talk__item {
     position: relative;
     display: flex;
-    padding: 15px 15px;
+    padding: 15px 15px 15px 32px;
     margin: 26px 0 0;
     --inner-accent: #607580; }
     .chat-talk__item:first-child {
@@ -1208,8 +1206,7 @@ h6 {
     display: flex; }
   .chat-talk__name {
     margin: 0;
-    font-weight: 600;
-    font-size: 17px;
+    font-size: 18px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1226,7 +1223,7 @@ h6 {
     margin: 3px 0 0;
     fill: var(--clr-accent); }
   .chat-talk__time {
-    font-family: "Avenir Next Condensed", sans-serif;
+    font-family: "open_sans_condensed", sans-serif;
     margin: 0 0 0 3px;
     font-size: 15px;
     white-space: nowrap;
@@ -1259,23 +1256,21 @@ h6 {
       width: 3px;
       background: #1cbaac; }
   .chat-talk__message {
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
+    font-family: "open_sans", sans-serif;
     position: relative;
     color: var(--clr-textD);
     margin: 11px 0 8px; }
     .chat-talk__message p {
       margin: 0 0 26px;
-      font-size: 18px;
-      line-height: 1.5; }
+      font-size: 17px;
+      line-height: 1.6; }
       .chat-talk__message p:last-child {
         margin: 0; }
     .chat-talk__message .chat-talk__name {
-      font-weight: 400;
       font-size: 16px;
       margin: 0 0 4px; }
   .chat-talk__sys-message {
-    font-family: "Lato", sans-serif;
+    font-family: "open_sans", sans-serif;
     font-size: 18px;
     text-align: center;
     padding: 20px 38px 20px 20px;
@@ -1320,7 +1315,7 @@ h6 {
     min-width: 100px;
     flex: 1 1 auto; }
   .chats-list__name {
-    font-family: "Lato", sans-serif;
+    font-family: "open_sans", sans-serif;
     margin: 0;
     font-weight: 600;
     font-size: 18px;
@@ -1329,7 +1324,7 @@ h6 {
     text-overflow: ellipsis;
     color: var(--clr-textD); }
   .chats-list__last {
-    font-family: "Lato", sans-serif;
+    font-family: "open_sans", sans-serif;
     font-size: 15px;
     margin: 5px 0 0;
     color: var(--clr-textL);
@@ -1345,14 +1340,14 @@ h6 {
     flex: 0 0 auto;
     align-items: flex-start; }
   .chats-list__time {
-    font-family: "Avenir Next Condensed", sans-serif;
+    font-family: "open_sans_condensed", sans-serif;
     margin: 0 0 4px;
     font-size: 14px;
     white-space: nowrap;
     min-height: 15px;
     color: var(--clr-textL); }
   .chats-list__comms {
-    font-family: "Lato", sans-serif;
+    font-family: "open_sans", sans-serif;
     margin: 0;
     font-size: 13px;
     white-space: nowrap;
@@ -1374,7 +1369,7 @@ h6 {
 /* =================================================================== */
 .exch-dropdown {
   position: relative;
-  font-family: "Lato", sans-serif;
+  font-family: "open_sans", sans-serif;
   z-index: 6;
   display: flex;
   justify-content: space-between;
@@ -1395,17 +1390,16 @@ h6 {
   .exch-dropdown__right {
     display: flex; }
   .exch-dropdown__sum-title {
-    font-family: "Lato", sans-serif;
+    font-family: "open_sans", sans-serif;
     color: var(--clr-textL);
-    font-size: 13px;
+    font-size: 12px;
     padding: 0;
     margin: 0;
     line-height: 1.18; }
   .exch-dropdown__sum-amount {
-    font-family: "Lato", sans-serif;
-    color: var(--clr-text);
-    font-size: 20px;
-    font-weight: 900;
+    font-family: "open_sans", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
     color: var(--clr-textD);
     padding: 0;
     margin: 0;
@@ -1464,7 +1458,7 @@ h6 {
   .exch-dropdown__icon {
     width: 46px;
     height: 46px;
-    margin: 0 20px 0 0;
+    margin: 0 12px 0 0;
     flex: 0 0 46px; }
     .exch-dropdown__icon.btc {
       fill: #f79330; }
@@ -1480,8 +1474,8 @@ h6 {
     padding: 0px 0 0;
     margin: 0;
     line-height: 1;
-    font-weight: 900;
-    font-size: 20px; }
+    font-weight: 700;
+    font-size: 21px; }
 
 /* =================================================================== */
 /* exch-head */
@@ -1510,7 +1504,7 @@ h6 {
     margin: 0 20px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 33px;
     white-space: nowrap;
     transition: all 0.1s;
     justify-content: center; }
@@ -1518,7 +1512,7 @@ h6 {
       background: #026ba0; }
   .exch-head__btn-text {
     position: relative;
-    top: 2px; }
+    top: -1px; }
   .exch-head__arrow-exch {
     width: 62px;
     height: 37px;
@@ -1532,7 +1526,7 @@ h6 {
 /* exchange-slider
 /* =================================================================== */
 .exchange-slider {
-  font-family: "Lato", sans-serif; }
+  font-family: "open_sans", sans-serif; }
   .exchange-slider__title {
     font-size: 13px;
     margin: 0 10px 0 5px;
@@ -1541,7 +1535,7 @@ h6 {
     position: relative;
     top: -2px;
     font-size: 20px;
-    font-weight: 900;
+    font-weight: 700;
     margin: 0 5px 0 5px;
     color: var(--clr-textD); }
   .exchange-slider__minus, .exchange-slider__plus {
@@ -1600,14 +1594,14 @@ h6 {
     top: 50%;
     transform: translateY(-50%);
     height: 2px;
-    background: var(--clr-text); }
+    background: var(--clr-textL); }
   .cubic-slider .irs-bar,
   .cubic-slider .irs-bar-edge {
     top: 50%;
     transform: translateY(-50%);
     height: 2px;
     width: 10px;
-    background: var(--clr-text); }
+    background: var(--clr-textL); }
   .cubic-slider .irs-single {
     display: none; }
   .cubic-slider .irs-grid {
@@ -1628,7 +1622,7 @@ h6 {
     height: 36px;
     border-radius: 5px;
     background: var(--clr-block);
-    border: 2px solid var(--clr-text);
+    border: 2px solid var(--clr-textL);
     padding: 0;
     color: #fff;
     text-align: center;
@@ -1642,7 +1636,7 @@ h6 {
       position: absolute;
       width: 8px;
       height: 8px;
-      border: 2px solid var(--clr-text);
+      border: 2px solid var(--clr-textL);
       border-radius: 50%;
       right: 4px;
       top: 50%;
@@ -1652,6 +1646,7 @@ h6 {
 /* gbar-info
 /* =================================================================== */
 .gbar-info {
+  font-family: "open_sans", sans-serif;
   position: absolute;
   top: 84px;
   left: 52px;
@@ -1662,27 +1657,26 @@ h6 {
   background: transparent;
   z-index: 5; }
   .gbar-info__item {
-    padding: 10px 12px; }
+    padding: 10px 10px; }
   .gbar-info__title {
-    font-family: "Lato", sans-serif;
-    font-size: 20px;
+    font-size: 21px;
     color: var(--clr-textD);
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1;
     padding: 0;
     margin: 0; }
   .gbar-info__nums {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1;
-    color: var(--clr-textL);
+    color: var(--clr-text);
     padding: 0;
-    margin: 5px 0 0; }
+    margin: 2px 0 0; }
 
 /* =================================================================== */
 /* graph-bar
 /* =================================================================== */
 .graph-bar {
-  font-family: "Lato", sans-serif;
+  font-family: "open_sans", sans-serif;
   position: absolute;
   left: 54px;
   top: 0;
@@ -1730,7 +1724,7 @@ h6 {
       font-weight: 700;
       color: var(--clr-textD); }
   .graph-bar__btn-text {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 600;
     padding: 0 5px;
     color: var(--clr-textD); }
@@ -1812,7 +1806,7 @@ h6 {
       fill: var(--clr-iconD); }
 
 .graph-prices {
-  font-family: "Lato", sans-serif;
+  font-family: "open_sans", sans-serif;
   position: absolute;
   transform: translateX(100%);
   top: 0;
@@ -1845,12 +1839,12 @@ h6 {
     .graph-prices__item:hover {
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); }
       .graph-prices__item:hover .graph-prices__trader {
-        font-weight: 900; }
+        font-weight: 700; }
     .graph-prices__item.active {
       background: var(--clr-backA);
       border-color: var(--clr-textL); }
       .graph-prices__item.active .graph-prices__trader {
-        font-weight: 900;
+        font-weight: 700;
         color: var(--clr-accentD); }
       .graph-prices__item.active:after {
         content: '';
@@ -1865,7 +1859,7 @@ h6 {
     color: var(--clr-textD); }
   .graph-prices__price {
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 700;
     color: var(--clr-textD); }
   .graph-prices__arrow {
     width: 14px;
@@ -2046,7 +2040,7 @@ Blocks from left bar
 /* menu-dropdown
 /* =================================================================== */
 .menu-dropdown {
-  font-family: "Lato", sans-serif;
+  font-family: "open_sans", sans-serif;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -2193,7 +2187,7 @@ body.menubar-in #user-btn:before {
   display: flex;
   align-items: center; }
   .message-bar__input {
-    font-family: "Avenir Next", sans-serif;
+    font-family: "open_sans", sans-serif;
     display: block;
     background: transparent;
     border: 1px solid transparent;
@@ -2250,7 +2244,7 @@ body.menubar-in #user-btn:before {
   display: flex;
   background: var(--clr-backA); }
   .search-bar__input {
-    font-family: "Avenir Next", sans-serif;
+    font-family: "open_sans", sans-serif;
     display: block;
     background: var(--clr-backL);
     border: 1px solid transparent;
@@ -2908,70 +2902,111 @@ body.menubar-in #user-btn:before {
 /* =================================================================== */
 /* Fonts
 /* =================================================================== */
-@font-face {
-  font-family: 'Avenir Next';
-  src: url("../fonts/AvenirNext-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
+/*@font-face {
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
-  font-family: 'Avenir Next';
-  src: url("../fonts/AvenirNext-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal; }
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
 
 @font-face {
-  font-family: 'Avenir Next';
-  src: url("../fonts/AvenirNext-DemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal; }
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-DemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
 
 @font-face {
-  font-family: 'Avenir Next';
-  src: url("../fonts/AvenirNext-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal; }
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
 
 @font-face {
-  font-family: 'Avenir Next Condensed';
-  src: url("../fonts/AvenirNextCondensed-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
+    font-family: 'Avenir Next Condensed';
+    src: url('../fonts/AvenirNextCondensed-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
-  font-family: 'Lato';
-  src: url("../fonts/Lato-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal; }
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
 @font-face {
-  font-family: 'Lato';
-  src: url("../fonts/Lato-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal; }
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
 
 @font-face {
-  font-family: 'Lato';
-  src: url("../fonts/Lato-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal; }
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
 
 @font-face {
-  font-family: 'Avenir Next Condensed';
-  src: url("../fonts/AvenirNextCondensed-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal; }
+    font-family: 'Avenir Next Condensed';
+    src: url('../fonts/AvenirNextCondensed-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
 
 @font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Light") format("woff");
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Light') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+*/
+@font-face {
+  font-family: 'open_sans';
+  src: url("../fonts/opensans-light-webfont.woff") format("woff");
   font-weight: 300;
   font-style: normal; }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Bold") format("woff");
+  font-family: 'open_sans';
+  src: url("../fonts/opensans-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sans';
+  src: url("../fonts/opensans-semibold-webfont.woff") format("woff");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sans';
+  src: url("../fonts/opensans-bold-webfont.woff") format("woff");
   font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sans_condensed';
+  src: url("../fonts/opensanscondensed-light-webfont.woff") format("woff");
+  font-weight: 300;
   font-style: normal; }
 
 /* =================================================================== */
@@ -2994,7 +3029,7 @@ body.menubar-in #user-btn:before {
   margin: 16px 10px; }
 
 .order-form {
-  font-family: "Lato", sans-serif;
+  font-family: "open_sans", sans-serif;
   font-size: 15px;
   padding: 17px 20px;
   width: 100%; }
@@ -3060,7 +3095,7 @@ body.menubar-in #user-btn:before {
 /* =================================================================== */
 .basic-btn {
   display: flex;
-  font-family: "Lato", sans-serif;
+  font-family: "open_sans", sans-serif;
   height: 40px;
   border: none;
   border-radius: 5px;

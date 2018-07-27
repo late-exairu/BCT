@@ -32,7 +32,7 @@
 		margin: 0 20px;
 		text-decoration: none;
 		font-weight: 700;
-		font-size: 32px;
+		font-size: 33px;
 		white-space: nowrap;
 		transition: all 0.1s;
 		justify-content: center;
@@ -44,7 +44,7 @@
 
 	&__btn-text{
 		position: relative;
-		top: 2px;
+		top: -1px;
 	}
 
 	&__arrow-exch{

@@ -5,7 +5,7 @@
 
 
 .c-block-head{
-	padding: 15px 25px 2px;
+	padding: 14px 25px 3px;
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid var(--clr-separator);
@@ -22,7 +22,7 @@
 	}
 
 	&__title{
-		font-size: 23px;
+		font-size: 22px;
 		margin: 0;
 		color: var(--clr-textD);
 		font-weight: 700;

@@ -7,7 +7,7 @@
 .chat-head{
 	position: relative;
 	display: flex;
-	padding: 9px 10px 9px 34px;
+	padding: 9px 10px 9px 32px;
 	height: 63px;
 	background: var(--clr-backA);
 
@@ -74,7 +74,7 @@
 	&__info{
 		font-size: 15px;
 		margin: 1px 0 0;
-		color: var(--clr-textL);
+		color: var(--clr-text);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;

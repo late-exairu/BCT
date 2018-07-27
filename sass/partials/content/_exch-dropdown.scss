@@ -6,7 +6,7 @@
 
 .exch-dropdown{
 	position: relative;
-	font-family: $lato;
+	font-family: $osans;
 	z-index: 6;
 	display: flex;
 	justify-content: space-between;
@@ -41,19 +41,18 @@
 	}
 
 	&__sum-title{
-		font-family: $lato;
+		font-family: $osans;
 		color: var(--clr-textL);
-		font-size: 13px;
+		font-size: 12px;
 		padding: 0;
 		margin: 0;
 		line-height: 1.18;
 	}
 
 	&__sum-amount{
-		font-family: $lato;
-		color: var(--clr-text);
-		font-size: 20px;
-		font-weight: 900;
+		font-family: $osans;
+		font-size: 21px;
+		font-weight: 700;
 		color: var(--clr-textD);
 		padding: 0;
 		margin: 0;
@@ -135,7 +134,7 @@
 	&__icon{
 		width: 46px;
 		height: 46px;
-		margin: 0 20px 0 0;
+		margin: 0 12px 0 0;
 		flex: 0 0 46px;
 
 		&.btc{
@@ -163,8 +162,8 @@
 		padding: 0px 0 0;
 		margin: 0;
 		line-height: 1;
-		font-weight: 900;
-		font-size: 20px;
+		font-weight: 700;
+		font-size: 21px;
 	}
 }
 

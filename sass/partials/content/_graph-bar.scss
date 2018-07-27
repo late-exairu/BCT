@@ -5,7 +5,7 @@
 
 
 .graph-bar{
-	font-family: $lato;
+	font-family: $osans;
 	position: absolute;
 	left: 54px;
 	top: 0;
@@ -72,7 +72,7 @@
 	}
 
 	&__btn-text{
-		font-size: 20px;
+		font-size: 21px;
 		font-weight: 600;
 		padding: 0 5px;
 		color: var(--clr-textD);

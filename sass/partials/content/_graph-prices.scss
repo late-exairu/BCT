@@ -45,7 +45,7 @@
 }
 
 .graph-prices{
-	font-family: $lato;
+	font-family: $osans;
 	position: absolute;
 	transform: translateX(100%);
 	top: 0;
@@ -86,7 +86,7 @@
 			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 
 			.graph-prices__trader{
-				font-weight: 900;
+				font-weight: 700;
 			}
 		}
 
@@ -95,7 +95,7 @@
 			border-color: var(--clr-textL);
 
 			.graph-prices__trader{
-				font-weight: 900;
+				font-weight: 700;
 				color: var(--clr-accentD);
 			}
 
@@ -118,7 +118,7 @@
 
 	&__price{
 		font-size: 15px;
-		font-weight: 900;
+		font-weight: 700;
 		color: var(--clr-textD);
 	}
 

@@ -6,10 +6,8 @@
 
 /*----- FONTS -----*/
 
-$avenir:			'Avenir Next', sans-serif;
-$avenirC:			'Avenir Next Condensed', sans-serif;
-$lato:				'Lato', sans-serif;
-$roboto:			'Roboto', sans-serif;
+$osans:				'open_sans', sans-serif;
+$osansC:			'open_sans_condensed', sans-serif;
 
 
 /*----- COLORS -----*/
@@ -83,9 +81,5 @@ body{
 		--clr-back:			#131a23;	/*background color basic*/
 		--clr-backA:		#213040;	/*background color accented*/
 		--clr-block:		#18202d;	/*basic block color basic*/
-
-		.left-bar{
-			background: #000;
-		}
 	}
 }

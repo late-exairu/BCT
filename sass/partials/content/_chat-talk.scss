@@ -13,7 +13,7 @@
 	&__item{
 		position: relative;
 		display: flex;
-		padding: 15px 15px;
+		padding: 15px 15px 15px 32px;
 		margin: 26px 0 0;
 
 		&:first-child{
@@ -68,8 +68,7 @@
 
 	&__name{
 		margin: 0;
-		font-weight: 600;
-		font-size: 17px;
+		font-size: 18px;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -92,7 +91,7 @@
 	}
 
 	&__time{
-		font-family: $avenirC;
+		font-family: $osansC;
 		margin: 0 0 0 3px;
 		font-size: 15px;
 		white-space: nowrap;
@@ -135,16 +134,15 @@
 	}
 
 	&__message{
-		font-family: $lato;
-		font-weight: 700;
+		font-family: $osans;
 		position: relative;
 		color: var(--clr-textD);
 		margin: 11px 0 8px;
 
 		p{
 			margin: 0 0 26px;
-			font-size: 18px;
-			line-height: 1.5;
+			font-size: 17px;
+			line-height: 1.6;
 
 			&:last-child{
 				margin: 0;
@@ -152,14 +150,13 @@
 		}
 
 		.chat-talk__name{
-			font-weight: 400;
 			font-size: 16px;
 			margin: 0 0 4px;
 		}
 	}
 
 	&__sys-message{
-		font-family: $lato;
+		font-family: $osans;
 		font-size: 18px;
 		text-align: center;
 		padding: 20px 38px 20px 20px;
