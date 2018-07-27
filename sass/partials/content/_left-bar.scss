@@ -45,10 +45,10 @@ Blocks from left bar
 	border: none;
 	background: transparent;
 	border-radius: 0;
-	padding: 20px 10px 10px;
-	flex: 0 0 80px;
+	padding: 20px 10px 20px;
+	flex: 0 0 90px;
 	cursor: pointer;
-	margin: 0 0 10px;
+	margin: 0;
 	transition: all .1s;
 
 	&:hover{
@@ -114,7 +114,7 @@ Blocks from left bar
 
 	&__title{
 		font-size: 14px;
-		color: var(--clr-icon);
+		color: var(--clr-iconD);
 		text-align: center;
 		margin: 0 auto;
 		transition: all .1s;

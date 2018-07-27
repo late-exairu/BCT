@@ -4,27 +4,67 @@
 /* =================================================================== */
 
 
+.graph-prices-toggle{
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	width: 22px;
+	height: 22px;
+	border: 1px solid var(--clr-separator);
+	background: var(--clr-back);
+	border-radius: 5px;
+	transition: background .1s, border-color .1s;
+	cursor: pointer;
+
+	&.open{
+		right: 300px;
+
+		.graph-prices-toggle__icon{
+			transform: translate(-50%, -50%) rotate(-90deg);
+		}
+	}
+
+	&__icon{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%) rotate(90deg);
+		width: 11px;
+		height: 7px;
+		fill: var(--clr-icon);
+		transition: fill .1s;
+	}
+
+	&:hover{
+		border-color: var(--clr-separatorD);
+
+		.graph-prices-toggle__icon{
+			fill: var(--clr-iconD);
+		}
+	}
+}
+
 .graph-prices{
 	font-family: $lato;
 	position: absolute;
 	transform: translateX(100%);
-	top: 98px;
+	top: 0;
 	right: 0;
+	height: 100%;
+	padding: 15px 0 15px 15px;
 	width: 285px;
 	background: var(--clr-block);
 	// transition: all .2s;
 	border-left: 1px solid var(--clr-separator);
-	max-height: calc(100% - 98px);
-	height: calc(100% - 98px);
 
 	&.open{
 		transform: translateX(0);
 	}
 	
 	&__list{
-		padding:  0 0 0 15px;
+		padding: 0;
 		overflow-y: auto;
-		height: 100%;
+		height: calc(100% - 63px);
 	}
 
 	&__item{
@@ -36,15 +76,11 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin: 20px 0 0 0;
+		margin: 0 0 20px 0;
 		padding: 5px;
 		transition: all .1s;
 		cursor: pointer;
 		border-radius: 5px;
-
-		&:first-child{
-			margin: 0;
-		}
 
 		&:hover{
 			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -92,5 +128,10 @@
 		display: inline-block;
 		margin: 0 1px 2px;
 		fill: var(--clr-textD);
+	}
+
+	.graph-bar__item{
+		width: 250px;
+		margin: 0 0 20px 0;
 	}
 }

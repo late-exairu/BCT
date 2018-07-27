@@ -1616,23 +1616,32 @@
 					</div><!-- graph-bar__left END -->
 
 					<div class="graph-bar__right">
-						<button class="graph-bar__item btn" id="js-graph-prices-toggle">
-							<svg class="graph-bar__icon sorting" role="img" aria-hidden="true">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#sorting"></use>
-							</svg>
-
-							<div class="graph-bar__text">Sort: <span>Lowest Price First</span></div>
-
-							<svg class="graph-bar__icon arrow-drop" role="img" aria-hidden="true">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-							</svg>
-						</button>
+						<!-- Will align to right side of bar -->
 					</div><!-- graph-bar__right END -->
 				</div>
 
 				<div id="mainChart"></div>
 
+				<buttom class="graph-prices-toggle" id="js-graph-prices-toggle">
+					<svg class="graph-prices-toggle__icon" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+					</svg>
+				</buttom>
+
 				<div class="graph-prices visibility-child" id="js-graph-prices">
+
+					<button class="graph-bar__item btn">
+						<svg class="graph-bar__icon sorting" role="img" aria-hidden="true">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#sorting"></use>
+						</svg>
+
+						<div class="graph-bar__text">Sort: <span>Lowest Price First</span></div>
+
+						<svg class="graph-bar__icon arrow-drop" role="img" aria-hidden="true">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+						</svg>
+					</button>
+
 					<div class="graph-prices__list scrollbar-outer">
 						<div class="graph-prices__item active">
 							<div class="graph-prices__trader">BINANCE</div>

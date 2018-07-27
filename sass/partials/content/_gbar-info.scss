@@ -5,14 +5,13 @@
 
 .gbar-info{
 	position: absolute;
-	top: 100px;
-	left: 50%;
-	transform: translateX(-50%);
+	top: 84px;
+	left: 52px;
 	display: flex;
 	padding: 0 6px;
 	white-space: nowrap;
 	flex: 0 0 auto;
-	background: var(--clr-block);
+	background: transparent;
 	z-index: 5;
 	
 	&__item{
