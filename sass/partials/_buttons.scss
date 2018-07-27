@@ -1,0 +1,25 @@
+
+/* =================================================================== */
+/* basic-btn
+/* =================================================================== */
+
+
+.basic-btn{
+	display: flex;
+	font-family: $lato;
+	height: 40px;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	font-weight: 900;
+	font-size: 23px;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	background: #0576b9;
+	cursor: pointer;
+
+	&.btn-red{
+		background: #e05475;
+	}
+}

@@ -1,0 +1,39 @@
+
+/* =================================================================== */
+/* gbar-info
+/* =================================================================== */
+
+.gbar-info{
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	padding: 0 6px;
+	white-space: nowrap;
+	flex: 0 0 auto;
+	background: var(--clr-block);
+	z-index: 5;
+	
+	&__item{
+		padding: 10px 12px;
+	}
+	
+	&__title{
+		font-family: $lato;
+		font-size: 20px;
+		color: var(--clr-textD);
+		font-weight: 900;
+		line-height: 1;
+		padding: 0;
+		margin: 0;
+	}
+	
+	&__nums{
+		font-size: 11px;
+		line-height: 1;
+		color: var(--clr-textL);
+		padding: 0;
+		margin: 5px 0 0;
+	}
+}

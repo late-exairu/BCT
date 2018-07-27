@@ -1,0 +1,45 @@
+
+/* =================================================================== */
+/* basic-select
+/* =================================================================== */
+
+
+.basic-select {
+	width: 100%;
+	position: relative;
+	height: 41px;
+	max-width: 266px;
+
+	&__select {
+		-ms-appearance: none;
+		appearance: none;
+		cursor: pointer;
+		width: 100%;
+		padding: 11px 30px 11px 15px;
+		border-radius: 4px;
+		border: 1px solid var(--clr-separatorD);
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		background: var(--clr-block);
+		color: var(--clr-text);
+	}
+	
+	&__arrow {
+		position: absolute;
+		right: 14px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 10px;
+		height: 6px;
+		pointer-events: none;
+		fill: var(--clr-textL);
+	}
+
+	&:hover{
+
+		.basic-select__select{
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+		}
+	}
+}

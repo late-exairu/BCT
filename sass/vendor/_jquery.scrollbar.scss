@@ -1,0 +1,225 @@
+/*************** SCROLLBAR BASE CSS ***************/
+
+.scroll-wrapper {
+	overflow: hidden !important;
+	position: relative;
+	& > .scroll-content {
+		border: none !important;
+		box-sizing: content-box !important;
+		height: auto;
+		left: 0;
+		margin: 0;
+		max-height: none;
+		max-width: none !important;
+		overflow: scroll !important;
+		padding: 0;
+		position: relative !important;
+		top: 0;
+		width: auto !important;
+		&::-webkit-scrollbar {
+			height: 0;
+			width: 0;
+		}
+	}
+	&.scroll--rtl {
+		direction: rtl;
+	}
+}
+
+.scroll-element {
+	display: none;
+}
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+	display: block;
+}
+
+.scroll-textarea {
+	border: 1px solid #cccccc;
+	border-top-color: #999999;
+	& > .scroll-content {
+		overflow: hidden !important;
+		& > textarea {
+			border: none !important;
+			box-sizing: border-box;
+			height: 100% !important;
+			margin: 0;
+			max-height: none !important;
+			max-width: none !important;
+			overflow: scroll !important;
+			outline: none;
+			padding: 2px;
+			position: relative !important;
+			top: 0;
+			width: 100% !important;
+			&::-webkit-scrollbar {
+				height: 0;
+				width: 0;
+			}
+		}
+	}
+}
+
+
+/*************** SCROLLBAR GOOGLE CHROME ***************/
+
+.scrollbar-outer > {
+	.scroll-element {
+		position: absolute;
+		z-index: 5;
+		margin: -1px;
+		border: 1px solid var(--clr-separator);
+		background-color: var(--clr-back);
+
+		&:hover{
+			.scroll-bar{
+				background-color: var(--clr-icon);
+			}
+		}
+
+		&.scroll-x {
+			bottom: 0;
+			height: 14px;
+			left: 0;
+			right: 0;
+			cursor: pointer;
+
+			.scroll-bar {
+				height: 8px;
+				min-width: 10px;
+				top: 2px;
+			}
+
+			&.scroll-scrolly_visible {
+				.scroll-element_size, .scroll-element_track {
+					top: -19px;
+				}
+			}
+		}
+		&.scroll-y {
+			bottom: 0;
+			right: 0;
+			top: 0;
+			width: 14px;
+			cursor: pointer;
+
+			.scroll-bar {
+				left: 2px;
+				min-height: 10px;
+				width: 8px;
+			}
+
+			&.scroll-scrollx_visible {
+				.scroll-element_size, .scroll-element_track {
+					top: -19px;
+				}
+			}
+		}
+		.scroll-bar {
+			transition: background 0.1s;
+			background-color: var(--clr-separatorD);
+			border-radius: 10px;
+
+			&:hover {
+				background-color: var(--clr-icon);
+			}
+		}
+
+		&.scroll-draggable .scroll-bar {
+			background-color: var(--clr-textLL);
+		}
+
+		div {
+			overflow: hidden;
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+	.scroll-content {
+		&.scroll-scrolly_visible {
+			left: -14px;
+			margin-left: 14px;
+		}
+		&.scroll-scrollx_visible {
+			top: -14px;
+			margin-top: 14px;
+		}
+	}
+}
+
+
+
+/*************** SIMPLE INNER SCROLLBAR ***************/
+
+.scrollbar-inner > .scroll-element,
+.scrollbar-inner > .scroll-element div
+{
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-inner > .scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-inner > .scroll-element.scroll-x {
+    bottom: 2px;
+    height: 8px;
+    left: 0;
+    width: 100%;
+}
+
+.scrollbar-inner > .scroll-element.scroll-y {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 3px;
+    cursor: pointer;
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_outer {
+    overflow: hidden;
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_outer,
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_track { background-color: #e0e0e0; }
+.scrollbar-inner > .scroll-element .scroll-bar { background-color: #f00; }
+.scrollbar-inner > .scroll-element:hover .scroll-bar { background-color: #f00; }
+.scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar { background-color: transparent; }
+
+
+/* update scrollbar offset if both scrolls are visible */
+
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left: -12px; }
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top: -12px; }
+
+
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -12px; }
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }
+
+

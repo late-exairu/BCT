@@ -1,0 +1,282 @@
+
+/* =================================================================== */
+/* Content */
+/* =================================================================== */
+
+
+// Need to rearrange to custom classes //
+
+.col-left{
+	width: 40%;
+	height: 100%;
+	min-width: 700px;
+	display: flex;
+	flex: 1 1 33%;
+	flex-direction: column;
+
+	&__top{
+		display: flex;
+		flex: 1 1;
+		flex-direction: column;
+	}
+
+	&__bottom{
+		display: flex;
+		flex: 0 0 400px;
+		flex-direction: column;
+	}
+}
+
+.col-right{
+	width: calc(67% - 20px);
+	height: 100%;
+	min-width: 680px;
+	display: flex;
+	flex: 1 1 calc(60% - 20px);
+	flex-direction: column;
+
+	&__top{
+		display: flex;
+		flex: 1 1;
+		flex-direction: column;
+	}
+
+	&__bottom{
+		display: flex;
+		flex: 0 0 400px;
+		flex-direction: column;
+	}
+}
+
+
+
+
+// Single content classes //
+
+.graphs-wrap{
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	// max-width: 1642px;
+	height: 100%;
+}
+
+.b-graph{
+	position: relative;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	flex: 1 1;
+}
+
+.account-stats{
+	flex: 1;
+	// overflow-y: auto;
+	min-height: 400px;
+	position: relative;
+}
+
+.cc-accounts{
+	height: calc(100% - 59px);
+}
+
+.cc-accounts-table{
+	overflow-y: auto;
+}
+
+.cc-tabs{
+	display: flex;
+	width: 100%;
+	position: relative;
+}
+
+.js-tabs__panel{
+	display: none;
+	width: 100%;
+
+	&.active{
+		display: flex;
+	}
+}
+
+
+
+
+
+
+
+
+// Diagram related //
+
+
+.accounts-diagram{
+	width: 344px;
+	// height: 100%;
+	flex: 0 0 344px;
+	max-height: 344px;
+	height: 100%;
+	border-right: 1px solid var(--clr-separator);
+}
+
+#circleChartText{
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+#mainChart{
+	padding-top: 89px;
+	padding-left: 45px;
+	height: 100%;
+	width: 100%;
+}
+
+#portfolioChartRange {
+	position: absolute;
+	top: 82px;
+	right: 40px;
+	span {
+		padding: 3px 11px;
+		display: inline-block;
+		font-size: 14px;
+		cursor: pointer;
+	}
+	.active {
+		border-bottom: 3px solid #0576b9;
+		font-weight: bold;
+	}
+}
+
+.label {
+	z-index: 1 !important;
+}
+
+.highcharts-container {
+	position: inherit !important;
+}
+
+.highcharts-tooltip {
+	z-index: 9998 !important;
+}
+
+.highcharts-tooltip {
+	div.circle,
+	table.portfolio {
+		opacity: 1;
+		padding: 2px 10px;
+		z-index: 9999 !important;
+		font-size: 14px;
+		border-radius: 5px;
+		line-height: 30px;
+	}
+	div.circle {
+		background-color: white;
+		border: 1px solid #797979;
+	}
+	table.portfolio {
+		background-color: #0576B9;
+		border: 1px solid #939393;
+	}
+	span svg {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		top: 5px;
+	}
+}
+
+#portfolioChartText {
+	position: absolute;
+	bottom: 50px;
+	left: 40px;
+	div {
+		display: inline-block;
+		color: #0576b9;
+		font-size: 48px;
+		border-right: 1px solid #a6a6a6;
+		padding: 0px 15px;
+		text-align: center;
+		span {
+			font-size: 31px;
+			vertical-align: top;
+			line-height: 55px;
+		}
+		p {
+			font-size: 15px;
+			color: black;
+			margin-top: 0px;
+			margin-bottom: 0;
+		}
+	}
+	div:last-child {
+		border-right: 0;
+	}
+}
+
+#panel-funds-account,
+#panel-dashboard-liquidity {
+	position: relative;
+}
+
+#panel-dashboard-liquidity {
+	.liquidityText {
+		color: black;
+		text-align: center;
+		span {
+			font-size: 16px;
+			vertical-align: top;
+			margin: 0px 5px;
+		}
+		p {
+			font-size: 48px;
+			margin: 0;
+			height: 53px;
+		}
+		.leftPart,
+		.rightPart,
+		.centerPart {
+			position: absolute;
+		}
+		.leftPart {
+			bottom: 50px;
+			left: 75px;
+		}
+		.rightPart {
+			bottom: 50px;
+			right: 75px;
+		}
+		.centerPart {
+			top: 15%;
+			left: 50%;
+			height: calc(85% - 40px);
+			transform: translateX(-50%);
+			p {
+				margin-bottom: 13px;
+			}
+		}
+		svg {
+			width: 21px;
+			height: 21px;
+			cursor: pointer;
+		}
+		.separator {
+			width: 2px;
+			height: calc(85% - 57px);
+			background: #000;
+			margin: 5px auto 0;
+		}
+	}
+}
+
+#orders {
+	.forms-wrap {
+		display: none;
+	}
+	.forms-wrap.current {
+		display: flex;
+	}
+}
+
+.advanced{
+	display: none;
+}

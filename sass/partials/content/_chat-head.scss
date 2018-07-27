@@ -1,0 +1,127 @@
+
+/* =================================================================== */
+/* chat-head */
+/* =================================================================== */
+
+
+.chat-head{
+	position: relative;
+	display: flex;
+	padding: 9px 10px 9px 34px;
+	height: 63px;
+	background: var(--clr-backA);
+
+	&__back{
+		position: absolute;
+		display: flex;
+		left: 4px;
+		top: 50%;
+		width: 26px;
+		height: 36px;
+		border-radius: 3px;
+		transition: all 0.1s;
+		align-items: center;
+		justify-content: center;
+		transform: translateY(-50%);
+
+		/*&:hover{
+			background: var(--clr-accent);;
+
+			.sprite-icon{
+				fill: #fff;
+			}
+		}*/
+
+		.sprite-icon{
+			display: block;
+			width: 13px;
+			height: 20px;
+			fill: var(--clr-accent);
+		}
+	}
+
+	&__avatar-wrap{
+		position: relative;
+		width: 43px;
+		height: 43px;
+		margin: 0 0;
+		flex: 0 0 auto;
+	}
+
+	&__avatar{
+		width: 43px;
+		height: 43px;
+		border-radius: 50%;
+	}
+
+	&__desc{
+		padding: 1px 12px;
+		overflow: hidden;
+		min-width: 100px;
+		flex: 1 1 auto;
+	}
+
+	&__name{
+		margin: 0;
+		font-weight: 600;
+		font-size: 16px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		color: var(--clr-textD);
+	}
+
+	&__info{
+		font-size: 15px;
+		margin: 1px 0 0;
+		color: var(--clr-textL);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__btns{
+		display: flex;
+		text-align: right;
+		margin: 0 20px 0 auto;
+		padding: 0 0;
+		flex: 0 0 auto;
+		align-items: flex-start;
+	}
+
+	&__btn{
+		display: block;
+		width: 44px;
+		height: 44px;
+		margin: 0 0 0 5px;
+		cursor: pointer;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		border: none;
+		border-radius: 3px;
+		background: transparent;
+		border: 1px solid transparent;
+		cursor: pointer;
+		transition: all .1s;
+
+		&:hover{
+			border-color: var(--clr-accent);
+			background: var(--clr-accent);
+			color: #fff;
+
+			.sprite-icon{
+				fill: #fff;
+			}
+		}
+
+		.sprite-icon{
+			position: relative;
+			top: -1px;
+			width: 25px;
+			height: 25px;
+			fill: var(--clr-accent);
+			transition: all 0.1s;
+		}
+	}
+}

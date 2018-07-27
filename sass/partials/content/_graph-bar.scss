@@ -1,0 +1,106 @@
+
+/* =================================================================== */
+/* graph-bar
+/* =================================================================== */
+
+
+.graph-bar{
+	font-family: $lato;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	background: var(--clr-block);
+	display: flex;
+	padding: 19px 19px 19px;
+	border-bottom: 1px solid var(--clr-separator);
+	max-width: 100%;
+	border-radius: 10px 10px 0 0;
+
+	&__left{
+		margin: 0 auto 0 0;
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	&__right{
+		margin: 0 0 0 0;
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	&__item{
+		border: 1px solid var(--clr-separator);
+		border-radius: 5px;
+		height: 60px;
+		min-width: 60px;
+		margin: 0 0 0 20px;
+		display: flex;
+		align-items: center;
+		flex: 0 auto;
+		background: var(--clr-block);
+		justify-content: center;
+		padding: 0 10px;
+
+		&:first-child{
+			margin: 0;
+		}
+
+		&.btn{
+			cursor: pointer;
+			transition: all 0.1s;
+
+			&:hover{
+				border-color: var(--clr-textL);
+
+				.graph-bar__icon{
+					fill: var(--clr-text);
+				}
+			}
+		}
+	}
+
+	&__text{
+		font-size: 13px;
+		padding: 0 10px;
+		color: var(--clr-text);
+
+		span{
+			font-size: 15px;
+			font-weight: 700;
+			color: var(--clr-textD);
+		}
+	}
+
+	&__btn-text{
+		font-size: 20px;
+		font-weight: 600;
+		padding: 0 5px;
+		color: var(--clr-textD);
+	}
+
+	&__icon{
+		height: 26px;
+		width: 26px;
+		fill: var(--clr-textD);
+		transition: all 0.1s;
+
+		&.clock		{ width: 28px; height: 28px; }
+		&.graph		{ min-width: 27px; height: 24px; }
+		&.arrows-td-short{ width: 9px; height: 22px; margin: 0 5px 0 17px; }
+		&.undo		{ width: 26px; height: 18px; }
+		&.redo		{ width: 26px; height: 18px; }
+		&.camera	{ width: 31px; height: 25px; }
+		&.gear		{ width: 27px; height: 27px; }
+		&.expand	{ width: 22px; height: 22px; }
+		&.sorting	{ width: 16px; height: 15px; }
+		&.arrow-drop{ width: 10px; height: 6px; }
+		&.arrows-td { width: 18px; height: 21px; fill: var(--clr-text); }
+	}
+
+	&__separator{
+		width: 0;
+		height: 0;
+		margin: 0 0 0 10px;
+	}
+}

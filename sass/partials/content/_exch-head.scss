@@ -1,0 +1,67 @@
+
+/* =================================================================== */
+/* exch-head */
+/* =================================================================== */
+
+
+.exch-head{
+	display: flex;
+	margin: 0 0 20px;
+	flex: 0 0 59px;
+
+	&__get,
+	&__send{
+		position: relative;
+		background: var(--clr-block);
+		display: flex;
+		flex: 1 1 31%;
+		padding: 0;
+		height: 59px;
+	}
+
+	&__btn{
+		padding: 0 10px;
+		height: 59px;
+		display: flex;
+		flex: 1 1 38%;
+		align-items: center;
+		background: #0576b9;
+		border-radius: 5px;
+		color: #fff;
+		cursor: pointer;
+		margin: 0 20px;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 32px;
+		white-space: nowrap;
+		transition: all 0.1s;
+		justify-content: center;
+
+		&:hover{
+			background: #026ba0;
+		}
+	}
+
+	&__btn-text{
+		position: relative;
+		top: 2px;
+	}
+
+	&__arrow-exch{
+		width: 62px;
+		height: 37px;
+		fill: #fff;
+		margin: 0 18px;
+	}
+
+	@media only screen and (max-width : 1920px) {
+		
+		&__btn-text{
+
+			span{
+				display: none;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,72 @@
+
+/* =================================================================== */
+/* search-bar */
+/* =================================================================== */
+
+
+.search-bar{
+	padding: 10px 10px 10px 28px;
+	background: #fafcfd;
+	display: flex;
+	background: var(--clr-backA);
+
+	&__input{
+		font-family: $avenir;
+		display: block;
+		background: var(--clr-backL);
+		border: 1px solid transparent;
+		outline: none;
+		height: 42px;
+		text-align: center;
+		font-size: 16px;
+		padding: 0 10px;
+		border-radius: 3px;
+		flex: 1 1 calc(100% - 70px);
+		color: var(--clr-text);
+		transition: all 0.1s;
+
+		&:focus{
+			background: var(--clr-back);
+			border-color: var(--clr-accent);
+		}
+
+		&::placeholder{
+			color: var(--clr-textLL);
+		}
+	}
+
+	&__submit{
+		display: block;
+		width: 65px;
+		flex: 1 0 65px;
+		margin: 0 0 0 5px;
+		cursor: pointer;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		border: none;
+		border-radius: 3px;
+		background: transparent;
+		transition: all 0.1s;
+		border: 1px solid transparent;
+
+		&:hover{
+			border-color: var(--clr-accent);
+			background: var(--clr-accent);
+			color: #fff;
+
+			.sprite-icon{
+				fill: #fff;
+			}
+		}
+
+		.sprite-icon{
+			position: relative;
+			top: -1px;
+			width: 23px;
+			height: 23px;
+			fill: var(--clr-accent);
+			transition: all 0.1s;
+		}
+	}
+}

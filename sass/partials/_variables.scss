@@ -1,0 +1,91 @@
+
+/* =================================================================== */
+/* Variables
+/* =================================================================== */
+
+
+/*----- FONTS -----*/
+
+$avenir:			'Avenir Next', sans-serif;
+$avenirC:			'Avenir Next Condensed', sans-serif;
+$lato:				'Lato', sans-serif;
+$roboto:			'Roboto', sans-serif;
+
+
+/*----- COLORS -----*/
+
+$clr-text:			#585b5c; 	/*text color basic*/
+$clr-textLL:		#c6c8c8; 	/*text color lighter*/
+$clr-textL:			#737474; 	/*text color light*/
+$clr-textD:			#010101;	/*text color dark*/
+$clr-textA:			#286bb4;	/*text color accented*/
+$clr-textAA:		#e15c79;	/*text color accented alternative*/
+
+
+$clr-icon:			#c6c8c8;	/*icon color basic*/
+$clr-iconD:			#9ba6b2;	/*icon color dark*/
+$clr-accent:		#4a9cd5;	/*icon color accented*/
+$clr-accentL:		#edf2f5;	/*icon color accented light*/
+$clr-accentD:		#286bb4;	/*icon color accented dark*/
+
+
+$clr-separator:		#e8e8e8;	/*separators and borders color basic*/
+$clr-separatorD:	#bfc0c0;	/*separators and borders color dark*/
+$clr-backL:			#e5e6e5;	/*background color light*/
+$clr-back:			#f9f9fa;	/*background color basic*/
+$clr-backA:			#e6f1f8;	/*background color accented*/
+$clr-block:			#ffffff;	/*basic block color basic*/
+
+body{
+	
+	--clr-text:			#585b5c; 	/*text color basic*/
+	--clr-textLL:		#c6c8c8; 	/*text color lighter*/
+	--clr-textL:		#737474; 	/*text color light*/
+	--clr-textD:		#010101;	/*text color dark*/
+	--clr-textA:		#286bb4;	/*text color accented*/
+	--clr-textAA:		#e15c79;	/*text color accented alternative*/
+
+
+	--clr-icon:			#c6c8c8;	/*icon color basic*/
+	--clr-iconD:		#9ba6b2;	/*icon color dark*/
+	--clr-accent:		#4a9cd5;	/*icon color accented*/
+	--clr-accentL:		#edf2f5;	/*icon color accented light*/
+	--clr-accentD:		#286bb4;	/*icon color accented dark*/
+
+
+	--clr-separator:	#e8e8e8;	/*separators and borders color basic*/
+	--clr-separatorD:	#bfc0c0;	/*separators and borders color dark*/
+	--clr-backL:		#e5e6e5;	/*background color light*/
+	--clr-back:			#f9f9fa;	/*background color basic*/
+	--clr-backA:		#e6f1f8;	/*background color accented*/
+	--clr-block:		#ffffff;	/*basic block color basic*/
+
+	&.dark-theme{
+	
+		--clr-text:			#9ba6b2; 	/*text color basic*/
+		--clr-textLL:		#c6c8c8; 	/*text color lighter*/
+		--clr-textL:		#9ba6b2; 	/*text color light*/
+		--clr-textD:		#9ba6b2;	/*text color dark*/
+		--clr-textA:		#286bb4;	/*text color accented*/
+		--clr-textAA:		#e15c79;	/*text color accented alternative*/
+
+
+		--clr-icon:			#4f6c82;	/*icon color basic*/
+		--clr-iconD:		#9ba6b2;	/*icon color dark*/
+		--clr-accent:		#4a9cd5;	/*icon color accented*/
+		--clr-accentL:		#0c1017;	/*icon color accented light*/
+		--clr-accentD:		#286bb4;	/*icon color accented dark*/
+
+
+		--clr-separator:	#24425b;	/*separators and borders color basic*/
+		--clr-separatorD:	#24425b;	/*separators and borders color dark*/
+		--clr-backL:		#141925;	/*background color light*/
+		--clr-back:			#131a23;	/*background color basic*/
+		--clr-backA:		#213040;	/*background color accented*/
+		--clr-block:		#18202d;	/*basic block color basic*/
+
+		.left-bar{
+			background: #000;
+		}
+	}
+}

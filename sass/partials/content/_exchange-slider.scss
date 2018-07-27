@@ -1,0 +1,165 @@
+
+/* =================================================================== */
+/* exchange-slider
+/* =================================================================== */
+
+
+.exchange-slider{
+	font-family: $lato;
+	
+	&__title{
+		font-size: 13px;
+		margin: 0 10px 0 5px;
+		color: var(--clr-text);
+	}
+	
+	&__value{
+		position: relative;
+		top: -2px;
+		font-size: 20px;
+		font-weight: 900;
+		margin: 0 5px 0 5px;
+		color: var(--clr-textD);
+	}
+
+	&__minus,
+	&__plus{
+		display: flex;
+		width: 32px;
+		height: 32px;
+		border: none;
+		border-radius: 2px;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		background: transparent;
+
+		.sprite-icon{
+			width: 17px;
+			height: 17px;
+			fill: var(--clr-iconD);
+		}
+	}
+
+	&__slider{
+		position: relative;
+		width: 280px;
+		margin: 0;
+
+		.irs-line{
+			top: 50%;
+			transform: translateY(-50%);
+			height: 1px;
+			background: var(--clr-iconD);
+		}
+
+		.irs-bar,
+		.irs-bar-edge{
+			top: 50%;
+			transform: translateY(-50%);
+			height: 2px;
+			width: 10px;
+			background: var(--clr-iconD);
+		}
+
+		.irs-single{
+			display: none;
+		}
+
+		.single{
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background: var(--clr-iconD);
+			padding: 0;
+			color: #fff;
+			text-align: center;
+			line-height: 18px;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 1;
+			cursor: pointer;
+		}
+	}
+}
+
+
+.cubic-slider{
+	position: relative;
+	width: 100%;
+	margin: 10px 0;
+
+	.irs-with-grid{
+		height: 40px;
+	}
+
+	.irs-line{
+		top: 50%;
+		transform: translateY(-50%);
+		height: 2px;
+		background: var(--clr-text);
+	}
+
+	.irs-bar,
+	.irs-bar-edge{
+		top: 50%;
+		transform: translateY(-50%);
+		height: 2px;
+		width: 10px;
+		background: var(--clr-text);
+	}
+
+	.irs-single{
+		display: none;
+	}
+
+	.irs-grid{
+		bottom: auto;
+		top: 14px;
+		left: 0 !important;
+		width: calc(100% - 2px) !important;
+		right: 0;
+
+	}
+
+	.irs-grid-pol {
+		width: 2px;
+		height: 12px;
+
+		&.small{
+			display: none;
+		}
+	}
+
+	.irs-grid-text{
+		display: none;
+	}
+
+	.single{
+		width: 42px;
+		height: 36px;
+		border-radius: 5px;
+		background: var(--clr-block);
+		border: 2px solid var(--clr-text);
+		padding: 0;
+		color: #fff;
+		text-align: center;
+		line-height: 18px;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1;
+		cursor: pointer;
+
+		&:after{
+			content: '';
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			border: 2px solid var(--clr-text);
+			border-radius: 50%;
+			right: 4px;
+			top: 50%;
+			transform: translateY(-50%)
+		}
+	}
+}

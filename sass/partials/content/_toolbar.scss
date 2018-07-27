@@ -1,0 +1,77 @@
+
+/* =================================================================== */
+/* toolbar
+/* =================================================================== */
+
+
+.toolbar{
+	position: absolute;
+	left: -1px;
+	top: 99px;
+	bottom: 0;
+	display: block;
+	padding: 0;
+	max-width: 100%;
+	width: 56px;
+	border-right: 1px solid var(--clr-separator);
+	border-left: 1px solid var(--clr-separator);
+	background: var(--clr-block);
+	z-index: 1;
+
+	&__btn{
+		height: 42px;
+		width: 56px;
+		margin: 0 -1px 0 -1px;
+		display: flex;
+		align-items: center;
+		flex: 0 auto;
+		background: transparent;
+		justify-content: center;
+		padding: 0 5px;
+		border: 1px solid transparent;
+		cursor: pointer;
+		transition: all .1s;
+
+		&:hover{
+			// background: #fff;
+			// border-color: var(--clr-textL);
+
+			.toolbar__icon{
+				fill: var(--clr-text);
+			}
+		}
+	}
+
+	&__icon{
+		height: 24px;
+		width: 24px;
+		fill: var(--clr-iconD);
+		transition: all 0.1s;
+
+		&.tool-cross		{ width: 24px; height: 24px; }
+		&.tool-trend		{ width: 22px; height: 20px; }
+		&.tool-pitchfork	{ width: 25px; height: 23px; }
+		&.tool-brush		{ width: 28px; height: 28px; }
+		&.tool-text			{ width: 16px; height: 19px; }
+		&.tool-pattern		{ width: 27px; height: 23px; }
+		&.tool-long-pos		{ width: 23px; height: 21px; }
+		&.tool-icon			{ width: 21px; height: 15px; }
+		&.tool-measure		{ width: 26px; height: 22px; }
+		&.tool-zoom			{ width: 22px; height: 22px; }
+		&.tool-magnet		{ width: 23px; height: 25px; }
+		&.tool-drawing		{ width: 25px; height: 27px; }
+		&.tool-lock			{ width: 18px; height: 24px; }
+		&.tool-hide			{ width: 29px; height: 17px; }
+		&.tool-show			{ width: 28px; height: 22px; }
+		&.tool-remove		{ width: 21px; height: 24px; }
+	}
+
+	&__separator{
+		width: 100%;
+		height: 1px;
+		background: var(--clr-separator);
+		margin: 5px 0;
+	}
+}
+
+

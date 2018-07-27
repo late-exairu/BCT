@@ -1,0 +1,40 @@
+// ===================================================================
+// c-block-btns
+// ===================================================================
+
+.c-block-btns{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+
+	&__btn{
+		width: 70px;
+		height: 62px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		transition: all .1s;
+		border: none;
+		background: transparent;
+
+		&:hover{
+			.sprite-icon{
+				fill: var(--clr-textL);
+			}
+		}
+
+		&.active{
+			.sprite-icon{
+				fill: var(--clr-accent);
+			}
+		}
+	}
+
+	.sprite-icon{
+		width: 34px;
+		height: 34px;
+		fill: var(--clr-icon);
+		transition: all 0.1s;
+	}
+}

@@ -1,0 +1,170 @@
+
+/* =================================================================== */
+/* exch-dropdown */
+/* =================================================================== */
+
+
+.exch-dropdown{
+	position: relative;
+	font-family: $lato;
+	z-index: 5;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	cursor: pointer;
+	border: 1px solid var(--clr-separatorD);
+	border-radius: 5px;
+
+	&.open{
+		border-radius: 5px 5px 0 0;
+
+		.exch-dropdown__list{
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.exch-dropdown__hangle{
+
+			.sprite-icon{
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&__left{
+		padding: 12px 10px 7px 22px;
+		margin: 0 auto 0 0;
+	}
+
+	&__right{
+		display: flex;
+	}
+
+	&__sum-title{
+		font-family: $lato;
+		color: var(--clr-textL);
+		font-size: 13px;
+		padding: 0;
+		margin: 0;
+		line-height: 1.18;
+	}
+
+	&__sum-amount{
+		font-family: $lato;
+		color: var(--clr-text);
+		font-size: 20px;
+		font-weight: 900;
+		color: var(--clr-textD);
+		padding: 0;
+		margin: 0;
+		line-height: 1;
+	}
+
+	&__current,
+	&__item{
+		height: 57px;
+		padding: 0 50px 0 20px;
+		display: flex;
+		align-items: center;
+		transition: all .1s;
+		color: var(--clr-textD);
+	}
+
+	&__hangle{
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.sprite-icon{
+			width: 10px;
+			height: 6px;
+			fill: var(--clr-text);
+			transition: all 0.2s;
+		}
+	}
+
+	&__list{
+		position: absolute;
+		z-index: 5;
+		left: -1px;
+		right: -1px;
+		top: calc(100%);
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.2s;
+		background: var(--clr-block);
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+		border: 1px solid var(--clr-separatorD);
+
+		.exch-dropdown__icon{
+			flex: 0 0 32px;
+			height: 32px;
+		}
+
+		.exch-dropdown__title{
+			font-size: 20px;
+			font-weight: 400;
+		}
+	}
+
+	&__item{
+		height: 42px;
+		cursor: pointer;
+
+		&:hover{
+			background: var(--clr-backL);
+		}
+
+		&.current{
+			color: var(--clr-accentD);
+
+			.exch-dropdown__title{
+				font-weight: 600;
+			}
+		}
+	}
+
+	&__icon{
+		width: 46px;
+		height: 46px;
+		margin: 0 20px 0 0;
+		flex: 0 0 46px;
+
+		&.btc{
+			fill: #f79330;
+		}
+
+		&.eth{
+			fill: #707cb9;
+		}
+
+		&.bcc{
+			fill: #83c55f;
+		}
+
+		&.ltc{
+			fill: #83c55f;
+		}
+
+		&.rpl{
+			fill: #438bca;
+		}
+	}
+
+	&__title{
+		padding: 0px 0 0;
+		margin: 0;
+		line-height: 1;
+		font-weight: 900;
+		font-size: 20px;
+	}
+}
+

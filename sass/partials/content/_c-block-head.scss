@@ -1,0 +1,57 @@
+
+/* =================================================================== */
+/* c-block-head */
+/* =================================================================== */
+
+
+.c-block-head{
+	padding: 15px 25px 2px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--clr-separator);
+	background: var(--clr-back);
+	border-radius: 5px 5px 0 0;
+
+	&__left{
+		margin: 0 auto 0 0;
+		padding: 5px 0;
+	}
+
+	&__right{
+		margin: 0 -26px 0 10px;
+	}
+
+	&__title{
+		font-size: 23px;
+		margin: 0;
+		color: var(--clr-textD);
+		font-weight: 700;
+
+		span{
+			font-weight: 500;
+		}
+	}
+
+	&__btn{
+		width: 48px;
+		height: 48px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: all .1s;
+		border: none;
+		background: transparent;
+
+		&:hover{
+			background: rgba(0, 0, 0, 0.05);
+		}
+
+		.sprite-icon{
+			width: 20px;
+			height: 20px;
+			fill: var(--clr-text);
+		}
+	}
+}

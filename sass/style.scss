@@ -1,0 +1,129 @@
+@import "partials/variables";
+@import "partials/sprite-svg";
+@import "partials/mixins";
+@import "partials/functions";
+@import "partials/normalize";
+
+
+/* =================================================================== */
+/* Custom Styles
+/* =================================================================== */
+
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+html {
+	font-family: $avenir;
+	font-weight: 500;
+}
+
+body {
+	width: 100%;
+	background: var(--clr-back);
+	color: $clr-text;
+	line-height: 1.32;
+}
+
+a {
+	color: #0680ba;
+	transition: all linear .1s;
+	text-decoration: none;
+}
+
+.clearfix:after {
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0;
+	content: ".";
+	font-size: 0;
+}
+
+.clearfix { zoom: 1; }
+
+.ir {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+.wrapper {
+	position: relative;
+	// overflow-X: hidden;
+	min-height: 100%;
+	min-width: 300px;
+	padding: 20px 20px 20px 90px;
+	display: flex;
+	align-items: flex-start;
+    width: 100%;
+    flex: 1 0 auto;
+    height: 100%;
+	// min-width: 2520px;
+	// min-height: 1440px;
+	min-width: 1440px;
+	min-height: 900px;
+}
+
+b,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $avenir;
+	font-weight: 500;
+}
+
+// -- Content Blocks -- //
+
+@import "partials/content/basic-select";
+@import "partials/content/basic-table";
+@import "partials/content/btn-switch";
+@import "partials/content/c-block";
+@import "partials/content/c-block-btns";
+@import "partials/content/c-block-head";
+@import "partials/content/c-head-menu";
+@import "partials/content/chat-head";
+@import "partials/content/chat-talk";
+@import "partials/content/chats-list";
+@import "partials/content/curr-dropdown";
+@import "partials/content/exch-head";
+@import "partials/content/exchange-slider";
+@import "partials/content/gbar-info";
+@import "partials/content/graph-bar";
+@import "partials/content/graph-prices";
+@import "partials/content/left-bar";
+@import "partials/content/menu-dropdown";
+@import "partials/content/menubar";
+@import "partials/content/message-bar";
+@import "partials/content/search-bar";
+@import "partials/content/toolbar";
+
+// -- Vendor Styles -- //
+
+@import "vendor/ionRangeSlider";
+@import "vendor/inputrange";
+@import "vendor/jquery.scrollbar";
+
+// -- Basic Blocks -- //
+
+@import "partials/fonts";
+@import "partials/icons";
+@import "partials/forms";
+@import "partials/buttons";
+
+@import "partials/content";
+@import "partials/globals";
+
+@import "partials/media";
+

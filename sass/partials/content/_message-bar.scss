@@ -1,0 +1,85 @@
+
+/* =================================================================== */
+/* message-bar */
+/* =================================================================== */
+
+
+.message-bar{
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+
+	&__input{
+		font-family: $avenir;
+		display: block;
+		background: transparent;
+		border: 1px solid transparent;
+		outline: none;
+		height: 42px;
+		font-size: 18px;
+		border-radius: 3px;
+		flex: 1 1;
+		padding: 0 10px;
+		transition: all 0.1s;
+
+		transition: all .1s;
+		color: var(--clr-text);
+
+		&::placeholder{
+			color: var(--clr-icon);
+		}
+
+		&:focus{
+			background: var(--clr-back);
+			border-color: var(--clr-separator);
+		}
+	}
+
+	&__btn{
+		width: 70px;
+		height: 62px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 0 0 54px;
+		cursor: pointer;
+		transition: all .1s;
+		border: none;
+		background: transparent;
+
+		&:hover{
+			.sprite-icon{
+				fill: var(--clr-textL);
+			}
+		}
+
+		&.active{
+			.sprite-icon{
+				fill: var(--clr-accent);
+			}
+		}
+
+		.sprite-icon{
+			width: 33px;
+			height: 33px;
+			fill: var(--clr-icon);
+			transition: all 0.1s;
+
+			&.chats-clip{
+				width: 26px;
+				height: 29px;
+			}
+
+			&.chats-image{
+				width: 33px;
+				height: 33px;
+			}
+
+			&.chats-mic{
+				width: 23px;
+				height: 27px;
+			}
+		}
+	}
+}
+

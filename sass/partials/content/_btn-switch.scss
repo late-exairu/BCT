@@ -1,0 +1,91 @@
+
+/* =================================================================== */
+/* btn-switch
+/* =================================================================== */
+
+
+.btn-switch {
+	font-family: $lato;
+	display: flex;
+	height: 44px;
+	width: 100%;
+	position: relative;	
+	user-select: none;
+	font-size: 13px;
+	color: var(--clr-textL);
+
+	&__radio {
+		display: none;
+
+		&:checked{
+
+			&~.btn-switch__label{
+				background: var(--clr-accentL);
+				color: var(--clr-accentD);
+
+				.sprite-icon{
+					fill: var(--clr-accentD);
+				}
+			}
+
+			&~.btn-switch__switch{
+				background: var(--clr-accentD);
+
+				&:after{
+					transform: translate(14px, 0)
+				}
+			}
+		}
+	}
+
+	&__label {
+		position: relative;
+		width: 100%;
+		line-height: 1;
+		cursor: pointer;
+		transition: all .1s ;
+		padding: 5px 48px 5px 20px;
+		display: flex;
+		align-items: center;
+		min-width: 180px;
+		white-space: nowrap;
+	}
+
+	&__switch{
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translate(0, -50%);
+		width: 28px;
+		height: 14px;
+		background: var(--clr-separator);
+		border-radius: 7px;
+		transition: all 0.2s;
+		pointer-events: none;
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 2px;
+			top: 2px;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: #fff;
+			transition: all 0.2s;
+			transform: translate(0, 0)
+		}
+	}
+
+	.sprite-icon{
+		width: 35px;
+		height: 35px;
+		margin: 0 25px 0 0;
+		fill: var(--clr-textL);
+
+		&.theme-light		{ width: 35px; height: 31px }
+		&.theme-dark		{ width: 35px; height: 27px }
+		&.trading-real		{ width: 35px; height: 35px }
+		&.trading-paper		{ width: 35px; height: 26px }
+	}
+}

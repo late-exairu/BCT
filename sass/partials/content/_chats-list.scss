@@ -1,0 +1,117 @@
+
+/* =================================================================== */
+/* chats-list */
+/* =================================================================== */
+
+
+.chats-list{
+	padding: 8px 0 0;
+	// height: calc(100vh - 204px);
+	overflow-y: auto;
+	flex: 1;
+
+	&__item{
+		position: relative;
+		display: flex;
+		padding: 10px 10px 10px 25px;
+		height: 75px;
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 85px;
+			bottom: -1px;
+			right: 20px;
+			height: 1px;
+			background: var(--clr-separator);
+		}
+
+		&:last-child{
+			&:after{
+				display: none;
+			}
+		}
+	}
+
+	&__avatar-wrap{
+		position: relative;
+		width: 52px;
+		height: 52px;
+		margin: 0 15px 0 0;
+		flex: 0 0 auto;
+	}
+
+	&__avatar{
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+	}
+
+	&__desc{
+		padding: 3px 10px;
+		overflow: hidden;
+		min-width: 100px;
+		flex: 1 1 auto;
+	}
+
+	&__name{
+		font-family: $lato;
+		margin: 0;
+		font-weight: 600;
+		font-size: 18px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		color: var(--clr-textD);
+	}
+
+	&__last{
+		font-family: $lato;
+		font-size: 15px;
+		margin: 5px 0 0;
+		color: var(--clr-textL);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__info{
+		display: flex;
+		flex-direction: column;
+		text-align: right;
+		margin: 0 0 0 auto;
+		padding: 7px 0 5px;
+		flex: 0 0 auto;
+		align-items: flex-start;
+	}
+
+	&__time{
+		font-family: $avenirC;
+		margin: 0 0 4px;
+		font-size: 14px;
+		white-space: nowrap;
+		min-height: 15px;
+		color: var(--clr-textL);
+	}
+
+	&__comms{
+		font-family: $lato;
+		margin: 0;
+		font-size: 13px;
+		white-space: nowrap;
+		background: var(--clr-textL);
+		color: #fff;
+		display: flex;
+		height: 18px;
+		line-height: 18px;
+		padding: 0 5px;
+		border-radius: 9px;
+		margin: auto 0 2px auto;
+		justify-content: center;
+		flex: 0 0 auto;
+
+		&.accented{
+			background: var(--clr-accent);
+		}
+	}
+}

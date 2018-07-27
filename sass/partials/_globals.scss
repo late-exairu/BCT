@@ -1,0 +1,73 @@
+
+/* =================================================================== */
+/* Globals
+/* =================================================================== */
+
+
+.icon-curr{
+	width: 40px;
+	height: 40px;
+	margin: 0 16px 0 0;
+}
+
+.clr-bitcoin		{ fill: #f79330; }
+.clr-bitcoincash	{ fill: #83c55f; }
+.clr-ethereum		{ fill: #707cb9; }
+.clr-litecoin		{ fill: #b1b0b0; }
+.clr-ripple			{ fill: #438bca; }
+
+.sprite-icon{
+	width: 28px;
+	height: 28px;
+	fill: var(--clr-icon);
+	transition: all 0.1s;	
+}
+
+.d-flex{ display: flex; }
+
+.d-flex-col{
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-1-1{ flex: 1 1; }
+
+.m-left		{ margin-left:	20px; }
+.m-top		{ margin-top:	20px; }
+.m-bottom	{ margin-bottom:20px; }
+.m-right	{ margin-right: 20px; }
+
+.scroll-y{
+	height: 100%;
+	overflow-y: auto;
+}
+
+.w-100{	width: 100%; }
+.h-100{	height: 100%; }
+
+.c-cols{ display: flex; }
+.c-col{	flex: 1 1;}
+
+
+
+.visibility-parent{
+	
+	&:hover{
+
+		.visibility-child{
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+// .visibility-child{
+// 	visibility: hidden;
+// 	opacity: 0;
+// 	transition: all .2s;
+// }
+
+.clr-textAA{
+	color: var(--clr-textAA);
+}
+
+
