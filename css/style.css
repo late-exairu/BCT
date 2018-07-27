@@ -561,10 +561,10 @@ a {
   width: 100%;
   flex: 1 0 auto;
   height: 100%;
-  min-width: 2520px;
-  min-height: 1440px;
-  /*min-width: 1440px;
-	min-height: 900px;*/ }
+  /*min-width: 2520px;
+	min-height: 1440px;*/
+  min-width: 1440px;
+  min-height: 900px; }
 
 b,
 h1,
@@ -1690,7 +1690,6 @@ h6 {
   background: transparent;
   display: flex;
   padding: 16px;
-  border-bottom: 1px solid var(--clr-separator);
   max-width: 100%;
   border-radius: 0; }
   .graph-bar__left {
@@ -2308,6 +2307,7 @@ body.menubar-in #user-btn:before {
   display: block;
   padding: 0;
   max-width: 100%;
+  max-height: 100%;
   width: 56px;
   border-right: 1px solid var(--clr-separator);
   border-left: 1px solid var(--clr-separator);
@@ -2864,14 +2864,21 @@ body.menubar-in #user-btn:before {
   -moz-border-radius: 8px;
   border-radius: 8px; }
 
-.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element:hover .scroll-element_track {
+  opacity: 0.6; }
+
+.scrollbar-inner > .scroll-element:hover .scroll-bar {
+  opacity: 0.8; }
+
+.scrollbar-inner > .scroll-element .scroll-element_track {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=30);
+  opacity: 0.3; }
+
 .scrollbar-inner > .scroll-element .scroll-bar {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
   filter: alpha(opacity=50);
   opacity: 0.5; }
-  .scrollbar-inner > .scroll-element .scroll-element_track:hover,
-  .scrollbar-inner > .scroll-element .scroll-bar:hover {
-    opacity: 0.8; }
 
 .scrollbar-inner > .scroll-element .scroll-element_track {
   background-color: var(--clr-accent); }

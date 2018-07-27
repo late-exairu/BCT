@@ -200,15 +200,29 @@
     border-radius: 8px;
 }
 
-.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element{
+
+	&:hover{
+		.scroll-element_track{
+    		opacity: 0.6;
+		}
+
+		.scroll-bar{
+    		opacity: 0.8;
+		}
+	}
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_track{
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+}
+
 .scrollbar-inner > .scroll-element .scroll-bar {
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
     filter: alpha(opacity=50);
     opacity: 0.5;
-
-    &:hover{
-    	opacity: 0.8;
-    }
 }
 
 .scrollbar-inner > .scroll-element .scroll-element_track { background-color: var(--clr-accent); }
