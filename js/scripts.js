@@ -58,7 +58,9 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.exch-dropdown__list .exch-dropdown__item').click(function () {
+		var dataName = $(this).attr('data-name');
 		var newCurr = $(this).children().clone();
+		newCurr[1].textContent = dataName;
 		var currDropdown = $(this).closest('.exch-dropdown');
 		currDropdown.find('.exch-dropdown__item').removeClass('current');
 		$(this).addClass('current');
@@ -110,7 +112,7 @@ $(function () {
 				}
 			},
 			areaspline: {
-				color: '#000000',
+				color: '#BFC0C0',
 				fillColor: {
 					linearGradient: [0, 0, 0, 1],
 					stops: [
@@ -120,7 +122,7 @@ $(function () {
 				},
 				states: {
 					hover: {
-						lineWidth: 3
+						lineWidth: 3,
 					}
 				},
 				events: {
@@ -145,7 +147,7 @@ $(function () {
 									[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
 								]
 							},
-							color: $('.dark-theme').length ? '#4F6C82' : '#000000'
+							color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
 						}, )
 					}
 				},
@@ -173,6 +175,7 @@ $(function () {
 				x: 50
 			},
 			tickLength: 0,
+			tickInterval: 2.5,
 			gridLineWidth: 1
 		},
 		yAxis: {
@@ -180,11 +183,19 @@ $(function () {
 				text: ''
 			},
 			opposite: true,
+			showLastLabel:false,
+			showFirstLabel:false,
 			labels: {
+				align: 'right',
+				x: -20,
+				y: -20,
+				step:2,
 				formatter: function () {
 					return this.value + '.00';
 				}
-			}
+			},
+			tickInterval: 7,
+			max:150
 		},
 		stickyTracking: false,
 		series: [{
@@ -498,7 +509,7 @@ $(function () {
 					fillColor: '',
 					lineWidth: 0,
 					lineColor: null,
-					symbol: 'url(../img/svg/circle.svg)',
+					symbol: 'url('+location.href+'img/svg/circle.svg)',
 					states: {
 						hover: {
 							enabled: true
@@ -645,7 +656,7 @@ $(function () {
 					fillColor: '',
 					lineWidth: 0,
 					lineColor: null,
-					symbol: 'url(../img/svg/circle.svg)',
+					symbol: 'url(' + location.href + 'img/svg/circle.svg)',
 					states: {
 						hover: {
 							enabled: true
@@ -781,12 +792,17 @@ $(function () {
 			var gridColor = '#ccd6eb';
 			var fontColor = '#000000';
 			var labelColor = '#666666';
-			var lineColor = '#000000';
+			var lineColor = '#BFC0C0';
 
 			changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor);
 		}
 	}
 
+
+
+	/*---------------------------------------------------*/
+	/* change colors in all charts */
+	/*---------------------------------------------------*/
 	function changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor) {
 
 		// circleChart
@@ -949,14 +965,24 @@ $(function () {
 		};
 
 		if (mainChartObj){
-			mainChartObj.update(stylesForMainChart);
-			mainChartObj.series.map(item => {
+ 			mainChartObj.series.map(item => {
 				if (item.type == 'areaspline')
-				item.update({
-					color: lineColor
-				});
+					item.setOptions({
+						color: lineColor
+					});
 			});
+			mainChartObj.update(stylesForMainChart);
 		} 
 	}
+
+	/*---------------------------------------------------*/
+	/* show Orders form */
+	/*---------------------------------------------------*/
+
+	$('.col-left .basic-table__row').click(function () {
+		$('.col-left .basic-table__row').removeClass('active');
+		$(this).addClass('active');
+		$('#orders').css('display','flex');
+	});
 
 });

@@ -1440,9 +1440,10 @@ h6 {
     background: var(--clr-block);
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
     border: 1px solid var(--clr-separatorD); }
-    .exch-dropdown__list .exch-dropdown__icon {
+    .exch-dropdown__list svg.exch-dropdown__icon {
       flex: 0 0 32px;
-      height: 32px; }
+      height: 32px;
+      fill: #808080; }
     .exch-dropdown__list .exch-dropdown__title {
       font-size: 20px;
       font-weight: 400; }
@@ -1460,22 +1461,27 @@ h6 {
     height: 46px;
     margin: 0 12px 0 0;
     flex: 0 0 46px; }
-    .exch-dropdown__icon.btc {
-      fill: #f79330; }
-    .exch-dropdown__icon.eth {
-      fill: #707cb9; }
-    .exch-dropdown__icon.bcc {
-      fill: #83c55f; }
-    .exch-dropdown__icon.ltc {
-      fill: #83c55f; }
-    .exch-dropdown__icon.rpl {
-      fill: #438bca; }
   .exch-dropdown__title {
     padding: 0px 0 0;
     margin: 0;
     line-height: 1;
     font-weight: 700;
     font-size: 21px; }
+  .exch-dropdown .current .btc,
+  .exch-dropdown .exch-dropdown__current .btc {
+    fill: #f79330; }
+  .exch-dropdown .current .eth,
+  .exch-dropdown .exch-dropdown__current .eth {
+    fill: #707cb9; }
+  .exch-dropdown .current .bcc,
+  .exch-dropdown .exch-dropdown__current .bcc {
+    fill: #83c55f; }
+  .exch-dropdown .current .ltc,
+  .exch-dropdown .exch-dropdown__current .ltc {
+    fill: #83c55f; }
+  .exch-dropdown .current .rpl,
+  .exch-dropdown .exch-dropdown__current .rpl {
+    fill: #438bca; }
 
 /* =================================================================== */
 /* exch-head */
@@ -3350,14 +3356,19 @@ body.menubar-in #user-btn:before {
     background: #000;
     margin: 5px auto 0; }
 
-#orders .forms-wrap {
+#orders {
   display: none; }
-
-#orders .forms-wrap.current {
-  display: flex; }
+  #orders .forms-wrap {
+    display: none; }
+  #orders .forms-wrap.current {
+    display: flex; }
 
 .advanced {
   display: none; }
+
+.col-left .basic-table__row:hover {
+  background: var(--clr-back);
+  cursor: pointer; }
 
 /* =================================================================== */
 /* Globals

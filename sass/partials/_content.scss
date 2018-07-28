@@ -276,6 +276,7 @@
 }
 
 #orders {
+	display: none;
 	.forms-wrap {
 		display: none;
 	}
@@ -286,4 +287,11 @@
 
 .advanced{
 	display: none;
+}
+
+.col-left{
+	.basic-table__row:hover{
+		background: var(--clr-back);
+		cursor: pointer;
+	}
 }
