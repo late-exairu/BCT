@@ -74,7 +74,7 @@ $(function () {
 	$('.scrollbar-outer').scrollbar();
 	$('.scrollbar-inner').scrollbar();
 
-	$('#user-btn').on('click', function() {
+	$('#user-btn').on('click', function () {
 		$('body').toggleClass('menubar-in');
 	})
 
@@ -110,6 +110,7 @@ $(function () {
 				}
 			},
 			areaspline: {
+				color: '#000000',
 				fillColor: {
 					linearGradient: [0, 0, 0, 1],
 					stops: [
@@ -126,7 +127,7 @@ $(function () {
 					mouseOver: function (event) {
 						this.update({
 							fillColor: {
-								linearGradient: [0, 0, 0, $('#mainChart').height()-100],
+								linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
 								stops: [
 									[0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.3).get('rgba')],
 									[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
@@ -144,7 +145,7 @@ $(function () {
 									[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
 								]
 							},
-							color: '#000000'
+							color: $('.dark-theme').length ? '#4F6C82' : '#000000'
 						}, )
 					}
 				},
@@ -188,7 +189,6 @@ $(function () {
 		stickyTracking: false,
 		series: [{
 				type: 'areaspline',
-				color: '#000000',
 				data: [30, 40, 35, 45, 60, 70, 72, 77, 79, 62,
 					44, 50, 50, 55, 57, 52, 38, 27, 60, 64,
 					70, 75, 79, 87, 94, 103, 102, 53, 107, 62,
@@ -200,7 +200,6 @@ $(function () {
 			},
 			{
 				type: 'areaspline',
-				color: '#000000',
 				data: [20, 24, 24, 26, 25, 27, 24, 28, 32, 34,
 					37, 39, 31, 36, 38, 82, 85, 79, 80, 70,
 					97, 94, 85, 56, 34, 66, 75, 77, 44, 36,
@@ -212,7 +211,6 @@ $(function () {
 			},
 			{
 				type: 'areaspline',
-				color: '#000000',
 				data: [30, 37, 38, 32, 32, 37, 34, 38, 32, 34,
 					37, 19, 13, 22, 18, 27, 29, 32, 20, 12,
 					49, 58, 50, 58, 57, 58, 62, 42, 47, 44,
@@ -224,7 +222,6 @@ $(function () {
 			},
 			{
 				type: 'areaspline',
-				color: '#000000',
 				data: [60, 66, 69, 77, 4, 3, 22, 13, 27, 22,
 					17, 19, 11, 16, 18, 20, 25, 29, 30, 20,
 					35, 75, 8, 2, 12, 27, 14, 18, 2, 4,
@@ -304,12 +301,13 @@ $(function () {
 	/* js-circle diagram */
 	/*---------------------------------------------------*/
 
-	var CircleChartObj = null;
-	var CircleChartOptions = {
+	var circleChartObj = null;
+	var circleChartOptions = {
 		chart: {
 			type: 'pie',
 			spacingLeft: 0,
 			spacingTop: 0,
+			backgroundColor: '#ffffff'
 		},
 		exporting: {
 			enabled: false
@@ -317,7 +315,8 @@ $(function () {
 		title: null,
 		plotOptions: {
 			pie: {
-				innerSize: '85%'
+				innerSize: '85%',
+				borderWidth: 0
 			},
 			series: {
 				dataLabels: {
@@ -390,8 +389,8 @@ $(function () {
 		span.css('top', textY + (span.height() * -0.65));
 	};
 
-	CircleChartObj = Highcharts.chart('circleChart', CircleChartOptions);
-	addCircleChartText(CircleChartObj);
+	circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
+	addCircleChartText(circleChartObj);
 
 	/*---------------------------------------------------*/
 	/* js-portfolio diagram */
@@ -402,6 +401,7 @@ $(function () {
 	var portfolioChartOptions = {
 		chart: {
 			type: 'areaspline',
+			backgroundColor: '#ffffff'
 		},
 		exporting: {
 			enabled: false
@@ -415,6 +415,8 @@ $(function () {
 			enabled: false
 		},
 		xAxis: {
+			gridLineColor: '#e6e6e6',
+			lineColor: '#ccd6eb',
 			crosshair: {
 				label: {
 					enabled: true,
@@ -437,10 +439,14 @@ $(function () {
 			tickInterval: 0,
 			gridLineWidth: 1,
 			labels: {
-				step: 2
+				step: 2,
+				style: {
+					color: '#666666'
+				}
 			},
 		},
 		yAxis: {
+			gridLineColor: '#e6e6e6',
 			labels: {
 				enabled: false,
 			},
@@ -472,7 +478,7 @@ $(function () {
 					x: point.plotX - 45,
 					y: point.plotY - 10
 				};
-			} 
+			}
 		},
 		credits: {
 			enabled: false
@@ -568,14 +574,20 @@ $(function () {
 					countForLiquidLabels += 253;
 					return label;
 				},
-				step: 2
+				step: 2,
+				style: {
+					color: '#666666'
+				}
 			},
 		},
 		yAxis: [{
 			labels: {
 				enabled: true,
 				step: 4,
-				overflow: 'justify'
+				overflow: 'justify',
+				style: {
+					color: '#666666'
+				}
 			},
 			title: {
 				enabled: false,
@@ -587,7 +599,10 @@ $(function () {
 			labels: {
 				enabled: true,
 				step: 4,
-				overflow: 'justify'
+				overflow: 'justify',
+				style: {
+					color: '#666666'
+				}
 			},
 			title: {
 				enabled: false,
@@ -693,14 +708,11 @@ $(function () {
 			var panelId = '#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel');
 			if (panelId == '#panel-dashboard-advanced') {
 				showAdvancedView();
-			}
-			else if (panelId == '#panel-dashboard-basic') {
+			} else if (panelId == '#panel-dashboard-basic') {
 				showBasicView();
-			}
-			else if (panelId == '#panel-dark-theme' || panelId == '#panel-light-theme') {
+			} else if (panelId == '#panel-dark-theme' || panelId == '#panel-light-theme') {
 				changeTheme();
-			}
-			else if ($(panelId).length != 0) {
+			} else if ($(panelId).length != 0) {
 				var btnText = $(this).find('button').text();
 				$('.account-stats .c-block-head h2.c-block-head__title').text(btnText);
 
@@ -713,7 +725,7 @@ $(function () {
 				}
 
 				if ($(this).attr('id') == 'tab-funds-account') {
-					CircleChartObj = Highcharts.chart('circleChart', CircleChartOptions);
+					circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
 				}
 
 			}
@@ -726,7 +738,7 @@ $(function () {
 
 	function showAdvancedView() {
 		$('.account-stats .c-block-head ul.c-head-menu li:nth-child(2) button').prop('disabled', true);
-		$('.basic').css('display','none');
+		$('.basic').css('display', 'none');
 		$('.advanced').css('display', 'flex');
 		$('#panel-dashboard-liquidity').addClass('active');
 		liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
@@ -737,7 +749,7 @@ $(function () {
 		$('.account-stats .c-block-head ul.c-head-menu li:nth-child(2) button').prop('disabled', false);
 		$('.advanced').css('display', 'none');
 		$('.basic').css('display', 'flex');
-		CircleChartObj = Highcharts.chart('circleChart', CircleChartOptions);
+		circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
 		portfolioChartObj = Highcharts.chart('portfolioChart', portfolioChartOptions);
 
 		var textForTitle = $('.account-stats .c-block-head  ul.c-head-menu li:nth-child(2) ul.menu-dropdown li.active button').text();
@@ -751,6 +763,200 @@ $(function () {
 
 	function changeTheme() {
 		var darkTheme = $('#tab-dark-theme input:checked').length;
-		darkTheme ? $('body').addClass('dark-theme') : $('body').removeClass('dark-theme');
+		if (darkTheme) {
+			$('body').addClass('dark-theme');
+
+			var backColor = '#18202d';
+			var gridColor = '#24425b';
+			var fontColor = '#9BA6B2';
+			var labelColor = '#9BA6B2';
+			var lineColor = '#4F6C82';
+
+			changeChartsColors(backColor, gridColor, fontColor, labelColor,lineColor);
+
+		} else {
+			$('body').removeClass('dark-theme');
+
+			var backColor = '#ffffff';
+			var gridColor = '#ccd6eb';
+			var fontColor = '#000000';
+			var labelColor = '#666666';
+			var lineColor = '#000000';
+
+			changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor);
+		}
 	}
+
+	function changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor) {
+
+		// circleChart
+		var stylesForCircleChart = {
+			chart: {
+				backgroundColor: backColor,
+			},
+			tooltip: {
+				formatter: function () {
+					var currency = this.key;
+					var resultString = '';
+					$('.cc-accounts-table .basic-table__row').each(function () {
+						if ($(this).find('.w-27').text().indexOf(currency) != -1) {
+							resultString = $(this).find('.w-27').html();
+							resultString += $(this).find('.w-20').eq(0).text().replace('000', '');
+							return false;
+						}
+					});
+
+					var lightResult = '<div class="circle">' + resultString + '</div>';
+					var darkResult = '<div class="circle dark">' + resultString + '</div>';
+
+					return $('.dark-theme').length ? darkResult : lightResult;
+				}
+			}
+		};
+
+		circleChartOptions.chart.backgroundColor = stylesForCircleChart.chart.backgroundColor;
+		circleChartOptions.tooltip.formatter = stylesForCircleChart.tooltip.formatter;
+
+		if (circleChartObj)
+			circleChartObj.update(stylesForCircleChart);
+		$('#pieChartInfoText *').css('color', fontColor);
+
+		// portfolioChart
+		var stylesForPortfolioChart = {
+			chart: {
+				backgroundColor: backColor
+			},
+			xAxis: {
+				gridLineColor: gridColor,
+				lineColor: gridColor,
+				crosshair: {
+					label: {
+						backgroundColor: backColor,
+						style: {
+							color: fontColor
+						}
+					}
+				},
+				labels: {
+					style: {
+						color: labelColor
+					}
+				}
+			},
+			yAxis: {
+				gridLineColor: gridColor
+			}
+		};
+		portfolioChartOptions.chart.backgroundColor = stylesForPortfolioChart.chart.backgroundColor;
+		portfolioChartOptions.xAxis.gridLineColor = stylesForPortfolioChart.xAxis.gridLineColor;
+		portfolioChartOptions.xAxis.lineColor = stylesForPortfolioChart.xAxis.lineColor;
+		portfolioChartOptions.xAxis.crosshair.label.backgroundColor = stylesForPortfolioChart.xAxis.crosshair.label.backgroundColor;
+		portfolioChartOptions.xAxis.crosshair.label.style.color = stylesForPortfolioChart.xAxis.crosshair.label.style.color;
+		portfolioChartOptions.xAxis.labels.style.color = stylesForPortfolioChart.xAxis.labels.style.color;
+		portfolioChartOptions.yAxis.gridLineColor = stylesForPortfolioChart.yAxis.gridLineColor;
+
+		if (portfolioChartObj)
+			portfolioChartObj.update(stylesForPortfolioChart);
+
+		$('#portfolioChartText div p,#portfolioChartRange span').css('color', fontColor);
+
+		// liquidityChart
+		var stylesForLiquidityChart = {
+			chart: {
+				backgroundColor: backColor
+			},
+			xAxis: {
+				gridLineColor: gridColor,
+				lineColor: gridColor,
+				crosshair: {
+					label: {
+						backgroundColor: backColor,
+						style: {
+							color: fontColor
+						}
+					}
+				},
+				labels: {
+					style: {
+						color: labelColor
+					}
+				}
+			},
+			yAxis: [{
+					gridLineColor: gridColor,
+					labels: {
+						style: {
+							color: gridColor
+						}
+					}
+				},
+				{
+					gridLineColor: gridColor,
+					labels: {
+						style: {
+							color: labelColor
+						}
+					}
+				}
+			]
+		};
+
+		liquidityChartOptions.chart.backgroundColor = stylesForLiquidityChart.chart.backgroundColor;
+		liquidityChartOptions.xAxis.gridLineColor = stylesForLiquidityChart.xAxis.gridLineColor;
+		liquidityChartOptions.xAxis.lineColor = stylesForLiquidityChart.xAxis.lineColor;
+		liquidityChartOptions.xAxis.crosshair.label.backgroundColor = stylesForLiquidityChart.xAxis.crosshair.label.backgroundColor;
+		liquidityChartOptions.xAxis.crosshair.label.style.color = stylesForLiquidityChart.xAxis.crosshair.label.style.color;
+		liquidityChartOptions.xAxis.labels.style.color = stylesForLiquidityChart.xAxis.labels.style.color;
+		liquidityChartOptions.yAxis[0].gridLineColor = stylesForLiquidityChart.yAxis[0].gridLineColor;
+		liquidityChartOptions.yAxis[0].labels.style.color = stylesForLiquidityChart.yAxis[0].labels.style.color;
+		liquidityChartOptions.yAxis[1].gridLineColor = stylesForLiquidityChart.yAxis[1].gridLineColor;
+		liquidityChartOptions.yAxis[1].labels.style.color = stylesForLiquidityChart.yAxis[1].labels.style.color;
+
+		if (liquidityChartObj)
+			liquidityChartObj.update(stylesForLiquidityChart);
+
+		$('.liquidityText').css('color', fontColor);
+		$('.liquidityText svg').css('fill', fontColor);
+		$('#panel-dashboard-liquidity .liquidityText .separator').css('background', fontColor);
+
+		// MainChart
+		var stylesForMainChart = {
+			chart: {
+				backgroundColor: backColor
+			},
+			xAxis: {
+				gridLineColor: gridColor,
+				lineColor: gridColor,
+				labels: {
+					style: {
+						color: labelColor
+					}
+				}
+			},
+			yAxis: {
+				gridLineColor: gridColor,
+				labels: {
+					style: {
+						color: labelColor
+					}
+				}
+			},
+			plotOptions: {
+				areaspline: {
+					color: lineColor
+				}
+			}
+		};
+
+		if (mainChartObj){
+			mainChartObj.update(stylesForMainChart);
+			mainChartObj.series.map(item => {
+				if (item.type == 'areaspline')
+				item.update({
+					color: lineColor
+				});
+			});
+		} 
+	}
+
 });

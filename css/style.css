@@ -3270,6 +3270,11 @@ body.menubar-in #user-btn:before {
   background-color: white;
   border: 1px solid #797979; }
 
+.highcharts-tooltip div.dark {
+  background-color: #18202d;
+  border: 1px solid #24425b;
+  color: #9BA6B2; }
+
 .highcharts-tooltip table.portfolio {
   background-color: #0576B9;
   border: 1px solid #939393; }
