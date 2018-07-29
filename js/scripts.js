@@ -15,7 +15,6 @@ $(function () {
 	$exchangeSlider.on("change", function () {
 		var $this = $(this),
 			value = $this.prop("value").split(";");
-
 		console.log(value[0] + " - " + value[1]);
 	});
 
@@ -30,6 +29,59 @@ $(function () {
 		from: 50,
 		grid_snap: false
 	});
+
+
+	/*---------------------------------------------------*/
+	/* functions for Update styles in Charts */
+	/*---------------------------------------------------*/
+
+	function changeChartStylesOptions(newStyles, oldStyles) {
+		var keys = getDeepKeys(newStyles);
+		keys.map(function (path) {
+			var deepValue = getDeepVal(newStyles, path);
+			if (typeof deepValue != 'object') {
+				setDeepValue(oldStyles, deepValue, path);
+			}
+		});
+	}
+
+	function getDeepKeys(obj) {
+		var keys = [];
+		for (var key in obj) {
+			keys.push(key);
+			if (typeof obj[key] === "object") {
+				var subkeys = getDeepKeys(obj[key]);
+				keys = keys.concat(subkeys.map(function (subkey) {
+					return key + "." + subkey;
+				}));
+			}
+		}
+		return keys;
+	}
+
+	function getDeepVal(obj, path) {
+		var paths = path.split('.'),
+			current = obj,
+			i;
+
+		for (i = 0; i < paths.length; ++i) {
+			if (current[paths[i]] == undefined) {
+				return undefined;
+			} else {
+				current = current[paths[i]];
+			}
+		}
+		return current;
+	}
+
+	function setDeepValue(obj, value, path) {
+		var i;
+		path = path.split('.');
+		for (i = 0; i < path.length - 1; i++)
+			obj = obj[path[i]];
+
+		obj[path[i]] = value;
+	}
 
 	/*---------------------------------------------------*/
 	/* js-dropdown */
@@ -51,7 +103,6 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('input[placeholder], textarea[placeholder]').placeholder();
-
 
 	/*---------------------------------------------------*/
 	/* js-select currency*/
@@ -89,9 +140,6 @@ $(function () {
 			enabled: false
 		},
 		title: null,
-		exporting: {
-			enabled: false
-		},
 		tooltip: {
 			enabled: false
 		},
@@ -183,19 +231,19 @@ $(function () {
 				text: ''
 			},
 			opposite: true,
-			showLastLabel:false,
-			showFirstLabel:false,
+			showLastLabel: false,
+			showFirstLabel: false,
 			labels: {
 				align: 'right',
 				x: -20,
 				y: -20,
-				step:2,
+				step: 2,
 				formatter: function () {
 					return this.value + '.00';
 				}
 			},
 			tickInterval: 7,
-			max:150
+			max: 150
 		},
 		stickyTracking: false,
 		series: [{
@@ -320,9 +368,6 @@ $(function () {
 			spacingTop: 0,
 			backgroundColor: '#ffffff'
 		},
-		exporting: {
-			enabled: false
-		},
 		title: null,
 		plotOptions: {
 			pie: {
@@ -407,15 +452,11 @@ $(function () {
 	/* js-portfolio diagram */
 	/*---------------------------------------------------*/
 
-
 	var portfolioChartObj = null;
 	var portfolioChartOptions = {
 		chart: {
 			type: 'areaspline',
 			backgroundColor: '#ffffff'
-		},
-		exporting: {
-			enabled: false
 		},
 		rangeSelector: {
 			allButtonsEnabled: true,
@@ -509,7 +550,7 @@ $(function () {
 					fillColor: '',
 					lineWidth: 0,
 					lineColor: null,
-					symbol: 'url('+location.href+'img/svg/circle.svg)',
+					symbol: 'url(' + location.href + 'img/svg/circle.svg)',
 					states: {
 						hover: {
 							enabled: true
@@ -549,9 +590,6 @@ $(function () {
 	var liquidityChartOptions = {
 		chart: {
 			type: 'area'
-		},
-		exporting: {
-			enabled: false
 		},
 		title: null,
 		legend: {
@@ -711,19 +749,13 @@ $(function () {
 
 
 	/*---------------------------------------------------*/
-	/* account-js-tabs */
+	/* account-js-simple-tabs */
 	/*---------------------------------------------------*/
 
 	$('.account-stats .menu-dropdown__item').on('click', function () {
 		if ($(this).attr('id')) {
 			var panelId = '#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel');
-			if (panelId == '#panel-dashboard-advanced') {
-				showAdvancedView();
-			} else if (panelId == '#panel-dashboard-basic') {
-				showBasicView();
-			} else if (panelId == '#panel-dark-theme' || panelId == '#panel-light-theme') {
-				changeTheme();
-			} else if ($(panelId).length != 0) {
+			if ($(panelId).length != 0) {
 				var btnText = $(this).find('button').text();
 				$('.account-stats .c-block-head h2.c-block-head__title').text(btnText);
 
@@ -742,6 +774,22 @@ $(function () {
 			}
 		}
 	});
+
+	/*---------------------------------------------------*/
+	/* account-js-radio-switchers */
+	/*---------------------------------------------------*/
+
+	$('.account-stats .menu-dropdown__item input[type=radio]').on('click', function () {
+		var switchBtnId = $(this).attr('id');
+		if (switchBtnId == 'switch-dashboard-advanced') {
+			showAdvancedView();
+		} else if (switchBtnId == 'switch-dashboard-basic') {
+			showBasicView();
+		} else if (switchBtnId == 'switch-theme-light' || switchBtnId == 'switch-theme-dark') {
+			changeTheme();
+		}
+	});
+
 
 	/*---------------------------------------------------*/
 	/* functions for change view between Basic and Advanced */
@@ -765,7 +813,6 @@ $(function () {
 
 		var textForTitle = $('.account-stats .c-block-head  ul.c-head-menu li:nth-child(2) ul.menu-dropdown li.active button').text();
 		$('.account-stats .c-block-head h2.c-block-head__title').text(textForTitle);
-
 	}
 
 	/*---------------------------------------------------*/
@@ -783,7 +830,7 @@ $(function () {
 			var labelColor = '#9BA6B2';
 			var lineColor = '#4F6C82';
 
-			changeChartsColors(backColor, gridColor, fontColor, labelColor,lineColor);
+			changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor);
 
 		} else {
 			$('body').removeClass('dark-theme');
@@ -797,7 +844,6 @@ $(function () {
 			changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor);
 		}
 	}
-
 
 
 	/*---------------------------------------------------*/
@@ -821,17 +867,14 @@ $(function () {
 							return false;
 						}
 					});
-
 					var lightResult = '<div class="circle">' + resultString + '</div>';
 					var darkResult = '<div class="circle dark">' + resultString + '</div>';
-
 					return $('.dark-theme').length ? darkResult : lightResult;
 				}
 			}
 		};
 
-		circleChartOptions.chart.backgroundColor = stylesForCircleChart.chart.backgroundColor;
-		circleChartOptions.tooltip.formatter = stylesForCircleChart.tooltip.formatter;
+		changeChartStylesOptions(stylesForCircleChart, circleChartOptions);
 
 		if (circleChartObj)
 			circleChartObj.update(stylesForCircleChart);
@@ -863,13 +906,8 @@ $(function () {
 				gridLineColor: gridColor
 			}
 		};
-		portfolioChartOptions.chart.backgroundColor = stylesForPortfolioChart.chart.backgroundColor;
-		portfolioChartOptions.xAxis.gridLineColor = stylesForPortfolioChart.xAxis.gridLineColor;
-		portfolioChartOptions.xAxis.lineColor = stylesForPortfolioChart.xAxis.lineColor;
-		portfolioChartOptions.xAxis.crosshair.label.backgroundColor = stylesForPortfolioChart.xAxis.crosshair.label.backgroundColor;
-		portfolioChartOptions.xAxis.crosshair.label.style.color = stylesForPortfolioChart.xAxis.crosshair.label.style.color;
-		portfolioChartOptions.xAxis.labels.style.color = stylesForPortfolioChart.xAxis.labels.style.color;
-		portfolioChartOptions.yAxis.gridLineColor = stylesForPortfolioChart.yAxis.gridLineColor;
+
+		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartOptions);
 
 		if (portfolioChartObj)
 			portfolioChartObj.update(stylesForPortfolioChart);
@@ -917,16 +955,7 @@ $(function () {
 			]
 		};
 
-		liquidityChartOptions.chart.backgroundColor = stylesForLiquidityChart.chart.backgroundColor;
-		liquidityChartOptions.xAxis.gridLineColor = stylesForLiquidityChart.xAxis.gridLineColor;
-		liquidityChartOptions.xAxis.lineColor = stylesForLiquidityChart.xAxis.lineColor;
-		liquidityChartOptions.xAxis.crosshair.label.backgroundColor = stylesForLiquidityChart.xAxis.crosshair.label.backgroundColor;
-		liquidityChartOptions.xAxis.crosshair.label.style.color = stylesForLiquidityChart.xAxis.crosshair.label.style.color;
-		liquidityChartOptions.xAxis.labels.style.color = stylesForLiquidityChart.xAxis.labels.style.color;
-		liquidityChartOptions.yAxis[0].gridLineColor = stylesForLiquidityChart.yAxis[0].gridLineColor;
-		liquidityChartOptions.yAxis[0].labels.style.color = stylesForLiquidityChart.yAxis[0].labels.style.color;
-		liquidityChartOptions.yAxis[1].gridLineColor = stylesForLiquidityChart.yAxis[1].gridLineColor;
-		liquidityChartOptions.yAxis[1].labels.style.color = stylesForLiquidityChart.yAxis[1].labels.style.color;
+		changeChartStylesOptions(stylesForLiquidityChart, liquidityChartOptions);
 
 		if (liquidityChartObj)
 			liquidityChartObj.update(stylesForLiquidityChart);
@@ -964,15 +993,15 @@ $(function () {
 			}
 		};
 
-		if (mainChartObj){
- 			mainChartObj.series.map(item => {
+		if (mainChartObj) {
+			mainChartObj.series.map(function (item) {
 				if (item.type == 'areaspline')
 					item.setOptions({
 						color: lineColor
 					});
 			});
 			mainChartObj.update(stylesForMainChart);
-		} 
+		}
 	}
 
 	/*---------------------------------------------------*/
@@ -982,7 +1011,7 @@ $(function () {
 	$('.col-left .basic-table__row').click(function () {
 		$('.col-left .basic-table__row').removeClass('active');
 		$(this).addClass('active');
-		$('#orders').css('display','flex');
+		$('#orders').css('display', 'flex');
 	});
 
 });
