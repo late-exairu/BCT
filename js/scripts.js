@@ -109,9 +109,9 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.exch-dropdown__list .exch-dropdown__item').click(function () {
-		var dataName = $(this).attr('data-name');
+		//var dataName = $(this).attr('data-name');
 		var newCurr = $(this).children().clone();
-		newCurr[1].textContent = dataName;
+		//newCurr[1].textContent = dataName;
 		var currDropdown = $(this).closest('.exch-dropdown');
 		currDropdown.find('.exch-dropdown__item').removeClass('current');
 		$(this).addClass('current');
@@ -138,6 +138,9 @@ $(function () {
 	var mainChartObj = Highcharts.chart('mainChart', {
 		legend: {
 			enabled: false
+		},
+		chart: {
+			marginBottom: 40
 		},
 		title: null,
 		tooltip: {
@@ -347,12 +350,14 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('#js-graph-prices-toggle').click(function () {
+		$('.graph-prices').toggleClass('open');
 		$(this).toggleClass('open');
-		// $('#js-graph-prices').toggleClass('open');
 		if ($('#js-graph-prices').hasClass('open')) {
-			mainChartObj.setSize($('#mainChart').width() - 310, mainChartObj.chartHeight, false);
+			mainChartObj.setSize($('.b-graph').width() - 280 - 45, mainChartObj.chartHeight, false);
+			$('.b-graph__chart').css('width', $('.b-graph').width() - 280 );
 		} else {
-			mainChartObj.setSize($('#mainChart').width(), mainChartObj.chartHeight, false);
+			mainChartObj.setSize($('.b-graph__chart').width() + 280 - 45, mainChartObj.chartHeight, false);
+			$('.b-graph__chart').css('width', $('.b-graph').width());
 		}
 	});
 
