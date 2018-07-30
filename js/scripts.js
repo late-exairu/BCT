@@ -348,7 +348,7 @@ $(function () {
 
 	$('#js-graph-prices-toggle').click(function () {
 		$(this).toggleClass('open');
-		$('#js-graph-prices').toggleClass('open');
+		// $('#js-graph-prices').toggleClass('open');
 		if ($('#js-graph-prices').hasClass('open')) {
 			mainChartObj.setSize($('#mainChart').width() - 310, mainChartObj.chartHeight, false);
 		} else {

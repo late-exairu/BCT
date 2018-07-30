@@ -1689,7 +1689,7 @@ h6 {
   right: 0;
   background: transparent;
   display: flex;
-  padding: 16px;
+  padding: 7px 14px;
   max-width: 100%;
   border-radius: 0; }
   .graph-bar__left {
@@ -1697,21 +1697,22 @@ h6 {
     display: flex;
     justify-content: flex-start; }
   .graph-bar__right {
-    margin: 0 0 0 0;
+    margin: 0 70px 0 0;
     display: flex;
     justify-content: flex-start; }
   .graph-bar__item {
+    position: relative;
     border: 1px solid var(--clr-separatorD);
     border-radius: 5px;
-    height: 60px;
-    min-width: 60px;
-    margin: 0 0 0 20px;
+    height: 40px;
+    min-width: 40px;
+    margin: 0 0 0 12px;
     display: flex;
     align-items: center;
     flex: 0 auto;
     background: var(--clr-block);
     justify-content: center;
-    padding: 0 10px; }
+    padding: 0 5px; }
     .graph-bar__item:first-child {
       margin: 0; }
     .graph-bar__item.btn {
@@ -1737,33 +1738,33 @@ h6 {
   .graph-bar__icon {
     height: 26px;
     width: 26px;
-    fill: var(--clr-textD);
+    fill: var(--clr-iconD);
     transition: all 0.1s; }
     .graph-bar__icon.clock {
-      width: 28px;
-      height: 28px; }
+      width: 26px;
+      height: 26px; }
     .graph-bar__icon.graph {
-      min-width: 27px;
-      height: 24px; }
+      min-width: 18px;
+      height: 17px; }
     .graph-bar__icon.arrows-td-short {
       width: 9px;
       height: 22px;
       margin: 0 5px 0 17px; }
     .graph-bar__icon.undo {
-      width: 26px;
-      height: 18px; }
+      width: 17px;
+      height: 12px; }
     .graph-bar__icon.redo {
-      width: 26px;
-      height: 18px; }
+      width: 17px;
+      height: 12px; }
     .graph-bar__icon.camera {
-      width: 31px;
-      height: 25px; }
+      width: 21px;
+      height: 17px; }
     .graph-bar__icon.gear {
-      width: 27px;
-      height: 27px; }
+      width: 18px;
+      height: 18px; }
     .graph-bar__icon.expand {
-      width: 22px;
-      height: 22px; }
+      width: 15px;
+      height: 15px; }
     .graph-bar__icon.sorting {
       width: 16px;
       height: 15px; }
@@ -1783,20 +1784,9 @@ h6 {
 /* graph-prices
 /* =================================================================== */
 .graph-prices-toggle {
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
-  width: 22px;
-  height: 22px;
-  border: 1px solid var(--clr-separator);
-  background: var(--clr-back);
-  border-radius: 5px;
-  transition: background .1s, border-color .1s;
-  cursor: pointer; }
-  .graph-prices-toggle.open {
-    right: 300px; }
-    .graph-prices-toggle.open .graph-prices-toggle__icon {
-      transform: translate(-50%, -50%) rotate(-90deg); }
+  transition: background .1s, border-color .1s; }
+  .graph-prices-toggle.open .graph-prices-toggle__icon {
+    transform: translate(-50%, -50%) rotate(-90deg); }
   .graph-prices-toggle__icon {
     position: absolute;
     left: 50%;
@@ -1809,7 +1799,7 @@ h6 {
   .graph-prices-toggle:hover {
     border-color: var(--clr-separatorD); }
     .graph-prices-toggle:hover .graph-prices-toggle__icon {
-      fill: var(--clr-iconD); }
+      fill: var(--clr-text); }
 
 .graph-prices {
   font-family: "open_sans", sans-serif;
@@ -3258,6 +3248,10 @@ body.menubar-in #user-btn:before {
   overflow: hidden;
   display: flex;
   flex: 1 1; }
+  .b-graph__chart {
+    position: relative;
+    width: 100%;
+    height: 100%; }
 
 .account-stats {
   flex: 1;

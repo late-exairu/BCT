@@ -12,7 +12,7 @@
 	right: 0;
 	background: transparent;
 	display: flex;
-	padding: 16px;
+	padding: 7px 14px;
 	max-width: 100%;
 	border-radius: 0;
 
@@ -23,23 +23,24 @@
 	}
 
 	&__right{
-		margin: 0 0 0 0;
+		margin: 0 70px 0 0;
 		display: flex;
 		justify-content: flex-start;
 	}
 
 	&__item{
+		position: relative;
 		border: 1px solid var(--clr-separatorD);
 		border-radius: 5px;
-		height: 60px;
-		min-width: 60px;
-		margin: 0 0 0 20px;
+		height: 40px;
+		min-width: 40px;
+		margin: 0 0 0 12px;
 		display: flex;
 		align-items: center;
 		flex: 0 auto;
 		background: var(--clr-block);
 		justify-content: center;
-		padding: 0 10px;
+		padding: 0 5px;
 
 		&:first-child{
 			margin: 0;
@@ -81,17 +82,17 @@
 	&__icon{
 		height: 26px;
 		width: 26px;
-		fill: var(--clr-textD);
+		fill: var(--clr-iconD);
 		transition: all 0.1s;
 
-		&.clock		{ width: 28px; height: 28px; }
-		&.graph		{ min-width: 27px; height: 24px; }
+		&.clock		{ width: 26px; height: 26px; }
+		&.graph		{ min-width: 18px; height: 17px; }
 		&.arrows-td-short{ width: 9px; height: 22px; margin: 0 5px 0 17px; }
-		&.undo		{ width: 26px; height: 18px; }
-		&.redo		{ width: 26px; height: 18px; }
-		&.camera	{ width: 31px; height: 25px; }
-		&.gear		{ width: 27px; height: 27px; }
-		&.expand	{ width: 22px; height: 22px; }
+		&.undo		{ width: 17px; height: 12px; }
+		&.redo		{ width: 17px; height: 12px; }
+		&.camera	{ width: 21px; height: 17px; }
+		&.gear		{ width: 18px; height: 18px; }
+		&.expand	{ width: 15px; height: 15px; }
 		&.sorting	{ width: 16px; height: 15px; }
 		&.arrow-drop{ width: 10px; height: 6px; }
 		&.arrows-td { width: 18px; height: 21px; fill: var(--clr-text); }

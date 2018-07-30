@@ -5,19 +5,9 @@
 
 
 .graph-prices-toggle{
-	position: absolute;
-	right: 20px;
-	bottom: 10px;
-	width: 22px;
-	height: 22px;
-	border: 1px solid var(--clr-separator);
-	background: var(--clr-back);
-	border-radius: 5px;
 	transition: background .1s, border-color .1s;
-	cursor: pointer;
 
 	&.open{
-		right: 300px;
 
 		.graph-prices-toggle__icon{
 			transform: translate(-50%, -50%) rotate(-90deg);
@@ -39,7 +29,7 @@
 		border-color: var(--clr-separatorD);
 
 		.graph-prices-toggle__icon{
-			fill: var(--clr-iconD);
+			fill: var(--clr-text);
 		}
 	}
 }
