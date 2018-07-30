@@ -7,35 +7,80 @@
 .exch-head{
 	display: flex;
 	margin: 0 0 20px;
-	flex: 0 0 59px;
+	flex: 0 0 95px;
+
+	&__input{
+		font-family: $osans;
+		font-size: 29px;
+		font-weight: 700;
+		padding: 5px 20px;
+		background: var(--clr-block);
+		border: 1px solid var(--clr-separatorD);
+		width: 162px;
+		flex: 0 0 162px;
+		margin: 0 16px 0 0;
+
+		&:focus{
+			border-color: var(--clr-accent);
+		}
+	}
 
 	&__get,
 	&__send{
 		position: relative;
 		background: var(--clr-block);
 		display: flex;
-		flex: 1 1 31%;
+		flex: 1 1;
 		padding: 0;
-		height: 59px;
+		height: 95px;
+	}
+
+	&__switch{
+		width: 92px;
+		height: 95px;
+		display: flex;
+		flex: 0 0 92px;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		background: transparent;
+		border: none;
+		transition: all .1s;
+
+		&:hover{
+			background: var(--clr-accent);
+
+			.sprite-icon{
+				fill: var(--clr-block);
+			}
+		}
+
+		.sprite-icon{
+			width: 31px;
+			height: 14px;
+			fill: var(--clr-accentD);
+			transition: all .1s;
+		}
 	}
 
 	&__btn{
 		padding: 0 10px;
-		height: 59px;
+		height: 95px;
 		display: flex;
-		flex: 1 1 38%;
+		flex: 0 0 162px;
 		align-items: center;
-		background: #0576b9;
-		border-radius: 5px;
+		background: var(--clr-accentD);
+		/*border-radius: 5px;*/
 		color: #fff;
 		cursor: pointer;
-		margin: 0 20px;
+		margin: 0 0 0 16px;
 		text-decoration: none;
 		font-weight: 700;
 		font-size: 33px;
 		white-space: nowrap;
 		transition: all 0.1s;
 		justify-content: center;
+		border: none;
 
 		&:hover{
 			background: #026ba0;
@@ -48,8 +93,8 @@
 	}
 
 	&__arrow-exch{
-		width: 62px;
-		height: 37px;
+		width: 42px;
+		height: 38px;
 		fill: #fff;
 		margin: 0 18px;
 	}

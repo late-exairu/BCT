@@ -218,7 +218,7 @@
 		<div class="col-left__top">
 
 			<div class="c-block h-100">
-				<div class="c-block-head">
+				<div class="c-block-head big">
 					<div class="c-block-head__left">
 						<h2 class="c-block-head__title">Telegram</h2>
 					</div>
@@ -1288,130 +1288,115 @@
 	<div class="col-right">
 		<div class="col-right__top">
 			<div class="exch-head">
-				<div class="exch-head__get">
+				<input class="exch-head__input" type="text" placeholder="1.000">
 
+				<div class="exch-head__get">
 					<div class="exch-dropdown js-select">
-						<div class="exch-dropdown__left">
-							<p class="exch-dropdown__sum-title">You Get:</p>
-							<p class="exch-dropdown__sum-amount">2,08154.00</p>
-						</div>
-						
-						<div class="exch-dropdown__right">
-							<div class="exch-dropdown__current">
-								<svg class="exch-dropdown__icon btc" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-								</svg><p class="exch-dropdown__title">BTC</p>
-					
-								<div class="exch-dropdown__hangle">
-									<svg class="sprite-icon" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-									</svg>
-								</div>
-							</div><!-- exch-dropdown END -->
+						<div class="exch-dropdown__current">
+							<svg class="exch-dropdown__icon btc" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
+							</svg><p class="exch-dropdown__title">BTC - Bitcoin</p>
+				
+							<div class="exch-dropdown__hangle">
+								<svg class="sprite-icon" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+								</svg>
+							</div>
 						</div>
 
 						<div class="exch-dropdown__list">
-							<div class="exch-dropdown__item current" data-name="BTC">
+							<div class="exch-dropdown__item current" data-name="BTC - Bitcoin">
 								<svg class="exch-dropdown__icon btc" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-								</svg><p class="exch-dropdown__title">Bitcoin</p>
+								</svg><p class="exch-dropdown__title">BTC - Bitcoin</p>
 							</div>
 				
-							<div class="exch-dropdown__item" data-name="ETH">
+							<div class="exch-dropdown__item" data-name="ETH - Ethereum">
 								<svg class="exch-dropdown__icon eth" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ethereum"></use>
-								</svg><p class="exch-dropdown__title">Ethereum</p>
+								</svg><p class="exch-dropdown__title">ETH - Ethereum</p>
 							</div>
 				
-							<div class="exch-dropdown__item" data-name="BCH">
+							<div class="exch-dropdown__item" data-name="BCC - Bitcoincash">
 								<svg class="exch-dropdown__icon bcc" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
-								</svg><p class="exch-dropdown__title">Bitcoincash</p>
+								</svg><p class="exch-dropdown__title">BCC - Bitcoincash</p>
 							</div>
 				
-							<div class="exch-dropdown__item" data-name="LTC">
+							<div class="exch-dropdown__item" data-name="LTC - Litecoin">
 								<svg class="exch-dropdown__icon ltc" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
-								</svg><p class="exch-dropdown__title">Litecoin</p>
+								</svg><p class="exch-dropdown__title">LTC - Litecoin</p>
 							</div>
 				
-							<div class="exch-dropdown__item" data-name="XRP">
+							<div class="exch-dropdown__item" data-name="RPL - Ripple">
 								<svg class="exch-dropdown__icon rpl" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
-								</svg><p class="exch-dropdown__title">Ripple</p>
+								</svg><p class="exch-dropdown__title">RPL - Ripple</p>
 							</div>
 						</div>
 					</div><!-- exch-dropdown END -->
-
 				</div><!-- exch-head__get END -->
 			
-				<a class="exch-head__btn" href="#">
-					<svg class="exch-head__arrow-exch" role="img" aria-hidden="true">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-exch"></use>
+				<button class="exch-head__switch">
+					<svg class="sprite-icon" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-switch"></use>
 					</svg>
-
-					<span class="exch-head__btn-text"><span>CLICK TO</span> EXCHANGE</span>
-
-					<svg class="exch-head__arrow-exch" role="img" aria-hidden="true">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-exch"></use>
-					</svg>
-				</a><!-- exch-head__btn END -->
+				</button><!-- exch-head__switch -->
 			
 				<div class="exch-head__send">
-
 					<div class="exch-dropdown js-select">
-						<div class="exch-dropdown__left">
-							<p class="exch-dropdown__sum-title">You Send:</p>
-							<p class="exch-dropdown__sum-amount">1000.00</p>
-						</div>
-						
-						<div class="exch-dropdown__right">
-							<div class="exch-dropdown__current">
-								<svg class="exch-dropdown__icon btc" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-								</svg><p class="exch-dropdown__title">BTC</p>
-					
-								<div class="exch-dropdown__hangle">
-									<svg class="sprite-icon" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-									</svg>
-								</div>
-							</div><!-- exch-dropdown END -->
+						<div class="exch-dropdown__current">
+							<svg class="exch-dropdown__icon btc" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
+							</svg><p class="exch-dropdown__title">BTC - Bitcoin</p>
+				
+							<div class="exch-dropdown__hangle">
+								<svg class="sprite-icon" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+								</svg>
+							</div>
 						</div>
 
 						<div class="exch-dropdown__list">
-							<div class="exch-dropdown__item current" data-name="BTC">
+							<div class="exch-dropdown__item current" data-name="BTC - Bitcoin">
 								<svg class="exch-dropdown__icon btc" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-								</svg><p class="exch-dropdown__title">Bitcoin</p>
+								</svg><p class="exch-dropdown__title">BTC - Bitcoin</p>
 							</div>
 				
-							<div class="exch-dropdown__item" data-name="ETH">
+							<div class="exch-dropdown__item" data-name="ETH - Ethereum">
 								<svg class="exch-dropdown__icon eth" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ethereum"></use>
-								</svg><p class="exch-dropdown__title">Ethereum</p>
+								</svg><p class="exch-dropdown__title">ETH - Ethereum</p>
 							</div>
 				
-							<div class="exch-dropdown__item" data-name="BCH">
+							<div class="exch-dropdown__item" data-name="BCC - Bitcoincash">
 								<svg class="exch-dropdown__icon bcc" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
-								</svg><p class="exch-dropdown__title">Bitcoincash</p>
+								</svg><p class="exch-dropdown__title">BCC - Bitcoincash</p>
 							</div>
 				
-							<div class="exch-dropdown__item" data-name="LTC">
+							<div class="exch-dropdown__item" data-name="BCC - Bitcoincash">
 								<svg class="exch-dropdown__icon ltc" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
-								</svg><p class="exch-dropdown__title">Litecoin</p>
+								</svg><p class="exch-dropdown__title">BCC - Bitcoincash</p>
 							</div>
 				
-							<div class="exch-dropdown__item" data-name="XRP">
+							<div class="exch-dropdown__item" data-name="RPL - Ripple">
 								<svg class="exch-dropdown__icon rpl" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
-								</svg><p class="exch-dropdown__title">Ripple</p>
+								</svg><p class="exch-dropdown__title">RPL - Ripple</p>
 							</div>
 						</div>
-					</div><!-- exch-dropdown END -->
+					</div>
 				</div><!-- exch-head__send END -->
+
+				<button class="exch-head__btn">
+					<svg class="exch-head__arrow-exch" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-exch"></use>
+					</svg>
+				</button><!-- exch-head__btn END -->
 			</div><!-- exch-head END -->
 
 			<div class="c-block b-graph visibility-parent">
