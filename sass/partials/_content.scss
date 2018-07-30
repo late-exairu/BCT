@@ -7,11 +7,11 @@
 // Need to rearrange to custom classes //
 
 .col-left{
-	width: 40%;
+	width: 33%;
 	height: 100%;
 	min-width: 700px;
 	display: flex;
-	flex: 1 1 33%;
+	flex: 0 0 33%;
 	flex-direction: column;
 
 	&__top{
@@ -25,6 +25,11 @@
 		flex: 0 0 400px;
 		flex-direction: column;
 	}
+
+	&.tables{
+		width: 10%;
+		flex: 0 0 10%;
+	}
 }
 
 .col-right{
@@ -32,7 +37,7 @@
 	height: 100%;
 	min-width: 680px;
 	display: flex;
-	flex: 1 1 calc(60% - 20px);
+	flex: 1 1;
 	flex-direction: column;
 
 	&__top{
