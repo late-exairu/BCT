@@ -6,14 +6,20 @@
 .gbar-info{
 	font-family: $osans;
 	position: absolute;
-	top: 84px;
-	left: 52px;
+	top: auto;
+	bottom: 112px;
+	left: 55px;
 	display: flex;
 	padding: 0 6px;
 	white-space: nowrap;
 	flex: 0 0 auto;
 	background: transparent;
 	z-index: 5;
+	transition: all .1s;
+
+	&:hover{
+		background: var(--clr-block);
+	}
 	
 	&__item{
 		padding: 10px 10px;
