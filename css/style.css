@@ -3545,6 +3545,12 @@ body.menubar-in #user-btn:before {
   height: 40px;
   margin: 0 16px 0 0; }
 
+.sprite-icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--clr-icon);
+  transition: all 0.1s; }
+
 .clr-bitcoin {
   fill: #f79330; }
 
@@ -3559,12 +3565,6 @@ body.menubar-in #user-btn:before {
 
 .clr-ripple {
   fill: #438bca; }
-
-.sprite-icon {
-  width: 28px;
-  height: 28px;
-  fill: var(--clr-icon);
-  transition: all 0.1s; }
 
 .d-flex {
   display: flex; }
@@ -3597,12 +3597,6 @@ body.menubar-in #user-btn:before {
 
 .h-100 {
   height: 100%; }
-
-.c-cols {
-  display: flex; }
-
-.c-col {
-  flex: 1 1; }
 
 .visibility-parent:hover .visibility-child {
   visibility: visible;

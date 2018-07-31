@@ -1,3 +1,15 @@
+
+	function redrawMainChart(correction) {
+		var chartParent = $('.b-graph__chart');
+		$(chartParent).css('width','100%');
+		var chartParentWidth = parseInt($(chartParent).width());
+		if ($('#js-graph-prices').hasClass('open')) {
+			chartParentWidth -= 280;
+		}
+		$(chartParent).css('width', chartParentWidth);
+		mainChartObj.setSize(chartParentWidth - 45, mainChartObj.chartHeight, false);
+	}
+
 	// color for highlight graphs on hover
 	var gradientColor = [
 	    [0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.8).get('rgba')],

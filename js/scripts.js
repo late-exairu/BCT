@@ -37,8 +37,7 @@ $(function () {
 
 	$('.js-dropdown-toggle, .menu-dropdown__item').click(function () {
 		var wrap = $(this).closest('.js-dropdown-wrap');
-		var item = $(this).closest('.js-dropdown-item');
-		var drop = item.find('.js-dropdown');
+		var drop = wrap.find('.js-dropdown');
 
 		if (drop.hasClass('open')) {
 			drop.removeClass('open');
@@ -83,13 +82,7 @@ $(function () {
 	$('#js-graph-prices-toggle').click(function () {
 		$('.graph-prices').toggleClass('open');
 		$(this).toggleClass('open');
-		if ($('#js-graph-prices').hasClass('open')) {
-			mainChartObj.setSize($('.b-graph').width() - 280 - 45, mainChartObj.chartHeight, false);
-			$('.b-graph__chart').css('width', $('.b-graph').width() - 280);
-		} else {
-			mainChartObj.setSize($('.b-graph__chart').width() + 280 - 45, mainChartObj.chartHeight, false);
-			$('.b-graph__chart').css('width', $('.b-graph').width());
-		}
+		redrawMainChart();
 	});
 
 	/*---------------------------------------------------*/
@@ -122,7 +115,9 @@ $(function () {
 			var panelId = '#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel');
 			if ($(panelId).length != 0) {
 				var btnText = $(this).find('button').text();
-				$('.account-stats .c-block-head h2.c-block-head__title').text(btnText);
+				var accountStatsHeader = $('.account-stats .c-block-head h2.c-block-head__title');
+				var svgFromHeader = $(accountStatsHeader).find('svg').clone();
+				accountStatsHeader.text(btnText + ' ').append(svgFromHeader);
 
 				$('.js-tabs__tab, .js-tabs__panel').removeClass('active');
 				$(this).add('#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel')).addClass('active');
@@ -161,23 +156,28 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	function showAdvancedView() {
-		$('.account-stats .c-block-head ul.c-head-menu li:nth-child(2) button').prop('disabled', true);
 		$('.basic').css('display', 'none');
 		$('.advanced').css('display', 'flex');
+		$('.js-tabs__panel').removeClass('active');
 		$('#panel-dashboard-liquidity').addClass('active');
 		liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
-		$('.account-stats .c-block-head h2.c-block-head__title').text('Consolidated Liquidity');
+		var accountStatsHeader = $('.account-stats .c-block-head h2.c-block-head__title');
+		var svgFromHeader = $(accountStatsHeader).find('svg').clone();
+		accountStatsHeader.text('Consolidated Liquidity ').append(svgFromHeader);
+		redrawMainChart();
 	}
 
 	function showBasicView() {
-		$('.account-stats .c-block-head ul.c-head-menu li:nth-child(2) button').prop('disabled', false);
 		$('.advanced').css('display', 'none');
 		$('.basic').css('display', 'flex');
+		$('.js-tabs__panel').removeClass('active');
+		$('#panel-funds-account').addClass('active');
 		circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
-		portfolioChartObj = Highcharts.chart('portfolioChart', portfolioChartOptions);
+		var accountStatsHeader = $('.account-stats .c-block-head h2.c-block-head__title');
+		var svgFromHeader = $(accountStatsHeader).find('svg').clone();
+		accountStatsHeader.text('Your Accounts ').append(svgFromHeader);
+		redrawMainChart();
 
-		var textForTitle = $('.account-stats .c-block-head  ul.c-head-menu li:nth-child(2) ul.menu-dropdown li.active button').text();
-		$('.account-stats .c-block-head h2.c-block-head__title').text(textForTitle);
 	}
 
 	/*---------------------------------------------------*/

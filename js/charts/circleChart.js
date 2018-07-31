@@ -14,7 +14,8 @@ var circleChartOptions = {
     plotOptions: {
         pie: {
             innerSize: '85%',
-            borderWidth: 0
+            borderWidth: 0,
+            startAngle: 20
         },
         series: {
             dataLabels: {
