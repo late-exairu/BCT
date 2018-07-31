@@ -214,7 +214,7 @@
 		</ul>
 	</aside><!-- menubar END -->
 
-	<div class="col-left tables m-right basic">
+	<div class="col-left col-chats m-right basic">
 		<div class="col-left__top">
 
 			<div class="c-block d-flex-col h-100">
@@ -226,7 +226,7 @@
 
 				<div class="c-block__content">
 					
-					<div class="c-block__col w-50">
+					<div class="c-block__col">
 						<div class="c-block__section chat-head">
 							<div class="chat-head__back">
 								<svg class="sprite-icon" role="img" aria-hidden="true">
@@ -447,13 +447,13 @@
 		</div><!-- col-left__top -->
 	</div><!-- col-left -->
 
-	<div class="col-left m-right advanced">
+	<div class="col-left col-tables m-right advanced">
 		<div class="col-left__top">
 			<div class="d-flex h-100">
 				<div class="d-flex-col flex-1-1 c-block">
-					<div class="c-block-head">
+					<div class="c-block-head big">
 						<div class="c-block-head__left">
-							<h2 class="c-block-head__title">Filled Order Transparency</h2>
+							<h2 class="c-block-head__title">Global Order Book</h2>
 						</div>
 					</div>
 					<!-- c-block-head END -->
@@ -752,7 +752,7 @@
 				<!-- c-block END -->
 
 				<div class="d-flex-col flex-1-1 c-block m-left">
-					<div class="c-block-head">
+					<div class="c-block-head big">
 						<div class="c-block-head__left">
 							<h2 class="c-block-head__title">RealTime Quote Feed</h2>
 						</div>
@@ -1770,8 +1770,36 @@
 		<div class="col-right__bottom m-top">
 			<div class="c-block account-stats">
 				<div class="c-block-head">
-					<div class="c-block-head__left">
-						<h2 class="c-block-head__title">Your Accounts</h2>
+					<div class="c-block-head__left js-dropdown-wrap">
+						<h2 class="c-block-head__title btn js-dropdown-toggle">
+							Your Accounts
+
+							<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+							</svg>
+						</h2>
+
+						<ul class="menu-dropdown js-dropdown">
+							<li class="menu-dropdown__item js-tabs__tab active" id="tab-funds-account">
+								<button class="menu-dropdown__btn js-tabs__tab">Your Accounts</button>
+							</li>
+
+							<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-portfolio">
+								<button class="menu-dropdown__btn">Your Portfolio</button>
+							</li>
+
+							<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-orders">
+								<button class="menu-dropdown__btn">Open Orders</button>
+							</li>
+
+							<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-history">
+								<button class="menu-dropdown__btn">Order History</button>
+							</li>
+
+							<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-tr-history">
+								<button class="menu-dropdown__btn">Trades History</button>
+							</li>
+						</ul>
 					</div>
 
 					<ul class="c-head-menu js-dropdown-wrap">
@@ -1784,8 +1812,8 @@
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 							</svg>
 
-							<ul class="menu-dropdown js-dropdown">
-								<li class="menu-dropdown__item active" id="tab-dashboard-basic">
+							<ul class="menu-dropdown js-dropdown to-right">
+								<li class="menu-dropdown__item" id="tab-dashboard-basic">
 									<div class="btn-switch">		
 										<input class="btn-switch__radio" type="radio" id="switch-dashboard-basic" name="switch-dashboard" checked />			
 										<label class="btn-switch__label" for="switch-dashboard-basic">Basic</label>
@@ -1800,56 +1828,11 @@
 										<div class="btn-switch__switch"></div>							
 									</div>
 								</li>
-							</ul>
-						</li>
 
-						<li class="c-head-menu__item js-dropdown-item">
-							<button class="c-head-menu__link js-dropdown-toggle">Your Funds</button>
-
-							<svg class="c-head-menu__arrow" role="img" aria-hidden="true">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-							</svg>
-
-							<ul class="menu-dropdown js-dropdown">
-								<li class="menu-dropdown__item js-tabs__tab active" id="tab-funds-account">
-									<button class="menu-dropdown__btn js-tabs__tab">Your Accounts</button>
-								</li>
-
-								<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-portfolio">
-									<button class="menu-dropdown__btn">Your Portfolio</button>
-								</li>
-
-								<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-orders">
-									<button class="menu-dropdown__btn">Open Orders</button>
-								</li>
-
-								<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-history">
-									<button class="menu-dropdown__btn">Order History</button>
-								</li>
-
-								<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-tr-history">
-									<button class="menu-dropdown__btn">Trades History</button>
-								</li>
-							</ul>
-						</li>
-
-						<li class="c-head-menu__item js-dropdown-item">
-							<button class="c-head-menu__link js-dropdown-toggle">Settings</button>
-
-							<svg class="c-head-menu__arrow" role="img" aria-hidden="true">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-							</svg>
-
-							<ul class="menu-dropdown to-right js-dropdown">
 								<li class="menu-dropdown__item" id="tab-light-theme">
 									<div class="btn-switch">
-										<input class="btn-switch__radio" type="radio" id="switch-theme-light" name="switch-theme" checked />			
-										<label class="btn-switch__label" for="switch-theme-light">
-											<svg class="sprite-icon theme-light" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#theme-light"></use>
-											</svg>
-											Light theme
-										</label>
+										<input class="btn-switch__radio" type="radio" id="switch-theme-light" name="switch-theme" checked />
+										<label class="btn-switch__label" for="switch-theme-light">Light theme</label>
 										<div class="btn-switch__switch"></div>
 									</div>
 								</li>
@@ -1857,25 +1840,15 @@
 								<li class="menu-dropdown__item" id="tab-dark-theme">
 									<div class="btn-switch">
 										<input class="btn-switch__radio" type="radio" id="switch-theme-dark" name="switch-theme" />			
-										<label class="btn-switch__label" for="switch-theme-dark">
-											<svg class="sprite-icon theme-dark" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#theme-dark"></use>
-											</svg>
-											Dark theme
-										</label>
+										<label class="btn-switch__label" for="switch-theme-dark">Dark theme</label>
 										<div class="btn-switch__switch"></div>
 									</div>
 								</li>
 
-								<li class="menu-dropdown__item separated">
+								<li class="menu-dropdown__item">
 									<div class="btn-switch">
-										<input class="btn-switch__radio" type="radio" id="switch-trading-paper" name="switch-trading" checked />			
-										<label class="btn-switch__label" for="switch-trading-paper">
-											<svg class="sprite-icon trading-paper" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#trading-paper"></use>
-											</svg>
-											Paper Trading
-										</label>
+										<input class="btn-switch__radio" type="radio" id="switch-trading-paper" name="switch-trading" checked />
+										<label class="btn-switch__label" for="switch-trading-paper">Paper Trading</label>
 										<div class="btn-switch__switch"></div>
 									</div>
 								</li>
@@ -1883,12 +1856,7 @@
 								<li class="menu-dropdown__item">
 									<div class="btn-switch">
 										<input class="btn-switch__radio" type="radio" id="switch-trading-real" name="switch-trading" />			
-										<label class="btn-switch__label" for="switch-trading-real">
-											<svg class="sprite-icon trading-real" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#trading-real"></use>
-											</svg>	
-											Real Trading
-										</label>
+										<label class="btn-switch__label" for="switch-trading-real">Real Trading</label>
 										<div class="btn-switch__switch"></div>
 									</div>
 								</li>
@@ -1919,7 +1887,8 @@
 											<option>Your Secure Custodian for BTC 2</option>
 											<option>Your Secure Custodian for BTC 3</option>
 										</select>
-<!-- 										<svg class="basic-select__arrow" role="img" aria-hidden="true">
+
+										<!-- <svg class="basic-select__arrow" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 										</svg> -->
 									</div>
@@ -1944,14 +1913,14 @@
 											<option>Your Secure Custodian for BTC 3</option>
 										</select>
 
-<!-- 										<svg class="basic-select__arrow" role="img" aria-hidden="true">
+										<!-- <svg class="basic-select__arrow" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 										</svg> -->
 									</div>
 								</div>
 							</div><!-- basic-table__row END -->
 						
-							<div class="basic-table__row">
+							<div class="basic-table__row disabled">
 								<div class="basic-table__col w-27">
 									<svg class="basic-table__curr icon-curr clr-bitcoincash" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
@@ -1969,14 +1938,14 @@
 											<option>Your Secure Custodian for BTC 3</option>
 										</select>
 
-<!-- 										<svg class="basic-select__arrow" role="img" aria-hidden="true">
+										<!-- <svg class="basic-select__arrow" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 										</svg> -->
 									</div>
 								</div>
 							</div><!-- basic-table__row END -->
 							
-							<div class="basic-table__row">
+							<div class="basic-table__row disabled">
 								<div class="basic-table__col w-27">
 									<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
@@ -1994,14 +1963,14 @@
 											<option>Your Secure Custodian for BTC 3</option>
 										</select>
 
-<!-- 										<svg class="basic-select__arrow" role="img" aria-hidden="true">
+										<!-- <svg class="basic-select__arrow" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 										</svg> -->
 									</div>
 								</div>
 							</div><!-- basic-table__row END -->
 							
-							<div class="basic-table__row">
+							<div class="basic-table__row disabled">
 								<div class="basic-table__col w-27">
 									<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
@@ -2019,14 +1988,14 @@
 											<option>Your Secure Custodian for BTC 3</option>
 										</select>
 
-<!-- 										<svg class="basic-select__arrow" role="img" aria-hidden="true">
+										<!--<svg class="basic-select__arrow" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 										</svg> -->
 									</div>
 								</div>
 							</div><!-- basic-table__row END -->
 						
-							<div class="basic-table__row">
+							<div class="basic-table__row disabled">
 								<div class="basic-table__col w-27">
 									<svg class="basic-table__curr icon-curr clr-bitcoincash" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
@@ -2044,14 +2013,14 @@
 											<option>Your Secure Custodian for BTC 3</option>
 										</select>
 
-<!-- 										<svg class="basic-select__arrow" role="img" aria-hidden="true">
+										<!--<svg class="basic-select__arrow" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 										</svg> -->
 									</div>
 								</div>
 							</div><!-- basic-table__row END -->
 							
-							<div class="basic-table__row">
+							<div class="basic-table__row disabled">
 								<div class="basic-table__col w-27">
 									<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
@@ -2069,14 +2038,14 @@
 											<option>Your Secure Custodian for BTC 3</option>
 										</select>
 
-<!-- 										<svg class="basic-select__arrow" role="img" aria-hidden="true">
+										<!--<svg class="basic-select__arrow" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 										</svg> -->
 									</div>
 								</div>
 							</div><!-- basic-table__row END -->
 							
-							<div class="basic-table__row">
+							<div class="basic-table__row disabled">
 								<div class="basic-table__col w-27">
 									<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
@@ -2094,14 +2063,14 @@
 											<option>Your Secure Custodian for BTC 3</option>
 										</select>
 
-<!-- 										<svg class="basic-select__arrow" role="img" aria-hidden="true">
+										<!--<svg class="basic-select__arrow" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 										</svg> -->
 									</div>
 								</div>
 							</div><!-- basic-table__row END -->
 							
-							<div class="basic-table__row">
+							<div class="basic-table__row disabled">
 								<div class="basic-table__col w-27">
 									<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
@@ -2119,14 +2088,14 @@
 											<option>Your Secure Custodian for BTC 3</option>
 										</select>
 
-<!-- 										<svg class="basic-select__arrow" role="img" aria-hidden="true">
+										<!--<svg class="basic-select__arrow" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 										</svg> -->
 									</div>
 								</div>
 							</div><!-- basic-table__row END -->
 							
-							<div class="basic-table__row">
+							<div class="basic-table__row disabled">
 								<div class="basic-table__col w-27">
 									<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
@@ -2144,7 +2113,7 @@
 											<option>Your Secure Custodian for BTC 3</option>
 										</select>
 
-<!-- 										<svg class="basic-select__arrow" role="img" aria-hidden="true">
+										<!--<svg class="basic-select__arrow" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 										</svg> -->
 									</div>

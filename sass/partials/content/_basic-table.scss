@@ -19,13 +19,17 @@
 		border-top: 1px solid var(--clr-separator);
 		padding: 0;
 
+		&:hover{
+			background: var(--clr-back);
+		}
+
 		&:first-child{
 			border: none;
 		}
 
 		&.head{
 			font-size: 13px;
-			font-weight: 600;
+			font-weight: 700;
 
 			.basic-table__col{
 				height: 59px;
@@ -38,11 +42,29 @@
 					color: var(--clr-textA);
 				}
 			}
+
+			&.active{
+				font-weight: 700;
+			}
 		}
 
 		&.active{
 			background: var(--clr-back);
 			font-weight: 600;
+		}
+
+		&.disabled{
+			position: relative;
+			opacity: 0.3;
+
+			&:after{
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+			}
 		}
 	}
 

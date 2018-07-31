@@ -13,43 +13,55 @@
 	display: flex;
 	flex: 0 0 33%;
 	flex-direction: column;
+	min-height: 500px;
 
 	&__top{
 		display: flex;
 		flex: 1 1;
 		flex-direction: column;
+		min-height: 0;
 	}
 
 	&__bottom{
 		display: flex;
 		flex: 0 0 400px;
 		flex-direction: column;
+		min-height: 400px;
 	}
 
-	&.tables{
+	&.col-chats{
 		width: 10%;
 		flex: 0 0 10%;
+		min-width: 620px;
+	}
+
+	&.col-tables{
+		width: 25%;
+		flex: 0 0 25%;
+		min-width: 930px;
 	}
 }
 
 .col-right{
-	width: calc(67% - 20px);
 	height: 100%;
 	min-width: 680px;
 	display: flex;
 	flex: 1 1;
 	flex-direction: column;
+	min-height: 700px;
 
 	&__top{
 		display: flex;
 		flex: 1 1;
 		flex-direction: column;
+		min-height: 0;
 	}
 
 	&__bottom{
 		display: flex;
 		flex: 0 0 400px;
 		flex-direction: column;
+		min-height: 400px;
 	}
 }
 
@@ -94,9 +106,9 @@
 }
 
 .account-stats{
-	flex: 1;
-	// overflow-y: auto;
-	min-height: 400px;
+	flex: 0 1 auto;
+	height: 400px;
+	min-height: 0;
 	position: relative;
 }
 

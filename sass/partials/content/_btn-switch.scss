@@ -20,7 +20,8 @@
 		&:checked{
 
 			&~.btn-switch__label{
-				background: var(--clr-accentL);
+				font-weight: 600;
+				/*background: var(--clr-accentL);*/
 				color: var(--clr-accentD);
 
 				.sprite-icon{

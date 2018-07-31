@@ -13,6 +13,7 @@
 	border-radius: 5px 5px 0 0;
 
 	&__left{
+		position: relative;
 		margin: 0 auto 0 0;
 		padding: 5px 0;
 		display: flex;
@@ -32,6 +33,18 @@
 		span{
 			font-weight: 500;
 		}
+
+		&.btn{
+			cursor: pointer;
+		}
+	}
+
+	&__title-arrow{
+		position: relative;
+		margin: 0 2px 4px 4px;
+		width: 8px;
+		height: 5px;
+		fill: var(--clr-textL);
 	}
 
 	&__btn{

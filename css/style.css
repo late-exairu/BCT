@@ -581,7 +581,7 @@ h6 {
   width: 100%;
   position: relative;
   height: 41px;
-  max-width: 266px; }
+  /*max-width: 266px;*/ }
   .basic-select__select {
     -ms-appearance: none;
     appearance: none;
@@ -623,11 +623,13 @@ h6 {
     display: flex;
     border-top: 1px solid var(--clr-separator);
     padding: 0; }
+    .basic-table__row:hover {
+      background: var(--clr-back); }
     .basic-table__row:first-child {
       border: none; }
     .basic-table__row.head {
       font-size: 13px;
-      font-weight: 600; }
+      font-weight: 700; }
       .basic-table__row.head .basic-table__col {
         height: 59px;
         padding: 10px 30px 10px;
@@ -636,9 +638,21 @@ h6 {
         .basic-table__row.head .basic-table__col.sorted {
           background: var(--clr-backA);
           color: var(--clr-textA); }
+      .basic-table__row.head.active {
+        font-weight: 700; }
     .basic-table__row.active {
       background: var(--clr-back);
       font-weight: 600; }
+    .basic-table__row.disabled {
+      position: relative;
+      opacity: 0.3; }
+      .basic-table__row.disabled:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0; }
   .basic-table__btn {
     font-size: 15px;
     height: 40px;
@@ -851,7 +865,8 @@ h6 {
   .btn-switch__radio {
     display: none; }
     .btn-switch__radio:checked ~ .btn-switch__label {
-      background: var(--clr-accentL);
+      font-weight: 600;
+      /*background: var(--clr-accentL);*/
       color: var(--clr-accentD); }
       .btn-switch__radio:checked ~ .btn-switch__label .sprite-icon {
         fill: var(--clr-accentD); }
@@ -921,7 +936,7 @@ h6 {
     border-bottom: 1px solid var(--clr-separator); }
   .c-block__content {
     display: flex;
-    /*height: calc(100% - 58px);*/ }
+    min-height: 0; }
   .c-block__col {
     display: flex;
     flex-direction: column;
@@ -935,7 +950,7 @@ h6 {
   .c-block__text-sep {
     font-family: "open_sans", sans-serif;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--clr-textD);
     text-align: center;
     padding: 20px 0;
@@ -979,6 +994,7 @@ h6 {
   background: var(--clr-back);
   border-radius: 5px 5px 0 0; }
   .c-block-head__left {
+    position: relative;
     margin: 0 auto 0 0;
     padding: 5px 0;
     display: flex;
@@ -992,6 +1008,14 @@ h6 {
     font-weight: 700; }
     .c-block-head__title span {
       font-weight: 500; }
+    .c-block-head__title.btn {
+      cursor: pointer; }
+  .c-block-head__title-arrow {
+    position: relative;
+    margin: 0 2px 4px 4px;
+    width: 8px;
+    height: 5px;
+    fill: var(--clr-textL); }
   .c-block-head__btn {
     width: 48px;
     height: 48px;
@@ -1871,7 +1895,7 @@ h6 {
   top: 0;
   right: 0;
   height: 100%;
-  padding: 15px 0 15px 15px;
+  padding: 7px 0 0 7px;
   width: 285px;
   background: var(--clr-block);
   border-left: 1px solid var(--clr-separator); }
@@ -3273,34 +3297,44 @@ body.menubar-in #user-btn:before {
   min-width: 700px;
   display: flex;
   flex: 0 0 33%;
-  flex-direction: column; }
+  flex-direction: column;
+  min-height: 500px; }
   .col-left__top {
     display: flex;
     flex: 1 1;
-    flex-direction: column; }
+    flex-direction: column;
+    min-height: 0; }
   .col-left__bottom {
     display: flex;
     flex: 0 0 400px;
-    flex-direction: column; }
-  .col-left.tables {
+    flex-direction: column;
+    min-height: 400px; }
+  .col-left.col-chats {
     width: 10%;
-    flex: 0 0 10%; }
+    flex: 0 0 10%;
+    min-width: 620px; }
+  .col-left.col-tables {
+    width: 25%;
+    flex: 0 0 25%;
+    min-width: 930px; }
 
 .col-right {
-  width: calc(67% - 20px);
   height: 100%;
   min-width: 680px;
   display: flex;
   flex: 1 1;
-  flex-direction: column; }
+  flex-direction: column;
+  min-height: 700px; }
   .col-right__top {
     display: flex;
     flex: 1 1;
-    flex-direction: column; }
+    flex-direction: column;
+    min-height: 0; }
   .col-right__bottom {
     display: flex;
     flex: 0 0 400px;
-    flex-direction: column; }
+    flex-direction: column;
+    min-height: 400px; }
 
 .graphs-wrap {
   display: flex;
@@ -3331,8 +3365,9 @@ body.menubar-in #user-btn:before {
     padding: 0; }
 
 .account-stats {
-  flex: 1;
-  min-height: 400px;
+  flex: 0 1 auto;
+  height: 400px;
+  min-height: 0;
   position: relative; }
 
 .cc-accounts {
