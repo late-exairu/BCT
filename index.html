@@ -230,12 +230,12 @@
 		</ul>
 	</aside><!-- menubar END -->
 
-	<div class="col-left col-chats m-right basic">
+	<div class="col-left col-chats m-right" id="telegram">
 		<div class="col-left__top">
 
 			<div class="c-block d-flex-col h-100">
 				<div class="c-block-head big">
-					<div class="c-block-head__left">
+					<div class="c-block-head__left js-dropdown-wrap">
 						<h2 class="c-block-head__title btn js-dropdown-toggle">Telegram <span>(ETH Ethereum Room)</span>
 
 							<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
@@ -244,11 +244,11 @@
 						</h2>
 
 						<ul class="menu-dropdown js-dropdown">
-							<li class="menu-dropdown__item js-tabs__tab" id="switch-dashboard-advanced">
+							<li class="menu-dropdown__item js-tabs__tab switch-telegram active">
 								<button class="menu-dropdown__btn js-tabs__tab">Chat</button>
 							</li>
 
-							<li class="menu-dropdown__item js-tabs__tab" id="switch-dashboard-basic">
+							<li class="menu-dropdown__item js-tabs__tab switch-orderBook">
 								<button class="menu-dropdown__btn">Order Book</button>
 							</li>
 						</ul>
@@ -478,13 +478,27 @@
 		</div><!-- col-left__top -->
 	</div><!-- col-left -->
 
-	<div class="col-left col-tables m-right advanced">
+	<div class="col-left col-tables m-right hidden" id="orderBook">
 		<div class="col-left__top">
 			<div class="d-flex h-100">
 				<div class="d-flex-col flex-1-1 c-block">
 					<div class="c-block-head big">
-						<div class="c-block-head__left">
-							<h2 class="c-block-head__title">Global Order Book</h2>
+						<div class="c-block-head__left js-dropdown-wrap">
+							<h2 class="c-block-head__title js-dropdown-toggle btn">Global Order Book
+								<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+								</svg>
+							</h2>
+
+							<ul class="menu-dropdown js-dropdown">
+								<li class="menu-dropdown__item js-tabs__tab switch-telegram">
+									<button class="menu-dropdown__btn js-tabs__tab">Chat</button>
+								</li>
+
+								<li class="menu-dropdown__item js-tabs__tab active switch-orderBook">
+									<button class="menu-dropdown__btn">Order Book</button>
+								</li>
+							</ul>
 						</div>
 					</div>
 					<!-- c-block-head END -->
@@ -1929,7 +1943,7 @@
 				</div><!-- c-block-head END -->
 
 				<div class="d-flex flex-1-1 flex-fix">
-					<div class="js-tabs__panel active cc-tabs" id="panel-funds-account">
+					<div class="js-tabs__panel active" id="panel-funds-account">
 
 						<div class="accounts-diagram" id="circleChart"></div>
 						<div id="circleChartText"></div>
@@ -2522,7 +2536,7 @@
 						</div><!-- scroll-y END -->
 					</div><!-- js-tabs__panel END -->
 
-					<div class="js-tabs__panel cc-tabs" id="panel-dashboard-liquidity">
+					<div class="js-tabs__panel" id="panel-dashboard-liquidity">
 						<div id="liquidityChart" style="width: 100%; height: 100%;"></div>
 						<div class="liquidityText">
 							<div class="leftPart">

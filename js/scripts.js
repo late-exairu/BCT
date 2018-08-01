@@ -30,6 +30,14 @@ $(function () {
 		grid_snap: false
 	});
 
+	/*---------------------------------------------------*/
+	/* redraw Charts after resize */
+	/*---------------------------------------------------*/
+	function redrawOtherCharts() {
+		if (circleChartObj) circleChartObj.reflow();
+		if (portfolioChartObj) portfolioChartObj.reflow();
+		if (liquidityChartObj) liquidityChartObj.reflow();
+	}
 
 	/*---------------------------------------------------*/
 	/* js-dropdown */
@@ -56,7 +64,9 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.exch-dropdown__list .exch-dropdown__item').click(function () {
+		var currencyName = $(this).attr('data-name');
 		var newCurr = $(this).children().clone();
+		$(newCurr).eq(1).text(currencyName);
 		var currDropdown = $(this).closest('.exch-dropdown');
 		currDropdown.find('.exch-dropdown__item').removeClass('current');
 		$(this).addClass('current');
@@ -106,7 +116,7 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
-	/* account-js-simple-tabs */
+	/* account-js-menu */
 	/*---------------------------------------------------*/
 
 	$('.account-stats .menu-dropdown__item').on('click', function () {
@@ -118,12 +128,14 @@ $(function () {
 				var svgFromHeader = $(accountStatsHeader).find('svg').clone();
 				accountStatsHeader.text(btnText + ' ').append(svgFromHeader);
 
-				$('.js-tabs__tab, .js-tabs__panel').removeClass('active');
+				$('.account-stats .js-tabs__tab, .account-stats .js-tabs__panel').removeClass('active');
 				$(this).add('#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel')).addClass('active');
 				$(this).focus();
 
 				if ($(this).attr('id') == 'tab-funds-portfolio') {
-					portfolioChartOptions.series = [{data:portfolioChartData}];					
+					portfolioChartOptions.series = [{
+						data: portfolioChartData
+					}];
 					portfolioChartOptions.rangeSelector.selected = portfolioChartCurrentRange;
 					portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);
 				}
@@ -132,60 +144,45 @@ $(function () {
 					circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
 				}
 
+				if ($(this).attr('id') == 'tab-dashboard-liquidity') {
+					liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
+				}
+
 			}
 		}
 	});
 
 	/*---------------------------------------------------*/
-	/* account-js-radio-switchers */
+	/* account-js-checkbox-switchers */
 	/*---------------------------------------------------*/
 
-	$('.account-stats .menu-dropdown__item input[type=radio]').on('click', function () {
-		var switchBtnId = $(this).attr('id');
-		if (switchBtnId == 'switch-dashboard-advanced') {
-			showAdvancedView();
-		} else if (switchBtnId == 'switch-dashboard-basic') {
-			showBasicView();
-		} else if (switchBtnId == 'switch-theme-light' || switchBtnId == 'switch-theme-dark') {
-			changeTheme();
-		}
+	$('.account-stats input[type=checkbox]').on('click', function () {
+		// for future Real trading option
 	});
 
+
 	/*---------------------------------------------------*/
-	/* functions for change view between Basic and Advanced */
+	/* Left column menu */
 	/*---------------------------------------------------*/
 
-	function showAdvancedView() {
-		$('.basic').css('display', 'none');
-		$('.advanced').css('display', 'flex');
-		$('.js-tabs__panel').removeClass('active');
-		$('#panel-dashboard-liquidity').addClass('active');
-		liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
-		var accountStatsHeader = $('.account-stats .c-block-head h2.c-block-head__title');
-		var svgFromHeader = $(accountStatsHeader).find('svg').clone();
-		accountStatsHeader.text('Consolidated Liquidity ').append(svgFromHeader);
+	$('.col-left .menu-dropdown__item').on('click', function () {
+		if ($(this).hasClass('switch-orderBook')) {
+			$('#telegram').addClass('hidden');
+			$('#orderBook').removeClass('hidden');
+		} else if ($(this).hasClass('switch-telegram')) {
+			$('#orderBook').addClass('hidden');
+			$('#telegram').removeClass('hidden');
+		}
 		redrawMainChart();
-	}
-
-	function showBasicView() {
-		$('.advanced').css('display', 'none');
-		$('.basic').css('display', 'flex');
-		$('.js-tabs__panel').removeClass('active');
-		$('#panel-funds-account').addClass('active');
-		circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
-		var accountStatsHeader = $('.account-stats .c-block-head h2.c-block-head__title');
-		var svgFromHeader = $(accountStatsHeader).find('svg').clone();
-		accountStatsHeader.text('Your Accounts ').append(svgFromHeader);
-		redrawMainChart();
-
-	}
+		redrawOtherCharts();
+	});
 
 	/*---------------------------------------------------*/
 	/* functions for change theme */
 	/*---------------------------------------------------*/
 
-	function changeTheme() {
-		var darkTheme = $('#tab-dark-theme input:checked').length;
+	$('#switch-theme').change(function () {
+		var darkTheme = $('#switch-theme:checked').length;
 		if (darkTheme) {
 			$('body').addClass('dark-theme');
 
@@ -194,9 +191,6 @@ $(function () {
 			var fontColor = '#9BA6B2';
 			var labelColor = '#9BA6B2';
 			var lineColor = '#4F6C82';
-
-			changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor);
-
 		} else {
 			$('body').removeClass('dark-theme');
 
@@ -205,10 +199,9 @@ $(function () {
 			var fontColor = '#000000';
 			var labelColor = '#666666';
 			var lineColor = '#BFC0C0';
-
-			changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor);
 		}
-	}
+		changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor);
+	});
 
 	/*---------------------------------------------------*/
 	/* change colors in all charts */
@@ -224,7 +217,7 @@ $(function () {
 				formatter: function () {
 					var currency = this.key;
 					var resultString = '';
-					$('.cc-accounts-table .basic-table__row').each(function () {
+					$('#panel-funds-account .basic-table__row').each(function () {
 						if ($(this).find('.w-27').text().indexOf(currency) != -1) {
 							resultString = $(this).find('.w-27').html();
 							resultString += $(this).find('.w-20').eq(0).text().replace('000', '');
@@ -389,7 +382,7 @@ $(function () {
 		$(this).addClass('active');
 		$('#orders').css('display', 'flex');
 	});
-	
+
 	/*---------------------------------------------------*/
 	/* change range on Portfolio Chart */
 	/*---------------------------------------------------*/
