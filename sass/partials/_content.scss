@@ -33,12 +33,14 @@
 		width: 10%;
 		flex: 0 0 10%;
 		min-width: 620px;
+		min-width: calc(620px * var(--scale));
 	}
 
 	&.col-tables{
 		width: 25%;
 		flex: 0 0 25%;
 		min-width: 930px;
+		min-width: calc(930px * var(--scale));
 	}
 }
 

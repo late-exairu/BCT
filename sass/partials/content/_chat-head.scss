@@ -8,16 +8,21 @@
 	position: relative;
 	display: flex;
 	padding: 9px 10px 9px 32px;
+	padding: calc(9px * var(--scale)) calc(10px * var(--scale)) calc(9px * var(--scale)) calc(32px * var(--scale));
 	height: 63px;
+	height: calc(63px * var(--scale));
 	background: var(--clr-backA);
 
 	&__back{
 		position: absolute;
 		display: flex;
 		left: 4px;
+		left: calc(4px * var(--scale));
 		top: 50%;
 		width: 26px;
+		width: calc(26px * var(--scale));
 		height: 36px;
+		height: calc(36px * var(--scale));
 		border-radius: 3px;
 		transition: all 0.1s;
 		align-items: center;
@@ -35,7 +40,9 @@
 		.sprite-icon{
 			display: block;
 			width: 13px;
+			width: calc(13px * var(--scale));
 			height: 20px;
+			height: calc(20px * var(--scale));
 			fill: var(--clr-accent);
 		}
 	}
@@ -43,21 +50,27 @@
 	&__avatar-wrap{
 		position: relative;
 		width: 43px;
+		width: calc(43px * var(--scale));
 		height: 43px;
+		height: calc(43px * var(--scale));
 		margin: 0 0;
 		flex: 0 0 auto;
 	}
 
 	&__avatar{
 		width: 43px;
+		width: calc(43px * var(--scale));
 		height: 43px;
+		height: calc(43px * var(--scale));
 		border-radius: 50%;
 	}
 
 	&__desc{
 		padding: 1px 12px;
+		padding: 1px calc(12px * var(--scale));
 		overflow: hidden;
 		min-width: 100px;
+		min-width: calc(100px * var(--scale));
 		flex: 1 1 auto;
 	}
 
@@ -65,6 +78,7 @@
 		margin: 0;
 		font-weight: 600;
 		font-size: 16px;
+		font-size: calc(16px * var(--scale));
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -73,6 +87,7 @@
 
 	&__info{
 		font-size: 15px;
+		font-size: calc(15px * var(--scale));
 		margin: 1px 0 0;
 		color: var(--clr-text);
 		white-space: nowrap;
@@ -84,6 +99,7 @@
 		display: flex;
 		text-align: right;
 		margin: 0 20px 0 auto;
+		margin: 0 calc(20px * var(--scale)) 0 auto;
 		padding: 0 0;
 		flex: 0 0 auto;
 		align-items: flex-start;
@@ -92,8 +108,11 @@
 	&__btn{
 		display: block;
 		width: 44px;
+		width: calc(44px * var(--scale));
 		height: 44px;
+		height: calc(44px * var(--scale));
 		margin: 0 0 0 5px;
+		margin: 0 0 0 calc(5px * var(--scale));
 		cursor: pointer;
 		align-items: center;
 		justify-content: center;
@@ -119,7 +138,9 @@
 			position: relative;
 			top: -1px;
 			width: 25px;
+			width: calc(25px * var(--scale));
 			height: 25px;
+			height: calc(25px * var(--scale));
 			fill: var(--clr-accent);
 			transition: all 0.1s;
 		}

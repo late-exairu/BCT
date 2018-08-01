@@ -7,18 +7,25 @@
 .exch-head{
 	display: flex;
 	margin: 0 0 20px;
+	margin: 0 0 calc(20px * var(--scale));
 	flex: 0 0 95px;
+	flex: 0 0 calc(95px * var(--scale));
 
 	&__input{
 		font-family: $osans;
 		font-size: 29px;
+		font-size: calc(29px * var(--scale));
 		font-weight: 700;
 		padding: 5px 20px;
+		padding: calc(5px * var(--scale)) calc(20px * var(--scale));
 		background: var(--clr-block);
 		border: 1px solid var(--clr-separatorD);
 		width: 162px;
+		width: calc(162px * var(--scale));
 		flex: 0 0 162px;
+		flex: 0 0 calc(162px * var(--scale));
 		margin: 0 16px 0 0;
+		margin: 0 calc(16px * var(--scale)) 0 0;
 
 		&:focus{
 			border-color: var(--clr-accent);
@@ -33,13 +40,17 @@
 		flex: 1 1;
 		padding: 0;
 		height: 95px;
+		height: calc(95px * var(--scale));
 	}
 
 	&__switch{
 		width: 92px;
+		width: calc(92px * var(--scale));
 		height: 95px;
+		height: calc(95px * var(--scale));
 		display: flex;
 		flex: 0 0 92px;
+		flex: 0 0 calc(92px * var(--scale));
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
@@ -65,18 +76,23 @@
 
 	&__btn{
 		padding: 0 10px;
+		padding: 0 calc(10px * var(--scale));
 		height: 95px;
+		height: calc(95px * var(--scale));
 		display: flex;
 		flex: 0 0 162px;
+		flex: 0 0 calc(162px * var(--scale));
 		align-items: center;
 		background: var(--clr-accentD);
 		/*border-radius: 5px;*/
 		color: #fff;
 		cursor: pointer;
 		margin: 0 0 0 16px;
+		margin: 0 0 0 calc(16px * var(--scale));
 		text-decoration: none;
 		font-weight: 700;
 		font-size: 33px;
+		font-size: calc(33px * var(--scale));
 		white-space: nowrap;
 		transition: all 0.1s;
 		justify-content: center;
@@ -94,9 +110,12 @@
 
 	&__arrow-exch{
 		width: 42px;
+		width: calc(42px * var(--scale));
 		height: 38px;
+		height: calc(38px * var(--scale));
 		fill: #fff;
 		margin: 0 18px;
+		margin: 0 calc(18px * var(--scale));
 	}
 
 	@media only screen and (max-width : 1920px) {

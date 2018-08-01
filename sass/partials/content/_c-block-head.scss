@@ -6,26 +6,31 @@
 
 .c-block-head{
 	padding: 14px 25px 3px;
+	padding: calc(14px * var(--scale)) calc(25px * var(--scale)) calc(3px * var(--scale));
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid var(--clr-separator);
 	background: var(--clr-back);
 	border-radius: 5px 5px 0 0;
+	border-radius: calc(5px * var(--scale)) calc(5px * var(--scale)) 0 0;
 
 	&__left{
 		position: relative;
 		margin: 0 auto 0 0;
 		padding: 5px 0;
+		padding: calc(5px * var(--scale)) 0;
 		display: flex;
 		align-items: center;
 	}
 
 	&__right{
 		margin: 0 -26px 0 10px;
+		margin: 0 calc(-26px * var(--scale)) 0 calc(10px * var(--scale));
 	}
 
 	&__title{
 		font-size: 22px;
+		font-size: calc(22px * var(--scale));
 		margin: 0;
 		color: var(--clr-textD);
 		font-weight: 700;
@@ -42,14 +47,19 @@
 	&__title-arrow{
 		position: relative;
 		margin: 0 2px 4px 4px;
+		margin: 0 calc(2px * var(--scale)) calc(4px * var(--scale)) calc(4px * var(--scale));
 		width: 8px;
+		width: calc(8px * var(--scale));
 		height: 5px;
+		height: calc(5px * var(--scale));
 		fill: var(--clr-textL);
 	}
 
 	&__btn{
 		width: 48px;
+		width: calc(48px * var(--scale));
 		height: 48px;
+		height: calc(48px * var(--scale));
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -65,17 +75,22 @@
 
 		.sprite-icon{
 			width: 20px;
+			width: calc(20px * var(--scale));
 			height: 20px;
+			height: calc(20px * var(--scale));
 			fill: var(--clr-text);
 		}
 	}
 
 	&.big{
 		min-height: 95px;
+		min-height: calc(95px * var(--scale));
 		padding: 10px 25px;
+		padding: calc(10px * var(--scale)) calc(25px * var(--scale));
 
 		.c-block-head__title{
 			font-size: 29px;
+			font-size: calc(29px * var(--scale));
 		}
 	}
 }
