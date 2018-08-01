@@ -153,6 +153,7 @@ gulp.task('watch', ['sass', 'css', 'browser-sync'], function() {
 	gulp.watch('css/style.css', ['css']);
 	gulp.watch('img/svg/*.svg', ['sprite']);
 	gulp.watch('js/*.js', browserSync.reload);
+	gulp.watch('js/charts/*.js', browserSync.reload);
 	gulp.watch('*.html', browserSync.reload);
 });
 

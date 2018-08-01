@@ -105,7 +105,6 @@ $(function () {
 		$('#orders .forms-wrap').eq(currentIndex).addClass('current');
 	});
 
-
 	/*---------------------------------------------------*/
 	/* account-js-simple-tabs */
 	/*---------------------------------------------------*/
@@ -124,7 +123,9 @@ $(function () {
 				$(this).focus();
 
 				if ($(this).attr('id') == 'tab-funds-portfolio') {
-					portfolioChartObj = Highcharts.chart('portfolioChart', portfolioChartOptions);
+					portfolioChartOptions.series = [{data:portfolioChartData}];					
+					portfolioChartOptions.rangeSelector.selected = portfolioChartCurrentRange;
+					portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);
 				}
 
 				if ($(this).attr('id') == 'tab-funds-account') {
@@ -149,7 +150,6 @@ $(function () {
 			changeTheme();
 		}
 	});
-
 
 	/*---------------------------------------------------*/
 	/* functions for change view between Basic and Advanced */
@@ -210,7 +210,6 @@ $(function () {
 		}
 	}
 
-
 	/*---------------------------------------------------*/
 	/* change colors in all charts */
 	/*---------------------------------------------------*/
@@ -250,7 +249,7 @@ $(function () {
 			chart: {
 				backgroundColor: backColor
 			},
-			xAxis: {
+			xAxis: [{
 				gridLineColor: gridColor,
 				lineColor: gridColor,
 				crosshair: {
@@ -266,12 +265,11 @@ $(function () {
 						color: labelColor
 					}
 				}
-			},
+			}],
 			yAxis: {
 				gridLineColor: gridColor
 			}
 		};
-
 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartOptions);
 
 		if (portfolioChartObj)
@@ -391,5 +389,15 @@ $(function () {
 		$(this).addClass('active');
 		$('#orders').css('display', 'flex');
 	});
+	
+	/*---------------------------------------------------*/
+	/* change range on Portfolio Chart */
+	/*---------------------------------------------------*/
 
+	$('#portfolioChartRange span').click(function () {
+		$('#portfolioChartRange span').removeClass('active');
+		$(this).addClass('active');
+		portfolioChartCurrentRange = $(this).index();
+		portfolioChartObj.rangeSelector.clickButton(portfolioChartCurrentRange, {}, true);
+	});
 });

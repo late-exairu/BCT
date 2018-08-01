@@ -2,27 +2,57 @@
 /* js-portfolio diagram */
 /*---------------------------------------------------*/
 
+var portfolioChartData = null;
 var portfolioChartObj = null;
+var portfolioChartCurrentRange = 3;
 var portfolioChartOptions = {
     chart: {
         type: 'areaspline',
         backgroundColor: '#ffffff'
     },
     rangeSelector: {
-        allButtonsEnabled: true,
-        selected: 2
+        selected: portfolioChartCurrentRange,
+        inputEnabled: false,
+        labelStyle: {
+            visibility: 'hidden'
+        },
+        buttons: [{
+                type: 'hour',
+                count: 1,
+            }, {
+                type: 'day',
+                count: 1,
+            }, {
+                type: 'week',
+            },
+            {
+                type: 'month',
+                count: 1,
+            }, {
+                type: 'year',
+                count: 1,
+            }, {
+                type: 'all',
+            }
+        ],
+        buttonTheme: {
+            visibility: 'hidden'
+        }
+    },
+    scrollbar: {
+        enabled: false
     },
     title: null,
     legend: {
         enabled: false
     },
-    xAxis: {
+    xAxis: [{
         gridLineColor: '#e6e6e6',
         lineColor: '#ccd6eb',
         crosshair: {
             label: {
                 enabled: true,
-                format: '{value:%b %d, %Y}',
+                format: '{value:%m/%d/%Y 8:00AM}',
                 backgroundColor: '#ffffff',
                 borderColor: '#5a5a5a',
                 borderWidth: 1,
@@ -46,7 +76,7 @@ var portfolioChartOptions = {
                 color: '#666666'
             }
         },
-    },
+    }],
     yAxis: {
         gridLineColor: '#e6e6e6',
         labels: {
@@ -57,7 +87,10 @@ var portfolioChartOptions = {
         },
         tickAmount: 10,
         minorTickLength: 0,
-        max: 11000,
+        //max: 200,
+    },
+    navigator: {
+        enabled: false
     },
     tooltip: {
         backgroundColor: 'rgba(0,0,0,0)',
@@ -68,17 +101,22 @@ var portfolioChartOptions = {
         shadow: false,
         useHTML: true,
         shape: "box",
+        split: false,
         style: {
             color: '#ffffff',
             fontSize: 16
         },
-        headerFormat: '<table class="portfolio">',
-        pointFormat: "<tr><td>${point.y}</td></tr>",
-        footerFormat: '</table>',
+        formatter: function () {
+            // edit value to ~8k 
+            var TooltipValue = (this.y * 45).toFixed(2);
+            return '<table class="portfolio">' +
+                "<tr><td>$" + TooltipValue + "</td></tr>" +
+                '</table>';
+        },
         positioner: function (labelWidth, labelHeight, point, ) {
             return {
                 x: point.plotX - 45,
-                y: point.plotY - 10
+                y: point.plotY + 30
             };
         }
     },
@@ -111,13 +149,19 @@ var portfolioChartOptions = {
     },
     series: [{
         name: 'Graph 1',
-        data: [
-            [8983.20], 8784.45, 8983.34, 8285.23, 8884.67, 8188.45, 8986.78,
-            8586.87, 8084.73, 8686.37, 8988.76, 8587.24, 8188.61, 8986.45,
-            8983.12, 8784.65, 8983.79, 8285.34, 8884.78, 8188.12, 8986.34,
-            8586.74, 8084.78, 8686.12, 8988.09, 8587.12, 8188.87, 8986.67
-        ],
-        pointStart: Date.UTC(2018, 5, 17),
-        pointInterval: 24 * 3600 * 1000
+        /*         data: [
+                    [8983.20], 8784.45, 8983.34, 8285.23, 8884.67, 8188.45, 8986.78,
+                    8586.87, 8084.73, 8686.37, 8988.76, 8587.24, 8188.61, 8986.45,
+                    8983.12, 8784.65, 8983.79, 8285.34, 8884.78, 8188.12, 8986.34,
+                    8586.74, 8084.78, 8686.12, 8988.09, 8587.12, 8188.87, 8986.67
+                ], */
+        data: portfolioChartData,
+        /*          pointStart: Date.UTC(2014, 5, 17),
+                    pointInterval: 24 * 3600 * 1000 */
     }]
 };
+
+$.getJSON('../data/exampleData.json', function (data) {
+    portfolioChartData = data;
+    portfolioChartOptions.series[0].data = portfolioChartData;
+});
