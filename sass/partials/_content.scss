@@ -251,6 +251,9 @@
 			background: var(--clr-backL);
 		}
 	}
+	&__item.active{
+		background: var(--clr-backL);
+	}
 }
 
 

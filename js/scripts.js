@@ -393,4 +393,23 @@ $(function () {
 		portfolioChartCurrentRange = $(this).index();
 		portfolioChartObj.rangeSelector.clickButton(portfolioChartCurrentRange, {}, true);
 	});
+
+
+	/*---------------------------------------------------*/
+	/* Graph prices list */
+	/*---------------------------------------------------*/
+	$('.graph-prices .graph-prices__list .graph-prices__item').click(function () {
+		$('.graph-prices__list .graph-prices__item').removeClass('active');
+		$(this).addClass('active');
+	});
+
+	/*---------------------------------------------------*/
+	/* Graph prices select */
+	/*---------------------------------------------------*/
+	$('.graph-prices .select-dropdown__list .select-dropdown__item').click(function () {
+		$('.graph-prices .select-dropdown__list .select-dropdown__item').removeClass('active');
+		$(this).addClass('active');
+		$('.graph-prices .select-dropdown__selected').text($(this).text());
+	});
+
 });

@@ -3724,6 +3724,8 @@ body.menubar-in #user-btn:before {
     overflow: hidden; }
     .select-dropdown__item:hover {
       background: var(--clr-backL); }
+  .select-dropdown__item.active {
+    background: var(--clr-backL); }
 
 .highcharts-credits {
   display: none; }
