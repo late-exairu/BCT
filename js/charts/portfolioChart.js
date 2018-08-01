@@ -161,7 +161,7 @@ var portfolioChartOptions = {
     }]
 };
 
-$.getJSON('../data/exampleData.json', function (data) {
+$.getJSON(location.href +'data/exampleData.json', function (data) {
     portfolioChartData = data;
     portfolioChartOptions.series[0].data = portfolioChartData;
 });
