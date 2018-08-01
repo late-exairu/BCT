@@ -1130,8 +1130,8 @@ h6 {
       height: calc(20px * var(--scale));
       fill: var(--clr-text); }
   .c-block-head.big {
-    min-height: 95px;
-    min-height: calc(95px * var(--scale));
+    min-height: 79px;
+    min-height: calc(79px * var(--scale));
     padding: 10px 25px;
     padding: calc(10px * var(--scale)) calc(25px * var(--scale)); }
     .c-block-head.big .c-block-head__title {
