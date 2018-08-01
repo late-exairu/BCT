@@ -68,10 +68,12 @@ a {
     width: 100%;
     flex: 1 0 auto;
     height: 100%;
-
-	min-width: 2520px;
-	min-height: 1440px;
 	
+	/*dev size*/
+	min-width: 2520px;
+	min-height: 1400px;
+	
+	/*prod size*/
 	/*min-width: 1440px;
 	min-height: 900px;*/
 }
