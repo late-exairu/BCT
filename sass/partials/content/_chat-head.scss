@@ -9,8 +9,8 @@
 	display: flex;
 	padding: 9px 10px 9px 32px;
 	padding: calc(9px * var(--scale)) calc(10px * var(--scale)) calc(9px * var(--scale)) calc(32px * var(--scale));
-	height: 63px;
-	height: calc(63px * var(--scale));
+	height: 66px;
+	height: calc(66px * var(--scale));
 	background: var(--clr-backA);
 
 	&__back{
@@ -66,8 +66,8 @@
 	}
 
 	&__desc{
-		padding: 1px 12px;
-		padding: 1px calc(12px * var(--scale));
+		padding: 0 12px;
+		padding: 0 calc(12px * var(--scale));
 		overflow: hidden;
 		min-width: 100px;
 		min-width: calc(100px * var(--scale));
@@ -77,8 +77,8 @@
 	&__name{
 		margin: 0;
 		font-weight: 600;
-		font-size: 16px;
-		font-size: calc(16px * var(--scale));
+		font-size: 17px;
+		font-size: calc(17px * var(--scale));
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -98,8 +98,8 @@
 	&__btns{
 		display: flex;
 		text-align: right;
-		margin: 0 20px 0 auto;
-		margin: 0 calc(20px * var(--scale)) 0 auto;
+		margin: 0 10px 0 auto;
+		margin: 0 calc(10px * var(--scale)) 0 auto;
 		padding: 0 0;
 		flex: 0 0 auto;
 		align-items: flex-start;

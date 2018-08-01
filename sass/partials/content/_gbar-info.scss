@@ -6,23 +6,37 @@
 .gbar-info{
 	font-family: $osans;
 	position: absolute;
-	top: auto;
-	bottom: 112px;
-	left: 55px;
+	top: 55px;
+	left: 58px;
 	display: flex;
-	padding: 0 6px;
+	padding: 0 2px;
 	white-space: nowrap;
 	flex: 0 0 auto;
 	background: transparent;
 	z-index: 5;
 	transition: all .1s;
 
-	&:hover{
+	&:after{
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		transition: background .1s;
 		background: var(--clr-block);
+		opacity: 0;
+		z-index: -1;
+	}
+
+	&:hover{
+		&:after{
+			opacity: 0.5;
+		}
 	}
 	
 	&__item{
-		padding: 10px 10px;
+		padding: 10px 8px;
 	}
 	
 	&__title{
@@ -35,10 +49,10 @@
 	}
 	
 	&__nums{
-		font-size: 12px;
+		font-size: 15px;
 		line-height: 1;
 		color: var(--clr-text);
 		padding: 0;
-		margin: 2px 0 0;
+		margin: 0 0 0;
 	}
 }

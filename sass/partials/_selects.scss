@@ -53,6 +53,10 @@
     left: 0;
     right: 0;
     z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.2s;
 }
 
 .select-items.top {
@@ -68,7 +72,10 @@
 /*hide the items when the select box is closed:*/
 
 .select-hide {
-    display: none;
+	/*display: none;*/
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
 }
 
 .select-items div:hover,

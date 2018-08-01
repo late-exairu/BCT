@@ -27,6 +27,14 @@
 				.sprite-icon{
 					fill: var(--clr-accentD);
 				}
+
+				.btn-switch__switch{
+					background: var(--clr-accentD);
+
+					&:after{
+						transform: translate(14px, 0)
+					}
+				}
 			}
 
 			&~.btn-switch__switch{
@@ -88,5 +96,115 @@
 		&.theme-dark		{ width: 35px; height: 27px }
 		&.trading-real		{ width: 35px; height: 35px }
 		&.trading-paper		{ width: 35px; height: 26px }
+	}
+
+	&.big{
+		font-size: 17px;
+		font-weight: 700;
+
+		.btn-switch {
+
+			&__radio {
+
+				&:checked{
+
+					&~.btn-switch__label{
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+
+	&.inline{
+
+		.btn-switch{
+			&__label{
+				color: var(--clr-textD);
+				min-width: 0;
+				padding: 5px 50px 5px 20px;
+			}
+		}
+	}
+}
+
+.theme-switch {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 70px;
+
+	&__checkbox {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		display: none;
+
+		&:checked{
+
+			&~.theme-switch__label{
+				.theme-switch__switch{
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+
+	&__label {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		cursor: pointer;
+		overflow: hidden;
+
+		&:hover{
+			.theme-switch__icon{
+				fill: var(--clr-textL);
+			}
+		}
+	}
+
+	&__switch{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 70px;
+		height: 140px;
+		transition: all 0.5s;
+		transform: rotate(0);
+	}
+
+	&__day{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 70px;
+		height: 70px;
+	}
+
+	&__night{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 70px;
+		height: 70px;
+	}
+
+	&__icon{
+		fill: var(--clr-icon);
+		transition: all 0.1s;
+
+		&.sun{
+			width: 34px;
+			height: 34px;
+		}
+
+		&.moon{
+			width: 32px;
+			height: 32px;
+		}
 	}
 }

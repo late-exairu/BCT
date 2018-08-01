@@ -67,7 +67,7 @@
 	.scroll-element {
 		position: absolute;
 		z-index: 5;
-		margin: -1px;
+		margin: 0;
 		border: 1px solid var(--clr-separator);
 		background-color: var(--clr-back);
 
@@ -98,7 +98,7 @@
 		}
 		&.scroll-y {
 			bottom: 0;
-			right: 0;
+			right: -1px;
 			top: 0;
 			width: 14px;
 			cursor: pointer;

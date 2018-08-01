@@ -6,10 +6,10 @@
 
 .exch-head{
 	display: flex;
-	margin: 0 0 20px;
-	margin: 0 0 calc(20px * var(--scale));
-	flex: 0 0 95px;
-	flex: 0 0 calc(95px * var(--scale));
+	margin: 0 0 15px;
+	margin: 0 0 calc(15px * var(--scale));
+	flex: 0 0 80px;
+	flex: 0 0 calc(80px * var(--scale));
 
 	&__input{
 		font-family: $osans;
@@ -39,18 +39,18 @@
 		display: flex;
 		flex: 1 1;
 		padding: 0;
-		height: 95px;
-		height: calc(95px * var(--scale));
+		height: 80px;
+		height: calc(80px * var(--scale));
 	}
 
 	&__switch{
-		width: 92px;
-		width: calc(92px * var(--scale));
-		height: 95px;
-		height: calc(95px * var(--scale));
+		width: 95px;
+		width: calc(95px * var(--scale));
+		height: 80px;
+		height: calc(80px * var(--scale));
 		display: flex;
-		flex: 0 0 92px;
-		flex: 0 0 calc(92px * var(--scale));
+		flex: 0 0 80px;
+		flex: 0 0 calc(80px * var(--scale));
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
@@ -75,13 +75,14 @@
 	}
 
 	&__btn{
-		padding: 0 10px;
-		padding: 0 calc(10px * var(--scale));
-		height: 95px;
-		height: calc(95px * var(--scale));
+		font-family: $osans;
+		padding: 0 20px 0 28px;
+		padding: 0 calc(20px * var(--scale)) 0 calc(28px * var(--scale));
+		height: 80px;
+		height: calc(80px * var(--scale));
 		display: flex;
-		flex: 0 0 162px;
-		flex: 0 0 calc(162px * var(--scale));
+		flex: 0 0 268px;
+		flex: 0 0 calc(268px * var(--scale));
 		align-items: center;
 		background: var(--clr-accentD);
 		/*border-radius: 5px;*/
@@ -90,13 +91,15 @@
 		margin: 0 0 0 16px;
 		margin: 0 0 0 calc(16px * var(--scale));
 		text-decoration: none;
-		font-weight: 700;
-		font-size: 33px;
-		font-size: calc(33px * var(--scale));
+		font-size: 36px;
+		font-size: calc(36px * var(--scale));
+		font-weight: 800;
+		letter-spacing: -0.03em;
 		white-space: nowrap;
 		transition: all 0.1s;
 		justify-content: center;
 		border: none;
+		line-height: 1;
 
 		&:hover{
 			background: #026ba0;
@@ -114,8 +117,8 @@
 		height: 38px;
 		height: calc(38px * var(--scale));
 		fill: #fff;
-		margin: 0 18px;
-		margin: 0 calc(18px * var(--scale));
+		margin: 0 0 0 16px;
+		margin: 0 0 0 calc(16px * var(--scale));
 	}
 
 	@media only screen and (max-width : 1920px) {

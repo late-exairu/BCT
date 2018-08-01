@@ -5,8 +5,8 @@
 
 
 .c-block-head{
-	padding: 14px 25px 3px;
-	padding: calc(14px * var(--scale)) calc(25px * var(--scale)) calc(3px * var(--scale));
+	padding: 7px 25px 3px;
+	padding: calc(7px * var(--scale)) calc(25px * var(--scale)) calc(3px * var(--scale));
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid var(--clr-separator);
@@ -24,19 +24,19 @@
 	}
 
 	&__right{
-		margin: 0 -26px 0 10px;
-		margin: 0 calc(-26px * var(--scale)) 0 calc(10px * var(--scale));
+		margin: 0 0 0 10px;
+		margin: 0 0 0 calc(10px * var(--scale));
 	}
 
 	&__title{
-		font-size: 22px;
-		font-size: calc(22px * var(--scale));
+		font-size: 30px;
+		font-size: calc(30px * var(--scale));
 		margin: 0;
 		color: var(--clr-textD);
 		font-weight: 700;
 
 		span{
-			font-weight: 500;
+			font-size: 18px;
 		}
 
 		&.btn{
@@ -46,13 +46,13 @@
 
 	&__title-arrow{
 		position: relative;
-		margin: 0 2px 4px 4px;
-		margin: 0 calc(2px * var(--scale)) calc(4px * var(--scale)) calc(4px * var(--scale));
-		width: 8px;
-		width: calc(8px * var(--scale));
-		height: 5px;
-		height: calc(5px * var(--scale));
-		fill: var(--clr-textL);
+		margin: 0 2px 2px 4px;
+		margin: 0 calc(2px * var(--scale)) calc(2px * var(--scale)) calc(4px * var(--scale));
+		width: 15px;
+		width: calc(15px * var(--scale));
+		height: 13px;
+		height: calc(13px * var(--scale));
+		fill: var(--clr-accentD);
 	}
 
 	&__btn{
@@ -89,8 +89,12 @@
 		padding: calc(10px * var(--scale)) calc(25px * var(--scale));
 
 		.c-block-head__title{
-			font-size: 29px;
-			font-size: calc(29px * var(--scale));
+			font-size: 30px;
+			font-size: calc(30px * var(--scale));
+
+			span{
+				font-size: 25px;
+			}
 		}
 	}
 }

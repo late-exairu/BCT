@@ -5,8 +5,8 @@
 
 
 .chat-talk{
-	padding: 4px 0 0;
-	padding: calc(4px * var(--scale)) 0 0;
+	padding: 16px 0 0;
+	padding: calc(16px * var(--scale)) 0 0;
 	overflow-y: auto;
 	flex: 1;
 
@@ -15,8 +15,8 @@
 		display: flex;
 		padding: 15px 15px 15px 32px;
 		padding: calc(15px * var(--scale)) calc(15px * var(--scale)) calc(15px * var(--scale)) calc(32px * var(--scale));
-		margin: 26px 0 0;
-		margin: calc(26px * var(--scale)) 0 0;
+		margin: 0 0 0;
+		margin: calc(0 * var(--scale)) 0 0;
 
 		&:first-child{
 			margin: 0;
@@ -77,8 +77,8 @@
 
 	&__name{
 		margin: 0;
-		font-size: 18px;
-		font-size: calc(18px * var(--scale));
+		font-size: 17px;
+		font-size: calc(17px * var(--scale));
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -105,7 +105,7 @@
 	}
 
 	&__time{
-		font-family: $osansC;
+		font-family: $osans;
 		margin: 0 0 0 3px;
 		margin: 0 0 0 calc(3px * var(--scale));
 		font-size: 15px;
@@ -163,12 +163,12 @@
 		font-family: $osans;
 		position: relative;
 		color: var(--clr-textD);
-		margin: 11px 0 8px;
-		margin: calc(11px * var(--scale)) 0 calc(8px * var(--scale));
+		margin: 12px 0 8px;
+		margin: calc(12px * var(--scale)) 0 calc(8px * var(--scale));
 
 		p{
-			margin: 0 0 26px;
-			margin: 0 0 calc(26px * var(--scale));
+			margin: 0 0 27px;
+			margin: 0 0 calc(27px * var(--scale));
 			font-size: 17px;
 			font-size: calc(17px * var(--scale));
 			line-height: 1.6;

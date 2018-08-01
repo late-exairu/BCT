@@ -117,6 +117,14 @@
 }
 
 @font-face {
+    font-family: 'open_sans';
+    src: url('../fonts/opensans-extrabold-webfont.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+
+}
+
+@font-face {
     font-family: 'open_sans_condensed';
     src: url('../fonts/opensanscondensed-light-webfont.woff') format('woff');
     font-weight: 300;

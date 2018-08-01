@@ -10,12 +10,14 @@ Blocks from left bar
  */
 
 .left-bar{
+	--left-bar-width: 70px;
+
 	position: fixed;
 	left: 0;
 	top: 0;
 	bottom: 0;
-	width: 70px;
-	width: calc(70px * var(--scale));
+	width: var(--left-bar-width);
+	width: calc(var(--left-bar-width) * var(--scale));
 	padding: 5px 0;
 	padding: calc(5px * var(--scale)) 0;
 	background: var(--clr-back);
@@ -25,6 +27,7 @@ Blocks from left bar
 	&__scroll{
 		position: absolute;
 		overflow-y: auto;
+		width: var(--left-bar-width);
 		left: 0;
 		top: 0;
 		bottom: 0;
@@ -88,6 +91,7 @@ Blocks from left bar
 }
 
 .nav-bar{
+	width: calc(100% + 1px);
 
 	&__item{
 		display: flex;
