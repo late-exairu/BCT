@@ -3703,7 +3703,7 @@ body.menubar-in #user-btn:before {
 		overflow-x: hidden;
 		white-space: nowrap;*/ }
   .select-dropdown__list {
-    font-size: 15px;
+    font-size: 16px;
     position: absolute;
     left: -1px;
     right: -1px;
