@@ -1,7 +1,6 @@
-
 function redrawMainChart(correction) {
 	var chartParent = $('.b-graph__chart');
-	$(chartParent).css('width','100%');
+	$(chartParent).css('width', '100%');
 	var chartParentWidth = parseInt($(chartParent).width());
 	if ($('#js-graph-prices').hasClass('open')) {
 		chartParentWidth -= 280;
@@ -18,12 +17,18 @@ var gradientColor = [
 
 // id of graph for highlight
 var mainGraphHighlighted = 2;
+var mainGraphHover = null;
 var mainChartObj = Highcharts.chart('mainChart', {
 	legend: {
 		enabled: false
 	},
 	chart: {
-		marginBottom: 40
+		marginBottom: 40,
+		events: {
+			click: function (event) {
+				mainGraphHighlighted = mainGraphHover;
+			}
+		}
 	},
 	title: null,
 	tooltip: {
@@ -80,7 +85,35 @@ var mainChartObj = Highcharts.chart('mainChart', {
 							color: '#0576B9'
 						}, );
 						// set id of current graph ( for change theme)
-						mainGraphHighlighted = this.options.id;
+						mainGraphHover = this.options.id;
+					}
+				},
+				click: function (event) {
+					mainGraphHighlighted = this.options.id;
+				},
+				mouseOut: function (event) {
+					if (this.type == 'areaspline') {
+						// find highlighted chart and remove highlight
+						mainChartObj.series.map(function (graph) {
+							if (graph.type == 'areaspline') {
+								if (graph.options.fillColor.linearGradient.y2 > 5) {
+									graph.update({
+										fillColor: {
+											linearGradient: [0, 0, 0, 1],
+										},
+										color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
+									});
+								}
+ 								if (graph.options.id == mainGraphHighlighted) {
+									graph.update({
+										fillColor: {
+											linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
+										},
+										color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
+									});
+								}
+							}
+						});
 					}
 				},
 			},
