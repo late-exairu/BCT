@@ -26,7 +26,8 @@
 .d-flex		{ display: flex; }
 .d-flex-col	{ display: flex; flex-direction: column; }
 .flex-1-1	{ flex: 1 1; }
-.flex-fix	{ min-height: 0; }
+.flex-h-fix	{ min-height: 0; }
+.flex-w-fix	{ min-width: 0; }
 
 .m-left		{ margin-left:	20px; }
 .m-top		{ margin-top:	20px; }

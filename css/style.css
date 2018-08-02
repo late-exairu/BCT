@@ -3923,8 +3923,11 @@ body.menubar-in #user-btn:before {
 .flex-1-1 {
   flex: 1 1; }
 
-.flex-fix {
+.flex-h-fix {
   min-height: 0; }
+
+.flex-w-fix {
+  min-width: 0; }
 
 .m-left {
   margin-left: 20px; }
