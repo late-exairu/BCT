@@ -569,7 +569,7 @@ a {
 	min-height: 1400px; */
   /*prod size*/
   min-width: 1440px;
-  min-height: 900px; }
+  min-height: 800px; }
 
 b,
 h1,
@@ -2356,6 +2356,7 @@ Blocks from left bar
 /* =================================================================== */
 .menu-dropdown {
   font-family: "open_sans", sans-serif;
+  font-size: 16px;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -2447,7 +2448,7 @@ Blocks from left bar
     background: transparent;
     cursor: pointer;
     color: var(--clr-textL);
-    font-size: 13px;
+    font-size: 16px;
     width: 100%;
     line-height: 1.18;
     cursor: pointer;
@@ -2542,6 +2543,7 @@ body.menubar-in #user-btn:before {
     border: 1px solid transparent;
     outline: none;
     height: 42px;
+    min-width: 0;
     font-size: 18px;
     border-radius: 3px;
     flex: 1 1;
@@ -3555,15 +3557,15 @@ body.menubar-in #user-btn:before {
     flex-direction: column;
     min-height: 400px; }
   .col-left.col-chats {
-    width: 10%;
-    flex: 0 0 10%;
-    min-width: 620px;
-    min-width: calc(620px * var(--scale)); }
-  .col-left.col-tables {
     width: 25%;
     flex: 0 0 25%;
-    min-width: 930px;
-    min-width: calc(930px * var(--scale)); }
+    min-width: 460px;
+    min-width: calc(460px * var(--scale)); }
+  .col-left.col-tables {
+    width: 33%;
+    flex: 0 0 33%;
+    min-width: 900px;
+    min-width: calc(900px * var(--scale)); }
 
 .col-right {
   height: 100%;

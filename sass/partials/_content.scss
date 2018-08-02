@@ -30,17 +30,17 @@
 	}
 
 	&.col-chats{
-		width: 10%;
-		flex: 0 0 10%;
-		min-width: 620px;
-		min-width: calc(620px * var(--scale));
+		width: 25%;
+		flex: 0 0 25%;
+		min-width: 460px;
+		min-width: calc(460px * var(--scale));
 	}
 
 	&.col-tables{
-		width: 25%;
-		flex: 0 0 25%;
-		min-width: 930px;
-		min-width: calc(930px * var(--scale));
+		width: 33%;
+		flex: 0 0 33%;
+		min-width: 900px;
+		min-width: calc(900px * var(--scale));
 	}
 }
 
