@@ -147,7 +147,7 @@ $(function () {
 	/* Left column menu */
 	/*---------------------------------------------------*/
 
-	$('.col-left .menu-dropdown__item').on('click', function () {
+	$('.main-cols__left .menu-dropdown__item').on('click', function () {
 		if ($(this).hasClass('switch-orderBook')) {
 			$('#telegram').addClass('hidden');
 			$('#orderBook').removeClass('hidden');
@@ -346,8 +346,8 @@ $(function () {
 	/* show Orders form */
 	/*---------------------------------------------------*/
 
-	$('.col-left .basic-table__row').click(function () {
-		$('.col-left .basic-table__row').removeClass('active');
+	$('.main-cols__left .basic-table__row').click(function () {
+		$('.main-cols__left .basic-table__row').removeClass('active');
 		$(this).addClass('active');
 		$('#orders').css('display', 'flex');
 	});
