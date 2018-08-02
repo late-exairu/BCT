@@ -244,11 +244,11 @@
 						</h2>
 
 						<ul class="menu-dropdown js-dropdown">
-							<li class="menu-dropdown__item js-tabs__tab switch-telegram active">
-								<button class="menu-dropdown__btn js-tabs__tab">Chat</button>
+							<li class="menu-dropdown__item js-tabs-tab switch-telegram active">
+								<button class="menu-dropdown__btn">Chat</button>
 							</li>
 
-							<li class="menu-dropdown__item js-tabs__tab switch-orderBook">
+							<li class="menu-dropdown__item js-tabs-tab switch-orderBook">
 								<button class="menu-dropdown__btn">Order Book</button>
 							</li>
 						</ul>
@@ -491,11 +491,11 @@
 							</h2>
 
 							<ul class="menu-dropdown js-dropdown">
-								<li class="menu-dropdown__item js-tabs__tab switch-telegram">
-									<button class="menu-dropdown__btn js-tabs__tab">Chat</button>
+								<li class="menu-dropdown__item js-tabs-tab switch-telegram">
+									<button class="menu-dropdown__btn">Chat</button>
 								</li>
 
-								<li class="menu-dropdown__item js-tabs__tab active switch-orderBook">
+								<li class="menu-dropdown__item js-tabs-tab active switch-orderBook">
 									<button class="menu-dropdown__btn">Order Book</button>
 								</li>
 							</ul>
@@ -1894,7 +1894,7 @@
 		</div><!-- col-right__top -->
 
 		<div class="col-right__bottom m-top">
-			<div class="c-block account-stats d-flex-col">
+			<div class="c-block d-flex-col flex-1-1 flex-h-fix js-account-stats">
 				<div class="c-block-head">
 					<div class="c-block-head__left js-dropdown-wrap">
 						<h2 class="c-block-head__title btn js-dropdown-toggle">
@@ -1905,27 +1905,27 @@
 						</h2>
 
 						<ul class="menu-dropdown js-dropdown">
-							<li class="menu-dropdown__item js-tabs__tab active" id="tab-funds-account">
-								<button class="menu-dropdown__btn js-tabs__tab">Your Wallet</button>
+							<li class="menu-dropdown__item js-tabs-tab active" id="tab-funds-account">
+								<button class="menu-dropdown__btn">Your Wallet</button>
 							</li>
 
-							<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-portfolio">
+							<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-portfolio">
 								<button class="menu-dropdown__btn">Your Portfolio</button>
 							</li>
 
-							<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-orders">
+							<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-orders">
 								<button class="menu-dropdown__btn">Open Orders</button>
 							</li>
 
-							<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-history">
+							<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-history">
 								<button class="menu-dropdown__btn">Order History</button>
 							</li>
 
-							<li class="menu-dropdown__item js-tabs__tab" id="tab-funds-tr-history">
+							<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-tr-history">
 								<button class="menu-dropdown__btn">Trades History</button>
 							</li>
 
-							<li class="menu-dropdown__item js-tabs__tab" id="tab-dashboard-liquidity">
+							<li class="menu-dropdown__item js-tabs-tab" id="tab-dashboard-liquidity">
 								<button class="menu-dropdown__btn">Global Liquidity</button>
 							</li>
 						</ul>
@@ -1943,7 +1943,7 @@
 				</div><!-- c-block-head END -->
 
 				<div class="d-flex flex-1-1 flex-h-fix">
-					<div class="js-tabs__panel active" id="panel-funds-account">
+					<div class="js-tabs-panel active" id="panel-funds-account">
 
 						<div class="accounts-diagram" id="circleChart"></div>
 						<div id="circleChartText"></div>
@@ -2162,9 +2162,9 @@
 							</div><!-- basic-table END -->
 						</div><!-- scroll-y -->
 					
-					</div><!-- js-tabs__panel END -->
+					</div><!-- js-tabs-panel END -->
 
-					<div class="js-tabs__panel" id="panel-funds-portfolio">
+					<div class="js-tabs-panel" id="panel-funds-portfolio">
 						<div id="portfolioChart" style="width: 100%;"></div>
 						<div id="portfolioChartRange">
 							<span>1H</span>
@@ -2186,9 +2186,9 @@
 								<p>Change since last month</p>
 							</div>
 						</div>
-					</div><!-- js-tabs__panel END -->
+					</div><!-- js-tabs-panel END -->
 
-					<div class="js-tabs__panel" id="panel-funds-orders">
+					<div class="js-tabs-panel" id="panel-funds-orders">
 						<div class="flex-1-1 scroll-y scrollbar-outer">
 							<div class="basic-table med-height">
 								<div class="basic-table__row head">
@@ -2312,9 +2312,9 @@
 								</div><!-- basic-table__row END -->
 							</div><!-- basic-table END -->
 						</div><!-- scroll-y END -->
-					</div><!-- js-tabs__panel END -->
+					</div><!-- js-tabs-panel END -->
 
-					<div class="js-tabs__panel" id="panel-funds-history">
+					<div class="js-tabs-panel" id="panel-funds-history">
 						<div class="flex-1-1 scroll-y scrollbar-outer">
 							<div class="basic-table med-height">
 								<div class="basic-table__row head">
@@ -2438,9 +2438,9 @@
 								</div><!-- basic-table__row END -->
 							</div><!-- basic-table END -->
 						</div><!-- scroll-y END -->
-					</div><!-- js-tabs__panel END -->
+					</div><!-- js-tabs-panel END -->
 
-					<div class="js-tabs__panel" id="panel-funds-tr-history">
+					<div class="js-tabs-panel" id="panel-funds-tr-history">
 						<div class="flex-1-1 scroll-y scrollbar-outer">
 							<div class="basic-table med-height">
 								<div class="basic-table__row head">
@@ -2534,9 +2534,9 @@
 								</div><!-- basic-table__row END -->
 							</div><!-- basic-table END -->
 						</div><!-- scroll-y END -->
-					</div><!-- js-tabs__panel END -->
+					</div><!-- js-tabs-panel END -->
 
-					<div class="js-tabs__panel" id="panel-dashboard-liquidity">
+					<div class="js-tabs-panel" id="panel-dashboard-liquidity">
 						<div id="liquidityChart" style="width: 100%; height: 100%;"></div>
 						<div class="liquidityText">
 							<div class="leftPart">
@@ -2559,7 +2559,7 @@
 								<span>exchanges</span>
 							</div>
 						</div>
-					</div><!-- js-tabs__panel END -->
+					</div><!-- js-tabs-panel END -->
 				</div><!-- d-flex END -->
 
 			</div><!-- c-block END -->
