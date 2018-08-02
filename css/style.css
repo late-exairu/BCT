@@ -3381,6 +3381,140 @@ body.menubar-in #user-btn:before {
 .same-as-selected {
   background-color: var(--clr-backL); }
 
+.highcharts-credits {
+  display: none; }
+
+.accounts-diagram {
+  width: 344px;
+  flex: 0 0 344px;
+  max-height: 344px;
+  height: 100%;
+  border-right: 1px solid var(--clr-separator); }
+
+#circleChartText {
+  position: absolute;
+  left: 0px;
+  top: 0px; }
+
+#mainChart {
+  padding-top: 0;
+  padding-left: 45px;
+  height: 100%;
+  width: 100%; }
+
+#portfolioChartRange {
+  position: absolute;
+  top: 82px;
+  right: 40px; }
+  #portfolioChartRange span {
+    padding: 3px 11px;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer; }
+  #portfolioChartRange .active {
+    border-bottom: 3px solid #0576b9;
+    font-weight: bold; }
+
+.label {
+  z-index: 1 !important; }
+
+.highcharts-container {
+  position: inherit !important; }
+
+.highcharts-tooltip {
+  z-index: 9998 !important; }
+
+.highcharts-tooltip div.tooltip {
+  opacity: 1;
+  padding: 4px 12px;
+  z-index: 9999 !important;
+  font-size: 16px;
+  border-radius: 4px;
+  line-height: 38px;
+  background-color: var(--clr-block);
+  color: var(--clr-textL);
+  box-shadow: 0px 2px 7px 0px rgba(120, 120, 120, 0.7); }
+  .highcharts-tooltip div.tooltip span {
+    color: var(--clr-textD); }
+
+.highcharts-tooltip span svg {
+  width: 22px;
+  height: 22px;
+  position: relative;
+  top: 5px; }
+
+#portfolioChartText {
+  position: absolute;
+  bottom: 50px;
+  left: 40px; }
+  #portfolioChartText div {
+    display: inline-block;
+    color: #0576b9;
+    font-size: 48px;
+    border-right: 1px solid #a6a6a6;
+    padding: 0px 15px;
+    text-align: center; }
+    #portfolioChartText div span {
+      font-size: 31px;
+      vertical-align: top;
+      line-height: 55px; }
+    #portfolioChartText div p {
+      font-size: 15px;
+      color: black;
+      margin-top: 0px;
+      margin-bottom: 0; }
+    #portfolioChartText div:last-child {
+      border-right: 0; }
+
+#panel-funds-account,
+#panel-dashboard-liquidity {
+  position: relative; }
+
+#panel-dashboard-liquidity .liquidityText {
+  color: black;
+  text-align: center; }
+  #panel-dashboard-liquidity .liquidityText span {
+    font-size: 16px;
+    vertical-align: top;
+    margin: 0px 5px; }
+  #panel-dashboard-liquidity .liquidityText p {
+    font-size: 48px;
+    margin: 0;
+    height: 53px; }
+  #panel-dashboard-liquidity .liquidityText .leftPart,
+  #panel-dashboard-liquidity .liquidityText .rightPart,
+  #panel-dashboard-liquidity .liquidityText .centerPart {
+    position: absolute; }
+  #panel-dashboard-liquidity .liquidityText .leftPart {
+    bottom: 50px;
+    left: 75px; }
+  #panel-dashboard-liquidity .liquidityText .rightPart {
+    bottom: 50px;
+    right: 75px; }
+  #panel-dashboard-liquidity .liquidityText .centerPart {
+    top: 15%;
+    left: 50%;
+    height: calc(85% - 40px);
+    transform: translateX(-50%); }
+    #panel-dashboard-liquidity .liquidityText .centerPart p {
+      margin-bottom: 13px; }
+  #panel-dashboard-liquidity .liquidityText svg {
+    width: 21px;
+    height: 21px;
+    cursor: pointer; }
+  #panel-dashboard-liquidity .liquidityText .separator {
+    width: 2px;
+    height: calc(85% - 57px);
+    background: #000;
+    margin: 5px auto 0; }
+
+#orders {
+  display: none; }
+  #orders .forms-wrap {
+    display: none; }
+    #orders .forms-wrap.current {
+      display: flex; }
+
 /* =================================================================== */
 /* basic-btn
 /* =================================================================== */
@@ -3593,143 +3727,6 @@ body.menubar-in #user-btn:before {
   .select-dropdown__item.active {
     background: var(--clr-backL); }
 
-.highcharts-credits {
-  display: none; }
-
-.accounts-diagram {
-  width: 344px;
-  flex: 0 0 344px;
-  max-height: 344px;
-  height: 100%;
-  border-right: 1px solid var(--clr-separator); }
-
-#circleChartText {
-  position: absolute;
-  left: 0px;
-  top: 0px; }
-
-#mainChart {
-  padding-top: 0;
-  padding-left: 45px;
-  height: 100%;
-  width: 100%; }
-
-#portfolioChartRange {
-  position: absolute;
-  top: 82px;
-  right: 40px; }
-  #portfolioChartRange span {
-    padding: 3px 11px;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer; }
-  #portfolioChartRange .active {
-    border-bottom: 3px solid #0576b9;
-    font-weight: bold; }
-
-.label {
-  z-index: 1 !important; }
-
-.highcharts-container {
-  position: inherit !important; }
-
-.highcharts-tooltip {
-  z-index: 9998 !important; }
-
-.highcharts-tooltip div.tooltip {
-  opacity: 1;
-  padding: 4px 12px;
-  z-index: 9999 !important;
-  font-size: 16px;
-  border-radius: 4px;
-  line-height: 38px;
-  background-color: var(--clr-block);
-  color: var(--clr-textL);
-  box-shadow: 0px 2px 7px 0px rgba(120, 120, 120, 0.7); }
-  .highcharts-tooltip div.tooltip span {
-    color: var(--clr-textD); }
-
-.highcharts-tooltip span svg {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  top: 5px; }
-
-#portfolioChartText {
-  position: absolute;
-  bottom: 50px;
-  left: 40px; }
-  #portfolioChartText div {
-    display: inline-block;
-    color: #0576b9;
-    font-size: 48px;
-    border-right: 1px solid #a6a6a6;
-    padding: 0px 15px;
-    text-align: center; }
-    #portfolioChartText div span {
-      font-size: 31px;
-      vertical-align: top;
-      line-height: 55px; }
-    #portfolioChartText div p {
-      font-size: 15px;
-      color: black;
-      margin-top: 0px;
-      margin-bottom: 0; }
-  #portfolioChartText div:last-child {
-    border-right: 0; }
-
-#panel-funds-account,
-#panel-dashboard-liquidity {
-  position: relative; }
-
-#panel-dashboard-liquidity .liquidityText {
-  color: black;
-  text-align: center; }
-  #panel-dashboard-liquidity .liquidityText span {
-    font-size: 16px;
-    vertical-align: top;
-    margin: 0px 5px; }
-  #panel-dashboard-liquidity .liquidityText p {
-    font-size: 48px;
-    margin: 0;
-    height: 53px; }
-  #panel-dashboard-liquidity .liquidityText .leftPart,
-  #panel-dashboard-liquidity .liquidityText .rightPart,
-  #panel-dashboard-liquidity .liquidityText .centerPart {
-    position: absolute; }
-  #panel-dashboard-liquidity .liquidityText .leftPart {
-    bottom: 50px;
-    left: 75px; }
-  #panel-dashboard-liquidity .liquidityText .rightPart {
-    bottom: 50px;
-    right: 75px; }
-  #panel-dashboard-liquidity .liquidityText .centerPart {
-    top: 15%;
-    left: 50%;
-    height: calc(85% - 40px);
-    transform: translateX(-50%); }
-    #panel-dashboard-liquidity .liquidityText .centerPart p {
-      margin-bottom: 13px; }
-  #panel-dashboard-liquidity .liquidityText svg {
-    width: 21px;
-    height: 21px;
-    cursor: pointer; }
-  #panel-dashboard-liquidity .liquidityText .separator {
-    width: 2px;
-    height: calc(85% - 57px);
-    background: #000;
-    margin: 5px auto 0; }
-
-#orders {
-  display: none; }
-  #orders .forms-wrap {
-    display: none; }
-  #orders .forms-wrap.current {
-    display: flex; }
-
-.hidden {
-  display: none; }
-
 .col-left .basic-table__row:hover {
   background: var(--clr-back);
   cursor: pointer; }
@@ -3800,6 +3797,9 @@ body.menubar-in #user-btn:before {
 
 .h-100 {
   height: 100%; }
+
+.hidden {
+  display: none; }
 
 .visibility-parent:hover .visibility-child {
   visibility: visible;
