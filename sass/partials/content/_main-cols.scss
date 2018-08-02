@@ -1,0 +1,73 @@
+
+/* =================================================================== */
+/* main-cols */
+/* =================================================================== */
+
+
+.main-cols{
+	position: relative;
+	display: flex;
+    flex: 1 0 auto;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+
+	&__left{
+		width: 33%;
+		height: 100%;
+		min-width: 700px;
+		display: flex;
+		flex: 0 0 33%;
+		flex-direction: column;
+		min-height: 500px;
+
+		&.col-chats{
+			width: 25%;
+			flex: 0 0 25%;
+			min-width: 460px;
+		}
+
+		&.col-tables{
+			width: 33%;
+			flex: 0 0 33%;
+			min-width: 600px;
+		}
+	}
+
+	&__left-top{
+		display: flex;
+		flex: 1 1;
+		flex-direction: column;
+		min-height: 0;
+	}
+
+	&__left-bottom{
+		display: flex;
+		flex: 0 0 400px;
+		flex-direction: column;
+		min-height: 400px;
+	}
+
+	&__right{
+		height: 100%;
+		min-width: 680px;
+		display: flex;
+		flex: 1 1;
+		flex-direction: column;
+		min-height: 700px;
+	}
+
+	&__right-top{
+		display: flex;
+		flex: 1 1;
+		flex-direction: column;
+		min-height: 0;
+	}
+
+	&__right-bottom{
+		display: flex;
+		flex: 0 0 400px;
+		flex-direction: column;
+		min-height: 400px;
+	}
+}
