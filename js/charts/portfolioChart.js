@@ -50,7 +50,7 @@ var portfolioChartOptions = {
         gridLineColor: '#e6e6e6',
         lineColor: '#ccd6eb',
         crosshair: {
-            label: {
+/*             label: {
                 enabled: true,
                 format: '{value:%m/%d/%Y 8:00AM}',
                 backgroundColor: '#ffffff',
@@ -61,7 +61,9 @@ var portfolioChartOptions = {
                 style: {
                     color: '#000000'
                 },
-            }
+            } */
+            width: 2,
+            dashStyle: 'LongDash'
         },
         type: 'datetime',
         dateTimeLabelFormats: {
@@ -107,18 +109,29 @@ var portfolioChartOptions = {
             fontSize: 16
         },
         formatter: function () {
-            // edit value to ~8k 
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var date = new Date(this.x);
+            var month = months[date.getMonth()];
+            var dayName = date.toString().split(' ')[0];
+            // edit value to ~8k
             var TooltipValue = (this.y * 45).toFixed(2);
+            TooltipValue = TooltipValue.slice(0,1) + ',' + TooltipValue.slice(1);
             return '<table class="portfolio">' +
-                "<tr><td>$" + TooltipValue + "</td></tr>" +
+                "<tr><td><span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() + "</td></tr>" +
                 '</table>';
         },
-        positioner: function (labelWidth, labelHeight, point, ) {
+         positioner: function (labelWidth, labelHeight, point, ) {
+            var graphWidth = $(portfolioChartObj.container).width();
+            var xPos = point.plotX - (labelWidth / 2);
+            if((point.plotX + labelWidth/2) > graphWidth){
+                xPos = point.plotX - labelWidth;
+            }
+
             return {
-                x: point.plotX - 45,
-                y: point.plotY + 30
+                x: xPos,
+                y: point.plotY + 40
             };
-        }
+        } 
     },
     credits: {
         enabled: false

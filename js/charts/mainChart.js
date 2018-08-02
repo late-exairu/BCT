@@ -7,7 +7,7 @@ function redrawMainChart(correction) {
 		chartParentWidth -= 280;
 	}
 	$(chartParent).css('width', chartParentWidth);
-	mainChartObj.setSize(chartParentWidth - 45, mainChartObj.chartHeight, false);
+	mainChartObj.reflow();
 }
 
 // color for highlight graphs on hover

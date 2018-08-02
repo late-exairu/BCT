@@ -245,14 +245,14 @@ $(function () {
 			xAxis: [{
 				gridLineColor: gridColor,
 				lineColor: gridColor,
-				crosshair: {
-					label: {
+/* 				crosshair: {
+ 					label: {
 						backgroundColor: backColor,
 						style: {
 							color: fontColor
 						}
-					}
-				},
+					} 
+				}, */
 				labels: {
 					style: {
 						color: labelColor
