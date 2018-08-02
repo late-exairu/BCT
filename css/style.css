@@ -3475,6 +3475,9 @@ body.menubar-in #user-btn:before {
     width: 100%;
     margin: auto 0 0; }
 
+/* =================================================================== */
+/* selects
+/* =================================================================== */
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative; }
@@ -3534,7 +3537,7 @@ body.menubar-in #user-btn:before {
 
 /*hide the items when the select box is closed:*/
 .select-hide {
-  /*display: none;*/
+  display: none;
   opacity: 0;
   visibility: hidden;
   transform: translateY(30px); }
