@@ -568,8 +568,8 @@ a {
   /* 	min-width: 2520px;
 	min-height: 1400px; */
   /*prod size*/
-  min-width: 1440px;
-  min-height: 800px; }
+  min-width: 1280px;
+  min-height: 600px; }
 
 b,
 h1,
@@ -859,6 +859,7 @@ h6 {
       font-weight: 600; }
       .basic-table.low-height .basic-table__row.head .basic-table__col {
         min-height: 29px;
+        height: auto;
         padding: 5px; }
         .basic-table.low-height .basic-table__row.head .basic-table__col:first-child {
           padding-left: 20px; }
@@ -3564,8 +3565,8 @@ body.menubar-in #user-btn:before {
   .col-left.col-tables {
     width: 33%;
     flex: 0 0 33%;
-    min-width: 900px;
-    min-width: calc(900px * var(--scale)); }
+    min-width: 600px;
+    min-width: calc(600px * var(--scale)); }
 
 .col-right {
   height: 100%;
