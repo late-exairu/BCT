@@ -15,18 +15,20 @@ var liquidityChartOptions = {
     },
     xAxis: {
         crosshair: {
-            label: {
-                enabled: true,
-                format: '{value:%b %d, %Y}',
-                backgroundColor: '#ffffff',
-                borderColor: '#5a5a5a',
-                borderWidth: 1,
-                borderRadius: 5,
-                shape: "box",
-                style: {
-                    color: '#000000'
-                },
-            }
+            /*             label: {
+                            enabled: true,
+                            format: '{value:%b %d, %Y}',
+                            backgroundColor: '#ffffff',
+                            borderColor: '#5a5a5a',
+                            borderWidth: 1,
+                            borderRadius: 5,
+                            shape: "box",
+                            style: {
+                                color: '#000000'
+                            },
+                        } */
+            width: 2,
+            dashStyle: 'LongDash'
         },
         type: 'datetime',
         dateTimeLabelFormats: {
@@ -93,12 +95,30 @@ var liquidityChartOptions = {
             color: '#ffffff',
             fontSize: 16
         },
+        /*
         headerFormat: '<table class="portfolio">',
         pointFormat: "<tr><td>${point.y}.00</td></tr>",
         footerFormat: '</table>',
-        positioner: function (labelWidth, labelHeight, point, ) {
+         positioner: function (labelWidth, labelHeight, point, ) {
             return {
                 x: point.plotX,
+                y: point.plotY - 50
+            };
+        } */
+        formatter: function () {
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var date = new Date(this.x);
+            var month = months[date.getMonth()];
+            var dayName = date.toString().split(' ')[0];
+            // edit value to ~8k
+            var TooltipValue = (this.y).toFixed(2);
+            return '<table class="portfolio">' +
+                "<tr><td><span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() + "</td></tr>" +
+                '</table>';
+        },
+        positioner: function (labelWidth, labelHeight, point, ) {
+            return {
+                x: point.plotX - 50,
                 y: point.plotY - 50
             };
         }
