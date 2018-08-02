@@ -22,7 +22,6 @@
 /*background color accented*/
 /*basic block color basic*/
 body {
-  --scale: 			1;
   --clr-text:			#585b5c;
   /*text color basic*/
   --clr-textLL:		#c6c8c8;
@@ -57,9 +56,6 @@ body {
   /*background color accented*/
   --clr-block:		#ffffff;
   /*basic block color basic*/ }
-  @media only screen and (max-width: 1920px) {
-    body {
-      --scale: 		1; } }
   body.dark-theme {
     --clr-text:			#9ba6b2;
     /*text color basic*/
@@ -558,7 +554,6 @@ a {
   min-height: 100%;
   min-width: 300px;
   padding: 20px 20px 20px 90px;
-  padding: calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale)) calc(90px * var(--scale));
   display: flex;
   align-items: flex-start;
   width: 100%;
@@ -1077,26 +1072,21 @@ h6 {
 /* =================================================================== */
 .c-block-head {
   padding: 7px 25px 3px;
-  padding: calc(7px * var(--scale)) calc(25px * var(--scale)) calc(3px * var(--scale));
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--clr-separator);
   background: var(--clr-back);
-  border-radius: 5px 5px 0 0;
-  border-radius: calc(5px * var(--scale)) calc(5px * var(--scale)) 0 0; }
+  border-radius: 5px 5px 0 0; }
   .c-block-head__left {
     position: relative;
     margin: 0 auto 0 0;
     padding: 5px 0;
-    padding: calc(5px * var(--scale)) 0;
     display: flex;
     align-items: center; }
   .c-block-head__right {
-    margin: 0 0 0 10px;
-    margin: 0 0 0 calc(10px * var(--scale)); }
+    margin: 0 0 0 10px; }
   .c-block-head__title {
     font-size: 30px;
-    font-size: calc(30px * var(--scale));
     margin: 0;
     color: var(--clr-textD);
     font-weight: 700; }
@@ -1107,17 +1097,12 @@ h6 {
   .c-block-head__title-arrow {
     position: relative;
     margin: 0 2px 2px 4px;
-    margin: 0 calc(2px * var(--scale)) calc(2px * var(--scale)) calc(4px * var(--scale));
     width: 15px;
-    width: calc(15px * var(--scale));
     height: 13px;
-    height: calc(13px * var(--scale));
     fill: var(--clr-accentD); }
   .c-block-head__btn {
     width: 48px;
-    width: calc(48px * var(--scale));
     height: 48px;
-    height: calc(48px * var(--scale));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1130,18 +1115,13 @@ h6 {
       background: rgba(0, 0, 0, 0.05); }
     .c-block-head__btn .sprite-icon {
       width: 20px;
-      width: calc(20px * var(--scale));
       height: 20px;
-      height: calc(20px * var(--scale));
       fill: var(--clr-text); }
   .c-block-head.big {
     min-height: 79px;
-    min-height: calc(79px * var(--scale));
-    padding: 10px 25px;
-    padding: calc(10px * var(--scale)) calc(25px * var(--scale)); }
+    padding: 10px 25px; }
     .c-block-head.big .c-block-head__title {
-      font-size: 30px;
-      font-size: calc(30px * var(--scale)); }
+      font-size: 30px; }
       .c-block-head.big .c-block-head__title span {
         font-size: 25px; }
 
@@ -1205,20 +1185,15 @@ h6 {
   position: relative;
   display: flex;
   padding: 9px 10px 9px 32px;
-  padding: calc(9px * var(--scale)) calc(10px * var(--scale)) calc(9px * var(--scale)) calc(32px * var(--scale));
   height: 66px;
-  height: calc(66px * var(--scale));
   background: var(--clr-backA); }
   .chat-head__back {
     position: absolute;
     display: flex;
     left: 4px;
-    left: calc(4px * var(--scale));
     top: 50%;
     width: 26px;
-    width: calc(26px * var(--scale));
     height: 36px;
-    height: calc(36px * var(--scale));
     border-radius: 3px;
     transition: all 0.1s;
     align-items: center;
@@ -1234,43 +1209,33 @@ h6 {
     .chat-head__back .sprite-icon {
       display: block;
       width: 13px;
-      width: calc(13px * var(--scale));
       height: 20px;
-      height: calc(20px * var(--scale));
       fill: var(--clr-accent); }
   .chat-head__avatar-wrap {
     position: relative;
     width: 43px;
-    width: calc(43px * var(--scale));
     height: 43px;
-    height: calc(43px * var(--scale));
     margin: 0 0;
     flex: 0 0 auto; }
   .chat-head__avatar {
     width: 43px;
-    width: calc(43px * var(--scale));
     height: 43px;
-    height: calc(43px * var(--scale));
     border-radius: 50%; }
   .chat-head__desc {
     padding: 0 12px;
-    padding: 0 calc(12px * var(--scale));
     overflow: hidden;
     min-width: 100px;
-    min-width: calc(100px * var(--scale));
     flex: 1 1 auto; }
   .chat-head__name {
     margin: 0;
     font-weight: 600;
     font-size: 17px;
-    font-size: calc(17px * var(--scale));
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--clr-textD); }
   .chat-head__info {
     font-size: 15px;
-    font-size: calc(15px * var(--scale));
     margin: 1px 0 0;
     color: var(--clr-text);
     white-space: nowrap;
@@ -1280,18 +1245,14 @@ h6 {
     display: flex;
     text-align: right;
     margin: 0 10px 0 auto;
-    margin: 0 calc(10px * var(--scale)) 0 auto;
     padding: 0 0;
     flex: 0 0 auto;
     align-items: flex-start; }
   .chat-head__btn {
     display: block;
     width: 44px;
-    width: calc(44px * var(--scale));
     height: 44px;
-    height: calc(44px * var(--scale));
     margin: 0 0 0 5px;
-    margin: 0 0 0 calc(5px * var(--scale));
     cursor: pointer;
     align-items: center;
     justify-content: center;
@@ -1312,9 +1273,7 @@ h6 {
       position: relative;
       top: -1px;
       width: 25px;
-      width: calc(25px * var(--scale));
       height: 25px;
-      height: calc(25px * var(--scale));
       fill: var(--clr-accent);
       transition: all 0.1s; }
 
@@ -1323,16 +1282,13 @@ h6 {
 /* =================================================================== */
 .chat-talk {
   padding: 16px 0 0;
-  padding: calc(16px * var(--scale)) 0 0;
   overflow-y: auto;
   flex: 1; }
   .chat-talk__item {
     position: relative;
     display: flex;
     padding: 15px 15px 15px 32px;
-    padding: calc(15px * var(--scale)) calc(15px * var(--scale)) calc(15px * var(--scale)) calc(32px * var(--scale));
     margin: 0 0 0;
-    margin: calc(0 * var(--scale)) 0 0;
     --inner-accent: #607580; }
     .chat-talk__item:first-child {
       margin: 0; }
@@ -1345,19 +1301,13 @@ h6 {
   .chat-talk__avatar-wrap {
     position: relative;
     width: 43px;
-    width: calc(43px * var(--scale));
     height: 43px;
-    height: calc(43px * var(--scale));
     margin: 2px 12px 2px 0;
-    margin: calc(2px * var(--scale)) calc(12px * var(--scale)) calc(2px * var(--scale)) 0;
     flex: 0 0 auto; }
   .chat-talk__avatar {
     font-size: 17px;
-    font-size: calc(17px * var(--scale));
     width: 43px;
-    width: calc(43px * var(--scale));
     height: 43px;
-    height: calc(43px * var(--scale));
     display: flex;
     border-radius: 50%;
     align-items: center;
@@ -1367,7 +1317,6 @@ h6 {
     color: #fff; }
   .chat-talk__content {
     padding: 0 8px 0 10px;
-    padding: 0 calc(8px * var(--scale)) 0 calc(10px * var(--scale));
     overflow: hidden;
     flex: 1 1 auto; }
   .chat-talk__head {
@@ -1375,7 +1324,6 @@ h6 {
   .chat-talk__name {
     margin: 0;
     font-size: 17px;
-    font-size: calc(17px * var(--scale));
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1385,38 +1333,27 @@ h6 {
     margin: 0 auto 0 0; }
   .chat-talk__info {
     display: flex;
-    padding: 3px 0 0;
-    padding: calc(3px * var(--scale)) 0 0; }
+    padding: 3px 0 0; }
   .chat-talk__readed {
     width: 18px;
-    width: calc(18px * var(--scale));
     height: 12px;
-    height: calc(12px * var(--scale));
     margin: 3px 0 0;
-    margin: calc(3px * var(--scale)) 0 0;
     fill: var(--clr-accent); }
   .chat-talk__time {
     font-family: "open_sans", sans-serif;
     margin: 0 0 0 3px;
-    margin: 0 0 0 calc(3px * var(--scale));
     font-size: 15px;
-    font-size: calc(15px * var(--scale));
     white-space: nowrap;
     min-height: 19px;
-    min-height: calc(19px * var(--scale));
     color: var(--clr-textL); }
   .chat-talk__quote {
     position: relative;
     color: var(--clr-text);
     margin: 5px 0 12px;
-    margin: calc(5px * var(--scale)) 0 calc(12px * var(--scale));
-    padding: 2px 0 0 12px;
-    padding: calc(2px * var(--scale)) 0 0 calc(12px * var(--scale)); }
+    padding: 2px 0 0 12px; }
     .chat-talk__quote p {
       margin: 0 0 20px;
-      margin: 0 0 calc(20px * var(--scale));
       font-size: 18px;
-      font-size: calc(18px * var(--scale));
       line-height: 1.36;
       white-space: nowrap;
       overflow: hidden;
@@ -1425,49 +1362,36 @@ h6 {
       color: var(--clr-textD); }
     .chat-talk__quote .chat-talk__name {
       font-size: 17px;
-      font-size: calc(17px * var(--scale));
       color: #1cbaac;
-      margin: 0 0 4px;
-      margin: 0 0 calc(4px * var(--scale)); }
+      margin: 0 0 4px; }
     .chat-talk__quote:after {
       content: '';
       position: absolute;
       left: 0;
       top: 2px;
-      top: calc(2px * var(--scale));
       bottom: 6px;
-      bottom: calc(6px * var(--scale));
       width: 3px;
-      width: calc(3px * var(--scale));
       background: #1cbaac; }
   .chat-talk__message {
     font-family: "open_sans", sans-serif;
     position: relative;
     color: var(--clr-textD);
-    margin: 12px 0 8px;
-    margin: calc(12px * var(--scale)) 0 calc(8px * var(--scale)); }
+    margin: 12px 0 8px; }
     .chat-talk__message p {
       margin: 0 0 27px;
-      margin: 0 0 calc(27px * var(--scale));
       font-size: 17px;
-      font-size: calc(17px * var(--scale));
       line-height: 1.6; }
       .chat-talk__message p:last-child {
         margin: 0; }
     .chat-talk__message .chat-talk__name {
       font-size: 16px;
-      font-size: calc(16px * var(--scale));
-      margin: 0 0 4px;
-      margin: 0 0 calc(4px * var(--scale)); }
+      margin: 0 0 4px; }
   .chat-talk__sys-message {
     font-family: "open_sans", sans-serif;
     font-size: 18px;
-    font-size: calc(18px * var(--scale));
     text-align: center;
     padding: 20px 38px 20px 20px;
-    padding: calc(20px * var(--scale)) calc(38px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale));
     margin: 30px 0 26px;
-    margin: calc(30px * var(--scale)) 0 calc(26px * var(--scale));
     color: var(--clr-textL); }
 
 /* =================================================================== */
@@ -1617,7 +1541,6 @@ h6 {
     width: 100%;
     height: 100%;
     padding: 0 50px 0 18px;
-    padding: 0 calc(50px * var(--scale)) 0 calc(18px * var(--scale));
     display: flex;
     align-items: center;
     transition: all .1s;
@@ -1628,15 +1551,12 @@ h6 {
     top: 0;
     bottom: 0;
     width: 60px;
-    width: calc(60px * var(--scale));
     display: flex;
     align-items: center;
     justify-content: center; }
     .exch-dropdown__hangle .sprite-icon {
       width: 15px;
-      width: calc(15px * var(--scale));
       height: 13px;
-      height: calc(13px * var(--scale));
       fill: var(--clr-accentD);
       transition: all 0.2s; }
   .exch-dropdown__list {
@@ -1656,17 +1576,13 @@ h6 {
     border: 1px solid var(--clr-separatorD); }
     .exch-dropdown__list svg.exch-dropdown__icon {
       flex: 0 0 32px;
-      flex: 0 0 calc(32px * var(--scale));
       height: 32px;
-      height: calc(32px * var(--scale));
       fill: #808080; }
     .exch-dropdown__list .exch-dropdown__title {
       font-size: 22px;
-      font-size: calc(22px * var(--scale));
       font-weight: 400; }
   .exch-dropdown__item {
     height: 62px;
-    height: calc(62px * var(--scale));
     cursor: pointer; }
     .exch-dropdown__item:hover {
       background: var(--clr-backL); }
@@ -1676,20 +1592,15 @@ h6 {
         font-weight: 600; }
   .exch-dropdown__icon {
     width: 42px;
-    width: calc(42px * var(--scale));
     height: 42px;
-    height: calc(42px * var(--scale));
     margin: 0 14px 0 0;
-    margin: 0 calc(14px * var(--scale)) 0 0;
-    flex: 0 0 46px;
-    flex: 0 0 calc(46px * var(--scale)); }
+    flex: 0 0 46px; }
   .exch-dropdown__title {
     padding: 0px 0 0;
     margin: 0;
     line-height: 1;
     font-weight: 800;
     font-size: 36px;
-    font-size: calc(36px * var(--scale));
     letter-spacing: -0.03em;
     text-transform: uppercase; }
   .exch-dropdown .current .btc,
@@ -1714,24 +1625,17 @@ h6 {
 .exch-head {
   display: flex;
   margin: 0 0 15px;
-  margin: 0 0 calc(15px * var(--scale));
-  flex: 0 0 80px;
-  flex: 0 0 calc(80px * var(--scale)); }
+  flex: 0 0 80px; }
   .exch-head__input {
     font-family: "open_sans", sans-serif;
     font-size: 29px;
-    font-size: calc(29px * var(--scale));
     font-weight: 700;
     padding: 5px 20px;
-    padding: calc(5px * var(--scale)) calc(20px * var(--scale));
     background: var(--clr-block);
     border: 1px solid var(--clr-separatorD);
     width: 162px;
-    width: calc(162px * var(--scale));
     flex: 0 0 162px;
-    flex: 0 0 calc(162px * var(--scale));
-    margin: 0 16px 0 0;
-    margin: 0 calc(16px * var(--scale)) 0 0; }
+    margin: 0 16px 0 0; }
     .exch-head__input:focus {
       border-color: var(--clr-accent); }
   .exch-head__get, .exch-head__send {
@@ -1740,16 +1644,12 @@ h6 {
     display: flex;
     flex: 1 1;
     padding: 0;
-    height: 80px;
-    height: calc(80px * var(--scale)); }
+    height: 80px; }
   .exch-head__switch {
     width: 95px;
-    width: calc(95px * var(--scale));
     height: 80px;
-    height: calc(80px * var(--scale));
     display: flex;
     flex: 0 0 80px;
-    flex: 0 0 calc(80px * var(--scale));
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -1768,22 +1668,17 @@ h6 {
   .exch-head__btn {
     font-family: "open_sans", sans-serif;
     padding: 0 20px 0 28px;
-    padding: 0 calc(20px * var(--scale)) 0 calc(28px * var(--scale));
     height: 80px;
-    height: calc(80px * var(--scale));
     display: flex;
     flex: 0 0 268px;
-    flex: 0 0 calc(268px * var(--scale));
     align-items: center;
     background: var(--clr-accentD);
     /*border-radius: 5px;*/
     color: #fff;
     cursor: pointer;
     margin: 0 0 0 16px;
-    margin: 0 0 0 calc(16px * var(--scale));
     text-decoration: none;
     font-size: 36px;
-    font-size: calc(36px * var(--scale));
     font-weight: 800;
     letter-spacing: -0.03em;
     white-space: nowrap;
@@ -1798,12 +1693,9 @@ h6 {
     top: -1px; }
   .exch-head__arrow-exch {
     width: 42px;
-    width: calc(42px * var(--scale));
     height: 38px;
-    height: calc(38px * var(--scale));
     fill: #fff;
-    margin: 0 0 0 16px;
-    margin: 0 0 0 calc(16px * var(--scale)); }
+    margin: 0 0 0 16px; }
   @media only screen and (max-width: 1920px) {
     .exch-head__btn-text span {
       display: none; } }
@@ -2185,9 +2077,7 @@ Blocks from left bar
   top: 0;
   bottom: 0;
   width: var(--left-bar-width);
-  width: calc(var(--left-bar-width) * var(--scale));
   padding: 5px 0;
-  padding: calc(5px * var(--scale)) 0;
   background: var(--clr-back);
   z-index: 10;
   border-right: 1px solid var(--clr-separator); }
@@ -2208,9 +2098,7 @@ Blocks from left bar
   background: transparent;
   border-radius: 0;
   padding: 20px 10px 20px;
-  padding: calc(20px * var(--scale)) calc(10px * var(--scale)) calc(20px * var(--scale));
   flex: 0 0 90px;
-  flex: 0 0 calc(90px * var(--scale));
   cursor: pointer;
   margin: 0;
   transition: all .1s; }
@@ -2220,9 +2108,7 @@ Blocks from left bar
       border-color: var(--clr-block); }
   .user-btn__pic {
     width: 50px;
-    width: calc(50px * var(--scale));
     height: 50px;
-    height: calc(50px * var(--scale));
     display: block;
     border-radius: 5px;
     border: 2px solid transparent;
@@ -2231,20 +2117,15 @@ Blocks from left bar
     position: absolute;
     right: 0px;
     top: 11px;
-    top: calc(11px * var(--scale));
     border-radius: 50%;
     background: #e05475;
     width: 27px;
-    width: calc(27px * var(--scale));
     height: 27px;
-    height: calc(27px * var(--scale));
     border: 2px solid var(--clr-block);
     color: #fff;
     font-size: 10px;
-    font-size: calc(10px * var(--scale));
     font-weight: 700;
-    line-height: 24px;
-    line-height: calc(24px * var(--scale)); }
+    line-height: 24px; }
 
 .nav-bar {
   width: calc(100% + 1px); }
@@ -2254,9 +2135,7 @@ Blocks from left bar
     align-items: center;
     justify-content: center;
     padding: 7px 5px;
-    padding: calc(7px * var(--scale)) calc(5px * var(--scale));
     height: 73px;
-    height: calc(73px * var(--scale));
     margin: 0;
     width: calc(100% - 1px);
     border: none;
@@ -2270,7 +2149,6 @@ Blocks from left bar
         fill: var(--clr-back); }
   .nav-bar__title {
     font-size: 14px;
-    font-size: calc(14px * var(--scale));
     color: var(--clr-iconD);
     text-align: center;
     margin: 0 auto;
@@ -2278,13 +2156,9 @@ Blocks from left bar
   .nav-bar__icon {
     display: block;
     flex: 1 0 22px;
-    flex: 1 0 calc(22px * var(--scale));
     margin: 5px auto 7px;
-    margin: calc(5px * var(--scale)) auto calc(7px * var(--scale));
     width: 22px;
-    width: calc(22px * var(--scale));
     max-height: 22px;
-    max-height: calc(22px * var(--scale));
     fill: var(--clr-icon);
     transition: all 0.1s; }
     .nav-bar__icon.ico {
@@ -2299,21 +2173,13 @@ Blocks from left bar
       fill: #e63730; }
     .nav-bar__icon.other {
       fill: #9e2021; }
-    .nav-bar__icon.reload {
-      fill: var(--clr-icon);
-      width: 34px;
-      width: calc(34px * var(--scale));
-      max-height: 34px;
-      max-height: calc(34px * var(--scale)); }
 
 .user-bar {
-  margin: auto 0 10px;
-  margin: auto 0 calc(10px * var(--scale)); }
+  margin: auto 0 10px; }
   .user-bar__btn {
     display: block;
     width: 100%;
     height: 46px;
-    height: calc(46px * var(--scale));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2324,16 +2190,12 @@ Blocks from left bar
       fill: var(--clr-textL); }
   .user-bar__separator {
     height: 10px;
-    height: calc(10px * var(--scale));
     width: 100%; }
   .user-bar__icon {
     width: 30px;
-    width: calc(30px * var(--scale));
     height: 30px;
-    height: calc(30px * var(--scale));
     fill: var(--clr-icon);
-    transition: all 0.1s;
-    transform: scale(calc(var(--scale))); }
+    transition: all 0.1s; }
     .user-bar__icon.two-windows {
       width: 33px;
       height: 32px; }
@@ -3564,13 +3426,11 @@ body.menubar-in #user-btn:before {
   .col-left.col-chats {
     width: 25%;
     flex: 0 0 25%;
-    min-width: 460px;
-    min-width: calc(460px * var(--scale)); }
+    min-width: 460px; }
   .col-left.col-tables {
     width: 33%;
     flex: 0 0 33%;
-    min-width: 600px;
-    min-width: calc(600px * var(--scale)); }
+    min-width: 600px; }
 
 .col-right {
   height: 100%;

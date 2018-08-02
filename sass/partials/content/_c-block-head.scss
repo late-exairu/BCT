@@ -6,31 +6,26 @@
 
 .c-block-head{
 	padding: 7px 25px 3px;
-	padding: calc(7px * var(--scale)) calc(25px * var(--scale)) calc(3px * var(--scale));
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid var(--clr-separator);
 	background: var(--clr-back);
 	border-radius: 5px 5px 0 0;
-	border-radius: calc(5px * var(--scale)) calc(5px * var(--scale)) 0 0;
 
 	&__left{
 		position: relative;
 		margin: 0 auto 0 0;
 		padding: 5px 0;
-		padding: calc(5px * var(--scale)) 0;
 		display: flex;
 		align-items: center;
 	}
 
 	&__right{
 		margin: 0 0 0 10px;
-		margin: 0 0 0 calc(10px * var(--scale));
 	}
 
 	&__title{
 		font-size: 30px;
-		font-size: calc(30px * var(--scale));
 		margin: 0;
 		color: var(--clr-textD);
 		font-weight: 700;
@@ -47,19 +42,14 @@
 	&__title-arrow{
 		position: relative;
 		margin: 0 2px 2px 4px;
-		margin: 0 calc(2px * var(--scale)) calc(2px * var(--scale)) calc(4px * var(--scale));
 		width: 15px;
-		width: calc(15px * var(--scale));
 		height: 13px;
-		height: calc(13px * var(--scale));
 		fill: var(--clr-accentD);
 	}
 
 	&__btn{
 		width: 48px;
-		width: calc(48px * var(--scale));
 		height: 48px;
-		height: calc(48px * var(--scale));
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -75,22 +65,17 @@
 
 		.sprite-icon{
 			width: 20px;
-			width: calc(20px * var(--scale));
 			height: 20px;
-			height: calc(20px * var(--scale));
 			fill: var(--clr-text);
 		}
 	}
 
 	&.big{
 		min-height: 79px;
-		min-height: calc(79px * var(--scale));
 		padding: 10px 25px;
-		padding: calc(10px * var(--scale)) calc(25px * var(--scale));
 
 		.c-block-head__title{
 			font-size: 30px;
-			font-size: calc(30px * var(--scale));
 
 			span{
 				font-size: 25px;

@@ -35,7 +35,6 @@ $clr-backA:			#e6f1f8;	/*background color accented*/
 $clr-block:			#ffffff;	/*basic block color basic*/
 
 body{
-	--scale: 			1;
 	
 	--clr-text:			#585b5c; 	/*text color basic*/
 	--clr-textLL:		#c6c8c8; 	/*text color lighter*/
@@ -56,10 +55,6 @@ body{
 	--clr-back:			#f9f9fa;	/*background color basic*/
 	--clr-backA:		#e6f1f8;	/*background color accented*/
 	--clr-block:		#ffffff;	/*basic block color basic*/
-	
-	@media only screen and (max-width : 1920px) {
-		--scale: 		1;
-	}
 	
 	&.dark-theme{
 	

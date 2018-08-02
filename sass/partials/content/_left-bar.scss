@@ -17,9 +17,7 @@ Blocks from left bar
 	top: 0;
 	bottom: 0;
 	width: var(--left-bar-width);
-	width: calc(var(--left-bar-width) * var(--scale));
 	padding: 5px 0;
-	padding: calc(5px * var(--scale)) 0;
 	background: var(--clr-back);
 	z-index: 10;
 	border-right: 1px solid var(--clr-separator);
@@ -43,9 +41,7 @@ Blocks from left bar
 	background: transparent;
 	border-radius: 0;
 	padding: 20px 10px 20px;
-	padding: calc(20px * var(--scale)) calc(10px * var(--scale)) calc(20px * var(--scale));
 	flex: 0 0 90px;
-	flex: 0 0 calc(90px * var(--scale));
 	cursor: pointer;
 	margin: 0;
 	transition: all .1s;
@@ -60,9 +56,7 @@ Blocks from left bar
 
 	&__pic{
 		width: 50px;
-		width: calc(50px * var(--scale));
 		height: 50px;
-		height: calc(50px * var(--scale));
 		display: block;
 		border-radius: 5px;
 		border: 2px solid transparent;
@@ -73,20 +67,15 @@ Blocks from left bar
 		position: absolute;
 		right: 0px;
 		top: 11px;
-		top: calc(11px * var(--scale));
 		border-radius: 50%;
 		background: #e05475;
 		width: 27px;
-		width: calc(27px * var(--scale));
 		height: 27px;
-		height: calc(27px * var(--scale));
 		border: 2px solid var(--clr-block);
 		color: #fff;
 		font-size: 10px;
-		font-size: calc(10px * var(--scale));
 		font-weight: 700;
 		line-height: 24px;
-		line-height: calc(24px * var(--scale));
 	}
 }
 
@@ -99,9 +88,7 @@ Blocks from left bar
 		align-items: center;
 		justify-content: center;
 		padding: 7px 5px;
-		padding: calc(7px * var(--scale)) calc(5px * var(--scale));
 		height: 73px;
-		height: calc(73px * var(--scale));
 		margin: 0;
 		width: calc(100% - 1px);
 		border: none;
@@ -123,7 +110,6 @@ Blocks from left bar
 
 	&__title{
 		font-size: 14px;
-		font-size: calc(14px * var(--scale));
 		color: var(--clr-iconD);
 		text-align: center;
 		margin: 0 auto;
@@ -133,13 +119,9 @@ Blocks from left bar
 	&__icon{
 		display: block;
 		flex: 1 0 22px;
-		flex: 1 0 calc(22px * var(--scale));
 		margin: 5px auto 7px;
-		margin: calc(5px * var(--scale)) auto calc(7px * var(--scale));
 		width: 22px;
-		width: calc(22px * var(--scale));
 		max-height: 22px;
-		max-height: calc(22px * var(--scale));
 		fill: var(--clr-icon);
 		transition: all 0.1s;
 
@@ -149,19 +131,16 @@ Blocks from left bar
 		&.trading	{ fill: #83529a; }
 		&.news		{ fill: #e63730; }
 		&.other		{ fill: #9e2021; }
-		&.reload	{ fill: var(--clr-icon); width: 34px; width: calc(34px * var(--scale)); max-height: 34px; max-height: calc(34px * var(--scale)); }
 	}
 }
 
 .user-bar{
 	margin: auto 0 10px;
-	margin: auto 0 calc(10px * var(--scale));
 
 	&__btn{
 		display: block;
 		width: 100%;
 		height: 46px;
-		height: calc(46px * var(--scale));
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -179,18 +158,14 @@ Blocks from left bar
 
 	&__separator{
 		height: 10px;
-		height: calc(10px * var(--scale));
 		width: 100%;
 	}
 
 	&__icon{
 		width: 30px;
-		width: calc(30px * var(--scale));
 		height: 30px;
-		height: calc(30px * var(--scale));
 		fill: var(--clr-icon);
 		transition: all 0.1s;
-		transform: scale(calc(var(--scale)));
 
 		&.two-windows	{ width: 33px; height: 32px; }
 		&.add-screen	{ width: 29px; height: 29px; }
