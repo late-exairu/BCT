@@ -3720,7 +3720,7 @@ body.menubar-in #user-btn:before {
   .select-dropdown__item {
     color: var(--clr-textD);
     padding: 0 16px;
-    height: 37px;
+    height: 44px;
     display: flex;
     align-items: center;
     border: 1px solid transparent;
