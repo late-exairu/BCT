@@ -163,6 +163,14 @@
 		&:hover{
 			.theme-switch__icon{
 				fill: var(--clr-textL);
+
+				&.sun{
+					fill: #fdf500;
+				}
+
+				&.moon{
+					fill: #2658d1;
+				}
 			}
 		}
 	}

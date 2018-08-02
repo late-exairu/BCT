@@ -980,6 +980,10 @@ h6 {
     overflow: hidden; }
     .theme-switch__label:hover .theme-switch__icon {
       fill: var(--clr-textL); }
+      .theme-switch__label:hover .theme-switch__icon.sun {
+        fill: #fdf500; }
+      .theme-switch__label:hover .theme-switch__icon.moon {
+        fill: #2658d1; }
   .theme-switch__switch {
     position: absolute;
     left: 0;
