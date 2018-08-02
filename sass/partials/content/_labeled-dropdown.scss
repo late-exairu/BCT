@@ -1,0 +1,124 @@
+
+/* =================================================================== */
+/* labeled-dropdown
+/* =================================================================== */
+
+
+.labeled-dropdown{
+	font-family: $osans;
+	position: relative;
+	border: 1px solid var(--clr-separatorD);
+	border-radius: 5px;
+	height: 61px;
+	width: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	flex: 0 0 auto;
+	background: var(--clr-block);
+	padding: 0;
+	cursor: pointer;
+	transition: all 0.1s;
+
+	&:hover{
+		box-shadow: 0 1px 5px rgba(0,0,0,.35);
+
+		.labeled-dropdown__arrow,
+		.labeled-dropdown__icon{
+			fill: var(--clr-textL);
+		}
+	}
+
+	&.open{
+		border-radius: 5px 5px 0 0;
+
+		.labeled-dropdown__list{
+			visibility: visible;
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	&__current{
+		width: 100%;
+		position: relative;
+		padding: 0 30px 0 48px;
+		margin: auto 0;
+	}
+
+	&__icon{
+		position: absolute;
+		left: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 16px;
+		height: 16px;
+		fill: var(--clr-iconD);
+	}
+
+	&__arrow{
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 10px;
+		height: 6px;
+		fill: var(--clr-iconD);
+	}
+
+	&__label{
+		display: flex;
+		font-size: 13px;
+		padding: 0;
+		color: var(--clr-text);
+		line-height: 16px;
+	}
+
+	&__selected{
+		font-size: 15px;
+		font-weight: 700;
+		color: var(--clr-textD);
+		margin: 0 0 0 5px;
+		/*text-overflow: ellipsis;
+		overflow-x: hidden;
+		white-space: nowrap;*/
+	}
+
+	&__list{
+		font-size: 16px;
+		position: absolute;
+		left: -1px;
+		right: -1px;
+		padding: 0;
+		margin: 0;
+		top: 100%;
+    	background-color: var(--clr-block);
+		border: 1px solid var(--clr-separatorD);
+		z-index: 10;
+		visibility: hidden;
+		opacity: 0;
+		transform: translateY(30px);
+		transition: all 0.2s;
+	}
+
+	&__item{
+		color: var(--clr-textD);
+		padding: 0 16px;
+		height: 44px;
+		display: flex;
+		align-items: center;
+		border: 1px solid transparent;
+		border-color: transparent transparent var(--clr-separator);
+		cursor: pointer;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+		&:hover{
+			background: var(--clr-backL);
+		}
+	}
+	&__item.active{
+		background: var(--clr-backL);
+	}
+}
