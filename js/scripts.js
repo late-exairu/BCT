@@ -101,16 +101,16 @@ $(function () {
 	/* account-js-menu */
 	/*---------------------------------------------------*/
 
-	$('.account-stats .menu-dropdown__item').on('click', function () {
+	$('.js-account-stats .menu-dropdown__item').on('click', function () {
 		if ($(this).attr('id')) {
 			var panelId = '#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel');
 			if ($(panelId).length != 0) {
 				var btnText = $(this).find('button').text();
-				var accountStatsHeader = $('.account-stats .c-block-head h2.c-block-head__title');
+				var accountStatsHeader = $('.js-account-stats .c-block-head h2.c-block-head__title');
 				var svgFromHeader = $(accountStatsHeader).find('svg').clone();
 				accountStatsHeader.text(btnText + ' ').append(svgFromHeader);
 
-				$('.account-stats .js-tabs__tab, .account-stats .js-tabs__panel').removeClass('active');
+				$('.js-account-stats .js-tabs-tab, .js-account-stats .js-tabs-panel').removeClass('active');
 				$(this).add('#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel')).addClass('active');
 				$(this).focus();
 
@@ -138,7 +138,7 @@ $(function () {
 	/* account-js-checkbox-switchers */
 	/*---------------------------------------------------*/
 
-	$('.account-stats input[type=checkbox]').on('click', function () {
+	$('.js-account-stats input[type=checkbox]').on('click', function () {
 		// for future Real trading option
 	});
 
@@ -375,10 +375,10 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* Graph prices select */
 	/*---------------------------------------------------*/
-	$('.graph-prices .select-dropdown__list .select-dropdown__item').click(function () {
-		$('.graph-prices .select-dropdown__list .select-dropdown__item').removeClass('active');
+	$('.graph-prices .labeled-dropdown__list .labeled-dropdown__item').click(function () {
+		$('.graph-prices .labeled-dropdown__list .labeled-dropdown__item').removeClass('active');
 		$(this).addClass('active');
-		$('.graph-prices .select-dropdown__selected').text($(this).text());
+		$('.graph-prices .labeled-dropdown__selected').text($(this).text());
 	});
 
 });
