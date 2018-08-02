@@ -10,13 +10,11 @@ Blocks from left bar
  */
 
 .left-bar{
-	--left-bar-width: 70px;
-
 	position: fixed;
 	left: 0;
 	top: 0;
 	bottom: 0;
-	width: var(--left-bar-width);
+	width: 70px;
 	padding: 5px 0;
 	background: var(--clr-back);
 	z-index: 10;
@@ -25,7 +23,7 @@ Blocks from left bar
 	&__scroll{
 		position: absolute;
 		overflow-y: auto;
-		width: var(--left-bar-width);
+		width: 70px;
 		left: 0;
 		top: 0;
 		bottom: 0;
