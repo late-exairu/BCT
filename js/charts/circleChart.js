@@ -71,9 +71,9 @@ function addCircleChartText(chart) {
     var textY = chart.plotTop + (chart.plotHeight * 0.5);
 
     var span = '<p id="pieChartInfoText" style="position:absolute; text-align:center;">';
-    span += '<span style="font-size: 16px;color:black;">Total balance</span><br>';
+    span += '<span style="font-size: 20px;color:black;">Total balance</span><br>';
     span += '<span style="font-size: 48px;color:black;"><span>$</span>6,359 <span>.50</span></span><br>';
-    span += '<span style="font-size: 16px">(+4%) over the last 30 days</span>';
+    span += '<span style="font-size: 18px">(+4%) over the last 30 days</span>';
     span += '</p>';
 
     $("#circleChartText").append(span);
@@ -85,7 +85,7 @@ function addCircleChartText(chart) {
         'vertical-align': 'top',
     });
     span.css('left', textX + (span.width() * -0.5));
-    span.css('top', textY + (span.height() * -0.65));
+    span.css('top', textY + (span.height() * -0.7));
 };
 
 circleChartObj = Highcharts.chart('circleChart', circleChartOptions);

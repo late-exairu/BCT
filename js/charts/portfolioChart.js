@@ -123,10 +123,14 @@ var portfolioChartOptions = {
          positioner: function (labelWidth, labelHeight, point, ) {
             var graphWidth = $(portfolioChartObj.container).width();
             var xPos = point.plotX - (labelWidth / 2);
+            // right side fix
             if((point.plotX + labelWidth/2) > graphWidth){
-                xPos = point.plotX - labelWidth;
+                xPos = graphWidth - labelWidth - 10;
             }
-
+            // left side fix
+            else if (point.plotX < 100){
+                xPos = 10;               
+            }
             return {
                 x: xPos,
                 y: point.plotY + 40
