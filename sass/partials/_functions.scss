@@ -3,21 +3,7 @@
 /* Functions
 /* =================================================================== */
 
-@mixin placeholder {
-	::-webkit-input-placeholder	{@content}
-	:-moz-placeholder					{@content}
-	::-moz-placeholder				{@content}
-	:-ms-input-placeholder			{@content}  
-}
-
-@mixin selection {
-	::-moz-selection { @content; }
-	::selection { @content; }
-}
-
-@mixin clip-path($clip) {
-	-webkit-clip-path: $clip;
-	-moz-clip-path: $clip;
-	-ms-clip-path: $clip;
-	clip-path: $clip;
+@function get-vw($target) {
+	$vw-context: (2560 * 0.01) * 1px;  
+	@return ($target / $vw-context) * 1vw;
 }
