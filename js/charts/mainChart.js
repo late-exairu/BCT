@@ -56,11 +56,6 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				linearGradient: [0, 0, 0, 1],
 				stops: gradientColor
 			},
-			states: {
-				hover: {
-					lineWidth: 3,
-				}
-			},
 			events: {
 				mouseOver: function (event) {
 					if (this.type == 'areaspline') {
@@ -82,7 +77,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 							fillColor: {
 								linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
 							},
-							color: '#0576B9'
+							color: '#0576B9',
+							lineWidth: this.options.lineWidth,
 						}, );
 						// set id of current graph ( for change theme)
 						mainGraphHover = this.options.id;
@@ -104,12 +100,12 @@ var mainChartObj = Highcharts.chart('mainChart', {
 										color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
 									});
 								}
- 								if (graph.options.id == mainGraphHighlighted) {
+								if (graph.options.id == mainGraphHighlighted) {
 									graph.update({
 										fillColor: {
 											linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
 										},
-										color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
+										color: '#0576B9'
 									});
 								}
 							}
@@ -173,6 +169,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				77, 80, 90, 87, 84,
 			],
 			name: "Series 1",
+			lineWidth: 3,
 			id: 1
 		},
 		{
@@ -185,6 +182,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				87, 84, 85, 86, 84,
 			],
 			name: "Series 2",
+			lineWidth: 4,
+			color: '#0576B9',
 			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
 				stops: [
@@ -204,6 +203,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				79, 78, 70, 78, 77,
 			],
 			name: "Series 3",
+			lineWidth: 2,
 			id: 3
 		},
 		{
@@ -216,6 +216,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				117, 119, 111, 116, 118,
 			],
 			name: "Series 4",
+			lineWidth: 1,
 			id: 4
 		},
 		{

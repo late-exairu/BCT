@@ -1,24 +1,6 @@
 $(function () {
 
-	/*---------------------------------------------------*/
-	/* Range Slider */
-	/*---------------------------------------------------*/
-
-	var $exchangeSlider = $(".js-exchange-slider");
-
-	$exchangeSlider.ionRangeSlider({
-		type: "single",
-		hide_min_max: true,
-		grid: false
-	});
-
-	$exchangeSlider.on("change", function () {
-		var $this = $(this),
-			value = $this.prop("value").split(";");
-		console.log(value[0] + " - " + value[1]);
-	});
-
-	/* - - - */
+	/* Cubic slider for Orders */
 
 	var $cubicSlider = $(".js-cubic-slider");
 
@@ -229,14 +211,14 @@ $(function () {
 			xAxis: [{
 				gridLineColor: gridColor,
 				lineColor: gridColor,
-/* 				crosshair: {
- 					label: {
-						backgroundColor: backColor,
-						style: {
-							color: fontColor
-						}
-					} 
-				}, */
+				/* 				crosshair: {
+				 					label: {
+										backgroundColor: backColor,
+										style: {
+											color: fontColor
+										}
+									} 
+								}, */
 				labels: {
 					style: {
 						color: labelColor
@@ -262,14 +244,14 @@ $(function () {
 			xAxis: {
 				gridLineColor: gridColor,
 				lineColor: gridColor,
-/* 				crosshair: {
-					label: {
-						backgroundColor: backColor,
-						style: {
-							color: fontColor
-						}
-					}
-				}, */
+				/* 				crosshair: {
+									label: {
+										backgroundColor: backColor,
+										style: {
+											color: fontColor
+										}
+									}
+								}, */
 				labels: {
 					style: {
 						color: labelColor
@@ -338,6 +320,7 @@ $(function () {
 				if (item.type == 'areaspline') {
 					item.setOptions({
 						color: lineColor,
+						lineWidth: item.options.lineWidth,
 						id: item.options.id
 					});
 					// add fill color on theme change 
@@ -347,7 +330,9 @@ $(function () {
 								linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
 								stops: gradientColor
 							},
-							id: item.options.id
+							id: item.options.id,
+							lineWidth: item.options.lineWidth,
+							color: item.options.color
 						});
 					}
 				}
