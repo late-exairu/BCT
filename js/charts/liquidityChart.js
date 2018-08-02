@@ -95,16 +95,6 @@ var liquidityChartOptions = {
             color: '#ffffff',
             fontSize: 16
         },
-        /*
-        headerFormat: '<table class="portfolio">',
-        pointFormat: "<tr><td>${point.y}.00</td></tr>",
-        footerFormat: '</table>',
-         positioner: function (labelWidth, labelHeight, point, ) {
-            return {
-                x: point.plotX,
-                y: point.plotY - 50
-            };
-        } */
         formatter: function () {
             var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
             var date = new Date(this.x);
@@ -112,9 +102,9 @@ var liquidityChartOptions = {
             var dayName = date.toString().split(' ')[0];
             // edit value to ~8k
             var TooltipValue = (this.y).toFixed(2);
-            return '<table class="portfolio">' +
-                "<tr><td><span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() + "</td></tr>" +
-                '</table>';
+            return '<div class="tooltip">' +
+                "<span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() +
+                '</div>';
         },
         positioner: function (labelWidth, labelHeight, point, ) {
             return {

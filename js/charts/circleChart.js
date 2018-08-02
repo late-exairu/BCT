@@ -42,11 +42,11 @@ var circleChartOptions = {
             $('#panel-funds-account .basic-table__row').each(function () {
                 if ($(this).find('.w-27').text().indexOf(currency) != -1) {
                     resultString = $(this).find('.w-27').html();
-                    resultString += $(this).find('.w-20').eq(0).text().replace('000', '');
+                    //resultString += $(this).find('.w-20').eq(0).text().replace('000', '');
                     return false;
                 }
             });
-            return '<div class="circle">' + resultString + '</div>';
+            return '<div class="tooltip">' + resultString + '</div>';
         }
     },
     series: [{

@@ -116,9 +116,9 @@ var portfolioChartOptions = {
             // edit value to ~8k
             var TooltipValue = (this.y * 45).toFixed(2);
             TooltipValue = TooltipValue.slice(0,1) + ',' + TooltipValue.slice(1);
-            return '<table class="portfolio">' +
-                "<tr><td><span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() + "</td></tr>" +
-                '</table>';
+            return '<div class="tooltip">' +
+                "<span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() +
+                '</div>';
         },
          positioner: function (labelWidth, labelHeight, point, ) {
             var graphWidth = $(portfolioChartObj.container).width();

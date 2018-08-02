@@ -3777,29 +3777,17 @@ body.menubar-in #user-btn:before {
 .highcharts-tooltip {
   z-index: 9998 !important; }
 
-.highcharts-tooltip div.circle,
-.highcharts-tooltip table.portfolio {
+.highcharts-tooltip div.tooltip {
   opacity: 1;
-  padding: 2px 10px;
+  padding: 4px 12px;
   z-index: 9999 !important;
   font-size: 16px;
-  border-radius: 3px;
-  line-height: 38px; }
-
-.highcharts-tooltip div.circle {
-  background-color: white;
-  border: 1px solid #797979; }
-
-.highcharts-tooltip div.dark {
-  background-color: #18202d;
-  border: 1px solid #24425b;
-  color: #9BA6B2; }
-
-.highcharts-tooltip table.portfolio {
+  border-radius: 4px;
+  line-height: 38px;
   background-color: var(--clr-block);
   color: var(--clr-textL);
   box-shadow: 0px 2px 7px 0px rgba(120, 120, 120, 0.7); }
-  .highcharts-tooltip table.portfolio span {
+  .highcharts-tooltip div.tooltip span {
     color: var(--clr-textD); }
 
 .highcharts-tooltip span svg {

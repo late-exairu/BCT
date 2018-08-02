@@ -212,22 +212,6 @@ $(function () {
 		var stylesForCircleChart = {
 			chart: {
 				backgroundColor: backColor,
-			},
-			tooltip: {
-				formatter: function () {
-					var currency = this.key;
-					var resultString = '';
-					$('#panel-funds-account .basic-table__row').each(function () {
-						if ($(this).find('.w-27').text().indexOf(currency) != -1) {
-							resultString = $(this).find('.w-27').html();
-							resultString += $(this).find('.w-20').eq(0).text().replace('000', '');
-							return false;
-						}
-					});
-					var lightResult = '<div class="circle">' + resultString + '</div>';
-					var darkResult = '<div class="circle dark">' + resultString + '</div>';
-					return $('.dark-theme').length ? darkResult : lightResult;
-				}
 			}
 		};
 
