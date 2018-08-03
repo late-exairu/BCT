@@ -14,19 +14,19 @@ Blocks from left bar
 	left: 0;
 	top: 0;
 	bottom: 0;
-	width: 70px;
-	padding: 5px 0;
+	width: var(--left-bar-width);
+	padding: 2px 0;
 	background: var(--clr-back);
 	z-index: 10;
-	border-right: 1px solid var(--clr-separator);
+	border: 1px solid var(--clr-separator);
 	
 	&__scroll{
 		position: absolute;
 		overflow-y: auto;
-		width: 70px;
-		left: 0;
-		top: 0;
-		bottom: 0;
+		width: var(--left-bar-width);
+		left: -1px;
+		top: -1px;
+		bottom: -1px;
 		padding: 0;
 		display: flex;
 		flex-direction: column;
@@ -85,13 +85,17 @@ Blocks from left bar
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 7px 5px;
-		height: 73px;
+		padding: 4px 2px;
+		height: 48px;
 		margin: 0;
-		width: calc(100% - 1px);
+		width: 100%;
 		border: none;
 		background: transparent;
 		cursor: pointer;
+
+		&.btn{
+			height: 62px;
+		}
 
 		&:hover{
 			background: var(--clr-accent);
@@ -106,20 +110,11 @@ Blocks from left bar
 		}
 	}
 
-	&__title{
-		font-size: 14px;
-		color: var(--clr-iconD);
-		text-align: center;
-		margin: 0 auto;
-		transition: all .1s;
-	}
-
 	&__icon{
 		display: block;
-		flex: 1 0 22px;
-		margin: 5px auto 7px;
-		width: 22px;
-		max-height: 22px;
+		flex: 0 0 15px;
+		margin: 3px auto 4px;
+		width: 15px;
 		fill: var(--clr-icon);
 		transition: all 0.1s;
 
@@ -129,6 +124,15 @@ Blocks from left bar
 		&.trading	{ fill: #83529a; }
 		&.news		{ fill: #e63730; }
 		&.other		{ fill: #9e2021; }
+		&.reload	{ fill: var(--clr-icon); width: 23px; height: 23px; flex: 0 0 23px;}
+	}
+
+	&__title{
+		font-size: 10px;
+		color: var(--clr-iconD);
+		text-align: center;
+		margin: 0 auto;
+		transition: all .1s;
 	}
 }
 
@@ -138,7 +142,7 @@ Blocks from left bar
 	&__btn{
 		display: block;
 		width: 100%;
-		height: 46px;
+		height: 34px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -160,17 +164,106 @@ Blocks from left bar
 	}
 
 	&__icon{
-		width: 30px;
-		height: 30px;
+		width: 20px;
+		height: 20px;
 		fill: var(--clr-icon);
 		transition: all 0.1s;
 
-		&.two-windows	{ width: 33px; height: 32px; }
-		&.add-screen	{ width: 29px; height: 29px; }
-		&.bell			{ width: 26px; height: 29px; }
-		&.sound			{ width: 25px; height: 22px; }
-		&.ex			{ width: 29px; height: 16px; }
-		&.user			{ width: 25px; height: 25px; }
-		&.gear			{ width: 25px; height: 25px; }
+		&.two-windows	{ width: 20px; height: 20px; }
+		&.add-screen	{ width: 18px; height: 18px; }
+		&.bell			{ width: 16px; height: 18px; }
+		&.sound			{ width: 16px; height: 12px; }
+		&.ex			{ width: 18px; height: 10px; }
+		&.user			{ width: 16px; height: 16px; }
+		&.gear			{ width: 16px; height: 16px; }
+	}
+}
+
+.theme-switch {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 36px;
+
+	&__checkbox {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		display: none;
+
+		&:checked{
+
+			&~.theme-switch__label{
+				.theme-switch__switch{
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+
+	&__label {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		cursor: pointer;
+		overflow: hidden;
+
+		&:hover{
+			.theme-switch__icon{
+				fill: var(--clr-textL);
+
+				&.sun{
+					fill: #fdf500;
+				}
+
+				&.moon{
+					fill: #2658d1;
+				}
+			}
+		}
+	}
+
+	&__switch{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: var(--left-bar-width);
+		height: calc(100% * 2);
+		transition: all 0.5s;
+		transform: rotate(0);
+	}
+
+	&__day{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: var(--left-bar-width);
+		height: calc(100% / 2);
+	}
+
+	&__night{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: var(--left-bar-width);
+		height: calc(100% / 2);
+	}
+
+	&__icon{
+		fill: var(--clr-icon);
+		transition: all 0.1s;
+
+		&.sun{
+			width: 22px;
+			height: 22px;
+		}
+
+		&.moon{
+			width: 20px;
+			height: 20px;
+		}
 	}
 }

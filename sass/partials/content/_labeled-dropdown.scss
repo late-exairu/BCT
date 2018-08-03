@@ -8,8 +8,8 @@
 	font-family: $osans;
 	position: relative;
 	border: 1px solid var(--clr-separatorD);
-	border-radius: 5px;
-	height: 61px;
+	border-radius: var(--border-radius);
+	height: 46px;
 	width: 100%;
 	margin: 0;
 	display: flex;
@@ -42,17 +42,17 @@
 	&__current{
 		width: 100%;
 		position: relative;
-		padding: 0 30px 0 48px;
+		padding: 0 20px 0 30px;
 		margin: auto 0;
 	}
 
 	&__icon{
 		position: absolute;
-		left: 20px;
+		left: 12px;
 		top: 50%;
 		transform: translateY(-50%);
-		width: 16px;
-		height: 16px;
+		width: 12px;
+		height: 12px;
 		fill: var(--clr-iconD);
 	}
 
@@ -61,21 +61,22 @@
 		right: 10px;
 		top: 50%;
 		transform: translateY(-50%);
-		width: 10px;
-		height: 6px;
+		width: 8px;
+		height: 7px;
 		fill: var(--clr-iconD);
 	}
 
 	&__label{
 		display: flex;
-		font-size: 13px;
+		font-size: 11px;
 		padding: 0;
 		color: var(--clr-text);
 		line-height: 16px;
+		align-items: center;
 	}
 
 	&__selected{
-		font-size: 15px;
+		font-size: 12px;
 		font-weight: 700;
 		color: var(--clr-textD);
 		margin: 0 0 0 5px;
@@ -85,7 +86,7 @@
 	}
 
 	&__list{
-		font-size: 16px;
+		font-size: 13px;
 		position: absolute;
 		left: -1px;
 		right: -1px;
@@ -103,8 +104,8 @@
 
 	&__item{
 		color: var(--clr-textD);
-		padding: 0 16px;
-		height: 44px;
+		padding: 0 10px;
+		height: 36px;
 		display: flex;
 		align-items: center;
 		border: 1px solid transparent;

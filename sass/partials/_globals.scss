@@ -23,21 +23,23 @@
 .clr-litecoin		{ fill: #b1b0b0; }
 .clr-ripple			{ fill: #438bca; }
 
-.d-flex		{ display: flex; }
-.d-flex-col	{ display: flex; flex-direction: column; }
-.flex-1-1	{ flex: 1 1; }
-.flex-h-fix	{ min-height: 0; }
-.flex-w-fix	{ min-width: 0; }
+.d-flex			{ display: flex; }
+.d-flex-col		{ display: flex; flex-direction: column; }
+.flex-1-1		{ flex: 1 1; }
+.flex-h-fix		{ min-height: 0; }
+.flex-w-fix		{ min-width: 0; }
 
-.m-left		{ margin-left:	20px; }
-.m-top		{ margin-top:	20px; }
-.m-bottom	{ margin-bottom:20px; }
-.m-right	{ margin-right: 20px; }
+.align-f-end	{ align-items: flex-end; }
 
-.scroll-y	{ height: 100%; overflow-y: auto; }
+.m-left			{ margin-left:	var(--gap-size); }
+.m-top			{ margin-top:	var(--gap-size); }
+.m-bottom		{ margin-bottom:var(--gap-size); }
+.m-right		{ margin-right: var(--gap-size); }
 
-.w-100		{ width: 100%; }
-.h-100		{ height: 100%; }
+.scroll-y		{ height: 100%; overflow-y: auto; }
+
+.w-100			{ width: 100%; }
+.h-100			{ height: 100%; }
 
 .hidden { display: none; }
 

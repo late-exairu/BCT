@@ -79,15 +79,15 @@
 
 		&.scroll-x {
 			bottom: 0;
-			height: 14px;
+			height: 8px;
 			left: 0;
 			right: 0;
 			cursor: pointer;
 
 			.scroll-bar {
-				height: 8px;
+				height: 4px;
 				min-width: 10px;
-				top: 2px;
+				top: 1px;
 			}
 
 			&.scroll-scrolly_visible {
@@ -100,13 +100,13 @@
 			bottom: 0;
 			right: -1px;
 			top: 0;
-			width: 14px;
+			width: 8px;
 			cursor: pointer;
 
 			.scroll-bar {
-				left: 2px;
+				left: 1px;
 				min-height: 10px;
-				width: 8px;
+				width: 4px;
 			}
 
 			&.scroll-scrollx_visible {
@@ -118,10 +118,10 @@
 		.scroll-bar {
 			transition: background 0.1s;
 			background-color: var(--clr-separatorD);
-			border-radius: 10px;
+			border-radius: 4px;
 
 			&:hover {
-				background-color: var(--clr-icon);
+				background-color: var(--clr-iconD);
 			}
 		}
 
@@ -141,12 +141,12 @@
 	}
 	.scroll-content {
 		&.scroll-scrolly_visible {
-			left: -14px;
-			margin-left: 14px;
+			left: -7px;
+			margin-left: 7px;
 		}
 		&.scroll-scrollx_visible {
-			top: -14px;
-			margin-top: 14px;
+			top: -7px;
+			margin-top: 7px;
 		}
 	}
 }

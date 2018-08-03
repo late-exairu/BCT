@@ -7,9 +7,9 @@
 .c-head-menu{
 	font-family: $osans;
 	padding: 0;
-	margin: -16px 10px -3px 5px;
+	margin: -4px 0px -3px 6px;
 	list-style: none;
-	font-size: 13px;
+	font-size: 11px;
 	display: flex;
 
 	&__item{
@@ -21,8 +21,8 @@
 			position: absolute;
 			left: 0;
 			right: 0;
-			bottom: 0px;
-			height: 4px;
+			bottom: -1px;
+			height: 3px;
 			background: var(--clr-accent);
 			display: none;
 		}
@@ -50,7 +50,7 @@
 		align-items: flex-end;
 		text-decoration: none;
 		height: 100%;
-		padding: 26px 22px 4px;
+		padding: 6px 8px 4px;
 		color: var(--clr-textL);
 		background: transparent;
 		border: none;

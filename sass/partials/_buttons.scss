@@ -7,12 +7,12 @@
 .basic-btn{
 	display: flex;
 	font-family: $osans;
-	height: 40px;
+	height: 18px;
 	border: none;
-	border-radius: 5px;
+	border-radius: var(--border-radius);
 	outline: none;
-	font-weight: 900;
-	font-size: 23px;
+	font-weight: 700;
+	font-size: 11px;
 	justify-content: center;
 	align-items: center;
 	color: #fff;

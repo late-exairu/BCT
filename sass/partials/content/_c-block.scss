@@ -7,7 +7,7 @@
 .c-block{
 	background: var(--clr-block);
 	border: 1px solid var(--clr-separator);
-	border-radius: 5px;
+	border-radius: var(--border-radius);
 
 	&__section{
 		border-bottom: 1px solid var(--clr-separator);
@@ -22,13 +22,8 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-		min-width: 260px;
-
+		min-width: 170px;
 		border-left: 1px solid var(--clr-separator);
-
-		&.w-50{
-			width: 50%;
-		}
 
 		&:first-child{
 			border-left: none;
@@ -37,11 +32,11 @@
 
 	&__text-sep{
 		font-family: $osans;
-		font-size: 22px;
+		font-size: 11px;
 		font-weight: 700;
 		color: var(--clr-textD);
 		text-align: center;
-		padding: 20px 0;
+		padding: 2px 5px;
 		margin: 0;
 		border-top: 1px solid var(--clr-separator);
 		border-bottom: 1px solid var(--clr-separator);

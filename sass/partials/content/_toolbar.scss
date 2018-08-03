@@ -13,22 +13,22 @@
 	padding: 0;
 	max-width: 100%;
 	max-height: 100%;
-	width: 56px;
+	width: 34px;
 	border-right: 1px solid var(--clr-separator);
 	border-left: 1px solid var(--clr-separator);
 	background: var(--clr-block);
 	z-index: 1;
 
 	&__btn{
-		height: 53px;
-		width: 56px;
+		height: 34px;
+		width: 34px;
 		margin: 0 -1px 0 -1px;
 		display: flex;
 		align-items: center;
 		flex: 0 auto;
 		background: transparent;
 		justify-content: center;
-		padding: 0 5px;
+		padding: 0;
 		border: 1px solid transparent;
 		cursor: pointer;
 		transition: all .1s;
@@ -48,6 +48,7 @@
 		width: 24px;
 		fill: var(--clr-iconD);
 		transition: all 0.1s;
+		transform: scale(0.75);
 
 		&.tool-cross		{ width: 24px; height: 24px; }
 		&.tool-trend		{ width: 22px; height: 20px; }

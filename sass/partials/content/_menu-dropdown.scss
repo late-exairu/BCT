@@ -6,7 +6,7 @@
 
 .menu-dropdown{
 	font-family: $osans;
-	font-size: 16px;
+	font-size: 12px;
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -20,7 +20,7 @@
 	visibility: hidden;
 	border: 1px solid var(--clr-separatorD);
 	border-radius: 5px;
-	min-width: 180px;
+	min-width: 120px;
 	z-index: 1;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
 
@@ -58,6 +58,10 @@
 		&.to-right{
 			transform: translate(0, 0);
 		}
+
+		&.to-top{
+			transform: translate(-50%, 0);
+		}
 	}
 
 	&.to-right{
@@ -78,11 +82,31 @@
 		}
 	}
 
+	&.to-top{
+		top: auto;
+		bottom: calc(100% + 10px);
+		transform: translate(-50%, -30px);
+
+		&:before{
+			top: auto;
+			bottom: -11px;
+			border-width: 11px 8px 0 8px;
+			border-color: var(--clr-separatorD) transparent transparent transparent;
+		}
+
+		&:after{
+			top: auto;
+			bottom: -10px;
+			border-width: 11px 7px 0 7px;
+			border-color: var(--clr-block) transparent transparent transparent;
+		}
+	}
+
 	&__item{
 		position: relative;
 		display: block;
 		width: 100%;
-		height: 44px;
+		height: 35px;
 		border-top: 1px solid var(--clr-separatorD);
 		background: var(--clr-block);
 		overflow: hidden;
@@ -128,12 +152,12 @@
 		background: transparent;
 		cursor: pointer;
 		color: var(--clr-textL);
-		font-size: 16px;
+		font-size: 12px;
 		width: 100%;
 		line-height: 1.18;
 		cursor: pointer;
 		transition: all .1s ;
-		padding: 5px 20px 5px 20px;
+		padding: 5px 10px 5px 10px;
 		align-items: center;
 		white-space: nowrap;
 

@@ -87,24 +87,26 @@
 .cubic-slider{
 	position: relative;
 	width: 100%;
-	margin: 10px 0;
+	margin: 7px 0;
+
+	.irs{
+		height: 16px;
+	}
 
 	.irs-with-grid{
-		height: 40px;
+		height: 16px;
 	}
 
 	.irs-line{
-		top: 50%;
-		transform: translateY(-50%);
-		height: 2px;
+		top: 8px;
+		height: 1px;
 		background: var(--clr-textL);
 	}
 
 	.irs-bar,
 	.irs-bar-edge{
-		top: 50%;
-		transform: translateY(-50%);
-		height: 2px;
+		top: 8px;
+		height: 1px;
 		width: 10px;
 		background: var(--clr-textL);
 	}
@@ -115,16 +117,17 @@
 
 	.irs-grid{
 		bottom: auto;
-		top: 14px;
+		top: 6px;
+		height: 5px;
 		left: 0 !important;
-		width: calc(100% - 2px) !important;
+		width: calc(100% - 1px) !important;
 		right: 0;
 
 	}
 
 	.irs-grid-pol {
-		width: 2px;
-		height: 12px;
+		width: 1px;
+		height: 5px;
 
 		&.small{
 			display: none;
@@ -136,15 +139,15 @@
 	}
 
 	.single{
-		width: 42px;
-		height: 36px;
-		border-radius: 5px;
+		width: 20px;
+		height: 16px;
+		border-radius: 3px;
 		background: var(--clr-block);
-		border: 2px solid var(--clr-textL);
+		border: 1px solid var(--clr-textL);
 		padding: 0;
 		color: #fff;
 		text-align: center;
-		line-height: 18px;
+		line-height: 17px;
 		top: 50%;
 		transform: translateY(-50%);
 		z-index: 1;
@@ -153,11 +156,11 @@
 		&:after{
 			content: '';
 			position: absolute;
-			width: 8px;
-			height: 8px;
-			border: 2px solid var(--clr-textL);
+			width: 2px;
+			height: 2px;
+			border: 1px solid var(--clr-textL);
 			border-radius: 50%;
-			right: 4px;
+			right: 2px;
 			top: 50%;
 			transform: translateY(-50%)
 		}

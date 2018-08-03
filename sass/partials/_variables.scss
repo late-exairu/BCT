@@ -33,7 +33,11 @@ $clr-back:			#f9f9fa;	/*background color basic*/
 $clr-backA:			#e6f1f8;	/*background color accented*/
 $clr-block:			#ffffff;	/*basic block color basic*/
 
-body{
+:root{
+
+	--left-bar-width:	52px;
+	--gap-size:			7px;
+	--border-radius:	4px;
 	
 	--clr-text:			#585b5c; 	/*text color basic*/
 	--clr-textLL:		#c6c8c8; 	/*text color lighter*/
@@ -55,26 +59,27 @@ body{
 	--clr-backA:		#e6f1f8;	/*background color accented*/
 	--clr-block:		#ffffff;	/*basic block color basic*/
 	
-	&.dark-theme{
-	
-		--clr-text:			#9ba6b2; 	/*text color basic*/
-		--clr-textLL:		#c6c8c8; 	/*text color lighter*/
-		--clr-textL:		#9ba6b2; 	/*text color light*/
-		--clr-textD:		#9ba6b2;	/*text color dark*/
-		--clr-textA:		#286bb4;	/*text color accented*/
-		--clr-textAA:		#e15c79;	/*text color accented alternative*/
+}
 
-		--clr-icon:			#4f6c82;	/*icon color basic*/
-		--clr-iconD:		#9ba6b2;	/*icon color dark*/
-		--clr-accent:		#4a9cd5;	/*icon color accented*/
-		--clr-accentL:		#0c1017;	/*icon color accented light*/
-		--clr-accentD:		#286bb4;	/*icon color accented dark*/
+.dark-theme{
 
-		--clr-separator:	#24425b;	/*separators and borders color basic*/
-		--clr-separatorD:	#24425b;	/*separators and borders color dark*/
-		--clr-backL:		#141925;	/*background color light*/
-		--clr-back:			#131a23;	/*background color basic*/
-		--clr-backA:		#213040;	/*background color accented*/
-		--clr-block:		#18202d;	/*basic block color basic*/
-	}
+	--clr-text:			#9ba6b2; 	/*text color basic*/
+	--clr-textLL:		#c6c8c8; 	/*text color lighter*/
+	--clr-textL:		#9ba6b2; 	/*text color light*/
+	--clr-textD:		#9ba6b2;	/*text color dark*/
+	--clr-textA:		#286bb4;	/*text color accented*/
+	--clr-textAA:		#e15c79;	/*text color accented alternative*/
+
+	--clr-icon:			#4f6c82;	/*icon color basic*/
+	--clr-iconD:		#9ba6b2;	/*icon color dark*/
+	--clr-accent:		#4a9cd5;	/*icon color accented*/
+	--clr-accentL:		#0c1017;	/*icon color accented light*/
+	--clr-accentD:		#286bb4;	/*icon color accented dark*/
+
+	--clr-separator:	#24425b;	/*separators and borders color basic*/
+	--clr-separatorD:	#24425b;	/*separators and borders color dark*/
+	--clr-backL:		#141925;	/*background color light*/
+	--clr-back:			#131a23;	/*background color basic*/
+	--clr-backA:		#213040;	/*background color accented*/
+	--clr-block:		#18202d;	/*basic block color basic*/
 }
