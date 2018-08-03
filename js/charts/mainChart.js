@@ -1,4 +1,4 @@
-function redrawMainChart(correction) {
+function redrawMainChart() {
 	var chartParent = $('.b-graph__chart');
 	$(chartParent).css('width', '100%');
 	var chartParentWidth = parseInt($(chartParent).width());
@@ -16,7 +16,7 @@ var gradientColor = [
 ];
 
 // id of graph for highlight
-var mainGraphHighlighted = 2;
+var mainGraphHighlighted = 4;
 var mainGraphHover = null;
 var mainChartObj = Highcharts.chart('mainChart', {
 	legend: {
@@ -174,27 +174,6 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		{
 			type: 'areaspline',
-			data: [20, 24, 24, 26, 25, 27, 24, 28, 32, 34,
-				37, 39, 31, 36, 38, 82, 85, 79, 80, 70,
-				97, 94, 85, 56, 34, 66, 75, 77, 44, 36,
-				38, 40, 44, 46, 45, 47, 44, 48, 52, 54,
-				57, 59, 61, 66, 68, 70, 75, 79, 80, 80,
-				87, 84, 85, 86, 84,
-			],
-			name: "Series 2",
-			lineWidth: 4,
-			color: '#0576B9',
-			fillColor: {
-				linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
-				stops: [
-					[0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.8).get('rgba')],
-					[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-				]
-			},
-			id: 2
-		},
-		{
-			type: 'areaspline',
 			data: [30, 37, 38, 32, 32, 37, 34, 38, 32, 34,
 				37, 19, 13, 22, 18, 27, 29, 32, 20, 12,
 				49, 58, 50, 58, 57, 58, 62, 42, 47, 44,
@@ -202,9 +181,9 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				97, 99, 83, 42, 48, 47, 49, 62, 70, 72,
 				79, 78, 70, 78, 77,
 			],
-			name: "Series 3",
+			name: "Series 2",
 			lineWidth: 2,
-			id: 3
+			id: 2
 		},
 		{
 			type: 'areaspline',
@@ -215,8 +194,29 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				54, 59, 60, 75, 77, 82, 83, 87, 82, 95,
 				117, 119, 111, 116, 118,
 			],
-			name: "Series 4",
+			name: "Series 3",
 			lineWidth: 1,
+			id: 3
+		},
+		{
+			type: 'areaspline',
+			data: [20, 24, 24, 26, 25, 27, 24, 28, 32, 34,
+				37, 39, 31, 36, 38, 82, 85, 79, 80, 70,
+				97, 94, 85, 56, 34, 66, 75, 77, 44, 36,
+				38, 40, 44, 46, 45, 47, 44, 48, 52, 54,
+				57, 59, 61, 66, 68, 70, 75, 79, 80, 80,
+				87, 84, 85, 86, 84,
+			],
+			name: "Series 4",
+			lineWidth: 4,
+			color: '#0576B9',
+			fillColor: {
+				linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
+				stops: [
+					[0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.8).get('rgba')],
+					[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+				]
+			},
 			id: 4
 		},
 		{

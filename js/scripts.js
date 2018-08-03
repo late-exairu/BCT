@@ -373,4 +373,17 @@ $(function () {
 		$('.graph-prices .labeled-dropdown__selected').text($(this).text());
 	});
 
+	/*---------------------------------------------------*/
+	/* Main graph size change */
+	/*---------------------------------------------------*/
+
+	$('#js-graph-size-toggle').click(function () {
+		if ($('.b-graph.fullScreen').length) {
+			$('.b-graph').removeClass('fullScreen');
+		} else {
+			$('.b-graph').addClass('fullScreen');
+		}
+		redrawMainChart();
+	});
+
 });
