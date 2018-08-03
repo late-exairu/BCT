@@ -1454,6 +1454,7 @@ h6 {
   cursor: pointer;
   border: 1px solid var(--clr-separatorD);
   border-radius: var(--border-radius);
+  background: var(--clr-block);
   /*&:after{
 		content: '';
 		position: absolute;
@@ -1601,7 +1602,6 @@ h6 {
 	}*/ }
   .exch-head__get, .exch-head__send {
     position: relative;
-    background: var(--clr-block);
     display: flex;
     flex: 1 1;
     padding: 0;
