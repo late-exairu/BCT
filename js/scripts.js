@@ -124,6 +124,7 @@ $(function () {
 
 				if ($(this).attr('id') == 'tab-funds-account') {
 					circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
+					addCircleChartText(circleChartObj);
 				}
 
 				if ($(this).attr('id') == 'tab-dashboard-liquidity') {

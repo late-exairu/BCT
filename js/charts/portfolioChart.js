@@ -133,7 +133,7 @@ var portfolioChartOptions = {
             }
             return {
                 x: xPos,
-                y: point.plotY + 40
+                y: point.plotY - 20
             };
         } 
     },
@@ -155,7 +155,7 @@ var portfolioChartOptions = {
                 fillColor: '',
                 lineWidth: 0,
                 lineColor: null,
-                symbol: 'url(' + location.href + 'img/svg/circle.svg)',
+                symbol: 'url(' + location.href.replace('#','') + 'img/svg/circle.svg)',
                 states: {
                     hover: {
                         enabled: true
@@ -178,7 +178,8 @@ var portfolioChartOptions = {
     }]
 };
 
-$.getJSON(location.href +'data/exampleData.json', function (data) {
+$.getJSON(location.href.replace('#', '') + 'data/exampleData.json', function (data) {
     portfolioChartData = data;
     portfolioChartOptions.series[0].data = portfolioChartData;
+	portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);
 });

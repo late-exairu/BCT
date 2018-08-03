@@ -88,5 +88,5 @@ function addCircleChartText(chart) {
     span.css('top', textY + (span.height() * -0.7));
 };
 
-circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
-addCircleChartText(circleChartObj);
+//circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
+//addCircleChartText(circleChartObj);

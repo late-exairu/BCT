@@ -108,8 +108,8 @@ var liquidityChartOptions = {
         },
         positioner: function (labelWidth, labelHeight, point, ) {
             return {
-                x: point.plotX - 50,
-                y: point.plotY - 50
+                x: point.plotX - 40,
+                y: point.plotY - 60
             };
         }
     },
@@ -122,7 +122,7 @@ var liquidityChartOptions = {
                 fillColor: '',
                 lineWidth: 0,
                 lineColor: null,
-                symbol: 'url(' + location.href + 'img/svg/circle.svg)',
+                symbol: 'url(' + location.href.replace('#', '') + 'img/svg/circle.svg)',
                 states: {
                     hover: {
                         enabled: true
