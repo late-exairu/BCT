@@ -596,7 +596,8 @@ h6 {
     left: calc(var(--left-bar-width) - 1px);
     right: 0;
     bottom: 0;
-    z-index: 99; }
+    z-index: 99;
+    border-radius: 0; }
 
 /* =================================================================== */
 /* basic-select
