@@ -72,7 +72,7 @@
 		padding: 0 10px 0 14px;
 		height: var(--exch-head-height);
 		display: flex;
-		flex: 0 0 146px;
+		flex: 0 0 161px;
 		align-items: center;
 		background: var(--clr-accentD);
 		/*border-radius: 5px;*/
@@ -82,7 +82,6 @@
 		text-decoration: none;
 		font-size: 18px;
 		font-weight: 800;
-		letter-spacing: -0.03em;
 		white-space: nowrap;
 		transition: all 0.1s;
 		justify-content: center;
@@ -104,7 +103,7 @@
 		width: 22px;
 		height: 20px;
 		fill: #fff;
-		margin: 0 0 0 8px;
+		margin: 0 0 0 12px;
 	}
 
 	@media only screen and (max-width : 1920px) {
