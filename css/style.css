@@ -3543,16 +3543,18 @@ body.menubar-in #user-btn:before {
   text-align: center;
   color: var(--clr-textD); }
   #pieChartInfoText > span span {
-    font-size: 31px;
-    line-height: 50px;
+    font-size: 16px;
+    line-height: 25px;
     vertical-align: top; }
   #pieChartInfoText > span:nth-child(1) {
-    font-size: 20px; }
+    font-size: 11px; }
+  #pieChartInfoText > span:nth-child(2) {
+    font-size: 24px; }
   #pieChartInfoText > span:nth-child(3) {
-    font-size: 48px; }
-  #pieChartInfoText > span:nth-child(4) {
-    font-size: 18px;
-    color: var(--clr-textL); }
+    font-size: 10px;
+    color: var(--clr-textL);
+    width: 70%;
+    display: inline-block; }
 
 #mainChart {
   padding-top: 0;
@@ -3573,9 +3575,9 @@ body.menubar-in #user-btn:before {
   opacity: 1;
   padding: 4px 12px;
   z-index: 9999 !important;
-  font-size: 16px;
-  border-radius: 4px;
-  line-height: 38px;
+  font-size: 11px;
+  border-radius: 3px;
+  line-height: 20px;
   background-color: var(--clr-block);
   color: var(--clr-textL);
   box-shadow: 0px 2px 7px 0px rgba(120, 120, 120, 0.7); }
@@ -3583,28 +3585,28 @@ body.menubar-in #user-btn:before {
     color: var(--clr-textD); }
 
 .highcharts-tooltip span svg {
-  width: 22px;
-  height: 22px;
+  width: 15px;
+  height: 15px;
   position: relative;
-  top: 5px; }
+  top: 2px; }
 
 #portfolioChartText {
   position: absolute;
-  bottom: 50px;
-  left: 40px; }
+  bottom: 30px;
+  left: 10px; }
   #portfolioChartText div {
     display: inline-block;
     color: #0576b9;
-    font-size: 48px;
+    font-size: 26px;
     border-right: 1px solid #a6a6a6;
     padding: 0px 15px;
     text-align: center; }
     #portfolioChartText div span {
-      font-size: 31px;
+      font-size: 16px;
       vertical-align: top;
-      line-height: 55px; }
+      line-height: 26px; }
     #portfolioChartText div p {
-      font-size: 15px;
+      font-size: 10px;
       color: var(--clr-textD);
       margin-top: 0px;
       margin-bottom: 0; }
@@ -3613,16 +3615,16 @@ body.menubar-in #user-btn:before {
 
 #portfolioChartRange {
   position: absolute;
-  top: 12px;
-  right: 40px; }
+  top: 0px;
+  right: 15px; }
   #portfolioChartRange span {
-    padding: 3px 11px;
+    padding: 2px 6px;
     display: inline-block;
-    font-size: 14px;
+    font-size: 10px;
     color: var(--clr-textL);
     cursor: pointer; }
   #portfolioChartRange .active {
-    border-bottom: 3px solid #0576b9;
+    border-bottom: 2px solid #0576b9;
     font-weight: bold; }
 
 #panel-funds-account,
@@ -3633,40 +3635,42 @@ body.menubar-in #user-btn:before {
   color: var(--clr-textD);
   text-align: center; }
   #panel-dashboard-liquidity .liquidityText span {
-    font-size: 16px;
+    font-size: 12px;
     vertical-align: top;
     margin: 0px 5px; }
   #panel-dashboard-liquidity .liquidityText p {
-    font-size: 48px;
+    font-size: 24px;
     margin: 0;
-    height: 53px; }
+    height: 30px; }
   #panel-dashboard-liquidity .liquidityText .leftPart,
   #panel-dashboard-liquidity .liquidityText .rightPart,
   #panel-dashboard-liquidity .liquidityText .centerPart {
     position: absolute; }
   #panel-dashboard-liquidity .liquidityText .leftPart {
-    bottom: 50px;
-    left: 75px; }
+    bottom: 30px;
+    left: 50px; }
   #panel-dashboard-liquidity .liquidityText .rightPart {
-    bottom: 50px;
-    right: 75px; }
+    bottom: 30px;
+    right: 50px; }
   #panel-dashboard-liquidity .liquidityText .centerPart {
-    top: 15%;
+    top: 10%;
     left: 50%;
-    height: calc(85% - 40px);
+    height: calc(90% - 40px);
     transform: translateX(-50%); }
     #panel-dashboard-liquidity .liquidityText .centerPart p {
-      margin-bottom: 13px; }
+      margin-bottom: 5px; }
   #panel-dashboard-liquidity .liquidityText svg {
-    width: 21px;
-    height: 21px;
+    width: 12px;
+    height: 12px;
     cursor: pointer;
-    fill: var(--clr-textD); }
+    fill: var(--clr-textD);
+    position: relative;
+    top: -2px; }
   #panel-dashboard-liquidity .liquidityText .separator {
-    width: 2px;
-    height: calc(85% - 57px);
+    width: 1px;
+    height: calc(85% - 34px);
     background: var(--clr-textD);
-    margin: 5px auto 0; }
+    margin: 0px auto 0; }
 
 #orders {
   display: none; }

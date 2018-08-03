@@ -23,7 +23,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		enabled: false
 	},
 	chart: {
-		marginBottom: 40,
+		marginBottom: 35,
 		events: {
 			click: function (event) {
 				mainGraphHighlighted = mainGraphHover;
@@ -36,7 +36,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	},
 	plotOptions: {
 		series: {
-			pointWidth: 5,
+			pointWidth: 4,
 			pointPadding: 0,
 			borderWidth: 0,
 			groupPadding: 0,
@@ -132,7 +132,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		labels: {
 			step: 5,
 			style: {
-				width: '50px'
+				width: '30px',
+				fontSize: '8px'
 			},
 			x: 50
 		},
@@ -148,9 +149,12 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		showFirstLabel: false,
 		labels: {
 			align: 'right',
-			x: -20,
+			x: -10,
 			y: -20,
 			step: 2,
+			style: {
+				fontSize: '8px'
+			},
 			formatter: function () {
 				return this.value + '.00';
 			}
@@ -169,7 +173,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				77, 80, 90, 87, 84,
 			],
 			name: "Series 1",
-			lineWidth: 3,
+			lineWidth: 1.5,
 			id: 1
 		},
 		{
@@ -182,7 +186,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				79, 78, 70, 78, 77,
 			],
 			name: "Series 2",
-			lineWidth: 2,
+			lineWidth: 1,
 			id: 2
 		},
 		{
@@ -195,7 +199,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				117, 119, 111, 116, 118,
 			],
 			name: "Series 3",
-			lineWidth: 1,
+			lineWidth: 0.5,
 			id: 3
 		},
 		{
@@ -208,7 +212,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				87, 84, 85, 86, 84,
 			],
 			name: "Series 4",
-			lineWidth: 4,
+			lineWidth: 2,
 			color: '#0576B9',
 			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 100],

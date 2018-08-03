@@ -8,7 +8,9 @@ var portfolioChartCurrentRange = 3;
 var portfolioChartOptions = {
     chart: {
         type: 'areaspline',
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        marginBottom: 25,
+        marginTop: -35,
     },
     rangeSelector: {
         selected: portfolioChartCurrentRange,
@@ -50,19 +52,19 @@ var portfolioChartOptions = {
         gridLineColor: '#e6e6e6',
         lineColor: '#ccd6eb',
         crosshair: {
-/*             label: {
-                enabled: true,
-                format: '{value:%m/%d/%Y 8:00AM}',
-                backgroundColor: '#ffffff',
-                borderColor: '#5a5a5a',
-                borderWidth: 1,
-                borderRadius: 5,
-                shape: "box",
-                style: {
-                    color: '#000000'
-                },
-            } */
-            width: 2,
+            /*             label: {
+                            enabled: true,
+                            format: '{value:%m/%d/%Y 8:00AM}',
+                            backgroundColor: '#ffffff',
+                            borderColor: '#5a5a5a',
+                            borderWidth: 1,
+                            borderRadius: 5,
+                            shape: "box",
+                            style: {
+                                color: '#000000'
+                            },
+                        } */
+            width: 1,
             dashStyle: 'LongDash'
         },
         type: 'datetime',
@@ -75,7 +77,8 @@ var portfolioChartOptions = {
         labels: {
             step: 2,
             style: {
-                color: '#666666'
+                color: '#666666',
+                fontSize: '8px'
             }
         },
     }],
@@ -89,7 +92,7 @@ var portfolioChartOptions = {
         },
         tickAmount: 10,
         minorTickLength: 0,
-        //max: 200,
+        max: 230,
     },
     navigator: {
         enabled: false
@@ -106,7 +109,7 @@ var portfolioChartOptions = {
         split: false,
         style: {
             color: '#ffffff',
-            fontSize: 16
+            fontSize: 8
         },
         formatter: function () {
             var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -115,27 +118,27 @@ var portfolioChartOptions = {
             var dayName = date.toString().split(' ')[0];
             // edit value to ~8k
             var TooltipValue = (this.y * 45).toFixed(2);
-            TooltipValue = TooltipValue.slice(0,1) + ',' + TooltipValue.slice(1);
+            TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
             return '<div class="tooltip">' +
                 "<span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() +
                 '</div>';
         },
-         positioner: function (labelWidth, labelHeight, point, ) {
+        positioner: function (labelWidth, labelHeight, point, ) {
             var graphWidth = $(portfolioChartObj.container).width();
             var xPos = point.plotX - (labelWidth / 2);
             // right side fix
-            if((point.plotX + labelWidth/2) > graphWidth){
-                xPos = graphWidth - labelWidth - 10;
+            if ((point.plotX + labelWidth / 2) > graphWidth) {
+                xPos = graphWidth - labelWidth - 5;
             }
             // left side fix
-            else if (point.plotX < 100){
-                xPos = 10;               
+            else if (point.plotX < 50) {
+                xPos = 5;
             }
             return {
                 x: xPos,
-                y: point.plotY - 20
+                y: point.plotY - 50
             };
-        } 
+        }
     },
     credits: {
         enabled: false
@@ -144,7 +147,7 @@ var portfolioChartOptions = {
         areaspline: {
             color: '#0576B9',
             fillColor: {
-                linearGradient: [0, 0, 0, 300],
+                linearGradient: [0, 0, 0, 150],
                 stops: [
                     [0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.3).get('rgba')],
                     [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
@@ -154,14 +157,25 @@ var portfolioChartOptions = {
                 enabled: false,
                 fillColor: '',
                 lineWidth: 0,
+                width: 0,
                 lineColor: null,
-                symbol: 'url(' + location.href.replace('#','') + 'img/svg/circle.svg)',
+                symbol: 'url(' + location.href.replace('#', '') + 'img/svg/circle.svg)',
                 states: {
                     hover: {
                         enabled: true
                     }
                 }
             },
+        },
+        series: {
+            states: {
+                hover: {
+                    halo: {
+                        opacity: 0
+                    }
+
+                }
+            }
         }
     },
     series: [{
@@ -181,5 +195,5 @@ var portfolioChartOptions = {
 $.getJSON(location.href.replace('#', '') + 'data/exampleData.json', function (data) {
     portfolioChartData = data;
     portfolioChartOptions.series[0].data = portfolioChartData;
-	portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);
+    portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);
 });

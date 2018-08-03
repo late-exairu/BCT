@@ -27,7 +27,7 @@ var liquidityChartOptions = {
                                 color: '#000000'
                             },
                         } */
-            width: 2,
+            width: 1,
             dashStyle: 'LongDash'
         },
         type: 'datetime',
@@ -45,7 +45,8 @@ var liquidityChartOptions = {
             },
             step: 2,
             style: {
-                color: '#666666'
+                color: '#666666',
+                fontSize: '8px'
             }
         },
     },
@@ -55,7 +56,8 @@ var liquidityChartOptions = {
             step: 4,
             overflow: 'justify',
             style: {
-                color: '#666666'
+                color: '#666666',
+                fontSize: '8px'
             }
         },
         title: {
@@ -70,7 +72,8 @@ var liquidityChartOptions = {
             step: 4,
             overflow: 'justify',
             style: {
-                color: '#666666'
+                color: '#666666',
+                fontSize: '8px'
             }
         },
         title: {
@@ -108,8 +111,8 @@ var liquidityChartOptions = {
         },
         positioner: function (labelWidth, labelHeight, point, ) {
             return {
-                x: point.plotX - 40,
-                y: point.plotY - 60
+                x: point.plotX - 30,
+                y: point.plotY - 40
             };
         }
     },
@@ -127,6 +130,16 @@ var liquidityChartOptions = {
                     hover: {
                         enabled: true
                     }
+                }
+            }
+        },
+        series: {
+            states: {
+                hover: {
+                    halo: {
+                        opacity: 0
+                    }
+
                 }
             }
         }

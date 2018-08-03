@@ -40,9 +40,8 @@ var circleChartOptions = {
             var currency = this.key;
             var resultString = '';
             $('#panel-funds-account .basic-table__row').each(function () {
-                if ($(this).find('.w-27').text().indexOf(currency) != -1) {
-                    resultString = $(this).find('.w-27').html();
-                    //resultString += $(this).find('.w-20').eq(0).text().replace('000', '');
+                if ($(this).find('.w-30').text().indexOf(currency) != -1) {
+                    resultString = $(this).find('.w-30').html();
                     return false;
                 }
             });
@@ -69,7 +68,7 @@ function positionCircleChartText(chart) {
     var textX = chart.plotLeft + (chart.plotWidth * 0.5);
     var textY = chart.plotTop + (chart.plotHeight * 0.5);
     span = $('#pieChartInfoText');
-    span.css('width', '230px');
+    span.css('width', '120px');
     span.css('left', textX + (span.width() * -0.5));
     span.css('top', textY + (span.height() * -0.7));
 };

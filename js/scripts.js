@@ -258,7 +258,7 @@ $(function () {
 					gridLineColor: gridColor,
 					labels: {
 						style: {
-							color: gridColor
+							color: labelColor
 						}
 					}
 				},
