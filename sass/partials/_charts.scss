@@ -16,27 +16,34 @@
     top: 0px;
 }
 
+#pieChartInfoText {
+    position: absolute;
+    text-align: center;
+    color:  var(--clr-textD);
+    &>span {
+        span {
+            font-size: 31px;
+            line-height: 50px;
+            vertical-align: top;
+        }
+        &:nth-child(1) {
+            font-size: 20px;
+        }
+        &:nth-child(3) {
+            font-size: 48px;
+        }
+        &:nth-child(4) {
+            font-size: 18px;
+            color: var(--clr-textL);
+        }
+    }
+}
+
 #mainChart {
     padding-top: 0;
     padding-left: 45px;
     height: 100%;
     width: 100%;
-}
-
-#portfolioChartRange {
-    position: absolute;
-    top: 12px;
-    right: 40px;
-    span {
-        padding: 3px 11px;
-        display: inline-block;
-        font-size: 14px;
-        cursor: pointer;
-    }
-    .active {
-        border-bottom: 3px solid #0576b9;
-        font-weight: bold;
-    }
 }
 
 .label {
@@ -92,13 +99,30 @@
         }
         p {
             font-size: 15px;
-            color: black;
+            color: var(--clr-textD);
             margin-top: 0px;
             margin-bottom: 0;
         }
         &:last-child {
             border-right: 0;
         }
+    }
+}
+
+#portfolioChartRange {
+    position: absolute;
+    top: 12px;
+    right: 40px;
+    span {
+        padding: 3px 11px;
+        display: inline-block;
+        font-size: 14px;
+        color:var(--clr-textL);
+        cursor: pointer;
+    }
+    .active {
+        border-bottom: 3px solid #0576b9;
+        font-weight: bold;
     }
 }
 
@@ -109,7 +133,7 @@
 
 #panel-dashboard-liquidity {
     .liquidityText {
-        color: black;
+        color: var(--clr-textD);
         text-align: center;
         span {
             font-size: 16px;
@@ -147,11 +171,12 @@
             width: 21px;
             height: 21px;
             cursor: pointer;
+            fill: var(--clr-textD);
         }
         .separator {
             width: 2px;
             height: calc(85% - 57px);
-            background: #000;
+            background: var(--clr-textD);
             margin: 5px auto 0;
         }
     }

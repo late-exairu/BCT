@@ -3561,24 +3561,27 @@ body.menubar-in #user-btn:before {
   left: 0px;
   top: 0px; }
 
+#pieChartInfoText {
+  position: absolute;
+  text-align: center;
+  color: var(--clr-textD); }
+  #pieChartInfoText > span span {
+    font-size: 31px;
+    line-height: 50px;
+    vertical-align: top; }
+  #pieChartInfoText > span:nth-child(1) {
+    font-size: 20px; }
+  #pieChartInfoText > span:nth-child(3) {
+    font-size: 48px; }
+  #pieChartInfoText > span:nth-child(4) {
+    font-size: 18px;
+    color: var(--clr-textL); }
+
 #mainChart {
   padding-top: 0;
   padding-left: 45px;
   height: 100%;
   width: 100%; }
-
-#portfolioChartRange {
-  position: absolute;
-  top: 12px;
-  right: 40px; }
-  #portfolioChartRange span {
-    padding: 3px 11px;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer; }
-  #portfolioChartRange .active {
-    border-bottom: 3px solid #0576b9;
-    font-weight: bold; }
 
 .label {
   z-index: 1 !important; }
@@ -3625,18 +3628,32 @@ body.menubar-in #user-btn:before {
       line-height: 55px; }
     #portfolioChartText div p {
       font-size: 15px;
-      color: black;
+      color: var(--clr-textD);
       margin-top: 0px;
       margin-bottom: 0; }
     #portfolioChartText div:last-child {
       border-right: 0; }
+
+#portfolioChartRange {
+  position: absolute;
+  top: 12px;
+  right: 40px; }
+  #portfolioChartRange span {
+    padding: 3px 11px;
+    display: inline-block;
+    font-size: 14px;
+    color: var(--clr-textL);
+    cursor: pointer; }
+  #portfolioChartRange .active {
+    border-bottom: 3px solid #0576b9;
+    font-weight: bold; }
 
 #panel-funds-account,
 #panel-dashboard-liquidity {
   position: relative; }
 
 #panel-dashboard-liquidity .liquidityText {
-  color: black;
+  color: var(--clr-textD);
   text-align: center; }
   #panel-dashboard-liquidity .liquidityText span {
     font-size: 16px;
@@ -3666,11 +3683,12 @@ body.menubar-in #user-btn:before {
   #panel-dashboard-liquidity .liquidityText svg {
     width: 21px;
     height: 21px;
-    cursor: pointer; }
+    cursor: pointer;
+    fill: var(--clr-textD); }
   #panel-dashboard-liquidity .liquidityText .separator {
     width: 2px;
     height: calc(85% - 57px);
-    background: #000;
+    background: var(--clr-textD);
     margin: 5px auto 0; }
 
 #orders {

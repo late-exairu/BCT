@@ -124,7 +124,7 @@ $(function () {
 
 				if ($(this).attr('id') == 'tab-funds-account') {
 					circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
-					addCircleChartText(circleChartObj);
+					positionCircleChartText(circleChartObj);
 				}
 
 				if ($(this).attr('id') == 'tab-dashboard-liquidity') {
@@ -171,7 +171,6 @@ $(function () {
 
 			var backColor = '#18202d';
 			var gridColor = '#24425b';
-			var fontColor = '#9BA6B2';
 			var labelColor = '#9BA6B2';
 			var lineColor = '#4F6C82';
 		} else {
@@ -179,17 +178,16 @@ $(function () {
 
 			var backColor = '#ffffff';
 			var gridColor = '#ccd6eb';
-			var fontColor = '#000000';
 			var labelColor = '#666666';
 			var lineColor = '#BFC0C0';
 		}
-		changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor);
+		changeChartsColors(backColor, gridColor, labelColor, lineColor);
 	});
 
 	/*---------------------------------------------------*/
 	/* change colors in all charts */
 	/*---------------------------------------------------*/
-	function changeChartsColors(backColor, gridColor, fontColor, labelColor, lineColor) {
+	function changeChartsColors(backColor, gridColor, labelColor, lineColor) {
 
 		// circleChart
 		var stylesForCircleChart = {
@@ -202,7 +200,6 @@ $(function () {
 
 		if (circleChartObj)
 			circleChartObj.update(stylesForCircleChart);
-		$('#pieChartInfoText *').css('color', fontColor);
 
 		// portfolioChart
 		var stylesForPortfolioChart = {
@@ -234,8 +231,6 @@ $(function () {
 
 		if (portfolioChartObj)
 			portfolioChartObj.update(stylesForPortfolioChart);
-
-		$('#portfolioChartText div p,#portfolioChartRange span').css('color', fontColor);
 
 		// liquidityChart
 		var stylesForLiquidityChart = {
@@ -282,10 +277,6 @@ $(function () {
 
 		if (liquidityChartObj)
 			liquidityChartObj.update(stylesForLiquidityChart);
-
-		$('.liquidityText').css('color', fontColor);
-		$('.liquidityText svg').css('fill', fontColor);
-		$('#panel-dashboard-liquidity .liquidityText .separator').css('background', fontColor);
 
 		// MainChart
 		var stylesForMainChart = {
