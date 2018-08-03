@@ -7,11 +7,11 @@
 .btn-switch {
 	font-family: $osans;
 	display: flex;
-	height: 44px;
+	height: 32px;
 	width: 100%;
 	position: relative;	
 	user-select: none;
-	font-size: 13px;
+	font-size: 12px;
 	color: var(--clr-textL);
 
 	&__radio {
@@ -32,7 +32,7 @@
 					background: var(--clr-accentD);
 
 					&:after{
-						transform: translate(14px, 0)
+						transform: translate(10px, 0)
 					}
 				}
 			}
@@ -41,7 +41,7 @@
 				background: var(--clr-accentD);
 
 				&:after{
-					transform: translate(14px, 0)
+					transform: translate(10px, 0)
 				}
 			}
 		}
@@ -53,7 +53,7 @@
 		line-height: 1;
 		cursor: pointer;
 		transition: all .1s ;
-		padding: 5px 48px 5px 20px;
+		padding: 2px 24px 2px 10px;
 		display: flex;
 		align-items: center;
 		min-width: 180px;
@@ -62,11 +62,11 @@
 
 	&__switch{
 		position: absolute;
-		right: 10px;
+		right: 8px;
 		top: 50%;
 		transform: translate(0, -50%);
-		width: 28px;
-		height: 14px;
+		width: 20px;
+		height: 10px;
 		background: var(--clr-separator);
 		border-radius: 7px;
 		transition: all 0.2s;
@@ -75,10 +75,10 @@
 		&:after{
 			content: '';
 			position: absolute;
-			left: 2px;
-			top: 2px;
-			width: 10px;
-			height: 10px;
+			left: 1px;
+			top: 1px;
+			width: 8px;
+			height: 8px;
 			border-radius: 50%;
 			background: #fff;
 			transition: all 0.2s;
@@ -99,8 +99,8 @@
 	}
 
 	&.big{
-		font-size: 17px;
-		font-weight: 700;
+		font-size: 12px;
+		font-weight: 600;
 
 		.btn-switch {
 
@@ -109,7 +109,7 @@
 				&:checked{
 
 					&~.btn-switch__label{
-						font-weight: 700;
+						font-weight: 600;
 					}
 				}
 			}
@@ -122,97 +122,8 @@
 			&__label{
 				color: var(--clr-textD);
 				min-width: 0;
-				padding: 5px 50px 5px 20px;
+				padding: 2px 36px 2px 10px;
 			}
-		}
-	}
-}
-
-.theme-switch {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 70px;
-
-	&__checkbox {
-		position: absolute;
-		left: 0;
-		top: 0;
-		z-index: 1;
-		display: none;
-
-		&:checked{
-
-			&~.theme-switch__label{
-				.theme-switch__switch{
-					transform: rotate(180deg);
-				}
-			}
-		}
-	}
-
-	&__label {
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		cursor: pointer;
-		overflow: hidden;
-
-		&:hover{
-			.theme-switch__icon{
-				fill: var(--clr-textL);
-
-				&.sun{
-					fill: #fdf500;
-				}
-
-				&.moon{
-					fill: #2658d1;
-				}
-			}
-		}
-	}
-
-	&__switch{
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 70px;
-		height: 140px;
-		transition: all 0.5s;
-		transform: rotate(0);
-	}
-
-	&__day{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 70px;
-		height: 70px;
-	}
-
-	&__night{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 70px;
-		height: 70px;
-	}
-
-	&__icon{
-		fill: var(--clr-icon);
-		transition: all 0.1s;
-
-		&.sun{
-			width: 34px;
-			height: 34px;
-		}
-
-		&.moon{
-			width: 32px;
-			height: 32px;
 		}
 	}
 }

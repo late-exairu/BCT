@@ -5,11 +5,13 @@
 
 
 .exch-head{
+	--exch-head-height: 48px;
 	display: flex;
-	margin: 0 0 15px;
-	flex: 0 0 80px;
+	margin: 0;
+	flex: 0 0 var(--exch-head-height);
 
-	&__input{
+
+	/*&__input{
 		font-family: $osans;
 		font-size: 29px;
 		font-weight: 700;
@@ -23,29 +25,30 @@
 		&:focus{
 			border-color: var(--clr-accent);
 		}
-	}
+	}*/
 
 	&__get,
 	&__send{
 		position: relative;
-		background: var(--clr-block);
 		display: flex;
 		flex: 1 1;
 		padding: 0;
-		height: 80px;
+		height: 48px;
 	}
 
 	&__switch{
-		width: 95px;
-		height: 80px;
+		width: var(--exch-head-height);
+		height: var(--exch-head-height);
 		display: flex;
-		flex: 0 0 80px;
+		flex: 0 0 var(--exch-head-height);
+		margin: 0 var(--gap-size);
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
 		background: transparent;
 		border: none;
 		transition: all .1s;
+		border-radius: var(--border-radius);
 
 		&:hover{
 			background: var(--clr-accent);
@@ -56,8 +59,8 @@
 		}
 
 		.sprite-icon{
-			width: 31px;
-			height: 14px;
+			width: 24px;
+			height: 13px;
 			fill: var(--clr-accentD);
 			transition: all .1s;
 		}
@@ -65,25 +68,25 @@
 
 	&__btn{
 		font-family: $osans;
-		padding: 0 20px 0 28px;
-		height: 80px;
+		padding: 0 10px 0 14px;
+		height: var(--exch-head-height);
 		display: flex;
-		flex: 0 0 268px;
+		flex: 0 0 161px;
 		align-items: center;
 		background: var(--clr-accentD);
 		/*border-radius: 5px;*/
 		color: #fff;
 		cursor: pointer;
-		margin: 0 0 0 16px;
+		margin: 0 0 0 var(--gap-size);
 		text-decoration: none;
-		font-size: 36px;
+		font-size: 18px;
 		font-weight: 800;
-		letter-spacing: -0.03em;
 		white-space: nowrap;
 		transition: all 0.1s;
 		justify-content: center;
 		border: none;
 		line-height: 1;
+		border-radius: var(--border-radius);
 
 		&:hover{
 			background: #026ba0;
@@ -96,10 +99,10 @@
 	}
 
 	&__arrow-exch{
-		width: 42px;
-		height: 38px;
+		width: 22px;
+		height: 20px;
 		fill: #fff;
-		margin: 0 0 0 16px;
+		margin: 0 0 0 12px;
 	}
 
 	@media only screen and (max-width : 1920px) {

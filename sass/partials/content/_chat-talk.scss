@@ -5,14 +5,14 @@
 
 
 .chat-talk{
-	padding: 16px 0 0;
+	padding: 4px 0 0;
 	overflow-y: auto;
 	flex: 1;
 
 	&__item{
 		position: relative;
 		display: flex;
-		padding: 15px 15px 15px 32px;
+		padding: 8px 10px 8px 16px;
 		margin: 0 0 0;
 
 		&:first-child{
@@ -36,16 +36,16 @@
 
 	&__avatar-wrap{
 		position: relative;
-		width: 43px;
-		height: 43px;
-		margin: 2px 12px 2px 0;
+		width: 24px;
+		height: 24px;
+		margin: 2px 8px 2px 0;
 		flex: 0 0 auto;
 	}
 
 	&__avatar{
-		font-size: 17px;
-		width: 43px;
-		height: 43px;
+		font-size: 10px;
+		width: 24px;
+		height: 24px;
 		display: flex;
 		border-radius: 50%;
 		align-items: center;
@@ -56,7 +56,7 @@
 	}
 
 	&__content{
-		padding: 0 8px 0 10px;
+		padding: 0 2px 0 2px;
 		overflow: hidden;
 		flex: 1 1 auto;
 	}
@@ -67,7 +67,7 @@
 
 	&__name{
 		margin: 0;
-		font-size: 17px;
+		font-size: 12px;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -83,51 +83,52 @@
 	}
 
 	&__readed{
-		width: 18px;
-		height: 12px;
-		margin: 3px 0 0;
+		width: 12px;
+		height: 8px;
+		margin: 2px 0 0;
 		fill: var(--clr-accent);
 	}
 
 	&__time{
 		font-family: $osans;
 		margin: 0 0 0 3px;
-		font-size: 15px;
+		font-size: 10px;
 		white-space: nowrap;
-		min-height: 19px;
+		min-height: 12px;
 		color: var(--clr-textL);
 	}
 
 	&__quote{
 		position: relative;
 		color: var(--clr-text);
-		margin: 5px 0 12px;
-		padding: 2px 0 0 12px;
+		margin: 5px 0 5px;
+		padding: 2px 0 0 7px;
 
 		p{
-			margin: 0 0 20px;
-			font-size: 18px;
+			margin: 0 0 12px;
+			font-size: 11px;
 			line-height: 1.36;
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			margin: 0;
 			color: var(--clr-textD);
+			opacity: 0.60;
 		}
 
 		.chat-talk__name{
-			font-size: 17px;
+			font-size: 12px;
 			color: #1cbaac;
-			margin: 0 0 4px;
+			margin: 0 0 2px;
 		}
 
 		&:after{
 			content: '';
 			position: absolute;
 			left: 0;
-			top: 2px;
-			bottom: 6px;
-			width: 3px;
+			top: 4px;
+			bottom: 2px;
+			width: 2px;
 			background: #1cbaac;
 		}
 	}
@@ -136,11 +137,11 @@
 		font-family: $osans;
 		position: relative;
 		color: var(--clr-textD);
-		margin: 12px 0 8px;
+		margin: 5px 0 5px;
 
 		p{
-			margin: 0 0 27px;
-			font-size: 17px;
+			margin: 0 0 12px;
+			font-size: 11px;
 			line-height: 1.6;
 
 			&:last-child{
@@ -149,17 +150,17 @@
 		}
 
 		.chat-talk__name{
-			font-size: 16px;
+			font-size: 12px;
 			margin: 0 0 4px;
 		}
 	}
 
 	&__sys-message{
 		font-family: $osans;
-		font-size: 18px;
+		font-size: 10px;
 		text-align: center;
-		padding: 20px 38px 20px 20px;
-		margin: 30px 0 26px;
+		padding: 12px;
+		margin: 6px 0;
 		color: var(--clr-textL);
 	}
 }

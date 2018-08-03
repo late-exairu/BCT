@@ -3,7 +3,7 @@ function redrawMainChart() {
 	$(chartParent).css('width', '100%');
 	var chartParentWidth = parseInt($(chartParent).width());
 	if ($('#js-graph-prices').hasClass('open')) {
-		chartParentWidth -= 280;
+		chartParentWidth -= 160;
 	}
 	$(chartParent).css('width', chartParentWidth);
 	mainChartObj.reflow();

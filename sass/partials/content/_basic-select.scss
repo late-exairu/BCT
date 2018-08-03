@@ -7,7 +7,7 @@
 .basic-select {
 	width: 100%;
 	position: relative;
-	/*height: 41px;*/
+	height: 28px;
 	/*max-width: 266px;*/
 
 	&__select {
@@ -15,7 +15,8 @@
 		appearance: none;
 		cursor: pointer;
 		width: 100%;
-		padding: 11px 30px 11px 15px;
+		height: 100%;
+		padding: 4px 20px 4px 10px;
 		border-radius: 4px;
 		border: 1px solid var(--clr-separatorD);
 		white-space: nowrap;
@@ -27,11 +28,11 @@
 	
 	&__arrow {
 		position: absolute;
-		right: 14px;
+		right: 7px;
 		top: 50%;
 		transform: translateY(-50%);
-		width: 10px;
-		height: 6px;
+		width: 6px;
+		height: 4px;
 		pointer-events: none;
 		fill: var(--clr-textL);
 	}

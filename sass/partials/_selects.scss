@@ -21,27 +21,29 @@
 .select-selected:after {
     position: absolute;
     content: "";
-    top: 60%;
+    top: 50%;
+    right: 7px;
     transform: translateY(-50%);
-    right: 13px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: var(--clr-textL) transparent transparent transparent;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 4px 3px 0 3px;
+	border-color: var(--clr-text) transparent transparent transparent;
 }
 
 /*point the arrow upwards when the select box is open (active):*/
 
 .select-selected.select-arrow-active:after {
+	border-width: 0 3px 4px 3px;
     border-color: transparent transparent var(--clr-textL) transparent;
-    top: 40%;
+    top: 50%;
 }
 
 /*style the items (options), including the selected item:*/
 
 .select-items div {
     color: var(--clr-textD);
-    padding: 8px 16px;
+    padding: 5px 10px;
     border: 1px solid transparent;
     border-color: transparent transparent var(--clr-separator) transparent;
     cursor: pointer;
