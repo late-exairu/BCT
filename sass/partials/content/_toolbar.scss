@@ -13,12 +13,12 @@
 	padding: 0;
 	max-width: 100%;
 	max-height: 100%;
-	width: 34px;
+	width: 35px;
 	border-right: 1px solid var(--clr-separator);
 	border-left: 1px solid var(--clr-separator);
 	background: var(--clr-block);
 	z-index: 1;
-
+	padding-left: 1px;
 	&__btn{
 		height: 34px;
 		width: 34px;

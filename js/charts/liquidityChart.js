@@ -7,7 +7,9 @@ var countForLiquidLabels = 76701;
 var liquidityChartObj = null;
 var liquidityChartOptions = {
     chart: {
-        type: 'area'
+        type: 'area',
+        //marginRight:35,
+        //marginLeft:35
     },
     title: null,
     legend: {
@@ -52,6 +54,7 @@ var liquidityChartOptions = {
     },
     yAxis: [{
         labels: {
+            x: -5,
             enabled: true,
             step: 4,
             overflow: 'justify',
@@ -68,6 +71,7 @@ var liquidityChartOptions = {
         max: 1600,
     }, {
         labels: {
+            x: 5,
             enabled: true,
             step: 4,
             overflow: 'justify',

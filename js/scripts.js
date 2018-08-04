@@ -398,4 +398,13 @@ $(function () {
 		$('.exch-dropdown').removeClass('open');
 	});
 
+	/*---------------------------------------------------*/
+	/* Table column sorted */
+	/*---------------------------------------------------*/
+
+	$('.basic-table__row.head > div').click(function () {
+		$('.basic-table__row.head > div').removeClass('sorted');
+		$(this).addClass('sorted');
+	});
+
 });

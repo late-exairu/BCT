@@ -2730,11 +2730,12 @@ body.menubar-in #user-btn:before {
   padding: 0;
   max-width: 100%;
   max-height: 100%;
-  width: 34px;
+  width: 35px;
   border-right: 1px solid var(--clr-separator);
   border-left: 1px solid var(--clr-separator);
   background: var(--clr-block);
-  z-index: 1; }
+  z-index: 1;
+  padding-left: 1px; }
   .toolbar__btn {
     height: 34px;
     width: 34px;
@@ -3562,7 +3563,7 @@ body.menubar-in #user-btn:before {
 
 #mainChart {
   padding-top: 0;
-  padding-left: 23px;
+  padding-left: 24px;
   height: 100%;
   width: 100%; }
 
