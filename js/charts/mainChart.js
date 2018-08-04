@@ -173,7 +173,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				77, 80, 90, 87, 84,
 			],
 			name: "Series 1",
-			lineWidth: 1.5,
+			lineWidth: 1,
 			id: 1
 		},
 		{
@@ -199,7 +199,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				117, 119, 111, 116, 118,
 			],
 			name: "Series 3",
-			lineWidth: 0.5,
+			lineWidth: 1,
 			id: 3
 		},
 		{
@@ -212,7 +212,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				87, 84, 85, 86, 84,
 			],
 			name: "Series 4",
-			lineWidth: 2,
+			lineWidth: 1,
 			color: '#0576B9',
 			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 100],

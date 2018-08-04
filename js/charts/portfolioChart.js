@@ -145,11 +145,12 @@ var portfolioChartOptions = {
     },
     plotOptions: {
         areaspline: {
+            lineWidth:1,
             color: '#0576B9',
             fillColor: {
-                linearGradient: [0, 0, 0, 150],
+                linearGradient: [0, 0, 0, $('.js-account-stats').height() - 60],
                 stops: [
-                    [0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.3).get('rgba')],
+                    [0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.4).get('rgba')],
                     [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
                 ]
             },
@@ -159,7 +160,7 @@ var portfolioChartOptions = {
                 lineWidth: 0,
                 width: 0,
                 lineColor: null,
-                symbol: 'url(' + location.href.replace('#', '') + 'img/svg/circle.svg)',
+                symbol: 'url(' + location.origin + location.pathname + 'img/svg/circle.svg)',
                 states: {
                     hover: {
                         enabled: true
@@ -192,7 +193,7 @@ var portfolioChartOptions = {
     }]
 };
 
-$.getJSON(location.href.replace('#', '') + 'data/exampleData.json', function (data) {
+$.getJSON(location.origin + location.pathname + 'data/exampleData.json', function (data) {
     portfolioChartData = data;
     portfolioChartOptions.series[0].data = portfolioChartData;
     portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);

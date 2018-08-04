@@ -31,7 +31,7 @@ $(function () {
 
 		if (drop.hasClass('open')) {
 			drop.removeClass('open');
-		} else {
+		} else{
 			wrap.find('.js-dropdown').removeClass('open')
 			drop.addClass('open');
 		}
@@ -384,6 +384,18 @@ $(function () {
 			$('.b-graph').addClass('fullScreen');
 		}
 		redrawMainChart();
+	});
+
+	/*---------------------------------------------------*/
+	/* Currency switch */
+	/*---------------------------------------------------*/
+
+	$('.exch-head__switch').click(function () {
+		var firstCurr = $('.exch-head__get .exch-dropdown__current .exch-dropdown__title').text();
+		var secondCurr = $('.exch-head__send .exch-dropdown__current .exch-dropdown__title').text();
+		$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-name="' + firstCurr + '"]').trigger('click');
+		$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-name="' + secondCurr + '"]').trigger('click');
+		$('.exch-dropdown').removeClass('open');
 	});
 
 });

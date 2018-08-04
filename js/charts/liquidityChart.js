@@ -125,7 +125,7 @@ var liquidityChartOptions = {
                 fillColor: '',
                 lineWidth: 0,
                 lineColor: null,
-                symbol: 'url(' + location.href.replace('#', '') + 'img/svg/circle.svg)',
+                symbol: 'url(' + location.origin + location.pathname + 'img/svg/circle.svg)',
                 states: {
                     hover: {
                         enabled: true
@@ -152,7 +152,7 @@ var liquidityChartOptions = {
         pointStart: Date.UTC(2018, 5, 17),
         pointInterval: 24 * 3600 * 1000,
         fillColor: {
-            linearGradient: [0, 0, 0, 300],
+            linearGradient: [0, 0, 0, $('.js-account-stats').height() - 90],
             stops: [
                 [0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.4).get('rgba')],
                 [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
@@ -166,7 +166,7 @@ var liquidityChartOptions = {
         pointStart: Date.UTC(2018, 5, 17),
         pointInterval: 24 * 3600 * 1000,
         fillColor: {
-            linearGradient: [0, 0, 0, 300],
+            linearGradient: [0, 0, 0, $('.js-account-stats').height() - 90],
             stops: [
                 [0, Highcharts.Color('#e05475').setOpacity(0.4).get('rgba')],
                 [1, Highcharts.Color('#e05475').setOpacity(0).get('rgba')]
