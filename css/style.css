@@ -3542,20 +3542,23 @@ body.menubar-in #user-btn:before {
 #pieChartInfoText {
   position: absolute;
   text-align: center;
-  color: var(--clr-textD); }
-  #pieChartInfoText > span span {
-    font-size: 16px;
-    line-height: 25px;
-    vertical-align: top; }
-  #pieChartInfoText > span:nth-child(1) {
-    font-size: 11px; }
-  #pieChartInfoText > span:nth-child(2) {
-    font-size: 24px; }
-  #pieChartInfoText > span:nth-child(3) {
-    font-size: 10px;
-    color: var(--clr-textL);
-    width: 70%;
-    display: inline-block; }
+  color: var(--clr-textD);
+  border-radius: 50%; }
+  #pieChartInfoText > span {
+    display: block; }
+    #pieChartInfoText > span span {
+      font-size: 16px;
+      line-height: 25px;
+      vertical-align: top; }
+    #pieChartInfoText > span:nth-child(1) {
+      font-size: 11px; }
+    #pieChartInfoText > span:nth-child(2) {
+      font-size: 24px; }
+    #pieChartInfoText > span:nth-child(3) {
+      font-size: 10px;
+      color: var(--clr-textL);
+      width: 70%;
+      display: inline-block; }
 
 #mainChart {
   padding-top: 0;
@@ -3589,7 +3592,8 @@ body.menubar-in #user-btn:before {
   width: 15px;
   height: 15px;
   position: relative;
-  top: 2px; }
+  top: 2px;
+  margin: 0px 3px 0px 0px; }
 
 #portfolioChartText {
   position: absolute;
