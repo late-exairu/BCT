@@ -15,6 +15,7 @@
 	border: 1px solid var(--clr-separatorD);
 	border-radius: var(--border-radius);
 	background: var(--clr-block);
+	transition: all 0.1s;
 
 	/*&:after{
 		content: '';
@@ -25,6 +26,10 @@
 		height: 5px;
 		background: var(--clr-accentD);
 	}*/
+
+	&:hover{
+		/*background: var(--clr-blockA);*/
+	}
 
 	&.open{
 		border-radius: var(--border-radius) var(--border-radius) 0 0;

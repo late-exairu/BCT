@@ -98,14 +98,19 @@ Blocks from left bar
 		}
 
 		&:hover{
-			background: var(--clr-accent);
+			/*background: var(--clr-text);*/
 
 			.nav-bar__title{
-				color: var(--clr-back);
+				color: var(--clr-text);
 			}
 
 			.nav-bar__icon{
-				fill: var(--clr-back);
+				/*fill: var(--clr-back);*/
+				opacity: 1;
+
+				&.reload{
+					fill: var(--clr-textL);
+				}
 			}
 		}
 	}
@@ -117,6 +122,7 @@ Blocks from left bar
 		width: 15px;
 		fill: var(--clr-icon);
 		transition: all 0.1s;
+		opacity: 0.80;
 
 		&.ico		{ fill: #11487b; }
 		&.charts	{ fill: #034e82; }

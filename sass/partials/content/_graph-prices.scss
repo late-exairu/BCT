@@ -79,6 +79,7 @@
 		transition: all .1s;
 		cursor: pointer;
 		border-radius: var(--border-radius);
+		overflow: hidden;
 
 		&:hover{
 			box-shadow: 0 1px 5px rgba(0,0,0,.35);

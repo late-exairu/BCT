@@ -37,6 +37,14 @@
 	
 	&__item{
 		padding: 5px 5px;
+
+		&.inline{
+			display: flex;
+
+			.gbar-info__nums{
+				margin: 2px 0 0 3px;
+			}
+		}
 	}
 	
 	&__title{

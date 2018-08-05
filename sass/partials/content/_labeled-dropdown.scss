@@ -29,7 +29,7 @@
 		}
 	}
 
-	&.open{
+	/*&.open{
 		border-radius: 5px 5px 0 0;
 
 		.labeled-dropdown__list{
@@ -37,12 +37,12 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
-	}
+	}*/
 
 	&__current{
 		width: 100%;
 		position: relative;
-		padding: 0 20px 0 30px;
+		padding: 0 20px 0 15px;
 		margin: auto 0;
 	}
 
