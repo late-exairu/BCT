@@ -171,6 +171,8 @@
             transform: translateX(-50%);
             p {
                 margin-bottom: 5px;
+                font-size: 16px;
+                height: auto;
             }
         }
         svg {
@@ -183,7 +185,7 @@
         }
         .separator {
             width: 1px;
-            height: calc(85% - 34px);
+            height: calc(85% - 25px);
             background: var(--clr-textD);
             margin: 0px auto 0;
         }

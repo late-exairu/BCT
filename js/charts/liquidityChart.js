@@ -54,7 +54,8 @@ var liquidityChartOptions = {
     },
     yAxis: [{
         labels: {
-            x: -5,
+            x: 20,
+            y: -3,
             enabled: true,
             step: 4,
             overflow: 'justify',
@@ -71,7 +72,8 @@ var liquidityChartOptions = {
         max: 1600,
     }, {
         labels: {
-            x: 5,
+            x: -20,
+            y: -3,
             enabled: true,
             step: 4,
             overflow: 'justify',
