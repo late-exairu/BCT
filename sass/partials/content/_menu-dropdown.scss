@@ -20,9 +20,9 @@
 	visibility: hidden;
 	border: 1px solid var(--clr-separatorD);
 	border-radius: 5px;
-	min-width: 120px;
-	z-index: 1;
-	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+	min-width: 150px;
+	z-index: 10;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 
 	&:before{
 		content: '';
@@ -157,7 +157,7 @@
 		line-height: 1.18;
 		cursor: pointer;
 		transition: all .1s ;
-		padding: 5px 10px 5px 10px;
+		padding: 5px 12px 5px 12px;
 		align-items: center;
 		white-space: nowrap;
 

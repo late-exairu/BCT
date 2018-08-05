@@ -1012,7 +1012,7 @@
 					<div class="d-flex-col flex-1-1 c-block m-left">
 						<div class="c-block-head big">
 							<div class="c-block-head__left">
-								<h2 class="c-block-head__title">RealTime Quote Feed</h2>
+								<h2 class="c-block-head__title"></h2>
 							</div>
 						</div>
 						<!-- c-block-head END -->
@@ -1021,7 +1021,7 @@
 							<div class="c-block__col">
 								<div class="basic-table low-height scroll-y scrollbar-outer">
 									<div class="basic-table__row head">
-										<div class="basic-table__col w-35">Price (USDT)</div>
+										<div class="basic-table__col w-35">Recent Trades</div>
 										<div class="basic-table__col w-32">Amount (ETH)</div>
 										<div class="basic-table__col w-32">Regional Exchange</div>
 									</div>
@@ -1787,12 +1787,12 @@
 								<p class="gbar-info__title">1 BTC = 8199.75 USD</p>
 							</div>
 						
-							<div class="gbar-info__item">
+							<div class="gbar-info__item inline">
 								<p class="gbar-info__title">-2.92%</p>
 								<p class="gbar-info__nums">24hr Chg.</p>
 							</div>
 						
-							<div class="gbar-info__item">
+							<div class="gbar-info__item inline">
 								<p class="gbar-info__title">43.706K</p>
 								<p class="gbar-info__nums">24hr Vol</p>
 							</div>
@@ -1887,25 +1887,25 @@
 						
 						<div class="labeled-dropdown js-select">
 							<div class="labeled-dropdown__current">
-								<svg class="labeled-dropdown__icon" role="img" aria-hidden="true">
+								<!-- <svg class="labeled-dropdown__icon" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#sorting"></use>
-								</svg>
+								</svg> -->
 
 								<svg class="labeled-dropdown__arrow" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
 								</svg>
 
-								<div class="labeled-dropdown__label">Sort:
-									<div class="labeled-dropdown__selected">Lowest Price First</div>
+								<div class="labeled-dropdown__label">Sort By Lowest Price
+									<!-- <div class="labeled-dropdown__selected">Lowest Price First</div> -->
 								</div>
 							</div>
 
-							<ul class="labeled-dropdown__list">
+							<!-- <ul class="labeled-dropdown__list">
 								<li class="labeled-dropdown__item active">Lowest Price First</li>
 								<li class="labeled-dropdown__item">Highest Price First</li>
 								<li class="labeled-dropdown__item">Other Price First</li>
 								<li class="labeled-dropdown__item">Captain Price First</li>
-							</ul>
+							</ul> -->
 						</div>
 						
 						<div class="graph-prices__scroll scroll-y scrollbar-outer">
@@ -2358,14 +2358,14 @@
 										<div class="basic-table__col w-10 sorted">Time</div>
 										<div class="basic-table__col w-10">Pair</div>
 										<div class="basic-table__col w-10">Type</div>
-										<div class="basic-table__col w-10">Side</div>
-										<div class="basic-table__col w-10">Price</div>
+										<div class="basic-table__col w-7">Side</div>
+										<div class="basic-table__col w-12">Price</div>
 										<div class="basic-table__col w-10">Amount</div>
 										<div class="basic-table__col w-10">Filled</div>
 										<div class="basic-table__col w-10">Total</div>
 										<div class="basic-table__col w-10">Trigger</div>
 										<div class="basic-table__col w-10 centered">
-											<button class="basic-table__btn accented">Cancel All</button>
+											<button class="basic-table__btn simple">Cancel All</button>
 										</div>
 									</div><!-- basic-table__row END -->
 
@@ -2373,8 +2373,8 @@
 										<div class="basic-table__col w-10">3m ago</div>
 										<div class="basic-table__col w-10">ETH/USDT</div>
 										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">Buy</div>
-										<div class="basic-table__col w-10">479.91 USDT</div>
+										<div class="basic-table__col w-7">Buy</div>
+										<div class="basic-table__col w-12">479.91 USDT</div>
 										<div class="basic-table__col w-10">0.0411 ETH</div>
 										<div class="basic-table__col w-10">29</div>
 										<div class="basic-table__col w-10">xxx</div>
@@ -2388,8 +2388,8 @@
 										<div class="basic-table__col w-10">3m ago</div>
 										<div class="basic-table__col w-10">ETH/USDT</div>
 										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">Buy</div>
-										<div class="basic-table__col w-10">479.91 USDT</div>
+										<div class="basic-table__col w-7">Buy</div>
+										<div class="basic-table__col w-12">479.91 USDT</div>
 										<div class="basic-table__col w-10">0.0411 ETH</div>
 										<div class="basic-table__col w-10">29</div>
 										<div class="basic-table__col w-10">xxx</div>
@@ -2403,8 +2403,8 @@
 										<div class="basic-table__col w-10">3m ago</div>
 										<div class="basic-table__col w-10">ETH/USDT</div>
 										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">Buy</div>
-										<div class="basic-table__col w-10">479.91 USDT</div>
+										<div class="basic-table__col w-7">Buy</div>
+										<div class="basic-table__col w-12">479.91 USDT</div>
 										<div class="basic-table__col w-10">0.0411 ETH</div>
 										<div class="basic-table__col w-10">29</div>
 										<div class="basic-table__col w-10">xxx</div>
@@ -2418,8 +2418,8 @@
 										<div class="basic-table__col w-10">3m ago</div>
 										<div class="basic-table__col w-10">ETH/USDT</div>
 										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">Buy</div>
-										<div class="basic-table__col w-10">479.91 USDT</div>
+										<div class="basic-table__col w-7">Buy</div>
+										<div class="basic-table__col w-12">479.91 USDT</div>
 										<div class="basic-table__col w-10">0.0411 ETH</div>
 										<div class="basic-table__col w-10">29</div>
 										<div class="basic-table__col w-10">xxx</div>
@@ -2433,8 +2433,8 @@
 										<div class="basic-table__col w-10">3m ago</div>
 										<div class="basic-table__col w-10">ETH/USDT</div>
 										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">Buy</div>
-										<div class="basic-table__col w-10">479.91 USDT</div>
+										<div class="basic-table__col w-7">Buy</div>
+										<div class="basic-table__col w-12">479.91 USDT</div>
 										<div class="basic-table__col w-10">0.0411 ETH</div>
 										<div class="basic-table__col w-10">29</div>
 										<div class="basic-table__col w-10">xxx</div>
@@ -2448,8 +2448,8 @@
 										<div class="basic-table__col w-10">3m ago</div>
 										<div class="basic-table__col w-10">ETH/USDT</div>
 										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">Buy</div>
-										<div class="basic-table__col w-10">479.91 USDT</div>
+										<div class="basic-table__col w-7">Buy</div>
+										<div class="basic-table__col w-12">479.91 USDT</div>
 										<div class="basic-table__col w-10">0.0411 ETH</div>
 										<div class="basic-table__col w-10">29</div>
 										<div class="basic-table__col w-10">xxx</div>
@@ -2463,8 +2463,8 @@
 										<div class="basic-table__col w-10">3m ago</div>
 										<div class="basic-table__col w-10">ETH/USDT</div>
 										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">Buy</div>
-										<div class="basic-table__col w-10">479.91 USDT</div>
+										<div class="basic-table__col w-7">Buy</div>
+										<div class="basic-table__col w-12">479.91 USDT</div>
 										<div class="basic-table__col w-10">0.0411 ETH</div>
 										<div class="basic-table__col w-10">29</div>
 										<div class="basic-table__col w-10">xxx</div>
@@ -2607,7 +2607,7 @@
 							<div class="flex-1-1 scroll-y scrollbar-outer">
 								<div class="basic-table med-height">
 									<div class="basic-table__row head">
-										<div class="basic-table__col w-15 sorted">Time</div>
+										<div class="basic-table__col w-15">Time</div>
 										<div class="basic-table__col w-15">Pair</div>
 										<div class="basic-table__col w-12">Type</div>
 										<div class="basic-table__col w-15">Price</div>
@@ -2626,7 +2626,7 @@
 										<div class="basic-table__col w-12">xxx</div>
 									</div><!-- basic-table__row END -->
 
-									<div class="basic-table__row active">
+									<div class="basic-table__row"><!-- Row can be selected ".active" -->
 										<div class="basic-table__col w-15">3m ago</div>
 										<div class="basic-table__col w-15">ETH/USDT</div>
 										<div class="basic-table__col w-12">xxx</div>
