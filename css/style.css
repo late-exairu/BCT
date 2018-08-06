@@ -655,11 +655,12 @@ h6 {
     .basic-table__row:first-child {
       border: none; }
     .basic-table__row.head {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700; }
       .basic-table__row.head .basic-table__col {
+        position: relative;
         height: 48px;
-        padding: 2px 4px;
+        padding: 4px 4px;
         color: var(--clr-textL);
         align-items: flex-end; }
         .basic-table__row.head .basic-table__col:first-child {
@@ -667,6 +668,19 @@ h6 {
         .basic-table__row.head .basic-table__col.sorted {
           background: var(--clr-backA);
           color: var(--clr-textA); }
+          .basic-table__row.head .basic-table__col.sorted .basic-table__arrow-sort {
+            fill: var(--clr-textA); }
+        .basic-table__row.head .basic-table__col.sorted-down {
+          background: var(--clr-backA);
+          color: var(--clr-textA); }
+          .basic-table__row.head .basic-table__col.sorted-down .basic-table__arrow-sort {
+            fill: var(--clr-textA); }
+        .basic-table__row.head .basic-table__col.sorted-up {
+          background: var(--clr-backA);
+          color: var(--clr-textA); }
+          .basic-table__row.head .basic-table__col.sorted-up .basic-table__arrow-sort {
+            fill: var(--clr-textA);
+            transform: rotate(180deg); }
       .basic-table__row.head.active {
         font-weight: 700; }
     .basic-table__row.active {
@@ -684,6 +698,9 @@ h6 {
     color: var(--clr-text);
     min-width: 50px;
     max-width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
     cursor: pointer;
     background: transparent;
     transition: all 0.1s; }
@@ -871,15 +888,21 @@ h6 {
       width: 100%;
       min-width: 100%;
       max-width: 100%; }
+  .basic-table__arrow-sort {
+    display: inline-block;
+    width: 5px;
+    height: 3px;
+    margin: 0 0 5px 7px;
+    fill: var(--clr-iconD); }
   .basic-table .icon-curr {
     width: 24px;
     height: 24px;
     margin: 0 22px 0 0;
     flex: 0 0 24px; }
   .basic-table.med-height .basic-table__row.head .basic-table__col {
-    height: 23px; }
+    height: 27px; }
   .basic-table.med-height .basic-table__col {
-    height: 34px; }
+    height: 33px; }
   .basic-table.low-height {
     font-size: 10px; }
     .basic-table.low-height .basic-table__row.head {

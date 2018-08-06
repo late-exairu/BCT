@@ -29,12 +29,13 @@
 		}
 
 		&.head{
-			font-size: 12px;
+			font-size: 11px;
 			font-weight: 700;
 
 			.basic-table__col{
+				position: relative;
 				height: 48px;
-				padding: 2px 4px;
+				padding: 4px 4px;
 				color: var(--clr-textL);
 				align-items: flex-end;
 
@@ -45,6 +46,29 @@
 				&.sorted{
 					background: var(--clr-backA);
 					color: var(--clr-textA);
+
+					.basic-table__arrow-sort{
+						fill: var(--clr-textA);
+					}
+				}
+
+				&.sorted-down{
+					background: var(--clr-backA);
+					color: var(--clr-textA);
+
+					.basic-table__arrow-sort{
+						fill: var(--clr-textA);
+					}
+				}
+
+				&.sorted-up{
+					background: var(--clr-backA);
+					color: var(--clr-textA);
+
+					.basic-table__arrow-sort{
+						fill: var(--clr-textA);
+						transform: rotate(180deg);
+					}
 				}
 			}
 
@@ -75,6 +99,9 @@
 		color: var(--clr-text);
 		min-width: 50px;
 		max-width: 100%;
+		display: flex;
+		align-items: center;
+		text-align: center;
 		cursor: pointer;
 		background: transparent;
 		transition: all 0.1s;
@@ -166,6 +193,14 @@
 		&.w-100	{ width: 100%;	min-width: 100%;	max-width: 100%; }
 	}
 
+	&__arrow-sort{
+		display: inline-block;
+		width: 5px;
+		height: 3px;
+		margin: 0 0 5px 7px;
+		fill: var(--clr-iconD);
+	}
+
 	.icon-curr{
 		width: 24px;
 		height: 24px;
@@ -180,13 +215,13 @@
 			&.head{
 
 				.basic-table__col{
-					height: 23px;
+					height: 27px;
 				}
 			}
 		}
 
 		.basic-table__col{
-			height: 34px;
+			height: 33px;
 		}
 	}
 
