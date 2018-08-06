@@ -18,11 +18,11 @@ var portfolioChartOptions = {
         gridLineColor: '#e6e6e6',
         lineColor: '#ccd6eb',
         dateTimeLabelFormats: {
-            day: '%b %e',
+            day: '%b - %e',
             hour: '%H:%M',
-            day: '%e. %b',
-            week: '%e. %b',
-            month: '%b \'%y',
+            day: '%b %e',
+            //week: '%e. --- %b',
+            month: "%b '%y",
             year: '%Y'
         },
         crosshair: {
@@ -37,7 +37,7 @@ var portfolioChartOptions = {
             step: 1,
             style: {
                 color: '#666666',
-                fontSize: '8px'
+                fontSize: '8px',
             }
         },
     }],
@@ -87,7 +87,7 @@ var portfolioChartOptions = {
         },
         tickAmount: 10,
         minorTickLength: 0,
-       // max: 10000,
+        // max: 10000,
     },
     navigator: {
         enabled: false
