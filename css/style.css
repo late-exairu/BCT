@@ -2752,14 +2752,35 @@ body.menubar-in #user-btn:before {
   bottom: 0;
   display: block;
   padding: 0;
+  width: 35px;
   max-width: 100%;
   max-height: 100%;
-  width: 35px;
   border-right: 1px solid var(--clr-separator);
   border-left: 1px solid var(--clr-separator);
   background: var(--clr-block);
-  z-index: 1;
+  z-index: 7;
   padding-left: 1px; }
+  .toolbar__scroll {
+    margin: 0 0 0 -1px; }
+  .toolbar__item {
+    position: relative;
+    overflow: hidden; }
+    .toolbar__item:hover .toolbar__drop-arrow {
+      transform: translate(0, -50%) rotate(0); }
+    .toolbar__item.active {
+      background: var(--clr-backA); }
+      .toolbar__item.active .toolbar__drop-arrow {
+        transform: translate(0, -50%) rotate(180deg); }
+  .toolbar__drop-arrow {
+    position: absolute;
+    width: 4px;
+    height: 7px;
+    right: 2px;
+    top: 50%;
+    transform: translate(10px, -50%) rotate(0);
+    transition: all .1s;
+    z-index: 1;
+    fill: var(--clr-textL); }
   .toolbar__btn {
     height: 34px;
     width: 34px;
@@ -2773,67 +2794,112 @@ body.menubar-in #user-btn:before {
     border: 1px solid transparent;
     cursor: pointer;
     transition: all .1s; }
-    .toolbar__btn:hover .toolbar__icon {
+    .toolbar__btn:hover .toolbar-icon {
       fill: var(--clr-text); }
-  .toolbar__icon {
-    height: 24px;
-    width: 24px;
-    fill: var(--clr-iconD);
-    transition: all 0.1s;
-    transform: scale(0.75); }
-    .toolbar__icon.tool-cross {
-      width: 24px;
-      height: 24px; }
-    .toolbar__icon.tool-trend {
-      width: 22px;
-      height: 20px; }
-    .toolbar__icon.tool-pitchfork {
-      width: 25px;
-      height: 23px; }
-    .toolbar__icon.tool-brush {
-      width: 28px;
-      height: 28px; }
-    .toolbar__icon.tool-text {
-      width: 16px;
-      height: 19px; }
-    .toolbar__icon.tool-pattern {
-      width: 27px;
-      height: 23px; }
-    .toolbar__icon.tool-long-pos {
-      width: 23px;
-      height: 21px; }
-    .toolbar__icon.tool-icon {
-      width: 21px;
-      height: 15px; }
-    .toolbar__icon.tool-measure {
-      width: 26px;
-      height: 22px; }
-    .toolbar__icon.tool-zoom {
-      width: 22px;
-      height: 22px; }
-    .toolbar__icon.tool-magnet {
-      width: 23px;
-      height: 25px; }
-    .toolbar__icon.tool-drawing {
-      width: 25px;
-      height: 27px; }
-    .toolbar__icon.tool-lock {
-      width: 18px;
-      height: 24px; }
-    .toolbar__icon.tool-hide {
-      width: 29px;
-      height: 17px; }
-    .toolbar__icon.tool-show {
-      width: 28px;
-      height: 22px; }
-    .toolbar__icon.tool-remove {
-      width: 21px;
-      height: 24px; }
   .toolbar__separator {
     width: 100%;
     height: 1px;
     background: var(--clr-separator);
     margin: 0; }
+
+.toolbar-drop {
+  position: absolute;
+  left: 38px;
+  top: 100px;
+  border: 1px solid var(--clr-separator);
+  background: var(--clr-block);
+  z-index: 5;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--clr-separator);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
+  .toolbar-drop__item {
+    display: block; }
+    .toolbar-drop__item:hover {
+      background: var(--clr-backA); }
+  .toolbar-drop__btn {
+    height: 34px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    background: transparent;
+    justify-content: center;
+    padding: 2px 15px 2px 5px;
+    border: none;
+    cursor: pointer;
+    transition: all .1s; }
+    .toolbar-drop__btn:hover .toolbar-icon {
+      fill: var(--clr-text); }
+    .toolbar-drop__btn:hover .toolbar-drop__title {
+      color: var(--clr-text); }
+  .toolbar-drop__icon-wrap {
+    width: 28px;
+    height: 28px;
+    margin: 0 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .toolbar-drop__title {
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    color: var(--clr-textL);
+    transition: all .1s; }
+
+.toolbar-icon {
+  height: 24px;
+  width: 24px;
+  fill: var(--clr-iconD);
+  transition: all 0.1s;
+  transform: scale(0.75); }
+  .toolbar-icon.tool-cross {
+    width: 24px;
+    height: 24px; }
+  .toolbar-icon.tool-trend {
+    width: 22px;
+    height: 20px; }
+  .toolbar-icon.tool-pitchfork {
+    width: 25px;
+    height: 23px; }
+  .toolbar-icon.tool-brush {
+    width: 28px;
+    height: 28px; }
+  .toolbar-icon.tool-text {
+    width: 16px;
+    height: 19px; }
+  .toolbar-icon.tool-pattern {
+    width: 27px;
+    height: 23px; }
+  .toolbar-icon.tool-long-pos {
+    width: 23px;
+    height: 21px; }
+  .toolbar-icon.tool-icon {
+    width: 21px;
+    height: 15px; }
+  .toolbar-icon.tool-measure {
+    width: 26px;
+    height: 22px; }
+  .toolbar-icon.tool-zoom {
+    width: 22px;
+    height: 22px; }
+  .toolbar-icon.tool-magnet {
+    width: 23px;
+    height: 25px; }
+  .toolbar-icon.tool-drawing {
+    width: 25px;
+    height: 27px; }
+  .toolbar-icon.tool-lock {
+    width: 18px;
+    height: 24px; }
+  .toolbar-icon.tool-hide {
+    width: 29px;
+    height: 17px; }
+  .toolbar-icon.tool-show {
+    width: 28px;
+    height: 22px; }
+  .toolbar-icon.tool-remove {
+    width: 21px;
+    height: 24px; }
 
 /* Ion.RangeSlider
 // css version 2.0.3

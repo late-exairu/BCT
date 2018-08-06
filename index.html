@@ -1678,109 +1678,186 @@
 
 				<div class="c-block b-graph visibility-parent">
 					<div class="b-graph__chart" id="mainChartWrap">
-						<div class="toolbar scrollbar-inner visibility-child">
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-cross" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-cross"></use>
-								</svg>
-							</button>
+						<div class="toolbar visibility-child">
+							<div class="toolbar__scroll scroll-y scrollbar-inner">
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-cross"></use>
+										</svg>
+									</button>
+								</div>
 
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-trend" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
-								</svg>
-							</button>
+								<div class="toolbar__item"><!-- .active on click -->
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
+										</svg>
+									</button>
 
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-pitchfork" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-pitchfork"></use>
-								</svg>
-							</button>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-brush" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-brush"></use>
-								</svg>
-							</button>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-text" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-text"></use>
-								</svg>
-							</button>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-pattern" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-pattern"></use>
-								</svg>
-							</button>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-long-pos" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-long-pos"></use>
-								</svg>
-							</button>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-icon" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-icon"></use>
-								</svg>
-							</button>
-
-							<div class="toolbar__separator"></div>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-measure" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-measure"></use>
-								</svg>
-							</button>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-zoom" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-zoom"></use>
-								</svg>
-							</button>
-
-							<div class="toolbar__separator"></div>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-magnet" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-magnet"></use>
-								</svg>
-							</button>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-drawing" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-drawing"></use>
-								</svg>
-							</button>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-lock" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-lock"></use>
-								</svg>
-							</button>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-hide" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-hide"></use>
-								</svg>
-							</button>
-
-							<div class="toolbar__separator"></div>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-show" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-show"></use>
-								</svg>
-							</button>
-
-							<button class="toolbar__btn">
-								<svg class="toolbar__icon tool-remove" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-remove"></use>
-								</svg>
-							</button>
+									<svg class="toolbar__drop-arrow tool-trend" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-tool-drop"></use>
+									</svg>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-pitchfork" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-pitchfork"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-brush" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-brush"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-text" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-text"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-pattern" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-pattern"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-long-pos" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-long-pos"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-icon" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-icon"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__separator"></div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-measure" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-measure"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-zoom" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-zoom"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__separator"></div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-magnet" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-magnet"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-drawing" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-drawing"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-lock" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-lock"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-hide" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-hide"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__separator"></div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-show" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-show"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-remove" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-remove"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
 						</div><!-- toolbar END -->
+
+						<!-- <div class="toolbar-drop">
+							<div class="toolbar-drop__item">
+								<button class="toolbar-drop__btn">
+									<div class="toolbar-drop__icon-wrap">
+										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
+										</svg>
+									</div>
+
+									<p class="toolbar-drop__title">Cross</p>
+								</button>
+							</div>
+					
+							<div class="toolbar-drop__item">
+								<button class="toolbar-drop__btn">
+									<div class="toolbar-drop__icon-wrap">
+										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
+										</svg>
+									</div>
+								
+									<p class="toolbar-drop__title">Dot</p>
+								</button>
+							</div>
+					
+							<div class="toolbar-drop__item">
+								<button class="toolbar-drop__btn">
+									<div class="toolbar-drop__icon-wrap">
+										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
+										</svg>
+									</div>
+								
+									<p class="toolbar-drop__title">Arrow</p>
+								</button>
+							</div>
+						</div> -->
+						<!-- toolbar-drop END -->
 
 						<div class="gbar-info visibility-child">
 							<div class="gbar-info__item">
