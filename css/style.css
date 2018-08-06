@@ -2759,7 +2759,7 @@ body.menubar-in #user-btn:before {
   border-left: 1px solid var(--clr-separator);
   background: var(--clr-block);
   z-index: 7;
-  padding-left: 1px; }
+  padding-bottom: 34px; }
   .toolbar__scroll {
     margin: 0 0 0 -1px; }
   .toolbar__item {
@@ -2771,6 +2771,8 @@ body.menubar-in #user-btn:before {
       background: var(--clr-backA); }
       .toolbar__item.active .toolbar__drop-arrow {
         transform: translate(0, -50%) rotate(180deg); }
+    .toolbar__item.bottom {
+      margin: auto 0 0; }
   .toolbar__drop-arrow {
     position: absolute;
     width: 4px;
@@ -2900,6 +2902,33 @@ body.menubar-in #user-btn:before {
   .toolbar-icon.tool-remove {
     width: 21px;
     height: 24px; }
+
+.sys-status {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 34px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+  .sys-status__dot {
+    width: 5px;
+    height: 5px;
+    background: #2EAA89;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0; }
+  .sys-status__title {
+    font-size: 5px;
+    padding: 0;
+    margin: 2px 0 0;
+    line-height: 1.28;
+    color: var(--clr-text); }
+  .sys-status.problem .sys-status__dot {
+    background: #ff4d3f; }
 
 /* Ion.RangeSlider
 // css version 2.0.3
@@ -3367,17 +3396,11 @@ body.menubar-in #user-btn:before {
   top: 0;
   width: 3px;
   cursor: pointer;
-  border-right: 1px solid var(--clr-separator); }
+  border: 0;
+  border-left: none; }
 
 .scrollbar-inner > .scroll-element .scroll-element_outer {
   overflow: hidden; }
-
-.scrollbar-inner > .scroll-element .scroll-element_outer,
-.scrollbar-inner > .scroll-element .scroll-element_track,
-.scrollbar-inner > .scroll-element .scroll-bar {
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px; }
 
 /*
 .scrollbar-inner > .scroll-element .scroll-element_track{
@@ -3397,9 +3420,6 @@ body.menubar-in #user-btn:before {
 .scrollbar-inner > .scroll-element:hover .scroll-bar { background-color: var(--clr-accentD); }
 .scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar { background-color: var(--clr-accentD); }
 */
-.scrollbar-inner > .scroll-element {
-  background-color: var(--clr-block); }
-
 .scrollbar-inner > .scroll-element .scroll-bar {
   background-color: var(--clr-separatorD); }
 

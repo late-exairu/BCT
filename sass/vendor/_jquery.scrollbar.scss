@@ -186,20 +186,14 @@
     top: 0;
     width: 3px;
     cursor: pointer;
-    border-right: 1px solid var(--clr-separator);
+    border: 0;
+    border-left: none;
 }
 
 .scrollbar-inner > .scroll-element .scroll-element_outer {
     overflow: hidden;
 }
 
-.scrollbar-inner > .scroll-element .scroll-element_outer,
-.scrollbar-inner > .scroll-element .scroll-element_track,
-.scrollbar-inner > .scroll-element .scroll-bar {
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-}
 
 /*
 .scrollbar-inner > .scroll-element .scroll-element_track{
@@ -219,7 +213,6 @@
 .scrollbar-inner > .scroll-element:hover .scroll-bar { background-color: var(--clr-accentD); }
 .scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar { background-color: var(--clr-accentD); }
 */
-.scrollbar-inner > .scroll-element { background-color: var(--clr-block); }
 .scrollbar-inner > .scroll-element .scroll-bar { background-color: var(--clr-separatorD); }
 
 
