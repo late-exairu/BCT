@@ -2180,19 +2180,6 @@
 
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="js-tabs-panel" id="panel-funds-account">
-
-							<div class="accounts-diagram" id="circleChart"></div>
-							<div id="circleChartText">
-								<p id="pieChartInfoText">
-									<span>Total balance</span>
-									<span>
-										<span>$</span>6,359
-										<span>.50</span>
-									</span>
-									<span>(+4%) over the last 30 days</span>
-								</p>
-							</div>
-
 							<div class="flex-1-1 scroll-y scrollbar-outer">
 								<div class="basic-table">
 									<div class="basic-table__row">
@@ -2410,11 +2397,23 @@
 						</div><!-- js-tabs-panel END -->
 
 						<div class="js-tabs-panel active" id="panel-funds-portfolio">
+							<div class="circleDiagramParent">
+								<div class="accounts-diagram" id="circleChart"></div>
+								<div id="circleChartText">
+									<p>
+										<span>Total balance</span>
+										<span>
+											<span>$</span>6,359
+											<span>.50</span>
+										</span>
+										<span>(+4%) over the last 30 days</span>
+									</p>
+								</div>
+							</div>
 							<div id="portfolioChart" style="width: 100%;"></div>
 							<div id="portfolioChartRange">
-								<span>1H</span>
+								<span>NOW</span>
 								<span>1D</span>
-								<span>1W</span>
 								<span class="active">1M</span>
 								<span>1Y</span>
 								<span>ALL</span>

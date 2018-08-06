@@ -4,15 +4,15 @@
 
 var portfolioChartData = null;
 var portfolioChartObj = null;
-var portfolioChartCurrentRange = 3;
+var portfolioChartCurrentRange = 1;
 var portfolioChartOptions = {
     chart: {
         type: 'areaspline',
         backgroundColor: '#ffffff',
-        marginBottom: 25,
-        marginTop: -35,
-        marginRight: 15,
-        marginLeft: 15
+        marginBottom: 21,
+        marginTop: -30,
+      //  marginRight: 15,
+      //  marginLeft: 15
     },
     xAxis: [{
         gridLineColor: '#e6e6e6',
@@ -27,13 +27,14 @@ var portfolioChartOptions = {
         },
         crosshair: {
             width: 1,
-            dashStyle: 'LongDash'
+            //dashStyle: 'LongDash'
         },
         type: 'datetime',
         tickLength: 0,
         tickAmount: 9,
-        gridLineWidth: 1,
+        gridLineWidth: 0,
         labels: {
+            enabled: false,
             step: 1,
             style: {
                 color: '#666666',
@@ -47,15 +48,11 @@ var portfolioChartOptions = {
         labelStyle: {
             visibility: 'hidden'
         },
-        buttons: [{
-                type: 'hour',
-                count: 1,
-            }, {
-                type: 'day',
-                count: 1,
-            }, {
+        buttons: [
+            {
                 type: 'week',
-            },
+                count: 1,
+            }, 
             {
                 type: 'month',
                 count: 1,
@@ -79,6 +76,7 @@ var portfolioChartOptions = {
     },
     yAxis: {
         gridLineColor: '#e6e6e6',
+        gridLineWidth: 0,
         labels: {
             enabled: false,
         },
@@ -111,7 +109,7 @@ var portfolioChartOptions = {
             var date = new Date(this.x);
             var month = months[date.getMonth()];
             var dayName = date.toString().split(' ')[0];
-            var TooltipValue = (this.y).toFixed(2);
+            var TooltipValue = (this.y * 45).toFixed(2);
             TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
             return '<div class="tooltip">' +
                 "<span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() +
@@ -179,7 +177,7 @@ var portfolioChartOptions = {
     }]
 };
 
-$.getJSON(location.origin + location.pathname + 'data/ownData.json', function (data) {
+$.getJSON(location.origin + location.pathname + 'data/exampleData.json', function (data) {
     /*      var newData = [];
         var now2 = new Date(Date.parse("2016-01-01T01:00:00+0000")).toUTCString();
         var now = new Date(now2).getTime();

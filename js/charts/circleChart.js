@@ -16,8 +16,8 @@ var circleChartOptions = {
             innerSize: '85%',
             borderWidth: 0,
             startAngle: 20,
-            size: 150,
-            center: [60, 60],
+            size: 138,
+            center: [55, 50],
         },
         series: {
             dataLabels: {
@@ -67,10 +67,10 @@ var circleChartOptions = {
     }]
 };
 
-function positionCircleChartText(chart) {
+/* function positionCircleChartText(chart) {
     var textY = chart.plotTop + (chart.plotHeight * 0.5);
     span = $('#pieChartInfoText');
     span.css('width', '162px');
     span.css('left','0');
     span.css('top', textY + (span.height() * -0.6));
-};
+}; */

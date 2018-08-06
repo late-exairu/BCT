@@ -3657,39 +3657,43 @@ body.menubar-in #user-btn:before {
 .highcharts-credits {
   display: none; }
 
+.circleDiagramParent {
+  display: none;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); }
+
 .accounts-diagram {
-  width: 162px;
-  flex: 0 0 162px;
+  width: 148px;
   max-height: 100%;
   height: 100%;
-  border-right: 1px solid var(--clr-separator);
   background: var(--clr-back); }
 
 #circleChartText {
   position: absolute;
-  left: 0px;
-  top: 0px; }
-
-#pieChartInfoText {
-  position: absolute;
-  text-align: center;
-  color: var(--clr-textD);
+  width: 120px;
+  top: 18px;
+  left: 14px;
   border-radius: 50%; }
-  #pieChartInfoText > span {
-    display: block; }
-    #pieChartInfoText > span span {
-      font-size: 16px;
-      line-height: 25px;
-      vertical-align: top; }
-    #pieChartInfoText > span:nth-child(1) {
-      font-size: 11px; }
-    #pieChartInfoText > span:nth-child(2) {
-      font-size: 24px; }
-    #pieChartInfoText > span:nth-child(3) {
-      font-size: 10px;
-      color: var(--clr-textL);
-      width: 70%;
-      display: inline-block; }
+  #circleChartText p {
+    text-align: center;
+    color: var(--clr-textD);
+    border-radius: 50%; }
+    #circleChartText p > span {
+      display: block; }
+      #circleChartText p > span span {
+        font-size: 16px;
+        line-height: 25px;
+        vertical-align: top; }
+      #circleChartText p > span:nth-child(1) {
+        font-size: 11px; }
+      #circleChartText p > span:nth-child(2) {
+        font-size: 24px; }
+      #circleChartText p > span:nth-child(3) {
+        font-size: 10px;
+        color: var(--clr-textL);
+        width: 75%;
+        display: inline-block; }
 
 #mainChart {
   padding-top: 0;
@@ -3751,16 +3755,19 @@ body.menubar-in #user-btn:before {
 
 #portfolioChartRange {
   position: absolute;
-  top: 0px;
-  right: 15px; }
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%); }
   #portfolioChartRange span {
-    padding: 2px 6px;
+    padding: 3px 16px;
     display: inline-block;
     font-size: 10px;
     color: var(--clr-textL);
-    cursor: pointer; }
+    cursor: pointer;
+    width: 50px;
+    text-align: center; }
   #portfolioChartRange .active {
-    border-bottom: 2px solid #0576b9;
+    border-top: 3px solid #0576b9;
     font-weight: bold; }
 
 #panel-funds-account,
