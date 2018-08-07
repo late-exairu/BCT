@@ -340,10 +340,13 @@ $(function () {
 	/* show Orders form */
 	/*---------------------------------------------------*/
 
-	$('.main-cols__left .basic-table__row').click(function () {
-		$('.main-cols__left .basic-table__row').removeClass('active');
+	$('.basic-table__row:not(.head)').click(function () {
+		$(this).parent().find('.basic-table__row').removeClass('active');
 		$(this).addClass('active');
-		$('#orders').css('display', 'flex');
+
+		if ($(this).parents('#orderBook').length) {
+			$('#orders').css('display', 'flex');
+		}
 	});
 
 	/*---------------------------------------------------*/
@@ -441,11 +444,11 @@ $(function () {
 	$('.basic-table__row.head > div').click(function () {
 
 		if ($(this).hasClass('sorted-down')) {
-			$('.basic-table__row.head > div').removeClass('sorted-down');
+			$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-down');
 			$(this).addClass('sorted-up');
 		} else {
-			$('.basic-table__row.head > div').removeClass('sorted-up');
-			$('.basic-table__row.head > div').removeClass('sorted-down');
+			$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-up');
+			$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-down');
 			$(this).addClass('sorted-down');
 		}
 	});
