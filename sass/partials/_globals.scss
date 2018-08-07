@@ -29,6 +29,8 @@
 .flex-h-fix		{ min-height: 0; }
 .flex-w-fix		{ min-width: 0; }
 
+.align-f-start	{ align-items: flex-end; }
+.align-f-center	{ align-items: center; }
 .align-f-end	{ align-items: flex-end; }
 
 .m-left			{ margin-left:	var(--gap-size); }

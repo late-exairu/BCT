@@ -105,6 +105,7 @@
 		cursor: pointer;
 		background: transparent;
 		transition: all 0.1s;
+		background: var(--clr-block);
 
 		&.accented{
 			color: var(--clr-accentD);
@@ -142,6 +143,10 @@
 
 		&.centered{
 			justify-content: center;
+		}
+
+		&.to-right{
+			justify-content: flex-end;
 		}
 
 		&.clr-red{
