@@ -314,7 +314,7 @@ $(function () {
 				if (item.type == 'areaspline') {
 					item.setOptions({
 						color: lineColor,
-						lineWidth: item.options.lineWidth,
+						//lineWidth: item.options.lineWidth,
 						id: item.options.id
 					});
 					// add fill color on theme change 
@@ -325,7 +325,7 @@ $(function () {
 								stops: gradientColor
 							},
 							id: item.options.id,
-							lineWidth: item.options.lineWidth,
+							//lineWidth: item.options.lineWidth,
 							color: item.options.color
 						});
 					}
