@@ -327,7 +327,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				87, 84, 85, 86, 84,
 			],
 			name: "Series 12",
-			lineWidth: 1,
+			lineWidth: 3,
 			color: '#0576B9',
 			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 100],

@@ -314,7 +314,7 @@ $(function () {
 				if (item.type == 'areaspline') {
 					item.setOptions({
 						color: lineColor,
-						//lineWidth: item.options.lineWidth,
+						lineWidth: item.options.lineWidth,
 						id: item.options.id
 					});
 					// add fill color on theme change 
@@ -325,7 +325,7 @@ $(function () {
 								stops: gradientColor
 							},
 							id: item.options.id,
-							//lineWidth: item.options.lineWidth,
+							lineWidth: item.options.lineWidth,
 							color: item.options.color
 						});
 					}
@@ -380,6 +380,24 @@ $(function () {
 	$('.graph-prices .graph-prices__list .graph-prices__item').click(function () {
 		$('.graph-prices__list .graph-prices__item').removeClass('active');
 		$(this).addClass('active');
+		mainChartObj.series.map(function (item, index) {
+			if (item.type == 'areaspline') {
+				if (item.options.lineWidth > 1){
+					item.update({
+						lineWidth: 1,
+						color: item.options.color
+					});
+					return false;
+				}
+			}
+		});
+
+		mainChartObj.series[$(this).attr('data-id') - 1].update({
+			lineWidth: 3,
+			//color: mainChartObj.series[$(this).attr('data-id')].options.color
+		});
+
+
 	});
 
 	/*---------------------------------------------------*/
