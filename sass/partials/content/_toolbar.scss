@@ -11,7 +11,7 @@
 	bottom: 0;
 	display: block;
 	padding: 0;
-	width: 35px;
+	width: 32px;
 	max-width: 100%;
 	max-height: 100%;
 	border-right: 1px solid var(--clr-separator);
@@ -22,6 +22,7 @@
 
 	&__scroll{
 		margin: 0 0 0 -1px;
+		padding: 0 0 0 1px;
 	}
 
 	&__item{
@@ -57,12 +58,11 @@
 		transition: all .1s;
 		z-index: 1;
 		fill: var(--clr-textL);
-		
 	}
 
 	&__btn{
-		height: 34px;
-		width: 34px;
+		height: 28px;
+		width: 32px;
 		margin: 0 -1px 0 -1px;
 		display: flex;
 		align-items: center;
@@ -87,6 +87,24 @@
 		height: 1px;
 		background: var(--clr-separator);
 		margin: 0;
+	}
+
+	@media only screen and (min-width : 1366px) {
+		width: 42px;
+
+		&__btn{
+			width: 42px;
+			height: 34px;
+		}
+	}
+
+	@media only screen and (min-width : 1920px) {
+		width: 48px;
+
+		&__btn{
+			width: 48px;
+			height: 40px;
+		}
 	}
 }
 
@@ -135,8 +153,8 @@
 	}
 
 	&__icon-wrap{
-		width: 28px;
 		height: 28px;
+		width: 32px;
 		margin: 0 5px 0 0;
 		display: flex;
 		align-items: center;
@@ -153,28 +171,36 @@
 }
 
 .toolbar-icon{
-	height: 24px;
+	height: 100%;
 	width: 24px;
 	fill: var(--clr-iconD);
 	transition: all 0.1s;
-	transform: scale(0.75);
+	--icon-scale: 1;
 
-	&.tool-cross		{ width: 24px; height: 24px; }
-	&.tool-trend		{ width: 22px; height: 20px; }
-	&.tool-pitchfork	{ width: 25px; height: 23px; }
-	&.tool-brush		{ width: 28px; height: 28px; }
-	&.tool-text			{ width: 16px; height: 19px; }
-	&.tool-pattern		{ width: 27px; height: 23px; }
-	&.tool-long-pos		{ width: 23px; height: 21px; }
-	&.tool-icon			{ width: 21px; height: 15px; }
-	&.tool-measure		{ width: 26px; height: 22px; }
-	&.tool-zoom			{ width: 22px; height: 22px; }
-	&.tool-magnet		{ width: 23px; height: 25px; }
-	&.tool-drawing		{ width: 25px; height: 27px; }
-	&.tool-lock			{ width: 18px; height: 24px; }
-	&.tool-hide			{ width: 29px; height: 17px; }
-	&.tool-show			{ width: 28px; height: 22px; }
-	&.tool-remove		{ width: 21px; height: 24px; }
+	&.tool-cross		{ width: calc(13px * var(--icon-scale)); height: calc(13px * var(--icon-scale)); }
+	&.tool-trend		{ width: calc(11px * var(--icon-scale)); height: calc(11px * var(--icon-scale)); }
+	&.tool-pitchfork	{ width: calc(13px * var(--icon-scale)); height: calc(12px * var(--icon-scale)); }
+	&.tool-brush		{ width: calc(15px * var(--icon-scale)); height: calc(18px * var(--icon-scale)); }
+	&.tool-text			{ width: calc(10px * var(--icon-scale)); height: calc(12px * var(--icon-scale)); }
+	&.tool-pattern		{ width: calc(14px * var(--icon-scale)); height: calc(12px * var(--icon-scale)); }
+	&.tool-long-pos		{ width: calc(13px * var(--icon-scale)); height: calc(11px * var(--icon-scale)); }
+	&.tool-icon			{ width: calc(11px * var(--icon-scale)); height: calc(9px * var(--icon-scale)); }
+	&.tool-measure		{ width: calc(14px * var(--icon-scale)); height: calc(13px * var(--icon-scale)); }
+	&.tool-zoom			{ width: calc(12px * var(--icon-scale)); height: calc(12px * var(--icon-scale)); }
+	&.tool-magnet		{ width: calc(13px * var(--icon-scale)); height: calc(14px * var(--icon-scale)); }
+	&.tool-drawing		{ width: calc(14px * var(--icon-scale)); height: calc(15px * var(--icon-scale)); }
+	&.tool-lock			{ width: calc(11px * var(--icon-scale)); height: calc(14px * var(--icon-scale)); }
+	&.tool-hide			{ width: calc(15px * var(--icon-scale)); height: calc(10px * var(--icon-scale)); }
+	&.tool-show			{ width: calc(15px * var(--icon-scale)); height: calc(11px * var(--icon-scale)); }
+	&.tool-remove		{ width: calc(11px * var(--icon-scale)); height: calc(12px * var(--icon-scale)); }
+
+	@media only screen and (min-width : 1366px) {
+		--icon-scale: 1.35;
+	}
+
+	@media only screen and (min-width : 1920px) {
+		--icon-scale: 1.8;
+	}
 }
 
 .sys-status{
@@ -209,6 +235,31 @@
 	&.problem{
 		.sys-status__dot{
 			background: #ff4d3f;
+		}
+	}
+
+	@media only screen and (min-width : 1366px) {
+
+		&__dot{
+			width: 7px;
+			height: 7px;
+		}
+
+		&__title{
+			margin: 4px 0 0;
+			font-size: 6px;
+		}
+	}
+
+	@media only screen and (min-width : 1920px) {
+
+		&__dot{
+			width: 8px;
+			height: 8px;
+		}
+
+		&__title{
+			font-size: 7px;
 		}
 	}
 }
