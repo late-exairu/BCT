@@ -382,7 +382,7 @@ $(function () {
 		$(this).addClass('active');
 		mainChartObj.series.map(function (item, index) {
 			if (item.type == 'areaspline') {
-				if (item.options.lineWidth > 1){
+				if (item.options.lineWidth > 1) {
 					item.update({
 						lineWidth: 1,
 						color: item.options.color
