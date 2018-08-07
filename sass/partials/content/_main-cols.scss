@@ -74,4 +74,13 @@
 		flex-direction: column;
 		min-height: 212px;
 	}
+
+	@media only screen and (min-height : 900px) {
+		
+		&__left-bottom,
+		&__right-bottom{
+			flex: 0 0 294px;
+			min-height: 294px;
+		}
+	}
 }

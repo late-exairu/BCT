@@ -63,7 +63,7 @@
 		border: 1px solid var(--clr-separatorD);
 		background: var(--clr-block);
 		font-size: 11px;
-		padding: 0 30px 0 5px;
+		padding: 0 36px 0 5px;
 		width: 100%;
 		color: var(--clr-textD);
 		border-radius: var(--border-radius);
@@ -90,7 +90,7 @@
 		right: 1px;
 		top: 1px;
 		bottom: 1px;
-		width: 30px;
+		width: 36px;
 		font-size: 11px;
 		padding: 2px 2px;
 		text-align: center;
@@ -108,3 +108,34 @@
 	}
 }
 
+.main-cols{
+	@media only screen and (min-height : 900px) {
+
+		.order-form{
+
+			&__group{
+				min-height: 152px;
+			}
+
+			&__line{
+				margin: 0 0 10px;
+
+				&:last-child{
+					margin: 0;
+				}
+			}
+
+			&__input{
+				height: 28px;
+			}
+
+			&__submit{
+				min-height: 28px;
+			}
+
+			.cubic-slider{
+				margin: 15px 0 15px;
+			}
+		}
+	}
+}
