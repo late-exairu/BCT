@@ -24,6 +24,11 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	},
 	chart: {
 		marginBottom: 35,
+		marginRight: -10,
+		spacingTop: 0,
+		spacingLeft: 0,
+		spacingRight: 0,
+		spacingBottom: 0,
 		events: {
 			click: function (event) {
 				mainGraphHighlighted = mainGraphHover;
@@ -149,7 +154,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		showFirstLabel: false,
 		labels: {
 			align: 'right',
-			x: -10,
+			x: -20,
 			y: -20,
 			step: 2,
 			style: {

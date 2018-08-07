@@ -3737,7 +3737,6 @@ body.menubar-in #user-btn:before {
   #portfolioChartText div {
     display: inline-block;
     color: #0576b9;
-    font-size: 26px;
     border-right: 1px solid #a6a6a6;
     padding: 0px 15px;
     text-align: center; }
@@ -3745,6 +3744,9 @@ body.menubar-in #user-btn:before {
       font-size: 16px;
       vertical-align: top;
       line-height: 26px; }
+      #portfolioChartText div span:nth-child(2) {
+        font-size: 26px;
+        line-height: initial; }
     #portfolioChartText div p {
       font-size: 10px;
       color: var(--clr-textD);

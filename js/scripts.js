@@ -355,6 +355,14 @@ $(function () {
 			$('#portfolioChart').css('display', 'block');
 			portfolioChartCurrentRange = $(this).index() - 1;
 			portfolioChartObj.rangeSelector.clickButton(portfolioChartCurrentRange, {}, true);
+
+			// change text in portfolioChart
+			if ($(this).index() != 4){
+				$('#portfolioChartText div:last-child p').text(portfolioChartArrChanges[$(this).index() - 1][0]);
+				$('#portfolioChartText div:last-child span:nth-child(2)').text(portfolioChartArrChanges[$(this).index() - 1][1]);
+				$('#portfolioChartText div:last-child span:nth-child(3)').text(portfolioChartArrChanges[$(this).index() - 1][2]);
+			}
+
 		} else {
 			$('#portfolioChart').css('display', 'none');
 			$('.circleDiagramParent').css('display', 'block');

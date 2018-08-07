@@ -2,6 +2,11 @@
 /* js-portfolio diagram */
 /*---------------------------------------------------*/
 
+var portfolioChartArrChanges = [
+    ['Change since last day',10,'.34'],
+    ['Change since last month',709,'.93'],
+    ['Change since last year',3122,'.18']
+];
 var portfolioChartData = null;
 var portfolioChartObj = null;
 var portfolioChartCurrentRange = 1;
