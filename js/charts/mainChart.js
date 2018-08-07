@@ -41,7 +41,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	},
 	plotOptions: {
 		series: {
-			pointWidth: 4,
+			pointWidth: $('#mainChartWrap').width() / 275,
 			pointPadding: 0,
 			borderWidth: 0,
 			groupPadding: 0,
