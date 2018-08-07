@@ -439,8 +439,15 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.basic-table__row.head > div').click(function () {
-		$('.basic-table__row.head > div').removeClass('sorted');
-		$(this).addClass('sorted');
+
+		if ($(this).hasClass('sorted-down')) {
+			$('.basic-table__row.head > div').removeClass('sorted-down');
+			$(this).addClass('sorted-up');
+		} else {
+			$('.basic-table__row.head > div').removeClass('sorted-up');
+			$('.basic-table__row.head > div').removeClass('sorted-down');
+			$(this).addClass('sorted-down');
+		}
 	});
 
 });

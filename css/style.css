@@ -662,14 +662,17 @@ h6 {
         height: 48px;
         padding: 4px 4px;
         color: var(--clr-textL);
-        align-items: flex-end; }
+        align-items: flex-end;
+        /* 				&.sorted{
+					background: var(--clr-backA);
+					color: var(--clr-textA);
+
+					.basic-table__arrow-sort{
+						fill: var(--clr-textA);
+					}
+				} */ }
         .basic-table__row.head .basic-table__col:first-child {
           padding-left: 10px; }
-        .basic-table__row.head .basic-table__col.sorted {
-          background: var(--clr-backA);
-          color: var(--clr-textA); }
-          .basic-table__row.head .basic-table__col.sorted .basic-table__arrow-sort {
-            fill: var(--clr-textA); }
         .basic-table__row.head .basic-table__col.sorted-down {
           background: var(--clr-backA);
           color: var(--clr-textA); }
