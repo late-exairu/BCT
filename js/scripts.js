@@ -48,7 +48,7 @@ $(function () {
 	$('.exch-dropdown__list .exch-dropdown__item').click(function () {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
-		if (telegramGroupName) $('.c-block-head__title span').text('('+telegramGroupName+')');
+		if (telegramGroupName) $('.chat-head__name').text(telegramGroupName);
 		var newCurr = $(this).children().clone();
 		$(newCurr).eq(1).text(currencyName);
 		var currDropdown = $(this).closest('.exch-dropdown');
