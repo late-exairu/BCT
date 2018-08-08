@@ -11,10 +11,20 @@
 	display: flex;
 	flex: 1 1;
 
-	&__chart{
-		position: relative;
+	&__controls{
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
 		width: 100%;
 		height: 100%;
+		transition: all 0.2s;
+
+		&.shifted{
+			right: 210px;
+			width: calc(100% - 210px);
+		}
 	}
 
 	&.fullScreen {

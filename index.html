@@ -1676,9 +1676,11 @@
 					</button><!-- exch-head__btn END -->
 				</div><!-- exch-head END -->
 
-				<div class="c-block b-graph visibility-parent">
-					<div class="b-graph__chart" id="mainChartWrap">
-						<div class="toolbar visibility-child">
+				<div class="c-block b-graph">
+					<div id="mainChart"></div>
+
+					<div class="b-graph__controls" id="mainChartWrap">
+						<div class="toolbar">
 							<div class="toolbar__scroll scroll-y scrollbar-inner">
 								<div class="toolbar__item">
 									<button class="toolbar__btn">
@@ -1864,7 +1866,7 @@
 						</div> -->
 						<!-- toolbar-drop END -->
 
-						<div class="gbar-info visibility-child">
+						<div class="gbar-info">
 							<div class="gbar-info__item">
 								<p class="gbar-info__title">1 BTC = 8199.75 USD</p>
 							</div>
@@ -1879,7 +1881,7 @@
 							</div>
 						</div><!-- gbar-info END -->
 
-						<div class="graph-bar visibility-child">
+						<div class="graph-bar">
 							<div class="graph-bar__left">
 								<button class="graph-bar__item btn">
 									<svg class="graph-bar__icon clock" role="img" aria-hidden="true">
@@ -1960,170 +1962,93 @@
 								</button>
 							</div><!-- graph-bar__right END -->
 						</div>
-
-						<div id="mainChart"></div>
 					</div>
 
-					<div class="graph-prices visibility-child" id="js-graph-prices">
-						
-						<div class="labeled-dropdown js-select">
-							<div class="labeled-dropdown__current">
-								<!-- <svg class="labeled-dropdown__icon" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#sorting"></use>
-								</svg> -->
+					<div class="graph-prices" id="js-graph-prices">
 
-								<svg class="labeled-dropdown__arrow" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-								</svg>
-
-								<div class="labeled-dropdown__label">Sort By Lowest Price
-									<!-- <div class="labeled-dropdown__selected">Lowest Price First</div> -->
-								</div>
+						<div class="graph-prices__left">
+							<div class="graph-prices__tier">
+								<p class="graph-prices__tier-title">Highest price</p>
+								<p class="graph-prices__tier-price clr-red">8191.75 USD</p>
 							</div>
+							<div class="graph-prices__tier">
+								<p class="graph-prices__tier-title">Lowest price</p>
+								<p class="graph-prices__tier-price clr-blue">8164.21 USD</p>
+							</div>
+							<button class="graph-prices__tier-btn">
+								VIEW DEALS
 
-							<!-- <ul class="labeled-dropdown__list">
-								<li class="labeled-dropdown__item active">Lowest Price First</li>
-								<li class="labeled-dropdown__item">Highest Price First</li>
-								<li class="labeled-dropdown__item">Other Price First</li>
-								<li class="labeled-dropdown__item">Captain Price First</li>
-							</ul> -->
-						</div>
+								<svg class="graph-prices__tier-icon" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right"></use>
+								</svg>
+							</button>
+						</div><!-- graph-prices__left END -->
 						
-						<div class="graph-prices__scroll scroll-y scrollbar-outer">
-							<div class="graph-prices__list">
-								<div class="graph-prices__item active" data-id="12">
-									<div class="graph-prices__trader">BINANCE</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+						<div class="graph-prices__right">
+							<div class="graph-prices__scroll scroll-y scrollbar-outer">
+								<div class="graph-prices__list">
+									<div class="graph-prices__item active" data-id="12">
+										<div class="graph-prices__trader">BINANCE</div>
+										<div class="graph-prices__price">8191.75 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="1">
-									<div class="graph-prices__trader">COINBASE</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="1">
+										<div class="graph-prices__trader">COINBASE</div>
+										<div class="graph-prices__price">8191.75 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="2">
-									<div class="graph-prices__trader">KRAKEN</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="2">
+										<div class="graph-prices__trader">KRAKEN</div>
+										<div class="graph-prices__price">8188.45 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="3">
-									<div class="graph-prices__trader">POLONIEX</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="3">
+										<div class="graph-prices__trader">POLONIEX</div>
+										<div class="graph-prices__price">8189.87 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="4">
-									<div class="graph-prices__trader">BINANCE</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="4">
+										<div class="graph-prices__trader">BINANCE</div>
+										<div class="graph-prices__price">8188.45 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="5">
-									<div class="graph-prices__trader">BITPANDA</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="5">
+										<div class="graph-prices__trader">BITPANDA</div>
+										<div class="graph-prices__price">8188.45 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="6">
-									<div class="graph-prices__trader">GDAX</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="6">
+										<div class="graph-prices__trader">GDAX</div>
+										<div class="graph-prices__price">8188.45 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="7">
-									<div class="graph-prices__trader">BITSTAMP</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="7">
+										<div class="graph-prices__trader">BITSTAMP</div>
+										<div class="graph-prices__price">8188.45 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="8">
-									<div class="graph-prices__trader">KRAKEN</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="8">
+										<div class="graph-prices__trader">KRAKEN</div>
+										<div class="graph-prices__price">8188.45 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="9">
-									<div class="graph-prices__trader">GDAX</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="9">
+										<div class="graph-prices__trader">GDAX</div>
+										<div class="graph-prices__price">8188.45 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="10">
-									<div class="graph-prices__trader">BITSTAMP</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="10">
+										<div class="graph-prices__trader">BITSTAMP</div>
+										<div class="graph-prices__price">8188.45 USD</div>
 									</div>
-								</div>
 
-								<div class="graph-prices__item" data-id="11">
-									<div class="graph-prices__trader">KRAKEN</div>
-									<div class="graph-prices__price">
-										1 ETH
-										<svg class="graph-prices__arrow" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-price"></use>
-										</svg>
-										0.14 USDT
+									<div class="graph-prices__item" data-id="11">
+										<div class="graph-prices__trader">KRAKEN</div>
+										<div class="graph-prices__price">8188.45 USD</div>
 									</div>
-								</div>
-							</div><!-- graph-prices__list END -->
-						</div><!-- graph-prices__scroll END -->
+								</div><!-- graph-prices__list END -->
+							</div><!-- graph-prices__scroll END -->
+						</div><!-- graph-prices__right END -->
 					</div><!-- graph-prices END -->
 				</div><!-- c-block END -->
 			</div><!-- main-cols__right-top END -->

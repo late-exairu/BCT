@@ -23,6 +23,11 @@
 .clr-litecoin		{ fill: #b1b0b0; }
 .clr-ripple			{ fill: #438bca; }
 
+.clr-red			{ color: #e05475; }
+.clr-blue			{ color: #0089cb; }
+.clr-textAA			{ color: var(--clr-textAA); }
+
+
 .d-flex			{ display: flex; }
 .d-flex-col		{ display: flex; flex-direction: column; }
 .flex-1-1		{ flex: 1 1; }
@@ -44,25 +49,4 @@
 .h-100			{ height: 100%; }
 
 .hidden { display: none; }
-
-.visibility-parent{
-	
-	&:hover{
-
-		.visibility-child{
-			visibility: visible;
-			opacity: 1;
-		}
-	}
-}
-// .visibility-child{
-// 	visibility: hidden;
-// 	opacity: 0;
-// 	transition: all .2s;
-// }
-
-.clr-textAA{
-	color: var(--clr-textAA);
-}
-
 

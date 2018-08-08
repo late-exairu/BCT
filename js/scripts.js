@@ -74,6 +74,7 @@ $(function () {
 	$('#js-graph-prices-toggle').click(function () {
 		$('.graph-prices').toggleClass('open');
 		$(this).toggleClass('open');
+		$(this).closest('.b-graph__controls').toggleClass('shifted');
 		redrawMainChart();
 	});
 

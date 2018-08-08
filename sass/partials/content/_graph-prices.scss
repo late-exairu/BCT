@@ -21,7 +21,7 @@
 		transform: translate(-50%, -50%) rotate(90deg);
 		width: 11px;
 		height: 7px;
-		fill: var(--clr-icon);
+		fill: var(--clr-iconD);
 		transition: fill .1s;
 	}
 
@@ -37,56 +37,108 @@
 .graph-prices{
 	font-family: $osans;
 	position: absolute;
-	transform: translateX(100%);
 	display: flex;
-	flex-direction: column;
 	min-height: 0;
-	top: 0;
-	right: 0;
-	height: 100%;
-	padding: 5px 5px 0px;
-	width: 160px;
+	top: -1px;
+	right: -1px;
+	height: 132px;
+	padding: 0;
+	width: 250px;
 	background: var(--clr-block);
-	// transition: all .2s;
-	border-left: 1px solid var(--clr-separator);
+	transition: all .2s;
+	border: 1px solid var(--clr-separator);
+	opacity: 0;
+	visibility: hidden;
+	will-change: transform;
+	transform: translateX(30px);
 
 	&.open{
+		visibility: visible;
+		opacity: 1;
 		transform: translateX(0);
 	}
 
+	&__left{
+		padding: 5px 0 0;
+		width: 138px;
+		border-right: 1px solid var(--clr-separator);
+	}
+
+	&__right{
+		width: 110px;
+	}
+
+	&__tier{
+		height: 45px;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	&__tier-title{
+		font-size: 12px;
+		margin: 0;
+		padding: 0;
+		color: var(--clr-textD);
+	}
+
+	&__tier-price{
+		font-weight: 700;
+		font-size: 14px;
+		margin: 2px 0 0;
+		padding: 0;
+	}
+
+	&__tier-btn{
+		height: 33px;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		text-align: center;
+		padding: 4px 5px;
+		width: calc(100% + 1px);
+		border: none;
+		color: #fff;
+		background: var(--clr-accentD);
+		cursor: pointer;
+		font-size: 12px;
+		margin: 3px 0 0 -1px;
+		border-radius: 2px;
+	}
+
+	&__tier-icon{
+		fill: #fff;
+		width: 8px;
+		height: 11px;
+		margin: 0 0 0 4px;
+	}
+
 	&__scroll{
-		width: 154px;
-		margin: 12px 0 0;
+		width: 110px;
+		margin: 0;
 	}
 	
 	&__list{
 		padding: 0;
-		overflow-y: auto;
-		height: 100%;
 	}
 
 	&__item{
 		position: relative;
-		width: 147px;
 		text-align: center;
-		border: 1px solid var(--clr-separatorD);
-		min-height: 46px;
+		height: 33px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin: 0 0 12px 0;
-		padding: 5px;
+		margin: 0;
+		padding: 4px 5px;
 		transition: all .1s;
 		cursor: pointer;
-		border-radius: var(--border-radius);
 		overflow: hidden;
 
 		&:hover{
-			box-shadow: 0 1px 5px rgba(0,0,0,.35);
-
-			.graph-prices__trader{
-				font-weight: 700;
-			}
+			background: var(--clr-back);
 		}
 
 		&.active{
@@ -97,38 +149,30 @@
 				font-weight: 700;
 				color: var(--clr-accentD);
 			}
-
-			&:after{
-				content: '';
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				right: 0;
-				height: 3px;
-				background: var(--clr-accentD);
-			}
 		}
 	}
 
 	&__trader{
-		font-size: 14px;
+		font-size: 11px;
+		line-height: 1.18;
 		color: var(--clr-textD);
 	}
 
 	&__price{
-		margin: 2px 0 0;
-		font-size: 10px;
+		margin: 0;
+		font-size: 11px;
+		line-height: 1.18;
 		font-weight: 700;
 		color: var(--clr-textD);
 	}
 
-	&__arrow{
+	/*&__arrow{
 		width: 12px;
 		height: 5px;
 		display: inline-block;
 		margin: 0 1px 2px;
 		fill: var(--clr-textD);
-	}
+	}*/
 
 	.graph-bar__item{
 		width: 250px;
