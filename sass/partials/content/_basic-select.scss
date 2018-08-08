@@ -8,6 +8,7 @@
 	width: 100%;
 	position: relative;
 	height: 28px;
+	font-weight: 400;
 	/*max-width: 266px;*/
 
 	&__select {
@@ -26,6 +27,7 @@
 		overflow: hidden;
 		background: var(--clr-block);
 		color: var(--clr-textD);
+		transition: all .1s;
 	}
 	
 	&__arrow {
@@ -42,6 +44,7 @@
 	&:hover{
 
 		.basic-select__select{
+			border-color: var(--clr-textL);
 			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
 		}
 	}

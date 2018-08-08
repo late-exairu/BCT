@@ -1668,7 +1668,7 @@
 						</div>
 					</div><!-- exch-head__send END -->
 
-					<button class="exch-head__btn">
+					<button class="exch-head__btn" data-fancybox="popup" data-src="#exchange-step_1">
 						<!-- CONVERT -->
 						<svg class="exch-head__arrow-exch" role="img" aria-hidden="true">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-exch"></use>
@@ -2099,16 +2099,19 @@
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="js-tabs-panel" id="panel-funds-account">
 							<div class="flex-1-1 scroll-y scrollbar-outer">
-								<div class="basic-table">
+								<div class="basic-table bigger-font">
 									<div class="basic-table__row">
 										<div class="basic-table__col w-20" data-percent="80">
 											<svg class="basic-table__curr icon-curr clr-bitcoin" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
 											</svg>
-											Bitcoin
+											<div class="d-flex-col">
+												<span class="basic-table__tip">Bitcoin</span>
+												1 BTC
+											</div>
 										</div>
-										<div class="basic-table__col w-25">$6,140.13</div>
-										<div class="basic-table__col w-30">
+										<div class="basic-table__col w-22">$6,140.13 <span class="smaller clr-red">(-5.47%)</span></div>
+										<div class="basic-table__col w-32">
 											<div class="basic-select custom-select">
 												<select class="basic-select__select">
 													<option>Your Secure Custodian for BTC</option>
@@ -2131,10 +2134,13 @@
 											<svg class="basic-table__curr icon-curr clr-ethereum" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ethereum"></use>
 											</svg>
-											Ethereum
+											<div class="d-flex-col">
+												<span class="basic-table__tip">Ethereum</span>
+												0.5 BTC
+											</div>
 										</div>
-										<div class="basic-table__col w-25">$219.37</div>
-										<div class="basic-table__col w-30">
+										<div class="basic-table__col w-22">$219.37 <span class="smaller clr-blue">(2.85%)</span></div>
+										<div class="basic-table__col w-32">
 											<div class="basic-select custom-select">
 												<select class="basic-select__select">
 													<option>Your Secure Custodian for ETH</option>
@@ -2157,10 +2163,13 @@
 											<svg class="basic-table__curr icon-curr clr-bitcoincash" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
 											</svg>
-											Bitcoin Cash
+											<div class="d-flex-col">
+												<span class="basic-table__tip">Bitcoin Cash</span>
+												0.0 ETH
+											</div>
 										</div>
-										<div class="basic-table__col w-25">$0.00</div>
-										<div class="basic-table__col w-30">
+										<div class="basic-table__col w-22">$0.00</div>
+										<div class="basic-table__col w-32">
 											<div class="basic-select custom-select">
 												<select class="basic-select__select">
 													<option>Your Secure Custodian for BCH</option>
@@ -2183,10 +2192,13 @@
 											<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
 											</svg>
-											Litecoin
+											<div class="d-flex-col">
+												<span class="basic-table__tip">Litecoin</span>
+												0.0 LTC
+											</div>
 										</div>
-										<div class="basic-table__col w-25">$0.00</div>
-										<div class="basic-table__col w-30">
+										<div class="basic-table__col w-22">$0.00</div>
+										<div class="basic-table__col w-32">
 											<div class="basic-select custom-select">
 												<select class="basic-select__select">
 													<option>Your Secure Custodian for LTC</option>
@@ -2209,10 +2221,13 @@
 											<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
 											</svg>
-											Ripple
+											<div class="d-flex-col">
+												<span class="basic-table__tip">Ripple</span>
+												0.0 RPL
+											</div>
 										</div>
-										<div class="basic-table__col w-25">$0.00</div>
-										<div class="basic-table__col w-30">
+										<div class="basic-table__col w-22">$0.00</div>
+										<div class="basic-table__col w-32">
 											<div class="basic-select custom-select">
 												<select class="basic-select__select">
 													<option>Your Secure Custodian for XRP</option>
@@ -2235,10 +2250,13 @@
 											<svg class="basic-table__curr icon-curr clr-bitcoincash" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
 											</svg>
-											Bitcoin Cash
+											<div class="d-flex-col">
+												<span class="basic-table__tip">Bitcoin Cash</span>
+												0.0 BCC
+											</div>
 										</div>
-										<div class="basic-table__col w-25">$0.00</div>
-										<div class="basic-table__col w-30">
+										<div class="basic-table__col w-22">$0.00</div>
+										<div class="basic-table__col w-32">
 											<div class="basic-select custom-select">
 												<select class="basic-select__select">
 													<option>Your Secure Custodian for BCH</option>
@@ -2261,10 +2279,13 @@
 											<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
 											</svg>
-											Litecoin
+											<div class="d-flex-col">
+												<span class="basic-table__tip">Litecoin</span>
+												0.0 LTC
+											</div>
 										</div>
-										<div class="basic-table__col w-25">$0.00</div>
-										<div class="basic-table__col w-30">
+										<div class="basic-table__col w-22">$0.00</div>
+										<div class="basic-table__col w-32">
 											<div class="basic-select custom-select">
 												<select class="basic-select__select">
 													<option>Your Secure Custodian for LTC</option>
@@ -2287,10 +2308,13 @@
 											<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
 											</svg>
-											Ripple
+											<div class="d-flex-col">
+												<span class="basic-table__tip">Ripple</span>
+												0.0 RPL
+											</div>
 										</div>
-										<div class="basic-table__col w-25">$0.00</div>
-										<div class="basic-table__col w-30">
+										<div class="basic-table__col w-22">$0.00</div>
+										<div class="basic-table__col w-32">
 											<div class="basic-select custom-select">
 												<select class="basic-select__select">
 													<option>Your Secure Custodian for XRP</option>
@@ -2313,10 +2337,13 @@
 											<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
 											</svg>
-											Ripple
+											<div class="d-flex-col">
+												<span class="basic-table__tip">Ripple</span>
+												0.0 RPL
+											</div>
 										</div>
-										<div class="basic-table__col w-25">$0.00</div>
-										<div class="basic-table__col w-30">
+										<div class="basic-table__col w-22">$0.00</div>
+										<div class="basic-table__col w-32">
 											<div class="basic-select custom-select">
 												<select class="basic-select__select">
 													<option>Your Secure Custodian for XRP</option>
@@ -2339,10 +2366,13 @@
 											<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
 											</svg>
-											Ripple
+											<div class="d-flex-col">
+												<span class="basic-table__tip">Ripple</span>
+												0.0 RPL
+											</div>
 										</div>
-										<div class="basic-table__col w-25">$0.00</div>
-										<div class="basic-table__col w-30">
+										<div class="basic-table__col w-22">$0.00</div>
+										<div class="basic-table__col w-32">
 											<div class="basic-select custom-select">
 												<select class="basic-select__select">
 													<option>Your Secure Custodian for XRP</option>
@@ -2878,6 +2908,220 @@
 	</div><!-- main-cols END -->
 </div><!-- wrapper END -->
 
+<div class="basic-popup no-close-btn" id="exchange-step_1" style="display: none;">
+	<div class="exch-popup">
+		<p class="exch-popup__title">Never regret a trade again</p>
+		<p class="exch-popup__subtitle">Search all Exchanges: Find Lowes Price</p>
+
+		<form class="exch-form">
+			<div class="exch-form__send">
+				<label class="exch-form__label">You are sending</label>
+				<input class="exch-form__input" type="text" placeholder="0.00" name="">
+				
+				<svg class="exch-form__coin clr-bitcoin" role="img" aria-hidden="true">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
+				</svg>
+			</div>
+
+			<div class="exch-form__sep">
+				<svg class="exch-form__sep-arrow" role="img" aria-hidden="true">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-dir-right"></use>
+				</svg>
+			</div>
+
+			<div class="exch-form__get">
+				<label class="exch-form__label">You will receive</label>
+				<input class="exch-form__input" type="text" placeholder="0.00" name="">
+				
+				<svg class="exch-form__coin clr-ethereum" role="img" aria-hidden="true">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ethereum"></use>
+				</svg>
+			</div>
+
+			<button class="exch-form__btn" type="submit" data-fancybox="popup" data-src="#exchange-step_2">
+				<svg class="exch-form__btn-arrow" role="img" aria-hidden="true">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-exch"></use>
+				</svg>
+			</button>
+		</form>
+
+		<p class="exch-popup__tip">Important information: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet sollicitudin nulla sit amet dictum. Fusce non arcu ut quam commodo porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+	</div>
+</div>
+
+<div class="basic-popup tables" id="exchange-step_2" style="display: none;">
+	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
+		<div class="c-block-head big">
+			<div class="c-block-head__left js-dropdown-wrap">
+				<h2 class="c-block-head__title">
+					Best Execution across 165 Connected Exchanges
+				</h2>
+			</div>
+		</div>
+
+		<div class="d-flex flex-1-1 flex-h-fix">
+			<div class="flex-1-1 scroll-y scrollbar-outer">
+				<div class="basic-table med-height">
+					<div class="basic-table__row head">
+						<div class="basic-table__col w-12 sorted-down">
+							Time
+							<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+							</svg>
+						</div>
+						<div class="basic-table__col w-12">
+							Exchange
+							<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+							</svg>
+						</div>
+						<div class="basic-table__col w-12">
+							Pair
+							<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+							</svg>
+						</div>
+						<div class="basic-table__col w-10">
+							Side
+							<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+							</svg>
+						</div>
+						<div class="basic-table__col w-12">
+							Price
+							<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+							</svg>
+						</div>
+						<div class="basic-table__col w-10">
+							Amount
+							<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+							</svg>
+						</div>
+						<div class="basic-table__col w-10">
+							Total
+							<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+							</svg>
+						</div>
+						<div class="basic-table__col w-10">
+							Trigger
+							<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+							</svg>
+						</div>
+						<div class="basic-table__col w-10">
+							Status
+							<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+							</svg>
+						</div>
+					</div><!-- basic-table__row END -->
+			
+					<div class="basic-table__row">
+						<div class="basic-table__col w-12">07.22.2018</div>
+						<div class="basic-table__col w-12">Bitfinex</div>
+						<div class="basic-table__col w-12">ETH/USDT</div>
+						<div class="basic-table__col w-10">Buy</div>
+						<div class="basic-table__col w-12">479.91 USDT</div>
+						<div class="basic-table__col w-10">0.0411 ETH</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">FILLED</div>
+					</div><!-- basic-table__row END -->
+			
+					<div class="basic-table__row">
+						<div class="basic-table__col w-12">07.22.2018</div>
+						<div class="basic-table__col w-12">Coinbase</div>
+						<div class="basic-table__col w-12">ETH/USDT</div>
+						<div class="basic-table__col w-10">Sell</div>
+						<div class="basic-table__col w-12">479.91 USDT</div>
+						<div class="basic-table__col w-10">0.0412 ETH</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">FILLED</div>
+					</div><!-- basic-table__row END -->
+			
+					<div class="basic-table__row">
+						<div class="basic-table__col w-12">07.22.2018</div>
+						<div class="basic-table__col w-12">Bitfinex</div>
+						<div class="basic-table__col w-12">ETH/USDT</div>
+						<div class="basic-table__col w-10">Buy</div>
+						<div class="basic-table__col w-12">479.91 USDT</div>
+						<div class="basic-table__col w-10">0.0411 ETH</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">FILLED</div>
+					</div><!-- basic-table__row END -->
+			
+					<div class="basic-table__row">
+						<div class="basic-table__col w-12">07.22.2018</div>
+						<div class="basic-table__col w-12">Kraken</div>
+						<div class="basic-table__col w-12">ETH/USDT</div>
+						<div class="basic-table__col w-10">Sell</div>
+						<div class="basic-table__col w-12">479.89 USDT</div>
+						<div class="basic-table__col w-10">0.0412 ETH</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">FILLED</div>
+					</div><!-- basic-table__row END -->
+			
+					<div class="basic-table__row">
+						<div class="basic-table__col w-12">07.22.2018</div>
+						<div class="basic-table__col w-12">Bitfinex</div>
+						<div class="basic-table__col w-12">ETH/USDT</div>
+						<div class="basic-table__col w-10">Buy</div>
+						<div class="basic-table__col w-12">479.91 USDT</div>
+						<div class="basic-table__col w-10">0.0411 ETH</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">FILLED</div>
+					</div><!-- basic-table__row END -->
+			
+					<div class="basic-table__row">
+						<div class="basic-table__col w-12">07.22.2018</div>
+						<div class="basic-table__col w-12">Coinbase</div>
+						<div class="basic-table__col w-12">ETH/USDT</div>
+						<div class="basic-table__col w-10">Sell</div>
+						<div class="basic-table__col w-12">479.91 USDT</div>
+						<div class="basic-table__col w-10">0.0412 ETH</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">FILLED</div>
+					</div><!-- basic-table__row END -->
+			
+					<div class="basic-table__row">
+						<div class="basic-table__col w-12">07.22.2018</div>
+						<div class="basic-table__col w-12">Bitfinex</div>
+						<div class="basic-table__col w-12">ETH/USDT</div>
+						<div class="basic-table__col w-10">Buy</div>
+						<div class="basic-table__col w-12">479.91 USDT</div>
+						<div class="basic-table__col w-10">0.0411 ETH</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">FILLED</div>
+					</div><!-- basic-table__row END -->
+			
+					<div class="basic-table__row">
+						<div class="basic-table__col w-12">07.22.2018</div>
+						<div class="basic-table__col w-12">Kraken</div>
+						<div class="basic-table__col w-12">ETH/USDT</div>
+						<div class="basic-table__col w-10">Sell</div>
+						<div class="basic-table__col w-12">479.89 USDT</div>
+						<div class="basic-table__col w-10">0.0412 ETH</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">xxx</div>
+						<div class="basic-table__col w-10">FILLED</div>
+					</div><!-- basic-table__row END -->
+				</div><!-- basic-table END -->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/libs/rangeSlider.js"></script>
@@ -2888,6 +3132,7 @@
 <script src="js/libs/solid-gauge.js"></script>
 <script src="js/libs/jquery.scrollbar.min.js"></script>
 <script src="js/libs/custom-select.js"></script>
+<script src="js/libs/jquery.fancybox.min.js"></script>
 
 <!-- Charts scripts-->
 <script src="js/charts/stylesUpdate.js"></script>

@@ -454,4 +454,13 @@ $(function () {
 		}
 	});
 
+	/*---------------------------------------------------*/
+	/* Fancybox popup */
+	/*---------------------------------------------------*/
+
+	$('[data-fancybox="popup"]').fancybox({
+		keyboard : false,
+		arrows: false,
+		infobar: false
+	});
 });

@@ -18,3 +18,12 @@
 
 // Rearrange to custom files //
 
+.fancybox-bg{
+	background: rgba(0, 0, 0, 0.45);
+	transition: all 0.2s;
+}
+
+.fancybox-content{
+	padding: 0;
+	background: transparent;
+}

@@ -69,8 +69,8 @@ a {
 	max-height: 720px; */
 	
 	/*prod size*/
-	/*max-width: 1280px;
-	max-height: 720px;*/
+	max-width: 1280px;
+	max-height: 720px;
 }
 
 b,
@@ -117,6 +117,7 @@ h6 {
 @import "vendor/ionRangeSlider";
 @import "vendor/inputrange";
 @import "vendor/jquery.scrollbar";
+@import "vendor/jquery.fancybox.min";
 
 // -- Basic Blocks -- //
 
@@ -126,6 +127,7 @@ h6 {
 @import "partials/selects";
 @import "partials/charts";
 @import "partials/buttons";
+@import "partials/popups";
 
 @import "partials/content";
 @import "partials/globals";
