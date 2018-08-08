@@ -143,8 +143,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		labels: {
 			step: 5,
 			style: {
-				width: '30px',
-				fontSize: '8px'
+				width: '35px',
+				fontSize: '10px'
 			},
 			x: 50
 		},
@@ -164,10 +164,10 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			y: -20,
 			step: 2,
 			style: {
-				fontSize: '8px'
+				fontSize: '10px'
 			},
 			formatter: function () {
-				return this.value + '.00';
+				return (this.value + 8100) + '.00';
 			}
 		},
 		tickInterval: 7,

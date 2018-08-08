@@ -158,9 +158,9 @@
             margin: 0px 5px;
         }
         p {
-            font-size: 24px;
+            font-size: 34px;
             margin: 0;
-            height: 30px;
+            height: 40px;
         }
         .leftPart,
         .rightPart,
@@ -168,37 +168,41 @@
             position: absolute;
         }
         .leftPart {
-            bottom: 30px;
+            bottom: 5px;
             left: 50px;
         }
         .rightPart {
-            bottom: 30px;
+            bottom: 5px;
             right: 50px;
         }
         .centerPart {
             top: 10%;
             left: 50%;
-            height: calc(90% - 40px);
+            height: 90%;
             transform: translateX(-50%);
             p {
                 margin-bottom: 5px;
                 font-size: 16px;
                 height: auto;
             }
-        }
-        svg {
-            width: 12px;
-            height: 12px;
-            cursor: pointer;
-            fill: var(--clr-textD);
-            position: relative;
-            top: -2px;
-        }
-        .separator {
-            width: 1px;
-            height: calc(85% - 25px);
-            background: var(--clr-textD);
-            margin: 0px auto 0;
+            svg {
+                width: 12px;
+                height: 12px;
+                cursor: pointer;
+                fill: var(--clr-textD);
+                position: relative;
+                top: -2px;
+            }
+            .separator {
+                width: 1px;
+                height: 60%;
+                background: var(--clr-textD);
+                margin: 0 auto;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: -1px;
+            }
         }
     }
 }

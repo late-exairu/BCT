@@ -8,8 +8,8 @@ var liquidityChartObj = null;
 var liquidityChartOptions = {
     chart: {
         type: 'area',
-        //marginRight:35,
-        //marginLeft:35
+        marginBottom:0,
+        marginTop:0
     },
     title: null,
     legend: {
@@ -40,6 +40,7 @@ var liquidityChartOptions = {
         tickInterval: 0,
         gridLineWidth: 1,
         labels: {
+            enabled:false,
             formatter: function () {
                 var label = 'B0.0' + countForLiquidLabels;
                 countForLiquidLabels += 253;
@@ -48,7 +49,7 @@ var liquidityChartOptions = {
             step: 2,
             style: {
                 color: '#666666',
-                fontSize: '8px'
+                fontSize: '10px'
             }
         },
     },
@@ -61,7 +62,7 @@ var liquidityChartOptions = {
             overflow: 'justify',
             style: {
                 color: '#666666',
-                fontSize: '8px'
+                fontSize: '10px'
             }
         },
         title: {
@@ -79,7 +80,7 @@ var liquidityChartOptions = {
             overflow: 'justify',
             style: {
                 color: '#666666',
-                fontSize: '8px'
+                fontSize: '10px'
             }
         },
         title: {
