@@ -41,10 +41,10 @@ var circleChartOptions = {
         formatter: function () {
             var currency = this.key;
             var resultString = '';
-            $('#panel-funds-account .basic-table__row').each(function () {
-                if ($(this).find('.w-30').text().indexOf(currency) != -1) {
-                    resultString = $(this).find('.w-30').html();
-                    resultString += '('+$(this).find('.w-30').attr('data-percent')+'%)';
+            $('#panel-funds-portfolio .basic-table__row').each(function () {
+                if ($(this).find('.w-20').text().indexOf(currency) != -1) {
+                    resultString = $(this).find('.w-20').html();
+                    resultString += '('+$(this).find('.w-20').attr('data-percent')+'%)';
                     return false;
                 }
             });

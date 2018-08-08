@@ -152,10 +152,14 @@ $(function () {
 		if ($(this).hasClass('switch-orderBook')) {
 			$('#telegram').addClass('hidden');
 			$('#orderBook').removeClass('hidden');
+			$('.book-item').css('display', 'block');
+			$('.chat-item').css('display', 'none');
 			$('#tab-dashboard-liquidity').trigger('click');
 		} else if ($(this).hasClass('switch-telegram')) {
 			$('#orderBook').addClass('hidden');
 			$('#telegram').removeClass('hidden');
+			$('.book-item').css('display', 'none');
+			$('.chat-item').css('display', 'block');
 			$('#tab-funds-portfolio').trigger('click');
 		}
 		$('.menu-dropdown.to-top.js-dropdown').removeClass('open');
@@ -458,7 +462,7 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('[data-fancybox="popup"]').fancybox({
-		keyboard : false,
+		keyboard: false,
 		arrows: false,
 		infobar: false
 	});
