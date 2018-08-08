@@ -104,12 +104,16 @@
 		}
 	}
 
+	&__scroll{
+	}
+
 	&__list{
 		position: absolute;
+		height: 146px;
 		z-index: 5;
 		left: -1px;
 		right: -1px;
-		top: calc(100%);
+		top: 100%;
 		padding: 0;
 		margin: 0;
 		list-style: none;
@@ -131,7 +135,7 @@
 		cursor: pointer;
 
 		&:hover{
-			background: var(--clr-backL);
+			background: var(--clr-backLL);
 		}
 
 		&.current{
@@ -166,7 +170,7 @@
 		.btc { fill: #f79330; }
 		.eth { fill: #707cb9; }
 		.bcc { fill: #83c55f; }
-		.ltc { fill: #83c55f; }
+		.ltc { fill: #b1b0b0; }
 		.rpl { fill: #438bca; }
 	}
 
