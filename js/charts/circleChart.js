@@ -17,7 +17,7 @@ var circleChartOptions = {
             borderWidth: 0,
             startAngle: 20,
             size: 138,
-            center: [55, 50],
+            center: [55, 52],
         },
         series: {
             dataLabels: {

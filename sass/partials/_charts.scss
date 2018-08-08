@@ -2,18 +2,12 @@
     display: none;
 }
 
-.circleDiagramParent {
-    display: none;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 .accounts-diagram {
-    width: 148px;
     max-height: 100%;
     height: 100%;
     background: var(--clr-back);
+    flex: 0 0 150px;
+    border-right: 1px solid var(--clr-separator);
 }
 
 #circleChartText {
@@ -90,6 +84,15 @@
         top: 2px;
         margin: 0px 3px 0px 0px;
     }
+}
+
+.portfolioChartParent{
+    display: flex;
+}
+.circleDiagramParent{
+    display: none;
+    height: calc(100% - 19px);
+    border-bottom: 1px solid var(--clr-separator);
 }
 
 #portfolioChartText {

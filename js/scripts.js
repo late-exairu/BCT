@@ -359,7 +359,7 @@ $(function () {
 		$(this).addClass('active');
 		if ($(this).index() != 0) {
 			$('.circleDiagramParent').css('display', 'none');
-			$('#portfolioChart').css('display', 'block');
+			$('.portfolioChartParent').css('display', 'flex');
 			portfolioChartCurrentRange = $(this).index() - 1;
 			portfolioChartObj.rangeSelector.clickButton(portfolioChartCurrentRange, {}, true);
 
@@ -371,8 +371,8 @@ $(function () {
 			}
 			portfolioChartObj.reflow();
 		} else {
-			$('#portfolioChart').css('display', 'none');
-			$('.circleDiagramParent').css('display', 'block');
+			$('.portfolioChartParent').css('display', 'none');
+			$('.circleDiagramParent').css('display', 'flex');
 			circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
 		}
 	});
@@ -448,8 +448,7 @@ $(function () {
 			$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-down');
 			$(this).addClass('sorted-up');
 		} else {
-			$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-up');
-			$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-down');
+			$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-up sorted-down');
 			$(this).addClass('sorted-down');
 		}
 	});
