@@ -1130,7 +1130,7 @@ h6 {
     .c-block-head.big .c-block-head__title {
       font-size: 15px; }
       .c-block-head.big .c-block-head__title span {
-        font-size: 12px; }
+        font-size: 13px; }
 
 /* =================================================================== */
 /* c-head-menu */
@@ -1236,7 +1236,7 @@ h6 {
     flex: 1 1 auto; }
   .chat-head__name {
     margin: 1px 0 0;
-    font-size: 11px;
+    font-size: 12px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1340,7 +1340,7 @@ h6 {
     margin: 0 auto 0 0; }
   .chat-talk__info {
     display: flex;
-    padding: 3px 0 0; }
+    padding: 2px 0 0; }
   .chat-talk__readed {
     width: 12px;
     height: 8px;
@@ -1360,8 +1360,8 @@ h6 {
     padding: 2px 0 0 7px; }
     .chat-talk__quote p {
       margin: 0 0 12px;
-      font-size: 11px;
-      line-height: 1.36;
+      font-size: 12px;
+      line-height: 1.42;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1387,8 +1387,8 @@ h6 {
     margin: 5px 0 5px; }
     .chat-talk__message p {
       margin: 0 0 12px;
-      font-size: 11px;
-      line-height: 1.6; }
+      font-size: 12px;
+      line-height: 1.42; }
       .chat-talk__message p:last-child {
         margin: 0; }
     .chat-talk__message .chat-talk__name {
