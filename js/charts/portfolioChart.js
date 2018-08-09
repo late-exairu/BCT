@@ -3,9 +3,10 @@
 /*---------------------------------------------------*/
 
 var portfolioChartArrChanges = [
-    ['Change since last day',10,'.34'],
-    ['Change since last month',709,'.93'],
-    ['Change since last year',3122,'.18']
+    ['Change since last day','10','.34'],
+    ['Change since last month','709','.93'],
+    ['Change since last year','3,122','.18'],
+    ['Change since inception', '6,709', '.93'],
 ];
 var portfolioChartData = null;
 var portfolioChartObj = null;
