@@ -29,7 +29,7 @@
 
 <div class="wrapper">
 	<div class="left-bar">
-		<div class="left-bar__scroll scrollbar-inner">
+		<div class="left-bar__scroll scrollbar-left">
 			<!-- <button class="user-btn" id="user-btn">
 				<img class="user-btn__pic" src="pic/userpic_1.jpg" height="150" width="150">
 				<div class="user-btn__nums">99+</div>
@@ -239,7 +239,7 @@
 	</aside><!-- menubar END -->
 
 	<div class="main-cols">
-		<div class="main-cols__left col-chats m-right" id="telegram">
+		<div class="main-cols__left col-chats m-right hidden" id="telegram">
 			<div class="main-cols__left-top">
 
 				<div class="c-block d-flex-col h-100">
@@ -296,7 +296,7 @@
 								</div>
 							</div><!-- chat-head END -->
 
-							<div class="c-block__section flex-1-1 scroll-y scrollbar-outer">
+							<div class="c-block__section flex-1-1 scroll-y scrollbar-right">
 								<div class="chat-talk">
 									<div class="chat-talk__item -clr-pink">
 										<div class="chat-talk__avatar-wrap">
@@ -643,7 +643,7 @@
 			</div><!-- main-cols__left-top END -->
 		</div><!-- main-cols__left END -->
 
-		<div class="main-cols__left col-tables m-right hidden" id="orderBook">
+		<div class="main-cols__left col-tables m-right" id="orderBook">
 			<div class="main-cols__left-top">
 				<div class="d-flex h-100">
 					<div class="d-flex-col flex-1-1 c-block">
@@ -670,165 +670,188 @@
 
 						<div class="d-flex flex-h-fix">
 							<div class="c-block__col">
-								<div class="basic-table low-height scroll-y scrollbar-outer">
+								<div class="basic-table low-height d-flex-col h-100 flex-h-fix">
 									<div class="basic-table__row head">
 										<div class="basic-table__col w-35">Price (USDT)</div>
 										<div class="basic-table__col w-32">Amount (ETH)</div>
 										<div class="basic-table__col w-32">Regional Exchange</div>
 									</div>
 									<!-- basic-table__row END -->
+									
+									<div class="basic-table__body h-100 scroll-y-hidden d-flex-col justify-f-end">
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
+									</div><!-- basic-table__scroll END -->
 								</div>
 
 								<div class="c-block__text-sep">8199.75 USD</div>
 
-								<div class="basic-table low-height scroll-y scrollbar-outer">
+								<div class="basic-table low-height scroll-y-hidden">
 									<div class="basic-table__row">
 										<div class="basic-table__col w-35 clr-blue">0.072419</div>
 										<div class="basic-table__col w-32">3.131000</div>
@@ -1027,279 +1050,281 @@
 
 						<div class="d-flex flex-h-fix">
 							<div class="c-block__col">
-								<div class="basic-table low-height scroll-y scrollbar-outer">
+								<div class="basic-table low-height d-flex-col h-100">
 									<div class="basic-table__row head">
 										<div class="basic-table__col w-35">Recent Trades</div>
 										<div class="basic-table__col w-32">Amount (ETH)</div>
 										<div class="basic-table__col w-32">Regional Exchange</div>
 									</div>
 									<!-- basic-table__row END -->
+									
+									<div class="basic-table__body scroll-y scrollbar-right outer">
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-red">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-red">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
 
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
-
-									<div class="basic-table__row">
-										<div class="basic-table__col w-35 clr-blue">0.072419</div>
-										<div class="basic-table__col w-32">3.131000</div>
-										<div class="basic-table__col w-32">BITFINEX</div>
-									</div>
-									<!-- basic-table__row END -->
+										<div class="basic-table__row">
+											<div class="basic-table__col w-35 clr-blue">0.072419</div>
+											<div class="basic-table__col w-32">3.131000</div>
+											<div class="basic-table__col w-32">BITFINEX</div>
+										</div>
+										<!-- basic-table__row END -->
+									</div><!-- basic-table__body END -->
 								</div>
 							</div>
 
@@ -1589,7 +1614,7 @@
 							</div>
 
 							<div class="exch-dropdown__list">
-								<div class="exch-dropdown__scroll scroll-y scrollbar-outer">
+								<div class="exch-dropdown__scroll scroll-y scrollbar-right">
 									<div class="exch-dropdown__item current" data-name="BTC - Bitcoin" data-telegram="BTC Bitcoin Room">
 										<svg class="exch-dropdown__icon btc" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
@@ -1645,7 +1670,7 @@
 							</div>
 
 							<div class="exch-dropdown__list">
-								<div class="exch-dropdown__scroll scroll-y scrollbar-outer">
+								<div class="exch-dropdown__scroll scroll-y scrollbar-right">
 									<div class="exch-dropdown__item" data-name="BTC - Bitcoin">
 										<svg class="exch-dropdown__icon btc" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
@@ -1693,7 +1718,7 @@
 
 					<div class="b-graph__controls" id="mainChartWrap">
 						<div class="toolbar">
-							<div class="toolbar__scroll scroll-y scrollbar-inner">
+							<div class="toolbar__scroll scroll-y scrollbar-left">
 								<div class="toolbar__item">
 									<button class="toolbar__btn">
 										<svg class="toolbar-icon tool-cross" role="img" aria-hidden="true">
@@ -1997,7 +2022,7 @@
 						</div><!-- graph-prices__left END -->
 						
 						<div class="graph-prices__right">
-							<div class="graph-prices__scroll scroll-y scrollbar-outer">
+							<div class="graph-prices__scroll scroll-y scrollbar-right">
 								<div class="graph-prices__list">
 									<div class="graph-prices__item active" data-id="12">
 										<div class="graph-prices__trader">BINANCE</div>
@@ -2118,7 +2143,7 @@
 										<span>(+4%) over the last 30 days</span>
 									</p>
 								</div>
-								<div class="flex-1-1 scroll-y scrollbar-outer">
+								<div class="flex-1-1 scroll-y scrollbar-right">
 									<div class="basic-table bigger-font">
 										<div class="basic-table__row">
 											<div class="basic-table__col w-20" data-percent="80">
@@ -2455,7 +2480,7 @@
 						</div><!-- js-tabs-panel END -->
 
 						<div class="js-tabs-panel" id="panel-funds-orders">
-							<div class="flex-1-1 scroll-y scrollbar-outer">
+							<div class="flex-1-1 scroll-y scrollbar-right">
 								<div class="basic-table med-height">
 									<div class="basic-table__row head">
 										<div class="basic-table__col w-10 sorted-down">
@@ -2617,7 +2642,7 @@
 						</div><!-- js-tabs-panel END -->
 
 						<div class="js-tabs-panel" id="panel-funds-history">
-							<div class="flex-1-1 scroll-y scrollbar-outer">
+							<div class="flex-1-1 scroll-y scrollbar-right">
 								<div class="basic-table med-height">
 									<div class="basic-table__row head">
 										<div class="basic-table__col w-10 sorted-down">
@@ -2803,7 +2828,7 @@
 						</div><!-- js-tabs-panel END -->
 
 						<div class="js-tabs-panel" id="panel-funds-tr-history">
-							<div class="flex-1-1 scroll-y scrollbar-outer">
+							<div class="flex-1-1 scroll-y scrollbar-right">
 								<div class="basic-table med-height">
 									<div class="basic-table__row head">
 										<div class="basic-table__col w-15">Time</div>
@@ -2982,7 +3007,7 @@
 		</div>
 
 		<div class="d-flex flex-1-1 flex-h-fix">
-			<div class="flex-1-1 scroll-y scrollbar-outer">
+			<div class="flex-1-1 scroll-y scrollbar-right">
 				<div class="basic-table med-height">
 					<div class="basic-table__row head">
 						<div class="basic-table__col w-12 sorted-down">

@@ -62,8 +62,8 @@ $(function () {
 	/* js-scrollbar-outer */
 	/*---------------------------------------------------*/
 
-	$('.scrollbar-outer').scrollbar();
-	$('.scrollbar-inner').scrollbar();
+	$('.scrollbar-right').scrollbar();
+	$('.scrollbar-left').scrollbar();
 
 	$('#user-btn').on('click', function () {
 		$('body').toggleClass('menubar-in');
