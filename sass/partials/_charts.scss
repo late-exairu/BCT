@@ -12,12 +12,17 @@
     background: var(--clr-back);
     flex: 0 0 150px;
     border-right: 1px solid var(--clr-separator);
+
+    /*@media only screen and (min-height : 900px) {
+    	flex: 0 0 250px;
+	}*/
 }
 
 #circleChartText {
+	font-family: $osans;
     position: absolute;
     width: 120px;
-    top: 18px;
+    top: 28px;
     left: 14px;
     border-radius: 50%;
     p {
@@ -27,21 +32,29 @@
         &>span {
             display: block;
             span {
-                font-size: 16px;
+                font-size: 17px;
                 line-height: 25px;
                 vertical-align: top;
             }
             &:nth-child(1) {
-                font-size: 11px;
+				font-size: 11px;
+				font-weight: 600;
+				margin: 0;
+				padding: 0;
             }
             &:nth-child(2) {
-                font-size: 24px;
+				font-size: 26px;
+				font-weight: 300;
+				line-height: 1.18;
             }
             &:nth-child(3) {
-                font-size: 10px;
-                color: var(--clr-textL);
-                width: 75%;
-                display: inline-block;
+				font-size: 10px;
+				font-weight: 400;
+				color: var(--clr-textL);
+				width: 75%;
+				margin: 1px 0 0;
+				line-height: 1.28;
+				display: inline-block;
             }
         }
     }
