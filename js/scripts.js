@@ -124,12 +124,13 @@ $(function () {
 					portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);
 				}
 
-				/* 				if ($(this).attr('id') == 'tab-funds-account') {
-
-								} */
-
 				if ($(this).attr('id') == 'tab-dashboard-liquidity') {
 					liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
+				}
+
+				$('.js-open-orders').addClass('hidden');
+				if ($(this).attr('id') == 'tab-funds-orders') {
+					$('.js-open-orders').removeClass('hidden');
 				}
 
 			}
@@ -471,8 +472,31 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.js-chat-search-toggle').click(function () {
-
 		$(this).closest('.chat-head').find('.chat-head__search').toggleClass('open');
+	});
+
+	/*---------------------------------------------------*/
+	/* Open orders click */
+	/*---------------------------------------------------*/
+
+	$('.js-open-orders input').change(function () {
+		if ($('#switch-trading-real:checked').length) {
+			$('#panel-funds-orders .basic-table__row').each(function (index, item) {
+				if ($(item).hasClass('head')) {
+					$(item).children().last().html('<button class="basic-table__btn simple">Cancel All</button>');
+				} else {
+					$(item).children().last().html('<button class="basic-table__btn">Cancel</button>');
+				}
+			});
+		} else {
+			$('#panel-funds-orders .basic-table__row').each(function (index, item) {
+				if ($(item).hasClass('head')) {
+					$(item).children().last().html('Status');
+				} else {
+					$(item).children().last().html('FILLED');
+				}
+			});
+		}
 	});
 
 });
