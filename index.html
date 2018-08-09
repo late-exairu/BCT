@@ -282,7 +282,7 @@
 								</div>
 
 								<div class="chat-head__btns">
-									<button class="chat-head__btn">
+									<button class="chat-head__btn js-chat-search-toggle">
 										<svg class="sprite-icon" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#magnifier"></use>
 										</svg>
@@ -294,6 +294,22 @@
 										</svg>
 									</button>
 								</div>
+
+								<form class="chat-head__search chat-search">
+									<input class="chat-search__input" type="text" placeholder="Search">
+
+									<button class="chat-search__submit" type="submit">
+										<svg class="sprite-icon" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#magnifier"></use>
+										</svg>
+									</button>
+
+									<button class="chat-search__close js-chat-search-toggle" type="reset">
+										<svg class="sprite-icon" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#close"></use>
+										</svg>
+									</button>
+								</form>
 							</div><!-- chat-head END -->
 
 							<div class="c-block__section flex-1-1 scroll-y scrollbar-right">

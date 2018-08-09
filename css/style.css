@@ -1282,6 +1282,19 @@ h6 {
       flex: 0 0 16px;
       fill: var(--clr-accent);
       transition: all 0.1s; }
+  .chat-head__search {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--clr-block);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s; }
+    .chat-head__search.open {
+      opacity: 1;
+      visibility: visible; }
 
 /* =================================================================== */
 /* chat-talk */
@@ -4454,6 +4467,82 @@ body.compensate-for-scrollbar {
     height: 20px;
     fill: #fff;
     margin: 0; }
+
+.chat-search {
+  padding: 8px 10px 8px 12px;
+  display: flex;
+  background: var(--clr-backA); }
+  .chat-search__input {
+    font-family: "open_sans", sans-serif;
+    display: block;
+    background: var(--clr-backLL);
+    border: 1px solid var(--clr-separator);
+    outline: none;
+    text-align: center;
+    font-size: 12px;
+    padding: 0 10px;
+    border-radius: 3px;
+    flex: 1 1 calc(100% - 66px);
+    margin: 0 2px 0 0;
+    color: var(--clr-text);
+    transition: all 0.1s; }
+    .chat-search__input:focus {
+      background: var(--clr-back);
+      border-color: var(--clr-accent); }
+    .chat-search__input::placeholder {
+      color: var(--clr-textLL); }
+  .chat-search__submit {
+    display: block;
+    width: 30px;
+    flex: 0 0 30px;
+    margin: 0 0 0 2px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+    transition: all 0.1s;
+    border: 1px solid transparent; }
+    .chat-search__submit:hover {
+      border-color: var(--clr-accent);
+      background: var(--clr-accent);
+      color: #fff; }
+      .chat-search__submit:hover .sprite-icon {
+        fill: #fff; }
+    .chat-search__submit .sprite-icon {
+      position: relative;
+      width: 16px;
+      height: 16px;
+      fill: var(--clr-accent);
+      transition: all 0.1s; }
+  .chat-search__close {
+    display: block;
+    width: 30px;
+    flex: 0 0 30px;
+    margin: 0 0 0 2px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+    transition: all 0.1s;
+    border: 1px solid transparent; }
+    .chat-search__close:hover {
+      border-color: var(--clr-accent);
+      background: var(--clr-accent);
+      color: #fff; }
+      .chat-search__close:hover .sprite-icon {
+        fill: #fff; }
+    .chat-search__close .sprite-icon {
+      position: relative;
+      width: 14px;
+      height: 14px;
+      fill: var(--clr-accent);
+      transition: all 0.1s; }
 
 /* =================================================================== */
 /* selects

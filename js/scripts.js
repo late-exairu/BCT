@@ -465,4 +465,14 @@ $(function () {
 		arrows: false,
 		infobar: false
 	});
+
+	/*---------------------------------------------------*/
+	/* Chat Search toggle */
+	/*---------------------------------------------------*/
+
+	$('.js-chat-search-toggle').click(function () {
+
+		$(this).closest('.chat-head').find('.chat-head__search').toggleClass('open');
+	});
+
 });
