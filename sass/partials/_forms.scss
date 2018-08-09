@@ -135,6 +135,20 @@
 
 			.cubic-slider{
 				margin: 15px 0 15px;
+
+				/*
+				.irs-line,
+				.irs-bar,
+				.irs-bar-edge{
+					height: 2px;
+				}
+				*/
+
+				.single{
+					width: 24px;
+					height: 20px;
+					/*border-width: 2px;*/
+				}
 			}
 		}
 	}
@@ -158,6 +172,7 @@
 		top: 10px;
 		font-size: 9px;
 		color: var(--clr-text);
+		pointer-events: none;
 	}
 
 	&__coin{
@@ -167,6 +182,7 @@
 		transform: translateY(-50%);
 		width: 28px;
 		height: 28px;
+		pointer-events: none;
 	}
 
 	&__input{
