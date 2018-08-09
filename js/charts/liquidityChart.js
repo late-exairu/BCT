@@ -9,7 +9,9 @@ var liquidityChartOptions = {
     chart: {
         type: 'area',
         marginBottom:0,
-        marginTop:0
+        marginTop:0,
+        marginLeft:32,
+        marginRight:32
     },
     title: null,
     legend: {
@@ -55,39 +57,44 @@ var liquidityChartOptions = {
     },
     yAxis: [{
         labels: {
-            x: 20,
+            x: 0,
             y: -3,
             enabled: true,
+            padding:0,
             step: 4,
             overflow: 'justify',
             style: {
                 color: '#666666',
-                fontSize: '10px'
+                fontSize: '10px',
+                whiteSpace: 'nowrap'
             }
         },
         title: {
             enabled: false,
         },
         tickAmount: 10,
-        minorTickLength: 0,
+        tickLength: 0,
+        tickWidth: 0,
+        //minorTickLength: 0,
         max: 1600,
     }, {
         labels: {
-            x: -20,
+            x: 0,
             y: -3,
             enabled: true,
             step: 4,
             overflow: 'justify',
             style: {
                 color: '#666666',
-                fontSize: '10px'
+                fontSize: '10px',
+                whiteSpace: 'nowrap'
             }
         },
         title: {
             enabled: false,
         },
         tickAmount: 10,
-        minorTickLength: 0,
+       // minorTickLength: 0,
         max: 1600,
         linkedTo: 0,
         opposite: true

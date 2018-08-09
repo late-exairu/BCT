@@ -17,8 +17,8 @@ var portfolioChartOptions = {
         backgroundColor: '#ffffff',
         marginBottom: 21,
         marginTop: -30,
-      //  marginRight: 15,
-      //  marginLeft: 15
+        marginRight: 0,
+        marginLeft: 0
     },
     xAxis: [{
         gridLineColor: '#e6e6e6',
