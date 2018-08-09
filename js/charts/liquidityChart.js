@@ -127,16 +127,16 @@ var liquidityChartOptions = {
             var graphWidth = $(liquidityChartObj.container).width();
             var xPos = point.plotX - (labelWidth / 2);
             // right side fix
-            if ((point.plotX + labelWidth / 2) > graphWidth) {
-                xPos = graphWidth - labelWidth - 5;
+            if ((point.plotX + labelWidth) > graphWidth) {
+                xPos = graphWidth - labelWidth - 35;
             }
             // left side fix
             else if (point.plotX < 50) {
                 xPos = 5;
             }
             return {
-                x: xPos,
-                y: point.plotY - 35
+                x: xPos + 30,
+                y: point.plotY - 45
             };
         }
     },

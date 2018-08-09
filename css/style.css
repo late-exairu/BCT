@@ -4647,7 +4647,7 @@ body.compensate-for-scrollbar {
   line-height: 20px;
   background-color: var(--clr-block);
   color: var(--clr-textL);
-  box-shadow: 0px 2px 7px 0px rgba(120, 120, 120, 0.7); }
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.35); }
   .highcharts-tooltip div.tooltip span {
     color: var(--clr-textD); }
   .highcharts-tooltip div.tooltip div {
