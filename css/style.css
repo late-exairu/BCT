@@ -1056,7 +1056,7 @@ h6 {
     margin: 0;
     border-top: 1px solid var(--clr-separator);
     border-bottom: 1px solid var(--clr-separator);
-    background: var(--clr-back); }
+    background: var(--clr-backLL); }
 
 .c-block-btns {
   display: flex;
@@ -4473,7 +4473,8 @@ body.compensate-for-scrollbar {
     border: 1px solid var(--clr-separatorD);
     border-radius: var(--border-radius);
     color: var(--clr-textD);
-    outline: none; }
+    outline: none;
+    background: var(--clr-block); }
     .exch-form__input:focus {
       border-color: var(--clr-accent); }
   .exch-form__sep {
@@ -4811,7 +4812,7 @@ body.compensate-for-scrollbar {
   width: auto;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
   border: 1px solid #0086AF;
-  background: var(--clr-block);
+  background: var(--clr-back);
   padding: 18px; }
   .exch-popup__title {
     font-size: 37px;
@@ -4833,7 +4834,7 @@ body.compensate-for-scrollbar {
     text-align: center; }
   .exch-popup__tip {
     font-size: 9px;
-    color: #969696;
+    color: var(--clr-textL);
     padding: 0;
     margin: 13px 0 0;
     line-height: 1; }

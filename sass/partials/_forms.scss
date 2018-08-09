@@ -195,6 +195,7 @@
 		border-radius: var(--border-radius);
 		color: var(--clr-textD);
 		outline: none;
+		background: var(--clr-block);
 
 		&:focus{
 			border-color: var(--clr-accent);

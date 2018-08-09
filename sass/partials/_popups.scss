@@ -34,7 +34,7 @@
 	width: auto;
 	box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
 	border: 1px solid #0086AF;
-	background: var(--clr-block);
+	background: var(--clr-back);
 	padding: 18px;
 
 	&__title{
@@ -61,7 +61,7 @@
 
 	&__tip{
 		font-size: 9px;
-		color: #969696;
+		color: var(--clr-textL);
 		padding: 0;
 		margin: 13px 0 0;
 		line-height: 1;
