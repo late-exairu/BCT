@@ -499,4 +499,8 @@ $(function () {
 		}
 	});
 
+	$('.exch-form__btn').click(function () {
+		$.fancybox.close();
+	});
+
 });
