@@ -4671,9 +4671,10 @@ body.compensate-for-scrollbar {
 .highcharts-tooltip {
   z-index: 9998 !important; }
 
-.highcharts-tooltip div.tooltip {
+.highcharts-tooltip div.tooltip,
+.highcharts-tooltip div.tooltipCircle {
   opacity: 1;
-  padding: 4px 12px;
+  padding: 5px;
   z-index: 9999 !important;
   font-size: 11px;
   border-radius: 3px;
@@ -4681,16 +4682,39 @@ body.compensate-for-scrollbar {
   background-color: var(--clr-block);
   color: var(--clr-textL);
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.35); }
-  .highcharts-tooltip div.tooltip span {
+  .highcharts-tooltip div.tooltip span,
+  .highcharts-tooltip div.tooltipCircle span {
     color: var(--clr-textD); }
-  .highcharts-tooltip div.tooltip div {
-    display: inline; }
+
+.highcharts-tooltip div.tooltipCircle {
+  padding: 3px 5px;
+  min-width: 175px; }
+  .highcharts-tooltip div.tooltipCircle div {
+    display: inline-block;
+    vertical-align: top; }
+  .highcharts-tooltip div.tooltipCircle .mainInfo {
+    border-right: 1.1px solid var(--clr-textD);
+    padding-right: 5px;
+    height: 33px; }
+    .highcharts-tooltip div.tooltipCircle .mainInfo .currency {
+      color: #707CB9;
+      font-size: 13px; }
+    .highcharts-tooltip div.tooltipCircle .mainInfo .values {
+      font-weight: bold;
+      margin-top: -5px;
+      color: var(--clr-iconD);
+      font-size: 10px; }
+  .highcharts-tooltip div.tooltipCircle .percent {
+    padding-left: 5px;
+    font-size: 16px;
+    line-height: 34px;
+    color: var(--clr-textD); }
 
 .highcharts-tooltip span svg {
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
   position: relative;
-  top: 2px;
+  top: 5px;
   margin: 0px 3px 0px 0px; }
 
 .portfolioChartParent {

@@ -134,7 +134,7 @@ var portfolioChartOptions = {
             }
             return {
                 x: xPos,
-                y: point.plotY - 50
+                y: point.plotY - 45
             };
         }
     },

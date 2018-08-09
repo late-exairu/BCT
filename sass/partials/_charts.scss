@@ -2,7 +2,7 @@
     display: none;
 }
 
-.book-item{
+.book-item {
     display: none;
 }
 
@@ -67,9 +67,10 @@
 }
 
 .highcharts-tooltip {
-    div.tooltip {
+    div.tooltip,
+    div.tooltipCircle {
         opacity: 1;
-        padding: 4px 12px;
+        padding: 5px;
         z-index: 9999 !important;
         font-size: 11px;
         border-radius: 3px;
@@ -80,23 +81,50 @@
         span {
             color: var(--clr-textD);
         }
-        div{
-            display: inline;
+    }
+    div.tooltipCircle {
+        padding: 3px 5px;
+        min-width: 175px;
+        div {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .mainInfo {
+            border-right: 1.1px solid var(--clr-textD);
+            padding-right: 5px;
+            height: 33px;
+            .currency {
+                color: #707CB9;
+                font-size: 13px;
+            }
+            .values {
+                font-weight: bold;
+                margin-top: -5px;
+                color: var(--clr-iconD);
+                font-size: 10px;
+            }
+        }
+        .percent {
+            padding-left: 5px;
+            font-size: 16px;
+            line-height: 34px;
+            color:var(--clr-textD);
         }
     }
     span svg {
-        width: 15px;
-        height: 15px;
+        width: 25px;
+        height: 25px;
         position: relative;
-        top: 2px;
+        top: 5px;
         margin: 0px 3px 0px 0px;
     }
 }
 
-.portfolioChartParent{
+.portfolioChartParent {
     display: flex;
 }
-.circleDiagramParent{
+
+.circleDiagramParent {
     display: none;
     height: calc(100% - 19px);
     border-bottom: 1px solid var(--clr-separator);

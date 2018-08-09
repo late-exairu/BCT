@@ -2,6 +2,19 @@
 /* js-circle diagram */
 /*---------------------------------------------------*/
 
+var circleChartTooltipData = {
+    Bitcoin: {
+        price: '$6,140.13',
+        value: '1 BTC',
+        percent: '80%'
+    },
+    Ethereum: {
+        price: '$219.37',
+        value: '0.5 ETH',
+        percent: '20%'
+    }
+}
+
 var circleChartObj = null;
 var circleChartOptions = {
     chart: {
@@ -40,15 +53,21 @@ var circleChartOptions = {
         shadow: false,
         formatter: function () {
             var currency = this.key;
-            var resultString = '';
+            var svgString = '';
             $('#panel-funds-portfolio .basic-table__row').each(function () {
                 if ($(this).find('.w-20').text().indexOf(currency) != -1) {
-                    resultString = $(this).find('.w-20').html();
-                    resultString += '('+$(this).find('.w-20').attr('data-percent')+'%)';
+                    svgString = $(this).find('.w-20 svg').clone();
                     return false;
                 }
             });
-            return '<div class="tooltip">' + resultString + '</div>';
+
+            return '<div class="tooltipCircle">' + svgString[0].outerHTML +
+                    '<div class="mainInfo">' + 
+                        '<div class="currency">' +  currency + '</div><br>' +
+                        '<div class="values">' + circleChartTooltipData[currency]['price'] + ' | ' + circleChartTooltipData[currency]['value'] + '</div>' +
+                    '</div>' +
+                    '<div class="percent">' + circleChartTooltipData[currency]['percent'] + '</div>' +
+                '</div>';
         }
     },
     series: [{
