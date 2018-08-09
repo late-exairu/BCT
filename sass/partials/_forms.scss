@@ -22,14 +22,14 @@
 .order-form{
 	font-family: $osans;
 	font-size: 13px;
-	padding: 10px 10px;
+	padding: 12px;
 	width: 100%;
 
 	&__group{
 		min-height: 92px;
-		display: flex;
+		/*display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: space-between;*/
 	}
 
 	&__line{
@@ -101,10 +101,27 @@
 	&__submit{
 		width: 100%;
 		margin: auto 0 0;
+		display: flex;
+		font-family: $osans;
+		height: 20px;
+		border: none;
+		border-radius: var(--border-radius);
+		outline: none;
+		font-weight: 700;
+		font-size: 11px;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		background: #0576b9;
+		cursor: pointer;
+
+		&.btn-red{
+			background: #e05475;
+		}
 	}
 
 	.cubic-slider{
-		margin: 10px 0 5px;
+		margin: 7px 0 5px;
 	}
 }
 
@@ -112,9 +129,10 @@
 	@media only screen and (min-height : 900px) {
 
 		.order-form{
+			padding: 15px;
 
 			&__group{
-				min-height: 152px;
+				min-height: 142px;
 			}
 
 			&__line{
@@ -149,6 +167,20 @@
 					height: 20px;
 					/*border-width: 2px;*/
 				}
+			}
+		}
+	}
+
+	@media only screen and (min-width : 1920px) {
+		
+		.order-form{
+
+			&__label{
+				flex: 1 0 25%;
+			}
+
+			&__input-wrap{
+				flex: 1 0 75%;
 			}
 		}
 	}
