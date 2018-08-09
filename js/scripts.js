@@ -460,7 +460,7 @@ $(function () {
 	/* Fancybox popup */
 	/*---------------------------------------------------*/
 
-	$('[data-fancybox="popup"]').fancybox({
+	$('data-fancybox').fancybox({
 		keyboard: false,
 		arrows: false,
 		infobar: false
