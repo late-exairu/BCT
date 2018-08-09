@@ -3,28 +3,12 @@
 /* Variables
 /* =================================================================== */
 /*----- FONTS -----*/
-/*----- COLORS -----*/
-/*text color basic*/
-/*text color lighter*/
-/*text color light*/
-/*text color dark*/
-/*text color accented*/
-/*text color accented alternative*/
-/*icon color basic*/
-/*icon color dark*/
-/*icon color accented*/
-/*icon color accented light*/
-/*icon color accented dark*/
-/*separators and borders color basic*/
-/*separators and borders color dark*/
-/*background color light*/
-/*background color basic*/
-/*background color accented*/
-/*basic block color basic*/
 :root {
+  /*----- LAYOUT -----*/
   --left-bar-width:	50px;
   --gap-size:			7px;
   --border-radius:	4px;
+  /*----- COLORS -----*/
   --clr-text:			#585b5c;
   /*text color basic*/
   --clr-textLL:		#c6c8c8;
@@ -533,7 +517,7 @@ html {
 body {
   width: 100%;
   background: var(--clr-back);
-  color: #585b5c;
+  color: var(--clr-text);
   line-height: 1.32; }
 
 a {

@@ -9,35 +9,15 @@
 $osans:				'open_sans', sans-serif;
 $osansC:			'open_sans_condensed', sans-serif;
 
-/*----- COLORS -----*/
-
-$clr-text:			#585b5c; 	/*text color basic*/
-$clr-textLL:		#c6c8c8; 	/*text color lighter*/
-$clr-textL:			#737474; 	/*text color light*/
-$clr-textD:			#010101;	/*text color dark*/
-$clr-textA:			#286bb4;	/*text color accented*/
-$clr-textAA:		#e15c79;	/*text color accented alternative*/
-
-
-$clr-icon:			#c6c8c8;	/*icon color basic*/
-$clr-iconD:			#9ba6b2;	/*icon color dark*/
-$clr-accent:		#4a9cd5;	/*icon color accented*/
-$clr-accentL:		#edf2f5;	/*icon color accented light*/
-$clr-accentD:		#286bb4;	/*icon color accented dark*/
-
-
-$clr-separator:		#e8e8e8;	/*separators and borders color basic*/
-$clr-separatorD:	#bfc0c0;	/*separators and borders color dark*/
-$clr-backL:			#e5e6e5;	/*background color light*/
-$clr-back:			#f9f9fa;	/*background color basic*/
-$clr-backA:			#e6f1f8;	/*background color accented*/
-$clr-block:			#ffffff;	/*basic block color basic*/
-
 :root{
+	
+	/*----- LAYOUT -----*/
 
 	--left-bar-width:	50px;
 	--gap-size:			7px;
 	--border-radius:	4px;
+
+	/*----- COLORS -----*/
 	
 	--clr-text:			#585b5c; 	/*text color basic*/
 	--clr-textLL:		#c6c8c8; 	/*text color lighter*/
