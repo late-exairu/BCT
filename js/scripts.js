@@ -163,7 +163,7 @@ $(function () {
 			$('.chat-item').css('display', 'block');
 			$('#tab-funds-portfolio').trigger('click');
 		}
-		$('.menu-dropdown.to-top.js-dropdown').removeClass('open');
+		$('.menu-dropdown.js-dropdown').removeClass('open');
 		redrawMainChart();
 		redrawOtherCharts();
 	});
