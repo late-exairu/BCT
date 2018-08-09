@@ -6,12 +6,12 @@ var circleChartTooltipData = {
     Bitcoin: {
         price: '$6,140.13',
         value: '1 BTC',
-        percent: '80%'
+        percent: '80'
     },
     Ethereum: {
         price: '$219.37',
         value: '0.5 ETH',
-        percent: '20%'
+        percent: '20'
     }
 }
 
@@ -66,7 +66,7 @@ var circleChartOptions = {
                         '<div class="currency">' +  currency + '</div><br>' +
                         '<div class="values">' + circleChartTooltipData[currency]['price'] + ' | ' + circleChartTooltipData[currency]['value'] + '</div>' +
                     '</div>' +
-                    '<div class="percent">' + circleChartTooltipData[currency]['percent'] + '</div>' +
+                    '<div class="percent"><span>' + circleChartTooltipData[currency]['percent'] + '</span>%</div>' +
                 '</div>';
         }
     },
