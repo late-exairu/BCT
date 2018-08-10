@@ -4929,7 +4929,7 @@ body.compensate-for-scrollbar {
 
 .fancybox-bg {
   background: rgba(0, 0, 0, 0.45);
-  transition: all 0.2s; }
+  transition: all 0.5s; }
 
 .fancybox-content {
   padding: 0;
