@@ -1699,7 +1699,7 @@ h6 {
     transition: all .1s;
     border-radius: var(--border-radius); }
     .exch-head__switch:hover {
-      border-color: var(--clr-accentD);
+      background: var(--clr-back);
       /*background: var(--clr-accent);*/ }
     .exch-head__switch .sprite-icon {
       width: 24px;
@@ -2975,7 +2975,7 @@ body.menubar-in #user-btn:before {
     cursor: pointer;
     transition: all .1s; }
     .toolbar__btn:hover .toolbar-icon {
-      fill: var(--clr-text); }
+      fill: var(--clr-textD); }
   .toolbar__separator {
     width: 100%;
     height: 1px;
@@ -4653,7 +4653,7 @@ body.compensate-for-scrollbar {
     border-radius: var(--border-radius);
     color: var(--clr-textD);
     outline: none;
-    background: var(--clr-block); }
+    background: var(--clr-back); }
     .transaction-form__input:focus {
       background: var(--clr-back);
       border-color: var(--clr-accent); }
@@ -4799,7 +4799,7 @@ body.compensate-for-scrollbar {
   height: 100%;
   background: var(--clr-back);
   flex: 0 0 150px;
-  border-right: 1px solid var(--clr-separator);
+  /*border-right: 1px solid var(--clr-separator);*/
   /*@media only screen and (min-height : 900px) {
     	flex: 0 0 250px;
 	}*/ }
@@ -4952,7 +4952,7 @@ body.compensate-for-scrollbar {
   justify-content: center;
   /* -webkit-transform: translateX(-50%); */
   /* transform: translateX(-50%); */
-  background: var(--clr-back); }
+  background: var(--clr-block); }
   #portfolioChartRange span {
     padding: 3px 16px;
     display: block;

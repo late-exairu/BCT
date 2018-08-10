@@ -7,7 +7,7 @@
     height: 100%;
     background: var(--clr-back);
     flex: 0 0 150px;
-    border-right: 1px solid var(--clr-separator);
+    /*border-right: 1px solid var(--clr-separator);*/
 
     /*@media only screen and (min-height : 900px) {
     	flex: 0 0 250px;
@@ -194,7 +194,7 @@
 	justify-content: center;
 	/* -webkit-transform: translateX(-50%); */
 	/* transform: translateX(-50%); */
-	background: var(--clr-back);
+	background: var(--clr-block);
 
     span {
         padding: 3px 16px;
