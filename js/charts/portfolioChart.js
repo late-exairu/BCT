@@ -4,13 +4,13 @@
 
 var portfolioChartArrChanges = [
     ['Change since last day','10','.34'],
-    ['Change since last month','709','.93'],
-    ['Change since last year','3,122','.18'],
+   // ['Change since last month','709','.93'],
+   // ['Change since last year','3,122','.18'],
     ['Change since inception', '6,709', '.93'],
 ];
 var portfolioChartData = null;
 var portfolioChartObj = null;
-var portfolioChartCurrentRange = 1;
+var portfolioChartCurrentRange = 0;
 var portfolioChartOptions = {
     chart: {
         type: 'areaspline',
@@ -59,13 +59,14 @@ var portfolioChartOptions = {
                 type: 'week',
                 count: 1,
             }, 
-            {
+/*             {
                 type: 'month',
                 count: 1,
             }, {
                 type: 'year',
                 count: 1,
-            }, {
+            },  */
+            {
                 type: 'all',
             }
         ],
@@ -91,7 +92,7 @@ var portfolioChartOptions = {
         },
         tickAmount: 10,
         minorTickLength: 0,
-        // max: 10000,
+        // max: 225,
     },
     navigator: {
         enabled: false
@@ -134,7 +135,8 @@ var portfolioChartOptions = {
             }
             return {
                 x: xPos,
-                y: point.plotY - 45
+                //y: point.plotY - 45
+                y: -15
             };
         }
     },
