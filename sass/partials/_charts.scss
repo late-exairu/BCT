@@ -76,6 +76,7 @@
 }
 
 .highcharts-tooltip {
+	font-family: $osans;
     div.tooltip,
     div.tooltipCircle {
         opacity: 1;
@@ -86,41 +87,49 @@
         line-height: 20px;
         background-color: var(--clr-block);
         color: var(--clr-textL);
-        box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.35);
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
         span {
             color: var(--clr-textD);
         }
     }
     div.tooltipCircle {
-        padding: 3px 5px;
-        min-width: 150px;
-        div {
-            display: inline-block;
-            vertical-align: top;
-        }
+		font-family: $osans;
+        padding: 5px 5px 5px 5px;
+        min-width: 148px;
+        border: 1px solid var(--clr-separatorD);
+        display: flex;
+
         .mainInfo {
-            border-right: 1.1px solid var(--clr-textD);
-            padding-right: 4px;
-            height: 25px;
+            border-right: 1px solid var(--clr-textD);
+            padding-right: 5px;
+            margin: -1px 0 0;
+
             .currency {
+            	display: block;
                 color: #707CB9;
                 font-size: 11px;
-                margin-top: -3px;
+                line-height: 1;
             }
             .values {
+            	display: block;
                 font-weight: bold;
-                margin-top: -11px;
                 color: var(--clr-iconD);
                 font-size: 8px;
+                line-height: 1;
+                margin: 2px 0 0;
+                white-space: nowrap;
             }
         }
         .percent {
-            padding-left: 4px;
-            font-size: 16px;
-            line-height: 25px;
+            padding-left: 5px;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 20px;
             color:var(--clr-textD);
+
             span{
-                font-weight: bold;
+           		line-height: 20px;
+                font-weight: 600;
             }
         }
     }
@@ -128,8 +137,8 @@
         width: 20px;
         height: 20px;
         position: relative;
-        top: 2px;
         margin: 0px 3px 0px 0px;
+        flex: 0 0 20px;
     }
 }
 

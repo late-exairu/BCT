@@ -63,7 +63,7 @@ var circleChartOptions = {
 
             return '<div class="tooltipCircle">' + svgString[0].outerHTML +
                     '<div class="mainInfo">' + 
-                        '<div class="currency">' +  currency + '</div><br>' +
+                        '<div class="currency">' +  currency + '</div>' +
                         '<div class="values">' + circleChartTooltipData[currency]['price'] + ' | ' + circleChartTooltipData[currency]['value'] + '</div>' +
                     '</div>' +
                     '<div class="percent"><span>' + circleChartTooltipData[currency]['percent'] + '</span>%</div>' +
