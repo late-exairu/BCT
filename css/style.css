@@ -1689,13 +1689,12 @@ h6 {
     align-items: center;
     cursor: pointer;
     background: transparent;
-    border: none;
+    border: 1px solid transparent;
     transition: all .1s;
     border-radius: var(--border-radius); }
     .exch-head__switch:hover {
-      background: var(--clr-accent); }
-      .exch-head__switch:hover .sprite-icon {
-        fill: var(--clr-block); }
+      border-color: var(--clr-accentD);
+      /*background: var(--clr-accent);*/ }
     .exch-head__switch .sprite-icon {
       width: 24px;
       height: 13px;
@@ -4626,9 +4625,10 @@ body.compensate-for-scrollbar {
     transition: all 0.1s; }
     .transaction-form__qr-code:hover {
       border-color: var(--clr-accentD);
-      /*background: var(--clr-accentD);*/ }
-      .transaction-form__qr-code:hover .sprite-icon {
-        fill: #fff; }
+      /*background: var(--clr-accentD);*/
+      /*.sprite-icon{
+				fill: #fff;
+			}*/ }
     .transaction-form__qr-code .sprite-icon {
       width: 22px;
       height: 22px;

@@ -46,16 +46,13 @@
 		align-items: center;
 		cursor: pointer;
 		background: transparent;
-		border: none;
+		border: 1px solid transparent;
 		transition: all .1s;
 		border-radius: var(--border-radius);
 
 		&:hover{
-			background: var(--clr-accent);
-
-			.sprite-icon{
-				fill: var(--clr-block);
-			}
+			border-color: var(--clr-accentD);
+			/*background: var(--clr-accent);*/
 		}
 
 		.sprite-icon{
