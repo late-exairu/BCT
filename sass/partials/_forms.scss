@@ -415,7 +415,7 @@
 		position: absolute;
 		left: 6px;
 		top: 4px;
-		font-size: 7px;
+		font-size: 8px;
 		color: var(--clr-text);
 	}
 
@@ -425,12 +425,12 @@
 		width: 100%;
 		height: 32px;
 		font-weight: 700;
-		padding: 11px 50px 2px 5px;
+		padding: 12px 50px 2px 5px;
 		border: 1px solid var(--clr-separatorD);
 		border-radius: var(--border-radius);
 		color: var(--clr-textD);
 		outline: none;
-		background: var(--clr-block);
+		background: var(--clr-back);
 
 		&:focus{
 			background: var(--clr-back);
