@@ -244,14 +244,14 @@
 
 				<div class="c-block d-flex-col h-100">
 					<div class="c-block-head big">
-						<div class="c-block-head__left js-dropdown-wrap">
-							<h2 class="c-block-head__title btn js-dropdown-toggle">Telegram
-								<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
+						<div class="c-block-head__left">
+							<h2 class="c-block-head__title">Telegram
+<!-- 								<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
-								</svg>
+								</svg> -->
 							</h2>
 
-							<ul class="menu-dropdown js-dropdown">
+<!-- 							<ul class="menu-dropdown js-dropdown">
 								<li class="menu-dropdown__item js-tabs-tab switch-telegram active">
 									<button class="menu-dropdown__btn">Chat</button>
 								</li>
@@ -259,7 +259,7 @@
 								<li class="menu-dropdown__item js-tabs-tab switch-orderBook">
 									<button class="menu-dropdown__btn">Order Book</button>
 								</li>
-							</ul>
+							</ul> -->
 						</div>
 					</div><!-- c-block-head END -->
 
@@ -664,14 +664,14 @@
 				<div class="d-flex h-100">
 					<div class="d-flex-col flex-1-1 c-block">
 						<div class="c-block-head big">
-							<div class="c-block-head__left js-dropdown-wrap">
-								<h2 class="c-block-head__title js-dropdown-toggle btn">Global Order Book
-									<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
+							<div class="c-block-head__left">
+								<h2 class="c-block-head__title">Global Order Book
+<!-- 									<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
-									</svg>
+									</svg> -->
 								</h2>
 
-								<ul class="menu-dropdown js-dropdown">
+<!-- 								<ul class="menu-dropdown js-dropdown">
 									<li class="menu-dropdown__item js-tabs-tab switch-telegram">
 										<button class="menu-dropdown__btn">Chat</button>
 									</li>
@@ -679,7 +679,7 @@
 									<li class="menu-dropdown__item js-tabs-tab active switch-orderBook">
 										<button class="menu-dropdown__btn">Order Book</button>
 									</li>
-								</ul>
+								</ul> -->
 							</div>
 						</div>
 						<!-- c-block-head END -->
@@ -2111,7 +2111,7 @@
 					<div class="c-block-head big">
 						<div class="c-block-head__left js-dropdown-wrap">
 							<h2 class="c-block-head__title btn js-dropdown-toggle">
-								 Your Portfolio
+								Portfolio
 								<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
 								</svg>
@@ -2119,24 +2119,24 @@
 
 							<ul class="menu-dropdown js-dropdown">
 								<li class="menu-dropdown__item js-tabs-tab active" id="tab-funds-portfolio">
-									<button class="menu-dropdown__btn">Your Portfolio</button>
+									<button class="menu-dropdown__btn">Portfolio</button>
 								</li>
 
-								<li class="menu-dropdown__item js-tabs-tab chat-item" id="tab-funds-orders">
-									<button class="menu-dropdown__btn">Open Orders</button>
+								<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-history">
+									<button class="menu-dropdown__btn">Orders</button>
 								</li>
 
-								<li class="menu-dropdown__item js-tabs-tab book-item" id="tab-funds-history">
+								<li class="menu-dropdown__item js-tabs-tab" id="tab-dashboard-liquidity">
+									<button class="menu-dropdown__btn">Exchanges</button>
+								</li>
+
+<!-- 							<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-history">
 									<button class="menu-dropdown__btn">Order History</button>
 								</li>
 
-								<!-- <li class="menu-dropdown__item js-tabs-tab" id="tab-funds-tr-history">
-									<button class="menu-dropdown__btn">Trades History</button>
-								</li> -->
-
-								<li class="menu-dropdown__item js-tabs-tab book-item" id="tab-dashboard-liquidity">
+								<li class="menu-dropdown__item js-tabs-tab" id="tab-dashboard-liquidity">
 									<button class="menu-dropdown__btn">Global Liquidity</button>
-								</li>
+								</li> -->
 							</ul>
 						</div>
 
@@ -2550,7 +2550,7 @@
 											Trigger
 										</div>
 										<div class="basic-table__col w-10 centered">
-											Status
+											<button class="basic-table__btn simple">Cancel All</button>
 										</div>
 									</div><!-- basic-table__row END -->
 
@@ -2565,7 +2565,7 @@
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10 centered">
-											FILLED
+											<button class="basic-table__btn">Cancel</button>
 										</div>
 									</div><!-- basic-table__row END -->
 									
@@ -2580,7 +2580,7 @@
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10 centered">
- 											FILLED
+											<button class="basic-table__btn">Cancel</button>
 										</div>
 									</div><!-- basic-table__row END -->
 									
@@ -2595,7 +2595,7 @@
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10 centered">
-											FILLED
+											<button class="basic-table__btn">Cancel</button>
 										</div>
 									</div><!-- basic-table__row END -->
 									
@@ -2610,7 +2610,7 @@
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10 centered">
-											FILLED
+											<button class="basic-table__btn">Cancel</button>
 										</div>
 									</div><!-- basic-table__row END -->
 									
@@ -2625,7 +2625,7 @@
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10 centered">
-											FILLED
+											<button class="basic-table__btn">Cancel</button>
 										</div>
 									</div><!-- basic-table__row END -->
 									
@@ -2640,7 +2640,7 @@
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10 centered">
-											FILLED
+											<button class="basic-table__btn">Cancel</button>
 										</div>
 									</div><!-- basic-table__row END -->
 									
@@ -2655,7 +2655,7 @@
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10">xxx</div>
 										<div class="basic-table__col w-10 centered">
-											FILLED
+											<button class="basic-table__btn">Cancel</button>
 										</div>
 									</div><!-- basic-table__row END -->
 								</div><!-- basic-table END -->

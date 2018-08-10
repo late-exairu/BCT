@@ -105,34 +105,45 @@ $(function () {
 
 	$('.js-account-stats .menu-dropdown__item').on('click', function () {
 		if ($(this).attr('id')) {
-			var panelId = '#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel');
-			if ($(panelId).length != 0) {
-				var btnText = $(this).find('button').text();
-				var accountStatsHeader = $('.js-account-stats .c-block-head h2.c-block-head__title');
-				var svgFromHeader = $(accountStatsHeader).find('svg').clone();
-				accountStatsHeader.text(btnText + ' ').append(svgFromHeader);
+			var btnText = $(this).find('button').text();
+			var accountStatsHeader = $('.js-account-stats .c-block-head h2.c-block-head__title');
+			var svgFromHeader = $(accountStatsHeader).find('svg').clone();
+			if (btnText == 'Exchanges') btnText = 'Global Liquidity';
+			accountStatsHeader.text(btnText + ' ').append(svgFromHeader);
 
-				$('.js-account-stats .js-tabs-tab, .js-account-stats .js-tabs-panel').removeClass('active');
-				$(this).add('#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel')).addClass('active');
-				$(this).focus();
+			$('.js-account-stats .js-tabs-tab, .js-account-stats .js-tabs-panel').removeClass('active');
+			$(this).add('#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel')).addClass('active');
+			$(this).focus();
 
-				if ($(this).attr('id') == 'tab-funds-portfolio') {
-					portfolioChartOptions.series = [{
-						data: portfolioChartData
-					}];
-					portfolioChartOptions.rangeSelector.selected = portfolioChartCurrentRange;
-					portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);
+			if ($(this).attr('id') == 'tab-funds-portfolio') {
+				$('#orderBook').addClass('hidden');
+				$('#telegram').removeClass('hidden');
+				portfolioChartOptions.series = [{
+					data: portfolioChartData
+				}];
+				portfolioChartOptions.rangeSelector.selected = portfolioChartCurrentRange;
+				portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);
+			}
+
+			if ($(this).attr('id') == 'tab-funds-history') {
+				if ($('#switch-trading-real:checked').length) {
+					$('.main-cols__right-bottom .js-tabs-panel').removeClass('active');
+					$('#panel-funds-orders').addClass('active');
 				}
+			}
 
-				if ($(this).attr('id') == 'tab-dashboard-liquidity') {
-					liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
-				}
+			if ($(this).attr('id') == 'tab-dashboard-liquidity') {
+				$('#telegram').addClass('hidden');
+				$('#orderBook').removeClass('hidden');
+				liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
+			}
+			
+			redrawMainChart();
+			redrawOtherCharts();
 
-				$('.js-open-orders').addClass('hidden');
-				if ($(this).attr('id') == 'tab-funds-orders') {
-					$('.js-open-orders').removeClass('hidden');
-				}
-
+			$('.js-open-orders').addClass('hidden');
+			if ($(this).attr('id') == 'tab-funds-history') {
+				$('.js-open-orders').removeClass('hidden');
 			}
 		}
 	});
@@ -145,29 +156,6 @@ $(function () {
 		// for future Real trading option
 	});
 
-
-	/*---------------------------------------------------*/
-	/* Left column menu */
-	/*---------------------------------------------------*/
-
-	$('.main-cols__left .menu-dropdown__item').on('click', function () {
-		if ($(this).hasClass('switch-orderBook')) {
-			$('#telegram').addClass('hidden');
-			$('#orderBook').removeClass('hidden');
-			$('.book-item').css('display', 'block');
-			$('.chat-item').css('display', 'none');
-			$('#tab-dashboard-liquidity').trigger('click');
-		} else if ($(this).hasClass('switch-telegram')) {
-			$('#orderBook').addClass('hidden');
-			$('#telegram').removeClass('hidden');
-			$('.book-item').css('display', 'none');
-			$('.chat-item').css('display', 'block');
-			$('#tab-funds-portfolio').trigger('click');
-		}
-		$('.menu-dropdown.js-dropdown').removeClass('open');
-		redrawMainChart();
-		redrawOtherCharts();
-	});
 
 	/*---------------------------------------------------*/
 	/* functions for change theme */
@@ -481,23 +469,17 @@ $(function () {
 
 	$('.js-open-orders input').change(function () {
 		if ($('#switch-trading-real:checked').length) {
-			$('#panel-funds-orders .basic-table__row').each(function (index, item) {
-				if ($(item).hasClass('head')) {
-					$(item).children().last().html('<button class="basic-table__btn simple">Cancel All</button>');
-				} else {
-					$(item).children().last().html('<button class="basic-table__btn">Cancel</button>');
-				}
-			});
+			$('.main-cols__right-bottom .js-tabs-panel').removeClass('active');
+			$('#panel-funds-orders').addClass('active');
 		} else {
-			$('#panel-funds-orders .basic-table__row').each(function (index, item) {
-				if ($(item).hasClass('head')) {
-					$(item).children().last().html('Status');
-				} else {
-					$(item).children().last().html('FILLED');
-				}
-			});
+			$('.main-cols__right-bottom .js-tabs-panel').removeClass('active');
+			$('#panel-funds-history').addClass('active');
 		}
 	});
+
+	/*---------------------------------------------------*/
+	/* first popUp layer close */
+	/*---------------------------------------------------*/
 
 	$('.exch-form__btn').click(function () {
 		$.fancybox.close();
