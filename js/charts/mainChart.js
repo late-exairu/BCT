@@ -1,11 +1,11 @@
 function redrawMainChart() {
-/* 	var chartParent = $('.b-graph');
-	$(chartParent).css('width', '100%');
-	var chartParentWidth = parseInt($(chartParent).width());
-	 if ($('#js-graph-prices').hasClass('open')) {
-	 	chartParentWidth -= 160;
-	 }
-	$(chartParent).css('width', chartParentWidth); */
+	/* 	var chartParent = $('.b-graph');
+		$(chartParent).css('width', '100%');
+		var chartParentWidth = parseInt($(chartParent).width());
+		 if ($('#js-graph-prices').hasClass('open')) {
+		 	chartParentWidth -= 160;
+		 }
+		$(chartParent).css('width', chartParentWidth); */
 	mainChartObj.reflow();
 }
 
@@ -16,17 +16,17 @@ var gradientColor = [
 ];
 
 // id of graph for highlight
-var mainGraphHighlighted = 12;
+var mainGraphHighlighted = 6;
 var mainGraphHover = null;
 var mainChartObj = Highcharts.chart('mainChart', {
 	legend: {
 		enabled: false
 	},
 	chart: {
-		marginBottom: 35,
-		marginRight: -10,
+		marginBottom: 0,
+		marginRight: -25,
 		spacingTop: 0,
-		spacingLeft: 0,
+		spacingLeft: -5,
 		spacingRight: 0,
 		spacingBottom: 0,
 		events: {
@@ -41,17 +41,32 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	},
 	plotOptions: {
 		series: {
-			pointWidth: $('#mainChartWrap').width() / 275,
+			pointWidth: $('#mainChart').width() / 275,
 			pointPadding: 0,
+			pointStart: Date.UTC(2018, 5, 17),
+			pointInterval: 24 * 3600 * 1000, // one day
 			borderWidth: 0,
 			groupPadding: 0,
 			lineWidth: 0.6,
 			marker: {
 				enabled: false,
+				fillColor: '',
+				lineWidth: 0,
+				width: 0,
+				lineColor: null,
+				symbol: 'url(' + location.origin + location.pathname + 'img/svg/circle.svg)',
 				states: {
 					hover: {
-						enabled: false
+						enabled: true
 					}
+				}
+			},
+			states: {
+				hover: {
+					halo: {
+						opacity: 0
+					}
+
 				}
 			}
 		},
@@ -127,20 +142,30 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		}
 	},
 	xAxis: {
-		categories: [
-			'Jun 17 2018', 'Jun 17 2018', 'Jun 17 2018', 'Jun 17 2018', 'Jun 17 2018',
-			'Jun 19 2018', 'Jun 19 2018', 'Jun 19 2018', 'Jun 19 2018', 'Jun 19 2018',
-			'Jun 21 2018', 'Jun 21 2018', 'Jun 21 2018', 'Jun 21 2018', 'Jun 21 2018',
-			'Jun 23 2018', 'Jun 23 2018', 'Jun 23 2018', 'Jun 23 2018', 'Jun 23 2018',
-			'Jun 25 2018', 'Jun 25 2018', 'Jun 25 2018', 'Jun 25 2018', 'Jun 25 2018',
-			'Jun 27 2018', 'Jun 27 2018', 'Jun 27 2018', 'Jun 27 2018', 'Jun 27 2018',
-			'Jun 29 2018', 'Jun 29 2018', 'Jun 29 2018', 'Jun 29 2018', 'Jun 29 2018',
-			'Jul 1 2018', 'Jul 1 2018', 'Jul 1 2018', 'Jul 1 2018', 'Jul 1 2018',
-			'Jul 3 2018', 'Jul 3 2018', 'Jul 3 2018', 'Jul 3 2018', 'Jul 3 2018',
-			'Jul 5 2018', 'Jul 5 2018', 'Jul 5 2018', 'Jul 5 2018', 'Jul 5 2018',
-			'Jul 7 2018', 'Jul 7 2018', 'Jul 7 2018', 'Jul 7 2018', 'Jul 7 2018',
-		],
+		/* 		categories: [
+					'Jun 9 2018', 'Jun 11 2018', 'Jun 13 2018', 'Jun 15 2018', 'Jun 17 2018',
+					'Jun 19 2018', 'Jun 21 2018', 'Jun 23 2018', 'Jun 25 2018', 'Jun 27 2018',
+					'Jun 29 2018', 'Jun 21 2018', 'Jun 21 2018', 'Jun 21 2018', 'Jun 21 2018',
+					'Jun 23 2018', 'Jun 23 2018', 'Jun 23 2018', 'Jun 23 2018', 'Jun 23 2018',
+					'Jun 25 2018', 'Jun 25 2018', 'Jun 25 2018', 'Jun 25 2018', 'Jun 25 2018',
+					'Jun 27 2018', 'Jun 27 2018', 'Jun 27 2018', 'Jun 27 2018', 'Jun 27 2018',
+					'Jun 29 2018', 'Jun 29 2018', 'Jun 29 2018', 'Jun 29 2018', 'Jun 29 2018',
+					'Jul 1 2018', 'Jul 1 2018', 'Jul 1 2018', 'Jul 1 2018', 'Jul 1 2018',
+					'Jul 3 2018', 'Jul 3 2018', 'Jul 3 2018', 'Jul 3 2018', 'Jul 3 2018',
+					'Jul 5 2018', 'Jul 5 2018', 'Jul 5 2018', 'Jul 5 2018', 'Jul 5 2018',
+					'Jul 7 2018', 'Jul 7 2018', 'Jul 7 2018', 'Jul 7 2018', 'Jul 7 2018',
+				], */
+		type: 'datetime',
+		dateTimeLabelFormats: {
+			month: '%e. %b',
+			year: '%b'
+		},
+		crosshair: {
+			width: 1,
+			color: '#939393'
+		},
 		labels: {
+			enabled: false,
 			step: 5,
 			style: {
 				width: '35px',
@@ -159,6 +184,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		showLastLabel: false,
 		showFirstLabel: false,
 		labels: {
+			enabled: false,
 			align: 'right',
 			x: -20,
 			y: -20,
@@ -173,7 +199,50 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		tickInterval: 7,
 		max: 150
 	},
-	stickyTracking: false,
+
+	tooltip: {
+		backgroundColor: 'rgba(0,0,0,0)',
+		borderColor: 'rgba(0,0,0,0)',
+		borderRadius: 0,
+		padding: 0,
+		shared: true,
+		shadow: false,
+		useHTML: true,
+		shape: "box",
+		split: false,
+		style: {
+			color: '#ffffff',
+			fontSize: 8
+		},
+		formatter: function () {
+			var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+			var date = new Date(this.x);
+			var month = months[date.getMonth()];
+			var dayName = date.toString().split(' ')[0];
+			var TooltipValue = (this.y * 90).toFixed(2);
+			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
+			return '<div class="tooltip">' +
+				"<span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() +
+				'</div>';
+		},
+		positioner: function (labelWidth, labelHeight, point, ) {
+			var graphWidth = $(mainChartObj.container).width();
+			var xPos = point.plotX - (labelWidth / 2);
+			// right side fix
+			if ((point.plotX + labelWidth / 2) > graphWidth) {
+				xPos = graphWidth - labelWidth - 5;
+			}
+			// left side fix
+			else if (point.plotX < 75) {
+				xPos = 25;
+			}
+			return {
+				x: xPos + 20,
+				//y: point.plotY - 45
+				y: 70
+			};
+		}
+	},
 	series: [{
 			type: 'areaspline',
 			data: [5, 20, 15, 35, 32, 14, 42, 57, 39, 42,
@@ -185,7 +254,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			],
 			name: "Series 1",
 			lineWidth: 1,
-			id: 1
+			id: 1,
+			enableMouseTracking: false,
 		},
 		{
 			type: 'areaspline',
@@ -198,7 +268,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			],
 			name: "Series 2",
 			lineWidth: 1,
-			id: 2
+			id: 2,
+			enableMouseTracking: false,
 		},
 		{
 			type: 'areaspline',
@@ -211,7 +282,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			],
 			name: "Series 3",
 			lineWidth: 1,
-			id: 3
+			id: 3,
+			enableMouseTracking: false,
 		},
 		{
 			type: 'areaspline',
@@ -224,7 +296,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			],
 			name: "Series 4",
 			lineWidth: 1,
-			id: 4
+			id: 4,
+			enableMouseTracking: false,
 		},
 		{
 			type: 'areaspline',
@@ -237,86 +310,93 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			],
 			name: "Series 5",
 			lineWidth: 1,
-			id: 5
+			id: 5,
+			enableMouseTracking: false,
 		},
-		{
-			type: 'areaspline',
-			data: [82, 80, 85, 85, 80, 79, 82, 87, 89, 91,
-				83, 80, 78, 105, 117, 122, 131, 127, 106, 123,
-				107, 115, 109, 127, 134, 123, 131, 140, 137, 122,
-				119, 126, 128, 124, 130, 121, 124, 137, 135, 129,
-				120, 129, 123, 122, 125, 125, 123, 132, 121, 128,
-				132, 134, 130, 137, 134,
-			],
-			name: "Series 6",
-			lineWidth: 1,
-			id: 6
-		},
-		{
-			type: 'areaspline',
-			data: [35, 42, 45, 65, 72, 75, 82, 87, 89, 92,
-				94, 90, 90, 95, 87, 92, 98, 97, 100, 104,
-				102, 105, 109, 107, 104, 113, 112, 113, 101, 112,
-				104, 106, 106, 108, 110, 110, 108, 107, 105, 112,
-				107, 109, 108, 102, 107, 115, 103, 107, 112, 108,
-				107, 108, 119, 107, 104,
-			],
-			name: "Series 7",
-			lineWidth: 1,
-			id: 7
-		},
-		{
-			type: 'areaspline',
-			data: [50, 60, 65, 71, 70, 73, 78, 87, 73, 72,
-				64, 60, 60, 61, 64, 62, 68, 57, 50, 54,
-				50, 52, 59, 57, 64, 63, 62, 58, 57, 53,
-				64, 56, 52, 58, 63, 72, 68, 57, 61, 62,
-				67, 62, 60, 72, 57, 56, 63, 67, 71, 73,
-				67, 75, 81, 83, 72,
-			],
-			name: "Series 8",
-			lineWidth: 1,
-			id: 8
-		},
-		{
-			type: 'areaspline',
-			data: [38, 40, 35, 45, 60, 70, 72, 77, 79, 62,
-				44, 50, 50, 55, 57, 52, 38, 27, 60, 64,
-				70, 75, 79, 87, 94, 103, 102, 53, 107, 62,
-				64, 66, 66, 68, 100, 112, 98, 97, 95, 68,
-				77, 79, 80, 82, 87, 85, 83, 87, 82, 88,
-				77, 80, 90, 82, 74,
-			],
-			name: "Series 9",
-			lineWidth: 1,
-			id: 9
-		},
-		{
-			type: 'areaspline',
-			data: [30, 37, 38, 32, 32, 37, 34, 38, 32, 34,
-				37, 19, 13, 22, 18, 27, 29, 32, 20, 12,
-				49, 58, 50, 58, 57, 58, 62, 42, 47, 44,
-				25, 27, 28, 22, 42, 87, 84, 98, 102, 104,
-				97, 99, 83, 42, 48, 47, 49, 62, 70, 72,
-				79, 78, 70, 78, 77,
-			],
-			name: "Series 10",
-			lineWidth: 1,
-			id: 10
-		},
-		{
-			type: 'areaspline',
-			data: [48, 66, 69, 77, 4, 3, 22, 13, 27, 22,
-				17, 19, 11, 16, 18, 20, 25, 29, 30, 20,
-				35, 75, 8, 2, 12, 27, 14, 18, 2, 4,
-				27, 24, 25, 26, 14, 6, 5, 7, 4, 30,
-				54, 59, 60, 75, 77, 82, 83, 87, 82, 95,
-				117, 119, 111, 116, 118,
-			],
-			name: "Series 11",
-			lineWidth: 1,
-			id: 11
-		},
+		/* 		{
+					type: 'areaspline',
+					data: [82, 80, 85, 85, 80, 79, 82, 87, 89, 91,
+						83, 80, 78, 105, 117, 122, 131, 127, 106, 123,
+						107, 115, 109, 127, 134, 123, 131, 140, 137, 122,
+						119, 126, 128, 124, 130, 121, 124, 137, 135, 129,
+						120, 129, 123, 122, 125, 125, 123, 132, 121, 128,
+						132, 134, 130, 137, 134,
+					],
+					name: "Series 6",
+					lineWidth: 1,
+					id: 6,
+					enableMouseTracking: false,
+				},
+				{
+					type: 'areaspline',
+					data: [35, 42, 45, 65, 72, 75, 82, 87, 89, 92,
+						94, 90, 90, 95, 87, 92, 98, 97, 100, 104,
+						102, 105, 109, 107, 104, 113, 112, 113, 101, 112,
+						104, 106, 106, 108, 110, 110, 108, 107, 105, 112,
+						107, 109, 108, 102, 107, 115, 103, 107, 112, 108,
+						107, 108, 119, 107, 104,
+					],
+					name: "Series 7",
+					lineWidth: 1,
+					id: 7,
+					enableMouseTracking: false,
+				},
+				{
+					type: 'areaspline',
+					data: [50, 60, 65, 71, 70, 73, 78, 87, 73, 72,
+						64, 60, 60, 61, 64, 62, 68, 57, 50, 54,
+						50, 52, 59, 57, 64, 63, 62, 58, 57, 53,
+						64, 56, 52, 58, 63, 72, 68, 57, 61, 62,
+						67, 62, 60, 72, 57, 56, 63, 67, 71, 73,
+						67, 75, 81, 83, 72,
+					],
+					name: "Series 8",
+					lineWidth: 1,
+					id: 8,
+					enableMouseTracking: false,
+				},
+				{
+					type: 'areaspline',
+					data: [38, 40, 35, 45, 60, 70, 72, 77, 79, 62,
+						44, 50, 50, 55, 57, 52, 38, 27, 60, 64,
+						70, 75, 79, 87, 94, 103, 102, 53, 107, 62,
+						64, 66, 66, 68, 100, 112, 98, 97, 95, 68,
+						77, 79, 80, 82, 87, 85, 83, 87, 82, 88,
+						77, 80, 90, 82, 74,
+					],
+					name: "Series 9",
+					lineWidth: 1,
+					id: 9,
+					enableMouseTracking: false,
+				},
+				{
+					type: 'areaspline',
+					data: [30, 37, 38, 32, 32, 37, 34, 38, 32, 34,
+						37, 19, 13, 22, 18, 27, 29, 32, 20, 12,
+						49, 58, 50, 58, 57, 58, 62, 42, 47, 44,
+						25, 27, 28, 22, 42, 87, 84, 98, 102, 104,
+						97, 99, 83, 42, 48, 47, 49, 62, 70, 72,
+						79, 78, 70, 78, 77,
+					],
+					name: "Series 10",
+					lineWidth: 1,
+					id: 10,
+					enableMouseTracking: false,
+				},
+				{
+					type: 'areaspline',
+					data: [48, 66, 69, 77, 4, 3, 22, 13, 27, 22,
+						17, 19, 11, 16, 18, 20, 25, 29, 30, 20,
+						35, 75, 8, 2, 12, 27, 14, 18, 2, 4,
+						27, 24, 25, 26, 14, 6, 5, 7, 4, 30,
+						54, 59, 60, 75, 77, 82, 83, 87, 82, 95,
+						117, 119, 111, 116, 118,
+					],
+					name: "Series 11",
+					lineWidth: 1,
+					id: 11,
+					enableMouseTracking: false,
+				}, */
 		{
 			type: 'areaspline',
 			data: [20, 24, 24, 26, 25, 27, 24, 28, 32, 34,
@@ -326,7 +406,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				57, 59, 61, 66, 68, 70, 75, 79, 80, 80,
 				87, 84, 85, 86, 84,
 			],
-			name: "Series 12",
+			name: "Series 6",
 			lineWidth: 3,
 			color: '#0576B9',
 			fillColor: {
@@ -336,7 +416,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 					[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
 				]
 			},
-			id: 12
+			id: 6,
+			enableMouseTracking: true,
 		},
 		{
 			type: 'column',
@@ -345,11 +426,12 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				7, 9, 11, 6, 8, 2, 5, 9, 3, 2,
 				5, 5, 8, 9, 2, 7, 22, 8, 2, 4,
 				7, 4, 5, 6, 4, 6, 5, 7, 4, 3,
-				4, 9, 26, 5, 27, 8, 38, 8, 28, 9,
-				11, 19, 11, 16, 18,
+				4, 9, 13, 5, 14, 8, 19, 8, 14, 9,
+				11, 11, 11, 16, 12,
 			],
-			name: "Series 13",
-			id: 13
+			name: "Series 7",
+			id: 7,
+			enableMouseTracking: false,
 		},
 		{
 			type: 'column',
@@ -357,12 +439,13 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			data: [8, 7, 6, 11, 16, 17, 9, 8, 9, 12,
 				6, 12, 9, 7, 5, 8, 7, 5, 9, 6,
 				8, 9, 6, 8, 12, 5, 12, 12, 12, 14,
-				17, 14, 8, 30, 25, 28, 19, 33, 47, 18,
-				34, 21, 35, 22, 37, 28, 36, 24, 18, 31,
+				17, 14, 8, 20, 21, 19, 19, 17, 23, 18,
+				17, 21, 25, 22, 21, 19, 17, 14, 12, 16,
 				13, 7, 6, 4, 8,
 			],
-			name: "Series 14",
-			id: 14
+			name: "Series 8",
+			id: 8,
+			enableMouseTracking: false,
 		},
 		{
 			type: 'column',
@@ -370,12 +453,13 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			data: [8, 7, 6, 11, 16, 17, 9, 8, 9, 12,
 				6, 12, 9, 7, 5, 8, 17, 5, 9, 6,
 				8, 9, 16, 18, 12, 15, 12, 12, 12, 14,
-				17, 14, 8, 3, 25, 40, 35, 30, 37, 45,
-				40, 46, 44, 52, 47, 60, 6, 4, 8, 11,
+				17, 14, 8, 3, 25, 29, 28, 25, 21, 23,
+				30, 26, 22, 27, 30, 28, 16, 4, 8, 11,
 				13, 7, 6, 4, 8,
 			],
-			name: "Series 15",
-			id: 15
+			name: "Series 9",
+			id: 9,
+			enableMouseTracking: false,
 		},
 		{
 			type: 'column',
@@ -383,12 +467,13 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			data: [8, 7, 6, 11, 16, 17, 9, 8, 9, 12,
 				6, 12, 9, 7, 5, 8, 7, 15, 9, 6,
 				8, 9, 6, 18, 12, 15, 12, 12, 12, 14,
-				17, 14, 8, 3, 15, 28, 29, 33, 27, 38,
-				14, 31, 25, 42, 27, 18, 16, 14, 8, 11,
+				17, 14, 8, 3, 15, 28, 29, 23, 27, 18,
+				14, 31, 25, 22, 27, 18, 16, 14, 8, 11,
 				13, 7, 6, 24, 10,
 			],
-			name: "Series 16",
-			id: 16
+			name: "Series 10",
+			id: 10,
+			enableMouseTracking: false,
 		}
 	]
 });
