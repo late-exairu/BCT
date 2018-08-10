@@ -1,278 +1,279 @@
 .highcharts-credits {
-    display: none;
+	display: none;
 }
 
 .accounts-diagram {
-    max-height: 100%;
-    height: 100%;
-    background: var(--clr-back);
-    flex: 0 0 150px;
-    border-right: 1px solid var(--clr-separator);
+	max-height: 100%;
+	height: 100%;
+	background: var(--clr-back);
+	flex: 0 0 150px;
+	border-right: 1px solid var(--clr-separator);
 
-    /*@media only screen and (min-height : 900px) {
-    	flex: 0 0 250px;
+	/*@media only screen and (min-height : 900px) {
+		flex: 0 0 250px;
 	}*/
 }
 
 #circleChartText {
 	font-family: $osans;
-    position: absolute;
-    width: 120px;
-    top: 28px;
-    left: 14px;
-    border-radius: 50%;
-    p {
-        text-align: center;
-        color: var(--clr-textD);
-        border-radius: 50%;
-        &>span {
-            display: block;
-            span {
-                font-size: 17px;
-                line-height: 25px;
-                vertical-align: top;
-            }
-            &:nth-child(1) {
-				font-size: 11px;
-				font-weight: 600;
-				margin: 0;
-				padding: 0;
-            }
-            &:nth-child(2) {
-				font-size: 26px;
-				font-weight: 300;
-				line-height: 1.18;
-            }
-            &:nth-child(3) {
-				font-size: 10px;
-				font-weight: 400;
-				color: var(--clr-textL);
-				width: 75%;
-				margin: 1px 0 0;
-				line-height: 1.28;
-				display: inline-block;
-            }
-        }
-    }
+	position: absolute;
+	width: 120px;
+	top: 52px;
+	left: 14px;
+	left: 14px;
+	border-radius: 50%;
+
+	.wrap {
+		text-align: center;
+		color: var(--clr-textD);
+		border-radius: 50%;
+			
+		.value {
+			display: block;
+			font-size: 26.5px;
+			line-height: 1.2;
+			font-weight: 300;
+			line-height: 1.18;
+			padding: 0;
+			margin: 0;
+
+			span{
+				top: 2px;
+				position: relative;
+				font-size: 17px;
+				vertical-align: top;
+			}
+		}
+
+		.title {
+			font-size: 10px;
+			line-height: 1.26;
+			text-transform: uppercase;
+			vertical-align: top;
+			font-weight: 700;
+			padding: 0;
+			margin: 0;
+		}
+	}
 }
 
 #mainChart {
-    padding-top: 0;
-    padding-left: 24px;
-    height: 100%;
-    width: 100%;
+	padding-top: 0;
+	padding-left: 24px;
+	height: 100%;
+	width: 100%;
 }
 
 .label {
-    z-index: 1 !important;
+	z-index: 1 !important;
 }
 
 .highcharts-container {
-    position: inherit !important;
+	position: inherit !important;
 }
 
 .highcharts-tooltip {
-    z-index: 9998 !important;
+	z-index: 9998 !important;
 }
 
 .highcharts-tooltip {
 	font-family: $osans;
-    div.tooltip,
-    div.tooltipCircle {
-        opacity: 1;
-        padding: 5px;
-        z-index: 9999 !important;
-        font-size: 11px;
-        border-radius: 3px;
-        line-height: 20px;
-        background-color: var(--clr-block);
-        color: var(--clr-textL);
-        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-        span {
-            color: var(--clr-textD);
-        }
-    }
-    div.tooltipCircle {
+	div.tooltip,
+	div.tooltipCircle {
+		opacity: 1;
+		padding: 5px;
+		z-index: 9999 !important;
+		font-size: 11px;
+		border-radius: 3px;
+		line-height: 20px;
+		background-color: var(--clr-block);
+		color: var(--clr-textL);
+		box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+		span {
+			color: var(--clr-textD);
+		}
+	}
+	div.tooltipCircle {
 		font-family: $osans;
-        padding: 5px 5px 5px 5px;
-        min-width: 148px;
-        border: 1px solid var(--clr-separatorD);
-        display: flex;
+		padding: 5px 5px 5px 5px;
+		min-width: 148px;
+		border: 1px solid var(--clr-separatorD);
+		display: flex;
 
-        .mainInfo {
-            border-right: 1px solid var(--clr-textD);
-            padding-right: 5px;
-            margin: -1px 0 0;
+		.mainInfo {
+			border-right: 1px solid var(--clr-textD);
+			padding-right: 5px;
+			margin: -1px 0 0;
 
-            .currency {
-            	display: block;
-                color: #707CB9;
-                font-size: 11px;
-                line-height: 1;
-            }
-            .values {
-            	display: block;
-                font-weight: bold;
-                color: var(--clr-iconD);
-                font-size: 8px;
-                line-height: 1;
-                margin: 2px 0 0;
-                white-space: nowrap;
-            }
-        }
-        .percent {
-            padding-left: 5px;
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 20px;
-            color:var(--clr-textD);
+			.currency {
+				display: block;
+				color: #707CB9;
+				font-size: 11px;
+				line-height: 1;
+			}
+			.values {
+				display: block;
+				font-weight: bold;
+				color: var(--clr-iconD);
+				font-size: 8px;
+				line-height: 1;
+				margin: 2px 0 0;
+				white-space: nowrap;
+			}
+		}
+		.percent {
+			padding-left: 5px;
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 20px;
+			color:var(--clr-textD);
 
-            span{
-           		line-height: 20px;
-                font-weight: 600;
-            }
-        }
-    }
-    span svg {
-        width: 20px;
-        height: 20px;
-        position: relative;
-        margin: 0px 3px 0px 0px;
-        flex: 0 0 20px;
-    }
+			span{
+				line-height: 20px;
+				font-weight: 600;
+			}
+		}
+	}
+	span svg {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		margin: 0px 3px 0px 0px;
+		flex: 0 0 20px;
+	}
 }
 
 .portfolioChartParent {
-    display: flex;
+	display: flex;
 }
 
 .circleDiagramParent {
-    display: none;
-    height: calc(100% - 19px);
-    border-bottom: 1px solid var(--clr-separator);
+	display: none;
+	height: calc(100% - 19px);
+	border-bottom: 1px solid var(--clr-separator);
 }
 
 #portfolioChartText {
-    position: absolute;
-    bottom: 30px;
-    left: 10px;
-    div {
-        display: inline-block;
-        color: #0576b9;
-        border-right: 1px solid #a6a6a6;
-        padding: 0px 15px;
-        text-align: center;
-        span {
-            font-size: 16px;
-            vertical-align: top;
-            line-height: 26px;
-            &:nth-child(2) {
-                font-size: 26px;
-                line-height: initial;
-            }
-        }
-        p {
-            font-size: 10px;
-            color: var(--clr-textD);
-            margin-top: 0px;
-            margin-bottom: 0;
-        }
-        &:last-child {
-            border-right: 0;
-        }
-    }
+	position: absolute;
+	bottom: 30px;
+	left: 10px;
+	div {
+		display: inline-block;
+		color: #0576b9;
+		border-right: 1px solid #a6a6a6;
+		padding: 0px 15px;
+		text-align: center;
+		span {
+			font-size: 16px;
+			vertical-align: top;
+			line-height: 26px;
+			&:nth-child(2) {
+				font-size: 26px;
+				line-height: initial;
+			}
+		}
+		p {
+			font-size: 10px;
+			color: var(--clr-textD);
+			margin-top: 0px;
+			margin-bottom: 0;
+		}
+		&:last-child {
+			border-right: 0;
+		}
+	}
 }
 
 #portfolioChartRange {
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    span {
-        padding: 3px 16px;
-        display: inline-block;
-        font-size: 10px;
-        color: var(--clr-textL);
-        cursor: pointer;
-        width: 50px;
-        text-align: center;
-    }
-    .active {
-        border-top: 3px solid #0576b9;
-        font-weight: bold;
-    }
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	span {
+		padding: 3px 16px;
+		display: inline-block;
+		font-size: 10px;
+		color: var(--clr-textL);
+		cursor: pointer;
+		width: 50px;
+		text-align: center;
+	}
+	.active {
+		border-top: 3px solid #0576b9;
+		font-weight: bold;
+	}
 }
 
 #panel-funds-account,
 #panel-dashboard-liquidity {
-    position: relative;
+	position: relative;
 }
 
 #panel-dashboard-liquidity {
-    .liquidityText {
-        color: var(--clr-textD);
-        text-align: center;
-        span {
-            font-size: 12px;
-            vertical-align: top;
-            margin: 0px 5px;
-        }
-        p {
-            font-size: 34px;
-            margin: 0;
-            height: 40px;
-        }
-        .leftPart,
-        .rightPart,
-        .centerPart {
-            position: absolute;
-        }
-        .leftPart {
-            bottom: 5px;
-            left: 50px;
-        }
-        .rightPart {
-            bottom: 5px;
-            right: 50px;
-        }
-        .centerPart {
-            top: 10%;
-            left: 50%;
-            height: 90%;
-            transform: translateX(-50%);
-            p {
-                margin-bottom: 5px;
-                font-size: 16px;
-                height: auto;
-            }
-            svg {
-                width: 12px;
-                height: 12px;
-                cursor: pointer;
-                fill: var(--clr-textD);
-                position: relative;
-                top: -2px;
-            }
-            .separator {
-                width: 1px;
-                height: 60%;
-                background: var(--clr-textD);
-                margin: 0 auto;
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                margin-left: -1px;
-            }
-        }
-    }
+	.liquidityText {
+		color: var(--clr-textD);
+		text-align: center;
+		span {
+			font-size: 12px;
+			vertical-align: top;
+			margin: 0px 5px;
+		}
+		p {
+			font-size: 34px;
+			margin: 0;
+			height: 40px;
+		}
+		.leftPart,
+		.rightPart,
+		.centerPart {
+			position: absolute;
+		}
+		.leftPart {
+			bottom: 5px;
+			left: 50px;
+		}
+		.rightPart {
+			bottom: 5px;
+			right: 50px;
+		}
+		.centerPart {
+			top: 10%;
+			left: 50%;
+			height: 90%;
+			transform: translateX(-50%);
+			p {
+				margin-bottom: 5px;
+				font-size: 16px;
+				height: auto;
+			}
+			svg {
+				width: 12px;
+				height: 12px;
+				cursor: pointer;
+				fill: var(--clr-textD);
+				position: relative;
+				top: -2px;
+			}
+			.separator {
+				width: 1px;
+				height: 60%;
+				background: var(--clr-textD);
+				margin: 0 auto;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				margin-left: -1px;
+			}
+		}
+	}
 }
 
 #orders {
-    display: none;
-    .forms-wrap {
-        display: none;
-        &.current {
-            display: flex;
-        }
-    }
+	display: none;
+	.forms-wrap {
+		display: none;
+		&.current {
+			display: flex;
+		}
+	}
 }
