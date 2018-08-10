@@ -3468,7 +3468,8 @@ body.menubar-in #user-btn:before {
     right: -2px;
     top: 0;
     width: 8px;
-    cursor: pointer; }
+    cursor: pointer;
+    opacity: 0.3; }
     .scrollbar-right .scroll-element.scroll-y .scroll-bar {
       left: 1px;
       min-height: 10px;
@@ -3515,7 +3516,8 @@ body.menubar-in #user-btn:before {
   margin: 0;
   padding: 0;
   position: absolute;
-  z-index: 100; }
+  z-index: 100;
+  opacity: 0.5; }
 
 .scrollbar-left > .scroll-element div {
   display: block;
