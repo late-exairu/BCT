@@ -14,7 +14,7 @@ $osansC:			'open_sans_condensed', sans-serif;
 	/*----- LAYOUT -----*/
 
 	--left-bar-width:	50px;
-	--gap-size:			7px;
+	--gap-size:			10px;
 	--border-radius:	4px;
 
 	/*----- COLORS -----*/
@@ -37,6 +37,7 @@ $osansC:			'open_sans_condensed', sans-serif;
 	--clr-backL:		#e5e6e5;	/*background color light*/
 	--clr-backLL:		#F3F3F3;	/*background color lighter*/
 	--clr-back:			#f9f9fa;	/*background color basic*/
+	--clr-back-new:		#E8E8E8;	/*background color basic*/
 	--clr-backA:		#e6f1f8;	/*background color accented*/
 	--clr-block:		#ffffff;	/*basic block color basic*/
 }
@@ -60,7 +61,8 @@ $osansC:			'open_sans_condensed', sans-serif;
 	--clr-separatorD:	#24425b;	/*separators and borders color dark*/
 	--clr-backL:		#141925;	/*background color light*/
 	--clr-backLL:		#1e2634;	/*background color lighter*/
-	--clr-back:			#131a23;	/*background color basic*/
+	--clr-back:			#171c26;	/*background color basic*/
+	--clr-back-new:		#10161d;	/*background color basic*/
 	--clr-backA:		#213040;	/*background color accented*/
 	--clr-block:		#18202d;	/*basic block color basic*/
 }

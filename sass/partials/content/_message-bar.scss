@@ -8,12 +8,13 @@
 	padding: 0 5px;
 	display: flex;
 	align-items: center;
+	background: var(--clr-back);
 
 	&__input{
 		font-family: $osans;
 		display: block;
 		background: transparent;
-		border: 1px solid transparent;
+		border: none;
 		outline: none;
 		height: 32px;
 		min-width: 0;
@@ -31,7 +32,7 @@
 		}
 
 		&:focus{
-			background: var(--clr-back);
+			background: var(--clr-block);
 			border-color: var(--clr-separator);
 		}
 	}

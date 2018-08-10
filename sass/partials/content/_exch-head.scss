@@ -65,10 +65,10 @@
 
 	&__btn{
 		font-family: $osans;
-		padding: 0 10px 0 14px;
+		padding: 0 10px 0 5px;
 		height: var(--exch-head-height);
 		display: flex;
-		flex: 0 0 56px;
+		flex: 0 0 100px;
 		align-items: center;
 		background: var(--clr-accentD);
 		/*border-radius: 5px;*/
@@ -76,18 +76,20 @@
 		cursor: pointer;
 		margin: 0 0 0 var(--gap-size);
 		text-decoration: none;
-		font-size: 18px;
-		font-weight: 800;
+		font-size: 16px;
+		font-weight: 700;
 		white-space: nowrap;
 		transition: all 0.1s;
 		justify-content: center;
 		border: none;
 		line-height: 1;
 		border-radius: var(--border-radius);
+		background: url(../img/fake-bg.svg) center center;
+		background-size: 100% 100%;
 
-		&:hover{
+		/*&:hover{
 			background: #026ba0;
-		}
+		}*/
 	}
 
 	&__btn-text{

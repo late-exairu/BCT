@@ -58,7 +58,7 @@
 
 #mainChart {
     padding-top: 0;
-    padding-left: 24px;
+    padding-left: 0;
     height: 100%;
     width: 100%;
 }
@@ -184,13 +184,21 @@
 }
 
 #portfolioChartRange {
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
+
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* left: 50%; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* -webkit-transform: translateX(-50%); */
+	/* transform: translateX(-50%); */
+	background: var(--clr-back);
+
     span {
         padding: 3px 16px;
-        display: inline-block;
+        display: block;
         font-size: 10px;
         color: var(--clr-textL);
         cursor: pointer;
