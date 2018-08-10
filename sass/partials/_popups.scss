@@ -6,10 +6,10 @@
 
 .basic-popup{
 	font-family: $osans;
-	background: transparent;
 	min-width: 320px;
 	width: auto;
 	box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+	background: transparent;
 	/*overflow: hidden;*/
 
 	&.tables{
@@ -35,35 +35,10 @@
 	box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
 	border: 1px solid #0086AF;
 	background: var(--clr-back);
-	padding: 18px;
+	padding: 19px 20px 11px;
+}
 
-	&__title{
-		font-size: 37px;
-		font-weight: 600;
-		line-height: 1.2;
-		margin: 0;
-		padding: 4px 0 4px;
-		line-height: 1;
-		background: var(--clr-accentD);
-		color: #fff;
-		text-align: center;
-	}
-
-	&__subtitle{
-		font-size: 27px;
-		font-weight: 300;
-		margin: 7px 0 10px;
-		padding: 0;
-		line-height: 1;
-		color: var(--clr-textD);
-		text-align: center;
-	}
-
-	&__tip{
-		font-size: 9px;
-		color: var(--clr-textL);
-		padding: 0;
-		margin: 13px 0 0;
-		line-height: 1;
-	}
+.send-popup{
+	max-width: 338px;
+	width: 100%;
 }

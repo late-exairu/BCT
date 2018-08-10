@@ -270,6 +270,24 @@
 		flex: 0 0 24px;
 	}
 
+	.sprite-icon{
+		width: 14px;
+		height: 14px;
+		margin: 0 5px 0 0;
+		flex: 0 0 auto;
+		fill: var(--clr-textL);
+
+		&.qr-code{
+			width: 11px;
+			height: 11px;
+		}
+
+		&.paper-plane{
+			width: 14px;
+			height: 13px;
+		}
+	}
+
 	.smaller{
 		font-size: 10px;
 		margin: 0 0 0 3px;
