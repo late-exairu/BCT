@@ -1,33 +1,19 @@
 
 /* =================================================================== */
-/* gbar-info
+/* graph-info
 /* =================================================================== */
 
-.gbar-info{
+.graph-info{
 	font-family: $osans;
-	position: absolute;
-	top: 40px;
-    left: 30px;
+	position: relative;
 	display: flex;
 	padding: 0 2px;
+	margin: 0 0 0 10px;
 	white-space: nowrap;
 	flex: 0 0 auto;
 	background: transparent;
 	z-index: 5;
 	transition: all .1s;
-
-	&:after{
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		transition: background .1s;
-		background: var(--clr-block);
-		opacity: 0;
-		z-index: -1;
-	}
 
 	&:hover{
 		&:after{
@@ -36,7 +22,12 @@
 	}
 	
 	&__item{
+		display: flex;
+		align-items: center;
+		height: 32px;
+		position: relative;
 		padding: 5px 5px;
+		margin: 0 0 0 1px;
 
 		&.inline{
 			display: flex;
@@ -45,40 +36,35 @@
 				margin: 2px 0 0 3px;
 			}
 		}
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			border-radius: var(--border-radius);
+			background: var(--clr-back);
+			transition: all .2s;
+			opacity: 0.75;
+			z-index: -1;
+		}
 	}
 	
 	&__title{
 		font-size: 12px;
-		color: var(--clr-iconD);
-		font-weight: 700;
+		color: var(--clr-important);
 		line-height: 1.2;
 		padding: 0;
 		margin: 0;
 	}
 	
 	&__nums{
-		font-size: 10px;
+		font-size: 12px;
 		line-height: 1;
-		color: var(--clr-iconD);
+		color: var(--clr-important);
 		padding: 0;
 		margin: 0 ;
-	}
-
-	@media only screen and (min-width : 1366px) {
-		top: 46px;
-	    left: 42px;
-	}
-
-	@media only screen and (min-width : 1920px) {
-		top: 52px;
-	    left: 52px;
-	
-		&__title{
-			font-size: 14px;
-		}
-	
-		&__nums{
-			font-size: 11px;
-		}
 	}
 }

@@ -9,6 +9,18 @@ Blocks from left bar
 
  */
 
+ .dark-theme{
+
+ 	.left-bar,
+ 	.user-btn,
+ 	.nav-bar,
+ 	.user-bar,
+ 	.theme-switch{
+ 		--clr-important: #24425B;
+ 	}
+ }
+
+
 .left-bar{
 	position: fixed;
 	left: 0;
@@ -86,7 +98,7 @@ Blocks from left bar
 		align-items: center;
 		justify-content: center;
 		padding: 4px 2px;
-		height: 48px;
+		height: 50px;
 		margin: 0;
 		width: 100%;
 		border: none;
@@ -105,37 +117,34 @@ Blocks from left bar
 			}
 
 			.nav-bar__icon{
-				/*fill: var(--clr-back);*/
 				opacity: 1;
 
-				&.reload{
-					fill: var(--clr-textL);
-				}
+				&.ico		{ fill: #11487b; }
+				&.charts	{ fill: #034e82; }
+				&.stats		{ fill: #005998; }
+				&.trading	{ fill: #83529a; }
+				&.news		{ fill: #e63730; }
+				&.other		{ fill: #9e2021; }
+				&.reload	{ fill: var(--clr-textL); width: 35px; height: 35px; flex: 0 0 35px;}
 			}
 		}
 	}
 
 	&__icon{
 		display: block;
-		flex: 0 0 15px;
+		flex: 0 0 17px;
 		margin: 3px auto 4px;
-		width: 15px;
-		fill: var(--clr-icon);
+		width: 17px;
+		fill: var(--clr-important);
 		transition: all 0.1s;
 		opacity: 0.80;
 
-		&.ico		{ fill: #11487b; }
-		&.charts	{ fill: #034e82; }
-		&.stats		{ fill: #005998; }
-		&.trading	{ fill: #83529a; }
-		&.news		{ fill: #e63730; }
-		&.other		{ fill: #9e2021; }
-		&.reload	{ fill: var(--clr-icon); width: 23px; height: 23px; flex: 0 0 23px;}
+		&.reload	{ fill: var(--clr-important); width: 35px; height: 35px; flex: 0 0 35px;}
 	}
 
 	&__title{
-		font-size: 10px;
-		color: var(--clr-iconD);
+		font-size: 12px;
+		color: var(--clr-important);
 		text-align: center;
 		margin: 0 auto;
 		transition: all .1s;
@@ -148,7 +157,7 @@ Blocks from left bar
 	&__btn{
 		display: block;
 		width: 100%;
-		height: 34px;
+		height: 38px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -172,24 +181,24 @@ Blocks from left bar
 	&__icon{
 		width: 20px;
 		height: 20px;
-		fill: var(--clr-icon);
+		fill: var(--clr-important);
 		transition: all 0.1s;
 
-		&.two-windows	{ width: 20px; height: 20px; }
-		&.add-screen	{ width: 18px; height: 18px; }
-		&.bell			{ width: 16px; height: 18px; }
-		&.sound			{ width: 16px; height: 12px; }
-		&.ex			{ width: 18px; height: 10px; }
-		&.user			{ width: 16px; height: 16px; }
-		&.gear			{ width: 16px; height: 16px; }
+		&.two-windows	{ width: 22px; height: 22px; }
+		&.add-screen	{ width: 22px; height: 20px; }
+		&.bell			{ width: 16px; height: 20px; }
+		&.sound			{ width: 22px; height: 15px; }
+		&.ex			{ width: 21px; height: 12px; }
+		&.user			{ width: 20px; height: 20px; }
+		&.gear			{ width: 22px; height: 22px; }
 	}
 }
 
-.theme-switch {
+.theme-switch{
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 36px;
+	height: 38px;
 
 	&__checkbox {
 		position: absolute;
@@ -259,17 +268,17 @@ Blocks from left bar
 	}
 
 	&__icon{
-		fill: var(--clr-icon);
+		fill: var(--clr-important);
 		transition: all 0.1s;
 
 		&.sun{
-			width: 22px;
-			height: 22px;
+			width: 24px;
+			height: 24px;
 		}
 
 		&.moon{
-			width: 20px;
-			height: 20px;
+			width: 22px;
+			height: 22px;
 		}
 	}
 }

@@ -5,10 +5,10 @@
 
 
 .c-block-head{
-	padding: 5px 10px 3px 15px;
+	min-height: 50px;
+	padding: 4px 10px 3px 12px;
 	display: flex;
 	justify-content: space-between;
-	/*border-bottom: 1px solid var(--clr-separator);*/
 	background: var(--clr-back);
 	border-radius: 5px 5px 0 0;
 
@@ -26,13 +26,13 @@
 	}
 
 	&__title{
-		font-size: 15px;
+		font-size: 16px;
 		margin: 0;
 		color: var(--clr-textD);
 		font-weight: 700;
 
 		span{
-			font-size: 12px;
+			font-size: 14px;
 		}
 
 		&.btn{
@@ -68,19 +68,6 @@
 			width: 20px;
 			height: 20px;
 			fill: var(--clr-text);
-		}
-	}
-
-	&.big{
-		min-height: 47px;
-		padding: 4px 10px 3px 15px;
-
-		.c-block-head__title{
-			font-size: 15px;
-
-			span{
-				font-size: 13px;
-			}
 		}
 	}
 }

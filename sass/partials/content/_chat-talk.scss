@@ -5,15 +5,15 @@
 
 
 .chat-talk{
-	padding: 4px 0 0;
+	padding: 14px 0 0;
 	overflow-y: auto;
 	flex: 1;
 
 	&__item{
 		position: relative;
 		display: flex;
-		padding: 8px 10px 8px 16px;
-		margin: 0 0 0;
+		padding: 6px 10px 6px 12px;
+		margin: 0;
 
 		&:first-child{
 			margin: 0;
@@ -36,16 +36,16 @@
 
 	&__avatar-wrap{
 		position: relative;
-		width: 24px;
-		height: 24px;
-		margin: 2px 8px 2px 0;
+		width: 30px;
+		height: 30px;
+		margin: 2px 14px 2px 0;
 		flex: 0 0 auto;
 	}
 
 	&__avatar{
-		font-size: 10px;
-		width: 24px;
-		height: 24px;
+		font-size: 12px;
+		width: 30px;
+		height: 30px;
 		display: flex;
 		border-radius: 50%;
 		align-items: center;
@@ -83,9 +83,9 @@
 	}
 
 	&__readed{
-		width: 12px;
-		height: 8px;
-		margin: 2px 0 0;
+		width: 13px;
+		height: 9px;
+		margin: 1px 0 0;
 		fill: var(--clr-accent);
 	}
 
@@ -107,13 +107,13 @@
 		p{
 			margin: 0 0 12px;
 			font-size: 12px;
-			line-height: 1.42;
+			line-height: 1.62;
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			margin: 0;
 			color: var(--clr-textD);
-			opacity: 0.60;
+			opacity: 0.70;
 		}
 
 		.chat-talk__name{
@@ -137,12 +137,12 @@
 		font-family: $osans;
 		position: relative;
 		color: var(--clr-textD);
-		margin: 5px 0 5px;
+		margin: 10px 0;
 
 		p{
 			margin: 0 0 12px;
 			font-size: 12px;
-			line-height: 1.42;
+			line-height: 1.62;
 
 			&:last-child{
 				margin: 0;

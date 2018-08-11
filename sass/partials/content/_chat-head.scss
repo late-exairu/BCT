@@ -7,12 +7,13 @@
 .chat-head{
 	position: relative;
 	display: flex;
-	padding: 10px 10px 10px 16px;
-	height: 46px;
+	padding: 4px 10px 4px 12px;
+	height: 42px;
 	align-items: center;
-	background: var(--clr-backA);
+	background: var(--clr-block);
+	border-bottom: 1px solid var(--clr-separator);
 
-	&__back{
+	/*&__back{
 		position: absolute;
 		display: flex;
 		left: 4px;
@@ -25,14 +26,6 @@
 		justify-content: center;
 		transform: translateY(-50%);
 
-		/*&:hover{
-			background: var(--clr-accent);;
-
-			.sprite-icon{
-				fill: #fff;
-			}
-		}*/
-
 		.sprite-icon{
 			display: block;
 			width: 13px;
@@ -43,20 +36,28 @@
 
 	&__avatar-wrap{
 		position: relative;
-		width: 24px;
-		height: 24px;
+		width: 32px;
+		height: 32px;
 		margin: 0 0;
 		flex: 0 0 auto;
 	}
 
 	&__avatar{
-		width: 24px;
-		height: 24px;
+		width: 32px;
+		height: 32px;
 		border-radius: 50%;
+	}*/
+
+	&__curr{
+		position: relative;
+		width: 30px;
+		height: 30px;
+		margin: 0 14px 0 0;
+		flex: 0 0 32px;
 	}
 
 	&__desc{
-		padding: 0 8px;
+		padding: 0 8px 0 0;
 		overflow: hidden;
 		min-width: 100px;
 		flex: 1 1 auto;
@@ -72,8 +73,8 @@
 	}
 
 	&__info{
-		font-size: 10px;
-		margin: 2px 0 0;
+		font-size: 12px;
+		margin: 0 0 0;
 		color: var(--clr-text);
 		white-space: nowrap;
 		overflow: hidden;
@@ -91,8 +92,8 @@
 
 	&__btn{
 		display: block;
-		width: 28px;
-		height: 28px;
+		width: 32px;
+		height: 32px;
 		margin: 0 0 0 2px;
 		cursor: pointer;
 		align-items: center;
@@ -106,8 +107,8 @@
 		transition: all .1s;
 
 		&:hover{
-			border-color: var(--clr-accent);
-			background: var(--clr-accent);
+			border-color: var(--clr-accentD);
+			background: var(--clr-accentD);
 			color: #fff;
 
 			.sprite-icon{
@@ -117,10 +118,10 @@
 
 		.sprite-icon{
 			position: relative;
-			width: 14px;
-			height: 14px;
-			flex: 0 0 14px;
-			fill: var(--clr-accent);
+			width: 18px;
+			height: 18px;
+			flex: 0 0 18px;
+			fill: var(--clr-accentD);
 			transition: all 0.1s;
 		}
 	}
