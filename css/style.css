@@ -942,6 +942,8 @@ h6 {
   .basic-table .smaller {
     font-size: 10px;
     margin: 0 0 0 3px; }
+  .basic-table .clr-gray {
+    color: var(--clr-separatorD); }
 
 /* =================================================================== */
 /* btn-switch
@@ -1936,7 +1938,8 @@ h6 {
   display: flex;
   padding: 0;
   max-width: 100%;
-  border-radius: 0; }
+  border-radius: 0;
+  transition: all .1s; }
   .graph-bar__group {
     position: relative;
     display: flex;
@@ -2053,7 +2056,7 @@ h6 {
     height: 0;
     margin: 0 0 0 10px; }
   .graph-bar.shifted {
-    width: calc(100% - 295px); }
+    right: 110px; }
   @media only screen and (min-width: 1366px) {
     .graph-bar {
       left: 62px; }
@@ -2108,9 +2111,9 @@ h6 {
   min-height: 0;
   top: -1px;
   right: -1px;
-  height: 132px;
+  bottom: -1px;
   padding: 0;
-  width: 250px;
+  width: 110px;
   background: var(--clr-block);
   transition: all .2s;
   border: 1px solid var(--clr-separator);
@@ -4642,7 +4645,7 @@ body.compensate-for-scrollbar {
     position: absolute;
     left: 6px;
     top: 4px;
-    font-size: 7px;
+    font-size: 8px;
     color: var(--clr-text); }
   .transaction-form__input {
     font-family: "open_sans", sans-serif;
@@ -4650,7 +4653,7 @@ body.compensate-for-scrollbar {
     width: 100%;
     height: 32px;
     font-weight: 700;
-    padding: 11px 50px 2px 5px;
+    padding: 12px 50px 2px 5px;
     border: 1px solid var(--clr-separatorD);
     border-radius: var(--border-radius);
     color: var(--clr-textD);
@@ -4803,43 +4806,42 @@ body.compensate-for-scrollbar {
   flex: 0 0 150px;
   /*border-right: 1px solid var(--clr-separator);*/
   /*@media only screen and (min-height : 900px) {
-    	flex: 0 0 250px;
+		flex: 0 0 250px;
 	}*/ }
 
 #circleChartText {
   font-family: "open_sans", sans-serif;
   position: absolute;
   width: 120px;
-  top: 28px;
+  top: 52px;
+  left: 14px;
   left: 14px;
   border-radius: 50%; }
-  #circleChartText p {
+  #circleChartText .wrap {
     text-align: center;
     color: var(--clr-textD);
     border-radius: 50%; }
-    #circleChartText p > span {
-      display: block; }
-      #circleChartText p > span span {
+    #circleChartText .wrap .value {
+      display: block;
+      font-size: 26.5px;
+      line-height: 1.2;
+      font-weight: 300;
+      line-height: 1.18;
+      padding: 0;
+      margin: 0; }
+      #circleChartText .wrap .value span {
+        top: 2px;
+        position: relative;
         font-size: 17px;
-        line-height: 25px;
         vertical-align: top; }
-      #circleChartText p > span:nth-child(1) {
-        font-size: 11px;
-        font-weight: 600;
-        margin: 0;
-        padding: 0; }
-      #circleChartText p > span:nth-child(2) {
-        font-size: 26px;
-        font-weight: 300;
-        line-height: 1.18; }
-      #circleChartText p > span:nth-child(3) {
-        font-size: 10px;
-        font-weight: 400;
-        color: var(--clr-textL);
-        width: 75%;
-        margin: 1px 0 0;
-        line-height: 1.28;
-        display: inline-block; }
+    #circleChartText .wrap .title {
+      font-size: 10px;
+      line-height: 1.26;
+      text-transform: uppercase;
+      vertical-align: top;
+      font-weight: 700;
+      padding: 0;
+      margin: 0; }
 
 #mainChart {
   padding-top: 0;
@@ -5073,8 +5075,16 @@ body.compensate-for-scrollbar {
   padding: 19px 20px 11px; }
 
 .send-popup {
-  max-width: 338px;
+  max-width: 470px;
   width: 100%; }
+  .send-popup .basic-table {
+    border-top: 1px solid var(--clr-separator);
+    font-size: 10px; }
+  .send-popup .icon-curr {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+    margin: 0 5px 0 0; }
 
 /* =================================================================== */
 /* Content */

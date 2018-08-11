@@ -39,6 +39,18 @@
 }
 
 .send-popup{
-	max-width: 338px;
+	max-width: 470px;
 	width: 100%;
+
+	.basic-table{
+		border-top: 1px solid var(--clr-separator);
+		font-size: 10px;
+	}
+
+	.icon-curr{
+		width: 14px;
+		height: 14px;
+		flex: 0 0 14px;
+		margin: 0 5px 0 0;
+	}
 }
