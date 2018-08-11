@@ -686,9 +686,8 @@ h6 {
       background: var(--clr-backLL);
       font-weight: 600; }
     .basic-table__row.disabled {
-      pointer-events: none; }
-      .basic-table__row.disabled > * {
-        opacity: 0.3; }
+      pointer-events: none;
+      opacity: 0.3; }
   .basic-table__btn {
     height: 28px;
     border: 1px solid var(--clr-separatorD);
@@ -1888,7 +1887,7 @@ h6 {
   .graph-info__item {
     display: flex;
     align-items: center;
-    height: 32px;
+    height: 100%;
     position: relative;
     padding: 5px 5px;
     margin: 0 0 0 1px; }
