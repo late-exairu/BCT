@@ -2305,12 +2305,8 @@ h6 {
 Blocks from left bar
 
  */
-.dark-theme .left-bar,
-.dark-theme .user-btn,
-.dark-theme .nav-bar,
-.dark-theme .user-bar,
-.dark-theme .theme-switch {
-  --clr-important: #24425B; }
+.dark-theme .left-bar {
+  --clr-important: #305777; }
 
 .left-bar {
   position: fixed;
