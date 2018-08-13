@@ -96,17 +96,17 @@
 			}
 		}
 		&.scroll-y {
-			bottom: 0;
+			height: calc(100% - 10px);
 			right: 0px;
-			top: 0;
-			width: 6px;
+			top: 5px;
+			width: 15px;
 			cursor: pointer;
 			opacity: 0.3;
 
 			.scroll-bar {
-				left: 1px;
+				left: 5px;
 				min-height: 10px;
-				width: 4px;
+				width: 5px;
 			}
 
 			&.scroll-scrollx_visible {
