@@ -27,424 +27,225 @@
 
 <body>
 
-<div class="wrapper no-bar">
+<div class="wrapper">
+	<div class="left-bar">
+		<div class="left-bar__scroll scrollbar-left">
+			<!-- <button class="user-btn" id="user-btn">
+				<img class="user-btn__pic" src="pic/userpic_1.jpg" height="150" width="150">
+				<div class="user-btn__nums">99+</div>
+			</button> -->
+			
+			<div class="nav-bar">
+				<button class="nav-bar__item btn">
+					<svg class="nav-bar__icon reload" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#reload"></use>
+					</svg>
+				</button>
+
+				<a class="nav-bar__item" href="#">
+					<svg class="nav-bar__icon ico" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
+					</svg>
+			
+					<p class="nav-bar__title">ICO</p>
+				</a>
+			
+				<a class="nav-bar__item" href="#">
+					<svg class="nav-bar__icon charts" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
+					</svg>
+			
+					<p class="nav-bar__title">Charts</p>
+				</a>
+			
+				<a class="nav-bar__item" href="#">
+					<svg class="nav-bar__icon stats" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
+					</svg>
+			
+					<p class="nav-bar__title">Stats</p>
+				</a>
+			
+				<a class="nav-bar__item" href="#">
+					<svg class="nav-bar__icon trading" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
+					</svg>
+			
+					<p class="nav-bar__title">Trading</p>
+				</a>
+				
+				<a class="nav-bar__item" href="#">
+					<svg class="nav-bar__icon news" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
+					</svg>
+			
+					<p class="nav-bar__title">News</p>
+				</a>
+				
+				<a class="nav-bar__item" href="#">
+					<svg class="nav-bar__icon other" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
+					</svg>
+			
+					<p class="nav-bar__title">Other</p>
+				</a>
+			</div>
+			
+			<div class="user-bar">
+				<div class="theme-switch">
+					<input class="theme-switch__checkbox" type="checkbox" name="btn-switch-theme" id="switch-theme" />
+					<label class="theme-switch__label" for="switch-theme">
+						<div class="theme-switch__switch">
+							<div class="theme-switch__night">
+								<svg class="theme-switch__icon moon" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#moon"></use>
+								</svg>
+							</div>
+							<div class="theme-switch__day">
+								<svg class="theme-switch__icon sun" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#sun"></use>
+								</svg>
+							</div>
+						</div>
+					</label>
+				</div>
+
+				<button class="user-bar__btn">
+					<svg class="user-bar__icon two-windows" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#two-windows"></use>
+					</svg>
+				</button>
+			
+				<button class="user-bar__btn">
+					<svg class="user-bar__icon add-screen" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#add-screen"></use>
+					</svg>
+				</button>
+			
+				<button class="user-bar__btn">
+					<svg class="user-bar__icon bell" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#bell"></use>
+					</svg>
+				</button>
+			
+				<button class="user-bar__btn">
+					<svg class="user-bar__icon sound" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#sound"></use>
+					</svg>
+				</button>
+			
+				<button class="user-bar__btn">
+					<svg class="user-bar__icon ex" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#ex"></use>
+					</svg>
+				</button>
+			
+				<button class="user-bar__btn">
+					<svg class="user-bar__icon user" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#user"></use>
+					</svg>
+				</button>
+			
+				<button class="user-bar__btn">
+					<svg class="user-bar__icon gear" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#gear-filled"></use>
+					</svg>
+				</button>
+			</div><!-- user-bar END -->
+		</div><!-- left-bar__scroll END -->
+	</div><!-- left-bar END -->
+
+	<aside class="menubar">
+		<div class="user-btn-wrap">
+			<button class="user-btn">
+				<img class="user-btn__pic" src="pic/userpic_1.jpg" height="150" width="150">
+			</button>
+			<div class="user-info">
+				<div class="user-signed">SIGNED IN AS</div>
+				<div class="c-block-head__title">David Ashton</div>
+			</div>
+		</div>
+		<ul class="menubar__icons">
+			<li>
+				<a href="#">
+					<svg class="sprite-icon" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#diskette"></use>
+					</svg>
+					Back to Terminal
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<svg class="sprite-icon" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#diskette"></use>
+					</svg>
+					Home
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<svg class="sprite-icon" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#diskette"></use>
+					</svg>
+					Account & profile
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<svg class="sprite-icon" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#diskette"></use>
+					</svg>
+					Configure apps
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<svg class="sprite-icon" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#diskette"></use>
+					</svg>
+					Files
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<svg class="sprite-icon" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#diskette"></use>
+					</svg>
+					Analytics
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<svg class="sprite-icon" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#diskette"></use>
+					</svg>
+					Customize
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<svg class="sprite-icon" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#diskette"></use>
+					</svg>
+					About this workspace
+				</a>
+			</li>
+		</ul>
+		<ul>
+			<li><a href="#">Tour</a></li>
+			<li><a href="#">Download apps</a></li>
+			<li><a href="#">Brand guidelines</a></li>
+		</ul>
+	</aside><!-- menubar END -->
 
 	<div class="main-cols">
-		<div class="main-cols__left col-chats m-right" id="telegram">
-			<div class="main-cols__left-top">
-
-				<div class="c-block d-flex-col h-100">
-					<div class="d-flex flex-1-1 flex-h-fix">
-						<div class="c-block__col">
-							<div class="c-block__section chat-head">
-								<svg class="chat-head__curr clr-bitcoin" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-								</svg>
-
-								<div class="chat-head__desc">
-									<p class="chat-head__name">BTC Bitcoin Room</p>
-									<p class="chat-head__info">67 members, 2 online</p>
-								</div>
-
-								<div class="chat-head__btns">
-									<button class="chat-head__btn js-chat-search-toggle">
-										<svg class="sprite-icon" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#magnifier"></use>
-										</svg>
-									</button>
-
-									<button class="chat-head__btn">
-										<svg class="sprite-icon" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tele-login"></use>
-										</svg>
-									</button>
-								</div>
-
-								<form class="chat-head__search chat-search">
-									<input class="chat-search__input" type="text" placeholder="Search">
-
-									<button class="chat-search__submit" type="submit">
-										<svg class="sprite-icon" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#magnifier"></use>
-										</svg>
-									</button>
-
-									<button class="chat-search__close js-chat-search-toggle" type="reset">
-										<svg class="sprite-icon" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#close"></use>
-										</svg>
-									</button>
-								</form>
-							</div><!-- chat-head END -->
-
-							<div class="c-block__section flex-1-1 scroll-y scrollbar-right">
-								<div class="chat-talk">
-									<div class="chat-talk__item -clr-pink">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">DA</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">David A</div>
-
-												<div class="chat-talk__info">
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__message">
-												<p>Growing strategic partnerships<br/>
-												- A trading firm of fixed income illiquid assets with 6,000 open trading channels.<br/>
-												- Another one of the big four consultancy groups in the United States.</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__item -clr-yellow">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">CM</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">CM | Matthew</div>
-												
-												<div class="chat-talk__info">
-													<svg class="chat-talk__readed" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#readed"></use>
-													</svg>
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__quote">
-												<div class="chat-talk__name">David A</div>
-												<p>All  tokens are loced up?</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__item -clr-pink">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">CM</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">David A</div>
-												
-												<div class="chat-talk__info">
-													<svg class="chat-talk__readed" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#readed"></use>
-													</svg>
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__message">
-												<p>When does the lookup countdown start, the distribution date or end of sale?</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__item -clr-yellow">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">CM</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">CM | Matthew</div>
-												
-												<div class="chat-talk__info">
-													<svg class="chat-talk__readed" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#readed"></use>
-													</svg>
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__quote">
-												<div class="chat-talk__name">David A</div>
-
-												<p>When does the lookup countdown start...</p>
-											</div>
-
-											<div class="chat-talk__message">
-												<p>I believe its distribution date. But let me check!</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__sys-message">
-										20 June
-									</div>
-
-									<div class="chat-talk__item -clr-pink">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">DA</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">David A</div>
-												
-												<div class="chat-talk__info">
-													<svg class="chat-talk__readed" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#readed"></use>
-													</svg>
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__message">
-												<p>Thanks!</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__item -clr-green">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">SL</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">Stylianos LFtheriadis</div>
-												
-												<div class="chat-talk__info">
-													<svg class="chat-talk__readed" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#readed"></use>
-													</svg>
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__message">
-												<p>Hello Admin, one question please. When Im going to see my tokens on Etherscan? I have passed the KYC.</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__sys-message">
-										21 June
-									</div>
-
-									<div class="chat-talk__item -clr-pink">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">DA</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">David A</div>
-
-												<div class="chat-talk__info">
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__message">
-												<p>Growing strategic partnerships<br/>
-												- A trading firm of fixed income illiquid assets with 6,000 open trading channels.<br/>
-												- Another one of the big four consultancy groups in the United States.</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__item -clr-yellow">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">CM</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">CM | Matthew</div>
-												
-												<div class="chat-talk__info">
-													<svg class="chat-talk__readed" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#readed"></use>
-													</svg>
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__quote">
-												<div class="chat-talk__name">David A</div>
-												<p>All  tokens are loced up?</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__item -clr-pink">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">CM</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">David A</div>
-												
-												<div class="chat-talk__info">
-													<svg class="chat-talk__readed" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#readed"></use>
-													</svg>
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__message">
-												<p>When does the lookup countdown start, the distribution date or end of sale?</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__item -clr-yellow">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">CM</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">CM | Matthew</div>
-												
-												<div class="chat-talk__info">
-													<svg class="chat-talk__readed" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#readed"></use>
-													</svg>
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__quote">
-												<div class="chat-talk__name">David A</div>
-
-												<p>When does the lookup countdown start...</p>
-											</div>
-
-											<div class="chat-talk__message">
-												<p>I believe its distribution date. But let me check!</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__sys-message">
-										22 June
-									</div>
-
-									<div class="chat-talk__item -clr-pink">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">DA</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">David A</div>
-												
-												<div class="chat-talk__info">
-													<svg class="chat-talk__readed" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#readed"></use>
-													</svg>
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__message">
-												<p>Thanks!</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__item -clr-green">
-										<div class="chat-talk__avatar-wrap">
-											<div class="chat-talk__avatar">SL</div>
-										</div>
-
-										<div class="chat-talk__content">
-											<div class="chat-talk__head">
-												<div class="chat-talk__name">Stylianos LFtheriadis</div>
-												
-												<div class="chat-talk__info">
-													<svg class="chat-talk__readed" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#readed"></use>
-													</svg>
-
-													<p class="chat-talk__time">21:09</p>
-												</div>
-											</div>
-
-											<div class="chat-talk__message">
-												<p>Hello Admin, one question please. When Im going to see my tokens on Etherscan? I have passed the KYC.</p>
-											</div>
-										</div>
-									</div><!-- chat-talk__item END -->
-
-									<div class="chat-talk__sys-message">
-										23 June
-									</div>
-								</div><!-- chat-talk END -->
-							</div><!-- scroll-y END -->
-
-							<div class="message-bar">
-								<button class="message-bar__btn">
-									<svg class="sprite-icon chats-clip" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chats-clip"></use>
-									</svg>
-								</button>
-
-								<input type="text" class="message-bar__input" placeholder="Write a message...">
-
-								<button class="message-bar__btn">
-									<svg class="sprite-icon chats-image" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chats-image"></use>
-									</svg>
-								</button>
-
-								<button class="message-bar__btn">
-									<svg class="sprite-icon chats-mic" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chats-mic"></use>
-									</svg>
-								</button>
-							</div><!-- message-bar END -->
-						</div><!-- c-block__col END -->
-					</div><!-- d-flex END -->
-				</div>
-			</div><!-- main-cols__left-top END -->
-		</div><!-- main-cols__left END -->
-
-		<div class="main-cols__left col-tables m-right hidden" id="orderBook">
+		<div class="main-cols__left col-tables m-right" id="orderBook">
 			<div class="main-cols__left-top">
 				<div class="d-flex h-100">
 					<div class="d-flex-col flex-1-1 c-block">
 						<div class="c-block-head">
 							<div class="c-block-head__left">
-								<h2 class="c-block-head__title">Global Order Book
-<!-- 									<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
-									</svg> -->
-								</h2>
-
-<!-- 								<ul class="menu-dropdown js-dropdown">
-									<li class="menu-dropdown__item js-tabs-tab switch-telegram">
-										<button class="menu-dropdown__btn">Chat</button>
-									</li>
-
-									<li class="menu-dropdown__item js-tabs-tab active switch-orderBook">
-										<button class="menu-dropdown__btn">Order Book</button>
-									</li>
-								</ul> -->
+								<h2 class="c-block-head__title">Global Order Book</h2>
 							</div>
 						</div>
 						<!-- c-block-head END -->
@@ -821,10 +622,10 @@
 					</div>
 					<!-- c-block END -->
 
-					<div class="d-flex-col flex-1-1 c-block m-left">
+					<div class="d-flex-col flex-1-1 c-block">
 						<div class="c-block-head">
 							<div class="c-block-head__left">
-								<h2 class="c-block-head__title"></h2>
+								<h2 class="c-block-head__title">Recent Trades</h2>
 							</div>
 						</div>
 						<!-- c-block-head END -->
@@ -1431,12 +1232,8 @@
 					</div><!-- exch-head__get END -->
 				
 					<button class="exch-head__switch">
-						<svg class="exch-head__switch-right" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-exch-right"></use>
-						</svg>
-						
-						<svg class="exch-head__switch-left" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-exch-left"></use>
+						<svg class="sprite-icon" role="img" aria-hidden="true">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-switch"></use>
 						</svg>
 					</button><!-- exch-head__switch -->
 				
@@ -1910,7 +1707,7 @@
 
 			<div class="main-cols__right-bottom m-top">
 				<div class="c-block d-flex-col flex-1-1 flex-h-fix js-account-stats">
-					<!-- <div class="c-block-head">
+					<div class="c-block-head">
 						<div class="c-block-head__left js-dropdown-wrap">
 							<h2 class="c-block-head__title btn js-dropdown-toggle">
 								Portfolio
@@ -1931,6 +1728,14 @@
 								<li class="menu-dropdown__item js-tabs-tab" id="tab-dashboard-liquidity">
 									<button class="menu-dropdown__btn">Exchanges</button>
 								</li>
+
+<!-- 							<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-history">
+									<button class="menu-dropdown__btn">Order History</button>
+								</li>
+
+								<li class="menu-dropdown__item js-tabs-tab" id="tab-dashboard-liquidity">
+									<button class="menu-dropdown__btn">Global Liquidity</button>
+								</li> -->
 							</ul>
 						</div>
 
@@ -1943,8 +1748,7 @@
 								</label>
 							</div>
 						</div>
-					</div> -->
-					<!-- c-block-head END -->
+					</div><!-- c-block-head END -->
 
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="js-tabs-panel active" id="panel-funds-portfolio">

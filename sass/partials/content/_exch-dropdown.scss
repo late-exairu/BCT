@@ -13,26 +13,16 @@
 	width: 100%;
 	cursor: pointer;
 	/*border: 1px solid var(--clr-separatorD);*/
-	border-radius: var(--border-radius);
+	border-radius: calc(var(--border-radius) - 1px);
 	background: var(--clr-block);
 	transition: all 0.1s;
-
-	/*&:after{
-		content: '';
-		position: absolute;
-		left: -1px;
-		right: -1px;
-		bottom: -1px;
-		height: 5px;
-		background: var(--clr-accentD);
-	}*/
 
 	&:hover{
 		/*background: var(--clr-blockA);*/
 	}
 
 	&.open{
-		border-radius: var(--border-radius) var(--border-radius) 0 0;
+		border-radius: calc(var(--border-radius) - 1px) calc(var(--border-radius) - 1px) 0 0;
 
 		.exch-dropdown__list{
 			opacity: 1;
@@ -46,34 +36,6 @@
 			}
 		}
 	}
-
-	/*&__left{
-		padding: 12px 10px 7px 22px;
-		margin: 0 auto 0 0;
-	}
-
-	&__right{
-		display: flex;
-	}
-
-	&__sum-title{
-		font-family: $osans;
-		color: var(--clr-textL);
-		font-size: 12px;
-		padding: 0;
-		margin: 0;
-		line-height: 1.18;
-	}
-
-	&__sum-amount{
-		font-family: $osans;
-		font-size: 21px;
-		font-weight: 700;
-		color: var(--clr-textD);
-		padding: 0;
-		margin: 0;
-		line-height: 1;
-	}*/
 
 	&__current,
 	&__item{
@@ -104,15 +66,12 @@
 		}
 	}
 
-	&__scroll{
-	}
-
 	&__list{
 		position: absolute;
 		height: 146px;
 		z-index: 5;
-		left: 0px;
-		right: 0px;
+		left: -1px;
+		right: -1px;
 		top: 100%;
 		padding: 0;
 		margin: 0;

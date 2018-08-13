@@ -6,6 +6,12 @@
 
 .exch-head{
 	--exch-head-height: 48px;
+	--color-one: var(--clr-separatorD);
+	--color-two: var(--clr-separatorD);
+	--color-one: #ee9100;
+	--color-two: #bf1319;
+
+
 	display: flex;
 	margin: 0;
 	flex: 0 0 var(--exch-head-height);
@@ -34,25 +40,36 @@
 		flex: 1 1;
 		padding: 0;
 		height: 48px;
+		background: var(--color-one);
+		padding: 1px;
+		border-radius: var(--border-radius);
+	}
+
+	&__get{
+		background: linear-gradient(to right, var(--color-one) 0%, var(--color-two) 100%);
+	}
+
+	&__send{
+		background: linear-gradient(to right, var(--color-two) 0%, var(--color-one) 100%);
 	}
 
 	&__switch{
-		width: var(--exch-head-height);
+		width: 40px;
 		height: var(--exch-head-height);
 		display: flex;
-		flex: 0 0 var(--exch-head-height);
+		flex: 0 0 40px;
+		flex-direction: column;
 		margin: 0 var(--gap-size);
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
 		background: transparent;
-		border: 1px solid transparent;
+		border: 1px solid var(--clr-separatorD);
 		transition: all .1s;
 		border-radius: var(--border-radius);
 
 		&:hover{
 			background: var(--clr-back);
-			/*background: var(--clr-accent);*/
 		}
 
 		.sprite-icon{
@@ -61,6 +78,24 @@
 			fill: var(--clr-accentD);
 			transition: all .1s;
 		}
+	}
+
+	&__switch-left{
+		display: block;
+		width: 17px;
+		height: 14px;
+		position: relative;
+		left: -2px;
+		fill: var(--color-two);
+	}
+
+	&__switch-right{
+		display: block;
+		width: 17px;
+		height: 14px;
+		position: relative;
+		left: 2px;
+		fill: var(--color-one);
 	}
 
 	&__btn{

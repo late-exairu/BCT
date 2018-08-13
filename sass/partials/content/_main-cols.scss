@@ -24,8 +24,8 @@
 		min-height: 0;
 
 		&.col-chats{
-			width: 28.6%;
-			flex: 0 0 28.6%;
+			width: 32%;
+			flex: 0 0 32%;
 			min-width: 250px;
 			max-width: 450px;
 		}
@@ -46,9 +46,9 @@
 
 	&__left-bottom{
 		display: flex;
-		flex: 0 0 212px;
+		flex: 0 0 230px;
 		flex-direction: column;
-		min-height: 212px;
+		min-height: 230px;
 	}
 
 	&__right{
@@ -70,9 +70,9 @@
 
 	&__right-bottom{
 		display: flex;
-		flex: 0 0 212px;
+		flex: 0 0 230px;
 		flex-direction: column;
-		min-height: 212px;
+		min-height: 230px;
 	}
 
 	@media only screen and (min-height : 900px) {
