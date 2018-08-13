@@ -8,19 +8,16 @@
 	transition: background .1s, border-color .1s;
 
 	&.open{
-
-		.graph-prices-toggle__icon{
-			transform: translate(-50%, -50%) rotate(-90deg);
-		}
+		
 	}
 
 	&__icon{
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		transform: translate(-50%, -50%) rotate(90deg);
+		transform: translate(-50%, -50%);
 		width: 11px;
-		height: 7px;
+		height: 21px;
 		fill: var(--clr-iconD);
 		transition: fill .1s;
 	}
