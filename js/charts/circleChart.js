@@ -15,13 +15,18 @@ var circleChartTooltipData = {
     }
 }
 
+
+var pieChartSize = $('#circleChart').width() - 10;
+var centerX = $('#circleChart').width() / 2 - 20;
+
 var circleChartObj = null;
 var circleChartOptions = {
     chart: {
         type: 'pie',
         spacingLeft: 0,
         spacingTop: 0,
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        marginLeft:0
     },
     title: null,
     plotOptions: {
@@ -29,8 +34,8 @@ var circleChartOptions = {
             innerSize: '85%',
             borderWidth: 0,
             startAngle: 20,
-            size: 138,
-            center: [55, 52],
+            size: pieChartSize,
+            center: [centerX, '50%'],
         },
         series: {
             dataLabels: {
@@ -93,3 +98,17 @@ var circleChartOptions = {
     span.css('left','0');
     span.css('top', textY + (span.height() * -0.6));
 }; */
+
+$(window).resize(function () {
+    var pieChartSize = $('#circleChart').width() - 10;
+    var centerX = $('#circleChart').width() / 2 - 20;
+    if (circleChartObj)
+    circleChartObj.update({
+        plotOptions:{
+            pie: {
+                size: pieChartSize,
+                center: [centerX, '50%'],
+            }
+        }
+    });
+});
