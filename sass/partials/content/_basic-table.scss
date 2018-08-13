@@ -20,12 +20,16 @@
 		min-width: 100%;
 		max-width: 100%;
 		display: flex;
-		border-top: 1px solid var(--clr-separator);
+		/*border-top: 1px solid var(--clr-separator);*/
 		padding: 0;
 		flex: 0 0 auto;
 
-		&:hover{
+		&:nth-child(even){
 			background: var(--clr-back);
+		}
+
+		&:hover{
+			background: var(--clr-backLL);
 			cursor: pointer;
 		}
 
@@ -72,16 +76,13 @@
 		}
 
 		&.active{
-			background: var(--clr-back);
+			background: var(--clr-backLL);
 			font-weight: 600;
 		}
 
 		&.disabled{
 			pointer-events: none;
-
-			& > *{
-				opacity: 0.3;
-			}
+			opacity: 0.3;
 		}
 	}
 

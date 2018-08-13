@@ -7,15 +7,46 @@
 .graph-bar{
 	font-family: $osans;
 	position: absolute;
-	left: 32px;
-	top: 0;
+	left: 50px;
+	top: 10px;
 	right: 0;
 	background: transparent;
 	display: flex;
-	padding: 5px;
+	padding: 0;
 	max-width: 100%;
 	border-radius: 0;
 	transition: all .1s;
+
+	&__group{
+		position: relative;
+		display: flex;
+		margin: 0 0 0 15px;
+
+		&:first-child{
+			margin: 0;
+		}
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			border-radius: var(--border-radius);
+			background: var(--clr-back);
+			transition: all .2s;
+			opacity: 0.75;
+			z-index: 0;
+		}
+
+		&:hover{
+
+			&:after{
+				opacity: 1;
+			}
+		}
+	}
 
 	&__left{
 		margin: 0 auto 0 0;
@@ -31,17 +62,20 @@
 
 	&__item{
 		position: relative;
-		border: 1px solid var(--clr-separatorD);
+		/*border: 1px solid var(--clr-important);*/
+		border: none;
 		border-radius: var(--border-radius);
-		height: 25px;
-		min-width: 25px;
+		height: 32px;
+		min-width: 32px;
 		margin: 0 0 0 6px;
 		display: flex;
 		align-items: center;
 		flex: 1 0 auto;
 		background: var(--clr-block);
+		background: transparent;
 		justify-content: center;
 		padding: 0 3px;
+		z-index: 1;
 
 		&:first-child{
 			margin: 0;
@@ -83,23 +117,23 @@
 	&__icon{
 		height: 18px;
 		width: 18px;
-		fill: var(--clr-iconD);
+		fill: var(--clr-important);
 		transition: all 0.1s;
 		flex: 0 auto;
-		--icon-scale: 1;
+		--icon-scale: 0.8;
 
-		&.clock			{ width: calc(16px * var(--icon-scale)); height: calc(16px * var(--icon-scale)); }
-		&.graph			{ width: calc(11px * var(--icon-scale)); height: calc(10px * var(--icon-scale)); }
+		&.clock			{ width: calc(28px * var(--icon-scale)); height: calc(28px * var(--icon-scale)); }
+		&.graph			{ width: calc(22px * var(--icon-scale)); height: calc(16px * var(--icon-scale)); flex: 0 0 22px;}
 		&.arrows-td-short{ width: calc(7px * var(--icon-scale)); height: calc(5px * var(--icon-scale)); margin: 0 0 0 5px; }
-		&.undo			{ width: calc(11px * var(--icon-scale)); height: calc(9px * var(--icon-scale)); }
-		&.redo			{ width: calc(11px * var(--icon-scale)); height: calc(9px * var(--icon-scale)); }
-		&.camera		{ width: calc(14px * var(--icon-scale)); height: calc(12px * var(--icon-scale)); }
-		&.gear			{ width: calc(13px * var(--icon-scale)); height: calc(13px * var(--icon-scale)); }
+		&.undo			{ width: calc(25px * var(--icon-scale)); height: calc(18px * var(--icon-scale)); }
+		&.redo			{ width: calc(25px * var(--icon-scale)); height: calc(18px * var(--icon-scale)); }
+		&.camera		{ width: calc(31px * var(--icon-scale)); height: calc(25px * var(--icon-scale)); }
+		&.gear			{ width: calc(27px * var(--icon-scale)); height: calc(27px * var(--icon-scale)); }
 		&.sorting		{ width: calc(16px * var(--icon-scale)); height: calc(15px * var(--icon-scale)); }
 		&.arrow-drop	{ width: calc(10px * var(--icon-scale)); height: calc(6px * var(--icon-scale)); }
-		&.graph-2		{ width: calc(14px * var(--icon-scale)); height: calc(11px * var(--icon-scale)); }
+		&.graph-2		{ width: calc(24px * var(--icon-scale)); height: calc(18px * var(--icon-scale)); }
 		&.arrows-td 	{ width: calc(18px * var(--icon-scale)); height: calc(21px * var(--icon-scale)); fill: var(--clr-text); }
-		&.expand		{ width: calc(13px * var(--icon-scale)); height: calc(13px * var(--icon-scale)); }
+		&.expand		{ width: calc(22px * var(--icon-scale)); height: calc(22px * var(--icon-scale)); }
 	}
 
 	&__separator{
@@ -112,25 +146,8 @@
 		right: 110px;
 	}
 
-	@media only screen and (min-width : 1366px) {
-		left: 42px;
-
-		&__item{
-			min-width: 35px;
-			height: 35px;
-			padding: 0 5px;
-		}
-
-		&__icon{
-			height: 26px;
-			width: 26px;
-
-			--icon-scale: 1.35;
-		}
-	}
-
 	@media only screen and (min-width : 1920px) {
-		left: 52px;
+		left: 62px;
 
 		&__item{
 			min-width: 42px;
@@ -140,14 +157,7 @@
 
 		&__icon{
 
-			--icon-scale: 1.8;
+			--icon-scale: 1;
 		}
-	}
-
-	.gbar-info{
-		position: relative;
-		left: auto;
-		top: auto;
-		margin: auto 0 auto 35px;
 	}
 }

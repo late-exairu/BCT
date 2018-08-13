@@ -5,19 +5,23 @@
 
 
 .message-bar{
-	padding: 0 5px;
+	height: 50px;
+	padding: 0 10px;
 	display: flex;
 	align-items: center;
+	background: var(--clr-block);
+	border-top: 1px solid var(--clr-separator);
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
 
 	&__input{
 		font-family: $osans;
 		display: block;
 		background: transparent;
-		border: 1px solid transparent;
+		border: none;
 		outline: none;
 		height: 32px;
 		min-width: 0;
-		font-size: 11px;
+		font-size: 12px;
 		border-radius: var(--border-radius);
 		margin: 0 4px;
 		flex: 1 1;
@@ -27,7 +31,7 @@
 		color: var(--clr-text);
 
 		&::placeholder{
-			color: var(--clr-icon);
+			color: var(--clr-separatorD);
 		}
 
 		&:focus{
@@ -37,12 +41,12 @@
 	}
 
 	&__btn{
-		width: 30px;
-		height: 44px;
+		width: 35px;
+		height: 100%;
 		display: flex;
+		flex: 0 0 35px;
 		justify-content: center;
 		align-items: center;
-		flex: 0 0 30px;
 		cursor: pointer;
 		transition: all .1s;
 		border: none;
@@ -63,22 +67,22 @@
 		.sprite-icon{
 			width: 18px;
 			height: 18px;
-			fill: var(--clr-icon);
+			fill: var(--clr-separatorD);
 			transition: all 0.1s;
 
 			&.chats-clip{
-				width: 14px;
-				height: 16px;
+				width: 18px;
+				height: 21px;
 			}
 
 			&.chats-image{
-				width: 16px;
-				height: 16px;
+				width: 24px;
+				height: 24px;
 			}
 
 			&.chats-mic{
-				width: 12px;
-				height: 16px;
+				width: 17px;
+				height: 22px;
 			}
 		}
 	}

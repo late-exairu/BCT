@@ -243,7 +243,7 @@
 			<div class="main-cols__left-top">
 
 				<div class="c-block d-flex-col h-100">
-					<div class="c-block-head big">
+					<div class="c-block-head">
 						<div class="c-block-head__left">
 							<h2 class="c-block-head__title">Telegram
 <!-- 								<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
@@ -266,15 +266,9 @@
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="c-block__col">
 							<div class="c-block__section chat-head">
-								<div class="chat-head__back">
-									<svg class="sprite-icon" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-left"></use>
-									</svg>
-								</div>
-
-								<div class="chat-head__avatar-wrap">
-									<img class="chat-head__avatar" src="pic/avatar_0.jpg" height="44" width="44" alt="">
-								</div>
+								<svg class="chat-head__curr clr-bitcoin" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
+								</svg>
 
 								<div class="chat-head__desc">
 									<p class="chat-head__name">BTC Bitcoin Room</p>
@@ -642,7 +636,7 @@
 								<input type="text" class="message-bar__input" placeholder="Write a message...">
 
 								<button class="message-bar__btn">
-									<svg class="sprite-icon" role="img" aria-hidden="true">
+									<svg class="sprite-icon chats-image" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chats-image"></use>
 									</svg>
 								</button>
@@ -663,7 +657,7 @@
 			<div class="main-cols__left-top">
 				<div class="d-flex h-100">
 					<div class="d-flex-col flex-1-1 c-block">
-						<div class="c-block-head big">
+						<div class="c-block-head">
 							<div class="c-block-head__left">
 								<h2 class="c-block-head__title">Global Order Book
 <!-- 									<svg class="c-block-head__title-arrow" role="img" aria-hidden="true">
@@ -1057,7 +1051,7 @@
 					<!-- c-block END -->
 
 					<div class="d-flex-col flex-1-1 c-block m-left">
-						<div class="c-block-head big">
+						<div class="c-block-head">
 							<div class="c-block-head__left">
 								<h2 class="c-block-head__title"></h2>
 							</div>
@@ -1352,7 +1346,7 @@
 
 			<div class="main-cols__left-bottom m-top" id="orders">
 				<div class="c-block d-flex-col flex-1-1 flex-h-fix">
-					<div class="c-block-head big">
+					<div class="c-block-head">
 						<div class="c-block-head__left">
 							<h2 class="c-block-head__title">Orders</h2>
 						</div>
@@ -1722,10 +1716,10 @@
 					</div><!-- exch-head__send END -->
 
 					<button class="exch-head__btn" data-fancybox data-src="#exchange-step_1">
-						<!-- CONVERT -->
-						<svg class="exch-head__arrow-exch" role="img" aria-hidden="true">
+						CONVERT
+						<!-- <svg class="exch-head__arrow-exch" role="img" aria-hidden="true">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-exch"></use>
-						</svg>
+						</svg> -->
 					</button><!-- exch-head__btn END -->
 				</div><!-- exch-head END -->
 
@@ -1921,66 +1915,71 @@
 
 					<div class="graph-bar">
 						<div class="graph-bar__left">
-							<button class="graph-bar__item btn">
-								<svg class="graph-bar__icon clock" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#clock"></use>
-								</svg>
-							</button>
-							
-							<button class="graph-bar__item btn">
-								<svg class="graph-bar__icon graph" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#graph"></use>
-								</svg>
+							<div class="graph-bar__group">
+								<button class="graph-bar__item btn">
+									<svg class="graph-bar__icon clock" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#clock"></use>
+									</svg>
+								</button>
+								
+								<button class="graph-bar__item btn">
+									<svg class="graph-bar__icon graph" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#graph"></use>
+									</svg>
 
-								<svg class="graph-bar__icon arrows-td-short" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-								</svg>
-							</button>
-							
-							<button class="graph-bar__item btn">
-								<svg class="graph-bar__icon undo" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#undo"></use>
-								</svg>
-							</button>
-							
-							<button class="graph-bar__item btn">
-								<svg class="graph-bar__icon redo" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#redo"></use>
-								</svg>
-							</button>
-							
-							<button class="graph-bar__item btn">
-								<svg class="graph-bar__icon camera" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#camera"></use>
-								</svg>
-							</button>
-							
-							<button class="graph-bar__item btn">
-								<svg class="graph-bar__icon gear" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#gear"></use>
-								</svg>
-							</button>
-							
-							<button class="graph-bar__item btn">
-								<svg class="graph-bar__icon graph-2" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#graph_2"></use>
-								</svg>
-							</button>
+									<svg class="graph-bar__icon arrows-td-short" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+									</svg>
+								</button>
+								
+								<button class="graph-bar__item btn">
+									<svg class="graph-bar__icon undo" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#undo"></use>
+									</svg>
+								</button>
+								
+								<button class="graph-bar__item btn">
+									<svg class="graph-bar__icon redo" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#redo"></use>
+									</svg>
+								</button>
+								
+								<button class="graph-bar__item btn">
+									<svg class="graph-bar__icon camera" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#camera"></use>
+									</svg>
+								</button>
+								
+								<button class="graph-bar__item btn">
+									<svg class="graph-bar__icon gear" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#gear"></use>
+									</svg>
+								</button>
+								
+								<button class="graph-bar__item btn">
+									<svg class="graph-bar__icon graph-2" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#graph_2"></use>
+									</svg>
+								</button>
+							</div>
 
-							<div class="gbar-info">
-								<div class="gbar-info__item">
-									<p class="gbar-info__title">1 BTC = 8199.75 USD</p>
+							<div class="graph-info">
+								<div class="graph-info__item">
+									<p class="graph-info__title">1 BTC = 8199.75 USD</p>
 								</div>
 							
-								<div class="gbar-info__item inline">
-									<p class="gbar-info__title">-2.92%</p>
+								<div class="graph-info__item inline">
+									<p class="graph-info__title">-2.92%</p>
 								</div>
 							
-								<div class="gbar-info__item inline">
-									<p class="gbar-info__title">43.706K</p>
-									<p class="gbar-info__nums">24hr Vol</p>
+								<div class="graph-info__item inline">
+									<p class="graph-info__title">43.706K</p>
 								</div>
-							</div><!-- gbar-info END -->
+							
+								<div class="graph-info__item inline">
+									<p class="graph-info__nums">24hr</p>
+								</div>
+							</div><!-- graph-info END -->
 							
 							<!-- <button class="graph-bar__item btn">
 								<div class="graph-bar__btn-text">Indicators</div>
@@ -2002,17 +2001,19 @@
 						</div><!-- graph-bar__left END -->
 
 						<div class="graph-bar__right">
-							<button class="graph-bar__item btn" id="js-graph-size-toggle">
-								<svg class="graph-bar__icon expand" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#expand"></use>
-								</svg>
-							</button>
+							<div class="graph-bar__group">
+								<button class="graph-bar__item btn" id="js-graph-size-toggle">
+									<svg class="graph-bar__icon expand" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#expand"></use>
+									</svg>
+								</button>
 
-							<button class="graph-bar__item btn graph-prices-toggle" id="js-graph-prices-toggle">
-								<svg class="graph-prices-toggle__icon" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-								</svg>
-							</button>
+								<button class="graph-bar__item btn graph-prices-toggle" id="js-graph-prices-toggle">
+									<svg class="graph-prices-toggle__icon" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+									</svg>
+								</button>
+							</div>
 						</div><!-- graph-bar__right END -->
 					</div>
 
@@ -2134,7 +2135,7 @@
 
 			<div class="main-cols__right-bottom m-top">
 				<div class="c-block d-flex-col flex-1-1 flex-h-fix js-account-stats">
-					<div class="c-block-head big">
+					<div class="c-block-head">
 						<div class="c-block-head__left js-dropdown-wrap">
 							<h2 class="c-block-head__title btn js-dropdown-toggle">
 								Portfolio
@@ -3151,7 +3152,7 @@
 
 <div class="basic-popup tables" id="exchange-step_2" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
-		<div class="c-block-head big">
+		<div class="c-block-head">
 			<div class="c-block-head__left js-dropdown-wrap">
 				<h2 class="c-block-head__title">
 					Best Execution across 165 Connected Exchanges
@@ -3322,7 +3323,7 @@
 
 <div class="basic-popup send-popup" id="send-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
-		<div class="c-block-head big">
+		<div class="c-block-head">
 			<div class="c-block-head__left js-dropdown-wrap">
 				<h2 class="c-block-head__title">
 					SEND BTC
@@ -3432,7 +3433,7 @@
 
 <div class="basic-popup send-popup" id="receive-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
-		<div class="c-block-head big">
+		<div class="c-block-head">
 			<div class="c-block-head__left js-dropdown-wrap">
 				<h2 class="c-block-head__title">
 					RECIEVE BTC

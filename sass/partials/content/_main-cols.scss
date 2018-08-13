@@ -11,7 +11,7 @@
     padding: var(--gap-size);
     height: 100%;
     width: 100%;
-    border: 1px solid var(--clr-separator);
+    /*border: 1px solid var(--clr-separator);*/
     border-left: none;
 
 	&__left{
@@ -24,8 +24,8 @@
 		min-height: 0;
 
 		&.col-chats{
-			width: 25%;
-			flex: 0 0 25%;
+			width: 28.6%;
+			flex: 0 0 28.6%;
 			min-width: 250px;
 			max-width: 450px;
 		}

@@ -28,7 +28,7 @@ html {
 
 body {
 	width: 100%;
-	background: var(--clr-back);
+	background: var(--clr-back-new);
 	color: var(--clr-text);
 	line-height: 1.32;
 }
@@ -96,7 +96,7 @@ h6 {
 @import "partials/content/exch-dropdown";
 @import "partials/content/exch-head";
 @import "partials/content/exchange-slider";
-@import "partials/content/gbar-info";
+@import "partials/content/graph-info";
 @import "partials/content/graph-bar";
 @import "partials/content/graph-prices";
 @import "partials/content/labeled-dropdown";
