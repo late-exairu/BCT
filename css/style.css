@@ -2061,15 +2061,13 @@ h6 {
 /* =================================================================== */
 .graph-prices-toggle {
   transition: background .1s, border-color .1s; }
-  .graph-prices-toggle.open .graph-prices-toggle__icon {
-    transform: translate(-50%, -50%) rotate(-90deg); }
   .graph-prices-toggle__icon {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-50%, -50%);
     width: 11px;
-    height: 7px;
+    height: 21px;
     fill: var(--clr-iconD);
     transition: fill .1s; }
   .graph-prices-toggle:hover {
@@ -3444,16 +3442,16 @@ body.menubar-in #user-btn:before {
     .scrollbar-right .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size, .scrollbar-right .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
       top: -19px; }
   .scrollbar-right .scroll-element.scroll-y {
-    bottom: 0;
+    height: calc(100% - 10px);
     right: 0px;
-    top: 0;
-    width: 6px;
+    top: 5px;
+    width: 15px;
     cursor: pointer;
     opacity: 0.3; }
     .scrollbar-right .scroll-element.scroll-y .scroll-bar {
-      left: 1px;
+      left: 5px;
       min-height: 10px;
-      width: 4px; }
+      width: 5px; }
     .scrollbar-right .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size, .scrollbar-right .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
       top: -19px; }
   .scrollbar-right .scroll-element .scroll-bar {
@@ -3474,12 +3472,12 @@ body.menubar-in #user-btn:before {
     left: 0; }
 
 .scrollbar-right .scroll-content.scroll-scrolly_visible {
-  left: -7px;
-  margin-left: 7px; }
+  left: -15px;
+  margin-left: 15px; }
 
 .scrollbar-right .scroll-content.scroll-scrollx_visible {
-  top: -7px;
-  margin-top: 7px; }
+  top: -15px;
+  margin-top: 15px; }
 
 .scrollbar-right.outer .scroll-content.scroll-scrolly_visible {
   left: 0;
@@ -4315,16 +4313,16 @@ body.compensate-for-scrollbar {
 .order-form {
   font-family: "open_sans", sans-serif;
   font-size: 13px;
-  padding: 12px;
+  padding: 10px 15px;
   width: 100%; }
   .order-form__group {
-    min-height: 92px;
+    min-height: 105px;
     /*display: flex;
 		flex-direction: column;
 		justify-content: space-between;*/ }
   .order-form__line {
     position: relative;
-    margin: 0 0 4px;
+    margin: 0 0 5px;
     display: flex; }
     .order-form__line:last-child {
       margin: 0; }
@@ -4341,7 +4339,7 @@ body.compensate-for-scrollbar {
     display: flex;
     flex: 1 0 65%; }
   .order-form__input {
-    height: 20px;
+    height: 22px;
     border: 1px solid var(--clr-separatorD);
     background: var(--clr-block);
     font-size: 11px;
@@ -4375,12 +4373,12 @@ body.compensate-for-scrollbar {
     margin: auto 0 0;
     display: flex;
     font-family: "open_sans", sans-serif;
-    height: 20px;
+    height: 26px;
     border: none;
     border-radius: var(--border-radius);
     outline: none;
     font-weight: 700;
-    font-size: 11px;
+    font-size: 16px;
     justify-content: center;
     align-items: center;
     color: #fff;
