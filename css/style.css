@@ -3474,12 +3474,12 @@ body.menubar-in #user-btn:before {
     left: 0; }
 
 .scrollbar-right .scroll-content.scroll-scrolly_visible {
-  left: -7px;
-  margin-left: 7px; }
+  left: -15px;
+  margin-left: 15px; }
 
 .scrollbar-right .scroll-content.scroll-scrollx_visible {
-  top: -7px;
-  margin-top: 7px; }
+  top: -15px;
+  margin-top: 15px; }
 
 .scrollbar-right.outer .scroll-content.scroll-scrolly_visible {
   left: 0;
