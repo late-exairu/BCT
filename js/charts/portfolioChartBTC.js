@@ -187,12 +187,3 @@ var portfolioChartBTCOptions = {
         data: portfolioChartData,
     }]
 };
-
-$.getJSON(location.origin + location.pathname + 'data/exampleData.json', function (data) {
-    portfolioChartData = data;
-    portfolioChartBTCData = data;
-    portfolioChartOptions.series[0].data = portfolioChartData;
-    portfolioChartBTCOptions.series[0].data = portfolioChartBTCData;
-    portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
-    portfolioChartBTCObj = Highcharts.stockChart('portfolioChartBTC', portfolioChartBTCOptions);
-});

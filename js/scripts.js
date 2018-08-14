@@ -325,6 +325,9 @@ $(function () {
 		portfolioChartBTCCurrentRange = $(this).index();
 		portfolioChartBTCObj.rangeSelector.clickButton(portfolioChartBTCCurrentRange, {}, true);
 
+		portfolioChartETHCurrentRange = $(this).index();
+		portfolioChartETHObj.rangeSelector.clickButton(portfolioChartETHCurrentRange, {}, true);
+
 		// change text in portfolioChart
 		/* 			
 		$('#portfolioChartText div:last-child p').text(portfolioChartArrChanges[$(this).index() - 1][0]);
