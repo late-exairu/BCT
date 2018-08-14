@@ -482,6 +482,7 @@ $(function () {
 		arrows: false,
 		dots: true,
 		infinite: false,
+		fade: true
 	});
 
 	// On before slide change

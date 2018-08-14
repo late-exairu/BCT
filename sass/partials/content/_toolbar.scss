@@ -50,6 +50,8 @@
 		overflow: hidden;
 		
 		&:hover{
+			background: var(--clr-backL);
+
 			.toolbar__drop-arrow{
 				transform: translate(0, -50%) rotate(0);
 			}
