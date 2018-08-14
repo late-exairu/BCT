@@ -26,7 +26,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		marginBottom: 0,
 		marginRight: -25,
 		spacingTop: 0,
-		spacingLeft: -5,
+		spacingLeft: -22,
 		spacingRight: 0,
 		spacingBottom: 0,
 		events: {
@@ -36,12 +36,9 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		}
 	},
 	title: null,
-	tooltip: {
-		enabled: false
-	},
 	plotOptions: {
 		series: {
-			pointWidth: $('#mainChart').width() / 275,
+			pointWidth: $('#mainChart').width() / 110,
 			pointPadding: 0,
 			pointStart: Date.UTC(2018, 5, 17),
 			pointInterval: 24 * 3600 * 1000, // one day
@@ -79,7 +76,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			states: {
 				hover: {
 					enabled: true,
-					lineWidth: 3
+					lineWidth: 4
 				}
 			},
 			events: {
@@ -142,19 +139,6 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		}
 	},
 	xAxis: {
-		/* 		categories: [
-					'Jun 9 2018', 'Jun 11 2018', 'Jun 13 2018', 'Jun 15 2018', 'Jun 17 2018',
-					'Jun 19 2018', 'Jun 21 2018', 'Jun 23 2018', 'Jun 25 2018', 'Jun 27 2018',
-					'Jun 29 2018', 'Jun 21 2018', 'Jun 21 2018', 'Jun 21 2018', 'Jun 21 2018',
-					'Jun 23 2018', 'Jun 23 2018', 'Jun 23 2018', 'Jun 23 2018', 'Jun 23 2018',
-					'Jun 25 2018', 'Jun 25 2018', 'Jun 25 2018', 'Jun 25 2018', 'Jun 25 2018',
-					'Jun 27 2018', 'Jun 27 2018', 'Jun 27 2018', 'Jun 27 2018', 'Jun 27 2018',
-					'Jun 29 2018', 'Jun 29 2018', 'Jun 29 2018', 'Jun 29 2018', 'Jun 29 2018',
-					'Jul 1 2018', 'Jul 1 2018', 'Jul 1 2018', 'Jul 1 2018', 'Jul 1 2018',
-					'Jul 3 2018', 'Jul 3 2018', 'Jul 3 2018', 'Jul 3 2018', 'Jul 3 2018',
-					'Jul 5 2018', 'Jul 5 2018', 'Jul 5 2018', 'Jul 5 2018', 'Jul 5 2018',
-					'Jul 7 2018', 'Jul 7 2018', 'Jul 7 2018', 'Jul 7 2018', 'Jul 7 2018',
-				], */
 		type: 'datetime',
 		dateTimeLabelFormats: {
 			month: '%e. %b',
@@ -162,7 +146,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		crosshair: {
 			width: 1,
-			color: '#939393'
+			color: '#2B569A'
 		},
 		labels: {
 			enabled: false,
@@ -174,7 +158,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			x: 50
 		},
 		tickLength: 0,
-		gridLineWidth: 1
+		gridLineWidth: 0
 	},
 	yAxis: {
 		title: {
@@ -197,6 +181,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			}
 		},
 		tickInterval: 7,
+		gridLineWidth: 0,
 		max: 150
 	},
 
@@ -237,7 +222,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				xPos = 25;
 			}
 			return {
-				x: xPos + 20,
+				x: xPos - 20,
 				//y: point.plotY - 45
 				y: 70
 			};
@@ -250,7 +235,6 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				56, 46, 63, 78, 82, 92, 105, 78, 97, 48,
 				66, 62, 55, 57, 90, 101, 98, 62, 85, 75,
 				49, 52, 63, 71, 53, 59, 68, 47, 35, 63,
-				71, 75, 82, 81, 87,
 			],
 			name: "Series 1",
 			lineWidth: 1,
@@ -265,7 +249,6 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				40, 25, 69, 47, 54, 73, 62, 43, 72, 64,
 				74, 62, 61, 78, 80, 101, 93, 91, 86, 78,
 				67, 61, 50, 42, 57, 65, 73, 82, 87, 81,
-				69, 73, 60, 81, 88,
 			],
 			name: "Series 2",
 			lineWidth: 1,
@@ -280,7 +263,6 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				27, 35, 19, 17, 24, 33, 42, 33, 28, 22,
 				30, 36, 29, 38, 40, 52, 48, 27, 55, 68,
 				71, 52, 40, 42, 57, 26, 33, 37, 42, 38,
-				47, 50, 31, 42, 54,
 			],
 			name: "Series 3",
 			lineWidth: 1,
@@ -409,15 +391,14 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				97, 94, 85, 56, 34, 66, 75, 77, 44, 36,
 				38, 40, 44, 46, 45, 47, 44, 48, 52, 54,
 				57, 59, 61, 66, 68, 70, 75, 79, 80, 80,
-				87, 84, 85, 86, 84,
 			],
 			name: "Series 6",
-			lineWidth: 3,
-			color: '#0576B9',
+			lineWidth: 4,
+			color: '#2B569A',
 			fillColor: {
-				linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
+				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 				stops: [
-					[0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.8).get('rgba')],
+					[0, Highcharts.Color('#2B569A').setOpacity(0.4).get('rgba')],
 					[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
 				]
 			},
@@ -426,13 +407,12 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		{
 			type: 'column',
-			color: '#0089CB',
+			color: '#2B569A',
 			data: [12, 11, 8, 12, 6, 7, 5, 7, 7, 2,
 				7, 9, 11, 6, 8, 2, 5, 9, 3, 2,
 				5, 5, 8, 9, 2, 7, 22, 8, 2, 4,
 				7, 4, 5, 6, 4, 6, 5, 7, 4, 3,
 				4, 9, 13, 5, 14, 8, 19, 8, 14, 9,
-				11, 11, 11, 16, 12,
 			],
 			name: "Series 7",
 			id: 7,
@@ -440,19 +420,18 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		{
 			type: 'column',
-			color: '#0089CB',
+			color: '#E05475',
 			data: [8, 7, 6, 11, 16, 17, 9, 8, 9, 12,
 				6, 12, 9, 7, 5, 8, 7, 5, 9, 6,
 				8, 9, 6, 8, 12, 5, 12, 12, 12, 14,
 				17, 14, 8, 20, 21, 19, 19, 17, 23, 18,
 				17, 21, 25, 22, 21, 19, 17, 14, 12, 16,
-				13, 7, 6, 4, 8,
 			],
 			name: "Series 8",
 			id: 8,
 			enableMouseTracking: false,
 		},
-		{
+/* 		{
 			type: 'column',
 			color: '#E05475',
 			data: [8, 7, 6, 11, 16, 17, 9, 8, 9, 12,
@@ -479,6 +458,6 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			name: "Series 10",
 			id: 10,
 			enableMouseTracking: false,
-		}
+		} */
 	]
 });

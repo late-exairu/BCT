@@ -99,6 +99,8 @@ var circleChartOptions = {
     span.css('top', textY + (span.height() * -0.6));
 }; */
 
+
+// change circle chart size on window resize
 $(window).resize(function () {
     var pieChartSize = $('#circleChart').width() - 10;
     var centerX = $('#circleChart').width() / 2 - 20;
