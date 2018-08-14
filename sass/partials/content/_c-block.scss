@@ -10,8 +10,8 @@
 	border-radius: var(--border-radius);
 	border: none;
 	
-	&:nth-child(n + 2){
-		border-left: 1px solid var(--clr-separator);
+	&:first-child{
+		border-right: 1px solid var(--clr-separator);
 	}
 
 	&__section{
