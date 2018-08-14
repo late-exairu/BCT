@@ -86,6 +86,7 @@
 			transition: all 0.1s;
 
 			&:hover{
+				background: var(--clr-backL);
 				border-color: var(--clr-textL);
 
 				.graph-bar__icon,

@@ -1,0 +1,54 @@
+
+/* =================================================================== */
+/* portfolio-menu */
+/* =================================================================== */
+
+
+.portfolio-menu{
+	display: flex;
+	position: relative;
+	font-size: 12px;
+	padding: 0;
+	margin: 0 -10px 0 0;
+	height: 22px;
+	list-style: none;
+
+	&:after{
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		height: 1px;
+		background: var(--clr-accentD);
+	}
+
+	&__item{
+		position: relative;
+		margin: 0 24px 0 0;
+		height: 22px;
+		cursor: pointer;
+		line-height: 22px;
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -1px;
+			height: 3px;
+			background: var(--clr-accentD);
+			opacity: 0;
+			transition: all .1s;
+		}
+
+		&.current{
+			font-weight: 700;
+			color: var(--clr-accentD);
+
+			&:after{
+				opacity: 1;
+			}
+		}
+	}
+}
