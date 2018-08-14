@@ -50,10 +50,15 @@
 			position: relative;
 			font-size: 16px;
 			top: -6px;
+			margin: 0px -3px;
+			&:nth-child(2){
+				font-size: 24px;
+				top: 0px;
+			}
 		}
 	}
 
-	&__amount-tip{
+	&__amount-tip {
 		font-size: 10px;
 		color: var(--clr-textL);
 		margin: 2px 0 0;

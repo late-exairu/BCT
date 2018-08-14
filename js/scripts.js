@@ -335,13 +335,30 @@ $(function () {
 		portfolioChartETHCurrentRange = $(this).index();
 		portfolioChartETHObj.rangeSelector.clickButton(portfolioChartETHCurrentRange, {}, true);
 
-		// change text in portfolioChart
-		/* 			
+		updatePortfolioStats();
+
+/* 		// change text in portfolioChart
 		$('#portfolioChartText div:last-child p').text(portfolioChartArrChanges[$(this).index() - 1][0]);
 		$('#portfolioChartText div:last-child span:nth-child(2)').text(portfolioChartArrChanges[$(this).index() - 1][1]);
 		$('#portfolioChartText div:last-child span:nth-child(3)').text(portfolioChartArrChanges[$(this).index() - 1][2]); */
 	});
 
+	function updatePortfolioStats() {
+		var currentSlide = $('.portfolioChartParent').slick('slickCurrentSlide');
+		var currentPeriod = $('.portfolio-period .portfolio-period__item.current').index();
+		if (currentSlide == 0){
+			$('.portfolio-stats__amount-tip').text('Portfolio value');
+		}
+		else if(currentSlide == 1){
+			$('.portfolio-stats__amount-tip').text('Bitcoin');
+		}
+		else if(currentSlide == 2){
+			$('.portfolio-stats__amount-tip').text('Ethereum');
+		}
+		$('.portfolio-stats__dinamic').text(portfolioChartArrChanges[currentSlide][currentPeriod][0]);
+ 		$('.portfolio-stats__amount-value').text(portfolioChartArrChanges[currentSlide][currentPeriod][1]);
+		$('.portfolio-stats__amount-cent').text(portfolioChartArrChanges[currentSlide][currentPeriod][2]);
+	}
 
 	/*---------------------------------------------------*/
 	/* Graph prices list */
@@ -468,11 +485,8 @@ $(function () {
 	});
 
 	// On before slide change
-	$('.portfolioChartParent').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-		console.log(event);
-		console.log(slick);
-		console.log(currentSlide);
-		console.log(nextSlide);
+	$('.portfolioChartParent').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+		updatePortfolioStats();
 	});
 
 

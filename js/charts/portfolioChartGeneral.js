@@ -3,10 +3,27 @@
 /*---------------------------------------------------*/
 
 var portfolioChartArrChanges = [
-    ['Change since last day', '10', '.34'],
-    // ['Change since last month','709','.93'],
-    // ['Change since last year','3,122','.18'],
-    ['Change since inception', '6,709', '.93'],
+    [
+        ['-1.24% Since last hour', '6,709', '.93'],
+        ['-10.93% Since Yesterday', '6,709', '.93'],
+        ['-15.47% Since last month', '6,709', '.93'],
+        ['-23.71% Since last year', '6,709', '.93'],
+        ['-30.58% Since inception', '6,709', '.93'],
+    ],
+    [
+        ['-1.18% Since last hour', '6,314', '.72'],
+        ['-11.43% Since Yesterday', '6,314', '.72'],
+        ['-16.23% Since last month', '6,314', '.72'],
+        ['-26.63% Since last year', '6,314', '.72'],
+        ['-32.17% Since inception', '6,314', '.72'],
+    ],
+    [
+        ['-1.32% Since last hour', '395', '.21'],
+        ['-12.34% Since Yesterday', '395', '.21'],
+        ['-13.51% Since last month', '395', '.21'],
+        ['-27.16% Since last year', '395', '.21'],
+        ['-29.10% Since inception', '395', '.21'],
+    ]
 ];
 var portfolioChartData = null;
 var portfolioChartObj = null;
@@ -163,7 +180,7 @@ var portfolioChartOptions = {
                 lineWidth: 0,
                 width: 0,
                 lineColor: null,
-                symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/")+1) + 'img/svg/circle.svg)',
+                symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)',
                 states: {
                     hover: {
                         enabled: true
