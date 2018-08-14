@@ -50,6 +50,4 @@ var circleChartSmallOptions = {
     }]
 };
 
-
-
 circleChartSmallObj = Highcharts.chart('circleChartSmall', circleChartSmallOptions);
