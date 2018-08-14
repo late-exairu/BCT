@@ -4883,9 +4883,9 @@ body.compensate-for-scrollbar {
     margin: 0px 3px 0px 0px;
     flex: 0 0 20px; }
 
-.portfolioChartParent {
-  display: flex; }
-
+/* .portfolioChartParent {
+	display: flex;
+} */
 .circleDiagramParent {
   display: none;
   height: calc(100% - 19px);
@@ -4918,7 +4918,7 @@ body.compensate-for-scrollbar {
 
 #portfolioChartRange {
   position: absolute;
-  bottom: 0;
+  top: 10px;
   width: 100%;
   /* left: 50%; */
   display: flex;
@@ -5062,7 +5062,8 @@ body.compensate-for-scrollbar {
 .js-tabs-panel {
   position: relative;
   display: none;
-  width: 100%; }
+  width: 100%;
+  overflow-y: hidden; }
   .js-tabs-panel.active {
     display: flex; }
 

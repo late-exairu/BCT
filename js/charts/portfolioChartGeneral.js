@@ -217,5 +217,5 @@ $.getJSON(location.origin + location.pathname + 'data/exampleData.json', functio
 
     portfolioChartData = data;
     portfolioChartOptions.series[0].data = portfolioChartData;
-    portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);
+    portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 });

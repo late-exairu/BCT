@@ -122,7 +122,7 @@ $(function () {
 					data: portfolioChartData
 				}];
 				portfolioChartOptions.rangeSelector.selected = portfolioChartCurrentRange;
-				portfolioChartObj = Highcharts.stockChart('portfolioChart', portfolioChartOptions);
+				portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 			}
 
 			if ($(this).attr('id') == 'tab-funds-history') {
@@ -483,6 +483,12 @@ $(function () {
 
 	$('.exch-form__btn').click(function () {
 		$.fancybox.close();
+	});
+
+
+	$('.portfolioChartParent').slick({
+		arrows:false,
+		dots: true,
 	});
 
 });

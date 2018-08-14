@@ -19,6 +19,11 @@
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
 
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick.css" />
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -2410,8 +2415,9 @@
 								<!-- scroll-y -->
 							</div>
 							<div class="portfolioChartParent w-100">
-								<div id="portfolioChart" style="width: 100%;"></div>
-								<div id="portfolioChartText">
+								<div id="portfolioChartGeneral" style="width: 100%;"></div>
+								<div id="portfolioChartGeneral" style="width: 100%;"></div>
+<!-- 								<div id="portfolioChartText">
 									<div>
 										<span>$</span>
 										<span>6,709</span>
@@ -2424,7 +2430,7 @@
 										<span>.93</span>
 										<p>Change since last month</p>
 									</div>
-								</div>
+								</div> -->
 							</div>
 							<div id="portfolioChartRange">
 								<span>NOW</span>
@@ -3340,11 +3346,13 @@
 <script src="js/libs/custom-select.js"></script>
 <script src="js/libs/jquery.fancybox.min.js"></script>
 
+<script type="text/javascript" src="http://kenwheeler.github.io/slick/slick/slick.js"></script>
+
 <!-- Charts scripts-->
 <script src="js/charts/stylesUpdate.js"></script>
 <script src="js/charts/mainChart.js"></script>
 <script src="js/charts/circleChart.js"></script>
-<script src="js/charts/portfolioChart.js"></script>
+<script src="js/charts/portfolioChartGeneral.js"></script>
 <script src="js/charts/liquidityChart.js"></script>
 <script src="js/scripts.js"></script>
 
