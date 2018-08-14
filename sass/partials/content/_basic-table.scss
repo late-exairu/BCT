@@ -8,6 +8,7 @@
 	width: 100%;
 	font-family: $osans;
 	font-size: 12px;
+	line-height: 1.2;
 	color: var(--clr-textD);
 	background: var(--clr-block);
 
@@ -38,15 +39,15 @@
 		}
 
 		&.head{
-			font-size: 11px;
+			/*font-size: 11px;*/
 			font-weight: 700;
 
 			.basic-table__col{
 				position: relative;
-				height: 48px;
+				height: 40px;
 				padding: 4px 4px;
 				color: var(--clr-textL);
-				align-items: flex-end;
+				/*align-items: flex-end;*/
 
 				&:first-child{
 					padding-left: 10px;
@@ -76,8 +77,9 @@
 		}
 
 		&.active{
-			background: var(--clr-backLL);
-			font-weight: 600;
+			background: var(--clr-back);
+			color: var(--clr-accent);
+			/*font-weight: 600;*/
 		}
 
 		&.disabled{
@@ -90,6 +92,7 @@
 		height: 28px;
 		border: 1px solid var(--clr-separatorD);
 		border-radius: 3px;
+		line-height: 1.2;
 		color: var(--clr-textD);
 		min-width: 50px;
 		max-width: 100%;
@@ -127,7 +130,7 @@
 
 	&__col{
 		display: flex;
-		height: 40px;
+		height: 46px;
 		align-items: center;
 		padding: 2px 5px 2px 5px;
 		flex: 0 0;
@@ -208,6 +211,12 @@
 		color: var(--clr-textL);
 	}
 
+	&.bordered{
+		.basic-table__row{
+			border-bottom: 1px solid var(--clr-separator);
+		}
+	}
+
 	&.med-height{
 
 		.basic-table__row{
@@ -257,7 +266,7 @@
 	}
 
 	&.bigger-font{
-		font-size: 14px;
+		font-size: 13px;
 
 		.smaller{
 			font-size: 11px;

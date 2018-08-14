@@ -15,9 +15,9 @@ var circleChartTooltipData = {
     }
 }
 
-
-var pieChartSize = $('#circleChart').width() - 10;
+var pieChartSize = $('#circleChart').width() - 20;
 var centerX = $('#circleChart').width() / 2 - 20;
+var centerY = $('#circleChart').height() / 2 - 20;
 
 var circleChartObj = null;
 var circleChartOptions = {
@@ -35,7 +35,7 @@ var circleChartOptions = {
             borderWidth: 0,
             startAngle: 20,
             size: pieChartSize,
-            center: [centerX, '50%'],
+            center: [centerX, centerY],
         },
         series: {
             dataLabels: {
@@ -102,14 +102,15 @@ var circleChartOptions = {
 
 // change circle chart size on window resize
 $(window).resize(function () {
-    var pieChartSize = $('#circleChart').width() - 10;
+    var pieChartSize = $('#circleChart').width() - 20;
     var centerX = $('#circleChart').width() / 2 - 20;
+	var centerY = $('#circleChart').height() / 2 - 20;
     if (circleChartObj)
     circleChartObj.update({
         plotOptions:{
             pie: {
                 size: pieChartSize,
-                center: [centerX, '50%'],
+                center: [centerX, centerY],
             }
         }
     });

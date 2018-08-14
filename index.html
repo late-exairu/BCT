@@ -52,7 +52,7 @@
 								</div>
 
 								<div class="chat-head__btns">
-									<button class="chat-head__btn js-chat-search-toggle">
+									<!-- <button class="chat-head__btn js-chat-search-toggle">
 										<svg class="sprite-icon" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#magnifier"></use>
 										</svg>
@@ -62,7 +62,14 @@
 										<svg class="sprite-icon" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tele-login"></use>
 										</svg>
-									</button>
+									</button> -->
+
+									<script async src="https://telegram.org/js/telegram-widget.js?4" data-telegram-login="BCTerminalBot" data-size="medium" data-radius="5" data-onauth="onTelegramAuth(user)"></script>
+									<script type="text/javascript">
+										function onTelegramAuth(user) {
+											alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
+										}
+									</script>
 								</div>
 
 								<form class="chat-head__search chat-search">
@@ -1971,14 +1978,17 @@
 						</div><!-- js-tabs-panel END -->
 						<div class="js-tabs-panel" id="panel-funds-wallet">
 							<div class="circleDiagramParent w-100">
-								<div class="accounts-diagram" id="circleChart"></div>
-								<div id="circleChartText">
-									<div class="wrap">
-										<p class="value">
-											<span>$</span>6,359
-											<span>.50</span>
-										</p>
-										<p class="title">Total balance</p>
+								<div class="accounts-diagram-wrap">
+									<div class="accounts-diagram" id="circleChart"></div>
+
+									<div id="circleChartText">
+										<div class="wrap">
+											<p class="value">
+												<span>$</span>6,359
+												<span>.50</span>
+											</p>
+											<p class="title">Total balance</p>
+										</div>
 									</div>
 								</div>
 								<div class="flex-1-1 scroll-y scrollbar-right">
@@ -1993,10 +2003,10 @@
 													1 BTC
 												</div>
 											</div>
-											<div class="basic-table__col w-22">$6,140.13
+											<div class="basic-table__col w-20">$6,140.13
 												<span class="smaller clr-red">(-5.47%)</span>
 											</div>
-											<div class="basic-table__col w-32">
+											<div class="basic-table__col w-30">
 												<div class="basic-select custom-select">
 													<select class="basic-select__select">
 														<option>BTC Custodian</option>
@@ -2007,7 +2017,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
 													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
@@ -2015,7 +2025,7 @@
 													Send
 												</button>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
 													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
@@ -2036,10 +2046,10 @@
 													0.5 ETH
 												</div>
 											</div>
-											<div class="basic-table__col w-22">$219.37
+											<div class="basic-table__col w-20">$219.37
 												<span class="smaller clr-blue">(2.85%)</span>
 											</div>
-											<div class="basic-table__col w-32">
+											<div class="basic-table__col w-30">
 												<div class="basic-select custom-select">
 													<select class="basic-select__select">
 														<option>ETH Custodian</option>
@@ -2050,7 +2060,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
 													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
@@ -2058,7 +2068,7 @@
 													Send
 												</button>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
 													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
@@ -2079,8 +2089,8 @@
 													0.0 ETH
 												</div>
 											</div>
-											<div class="basic-table__col w-22">$0.00</div>
-											<div class="basic-table__col w-32">
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
 												<div class="basic-select custom-select">
 													<select class="basic-select__select">
 														<option>BCH Custodian</option>
@@ -2091,7 +2101,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
 													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
@@ -2099,7 +2109,7 @@
 													Send
 												</button>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
 													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
@@ -2120,8 +2130,8 @@
 													0.0 LTC
 												</div>
 											</div>
-											<div class="basic-table__col w-22">$0.00</div>
-											<div class="basic-table__col w-32">
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
 												<div class="basic-select custom-select">
 													<select class="basic-select__select">
 														<option>LTC Custodian</option>
@@ -2132,7 +2142,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
 													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
@@ -2140,7 +2150,7 @@
 													Send
 												</button>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
 													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
@@ -2161,8 +2171,8 @@
 													0.0 RPL
 												</div>
 											</div>
-											<div class="basic-table__col w-22">$0.00</div>
-											<div class="basic-table__col w-32">
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
 												<div class="basic-select custom-select">
 													<select class="basic-select__select">
 														<option>RPL Custodian</option>
@@ -2173,7 +2183,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
 													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
@@ -2181,7 +2191,7 @@
 													Send
 												</button>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
 													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
@@ -2202,8 +2212,8 @@
 													0.0 BCC
 												</div>
 											</div>
-											<div class="basic-table__col w-22">$0.00</div>
-											<div class="basic-table__col w-32">
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
 												<div class="basic-select custom-select">
 													<select class="basic-select__select">
 														<option>BCH Custodian</option>
@@ -2214,7 +2224,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
 													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
@@ -2222,7 +2232,7 @@
 													Send
 												</button>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
 													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
@@ -2243,8 +2253,8 @@
 													0.0 LTC
 												</div>
 											</div>
-											<div class="basic-table__col w-22">$0.00</div>
-											<div class="basic-table__col w-32">
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
 												<div class="basic-select custom-select">
 													<select class="basic-select__select">
 														<option>LTC Custodian</option>
@@ -2255,7 +2265,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
 													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
@@ -2263,7 +2273,7 @@
 													Send
 												</button>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
 													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
@@ -2284,8 +2294,8 @@
 													0.0 RPL
 												</div>
 											</div>
-											<div class="basic-table__col w-22">$0.00</div>
-											<div class="basic-table__col w-32">
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
 												<div class="basic-select custom-select">
 													<select class="basic-select__select">
 														<option>RPL Custodian</option>
@@ -2296,7 +2306,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
 													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
@@ -2304,7 +2314,7 @@
 													Send
 												</button>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
 													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
@@ -2325,8 +2335,8 @@
 													0.0 RPL
 												</div>
 											</div>
-											<div class="basic-table__col w-22">$0.00</div>
-											<div class="basic-table__col w-32">
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
 												<div class="basic-select custom-select">
 													<select class="basic-select__select">
 														<option>RPL Custodian</option>
@@ -2337,7 +2347,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
 													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
@@ -2345,7 +2355,7 @@
 													Send
 												</button>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
 													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
@@ -2366,8 +2376,8 @@
 													0.0 RPL
 												</div>
 											</div>
-											<div class="basic-table__col w-22">$0.00</div>
-											<div class="basic-table__col w-32">
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
 												<div class="basic-select custom-select">
 													<select class="basic-select__select">
 														<option>RPL Custodian</option>
@@ -2378,7 +2388,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
 													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
@@ -2386,7 +2396,7 @@
 													Send
 												</button>
 											</div>
-											<div class="basic-table__col w-12 to-right">
+											<div class="basic-table__col w-15 to-right">
 												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
 													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
@@ -2404,161 +2414,76 @@
 						</div>
 						<div class="js-tabs-panel" id="panel-funds-orders">
 							<div class="flex-1-1 scroll-y scrollbar-right">
-								<div class="basic-table med-height">
+								<div class="basic-table bordered">
 									<div class="basic-table__row head">
-										<div class="basic-table__col w-10 sorted-down">
-											Time
-											<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-											</svg>
+										<div class="basic-table__col w-25">
+											Date
 										</div>
-										<div class="basic-table__col w-10">
-											Pair
-											<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-											</svg>
+										<div class="basic-table__col w-25">
+											Exchange -> Receive
 										</div>
-										<div class="basic-table__col w-10">
-											Type
-											<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-											</svg>
+										<div class="basic-table__col w-25">
+											Price Per Coin
 										</div>
-										<div class="basic-table__col w-7">
-											Side
-											<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-											</svg>
-										</div>
-										<div class="basic-table__col w-12">
-											Price
-											<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-											</svg>
-										</div>
-										<div class="basic-table__col w-10">
-											Amount
-											<svg class="basic-table__arrow-sort" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-											</svg>
-										</div>
-										<div class="basic-table__col w-10">
-											Filled
-										</div>
-										<div class="basic-table__col w-10">
-											Total
-										</div>
-										<div class="basic-table__col w-10">
-											Trigger
-										</div>
-										<div class="basic-table__col w-10 centered">
-											<button class="basic-table__btn simple">Cancel All</button>
+										<div class="basic-table__col w-25">
+											Completed
 										</div>
 									</div><!-- basic-table__row END -->
 
 									<div class="basic-table__row">
-										<div class="basic-table__col w-10">3m ago</div>
-										<div class="basic-table__col w-10">ETH/USDT</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-7">Buy</div>
-										<div class="basic-table__col w-12">479.91 USDT</div>
-										<div class="basic-table__col w-10">0.0411 ETH</div>
-										<div class="basic-table__col w-10">29</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10 centered">
-											<button class="basic-table__btn">Cancel</button>
-										</div>
+										<div class="basic-table__col w-25">Dec 16</div>
+										<div class="basic-table__col w-25">14012 USD -> 2.0000 BTC</div>
+										<div class="basic-table__col w-25">7006 USD</div>
+										<div class="basic-table__col w-25">82 orders on 9 Exchanges</div>
 									</div><!-- basic-table__row END -->
-									
+
 									<div class="basic-table__row">
-										<div class="basic-table__col w-10">3m ago</div>
-										<div class="basic-table__col w-10">ETH/USDT</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-7">Buy</div>
-										<div class="basic-table__col w-12">479.91 USDT</div>
-										<div class="basic-table__col w-10">0.0411 ETH</div>
-										<div class="basic-table__col w-10">29</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10 centered">
-											<button class="basic-table__btn">Cancel</button>
-										</div>
+										<div class="basic-table__col w-25">Dec 16</div>
+										<div class="basic-table__col w-25">14012 USD -> 2.0000 BTC</div>
+										<div class="basic-table__col w-25">7006 USD</div>
+										<div class="basic-table__col w-25">82 orders on 9 Exchanges</div>
 									</div><!-- basic-table__row END -->
-									
+
 									<div class="basic-table__row">
-										<div class="basic-table__col w-10">3m ago</div>
-										<div class="basic-table__col w-10">ETH/USDT</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-7">Buy</div>
-										<div class="basic-table__col w-12">479.91 USDT</div>
-										<div class="basic-table__col w-10">0.0411 ETH</div>
-										<div class="basic-table__col w-10">29</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10 centered">
-											<button class="basic-table__btn">Cancel</button>
-										</div>
+										<div class="basic-table__col w-25">Dec 16</div>
+										<div class="basic-table__col w-25">14012 USD -> 2.0000 BTC</div>
+										<div class="basic-table__col w-25">7006 USD</div>
+										<div class="basic-table__col w-25">82 orders on 9 Exchanges</div>
 									</div><!-- basic-table__row END -->
-									
+
 									<div class="basic-table__row">
-										<div class="basic-table__col w-10">3m ago</div>
-										<div class="basic-table__col w-10">ETH/USDT</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-7">Buy</div>
-										<div class="basic-table__col w-12">479.91 USDT</div>
-										<div class="basic-table__col w-10">0.0411 ETH</div>
-										<div class="basic-table__col w-10">29</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10 centered">
-											<button class="basic-table__btn">Cancel</button>
-										</div>
+										<div class="basic-table__col w-25">Dec 16</div>
+										<div class="basic-table__col w-25">14012 USD -> 2.0000 BTC</div>
+										<div class="basic-table__col w-25">7006 USD</div>
+										<div class="basic-table__col w-25">82 orders on 9 Exchanges</div>
 									</div><!-- basic-table__row END -->
-									
+
 									<div class="basic-table__row">
-										<div class="basic-table__col w-10">3m ago</div>
-										<div class="basic-table__col w-10">ETH/USDT</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-7">Buy</div>
-										<div class="basic-table__col w-12">479.91 USDT</div>
-										<div class="basic-table__col w-10">0.0411 ETH</div>
-										<div class="basic-table__col w-10">29</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10 centered">
-											<button class="basic-table__btn">Cancel</button>
-										</div>
+										<div class="basic-table__col w-25">Dec 16</div>
+										<div class="basic-table__col w-25">14012 USD -> 2.0000 BTC</div>
+										<div class="basic-table__col w-25">7006 USD</div>
+										<div class="basic-table__col w-25">82 orders on 9 Exchanges</div>
 									</div><!-- basic-table__row END -->
-									
+
 									<div class="basic-table__row">
-										<div class="basic-table__col w-10">3m ago</div>
-										<div class="basic-table__col w-10">ETH/USDT</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-7">Buy</div>
-										<div class="basic-table__col w-12">479.91 USDT</div>
-										<div class="basic-table__col w-10">0.0411 ETH</div>
-										<div class="basic-table__col w-10">29</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10 centered">
-											<button class="basic-table__btn">Cancel</button>
-										</div>
+										<div class="basic-table__col w-25">Dec 16</div>
+										<div class="basic-table__col w-25">14012 USD -> 2.0000 BTC</div>
+										<div class="basic-table__col w-25">7006 USD</div>
+										<div class="basic-table__col w-25">82 orders on 9 Exchanges</div>
 									</div><!-- basic-table__row END -->
-									
+
 									<div class="basic-table__row">
-										<div class="basic-table__col w-10">3m ago</div>
-										<div class="basic-table__col w-10">ETH/USDT</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-7">Buy</div>
-										<div class="basic-table__col w-12">479.91 USDT</div>
-										<div class="basic-table__col w-10">0.0411 ETH</div>
-										<div class="basic-table__col w-10">29</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10">xxx</div>
-										<div class="basic-table__col w-10 centered">
-											<button class="basic-table__btn">Cancel</button>
-										</div>
+										<div class="basic-table__col w-25">Dec 16</div>
+										<div class="basic-table__col w-25">14012 USD -> 2.0000 BTC</div>
+										<div class="basic-table__col w-25">7006 USD</div>
+										<div class="basic-table__col w-25">82 orders on 9 Exchanges</div>
+									</div><!-- basic-table__row END -->
+
+									<div class="basic-table__row">
+										<div class="basic-table__col w-25">Dec 16</div>
+										<div class="basic-table__col w-25">14012 USD -> 2.0000 BTC</div>
+										<div class="basic-table__col w-25">7006 USD</div>
+										<div class="basic-table__col w-25">82 orders on 9 Exchanges</div>
 									</div><!-- basic-table__row END -->
 								</div><!-- basic-table END -->
 							</div><!-- scroll-y END -->

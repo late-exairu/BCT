@@ -557,8 +557,8 @@ a {
   width: 100%;
   height: 100%;
   /*dev size*/
-  /* 	max-width: 1280px;
-	max-height: 720px; */ }
+  /*max-width: 1280px;
+	max-height: 720px;*/ }
   .wrapper.no-bar {
     padding: 0; }
 
@@ -645,6 +645,7 @@ h6 {
   width: 100%;
   font-family: "open_sans", sans-serif;
   font-size: 12px;
+  line-height: 1.2;
   color: var(--clr-textD);
   background: var(--clr-block); }
   .basic-table__body {
@@ -666,14 +667,14 @@ h6 {
     .basic-table__row:first-child {
       border: none; }
     .basic-table__row.head {
-      font-size: 11px;
+      /*font-size: 11px;*/
       font-weight: 700; }
       .basic-table__row.head .basic-table__col {
         position: relative;
-        height: 48px;
+        height: 40px;
         padding: 4px 4px;
         color: var(--clr-textL);
-        align-items: flex-end; }
+        /*align-items: flex-end;*/ }
         .basic-table__row.head .basic-table__col:first-child {
           padding-left: 10px; }
         .basic-table__row.head .basic-table__col.sorted-down, .basic-table__row.head .basic-table__col.sorted-up {
@@ -686,8 +687,9 @@ h6 {
       .basic-table__row.head.active {
         font-weight: 700; }
     .basic-table__row.active {
-      background: var(--clr-backLL);
-      font-weight: 600; }
+      background: var(--clr-back);
+      color: var(--clr-accent);
+      /*font-weight: 600;*/ }
     .basic-table__row.disabled {
       pointer-events: none;
       opacity: 0.3; }
@@ -695,6 +697,7 @@ h6 {
     height: 28px;
     border: 1px solid var(--clr-separatorD);
     border-radius: 3px;
+    line-height: 1.2;
     color: var(--clr-textD);
     min-width: 50px;
     max-width: 100%;
@@ -722,7 +725,7 @@ h6 {
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
   .basic-table__col {
     display: flex;
-    height: 40px;
+    height: 46px;
     align-items: center;
     padding: 2px 5px 2px 5px;
     flex: 0 0; }
@@ -903,6 +906,8 @@ h6 {
     padding: 3px 0 0;
     line-height: 1;
     color: var(--clr-textL); }
+  .basic-table.bordered .basic-table__row {
+    border-bottom: 1px solid var(--clr-separator); }
   .basic-table.med-height .basic-table__row.head .basic-table__col {
     height: 27px; }
   .basic-table.med-height .basic-table__col {
@@ -925,7 +930,7 @@ h6 {
       .basic-table.low-height .basic-table__col:first-child {
         padding-left: 10px; }
   .basic-table.bigger-font {
-    font-size: 14px; }
+    font-size: 13px; }
     .basic-table.bigger-font .smaller {
       font-size: 11px; }
   .basic-table .icon-curr {
@@ -4759,25 +4764,30 @@ body.compensate-for-scrollbar {
 .highcharts-credits {
   display: none; }
 
-.accounts-diagram {
+.accounts-diagram-wrap {
+  position: relative;
+  flex: 0 0 180px;
+  width: 180px;
   max-height: 100%;
   height: 100%;
-  background: var(--clr-back);
-  flex: 0 0 150px;
-  width: 150px;
-  border-right: 1px solid var(--clr-separator); }
+  background: var(--clr-back); }
   @media only screen and (min-height: 900px) {
-    .accounts-diagram {
+    .accounts-diagram-wrap {
       flex: 0 0 250px;
       width: 250px; } }
+
+.accounts-diagram {
+  position: relative;
+  height: 100%;
+  width: 100%; }
 
 #circleChartText {
   font-family: "open_sans", sans-serif;
   position: absolute;
   width: 150px;
-  top: calc(50% - 14px);
-  transform: translateY(-50%);
-  left: 0px;
+  top: calc(50% - 5px);
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%; }
   #circleChartText .wrap {
     text-align: center;
