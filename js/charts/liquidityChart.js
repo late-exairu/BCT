@@ -149,7 +149,7 @@ var liquidityChartOptions = {
                 fillColor: '',
                 lineWidth: 0,
                 lineColor: null,
-                symbol: 'url(' + location.origin + location.pathname + 'img/svg/circle.svg)',
+                symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)',
                 states: {
                     hover: {
                         enabled: true

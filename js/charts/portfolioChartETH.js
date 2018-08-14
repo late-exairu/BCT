@@ -163,7 +163,7 @@ var portfolioChartETHOptions = {
                 lineWidth: 0,
                 width: 0,
                 lineColor: null,
-                symbol: 'url(' + location.origin + location.pathname + 'img/svg/circle.svg)',
+                symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)',
                 states: {
                     hover: {
                         enabled: true
@@ -188,7 +188,7 @@ var portfolioChartETHOptions = {
     }]
 };
 
-$.getJSON(location.origin + location.pathname + 'data/exampleData.json', function (data) {
+$.getJSON(location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'data/exampleData.json', function (data) {
     portfolioChartData = data;
     portfolioChartBTCData = data;
     portfolioChartETHData = data;

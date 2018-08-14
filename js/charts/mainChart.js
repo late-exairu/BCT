@@ -16,7 +16,7 @@ var gradientColor = [
 ];
 
 // id of graph for highlight
-var mainGraphHighlighted = 6;
+var mainGraphHighlighted = 4;
 var mainGraphHover = null;
 var mainChartObj = Highcharts.chart('mainChart', {
 	legend: {
@@ -51,7 +51,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				lineWidth: 0,
 				width: 0,
 				lineColor: null,
-				symbol: 'url(' + location.origin + location.pathname + 'img/svg/circle.svg)',
+				symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)',
 				states: {
 					hover: {
 						enabled: true
@@ -392,8 +392,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				38, 40, 44, 46, 45, 47, 44, 48, 52, 54,
 				57, 59, 61, 66, 68, 70, 75, 79, 80, 80,
 			],
-			name: "Series 6",
-			lineWidth: 3,
+			name: "Series 4",
+			lineWidth: 4,
 			color: '#2B569A',
 			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
@@ -414,8 +414,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				7, 4, 5, 6, 4, 6, 5, 7, 4, 3,
 				4, 9, 13, 5, 14, 8, 19, 8, 14, 9,
 			],
-			name: "Series 7",
-			id: 7,
+			name: "Series 5",
+			id: 5,
 			enableMouseTracking: false,
 		},
 		{
@@ -427,8 +427,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				17, 14, 8, 20, 21, 19, 19, 17, 23, 18,
 				17, 21, 25, 22, 21, 19, 17, 14, 12, 16,
 			],
-			name: "Series 8",
-			id: 8,
+			name: "Series 6",
+			id: 6,
 			enableMouseTracking: false,
 		},
 /* 		{

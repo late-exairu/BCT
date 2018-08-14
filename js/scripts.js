@@ -1,7 +1,6 @@
 $(function () {
 
 	/* Cubic slider for Orders */
-
 	var $cubicSlider = $(".js-cubic-slider");
 
 	$cubicSlider.ionRangeSlider({
@@ -123,17 +122,7 @@ $(function () {
 		}
 
 
-
 	});
-
-	/*---------------------------------------------------*/
-	/* account-js-checkbox-switchers */
-	/*---------------------------------------------------*/
-
-	$('.js-account-stats input[type=checkbox]').on('click', function () {
-		// for future Real trading option
-	});
-
 
 	/*---------------------------------------------------*/
 	/* functions for change theme */
@@ -143,21 +132,26 @@ $(function () {
 		var darkTheme = $('#switch-theme:checked').length;
 		if (darkTheme) {
 			$('body').addClass('dark-theme');
+		} else {
+			$('body').removeClass('dark-theme');
+		}
+		changeTheme();
+	});
 
+	function changeTheme() {
+		if ($('body').hasClass('dark-theme')) {
 			var backColor = '#18202d';
 			var gridColor = '#24425b';
 			var labelColor = '#9BA6B2';
 			var lineColor = '#4F6C82';
 		} else {
-			$('body').removeClass('dark-theme');
-
 			var backColor = '#ffffff';
 			var gridColor = '#ccd6eb';
 			var labelColor = '#666666';
 			var lineColor = '#BFC0C0';
 		}
 		changeChartsColors(backColor, gridColor, labelColor, lineColor);
-	});
+	}
 
 	/*---------------------------------------------------*/
 	/* change colors in all charts */
@@ -276,20 +270,15 @@ $(function () {
 				}
 			},
 			plotOptions: {
-				areaspline: {
-					color: lineColor
-				}
+				/* 				areaspline: {
+									color: lineColor
+								} */
 			}
 		};
 
 		if (mainChartObj) {
 			mainChartObj.series.map(function (item, index) {
 				if (item.type == 'areaspline') {
-					item.setOptions({
-						color: lineColor,
-						lineWidth: item.options.lineWidth,
-						id: item.options.id
-					});
 					// add fill color on theme change 
 					if (index == mainGraphHighlighted - 1) {
 						item.setOptions({
@@ -299,7 +288,15 @@ $(function () {
 							},
 							id: item.options.id,
 							lineWidth: item.options.lineWidth,
-							color: item.options.color
+							color: item.options.color,
+							enableMouseTracking: item.options.enableMouseTracking
+						});
+					} else {
+						item.setOptions({
+							color: lineColor,
+							lineWidth: item.options.lineWidth,
+							id: item.options.id,
+							enableMouseTracking: item.options.enableMouseTracking
 						});
 					}
 				}
@@ -469,5 +466,24 @@ $(function () {
 		dots: true,
 		infinite: false,
 	});
+
+	// On before slide change
+	$('.portfolioChartParent').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		console.log(event);
+		console.log(slick);
+		console.log(currentSlide);
+		console.log(nextSlide);
+	});
+
+
+	/*---------------------------------------------------*/
+	/* JS for ADVANCED page */
+	/*---------------------------------------------------*/
+
+	if ($('body').hasClass('advanced')) {
+		changeTheme();
+		liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
+	}
+
 
 });
