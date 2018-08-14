@@ -213,7 +213,11 @@
 
 	&.bordered{
 		.basic-table__row{
-			border-bottom: 1px solid var(--clr-separator);
+			border-top: 1px solid var(--clr-separator);
+
+			&:first-child{
+				border: none;
+			}
 		}
 	}
 

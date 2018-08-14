@@ -88,8 +88,10 @@
 			&:hover{
 				border-color: var(--clr-textL);
 
-				.graph-bar__icon{
+				.graph-bar__icon,
+				.graph-bar__text{
 					fill: var(--clr-text);
+					color: var(--clr-text);
 				}
 			}
 		}
@@ -98,7 +100,7 @@
 	&__text{
 		font-size: 13px;
 		padding: 0 10px;
-		color: var(--clr-text);
+		color: var(--clr-important);
 
 		span{
 			font-size: 15px;

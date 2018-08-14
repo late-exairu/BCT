@@ -14,11 +14,11 @@
 	background: transparent;
 	z-index: 5;
 	transition: all .1s;
+	border: 1px solid var(--clr-separator);
+	border-radius: var(--border-radius);
 
 	&:hover{
-		&:after{
-			opacity: 0.5;
-		}
+
 	}
 	
 	&__item{
@@ -26,8 +26,13 @@
 		align-items: center;
 		height: 100%;
 		position: relative;
-		padding: 5px 5px;
+		padding: 5px 12px;
 		margin: 0 0 0 1px;
+		border-left: 1px solid var(--clr-separator);
+
+		&:first-child{
+			border: none;
+		}
 
 		&.inline{
 			display: flex;
@@ -35,20 +40,6 @@
 			.gbar-info__nums{
 				margin: 2px 0 0 3px;
 			}
-		}
-
-		&:after{
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			border-radius: var(--border-radius);
-			background: var(--clr-back);
-			transition: all .2s;
-			opacity: 0.75;
-			z-index: -1;
 		}
 	}
 	

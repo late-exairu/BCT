@@ -25,7 +25,7 @@
 	<![endif]-->
 </head>
 
-<body>
+<body class="dark-theme">
 
 <div class="wrapper">
 	<div class="left-bar">
@@ -36,12 +36,6 @@
 			</button> -->
 			
 			<div class="nav-bar">
-				<button class="nav-bar__item btn">
-					<svg class="nav-bar__icon reload" role="img" aria-hidden="true">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#reload"></use>
-					</svg>
-				</button>
-
 				<a class="nav-bar__item" href="#">
 					<svg class="nav-bar__icon ico" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
@@ -92,7 +86,7 @@
 			</div>
 			
 			<div class="user-bar">
-				<div class="theme-switch">
+				<!-- <div class="theme-switch">
 					<input class="theme-switch__checkbox" type="checkbox" name="btn-switch-theme" id="switch-theme" />
 					<label class="theme-switch__label" for="switch-theme">
 						<div class="theme-switch__switch">
@@ -108,7 +102,7 @@
 							</div>
 						</div>
 					</label>
-				</div>
+				</div> -->
 
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon two-windows" role="img" aria-hidden="true">
@@ -252,7 +246,7 @@
 
 						<div class="d-flex flex-h-fix">
 							<div class="c-block__col">
-								<div class="basic-table low-height d-flex-col h-100 flex-h-fix">
+								<div class="basic-table bordered low-height d-flex-col h-100 flex-h-fix">
 									<div class="basic-table__row head">
 										<div class="basic-table__col w-35">Price (USDT)</div>
 										<div class="basic-table__col w-32">Amount (ETH)</div>
@@ -433,7 +427,7 @@
 
 								<div class="c-block__text-sep">8199.75 USD</div>
 
-								<div class="basic-table low-height scroll-y-hidden">
+								<div class="basic-table bordered low-height scroll-y-hidden">
 									<div class="basic-table__row">
 										<div class="basic-table__col w-35 clr-blue">0.072419</div>
 										<div class="basic-table__col w-32">3.131000</div>
@@ -632,7 +626,7 @@
 
 						<div class="d-flex flex-h-fix">
 							<div class="c-block__col">
-								<div class="basic-table low-height d-flex-col h-100">
+								<div class="basic-table bordered low-height d-flex-col h-100">
 									<div class="basic-table__row head">
 										<div class="basic-table__col w-35">Recent Trades</div>
 										<div class="basic-table__col w-32">Amount (ETH)</div>
@@ -1578,6 +1572,10 @@
 
 						<div class="graph-bar__right">
 							<div class="graph-bar__group">
+								<a class="graph-bar__item btn" href="index.html">
+									<div class="graph-bar__text">Basic Mode</div>
+								</a>
+
 								<button class="graph-bar__item btn" id="js-graph-size-toggle">
 									<svg class="graph-bar__icon expand" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#expand"></use>
@@ -1711,7 +1709,7 @@
 
 			<div class="main-cols__right-bottom m-top">
 				<div class="c-block d-flex-col flex-1-1 flex-h-fix js-account-stats">
-					<div class="c-block-head">
+					<div class="c-block-head no-bg">
 						<div class="c-block-head__left js-dropdown-wrap">
 							<h2 class="c-block-head__title btn js-dropdown-toggle">
 								Portfolio
@@ -1743,14 +1741,12 @@
 							</ul>
 						</div>
 
-						<div class="c-block-head__right align-f-end js-open-orders hidden">
-							<div class="btn-switch inline big">
-								<input class="btn-switch__radio" type="checkbox" id="switch-trading-real" name="switch-trading" />			
-								<label class="btn-switch__label" for="switch-trading-real">
-									Open Orders
-									<div class="btn-switch__switch"></div>
-								</label>
-							</div>
+						<div class="c-block-head__right">
+							<ul class="portfolio-menu">
+								<li class="portfolio-menu__item current">Portfolio</li>
+								<li class="portfolio-menu__item">Wallet</li>
+								<li class="portfolio-menu__item">Order History</li>
+							</ul>
 						</div>
 					</div><!-- c-block-head END -->
 

@@ -83,9 +83,9 @@
   /*background color light*/
   --clr-backLL:		#1e2634;
   /*background color lighter*/
-  --clr-back:			#171c26;
+  --clr-back:			#1B293F;
   /*background color basic*/
-  --clr-back-new:		#10161d;
+  --clr-back-new:		#131A23;
   /*background color basic*/
   --clr-backA:		#213040;
   /*background color accented*/
@@ -907,7 +907,9 @@ h6 {
     line-height: 1;
     color: var(--clr-textL); }
   .basic-table.bordered .basic-table__row {
-    border-bottom: 1px solid var(--clr-separator); }
+    border-top: 1px solid var(--clr-separator); }
+    .basic-table.bordered .basic-table__row:first-child {
+      border: none; }
   .basic-table.med-height .basic-table__row.head .basic-table__col {
     height: 27px; }
   .basic-table.med-height .basic-table__col {
@@ -1050,7 +1052,10 @@ h6 {
 .c-block {
   background: var(--clr-block);
   /*border: 1px solid var(--clr-separator);*/
-  border-radius: var(--border-radius); }
+  border-radius: var(--border-radius);
+  border-left: 1px solid var(--clr-separator); }
+  .c-block:first-child {
+    border-left: none; }
   .c-block__section {
     /*border-bottom: 1px solid var(--clr-separator);*/ }
   .c-block__content {
@@ -1821,13 +1826,13 @@ h6 {
   .cubic-slider .irs-line {
     top: 8px;
     height: 1px;
-    background: var(--clr-textL); }
+    background: var(--clr-separatorD); }
   .cubic-slider .irs-bar,
   .cubic-slider .irs-bar-edge {
     top: 8px;
     height: 1px;
     width: 10px;
-    background: var(--clr-textL); }
+    background: var(--clr-separatorD); }
   .cubic-slider .irs-single {
     display: none; }
   .cubic-slider .irs-grid {
@@ -1839,7 +1844,8 @@ h6 {
     right: 0; }
   .cubic-slider .irs-grid-pol {
     width: 1px;
-    height: 5px; }
+    height: 5px;
+    background: var(--clr-separatorD); }
     .cubic-slider .irs-grid-pol.small {
       display: none; }
   .cubic-slider .irs-grid-text {
@@ -1849,7 +1855,7 @@ h6 {
     height: 16px;
     border-radius: 3px;
     background: var(--clr-block);
-    border: 1px solid var(--clr-textL);
+    border: 1px solid var(--clr-separatorD);
     padding: 0;
     color: #fff;
     text-align: center;
@@ -1858,12 +1864,14 @@ h6 {
     transform: translateY(-50%);
     z-index: 1;
     cursor: pointer; }
+    .cubic-slider .single:hover {
+      border-color: var(--clr-separatorD); }
     .cubic-slider .single:after {
       content: '';
       position: absolute;
       width: 2px;
       height: 2px;
-      border: 1px solid var(--clr-textL);
+      border: 1px solid var(--clr-separatorD);
       border-radius: 50%;
       right: 2px;
       top: 50%;
@@ -1882,32 +1890,23 @@ h6 {
   flex: 0 0 auto;
   background: transparent;
   z-index: 5;
-  transition: all .1s; }
-  .graph-info:hover:after {
-    opacity: 0.5; }
+  transition: all .1s;
+  border: 1px solid var(--clr-separator);
+  border-radius: var(--border-radius); }
   .graph-info__item {
     display: flex;
     align-items: center;
     height: 100%;
     position: relative;
-    padding: 5px 5px;
-    margin: 0 0 0 1px; }
+    padding: 5px 12px;
+    margin: 0 0 0 1px;
+    border-left: 1px solid var(--clr-separator); }
+    .graph-info__item:first-child {
+      border: none; }
     .graph-info__item.inline {
       display: flex; }
       .graph-info__item.inline .gbar-info__nums {
         margin: 2px 0 0 3px; }
-    .graph-info__item:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: var(--border-radius);
-      background: var(--clr-back);
-      transition: all .2s;
-      opacity: 0.75;
-      z-index: -1; }
   .graph-info__title {
     font-size: 12px;
     color: var(--clr-important);
@@ -1987,12 +1986,14 @@ h6 {
       transition: all 0.1s; }
       .graph-bar__item.btn:hover {
         border-color: var(--clr-textL); }
-        .graph-bar__item.btn:hover .graph-bar__icon {
-          fill: var(--clr-text); }
+        .graph-bar__item.btn:hover .graph-bar__icon,
+        .graph-bar__item.btn:hover .graph-bar__text {
+          fill: var(--clr-text);
+          color: var(--clr-text); }
   .graph-bar__text {
     font-size: 13px;
     padding: 0 10px;
-    color: var(--clr-text); }
+    color: var(--clr-important); }
     .graph-bar__text span {
       font-size: 15px;
       font-weight: 700;
@@ -2305,7 +2306,8 @@ Blocks from left bar
 
  */
 .dark-theme .left-bar {
-  --clr-important: #305777; }
+  --clr-important: #305777;
+  --clr-back: #0C1017; }
 
 .left-bar {
   position: fixed;
