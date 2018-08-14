@@ -26,7 +26,7 @@ var circleChartOptions = {
         spacingLeft: 0,
         spacingTop: 0,
         backgroundColor: '#ffffff',
-        marginLeft:0
+        marginLeft: 0
     },
     title: null,
     plotOptions: {
@@ -59,7 +59,7 @@ var circleChartOptions = {
         formatter: function () {
             var currency = this.key;
             var svgString = '';
-            $('#panel-funds-portfolio .basic-table__row').each(function () {
+            $('#panel-funds-wallet .basic-table__row').each(function () {
                 if ($(this).find('.w-20').text().indexOf(currency) != -1) {
                     svgString = $(this).find('.w-20 svg').clone();
                     return false;
@@ -67,11 +67,11 @@ var circleChartOptions = {
             });
 
             return '<div class="tooltipCircle">' + svgString[0].outerHTML +
-                    '<div class="mainInfo">' + 
-                        '<div class="currency">' +  currency + '</div>' +
-                        '<div class="values">' + circleChartTooltipData[currency]['price'] + ' | ' + circleChartTooltipData[currency]['value'] + '</div>' +
-                    '</div>' +
-                    '<div class="percent"><span>' + circleChartTooltipData[currency]['percent'] + '</span>%</div>' +
+                '<div class="mainInfo">' +
+                '<div class="currency">' + currency + '</div>' +
+                '<div class="values">' + circleChartTooltipData[currency]['price'] + ' | ' + circleChartTooltipData[currency]['value'] + '</div>' +
+                '</div>' +
+                '<div class="percent"><span>' + circleChartTooltipData[currency]['percent'] + '</span>%</div>' +
                 '</div>';
         }
     },
@@ -101,17 +101,19 @@ var circleChartOptions = {
 
 
 // change circle chart size on window resize
-$(window).resize(function () {
+$(window).resize(drawCircleChart);
+
+function drawCircleChart() {
     var pieChartSize = $('#circleChart').width() - 20;
     var centerX = $('#circleChart').width() / 2 - 20;
-	var centerY = $('#circleChart').height() / 2 - 20;
-    if (circleChartObj)
+    var centerY = $('#circleChart').height() / 2 - 20;
+    circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
     circleChartObj.update({
-        plotOptions:{
+        plotOptions: {
             pie: {
                 size: pieChartSize,
                 center: [centerX, centerY],
             }
         }
     });
-});
+}

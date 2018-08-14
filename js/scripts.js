@@ -111,7 +111,7 @@ $(function () {
 
 		// Wallet tab
 		if ($(this).index() == 1) {
-			circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
+			drawCircleChart();
 		}
 
 	});
