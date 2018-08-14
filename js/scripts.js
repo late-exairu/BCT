@@ -103,49 +103,17 @@ $(function () {
 	/* account-js-menu */
 	/*---------------------------------------------------*/
 
-	$('.js-account-stats .menu-dropdown__item').on('click', function () {
-		if ($(this).attr('id')) {
-			var btnText = $(this).find('button').text();
-			var accountStatsHeader = $('.js-account-stats .c-block-head h2.c-block-head__title');
-			var svgFromHeader = $(accountStatsHeader).find('svg').clone();
-			if (btnText == 'Exchanges') btnText = 'Global Liquidity';
-			accountStatsHeader.text(btnText + ' ').append(svgFromHeader);
+	$('.js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function () {
+		$('.js-account-stats .portfolio-menu .portfolio-menu__item').removeClass('current');
+		$(this).addClass('current');
+		$('.js-tabs-panel').removeClass('active');
+		$('.js-tabs-panel').eq($(this).index()).addClass('active');
 
-			$('.js-account-stats .js-tabs-tab, .js-account-stats .js-tabs-panel').removeClass('active');
-			$(this).add('#' + $(this).attr('id').replace(/\s*tab\s*/, 'panel')).addClass('active');
-			$(this).focus();
-
-			if ($(this).attr('id') == 'tab-funds-portfolio') {
-				$('#orderBook').addClass('hidden');
-				$('#telegram').removeClass('hidden');
-				portfolioChartOptions.series = [{
-					data: portfolioChartData
-				}];
-				portfolioChartOptions.rangeSelector.selected = portfolioChartCurrentRange;
-				portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
-			}
-
-			if ($(this).attr('id') == 'tab-funds-history') {
-				if ($('#switch-trading-real:checked').length) {
-					$('.main-cols__right-bottom .js-tabs-panel').removeClass('active');
-					$('#panel-funds-orders').addClass('active');
-				}
-			}
-
-			if ($(this).attr('id') == 'tab-dashboard-liquidity') {
-				$('#telegram').addClass('hidden');
-				$('#orderBook').removeClass('hidden');
-				liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
-			}
-			
-			redrawMainChart();
-			redrawOtherCharts();
-
-			$('.js-open-orders').addClass('hidden');
-			if ($(this).attr('id') == 'tab-funds-history') {
-				$('.js-open-orders').removeClass('hidden');
-			}
+		// Wallet tab
+		if ($(this).index() == 1) {
+			circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
 		}
+
 	});
 
 	/*---------------------------------------------------*/
@@ -348,25 +316,17 @@ $(function () {
 	/* change range on Portfolio Chart */
 	/*---------------------------------------------------*/
 
-	$('#portfolioChartRange span').click(function () {
-		$('#portfolioChartRange span').removeClass('active');
-		$(this).addClass('active');
-		if ($(this).index() != 0) {
-			$('.circleDiagramParent').css('display', 'none');
-			$('.portfolioChartParent').css('display', 'flex');
-			portfolioChartCurrentRange = $(this).index() - 1;
-			portfolioChartObj.rangeSelector.clickButton(portfolioChartCurrentRange, {}, true);
+	$('.portfolio-period .portfolio-period__item').click(function () {
+		$('.portfolio-period .portfolio-period__item').removeClass('current');
+		$(this).addClass('current');
+		portfolioChartCurrentRange = $(this).index();
+		portfolioChartObj.rangeSelector.clickButton(portfolioChartCurrentRange, {}, true);
 
-			// change text in portfolioChart
-			$('#portfolioChartText div:last-child p').text(portfolioChartArrChanges[$(this).index() - 1][0]);
-			$('#portfolioChartText div:last-child span:nth-child(2)').text(portfolioChartArrChanges[$(this).index() - 1][1]);
-			$('#portfolioChartText div:last-child span:nth-child(3)').text(portfolioChartArrChanges[$(this).index() - 1][2]);
-			portfolioChartObj.reflow();
-		} else {
-			$('.portfolioChartParent').css('display', 'none');
-			$('.circleDiagramParent').css('display', 'flex');
-			circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
-		}
+		// change text in portfolioChart
+		/* 			
+		$('#portfolioChartText div:last-child p').text(portfolioChartArrChanges[$(this).index() - 1][0]);
+		$('#portfolioChartText div:last-child span:nth-child(2)').text(portfolioChartArrChanges[$(this).index() - 1][1]);
+		$('#portfolioChartText div:last-child span:nth-child(3)').text(portfolioChartArrChanges[$(this).index() - 1][2]); */
 	});
 
 
@@ -435,7 +395,6 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.basic-table__row.head > div').click(function () {
-
 		if ($(this).hasClass('sorted-down')) {
 			$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-down');
 			$(this).addClass('sorted-up');
@@ -485,9 +444,12 @@ $(function () {
 		$.fancybox.close();
 	});
 
+	/*---------------------------------------------------*/
+	/* Portfolio charts slider settings */
+	/*---------------------------------------------------*/
 
 	$('.portfolioChartParent').slick({
-		arrows:false,
+		arrows: false,
 		dots: true,
 	});
 

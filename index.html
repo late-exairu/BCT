@@ -1943,23 +1943,42 @@
 
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="js-tabs-panel active" id="panel-funds-portfolio">
-
 							<ul class="portfolio-period">
-								<li class="portfolio-period__item current">1h</li>
-								<li class="portfolio-period__item">1D</li>
+								<li class="portfolio-period__item">1h</li>
+								<li class="portfolio-period__item current">1D</li>
 								<li class="portfolio-period__item">1M</li>
 								<li class="portfolio-period__item">1Y</li>
 								<li class="portfolio-period__item">ALL</li>
 							</ul>
-
+							<div class="portfolioChartParent w-100">
+								<div id="portfolioChartGeneral" style="width: 100%;"></div>
+								<div id="portfolioChartGeneral" style="width: 100%;"></div>
+<!-- 								<div id="portfolioChartText">
+									<div>
+										<span>$</span>
+										<span>6,709</span>
+										<span>.93</span>
+										<p>Portfolio value</p>
+									</div>
+									<div>
+										<span>$</span>
+										<span>709</span>
+										<span>.93</span>
+										<p>Change since last month</p>
+									</div>
+								</div> -->
+							</div>
+						</div><!-- js-tabs-panel END -->
+						<div class="js-tabs-panel" id="panel-funds-wallet">
 							<div class="circleDiagramParent w-100">
 								<div class="accounts-diagram" id="circleChart"></div>
 								<div id="circleChartText">
 									<div class="wrap">
 										<p class="value">
-											<span>$</span>6,359<span>.50</span>
+											<span>$</span>6,359
+											<span>.50</span>
 										</p>
-										<p class="title">Total balance</span>
+										<p class="title">Total balance</p>
 									</div>
 								</div>
 								<div class="flex-1-1 scroll-y scrollbar-right">
@@ -2006,7 +2025,7 @@
 											</div>
 										</div>
 										<!-- basic-table__row END -->
-								
+
 										<div class="basic-table__row">
 											<div class="basic-table__col w-20" data-percent="20">
 												<svg class="basic-table__curr icon-curr clr-ethereum" role="img" aria-hidden="true">
@@ -2049,7 +2068,7 @@
 											</div>
 										</div>
 										<!-- basic-table__row END -->
-								
+
 										<div class="basic-table__row disabled">
 											<div class="basic-table__col w-20">
 												<svg class="basic-table__curr icon-curr clr-bitcoincash" role="img" aria-hidden="true">
@@ -2090,7 +2109,7 @@
 											</div>
 										</div>
 										<!-- basic-table__row END -->
-								
+
 										<div class="basic-table__row disabled">
 											<div class="basic-table__col w-20">
 												<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">
@@ -2131,7 +2150,7 @@
 											</div>
 										</div>
 										<!-- basic-table__row END -->
-								
+
 										<div class="basic-table__row disabled">
 											<div class="basic-table__col w-20">
 												<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
@@ -2172,7 +2191,7 @@
 											</div>
 										</div>
 										<!-- basic-table__row END -->
-								
+
 										<div class="basic-table__row disabled">
 											<div class="basic-table__col w-20">
 												<svg class="basic-table__curr icon-curr clr-bitcoincash" role="img" aria-hidden="true">
@@ -2213,7 +2232,7 @@
 											</div>
 										</div>
 										<!-- basic-table__row END -->
-								
+
 										<div class="basic-table__row disabled">
 											<div class="basic-table__col w-20">
 												<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">
@@ -2254,7 +2273,7 @@
 											</div>
 										</div>
 										<!-- basic-table__row END -->
-								
+
 										<div class="basic-table__row disabled">
 											<div class="basic-table__col w-20">
 												<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
@@ -2295,7 +2314,7 @@
 											</div>
 										</div>
 										<!-- basic-table__row END -->
-								
+
 										<div class="basic-table__row disabled">
 											<div class="basic-table__col w-20">
 												<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
@@ -2336,7 +2355,7 @@
 											</div>
 										</div>
 										<!-- basic-table__row END -->
-								
+
 										<div class="basic-table__row disabled">
 											<div class="basic-table__col w-20">
 												<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
@@ -2382,31 +2401,7 @@
 								</div>
 								<!-- scroll-y -->
 							</div>
-							<div class="portfolioChartParent w-100">
-								<div id="portfolioChartGeneral" style="width: 100%;"></div>
-								<div id="portfolioChartGeneral" style="width: 100%;"></div>
-<!-- 								<div id="portfolioChartText">
-									<div>
-										<span>$</span>
-										<span>6,709</span>
-										<span>.93</span>
-										<p>Portfolio value</p>
-									</div>
-									<div>
-										<span>$</span>
-										<span>709</span>
-										<span>.93</span>
-										<p>Change since last month</p>
-									</div>
-								</div> -->
-							</div>
-							<div id="portfolioChartRange">
-								<span>NOW</span>
-								<span class="active">1D</span>
-								<span>ALL</span>
-							</div>
-						</div><!-- js-tabs-panel END -->
-
+						</div>
 						<div class="js-tabs-panel" id="panel-funds-orders">
 							<div class="flex-1-1 scroll-y scrollbar-right">
 								<div class="basic-table med-height">

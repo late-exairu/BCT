@@ -3,14 +3,14 @@
 /*---------------------------------------------------*/
 
 var portfolioChartArrChanges = [
-    ['Change since last day','10','.34'],
-   // ['Change since last month','709','.93'],
-   // ['Change since last year','3,122','.18'],
+    ['Change since last day', '10', '.34'],
+    // ['Change since last month','709','.93'],
+    // ['Change since last year','3,122','.18'],
     ['Change since inception', '6,709', '.93'],
 ];
 var portfolioChartData = null;
 var portfolioChartObj = null;
-var portfolioChartCurrentRange = 0;
+var portfolioChartCurrentRange = 1;
 var portfolioChartOptions = {
     chart: {
         type: 'areaspline',
@@ -54,18 +54,21 @@ var portfolioChartOptions = {
         labelStyle: {
             visibility: 'hidden'
         },
-        buttons: [
+        buttons: [{
+                type: 'day',
+                count: 1,
+            },
             {
                 type: 'week',
                 count: 1,
-            }, 
-/*             {
+            },
+            {
                 type: 'month',
                 count: 1,
             }, {
                 type: 'year',
                 count: 1,
-            },  */
+            },
             {
                 type: 'all',
             }
