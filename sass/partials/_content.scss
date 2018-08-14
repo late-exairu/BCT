@@ -30,10 +30,8 @@
 }
 
 .portfolio-stats{
-	position: absolute;
+	position: relative;
 	display: flex;
-	left: 14px;
-	top: 12px;
 
 	&__currency{
 		width: 32px;
@@ -74,12 +72,11 @@
 
 .portfolio-menu{
 	display: flex;
-	position: absolute;
-	right: 0;
-	top: 6px;
+	position: relative;
 	font-size: 12px;
 	padding: 0;
-	margin: 0;
+	margin: 0 -10px 0 0;
+	height: 22px;
 	list-style: none;
 
 	&:after{
@@ -126,11 +123,12 @@
 	display: flex;
 	position: absolute;
 	right: 16px;
-	top: 42px;
+	top: 0;
 	font-size: 7px;
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	z-index: 1;
 
 	&__item{
 		display: flex;

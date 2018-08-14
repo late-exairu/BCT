@@ -12,6 +12,10 @@
 	background: var(--clr-back);
 	border-radius: 5px 5px 0 0;
 
+	&.no-bg{
+		background: transparent;
+	}
+
 	&__left{
 		position: relative;
 		margin: 0 auto 0 0;
