@@ -2882,7 +2882,11 @@ body.menubar-in #user-btn:before {
     .portfolio-stats__amount span {
       position: relative;
       font-size: 16px;
-      top: -6px; }
+      top: -6px;
+      margin: 0 -3px; }
+      .portfolio-stats__amount span:nth-child(2) {
+        font-size: 24px;
+        top: 0px; }
   .portfolio-stats__amount-tip {
     font-size: 10px;
     color: var(--clr-textL);

@@ -137,7 +137,7 @@ var portfolioChartBTCOptions = {
                 xPos = 5;
             }
             return {
-                x: point.plotX,
+                x: point.plotX - 60,
                 //y: point.plotY - 45
                 y: point.plotY
             };

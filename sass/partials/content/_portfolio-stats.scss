@@ -25,6 +25,11 @@
 			position: relative;
 			font-size: 16px;
 			top: -6px;
+			margin: 0 -3px;
+			&:nth-child(2){
+				font-size: 24px;
+				top: 0px;
+			}
 		}
 	}
 
