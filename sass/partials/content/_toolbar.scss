@@ -199,6 +199,8 @@
 	transition: all 0.1s;
 	--icon-scale: 0.8;
 
+
+	&.tool-reload		{ width: calc(25px * var(--icon-scale)); height: calc(25px * var(--icon-scale)); }
 	&.tool-cross		{ width: calc(24px * var(--icon-scale)); height: calc(24px * var(--icon-scale)); }
 	&.tool-trend		{ width: calc(22px * var(--icon-scale)); height: calc(20px * var(--icon-scale)); }
 	&.tool-pitchfork	{ width: calc(25px * var(--icon-scale)); height: calc(23px * var(--icon-scale)); }
