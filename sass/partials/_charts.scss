@@ -23,9 +23,7 @@
 	transform: translateY(-50%);
 	left: 0px;
 	border-radius: 50%;
-	@media only screen and (min-height: 900px) {
-		width: 250px;
-	}
+
 	.wrap {
 		text-align: center;
 		color: var(--clr-textD);
@@ -53,6 +51,23 @@
 			font-weight: 700;
 			padding: 0;
 			margin: 0;
+		}
+	}
+
+	@media only screen and (min-height: 900px) {
+		width: 250px;
+
+		.wrap {
+			.value {
+				font-size: 46px;
+				span {
+					top: 2px;
+					font-size: 26px;
+				}
+			}
+			.title {
+				font-size: 16px;
+			}
 		}
 	}
 }
