@@ -4949,10 +4949,10 @@ body.compensate-for-scrollbar {
     position: absolute; }
   #panel-dashboard-liquidity .liquidityText .leftPart {
     bottom: 5px;
-    left: 50px; }
+    left: 10px; }
   #panel-dashboard-liquidity .liquidityText .rightPart {
     bottom: 5px;
-    right: 50px; }
+    right: 10px; }
   #panel-dashboard-liquidity .liquidityText .centerPart {
     top: 10%;
     left: 50%;

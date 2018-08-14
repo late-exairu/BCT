@@ -10,8 +10,8 @@ var liquidityChartOptions = {
         type: 'area',
         marginBottom:0,
         marginTop:0,
-        marginLeft:32,
-        marginRight:32
+        marginLeft:-10,
+        marginRight:-10
     },
     title: null,
     legend: {
@@ -32,7 +32,7 @@ var liquidityChartOptions = {
                             },
                         } */
             width: 1,
-            dashStyle: 'LongDash'
+            //dashStyle: 'LongDash'
         },
         type: 'datetime',
         dateTimeLabelFormats: {
@@ -40,7 +40,7 @@ var liquidityChartOptions = {
         },
         tickLength: 0,
         tickInterval: 0,
-        gridLineWidth: 1,
+        gridLineWidth: 0,
         labels: {
             enabled:false,
             formatter: function () {
@@ -56,10 +56,11 @@ var liquidityChartOptions = {
         },
     },
     yAxis: [{
+        gridLineWidth: 0,
         labels: {
             x: 0,
             y: -3,
-            enabled: true,
+            enabled: false,
             padding:0,
             step: 4,
             overflow: 'justify',
@@ -78,10 +79,11 @@ var liquidityChartOptions = {
         //minorTickLength: 0,
         max: 1600,
     }, {
+        gridLineWidth: 0,
         labels: {
             x: 0,
             y: -3,
-            enabled: true,
+            enabled: false,
             step: 4,
             overflow: 'justify',
             style: {
@@ -97,7 +99,7 @@ var liquidityChartOptions = {
        // minorTickLength: 0,
         max: 1600,
         linkedTo: 0,
-        opposite: true
+        opposite: true,
     }],
     tooltip: {
         backgroundColor: 'rgba(0,0,0,0)',
