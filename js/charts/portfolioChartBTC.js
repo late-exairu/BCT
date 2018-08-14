@@ -2,16 +2,16 @@
 /* js-portfolio diagram */
 /*---------------------------------------------------*/
 
-var portfolioChartArrChanges = [
+/* var portfolioChartArrChanges = [
     ['Change since last day', '10', '.34'],
     // ['Change since last month','709','.93'],
     // ['Change since last year','3,122','.18'],
     ['Change since inception', '6,709', '.93'],
-];
-var portfolioChartData = null;
-var portfolioChartObj = null;
-var portfolioChartCurrentRange = 1;
-var portfolioChartOptions = {
+]; */
+var portfolioChartBTCData = null;
+var portfolioChartBTCObj = null;
+var portfolioChartBTCCurrentRange = 1;
+var portfolioChartBTCOptions = {
     chart: {
         type: 'areaspline',
         backgroundColor: '#ffffff',
@@ -149,11 +149,11 @@ var portfolioChartOptions = {
     plotOptions: {
         areaspline: {
             lineWidth: 3,
-            color: '#2B569A',
+            color: '#F6921E',
             fillColor: {
                 linearGradient: [0, 0, 0, $('.js-account-stats').height() - 60],
                 stops: [
-                    [0, Highcharts.Color('#2B569A').setOpacity(0.4).get('rgba')],
+                    [0, Highcharts.Color('#F6921E').setOpacity(0.6).get('rgba')],
                     [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
                 ]
             },
@@ -188,8 +188,11 @@ var portfolioChartOptions = {
     }]
 };
 
-/* $.getJSON(location.origin + location.pathname + 'data/exampleData.json', function (data) {
+$.getJSON(location.origin + location.pathname + 'data/exampleData.json', function (data) {
     portfolioChartData = data;
+    portfolioChartBTCData = data;
     portfolioChartOptions.series[0].data = portfolioChartData;
+    portfolioChartBTCOptions.series[0].data = portfolioChartBTCData;
     portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
-}); */
+    portfolioChartBTCObj = Highcharts.stockChart('portfolioChartBTC', portfolioChartBTCOptions);
+});

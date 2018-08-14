@@ -76,7 +76,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			states: {
 				hover: {
 					enabled: true,
-					lineWidth: 4
+					lineWidth: 3
 				}
 			},
 			events: {
@@ -393,7 +393,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				57, 59, 61, 66, 68, 70, 75, 79, 80, 80,
 			],
 			name: "Series 6",
-			lineWidth: 4,
+			lineWidth: 3,
 			color: '#2B569A',
 			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
