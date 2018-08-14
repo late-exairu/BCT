@@ -78,7 +78,7 @@ var circleChartOptions = {
     series: [{
         name: 'Percent',
         data: [
-            ['Ethereum', 20, 999],
+            ['Ethereum', 20],
             ['Bitcoin', 80],
         ],
         zones: [{

@@ -457,6 +457,7 @@ $(function () {
 	$('.portfolioChartParent').slick({
 		arrows: false,
 		dots: true,
+		infinite: false,
 	});
 
 });
