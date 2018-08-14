@@ -5068,8 +5068,7 @@ body.compensate-for-scrollbar {
     width: 32px;
     height: 32px;
     margin: 2px 10px 0 0;
-    flex: 0 0 32px;
-    background: var(--clr-text); }
+    flex: 0 0 32px; }
   .portfolio-stats__amount {
     line-height: 1;
     font-size: 24px;

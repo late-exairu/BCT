@@ -106,13 +106,23 @@ $(function () {
 	$('.js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function () {
 		$('.js-account-stats .portfolio-menu .portfolio-menu__item').removeClass('current');
 		$(this).addClass('current');
+
 		$('.js-tabs-panel').removeClass('active');
 		$('.js-tabs-panel').eq($(this).index()).addClass('active');
+
+		$('.portfolio-stats').addClass('hidden');
+
+		// Portfolio tab
+		if ($(this).index() == 0) {
+			$('.portfolio-stats').removeClass('hidden');
+		}
 
 		// Wallet tab
 		if ($(this).index() == 1) {
 			drawCircleChart();
 		}
+
+
 
 	});
 
