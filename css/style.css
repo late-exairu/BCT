@@ -1053,9 +1053,9 @@ h6 {
   background: var(--clr-block);
   /*border: 1px solid var(--clr-separator);*/
   border-radius: var(--border-radius);
-  border-left: 1px solid var(--clr-separator); }
-  .c-block:first-child {
-    border-left: none; }
+  border: none; }
+  .c-block:nth-child(n + 2) {
+    border-left: 1px solid var(--clr-separator); }
   .c-block__section {
     /*border-bottom: 1px solid var(--clr-separator);*/ }
   .c-block__content {
@@ -1910,8 +1910,8 @@ h6 {
     flex: 0 auto;
     --icon-scale: 0.8; }
     .graph-bar__icon.clock {
-      width: calc(28px * var(--icon-scale));
-      height: calc(28px * var(--icon-scale)); }
+      width: calc(26px * var(--icon-scale));
+      height: calc(26px * var(--icon-scale)); }
     .graph-bar__icon.graph {
       width: calc(22px * var(--icon-scale));
       height: calc(16px * var(--icon-scale));
@@ -1921,17 +1921,17 @@ h6 {
       height: calc(5px * var(--icon-scale));
       margin: 0 0 0 5px; }
     .graph-bar__icon.undo {
-      width: calc(25px * var(--icon-scale));
-      height: calc(18px * var(--icon-scale)); }
+      width: calc(18px * var(--icon-scale));
+      height: calc(14px * var(--icon-scale)); }
     .graph-bar__icon.redo {
-      width: calc(25px * var(--icon-scale));
-      height: calc(18px * var(--icon-scale)); }
+      width: calc(18px * var(--icon-scale));
+      height: calc(14px * var(--icon-scale)); }
     .graph-bar__icon.camera {
-      width: calc(31px * var(--icon-scale));
-      height: calc(25px * var(--icon-scale)); }
+      width: calc(22px * var(--icon-scale));
+      height: calc(18px * var(--icon-scale)); }
     .graph-bar__icon.gear {
-      width: calc(27px * var(--icon-scale));
-      height: calc(27px * var(--icon-scale)); }
+      width: calc(21px * var(--icon-scale));
+      height: calc(21px * var(--icon-scale)); }
     .graph-bar__icon.sorting {
       width: calc(16px * var(--icon-scale));
       height: calc(15px * var(--icon-scale)); }
@@ -1939,15 +1939,18 @@ h6 {
       width: calc(10px * var(--icon-scale));
       height: calc(6px * var(--icon-scale)); }
     .graph-bar__icon.graph-2 {
-      width: calc(24px * var(--icon-scale));
-      height: calc(18px * var(--icon-scale)); }
+      width: calc(22px * var(--icon-scale));
+      height: calc(16px * var(--icon-scale)); }
     .graph-bar__icon.arrows-td {
       width: calc(18px * var(--icon-scale));
       height: calc(21px * var(--icon-scale));
       fill: var(--clr-text); }
     .graph-bar__icon.expand {
-      width: calc(22px * var(--icon-scale));
-      height: calc(22px * var(--icon-scale)); }
+      width: calc(28px * var(--icon-scale));
+      height: calc(28px * var(--icon-scale)); }
+    .graph-bar__icon.buck {
+      width: calc(14px * var(--icon-scale));
+      height: calc(27px * var(--icon-scale)); }
   .graph-bar__separator {
     width: 0;
     height: 0;
@@ -3092,6 +3095,9 @@ body.menubar-in #user-btn:before {
   /*@media only screen and (min-width : 1366px) {
 		--icon-scale: 1.35;
 	}*/ }
+  .toolbar-icon.tool-reload {
+    width: calc(25px * var(--icon-scale));
+    height: calc(25px * var(--icon-scale)); }
   .toolbar-icon.tool-cross {
     width: calc(24px * var(--icon-scale));
     height: calc(24px * var(--icon-scale)); }
@@ -5114,7 +5120,6 @@ body.compensate-for-scrollbar {
   padding: 0;
   background: transparent; }
 
-<<<<<<< HEAD
 .portfolio-stats {
   position: relative;
   display: flex; }
@@ -5215,8 +5220,6 @@ body.compensate-for-scrollbar {
       color: #fff;
       background: var(--clr-accentD); }
 
-=======
->>>>>>> 5d5dd1bb904b9c0cad9bdb4351a09dee9ab4cccf
 /* =================================================================== */
 /* Globals
 /* =================================================================== */

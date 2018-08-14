@@ -8,10 +8,10 @@
 	background: var(--clr-block);
 	/*border: 1px solid var(--clr-separator);*/
 	border-radius: var(--border-radius);
-	border-left: 1px solid var(--clr-separator);
+	border: none;
 	
-	&:first-child{
-		border-left: none;
+	&:nth-child(n + 2){
+		border-left: 1px solid var(--clr-separator);
 	}
 
 	&__section{

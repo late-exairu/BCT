@@ -125,18 +125,19 @@
 		flex: 0 auto;
 		--icon-scale: 0.8;
 
-		&.clock			{ width: calc(28px * var(--icon-scale)); height: calc(28px * var(--icon-scale)); }
+		&.clock			{ width: calc(26px * var(--icon-scale)); height: calc(26px * var(--icon-scale)); }
 		&.graph			{ width: calc(22px * var(--icon-scale)); height: calc(16px * var(--icon-scale)); flex: 0 0 22px;}
 		&.arrows-td-short{ width: calc(7px * var(--icon-scale)); height: calc(5px * var(--icon-scale)); margin: 0 0 0 5px; }
-		&.undo			{ width: calc(25px * var(--icon-scale)); height: calc(18px * var(--icon-scale)); }
-		&.redo			{ width: calc(25px * var(--icon-scale)); height: calc(18px * var(--icon-scale)); }
-		&.camera		{ width: calc(31px * var(--icon-scale)); height: calc(25px * var(--icon-scale)); }
-		&.gear			{ width: calc(27px * var(--icon-scale)); height: calc(27px * var(--icon-scale)); }
+		&.undo			{ width: calc(18px * var(--icon-scale)); height: calc(14px * var(--icon-scale)); }
+		&.redo			{ width: calc(18px * var(--icon-scale)); height: calc(14px * var(--icon-scale)); }
+		&.camera		{ width: calc(22px * var(--icon-scale)); height: calc(18px * var(--icon-scale)); }
+		&.gear			{ width: calc(21px * var(--icon-scale)); height: calc(21px * var(--icon-scale)); }
 		&.sorting		{ width: calc(16px * var(--icon-scale)); height: calc(15px * var(--icon-scale)); }
 		&.arrow-drop	{ width: calc(10px * var(--icon-scale)); height: calc(6px * var(--icon-scale)); }
-		&.graph-2		{ width: calc(24px * var(--icon-scale)); height: calc(18px * var(--icon-scale)); }
+		&.graph-2		{ width: calc(22px * var(--icon-scale)); height: calc(16px * var(--icon-scale)); }
 		&.arrows-td 	{ width: calc(18px * var(--icon-scale)); height: calc(21px * var(--icon-scale)); fill: var(--clr-text); }
-		&.expand		{ width: calc(22px * var(--icon-scale)); height: calc(22px * var(--icon-scale)); }
+		&.expand		{ width: calc(28px * var(--icon-scale)); height: calc(28px * var(--icon-scale)); }
+		&.buck			{ width: calc(14px * var(--icon-scale)); height: calc(27px * var(--icon-scale)); }
 	}
 
 	&__separator{
