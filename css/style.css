@@ -598,7 +598,7 @@ h6 {
   .b-graph.fullScreen {
     position: fixed;
     top: 0px;
-    left: calc(var(--left-bar-width) - 1px);
+    left: 0;
     right: 0;
     bottom: 0;
     z-index: 99;
