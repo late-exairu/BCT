@@ -24,15 +24,15 @@
 		height: 50px;
 		background: var(--color-one);
 		padding: 0;
-		border-radius: var(--border-radius);
+		/*border-radius: var(--border-radius);*/
 	}
 
 	&__get{
-		background: linear-gradient(to right, var(--color-one) 0%, var(--color-two) 100%);
+		/*background: linear-gradient(to right, var(--color-one) 0%, var(--color-two) 100%);*/
 	}
 
 	&__send{
-		background: linear-gradient(to right, var(--color-two) 0%, var(--color-one) 100%);
+		/*background: linear-gradient(to right, var(--color-two) 0%, var(--color-one) 100%);*/
 	}
 
 	&__switch{
