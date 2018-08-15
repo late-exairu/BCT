@@ -1673,9 +1673,16 @@
 
 			<div class="main-cols__right-bottom m-top">
 				<div class="c-block d-flex-col flex-1-1 flex-h-fix js-account-stats">
-					<div class="c-block-head no-bg">
-						<div class="c-block-head__left">
-							<div class="portfolio-stats">
+
+					<div class="d-flex flex-1-1 flex-h-fix">
+						<div class="js-tabs-panel active" id="panel-funds-portfolio">
+							<div class="portfolio-stats absolute">
+								<button class="portfolio-stats__back">
+									<svg class="sprite-icon" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-back"></use>
+									</svg>
+								</button>
+
 								<div class="portfolio-stats__currency" id="circleChartSmall">
 									
 								</div>
@@ -1689,20 +1696,7 @@
 
 								<p class="portfolio-stats__dinamic">-10.93% Since Yesterday</p>
 							</div>
-						</div>
 
-						<div class="c-block-head__right">
-							<ul class="portfolio-menu">
-								<li class="portfolio-menu__item current">Portfolio</li>
-								<li class="portfolio-menu__item">Wallet</li>
-								<li class="portfolio-menu__item">Order History</li>
-							</ul>
-						</div>
-					</div>
-					<!-- c-block-head END -->
-
-					<div class="d-flex flex-1-1 flex-h-fix">
-						<div class="js-tabs-panel active" id="panel-funds-portfolio">
 							<ul class="portfolio-period">
 								<li class="portfolio-period__item">1h</li>
 								<li class="portfolio-period__item current">1D</li>
@@ -1710,6 +1704,7 @@
 								<li class="portfolio-period__item">1Y</li>
 								<li class="portfolio-period__item">ALL</li>
 							</ul>
+
 							<div class="portfolioChartParent w-100">
 								<div id="portfolioChartGeneral" style="width: 100%;"></div>
 								<div id="portfolioChartBTC" style="width: 100%;"></div>

@@ -2838,7 +2838,7 @@ body.menubar-in #user-btn:before {
   display: flex;
   position: absolute;
   right: 16px;
-  top: 0;
+  top: 12px;
   font-size: 7px;
   padding: 0;
   margin: 0;
@@ -2869,6 +2869,19 @@ body.menubar-in #user-btn:before {
 .portfolio-stats {
   position: relative;
   display: flex; }
+  .portfolio-stats__back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    margin: 0 5px 0 0;
+    background: transparent;
+    border: none;
+    cursor: pointer; }
+    .portfolio-stats__back .sprite-icon {
+      width: 8px;
+      height: 16px;
+      fill: var(--clr-accentD); }
   .portfolio-stats__currency {
     width: 32px;
     height: 32px;
@@ -2898,6 +2911,11 @@ body.menubar-in #user-btn:before {
     padding: 0;
     line-height: 1.28;
     color: #E05475; }
+  .portfolio-stats.absolute {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 1; }
 
 /* =================================================================== */
 /* search-bar */

@@ -8,6 +8,23 @@
 	position: relative;
 	display: flex;
 
+	&__back{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 20px;
+		margin: 0 5px 0 0;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+
+		.sprite-icon{
+			width: 8px;
+			height: 16px;
+			fill: var(--clr-accentD);
+		}
+	}
+
 	&__currency{
 		width: 32px;
 		height: 32px;
@@ -46,5 +63,12 @@
 		padding: 0;
 		line-height: 1.28;
 		color: #E05475;
+	}
+
+	&.absolute{
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		z-index: 1;
 	}
 }
