@@ -91,15 +91,6 @@ var circleChartOptions = {
     }]
 };
 
-/* function positionCircleChartText(chart) {
-    var textY = chart.plotTop + (chart.plotHeight * 0.5);
-    span = $('#pieChartInfoText');
-    span.css('width', '162px');
-    span.css('left','0');
-    span.css('top', textY + (span.height() * -0.6));
-}; */
-
-
 // change circle chart size on window resize
 $(window).resize(drawCircleChart);
 
@@ -117,3 +108,5 @@ function drawCircleChart() {
         }
     });
 }
+
+drawCircleChart();

@@ -33,7 +33,7 @@ var portfolioChartOptions = {
         type: 'areaspline',
         backgroundColor: '#ffffff',
         marginBottom: 100,
-        marginTop: -40,
+        marginTop: 40,
         marginRight: 0,
         marginLeft: 0
     },
@@ -156,7 +156,7 @@ var portfolioChartOptions = {
             return {
                 x: point.plotX - 60,
                 //y: point.plotY - 45
-                y: 0
+                y: 50
             };
         }
     },

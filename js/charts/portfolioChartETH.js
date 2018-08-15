@@ -16,7 +16,7 @@ var portfolioChartETHOptions = {
         type: 'areaspline',
         backgroundColor: '#ffffff',
         marginBottom: 100,
-        marginTop: -40,
+        marginTop: 40,
         marginRight: 0,
         marginLeft: 0
     },
@@ -139,7 +139,7 @@ var portfolioChartETHOptions = {
             return {
                 x: point.plotX - 60,
                 //y: point.plotY - 45
-                y: point.plotY
+                y: 50
             };
         }
     },
@@ -195,7 +195,5 @@ $.getJSON(location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'data
     portfolioChartOptions.series[0].data = portfolioChartData;
     portfolioChartBTCOptions.series[0].data = portfolioChartBTCData;
     portfolioChartETHOptions.series[0].data = portfolioChartETHData;
-    portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
-    portfolioChartBTCObj = Highcharts.stockChart('portfolioChartBTC', portfolioChartBTCOptions);
-    portfolioChartETHObj = Highcharts.stockChart('portfolioChartETH', portfolioChartETHOptions);
+
 });

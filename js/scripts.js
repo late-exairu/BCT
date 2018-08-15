@@ -99,10 +99,42 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
-	/* account-js-menu */
+	/* BASIC account-js-menu */
 	/*---------------------------------------------------*/
 
-	$('.js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function () {
+	$('.accounts-diagram-wrap').click(function () {
+		$('.js-tabs-panel').removeClass('active');
+		$('#panel-funds-portfolio').addClass('active');
+
+		/*---------------------------------------------------*/
+		/* Portfolio charts slider settings */
+		/*---------------------------------------------------*/
+
+		$('.portfolioChartParent').slick({
+			arrows: false,
+			dots: true,
+			infinite: false,
+			fade: true
+		});
+
+		portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
+		portfolioChartBTCObj = Highcharts.stockChart('portfolioChartBTC', portfolioChartBTCOptions);
+		portfolioChartETHObj = Highcharts.stockChart('portfolioChartETH', portfolioChartETHOptions);
+
+	});
+
+	$('.portfolio-stats__back').click(function () {
+		$('.js-tabs-panel').removeClass('active');
+		$('#panel-funds-wallet').addClass('active');
+		drawCircleChart();
+	});
+
+
+	/*---------------------------------------------------*/
+	/* ADVANCED account-js-menu */
+	/*---------------------------------------------------*/
+
+	$('.advanced .js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function () {
 		$('.js-account-stats .portfolio-menu .portfolio-menu__item').removeClass('current');
 		$(this).addClass('current');
 
@@ -470,17 +502,6 @@ $(function () {
 
 	$('.exch-form__btn').click(function () {
 		$.fancybox.close();
-	});
-
-	/*---------------------------------------------------*/
-	/* Portfolio charts slider settings */
-	/*---------------------------------------------------*/
-
-	$('.portfolioChartParent').slick({
-		arrows: false,
-		dots: true,
-		infinite: false,
-		fade: true
 	});
 
 	// On before slide change
