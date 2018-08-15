@@ -221,3 +221,134 @@
 .scrollbar-left > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }
 
 
+/******************* ARROWS SCROLLBAR *******************/
+ 
+.scrollbar-arrows > .scroll-content.scroll-scrolly_visible { left: 0; margin-left: 0; }
+.scrollbar-arrows > .scroll-content.scroll-scrollx_visible { top:  0; margin-top:  0; }
+ 
+ 
+.scrollbar-arrows > .scroll-element {
+    background-color: #fcfdff;
+}
+ 
+.scrollbar-arrows > .scroll-element,
+.scrollbar-arrows > .scroll-element div
+{
+    border: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+ 
+.scrollbar-arrows > .scroll-element .scroll-element_outer,
+.scrollbar-arrows > .scroll-element .scroll-element_size,
+.scrollbar-arrows > .scroll-element .scroll-element_inner-wrapper,
+.scrollbar-arrows > .scroll-element .scroll-element_inner,
+.scrollbar-arrows > .scroll-element .scroll-bar,
+.scrollbar-arrows > .scroll-element .scroll-bar div
+{
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+ 
+.scrollbar-arrows > .scroll-element .scroll-element_outer,
+.scrollbar-arrows > .scroll-element .scroll-element_size,
+.scrollbar-arrows > .scroll-element .scroll-element_inner-wrapper,
+.scrollbar-arrows > .scroll-element .scroll-bar_body
+{
+    background: none !important;
+}
+ 
+ 
+.scrollbar-arrows > .scroll-element.scroll-x {
+    border-top: solid 1px #fcfdff;
+    bottom: 0;
+    height: 16px;
+    left: 0;
+    min-width: 100%;
+    width: 100%;
+    display: none;
+}
+ 
+.scrollbar-arrows > .scroll-element.scroll-y {
+    border-left: solid 1px #fcfdff;
+    height: 100%;
+    min-height: 100%;
+    right: 0;
+    top: 0;
+    width: 16px;
+    display: none;
+}
+ 
+.scrollbar-arrows > .scroll-element.scroll-x div {
+    background: #f00;
+    background-repeat: repeat-x;
+}
+ 
+.scrollbar-arrows > .scroll-element.scroll-y div {
+    background: #f00;
+    background-repeat: repeat-y;
+}
+ 
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-arrow {}
+ 
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-bar { min-width: 16px; background: #f00; background-repeat: no-repeat; }
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-bar_body { left: 2px; }
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-bar_body-inner { left: -4px; background: #ccc; }
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-bar_center { left: 50%; margin-left: -6px; width: 12px; background: #f00; }
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-bar_bottom { left: auto; right: 0; width: 2px; background: #f00; }
+ 
+ 
+.scrollbar-arrows > .scroll-element.scroll-y .scroll-bar { min-height: 16px; background: #f00; background-repeat: no-repeat; }
+.scrollbar-arrows > .scroll-element.scroll-y .scroll-bar_body { top: 2px; }
+.scrollbar-arrows > .scroll-element.scroll-y .scroll-bar_body-inner { top: -4px; background: #f00; }
+.scrollbar-arrows > .scroll-element.scroll-y .scroll-bar_center { top: 50%; margin-top: -6px; height: 12px; background: #f00; }
+.scrollbar-arrows > .scroll-element.scroll-y .scroll-bar_bottom { top: auto; bottom: 0; height: 2px; background: #f00; }
+ 
+ 
+ 
+/* SCROLL ARROWS */
+ 
+.scrollbar-arrows > .scroll-element .scroll-arrow { display: none; }
+.scrollbar-arrows > .scroll-element.scroll-element_arrows_visible .scroll-arrow { display: block; z-index: 12; }
+ 
+ 
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible .scroll-arrow_less { height: 100%; width: 17px; background: #f00;}
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible .scroll-arrow_more { height: 100%; left: auto; right: 0; width: 17px; background: #f00;}
+ 
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible .scroll-element_outer { left: 17px; }
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible .scroll-element_inner { left: -34px; }
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible .scroll-element_size { left: -34px; }
+ 
+ 
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible .scroll-arrow_less { width: 100%; height: 17px; background: #f00;}
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible .scroll-arrow_more { width: 100%; top: auto; bottom: 0; height: 17px; background: #f00;}
+ 
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible .scroll-element_outer { top: 17px; }
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible .scroll-element_inner { top: -34px; }
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible .scroll-element_size { top: -34px; }
+ 
+ 
+/* PROCEED OFFSET IF ANOTHER SCROLL VISIBLE */
+ 
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -17px; }
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -17px; }
+ 
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_inner { left: -17px; }
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_inner { top: -17px; }
+ 
+ 
+/* PROCEED OFFSET IF ARROWS & ANOTHER SCROLL */
+ 
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible.scroll-scrolly_visible .scroll-arrow_more { right: 17px;}
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible.scroll-scrolly_visible .scroll-element_inner { left: -51px;}
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible.scroll-scrolly_visible .scroll-element_size { left: -51px;}
+ 
+ 
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible.scroll-scrollx_visible .scroll-arrow_more { bottom: 17px;}
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible.scroll-scrollx_visible .scroll-element_inner { top: -51px;}
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible.scroll-scrollx_visible .scroll-element_size { top: -51px;}

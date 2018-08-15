@@ -9,7 +9,7 @@
 	position: absolute;
 	left: 50px;
 	top: 10px;
-	right: 0;
+	right: 5px;
 	background: transparent;
 	display: flex;
 	padding: 0;
@@ -138,6 +138,7 @@
 		&.arrows-td 	{ width: calc(18px * var(--icon-scale)); height: calc(21px * var(--icon-scale)); fill: var(--clr-text); }
 		&.expand		{ width: calc(28px * var(--icon-scale)); height: calc(28px * var(--icon-scale)); }
 		&.buck			{ width: calc(14px * var(--icon-scale)); height: calc(27px * var(--icon-scale)); }
+		&.mode			{ width: calc(29px * var(--icon-scale)); height: calc(28px * var(--icon-scale)); }
 	}
 
 	&__separator{
@@ -151,7 +152,7 @@
 	}
 
 	&.shifted {
-		right: 110px;
+		right: 115px;
 	}
 
 	@media only screen and (min-width : 1920px) {

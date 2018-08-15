@@ -97,6 +97,11 @@
  * If you have already included it, you can eliminate the below
  * https://github.com/sass-mq/sass-mq/blob/master/_mq.scss
  */
+.graph-prices__icon.binance, .graph-prices__icon.okex, .graph-prices__icon.huobi, .graph-prices__icon.bitfinex, .graph-prices__icon.coinbene, .graph-prices__icon.kraken {
+  display: inline-block;
+  background-image: url("../img/sprite.svg");
+  background-size: 130.75em 124.3125em; }
+
 /* =================================================================== */
 /* Functions
 /* =================================================================== */
@@ -1826,7 +1831,7 @@ h6 {
   position: absolute;
   left: 50px;
   top: 10px;
-  right: 0;
+  right: 5px;
   background: transparent;
   display: flex;
   padding: 0;
@@ -1951,6 +1956,9 @@ h6 {
     .graph-bar__icon.buck {
       width: calc(14px * var(--icon-scale));
       height: calc(27px * var(--icon-scale)); }
+    .graph-bar__icon.mode {
+      width: calc(29px * var(--icon-scale));
+      height: calc(28px * var(--icon-scale)); }
   .graph-bar__separator {
     width: 0;
     height: 0;
@@ -1958,7 +1966,7 @@ h6 {
   .graph-bar.basic {
     left: 0; }
   .graph-bar.shifted {
-    right: 110px; }
+    right: 115px; }
   @media only screen and (min-width: 1920px) {
     .graph-bar {
       left: 62px; }
@@ -2036,11 +2044,11 @@ h6 {
   position: absolute;
   display: flex;
   min-height: 0;
-  top: -1px;
-  right: -1px;
-  bottom: -1px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
   padding: 0;
-  width: 110px;
+  width: 100px;
   background: var(--clr-block);
   transition: all .2s;
   border: 1px solid var(--clr-separator);
@@ -2048,6 +2056,57 @@ h6 {
   visibility: hidden;
   will-change: transform;
   transform: translateX(30px);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  /*&__left{
+		padding: 5px 0 0;
+		width: 138px;
+		border-right: 1px solid var(--clr-separator);
+	}
+
+	&__right{
+		width: 110px;
+	}
+
+	&__tier{
+		height: 45px;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	&__tier-title{
+		font-size: 12px;
+		margin: 0;
+		padding: 0;
+		color: var(--clr-textD);
+	}
+
+	&__tier-price{
+		font-weight: 700;
+		font-size: 14px;
+		margin: 2px 0 0;
+		padding: 0;
+	}
+
+	&__tier-btn{
+		height: 33px;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		text-align: center;
+		padding: 4px 5px;
+		width: calc(100% + 1px);
+		border: none;
+		color: #fff;
+		background: var(--clr-accentD);
+		cursor: pointer;
+		font-size: 12px;
+		margin: 3px 0 0 -1px;
+		border-radius: 2px;
+	}*/
   /*&__arrow{
 		width: 12px;
 		height: 5px;
@@ -2059,84 +2118,99 @@ h6 {
     visibility: visible;
     opacity: 1;
     transform: translateX(0); }
-  .graph-prices__left {
-    padding: 5px 0 0;
-    width: 138px;
-    border-right: 1px solid var(--clr-separator); }
-  .graph-prices__right {
-    width: 110px; }
-  .graph-prices__tier {
-    height: 45px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    text-align: center; }
-  .graph-prices__tier-title {
+  .graph-prices__label {
     font-size: 12px;
-    margin: 0;
-    padding: 0;
-    color: var(--clr-textD); }
-  .graph-prices__tier-price {
     font-weight: 700;
-    font-size: 14px;
-    margin: 2px 0 0;
-    padding: 0; }
-  .graph-prices__tier-btn {
-    height: 33px;
+    height: 50px;
     display: flex;
-    align-content: center;
     justify-content: center;
-    text-align: center;
-    padding: 4px 5px;
-    width: calc(100% + 1px);
-    border: none;
-    color: #fff;
-    background: var(--clr-accentD);
-    cursor: pointer;
-    font-size: 12px;
-    margin: 3px 0 0 -1px;
-    border-radius: 2px; }
+    align-items: center;
+    margin: 0 0 1px;
+    color: var(--clr-textD);
+    background: var(--clr-back);
+    text-align: center; }
   .graph-prices__tier-icon {
     fill: #fff;
     width: 8px;
     height: 11px;
     margin: 0 0 0 4px; }
   .graph-prices__scroll {
-    width: 110px;
+    width: 100px;
     margin: 0; }
   .graph-prices__list {
     padding: 0; }
   .graph-prices__item {
     position: relative;
     text-align: center;
-    height: 33px;
+    height: 50px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     margin: 0;
     padding: 4px 5px;
     transition: all .1s;
     cursor: pointer;
-    overflow: hidden; }
+    overflow: hidden;
+    border-top: 1px solid var(--clr-separator);
+    color: var(--clr-textD); }
+    .graph-prices__item:first-child {
+      border: none; }
     .graph-prices__item:hover {
       background: var(--clr-back); }
     .graph-prices__item.active {
       background: var(--clr-backA);
-      border-color: var(--clr-textL); }
-      .graph-prices__item.active .graph-prices__trader {
-        font-weight: 700;
-        color: var(--clr-accentD); }
+      color: var(--clr-accentD); }
   .graph-prices__trader {
-    font-size: 11px;
+    display: flex;
+    font-size: 13px;
+    font-weight: 600;
     line-height: 1.18;
-    color: var(--clr-textD); }
+    text-align: left;
+    align-self: flex-start;
+    padding: 0 5px; }
+  .graph-prices__icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
+    width: 15px;
+    margin: -1px 3px 0 0; }
+  .graph-prices__icon {
+    font-size: 16px;
+    /*&.coinbase	{ @include sprite(trader-coinbase); }*/ }
+    .graph-prices__icon.binance {
+      width: 0.725em;
+      height: 0.725em;
+      background-position: -115.3125em -109.8125em; }
+    .graph-prices__icon.okex {
+      width: 0.875em;
+      height: 0.875em;
+      background-position: -118.8125em -113.375em; }
+    .graph-prices__icon.huobi {
+      width: 0.51875em;
+      height: 0.80625em;
+      background-position: -117.375em -111.875em; }
+    .graph-prices__icon.bitfinex {
+      width: 0.625em;
+      height: 0.61875em;
+      background-position: -116.0625em -110.5625em; }
+    .graph-prices__icon.coinbene {
+      width: 0.675em;
+      height: 0.675em;
+      background-position: -116.6875em -111.1875em; }
+    .graph-prices__icon.kraken {
+      width: 0.8625em;
+      height: 0.66875em;
+      background-position: -117.9375em -112.6875em; }
   .graph-prices__price {
     margin: 0;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.18;
-    font-weight: 700;
-    color: var(--clr-textD); }
+    font-weight: 700; }
+    .graph-prices__price span {
+      font-size: 10px;
+      font-weight: 400; }
   .graph-prices .graph-bar__item {
     width: 250px;
     margin: 0 0 20px 0; }
@@ -3627,6 +3701,200 @@ body.menubar-in #user-btn:before {
 .scrollbar-left > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
   top: -12px; }
 
+/******************* ARROWS SCROLLBAR *******************/
+.scrollbar-arrows > .scroll-content.scroll-scrolly_visible {
+  left: 0;
+  margin-left: 0; }
+
+.scrollbar-arrows > .scroll-content.scroll-scrollx_visible {
+  top: 0;
+  margin-top: 0; }
+
+.scrollbar-arrows > .scroll-element {
+  background-color: #fcfdff; }
+
+.scrollbar-arrows > .scroll-element,
+.scrollbar-arrows > .scroll-element div {
+  border: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  z-index: 10; }
+
+.scrollbar-arrows > .scroll-element .scroll-element_outer,
+.scrollbar-arrows > .scroll-element .scroll-element_size,
+.scrollbar-arrows > .scroll-element .scroll-element_inner-wrapper,
+.scrollbar-arrows > .scroll-element .scroll-element_inner,
+.scrollbar-arrows > .scroll-element .scroll-bar,
+.scrollbar-arrows > .scroll-element .scroll-bar div {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%; }
+
+.scrollbar-arrows > .scroll-element .scroll-element_outer,
+.scrollbar-arrows > .scroll-element .scroll-element_size,
+.scrollbar-arrows > .scroll-element .scroll-element_inner-wrapper,
+.scrollbar-arrows > .scroll-element .scroll-bar_body {
+  background: none !important; }
+
+.scrollbar-arrows > .scroll-element.scroll-x {
+  border-top: solid 1px #fcfdff;
+  bottom: 0;
+  height: 16px;
+  left: 0;
+  min-width: 100%;
+  width: 100%;
+  display: none; }
+
+.scrollbar-arrows > .scroll-element.scroll-y {
+  border-left: solid 1px #fcfdff;
+  height: 100%;
+  min-height: 100%;
+  right: 0;
+  top: 0;
+  width: 16px;
+  display: none; }
+
+.scrollbar-arrows > .scroll-element.scroll-x div {
+  background: #f00;
+  background-repeat: repeat-x; }
+
+.scrollbar-arrows > .scroll-element.scroll-y div {
+  background: #f00;
+  background-repeat: repeat-y; }
+
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-bar {
+  min-width: 16px;
+  background: #f00;
+  background-repeat: no-repeat; }
+
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-bar_body {
+  left: 2px; }
+
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-bar_body-inner {
+  left: -4px;
+  background: #ccc; }
+
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-bar_center {
+  left: 50%;
+  margin-left: -6px;
+  width: 12px;
+  background: #f00; }
+
+.scrollbar-arrows > .scroll-element.scroll-x .scroll-bar_bottom {
+  left: auto;
+  right: 0;
+  width: 2px;
+  background: #f00; }
+
+.scrollbar-arrows > .scroll-element.scroll-y .scroll-bar {
+  min-height: 16px;
+  background: #f00;
+  background-repeat: no-repeat; }
+
+.scrollbar-arrows > .scroll-element.scroll-y .scroll-bar_body {
+  top: 2px; }
+
+.scrollbar-arrows > .scroll-element.scroll-y .scroll-bar_body-inner {
+  top: -4px;
+  background: #f00; }
+
+.scrollbar-arrows > .scroll-element.scroll-y .scroll-bar_center {
+  top: 50%;
+  margin-top: -6px;
+  height: 12px;
+  background: #f00; }
+
+.scrollbar-arrows > .scroll-element.scroll-y .scroll-bar_bottom {
+  top: auto;
+  bottom: 0;
+  height: 2px;
+  background: #f00; }
+
+/* SCROLL ARROWS */
+.scrollbar-arrows > .scroll-element .scroll-arrow {
+  display: none; }
+
+.scrollbar-arrows > .scroll-element.scroll-element_arrows_visible .scroll-arrow {
+  display: block;
+  z-index: 12; }
+
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible .scroll-arrow_less {
+  height: 100%;
+  width: 17px;
+  background: #f00; }
+
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible .scroll-arrow_more {
+  height: 100%;
+  left: auto;
+  right: 0;
+  width: 17px;
+  background: #f00; }
+
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible .scroll-element_outer {
+  left: 17px; }
+
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible .scroll-element_inner {
+  left: -34px; }
+
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible .scroll-element_size {
+  left: -34px; }
+
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible .scroll-arrow_less {
+  width: 100%;
+  height: 17px;
+  background: #f00; }
+
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible .scroll-arrow_more {
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  height: 17px;
+  background: #f00; }
+
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible .scroll-element_outer {
+  top: 17px; }
+
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible .scroll-element_inner {
+  top: -34px; }
+
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible .scroll-element_size {
+  top: -34px; }
+
+/* PROCEED OFFSET IF ANOTHER SCROLL VISIBLE */
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+  left: -17px; }
+
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+  top: -17px; }
+
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_inner {
+  left: -17px; }
+
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_inner {
+  top: -17px; }
+
+/* PROCEED OFFSET IF ARROWS & ANOTHER SCROLL */
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible.scroll-scrolly_visible .scroll-arrow_more {
+  right: 17px; }
+
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible.scroll-scrolly_visible .scroll-element_inner {
+  left: -51px; }
+
+.scrollbar-arrows > .scroll-element.scroll-x.scroll-element_arrows_visible.scroll-scrolly_visible .scroll-element_size {
+  left: -51px; }
+
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible.scroll-scrollx_visible .scroll-arrow_more {
+  bottom: 17px; }
+
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible.scroll-scrollx_visible .scroll-element_inner {
+  top: -51px; }
+
+.scrollbar-arrows > .scroll-element.scroll-y.scroll-element_arrows_visible.scroll-scrollx_visible .scroll-element_size {
+  top: -51px; }
+
 body.compensate-for-scrollbar {
   overflow: hidden; }
 
@@ -4850,7 +5118,8 @@ body.compensate-for-scrollbar {
   flex: 0 0 180px;
   width: 180px;
   max-height: 100%;
-  height: 100%; }
+  height: 100%;
+  cursor: pointer; }
   @media only screen and (min-height: 900px) {
     .accounts-diagram-wrap {
       flex: 0 0 250px;

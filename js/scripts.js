@@ -63,6 +63,11 @@ $(function () {
 
 	$('.scrollbar-right').scrollbar();
 	$('.scrollbar-left').scrollbar();
+	$('.scrollbar-arrows').scrollbar({
+		"scrollx": "advanced",
+        "scrolly": "advanced",
+		"showArrows": true
+	});
 
 	$('#user-btn').on('click', function () {
 		$('body').toggleClass('menubar-in');
