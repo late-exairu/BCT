@@ -1833,448 +1833,439 @@
 							</div>
 						</div><!-- js-tabs-panel END -->
 						<div class="js-tabs-panel active" id="panel-funds-wallet">
-							<div class="d-flex-col w-100">
-								<div class="c-block-head no-bg">
-									<div class="c-block-head__left">
-										<h2 class="c-block-head__title btn">
-											Wallet
-										</h2>
-									</div>
-								</div>
-								<div class="circleDiagramParent w-100">
-									<div class="accounts-diagram-wrap">
-										<div class="accounts-diagram" id="circleChart"></div>
+							<div class="circleDiagramParent w-100">
+								<div class="accounts-diagram-wrap">
+									<div class="accounts-diagram" id="circleChart"></div>
 
-										<div id="circleChartText">
-											<div class="wrap">
-												<p class="value">
-													<span>$</span>6,359
-													<span>.50</span>
-												</p>
-												<p class="title">Total balance</p>
-											</div>
+									<div id="circleChartText">
+										<div class="wrap">
+											<p class="value">
+												<span>$</span>6,359
+												<span>.50</span>
+											</p>
+											<p class="title">Total balance</p>
 										</div>
 									</div>
-									<div class="flex-1-1 scroll-y scrollbar-right">
-										<div class="basic-table bigger-font">
-											<div class="basic-table__row">
-												<div class="basic-table__col w-20" data-percent="80">
-													<svg class="basic-table__curr icon-curr clr-bitcoin" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-													</svg>
-													<div class="d-flex-col">
-														<span class="basic-table__tip">Bitcoin</span>
-														1 BTC
-													</div>
-												</div>
-												<div class="basic-table__col w-20">$6,140.13
-													<span class="smaller clr-red">(-5.47%)</span>
-												</div>
-												<div class="basic-table__col w-30">
-													<div class="basic-select custom-select">
-														<select class="basic-select__select">
-															<option>BTC Custodian</option>
-															<option>Gemini</option>
-															<option>itBit</option>
-															<option>Vo1t</option>
-															<option>BitGO</option>
-														</select>
-													</div>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
-														<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
-														</svg>
-														Receive
-													</button>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#send-popup">
-														<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-														</svg>
-														Send
-													</button>
-												</div>
-											</div>
-											<!-- basic-table__row END -->
-
-											<div class="basic-table__row">
-												<div class="basic-table__col w-20" data-percent="20">
-													<svg class="basic-table__curr icon-curr clr-ethereum" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ethereum"></use>
-													</svg>
-													<div class="d-flex-col">
-														<span class="basic-table__tip">Ethereum</span>
-														0.5 ETH
-													</div>
-												</div>
-												<div class="basic-table__col w-20">$219.37
-													<span class="smaller clr-blue">(2.85%)</span>
-												</div>
-												<div class="basic-table__col w-30">
-													<div class="basic-select custom-select">
-														<select class="basic-select__select">
-															<option>ETH Custodian</option>
-															<option>Gemini</option>
-															<option>itBit</option>
-															<option>Vo1t</option>
-															<option>BitGO</option>
-														</select>
-													</div>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
-														<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
-														</svg>
-														Receive
-													</button>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#send-popup">
-														<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-														</svg>
-														Send
-													</button>
-												</div>
-											</div>
-											<!-- basic-table__row END -->
-
-											<div class="basic-table__row disabled">
-												<div class="basic-table__col w-20">
-													<svg class="basic-table__curr icon-curr clr-bitcoincash" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
-													</svg>
-													<div class="d-flex-col">
-														<span class="basic-table__tip">Bitcoin Cash</span>
-														0.0 ETH
-													</div>
-												</div>
-												<div class="basic-table__col w-20">$0.00</div>
-												<div class="basic-table__col w-30">
-													<div class="basic-select custom-select">
-														<select class="basic-select__select">
-															<option>BCH Custodian</option>
-															<option>Gemini</option>
-															<option>itBit</option>
-															<option>Vo1t</option>
-															<option>BitGO</option>
-														</select>
-													</div>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
-														<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
-														</svg>
-														Receive
-													</button>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#send-popup">
-														<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-														</svg>
-														Send
-													</button>
-												</div>
-											</div>
-											<!-- basic-table__row END -->
-
-											<div class="basic-table__row disabled">
-												<div class="basic-table__col w-20">
-													<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
-													</svg>
-													<div class="d-flex-col">
-														<span class="basic-table__tip">Litecoin</span>
-														0.0 LTC
-													</div>
-												</div>
-												<div class="basic-table__col w-20">$0.00</div>
-												<div class="basic-table__col w-30">
-													<div class="basic-select custom-select">
-														<select class="basic-select__select">
-															<option>LTC Custodian</option>
-															<option>Gemini</option>
-															<option>itBit</option>
-															<option>Vo1t</option>
-															<option>BitGO</option>
-														</select>
-													</div>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
-														<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
-														</svg>
-														Receive
-													</button>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#send-popup">
-														<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-														</svg>
-														Send
-													</button>
-												</div>
-											</div>
-											<!-- basic-table__row END -->
-
-											<div class="basic-table__row disabled">
-												<div class="basic-table__col w-20">
-													<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
-													</svg>
-													<div class="d-flex-col">
-														<span class="basic-table__tip">Ripple</span>
-														0.0 RPL
-													</div>
-												</div>
-												<div class="basic-table__col w-20">$0.00</div>
-												<div class="basic-table__col w-30">
-													<div class="basic-select custom-select">
-														<select class="basic-select__select">
-															<option>RPL Custodian</option>
-															<option>Gemini</option>
-															<option>itBit</option>
-															<option>Vo1t</option>
-															<option>BitGO</option>
-														</select>
-													</div>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
-														<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
-														</svg>
-														Receive
-													</button>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#send-popup">
-														<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-														</svg>
-														Send
-													</button>
-												</div>
-											</div>
-											<!-- basic-table__row END -->
-
-											<div class="basic-table__row disabled">
-												<div class="basic-table__col w-20">
-													<svg class="basic-table__curr icon-curr clr-bitcoincash" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
-													</svg>
-													<div class="d-flex-col">
-														<span class="basic-table__tip">Bitcoin Cash</span>
-														0.0 BCC
-													</div>
-												</div>
-												<div class="basic-table__col w-20">$0.00</div>
-												<div class="basic-table__col w-30">
-													<div class="basic-select custom-select">
-														<select class="basic-select__select">
-															<option>BCH Custodian</option>
-															<option>Gemini</option>
-															<option>itBit</option>
-															<option>Vo1t</option>
-															<option>BitGO</option>
-														</select>
-													</div>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
-														<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
-														</svg>
-														Receive
-													</button>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#send-popup">
-														<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-														</svg>
-														Send
-													</button>
-												</div>
-											</div>
-											<!-- basic-table__row END -->
-
-											<div class="basic-table__row disabled">
-												<div class="basic-table__col w-20">
-													<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
-													</svg>
-													<div class="d-flex-col">
-														<span class="basic-table__tip">Litecoin</span>
-														0.0 LTC
-													</div>
-												</div>
-												<div class="basic-table__col w-20">$0.00</div>
-												<div class="basic-table__col w-30">
-													<div class="basic-select custom-select">
-														<select class="basic-select__select">
-															<option>LTC Custodian</option>
-															<option>Gemini</option>
-															<option>itBit</option>
-															<option>Vo1t</option>
-															<option>BitGO</option>
-														</select>
-													</div>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
-														<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
-														</svg>
-														Receive
-													</button>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#send-popup">
-														<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-														</svg>
-														Send
-													</button>
-												</div>
-											</div>
-											<!-- basic-table__row END -->
-
-											<div class="basic-table__row disabled">
-												<div class="basic-table__col w-20">
-													<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
-													</svg>
-													<div class="d-flex-col">
-														<span class="basic-table__tip">Ripple</span>
-														0.0 RPL
-													</div>
-												</div>
-												<div class="basic-table__col w-20">$0.00</div>
-												<div class="basic-table__col w-30">
-													<div class="basic-select custom-select">
-														<select class="basic-select__select">
-															<option>RPL Custodian</option>
-															<option>Gemini</option>
-															<option>itBit</option>
-															<option>Vo1t</option>
-															<option>BitGO</option>
-														</select>
-													</div>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
-														<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
-														</svg>
-														Receive
-													</button>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#send-popup">
-														<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-														</svg>
-														Send
-													</button>
-												</div>
-											</div>
-											<!-- basic-table__row END -->
-
-											<div class="basic-table__row disabled">
-												<div class="basic-table__col w-20">
-													<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
-													</svg>
-													<div class="d-flex-col">
-														<span class="basic-table__tip">Ripple</span>
-														0.0 RPL
-													</div>
-												</div>
-												<div class="basic-table__col w-20">$0.00</div>
-												<div class="basic-table__col w-30">
-													<div class="basic-select custom-select">
-														<select class="basic-select__select">
-															<option>RPL Custodian</option>
-															<option>Gemini</option>
-															<option>itBit</option>
-															<option>Vo1t</option>
-															<option>BitGO</option>
-														</select>
-													</div>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
-														<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
-														</svg>
-														Receive
-													</button>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#send-popup">
-														<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-														</svg>
-														Send
-													</button>
-												</div>
-											</div>
-											<!-- basic-table__row END -->
-
-											<div class="basic-table__row disabled">
-												<div class="basic-table__col w-20">
-													<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
-														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
-													</svg>
-													<div class="d-flex-col">
-														<span class="basic-table__tip">Ripple</span>
-														0.0 RPL
-													</div>
-												</div>
-												<div class="basic-table__col w-20">$0.00</div>
-												<div class="basic-table__col w-30">
-													<div class="basic-select custom-select">
-														<select class="basic-select__select">
-															<option>RPL Custodian</option>
-															<option>Gemini</option>
-															<option>itBit</option>
-															<option>Vo1t</option>
-															<option>BitGO</option>
-														</select>
-													</div>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
-														<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
-														</svg>
-														Receive
-													</button>
-												</div>
-												<div class="basic-table__col w-15 to-right">
-													<button class="basic-table__btn" data-fancybox data-src="#send-popup">
-														<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-														</svg>
-														Send
-													</button>
-												</div>
-											</div>
-											<!-- basic-table__row END -->
-										</div>
-										<!-- basic-table END -->
-									</div>
-									<!-- scroll-y -->
 								</div>
+								<div class="flex-1-1 scroll-y scrollbar-right">
+									<div class="basic-table bigger-font">
+										<div class="basic-table__row">
+											<div class="basic-table__col w-20" data-percent="80">
+												<svg class="basic-table__curr icon-curr clr-bitcoin" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
+												</svg>
+												<div class="d-flex-col">
+													<span class="basic-table__tip">Bitcoin</span>
+													1 BTC
+												</div>
+											</div>
+											<div class="basic-table__col w-20">$6,140.13
+												<span class="smaller clr-red">(-5.47%)</span>
+											</div>
+											<div class="basic-table__col w-30">
+												<div class="basic-select custom-select">
+													<select class="basic-select__select">
+														<option>BTC Custodian</option>
+														<option>Gemini</option>
+														<option>itBit</option>
+														<option>Vo1t</option>
+														<option>BitGO</option>
+													</select>
+												</div>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
+													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
+													</svg>
+													Receive
+												</button>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													Send
+												</button>
+											</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row">
+											<div class="basic-table__col w-20" data-percent="20">
+												<svg class="basic-table__curr icon-curr clr-ethereum" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ethereum"></use>
+												</svg>
+												<div class="d-flex-col">
+													<span class="basic-table__tip">Ethereum</span>
+													0.5 ETH
+												</div>
+											</div>
+											<div class="basic-table__col w-20">$219.37
+												<span class="smaller clr-blue">(2.85%)</span>
+											</div>
+											<div class="basic-table__col w-30">
+												<div class="basic-select custom-select">
+													<select class="basic-select__select">
+														<option>ETH Custodian</option>
+														<option>Gemini</option>
+														<option>itBit</option>
+														<option>Vo1t</option>
+														<option>BitGO</option>
+													</select>
+												</div>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
+													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
+													</svg>
+													Receive
+												</button>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													Send
+												</button>
+											</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row disabled">
+											<div class="basic-table__col w-20">
+												<svg class="basic-table__curr icon-curr clr-bitcoincash" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
+												</svg>
+												<div class="d-flex-col">
+													<span class="basic-table__tip">Bitcoin Cash</span>
+													0.0 ETH
+												</div>
+											</div>
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
+												<div class="basic-select custom-select">
+													<select class="basic-select__select">
+														<option>BCH Custodian</option>
+														<option>Gemini</option>
+														<option>itBit</option>
+														<option>Vo1t</option>
+														<option>BitGO</option>
+													</select>
+												</div>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
+													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
+													</svg>
+													Receive
+												</button>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													Send
+												</button>
+											</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row disabled">
+											<div class="basic-table__col w-20">
+												<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
+												</svg>
+												<div class="d-flex-col">
+													<span class="basic-table__tip">Litecoin</span>
+													0.0 LTC
+												</div>
+											</div>
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
+												<div class="basic-select custom-select">
+													<select class="basic-select__select">
+														<option>LTC Custodian</option>
+														<option>Gemini</option>
+														<option>itBit</option>
+														<option>Vo1t</option>
+														<option>BitGO</option>
+													</select>
+												</div>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
+													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
+													</svg>
+													Receive
+												</button>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													Send
+												</button>
+											</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row disabled">
+											<div class="basic-table__col w-20">
+												<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
+												</svg>
+												<div class="d-flex-col">
+													<span class="basic-table__tip">Ripple</span>
+													0.0 RPL
+												</div>
+											</div>
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
+												<div class="basic-select custom-select">
+													<select class="basic-select__select">
+														<option>RPL Custodian</option>
+														<option>Gemini</option>
+														<option>itBit</option>
+														<option>Vo1t</option>
+														<option>BitGO</option>
+													</select>
+												</div>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
+													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
+													</svg>
+													Receive
+												</button>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													Send
+												</button>
+											</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row disabled">
+											<div class="basic-table__col w-20">
+												<svg class="basic-table__curr icon-curr clr-bitcoincash" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
+												</svg>
+												<div class="d-flex-col">
+													<span class="basic-table__tip">Bitcoin Cash</span>
+													0.0 BCC
+												</div>
+											</div>
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
+												<div class="basic-select custom-select">
+													<select class="basic-select__select">
+														<option>BCH Custodian</option>
+														<option>Gemini</option>
+														<option>itBit</option>
+														<option>Vo1t</option>
+														<option>BitGO</option>
+													</select>
+												</div>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
+													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
+													</svg>
+													Receive
+												</button>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													Send
+												</button>
+											</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row disabled">
+											<div class="basic-table__col w-20">
+												<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
+												</svg>
+												<div class="d-flex-col">
+													<span class="basic-table__tip">Litecoin</span>
+													0.0 LTC
+												</div>
+											</div>
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
+												<div class="basic-select custom-select">
+													<select class="basic-select__select">
+														<option>LTC Custodian</option>
+														<option>Gemini</option>
+														<option>itBit</option>
+														<option>Vo1t</option>
+														<option>BitGO</option>
+													</select>
+												</div>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
+													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
+													</svg>
+													Receive
+												</button>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													Send
+												</button>
+											</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row disabled">
+											<div class="basic-table__col w-20">
+												<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
+												</svg>
+												<div class="d-flex-col">
+													<span class="basic-table__tip">Ripple</span>
+													0.0 RPL
+												</div>
+											</div>
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
+												<div class="basic-select custom-select">
+													<select class="basic-select__select">
+														<option>RPL Custodian</option>
+														<option>Gemini</option>
+														<option>itBit</option>
+														<option>Vo1t</option>
+														<option>BitGO</option>
+													</select>
+												</div>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
+													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
+													</svg>
+													Receive
+												</button>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													Send
+												</button>
+											</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row disabled">
+											<div class="basic-table__col w-20">
+												<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
+												</svg>
+												<div class="d-flex-col">
+													<span class="basic-table__tip">Ripple</span>
+													0.0 RPL
+												</div>
+											</div>
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
+												<div class="basic-select custom-select">
+													<select class="basic-select__select">
+														<option>RPL Custodian</option>
+														<option>Gemini</option>
+														<option>itBit</option>
+														<option>Vo1t</option>
+														<option>BitGO</option>
+													</select>
+												</div>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
+													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
+													</svg>
+													Receive
+												</button>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													Send
+												</button>
+											</div>
+										</div>
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row disabled">
+											<div class="basic-table__col w-20">
+												<svg class="basic-table__curr icon-curr clr-ripple" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
+												</svg>
+												<div class="d-flex-col">
+													<span class="basic-table__tip">Ripple</span>
+													0.0 RPL
+												</div>
+											</div>
+											<div class="basic-table__col w-20">$0.00</div>
+											<div class="basic-table__col w-30">
+												<div class="basic-select custom-select">
+													<select class="basic-select__select">
+														<option>RPL Custodian</option>
+														<option>Gemini</option>
+														<option>itBit</option>
+														<option>Vo1t</option>
+														<option>BitGO</option>
+													</select>
+												</div>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#receive-popup">
+													<svg class="sprite-icon paper-plane" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#paper-plane"></use>
+													</svg>
+													Receive
+												</button>
+											</div>
+											<div class="basic-table__col w-15 to-right">
+												<button class="basic-table__btn" data-fancybox data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													Send
+												</button>
+											</div>
+										</div>
+										<!-- basic-table__row END -->
+									</div>
+									<!-- basic-table END -->
+								</div>
+								<!-- scroll-y -->
 							</div>
 						</div>
 						<div class="js-tabs-panel" id="panel-funds-orders">
