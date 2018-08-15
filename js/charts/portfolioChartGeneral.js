@@ -27,7 +27,7 @@ var portfolioChartArrChanges = [
 ];
 var portfolioChartData = null;
 var portfolioChartObj = null;
-var portfolioChartCurrentRange = 1;
+var portfolioChartCurrentRange = 4;
 var portfolioChartOptions = {
     chart: {
         type: 'areaspline',

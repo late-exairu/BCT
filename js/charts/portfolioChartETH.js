@@ -10,7 +10,7 @@
 ]; */
 var portfolioChartETHData = null;
 var portfolioChartETHObj = null;
-var portfolioChartETHCurrentRange = 1;
+var portfolioChartETHCurrentRange = 4;
 var portfolioChartETHOptions = {
     chart: {
         type: 'areaspline',

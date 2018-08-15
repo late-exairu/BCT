@@ -10,7 +10,7 @@
 ]; */
 var portfolioChartBTCData = null;
 var portfolioChartBTCObj = null;
-var portfolioChartBTCCurrentRange = 1;
+var portfolioChartBTCCurrentRange = 4;
 var portfolioChartBTCOptions = {
     chart: {
         type: 'areaspline',
