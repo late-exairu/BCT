@@ -2879,209 +2879,65 @@
 	</div>
 </div>
 
-<div class="basic-popup send-popup" id="send-popup" style="display: none;">
+<div class="basic-popup transaction-popup" id="send-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
 		<div class="c-block-head">
 			<div class="c-block-head__left js-dropdown-wrap">
 				<h2 class="c-block-head__title">
-					SEND BTC
+					Your Bitcoin Address
 				</h2>
 			</div>
 		</div>
 
 		<div class="d-flex-col flex-1-1 flex-h-fix">
 			<form class="transaction-form">
-				<div class="transaction-form__line">
-					<label class="transaction-form__label">You send</label>
-					<input class="transaction-form__input" type="text" name="" value="1000.000">
-					<div class="transaction-form__curr">BTC</div>
+				<div class="transaction-form__qr-code-wrap">
+					<img src="pic/qr-code.svg" width="130" height="130" alt="qr-code">
 				</div>
 
 				<div class="transaction-form__line">
-					<label class="transaction-form__label">To BTC Address</label>
-					<input class="transaction-form__input" type="text" name="" value="XxxxXXxxxxXXXXXxxXXxxxXXxXXXxx">
+					<input class="transaction-form__input with-copy" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
 
-					<button class="transaction-form__qr-code">
+					<div class="transaction-form__to-clipdoard">
 						<svg class="sprite-icon" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code-big"></use>
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard"></use>
 						</svg>
-					</button>
+					</div>
 				</div>
-
-				<button class="transaction-form__submit" type="submit">SEND BTC</button>
 			</form>
-
-			<div class="basic-table low-height">
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-17 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-47">BCT Fee for 0.078 KB is 0.000078 BTC $0.05</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-17 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-47">BCT Fee for 0.078 KB is 0.000078 BTC $0.05</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-17 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-47">BCT Fee for 0.078 KB is 0.000078 BTC $0.05</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-17 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-47">BCT Fee for 0.078 KB is 0.000078 BTC $0.05</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-17 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-47">BCT Fee for 0.078 KB is 0.000078 BTC $0.05</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-17 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-47">BCT Fee for 0.078 KB is 0.000078 BTC $0.05</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-			</div>
 		</div>
 	</div>
 </div>
 
-
-<div class="basic-popup send-popup" id="receive-popup" style="display: none;">
+<div class="basic-popup transaction-popup" id="receive-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
 		<div class="c-block-head">
 			<div class="c-block-head__left js-dropdown-wrap">
 				<h2 class="c-block-head__title">
-					RECIEVE BTC
+					Send Bitcoin
 				</h2>
 			</div>
 		</div>
 
 		<div class="d-flex-col flex-1-1 flex-h-fix">
 			<form class="transaction-form">
-				<div class="transaction-form__line">
-					<button class="transaction-form__qr-code big">
-						<svg class="sprite-icon" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code-big"></use>
-						</svg>
-					</button>
+				<div class="transaction-form__line convert">
+					<input class="transaction-form__input" type="text" name="" value="1000.000 BTC">
+					<div class="transaction-form__sep">≈</div>
+					<input class="transaction-form__input" type="text" name="" value="8197500.000 USD">
 				</div>
 
-				<div class="transaction-form__line">
-					<label class="transaction-form__label">Your BCT Address</label>
-					<input class="transaction-form__input" type="text" name="" value="XxxxXXxxxxXXXXXxxXXxxxXXxXXXxx">
+				<div class="transaction-form__line inner">
+					<label class="transaction-form__label">To Bitcoin Address:</label>
+					<input class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
 				</div>
+
+				<div class="cubic-slider">
+					<input type="range" class="js-cubic-slider" name="example_name" value="" />
+				</div>
+
+				<button class="transaction-form__submit">SEND BTC</button>
 			</form>
-
-			<div class="basic-table low-height">
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-65 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-65 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-65 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-65 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-65 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-
-				<div class="basic-table__row">
-					<div class="basic-table__col w-12">Jun 12</div>
-					<div class="basic-table__col w-65 clr-gray">
-						<svg class="icon-curr clr-bitcoin" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-						</svg>
-						2H ago
-					</div>
-					<div class="basic-table__col w-22 clr-gray">-0.01287812 BTC</div>
-				</div><!-- basic-table__row END -->
-			</div>
 		</div>
 	</div>
 </div>

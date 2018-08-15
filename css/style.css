@@ -100,7 +100,7 @@
 .graph-prices__icon.binance, .graph-prices__icon.okex, .graph-prices__icon.huobi, .graph-prices__icon.bitfinex, .graph-prices__icon.coinbene, .graph-prices__icon.kraken {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 130.75em 124.3125em; }
+  background-size: 131.375em 124.9375em; }
 
 /* =================================================================== */
 /* Functions
@@ -1134,7 +1134,7 @@ h6 {
   .c-block-head__title {
     font-size: 16px;
     margin: 0;
-    color: var(--clr-textD);
+    color: var(--clr-accentD);
     font-weight: 700; }
     .c-block-head__title span {
       font-size: 14px; }
@@ -2182,27 +2182,27 @@ h6 {
     .graph-prices__icon.binance {
       width: 0.725em;
       height: 0.725em;
-      background-position: -115.3125em -109.8125em; }
+      background-position: -115.9375em -110.4375em; }
     .graph-prices__icon.okex {
       width: 0.875em;
       height: 0.875em;
-      background-position: -118.8125em -113.375em; }
+      background-position: -119.4375em -114em; }
     .graph-prices__icon.huobi {
       width: 0.51875em;
       height: 0.80625em;
-      background-position: -117.375em -111.875em; }
+      background-position: -118em -112.5em; }
     .graph-prices__icon.bitfinex {
       width: 0.625em;
       height: 0.61875em;
-      background-position: -116.0625em -110.5625em; }
+      background-position: -116.6875em -111.1875em; }
     .graph-prices__icon.coinbene {
       width: 0.675em;
       height: 0.675em;
-      background-position: -116.6875em -111.1875em; }
+      background-position: -117.3125em -111.8125em; }
     .graph-prices__icon.kraken {
       width: 0.8625em;
       height: 0.66875em;
-      background-position: -117.9375em -112.6875em; }
+      background-position: -118.5625em -113.3125em; }
   .graph-prices__price {
     margin: 0;
     font-size: 12px;
@@ -4948,26 +4948,44 @@ body.compensate-for-scrollbar {
 .transaction-form {
   font-family: "open_sans", sans-serif;
   width: 100%;
-  padding: 5px 10px; }
+  padding: 5px 10px 10px; }
   .transaction-form__line {
     position: relative;
     display: flex;
+    flex-direction: column;
     margin: 8px 0 0; }
     .transaction-form__line:first-child {
       margin: 0; }
+    .transaction-form__line.inner .transaction-form__label {
+      position: absolute;
+      left: 6px;
+      top: 4px;
+      font-size: 8px; }
+    .transaction-form__line.inner .transaction-form__input {
+      padding: 10px 5px 0; }
+    .transaction-form__line.convert {
+      border: 1px solid var(--clr-separatorD);
+      border-radius: var(--border-radius);
+      flex-direction: row; }
+      .transaction-form__line.convert .transaction-form__input {
+        font-size: 12px;
+        background: transparent;
+        border: none;
+        padding: 5px 5px;
+        width: calc(50% - 12px); }
   .transaction-form__label {
-    position: absolute;
-    left: 6px;
-    top: 4px;
-    font-size: 8px;
     color: var(--clr-text); }
+  .transaction-form__sep {
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .transaction-form__input {
     font-family: "open_sans", sans-serif;
     font-size: 12px;
     width: 100%;
-    height: 32px;
-    font-weight: 700;
-    padding: 12px 50px 2px 5px;
+    height: 30px;
+    padding: 5px;
     border: 1px solid var(--clr-separatorD);
     border-radius: var(--border-radius);
     color: var(--clr-textD);
@@ -4978,37 +4996,34 @@ body.compensate-for-scrollbar {
       border-color: var(--clr-accent); }
     .transaction-form__input::placeholder {
       color: var(--clr-textLL); }
-  .transaction-form__qr-code {
-    width: 40px;
+    .transaction-form__input.with-copy {
+      padding-right: 28px; }
+  .transaction-form__qr-code-wrap {
+    padding: 5px;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto; }
+    .transaction-form__qr-code-wrap > * {
+      display: block; }
+  .transaction-form__to-clipdoard {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
     background: var(--clr-block);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--clr-separatorD);
-    margin: 0 0 0 5px;
+    width: 24px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
-    cursor: pointer;
-    transition: all 0.1s; }
-    .transaction-form__qr-code:hover {
-      border-color: var(--clr-accentD);
-      /*background: var(--clr-accentD);*/
-      /*.sprite-icon{
-				fill: #fff;
-			}*/ }
-    .transaction-form__qr-code .sprite-icon {
-      width: 22px;
-      height: 22px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer; }
+    .transaction-form__to-clipdoard .sprite-icon {
+      width: 10px;
+      height: 10px;
       fill: var(--clr-text);
-      transition: all 0.1s; }
-    .transaction-form__qr-code.big {
-      width: 76px;
-      height: 76px;
-      margin: 0 auto; }
-      .transaction-form__qr-code.big .sprite-icon {
-        width: 64px;
-        height: 64px;
-        flex: 64px;
-        fill: var(--clr-textD); }
+      transition: all .1s; }
+    .transaction-form__to-clipdoard:active .sprite-icon {
+      fill: var(--clr-accent); }
   .transaction-form__curr {
     position: absolute;
     right: 1px;
@@ -5036,6 +5051,11 @@ body.compensate-for-scrollbar {
     font-size: 10px;
     border: none;
     cursor: pointer; }
+  .transaction-form .cubic-slider {
+    margin: 15px 0; }
+    .transaction-form .cubic-slider .single {
+      width: 20px;
+      height: 20px; }
 
 /* =================================================================== */
 /* selects
@@ -5378,13 +5398,14 @@ body.compensate-for-scrollbar {
   background: var(--clr-back);
   padding: 19px 20px 11px; }
 
-.send-popup {
-  max-width: 470px;
+.transaction-popup {
+  max-width: 260px;
+  min-width: 260px;
   width: 100%; }
-  .send-popup .basic-table {
+  .transaction-popup .basic-table {
     border-top: 1px solid var(--clr-separator);
     font-size: 10px; }
-  .send-popup .icon-curr {
+  .transaction-popup .icon-curr {
     width: 14px;
     height: 14px;
     flex: 0 0 14px;

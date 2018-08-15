@@ -476,7 +476,8 @@ $(function () {
 	$('data-fancybox').fancybox({
 		keyboard: false,
 		arrows: false,
-		infobar: false
+		infobar: false,
+		touch: false
 	});
 
 	/*---------------------------------------------------*/
