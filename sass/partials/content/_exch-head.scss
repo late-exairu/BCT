@@ -11,27 +11,9 @@
 	--color-one: #ee9100;
 	--color-two: #bf1319;
 
-
 	display: flex;
 	margin: 0;
 	flex: 0 0 var(--exch-head-height);
-
-
-	/*&__input{
-		font-family: $osans;
-		font-size: 29px;
-		font-weight: 700;
-		padding: 5px 20px;
-		background: var(--clr-block);
-		border: 1px solid var(--clr-separatorD);
-		width: 162px;
-		flex: 0 0 162px;
-		margin: 0 16px 0 0;
-
-		&:focus{
-			border-color: var(--clr-accent);
-		}
-	}*/
 
 	&__get,
 	&__send{
@@ -39,18 +21,18 @@
 		display: flex;
 		flex: 1 1;
 		padding: 0;
-		height: 49px;
+		height: 50px;
 		background: var(--color-one);
-		padding: 1px;
-		border-radius: var(--border-radius);
+		padding: 0;
+		/*border-radius: var(--border-radius);*/
 	}
 
 	&__get{
-		background: linear-gradient(to right, var(--color-one) 0%, var(--color-two) 100%);
+		/*background: linear-gradient(to right, var(--color-one) 0%, var(--color-two) 100%);*/
 	}
 
 	&__send{
-		background: linear-gradient(to right, var(--color-two) 0%, var(--color-one) 100%);
+		/*background: linear-gradient(to right, var(--color-two) 0%, var(--color-one) 100%);*/
 	}
 
 	&__switch{
