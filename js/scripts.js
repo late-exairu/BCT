@@ -65,7 +65,7 @@ $(function () {
 	$('.scrollbar-left').scrollbar();
 	$('.scrollbar-arrows').scrollbar({
 		"scrollx": "advanced",
-        "scrolly": "advanced",
+		"scrolly": "advanced",
 		"showArrows": true
 	});
 
@@ -103,29 +103,29 @@ $(function () {
 		$('#orders .forms-wrap').eq(currentIndex).addClass('current');
 	});
 
-	/*---------------------------------------------------*/
-	/* BASIC account-js-menu */
-	/*---------------------------------------------------*/
 
-	$('.accounts-diagram-wrap').click(function () {
-		$('.js-tabs-panel').removeClass('active');
-		$('#panel-funds-portfolio').addClass('active');
-
-		/*---------------------------------------------------*/
-		/* Portfolio charts slider settings */
-		/*---------------------------------------------------*/
-
+	function initializeSliderCharts() {
 		$('.portfolioChartParent').slick({
 			arrows: false,
 			dots: true,
 			infinite: false,
 			fade: true
 		});
-
 		portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 		portfolioChartBTCObj = Highcharts.stockChart('portfolioChartBTC', portfolioChartBTCOptions);
 		portfolioChartETHObj = Highcharts.stockChart('portfolioChartETH', portfolioChartETHOptions);
 
+	}
+
+
+	/*---------------------------------------------------*/
+	/* BASIC account-js-menu */
+	/*---------------------------------------------------*/
+
+	$('body:not(.advanced) .accounts-diagram-wrap').click(function () {
+		$('.js-tabs-panel').removeClass('active');
+		$('#panel-funds-portfolio').addClass('active');
+		initializeSliderCharts();
 	});
 
 	$('.portfolio-stats__back').click(function () {
@@ -142,23 +142,25 @@ $(function () {
 	$('.advanced .js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function () {
 		$('.js-account-stats .portfolio-menu .portfolio-menu__item').removeClass('current');
 		$(this).addClass('current');
+		$('.main-cols__right-bottom .c-block-head__title').text($(this).text());
 
 		$('.js-tabs-panel').removeClass('active');
 		$('.js-tabs-panel').eq($(this).index()).addClass('active');
 
-		$('.portfolio-stats').addClass('hidden');
+		// Global liquidity
+		if ($(this).index() == 0) {
+			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
+		}
 
 		// Portfolio tab
-		if ($(this).index() == 0) {
-			$('.portfolio-stats').removeClass('hidden');
+		if ($(this).index() == 1) {
+			initializeSliderCharts();
 		}
 
 		// Wallet tab
-		if ($(this).index() == 1) {
+		if ($(this).index() == 2) {
 			drawCircleChart();
 		}
-
-
 	});
 
 	/*---------------------------------------------------*/
@@ -203,9 +205,10 @@ $(function () {
 		};
 
 		changeChartStylesOptions(stylesForCircleChart, circleChartOptions);
+		changeChartStylesOptions(stylesForCircleChart, circleChartSmallOptions);
 
-		if (circleChartObj)
-			circleChartObj.update(stylesForCircleChart);
+		if (circleChartObj) circleChartObj.update(stylesForCircleChart);
+		if (circleChartSmallObj) circleChartSmallObj.update(stylesForCircleChart);
 
 		// portfolioChart
 		var stylesForPortfolioChart = {
@@ -234,9 +237,12 @@ $(function () {
 			}
 		};
 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartOptions);
+		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartBTCOptions);
+		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartETHOptions);
 
-		if (portfolioChartObj)
-			portfolioChartObj.update(stylesForPortfolioChart);
+		if (portfolioChartObj) portfolioChartObj.update(stylesForPortfolioChart);
+		if (portfolioChartBTCObj) portfolioChartBTCObj.update(stylesForPortfolioChart);
+		if (portfolioChartETHObj) portfolioChartETHObj.update(stylesForPortfolioChart);
 
 		// liquidityChart
 		var stylesForLiquidityChart = {

@@ -28,12 +28,21 @@ var portfolioChartArrChanges = [
 var portfolioChartData = null;
 var portfolioChartObj = null;
 var portfolioChartCurrentRange = 4;
+
+var portfolioChartMarginTop = 40;
+var portfolioChartMarginBottom = 100;
+
+if($('body').hasClass('advanced')){
+    portfolioChartMarginTop = 10;
+    portfolioChartMarginBottom = 130;
+}
+
 var portfolioChartOptions = {
     chart: {
         type: 'areaspline',
         backgroundColor: '#ffffff',
-        marginBottom: 100,
-        marginTop: 40,
+        marginTop: portfolioChartMarginTop,
+        marginBottom: portfolioChartMarginBottom,
         marginRight: 0,
         marginLeft: 0
     },

@@ -2,12 +2,6 @@
 /* js-portfolio diagram */
 /*---------------------------------------------------*/
 
-/* var portfolioChartArrChanges = [
-    ['Change since last day', '10', '.34'],
-    // ['Change since last month','709','.93'],
-    // ['Change since last year','3,122','.18'],
-    ['Change since inception', '6,709', '.93'],
-]; */
 var portfolioChartETHData = null;
 var portfolioChartETHObj = null;
 var portfolioChartETHCurrentRange = 4;
@@ -15,8 +9,8 @@ var portfolioChartETHOptions = {
     chart: {
         type: 'areaspline',
         backgroundColor: '#ffffff',
-        marginBottom: 100,
-        marginTop: 40,
+        marginTop: portfolioChartMarginTop,
+        marginBottom: portfolioChartMarginBottom,
         marginRight: 0,
         marginLeft: 0
     },
