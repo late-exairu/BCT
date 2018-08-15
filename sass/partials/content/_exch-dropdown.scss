@@ -22,7 +22,7 @@
 	}
 
 	&.open{
-		border-radius: calc(var(--border-radius) - 1px) calc(var(--border-radius) - 1px) 0 0;
+		/*border-radius: calc(var(--border-radius) - 1px) calc(var(--border-radius) - 1px) 0 0;*/
 
 		.exch-dropdown__list{
 			opacity: 1;
@@ -33,6 +33,55 @@
 
 			.sprite-icon{
 				transform: rotate(180deg);
+			}
+		}
+
+		.exch-dropdown__current{
+			&:before{
+				border-radius: 4px 4px 0 0;
+			}
+
+			&:after{
+				border-radius: 5px 5px 0 0;
+			}
+		}
+	}
+
+	&__current{
+		position: relative;
+		border-radius: 4px;
+		overflow: hidden;
+
+		&:before{
+			content: '';
+			position: absolute;
+			left: 1px;
+			top: 1px;
+			bottom: 1px;
+			right: 1px;
+			background: #f00;
+			z-index: -1;
+			border-radius: 4px;
+			background: var(--clr-block);
+		}
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			background: #f00;
+			z-index: -2;
+			border-radius: 5px;
+			width: calc(200% + 60px);
+			background: linear-gradient(to right, var(--color-one) 0%, var(--color-two) 100%);
+		}
+
+		&.send{
+			&:after{
+				left: auto;
+				right: 0;
 			}
 		}
 	}
@@ -72,7 +121,7 @@
 		z-index: 5;
 		left: -1px;
 		right: -1px;
-		top: 100%;
+		top: calc(100% - 1px);
 		padding: 0;
 		margin: 0;
 		list-style: none;
