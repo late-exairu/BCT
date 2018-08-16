@@ -116,13 +116,23 @@ $(function () {
 	function initializeSliderCharts() {
 		$('.portfolioChartParent').slick({
 			arrows: false,
-			dots: true,
+			dots: false,
 			infinite: false,
 			fade: true
 		});
 		portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 		portfolioChartBTCObj = Highcharts.stockChart('portfolioChartBTC', portfolioChartBTCOptions);
 		portfolioChartETHObj = Highcharts.stockChart('portfolioChartETH', portfolioChartETHOptions);
+
+		  $('.portfolioChartParent').mousewheel(function (e) {
+		  	e.preventDefault();
+
+		  	if (e.deltaY < 0) {
+		  		$(this).slick('slickNext');
+		  	} else {
+		  		$(this).slick('slickPrev');
+		  	}
+		  });
 
 	}
 
