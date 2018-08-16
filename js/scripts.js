@@ -55,6 +55,10 @@ $(function () {
 		$(this).addClass('current');
 		$(currDropdown).find('.exch-dropdown__current > svg, .exch-dropdown__current > p').remove();
 		$(newCurr).insertBefore($(currDropdown).find('.exch-dropdown__hangle'));
+		var firstColor = $('.exch-dropdown__current .exch-dropdown__icon').eq(0).css('fill');
+		var secondColor = $('.exch-dropdown__current .exch-dropdown__icon').eq(1).css('fill');
+		$(".exch-head").get(0).style.setProperty("--color-one", firstColor);
+		$(".exch-head").get(0).style.setProperty("--color-two", secondColor);
 	});
 
 	/*---------------------------------------------------*/
