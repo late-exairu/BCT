@@ -1778,7 +1778,7 @@ h6 {
     /*background: linear-gradient(to right, var(--color-two) 0%, var(--color-one) 100%);*/ }
   .exch-head__switch {
     width: 40px;
-    height: var(--exch-head-height);
+    height: 50px;
     display: flex;
     flex: 0 0 40px;
     flex-direction: column;
