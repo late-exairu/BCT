@@ -128,15 +128,15 @@ $(function () {
 		portfolioChartBTCObj = Highcharts.stockChart('portfolioChartBTC', portfolioChartBTCOptions);
 		portfolioChartETHObj = Highcharts.stockChart('portfolioChartETH', portfolioChartETHOptions);
 
-		  $('.portfolioChartParent').mousewheel(function (e) {
-		  	e.preventDefault();
+		$('.portfolioChartParent').mousewheel(function (e) {
+		e.preventDefault();
 
-		  	if (e.deltaY < 0) {
-		  		$(this).slick('slickNext');
-		  	} else {
-		  		$(this).slick('slickPrev');
-		  	}
-		  });
+		if (e.deltaY < 0) {
+			$(this).slick('slickNext');
+		} else {
+			$(this).slick('slickPrev');
+		}
+		});
 
 	}
 
@@ -145,9 +145,10 @@ $(function () {
 	/* BASIC account-js-menu */
 	/*---------------------------------------------------*/
 
-	$('body:not(.advanced) .accounts-diagram-wrap').click(function () {
+	$('.accounts-diagram-wrap').click(function () {
 		$('.js-tabs-panel').removeClass('active');
 		$('#panel-funds-portfolio').addClass('active');
+		$('.main-cols__right-bottom .portfolio-menu__item').eq(1).trigger('click');
 		initializeSliderCharts();
 	});
 

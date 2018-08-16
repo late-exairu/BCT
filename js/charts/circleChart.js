@@ -60,8 +60,8 @@ var circleChartOptions = {
             var currency = this.key;
             var svgString = '';
             $('#panel-funds-wallet .basic-table__row').each(function () {
-                if ($(this).find('.w-22').text().indexOf(currency) != -1) {
-                    svgString = $(this).find('.w-22 svg').clone();
+                if ($(this).find('.basic-table__col').text().indexOf(currency) != -1) {
+                    svgString = $(this).find('.basic-table__col svg').clone();
                     return false;
                 }
             });
