@@ -12,6 +12,7 @@
 	color: var(--clr-textD);
 	background: var(--clr-block);
 	--cell-height: 46px;
+	border-radius: var(--border-radius);
 
 	&__body{
 		/*border-top: 1px solid var(--clr-separator);*/

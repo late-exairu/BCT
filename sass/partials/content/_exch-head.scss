@@ -11,9 +11,15 @@
 	--color-one: #ee9100;
 	--color-two: #707cb9;
 
-	display: flex;
-	margin: 0;
-	flex: 0 0 var(--exch-head-height);
+	position: relative;
+	height: calc(var(--exch-head-height) + 2px);
+
+	&__body{
+		position: relative;
+		display: flex;
+		margin: 0;
+		flex: 0 0 var(--exch-head-height);
+	}
 
 	&__get,
 	&__send{
@@ -24,15 +30,14 @@
 		height: 50px;
 		background: var(--color-one);
 		padding: 0;
-		/*border-radius: var(--border-radius);*/
 	}
 
 	&__get{
-		/*background: linear-gradient(to right, var(--color-one) 0%, var(--color-two) 100%);*/
+		border-radius: var(--border-radius) 0 0  var(--border-radius);
 	}
 
 	&__send{
-		/*background: linear-gradient(to right, var(--color-two) 0%, var(--color-one) 100%);*/
+		border-radius: 0 var(--border-radius) var(--border-radius) 0;
 	}
 
 	&__switch{

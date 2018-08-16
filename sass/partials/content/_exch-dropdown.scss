@@ -137,7 +137,7 @@
 		z-index: 5;
 		left: 0;
 		right: 0;
-		top: calc(100% - 1px);
+		top: calc(100% - 0px);
 		padding: 0;
 		margin: 0;
 		list-style: none;
@@ -146,7 +146,7 @@
 		transition: all 0.2s;
 		background: var(--clr-block);
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
-		border-top: 1px solid var(--clr-separator);
+		/*border-top: 1px solid var(--clr-separator);*/
 
 		.exch-dropdown__title{
 			font-size: 18px;
