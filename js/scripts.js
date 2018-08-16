@@ -1,5 +1,9 @@
 $(function () {
 
+	if (localStorage.getItem('telegramAuth') == 'true'){
+		$('.message-bar__login').addClass('hidden');
+	}
+
 	/* Cubic slider for Orders */
 	var $cubicSlider = $(".js-cubic-slider");
 
