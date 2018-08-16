@@ -513,7 +513,10 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.exch-form__btn').click(function () {
+		$('.js-tabs-panel').removeClass('active');
+		$('#panel-funds-history').addClass('active');
 		$.fancybox.close();
+
 	});
 
 	// On before slide change
