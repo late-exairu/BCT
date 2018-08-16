@@ -3045,7 +3045,35 @@
 					<input type="range" class="js-cubic-slider" name="example_name" value="" />
 				</div>
 
-				<button class="transaction-form__submit">SEND BTC</button>
+				<button class="transaction-form__btn submit js-fancybox-close" data-fancybox data-src="#autentificator-popup">SEND BTC</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="basic-popup autentificator-popup no-close-btn" id="autentificator-popup" style="display: none;">
+	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
+
+		<div class="d-flex-col flex-1-1 flex-h-fix">
+			<form class="transaction-form">
+		
+				<div class="autentificator">
+					<p class="autentificator__title">Input Code from<br/>Google Authentificator</p>
+
+					<ul class="autentificator__nums">
+						<li class="autentificator__num">1</li>
+						<li class="autentificator__num">2</li>
+						<li class="autentificator__num">3</li>
+						<li class="autentificator__num">4</li>
+						<li class="autentificator__num">5</li>
+						<li class="autentificator__num">6</li>
+					</ul>
+				</div>
+				
+				<div class="transaction-form__btns">
+					<button class="transaction-form__btn js-fancybox-close" type="reset">CANCEL</button>
+					<button class="transaction-form__btn submit">CONFIRM</button>
+				</div>
 			</form>
 		</div>
 	</div>
