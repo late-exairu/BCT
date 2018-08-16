@@ -652,9 +652,10 @@ h6 {
   font-size: 12px;
   line-height: 1.2;
   color: var(--clr-textD);
-  background: var(--clr-block); }
+  background: var(--clr-block);
+  --cell-height: 46px; }
   .basic-table__body {
-    border-top: 1px solid var(--clr-separator); }
+    /*border-top: 1px solid var(--clr-separator);*/ }
   .basic-table__row {
     width: 100%;
     min-width: 100%;
@@ -676,10 +677,11 @@ h6 {
       font-weight: 700; }
       .basic-table__row.head .basic-table__col {
         position: relative;
-        height: 40px;
+        height: 46px;
+        height: var(--cell-height);
         padding: 4px 4px;
         color: var(--clr-textL);
-        /*align-items: flex-end;*/ }
+        font-size: 12px; }
         .basic-table__row.head .basic-table__col:first-child {
           padding-left: 10px; }
         .basic-table__row.head .basic-table__col.sorted-down, .basic-table__row.head .basic-table__col.sorted-up {
@@ -692,7 +694,7 @@ h6 {
       .basic-table__row.head.active {
         font-weight: 700; }
     .basic-table__row.active {
-      background: var(--clr-back);
+      background: var(--clr-backA);
       color: var(--clr-accent);
       /*font-weight: 600;*/ }
     .basic-table__row.disabled {
@@ -731,6 +733,7 @@ h6 {
   .basic-table__col {
     display: flex;
     height: 46px;
+    height: var(--cell-height);
     align-items: center;
     padding: 2px 5px 2px 5px;
     flex: 0 0; }
@@ -744,162 +747,6 @@ h6 {
       color: #e05475; }
     .basic-table__col.clr-blue {
       color: #0089cb; }
-    .basic-table__col.w-5 {
-      width: 5%;
-      min-width: 5%;
-      max-width: 5%; }
-    .basic-table__col.w-7 {
-      width: 7.5%;
-      min-width: 7.5%;
-      max-width: 7.5%; }
-    .basic-table__col.w-10 {
-      width: 10%;
-      min-width: 10%;
-      max-width: 10%; }
-    .basic-table__col.w-12 {
-      width: 12.5%;
-      min-width: 12.5%;
-      max-width: 12.5%; }
-    .basic-table__col.w-15 {
-      width: 15%;
-      min-width: 15%;
-      max-width: 15%; }
-    .basic-table__col.w-17 {
-      width: 17.5%;
-      min-width: 17.5%;
-      max-width: 17.5%; }
-    .basic-table__col.w-20 {
-      width: 20%;
-      min-width: 20%;
-      max-width: 20%; }
-    .basic-table__col.w-22 {
-      width: 22.5%;
-      min-width: 22.5%;
-      max-width: 22.5%; }
-    .basic-table__col.w-25 {
-      width: 25%;
-      min-width: 25%;
-      max-width: 25%; }
-    .basic-table__col.w-27 {
-      width: 27.5%;
-      min-width: 27.5%;
-      max-width: 27.5%; }
-    .basic-table__col.w-30 {
-      width: 30%;
-      min-width: 30%;
-      max-width: 30%; }
-    .basic-table__col.w-32 {
-      width: 32.5%;
-      min-width: 32.5%;
-      max-width: 32.5%; }
-    .basic-table__col.w-35 {
-      width: 35%;
-      min-width: 35%;
-      max-width: 35%; }
-    .basic-table__col.w-37 {
-      width: 37.5%;
-      min-width: 37.5%;
-      max-width: 37.5%; }
-    .basic-table__col.w-40 {
-      width: 40%;
-      min-width: 40%;
-      max-width: 40%; }
-    .basic-table__col.w-42 {
-      width: 42.5%;
-      min-width: 42.5%;
-      max-width: 42.5%; }
-    .basic-table__col.w-45 {
-      width: 45%;
-      min-width: 45%;
-      max-width: 45%; }
-    .basic-table__col.w-47 {
-      width: 47.5%;
-      min-width: 47.5%;
-      max-width: 47.5%; }
-    .basic-table__col.w-50 {
-      width: 50%;
-      min-width: 50%;
-      max-width: 50%; }
-    .basic-table__col.w-52 {
-      width: 52.5%;
-      min-width: 52.5%;
-      max-width: 52.5%; }
-    .basic-table__col.w-55 {
-      width: 55%;
-      min-width: 55%;
-      max-width: 55%; }
-    .basic-table__col.w-57 {
-      width: 57.5%;
-      min-width: 57.5%;
-      max-width: 57.5%; }
-    .basic-table__col.w-60 {
-      width: 60%;
-      min-width: 60%;
-      max-width: 60%; }
-    .basic-table__col.w-62 {
-      width: 62.5%;
-      min-width: 62.5%;
-      max-width: 62.5%; }
-    .basic-table__col.w-65 {
-      width: 65%;
-      min-width: 65%;
-      max-width: 65%; }
-    .basic-table__col.w-67 {
-      width: 67.5%;
-      min-width: 67.5%;
-      max-width: 67.5%; }
-    .basic-table__col.w-70 {
-      width: 70%;
-      min-width: 70%;
-      max-width: 70%; }
-    .basic-table__col.w-72 {
-      width: 72.5%;
-      min-width: 72.5%;
-      max-width: 72.5%; }
-    .basic-table__col.w-75 {
-      width: 75%;
-      min-width: 75%;
-      max-width: 75%; }
-    .basic-table__col.w-77 {
-      width: 77.5%;
-      min-width: 77.5%;
-      max-width: 77.5%; }
-    .basic-table__col.w-80 {
-      width: 80%;
-      min-width: 80%;
-      max-width: 80%; }
-    .basic-table__col.w-82 {
-      width: 82.5%;
-      min-width: 82.5%;
-      max-width: 82.5%; }
-    .basic-table__col.w-85 {
-      width: 85%;
-      min-width: 85%;
-      max-width: 85%; }
-    .basic-table__col.w-87 {
-      width: 87.5%;
-      min-width: 87.5%;
-      max-width: 87.5%; }
-    .basic-table__col.w-90 {
-      width: 90%;
-      min-width: 90%;
-      max-width: 90%; }
-    .basic-table__col.w-92 {
-      width: 92.5%;
-      min-width: 92.5%;
-      max-width: 92.5%; }
-    .basic-table__col.w-95 {
-      width: 95%;
-      min-width: 95%;
-      max-width: 95%; }
-    .basic-table__col.w-97 {
-      width: 97.5%;
-      min-width: 97.5%;
-      max-width: 97.5%; }
-    .basic-table__col.w-100 {
-      width: 100%;
-      min-width: 100%;
-      max-width: 100%; }
   .basic-table__arrow-sort {
     display: inline-block;
     width: 5px;
@@ -911,10 +758,14 @@ h6 {
     padding: 3px 0 0;
     line-height: 1;
     color: var(--clr-textL); }
+  .basic-table.bordered .basic-table__body {
+    border-top: 1px solid var(--clr-separator); }
   .basic-table.bordered .basic-table__row {
     border-top: 1px solid var(--clr-separator); }
     .basic-table.bordered .basic-table__row:first-child {
       border: none; }
+  .basic-table.bordered .basic-table__col {
+    height: calc(var(--cell-height) - 1px); }
   .basic-table.med-height .basic-table__row.head .basic-table__col {
     height: 27px; }
   .basic-table.med-height .basic-table__col {
@@ -5628,6 +5479,201 @@ body.compensate-for-scrollbar {
 
 .hidden {
   display: none; }
+
+.w-5 {
+  width: 5%;
+  min-width: 5%;
+  max-width: 5%; }
+
+.w-7 {
+  width: 7.5%;
+  min-width: 7.5%;
+  max-width: 7.5%; }
+
+.w-10 {
+  width: 10%;
+  min-width: 10%;
+  max-width: 10%; }
+
+.w-12 {
+  width: 12.5%;
+  min-width: 12.5%;
+  max-width: 12.5%; }
+
+.w-15 {
+  width: 15%;
+  min-width: 15%;
+  max-width: 15%; }
+
+.w-17 {
+  width: 17.5%;
+  min-width: 17.5%;
+  max-width: 17.5%; }
+
+.w-20 {
+  width: 20%;
+  min-width: 20%;
+  max-width: 20%; }
+
+.w-22 {
+  width: 22.5%;
+  min-width: 22.5%;
+  max-width: 22.5%; }
+
+.w-25 {
+  width: 25%;
+  min-width: 25%;
+  max-width: 25%; }
+
+.w-27 {
+  width: 27.5%;
+  min-width: 27.5%;
+  max-width: 27.5%; }
+
+.w-30 {
+  width: 30%;
+  min-width: 30%;
+  max-width: 30%; }
+
+.w-32 {
+  width: 32.5%;
+  min-width: 32.5%;
+  max-width: 32.5%; }
+
+.w-35 {
+  width: 35%;
+  min-width: 35%;
+  max-width: 35%; }
+
+.w-37 {
+  width: 37.5%;
+  min-width: 37.5%;
+  max-width: 37.5%; }
+
+.w-40 {
+  width: 40%;
+  min-width: 40%;
+  max-width: 40%; }
+
+.w-42 {
+  width: 42.5%;
+  min-width: 42.5%;
+  max-width: 42.5%; }
+
+.w-45 {
+  width: 45%;
+  min-width: 45%;
+  max-width: 45%; }
+
+.w-47 {
+  width: 47.5%;
+  min-width: 47.5%;
+  max-width: 47.5%; }
+
+.w-50 {
+  width: 50%;
+  min-width: 50%;
+  max-width: 50%; }
+
+.w-52 {
+  width: 52.5%;
+  min-width: 52.5%;
+  max-width: 52.5%; }
+
+.w-55 {
+  width: 55%;
+  min-width: 55%;
+  max-width: 55%; }
+
+.w-57 {
+  width: 57.5%;
+  min-width: 57.5%;
+  max-width: 57.5%; }
+
+.w-60 {
+  width: 60%;
+  min-width: 60%;
+  max-width: 60%; }
+
+.w-62 {
+  width: 62.5%;
+  min-width: 62.5%;
+  max-width: 62.5%; }
+
+.w-65 {
+  width: 65%;
+  min-width: 65%;
+  max-width: 65%; }
+
+.w-67 {
+  width: 67.5%;
+  min-width: 67.5%;
+  max-width: 67.5%; }
+
+.w-70 {
+  width: 70%;
+  min-width: 70%;
+  max-width: 70%; }
+
+.w-72 {
+  width: 72.5%;
+  min-width: 72.5%;
+  max-width: 72.5%; }
+
+.w-75 {
+  width: 75%;
+  min-width: 75%;
+  max-width: 75%; }
+
+.w-77 {
+  width: 77.5%;
+  min-width: 77.5%;
+  max-width: 77.5%; }
+
+.w-80 {
+  width: 80%;
+  min-width: 80%;
+  max-width: 80%; }
+
+.w-82 {
+  width: 82.5%;
+  min-width: 82.5%;
+  max-width: 82.5%; }
+
+.w-85 {
+  width: 85%;
+  min-width: 85%;
+  max-width: 85%; }
+
+.w-87 {
+  width: 87.5%;
+  min-width: 87.5%;
+  max-width: 87.5%; }
+
+.w-90 {
+  width: 90%;
+  min-width: 90%;
+  max-width: 90%; }
+
+.w-92 {
+  width: 92.5%;
+  min-width: 92.5%;
+  max-width: 92.5%; }
+
+.w-95 {
+  width: 95%;
+  min-width: 95%;
+  max-width: 95%; }
+
+.w-97 {
+  width: 97.5%;
+  min-width: 97.5%;
+  max-width: 97.5%; }
+
+.w-100 {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%; }
 
 /* =================================================================== */
 /* Media Queries
