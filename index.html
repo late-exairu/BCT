@@ -2885,35 +2885,35 @@
 					<input type="range" class="js-cubic-slider" name="example_name" value="" />
 				</div>
 
-				<button class="transaction-form__submit">SEND BTC</button>
+				<button class="transaction-form__btn submit js-fancybox-close" data-fancybox data-src="#autentificator-popup">SEND BTC</button>
 			</form>
 		</div>
 	</div>
 </div>
 
-<div class="basic-popup autentificator-popup" id="autentificator-popup" style="display: none;">
+<div class="basic-popup autentificator-popup no-close-btn" id="autentificator-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
-
-		Input Code from<br/> Google Authentificator
 
 		<div class="d-flex-col flex-1-1 flex-h-fix">
 			<form class="transaction-form">
-				<div class="transaction-form__line convert">
-					<input class="transaction-form__input" type="text" name="" value="1000.000 BTC">
-					<div class="transaction-form__sep">≈</div>
-					<input class="transaction-form__input" type="text" name="" value="8197500.000 USD">
-				</div>
+		
+				<div class="autentificator">
+					<p class="autentificator__title">Input Code from<br/>Google Authentificator</p>
 
-				<div class="transaction-form__line inner">
-					<label class="transaction-form__label">To Bitcoin Address:</label>
-					<input class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
+					<ul class="autentificator__nums">
+						<li class="autentificator__num">1</li>
+						<li class="autentificator__num">2</li>
+						<li class="autentificator__num">3</li>
+						<li class="autentificator__num">4</li>
+						<li class="autentificator__num">5</li>
+						<li class="autentificator__num">6</li>
+					</ul>
 				</div>
-
-				<div class="cubic-slider">
-					<input type="range" class="js-cubic-slider" name="example_name" value="" />
+				
+				<div class="transaction-form__btns">
+					<button class="transaction-form__btn js-fancybox-close" type="reset">CANCEL</button>
+					<button class="transaction-form__btn submit">CONFIRM</button>
 				</div>
-
-				<button class="transaction-form__submit">SEND BTC</button>
 			</form>
 		</div>
 	</div>
