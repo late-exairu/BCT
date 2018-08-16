@@ -47,7 +47,12 @@ $(function () {
 	$('.exch-dropdown__list .exch-dropdown__item').click(function () {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
-		if (telegramGroupName) $('.chat-head__name').text(telegramGroupName);
+		if (telegramGroupName) {
+			$('.chat-head__name').text(telegramGroupName);
+			var realCurrencyName = currencyName.slice(6).toLowerCase();
+			$('.chat-head__curr').remove();
+			$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+		}
 		var newCurr = $(this).children().clone();
 		$(newCurr).eq(1).text(currencyName);
 		var currDropdown = $(this).closest('.exch-dropdown');
@@ -394,10 +399,10 @@ $(function () {
 				circleChartSmallObj = Highcharts.chart('circleChartSmall', circleChartSmallOptions);
 			} else if (currentSlide == 1) {
 				$('.portfolio-stats__amount-tip').text('Bitcoin');
-				$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-bitcoin" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-bitcoin" > < /use> </svg>')
+				$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-bitcoin" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-bitcoin" > < /use> </svg>');
 			} else if (currentSlide == 2) {
 				$('.portfolio-stats__amount-tip').text('Ethereum');
-				$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-ethereum" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-ethereum" > < /use> </svg>')
+				$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-ethereum" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-ethereum" > < /use> </svg>');
 			}
 		}
 		$('.portfolio-stats__dinamic').text(portfolioChartArrChanges[currentSlide][currentPeriod][0]);
