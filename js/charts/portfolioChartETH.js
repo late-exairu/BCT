@@ -147,8 +147,8 @@ var portfolioChartETHOptions = {
             fillColor: {
                 linearGradient: [0, 0, 0, $('.js-account-stats').height() - 60],
                 stops: [
-                    [0, Highcharts.Color('#707cb9').setOpacity(0.6).get('rgba')],
-                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    [0, Highcharts.Color('#707cb9').setOpacity(0.4).get('rgba')],
+                    [1, Highcharts.Color('#707cb9').setOpacity(0).get('rgba')]
                 ]
             },
             marker: {
