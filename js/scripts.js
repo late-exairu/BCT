@@ -521,7 +521,7 @@ $(function () {
 	/* first popUp layer close */
 	/*---------------------------------------------------*/
 
-	$('.exch-form__btn').click(function () {
+	$('.exch-form__btn, .js-fancybox-close').click(function () {
 		if (!$('body').hasClass('advanced')) {
 			$('.js-tabs-panel').removeClass('active');
 			$('#panel-funds-history').addClass('active');

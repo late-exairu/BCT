@@ -428,6 +428,7 @@
 			border: 1px solid var(--clr-separatorD);
 			border-radius: var(--border-radius);
 			flex-direction: row;
+			background: var(--clr-back);
 
 			.transaction-form__input{
 				font-size: 12px;
@@ -481,6 +482,8 @@
 		width: 140px;
 		height: 140px;
 		margin: 0 auto;
+		background: #fff;
+		border-radius: var(--border-radius);
 
 		& > * {
 			display: block;
@@ -499,6 +502,7 @@
 		justify-content: center;
 		border-radius: 0 3px 3px 0;
 		cursor: pointer;
+		border-left: 1px solid var(--clr-separatorD);
 
 		.sprite-icon{
 			width: 10px;
@@ -526,23 +530,49 @@
 		color: var(--clr-textD);
 	}
 
-	&__submit{
-		font-family: $osans;
-		height: 32px;
+	&__btns{
 		margin: 5px 0 0;
 		display: flex;
-		flex: 1 1 100%;
+
+		&>*{
+			margin: 0 0 0 5px;
+
+			&:first-child{
+				margin: 0;
+			}
+		}
+	}
+
+	&__btn{
+		font-family: $osans;
+		height: 32px;
+		display: flex;
+		flex: 1 1;
 		width: 100%;
+		border: none;
 		border-radius: var(--border-radius);
-		background: var(--clr-accentD);
+		background: var(--clr-icon);
 		color: #fff;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 		font-weight: 700;
-		font-size: 10px;
+		font-size: 18px;
 		border: none;
 		cursor: pointer;
+		transition: all .1s;
+
+		/*&:hover{
+			background: var(--clr-textL);
+		}*/
+
+		&.submit{
+			background: var(--clr-accentD);
+
+			/*&:hover{
+				background: var(--clr-accent);
+			}*/
+		}
 	}
 
 	.cubic-slider{
@@ -552,5 +582,65 @@
 			width: 20px;
 			height: 20px;
 		}
+	}
+}
+
+.autentificator{
+
+	&__title{
+		position: relative;
+		font-size: 11px;
+		font-weight: 600;
+		padding: 0 0 0 52px;
+		color: var(--clr-text);
+		min-height: 46px;
+		margin: 5px 0 0;
+		display: flex;
+		align-items: center;
+
+		&:before{
+			content: '';
+			width: 46px;
+			height: 46px;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			background: url(../img/authentificator.png) no-repeat;
+			background-size: 100%;
+		}
+	}
+
+	&__nums{
+		font-size: 18px;
+		font-weight: 700;
+		display: flex;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		margin: 20px 0;
+	}
+
+	&__num{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 32px;
+		height: 32px;
+		background: var(--clr-separatorD);
+		border-radius: 3px;
+		color: #fff;
+		margin: 0 0 0 8px;
+		cursor: pointer;
+		transition: all .1s;
+
+		&:hover{
+			background: var(--clr-textL);
+		}
+
+		&:first-child{
+			margin: 0;
+		}
+
 	}
 }
