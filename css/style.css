@@ -2689,6 +2689,7 @@ body.menubar-in #user-btn:before {
 /* message-bar */
 /* =================================================================== */
 .message-bar {
+  position: relative;
   height: 50px;
   padding: 0 10px;
   display: flex;
@@ -2745,6 +2746,26 @@ body.menubar-in #user-btn:before {
       .message-bar__btn .sprite-icon.chats-mic {
         width: 17px;
         height: 22px; }
+  .message-bar__login {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; }
+    .message-bar__login:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.75;
+      background: var(--clr-block);
+      z-index: -1; }
 
 /* =================================================================== */
 /* portfolio-menu */

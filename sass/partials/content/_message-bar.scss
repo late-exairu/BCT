@@ -5,6 +5,7 @@
 
 
 .message-bar{
+	position: relative;
 	height: 50px;
 	padding: 0 10px;
 	display: flex;
@@ -84,6 +85,30 @@
 				width: 17px;
 				height: 22px;
 			}
+		}
+	}
+
+	&__login{
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 1;
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			opacity: 0.75;
+			background: var(--clr-block);
+			z-index: -1;
 		}
 	}
 }
