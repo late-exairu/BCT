@@ -1,6 +1,6 @@
 $(function () {
 
-	if (localStorage.getItem('telegramAuth') == 'true'){
+	if (localStorage.getItem('telegramAuth') == 'true') {
 		$('.message-bar__login').addClass('hidden');
 	}
 
@@ -129,13 +129,13 @@ $(function () {
 		portfolioChartETHObj = Highcharts.stockChart('portfolioChartETH', portfolioChartETHOptions);
 
 		$('.portfolioChartParent').mousewheel(function (e) {
-		e.preventDefault();
+			e.preventDefault();
 
-		if (e.deltaY < 0) {
-			$(this).slick('slickNext');
-		} else {
-			$(this).slick('slickPrev');
-		}
+			if (e.deltaY < 0) {
+				$(this).slick('slickNext');
+			} else {
+				$(this).slick('slickPrev');
+			}
 		});
 
 	}
@@ -350,7 +350,7 @@ $(function () {
 					if (index == mainGraphHighlighted - 1) {
 						item.setOptions({
 							fillColor: {
-								linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
+								linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 								stops: gradientColor
 							},
 							id: item.options.id,
@@ -428,28 +428,80 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* Graph prices list */
 	/*---------------------------------------------------*/
+
+	var mainChartFirstColor = '#2B569A';
+	var mainChartSecondColor = '#dbdbdb';
+
+	if ($('body').hasClass('dark-theme')){
+		mainChartFirstColor = '#2B569A';
+		mainChartSecondColor = '#4F6C82';
+	}
+
 	$('.graph-prices .graph-prices__list .graph-prices__item').click(function () {
 		$('.graph-prices__list .graph-prices__item').removeClass('active');
 		$(this).addClass('active');
+		var currentDataId = $(this).attr('data-id');
 		mainChartObj.series.map(function (item, index) {
 			if (item.type == 'areaspline') {
-				if (item.options.lineWidth > 1) {
-					item.update({
-						lineWidth: 1,
-						color: item.options.color
-					});
-					return false;
-				}
+				item.update({
+					fillColor: {
+						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+						stops: [
+							[0, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')],
+							[1, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')]
+						]
+					}
+				});
 			}
 		});
 
-		mainChartObj.series[$(this).attr('data-id') - 1].update({
-			lineWidth: 3,
-			//color: mainChartObj.series[$(this).attr('data-id')].options.color
+		mainChartObj.series[currentDataId - 1].update({
+			fillColor: {
+				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+				stops: gradientColor
+			}
 		});
 
-
+		mainGraphHighlighted = currentDataId;
 	});
+
+	$('.graph-prices .graph-prices__list .graph-prices__item').hover(function () {
+		var currentDataId = $(this).attr('data-id');
+		mainChartObj.series.map(function (item, index) {
+			if (item.type == 'areaspline') {
+				item.update({
+					lineWidth: 1,
+					color: mainChartSecondColor
+				});
+				if (item.options.id == currentDataId) {
+					item.update({
+						lineWidth: 3,
+						color: mainChartFirstColor
+					});
+				}
+			}
+		});
+	});
+
+	$('.graph-prices__list').mouseleave(function () {
+		mainChartObj.series.map(function (item, index) {
+			if (item.type == 'areaspline') {
+				item.update({
+					lineWidth: 1,
+					color: mainChartSecondColor,
+					enableMouseTracking: false,
+				});
+				if (item.options.id == mainGraphHighlighted) {
+					item.update({
+						lineWidth: 3,
+						color: mainChartFirstColor,
+						enableMouseTracking: true,
+					});
+				}
+			}
+		});
+	});
+
 
 	/*---------------------------------------------------*/
 	/* Graph prices select */

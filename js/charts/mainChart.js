@@ -11,8 +11,8 @@ function redrawMainChart() {
 
 // color for highlight graphs on hover
 var gradientColor = [
-	[0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.8).get('rgba')],
-	[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+	[0, Highcharts.Color('#2B569A').setOpacity(0.4).get('rgba')],
+	[1, Highcharts.Color('#2B569A').setOpacity(0).get('rgba')]
 ];
 
 // id of graph for highlight
@@ -393,16 +393,13 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				57, 59, 61, 66, 68, 70, 75, 79, 80, 80,
 			],
 			name: "Series 4",
-			lineWidth: 4,
+			lineWidth: 3,
 			color: '#2B569A',
 			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-				stops: [
-					[0, Highcharts.Color('#2B569A').setOpacity(0.4).get('rgba')],
-					[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-				]
+				stops: gradientColor
 			},
-			id: 6,
+			id: 4,
 			enableMouseTracking: true,
 		},
 		{
