@@ -1,0 +1,28 @@
+
+/* =================================================================== */
+/* icon-trader */
+/* =================================================================== */
+
+
+.icon-trader{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 15px;
+	width: 16px;
+	margin: 0 2px 0 0;
+
+	&:after {
+		content: '';
+		font-size: 16px;
+		display: block;
+	};
+
+	&.binance:after		{ @include sprite(trader-binance); }
+	&.okex:after		{ @include sprite(trader-okex); }
+	&.huobi:after		{ @include sprite(trader-huobi); }
+	&.bitfinex:after	{ @include sprite(trader-bitfinex); }
+	&.coinbene:after	{ @include sprite(trader-coinbene); }
+	/*&.coinbase:after	{ @include sprite(trader-coinbase); }*/
+	&.kraken:after		{ @include sprite(trader-kraken); }
+}

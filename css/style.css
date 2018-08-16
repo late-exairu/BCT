@@ -97,7 +97,7 @@
  * If you have already included it, you can eliminate the below
  * https://github.com/sass-mq/sass-mq/blob/master/_mq.scss
  */
-.graph-prices__icon.binance, .graph-prices__icon.okex, .graph-prices__icon.huobi, .graph-prices__icon.bitfinex, .graph-prices__icon.coinbene, .graph-prices__icon.kraken {
+.icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
   background-size: 131.375em 124.9375em; }
@@ -2046,7 +2046,7 @@ h6 {
     margin: 0; }
 
 /* =================================================================== */
-/* graph-prices
+/* graph-prices */
 /* =================================================================== */
 .graph-prices-toggle {
   transition: background .1s, border-color .1s; }
@@ -2194,40 +2194,6 @@ h6 {
     text-align: left;
     align-self: flex-start;
     padding: 0 5px; }
-  .graph-prices__icon-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 15px;
-    width: 15px;
-    margin: -1px 3px 0 0; }
-  .graph-prices__icon {
-    font-size: 16px;
-    /*&.coinbase	{ @include sprite(trader-coinbase); }*/ }
-    .graph-prices__icon.binance {
-      width: 0.725em;
-      height: 0.725em;
-      background-position: -115.9375em -110.4375em; }
-    .graph-prices__icon.okex {
-      width: 0.875em;
-      height: 0.875em;
-      background-position: -119.4375em -114em; }
-    .graph-prices__icon.huobi {
-      width: 0.51875em;
-      height: 0.80625em;
-      background-position: -118em -112.5em; }
-    .graph-prices__icon.bitfinex {
-      width: 0.625em;
-      height: 0.61875em;
-      background-position: -116.6875em -111.1875em; }
-    .graph-prices__icon.coinbene {
-      width: 0.675em;
-      height: 0.675em;
-      background-position: -117.3125em -111.8125em; }
-    .graph-prices__icon.kraken {
-      width: 0.8625em;
-      height: 0.66875em;
-      background-position: -118.5625em -113.3125em; }
   .graph-prices__price {
     margin: 0;
     font-size: 12px;
@@ -2242,6 +2208,46 @@ h6 {
   .graph-prices .labeled-dropdown {
     width: auto;
     margin: 0 0 0 0; }
+
+/* =================================================================== */
+/* icon-trader */
+/* =================================================================== */
+.icon-trader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15px;
+  width: 16px;
+  margin: 0 2px 0 0;
+  /*&.coinbase:after	{ @include sprite(trader-coinbase); }*/ }
+  .icon-trader:after {
+    content: '';
+    font-size: 16px;
+    display: block; }
+  .icon-trader.binance:after {
+    width: 0.725em;
+    height: 0.725em;
+    background-position: -115.9375em -110.4375em; }
+  .icon-trader.okex:after {
+    width: 0.875em;
+    height: 0.875em;
+    background-position: -119.4375em -114em; }
+  .icon-trader.huobi:after {
+    width: 0.51875em;
+    height: 0.80625em;
+    background-position: -118em -112.5em; }
+  .icon-trader.bitfinex:after {
+    width: 0.625em;
+    height: 0.61875em;
+    background-position: -116.6875em -111.1875em; }
+  .icon-trader.coinbene:after {
+    width: 0.675em;
+    height: 0.675em;
+    background-position: -117.3125em -111.8125em; }
+  .icon-trader.kraken:after {
+    width: 0.8625em;
+    height: 0.66875em;
+    background-position: -118.5625em -113.3125em; }
 
 /* =================================================================== */
 /* labeled-dropdown
