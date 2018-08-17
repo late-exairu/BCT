@@ -59,11 +59,19 @@ $(function () {
 	$('.exch-dropdown__list .exch-dropdown__item').click(function () {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
+		var realCurrencyName = currencyName.slice(6).toLowerCase();
+		// first currency
 		if (telegramGroupName) {
 			$('.chat-head__name').text(telegramGroupName);
-			var realCurrencyName = currencyName.slice(6).toLowerCase();
 			$('.chat-head__curr').remove();
 			$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+			$('.exch-form__send .exch-form__coin').remove();
+			$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+		}
+		// second currency
+		else {
+			$('.exch-form__get .exch-form__coin').remove();
+			$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 		}
 		var newCurr = $(this).children().clone();
 		$(newCurr).eq(1).text(currencyName);
@@ -601,7 +609,7 @@ $(function () {
 			$('.js-tabs-panel').removeClass('active');
 			$('#panel-funds-history').addClass('active');
 		}
-		$.fancybox.close();
+		//$.fancybox.close();
 
 	});
 
@@ -610,7 +618,7 @@ $(function () {
 		updatePortfolioStats(true);
 	});
 
-
+	// convert/confirm buttons
 	$('.exch-head__btn, .exch-form__btn').click(function () {
 		$(this).closest('.exch-head').toggleClass('open');
 	});
