@@ -485,10 +485,12 @@ $(function () {
 		var currentDataId = $(this).attr('data-id');
 		mainChartObj.series.map(function (item, index) {
 			if (item.type == 'areaspline') {
-				item.update({
-					lineWidth: 1,
-					color: mainChartSecondColor
-				});
+				if (item.options.lineWidth > 1) {
+					item.update({
+						lineWidth: 1,
+						color: mainChartSecondColor
+					});
+				}
 				if (item.options.id == currentDataId) {
 					item.update({
 						lineWidth: 3,
@@ -496,7 +498,7 @@ $(function () {
 					});
 				}
 			}
-		});
+		});		
 	});
 
 	$('.graph-prices__list').mouseleave(function () {
