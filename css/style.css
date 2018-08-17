@@ -5061,10 +5061,7 @@ body.compensate-for-scrollbar {
 				background: var(--clr-accent);
 			}*/ }
   .transaction-form .cubic-slider {
-    margin: 15px 0; }
-    .transaction-form .cubic-slider .single {
-      width: 20px;
-      height: 20px; }
+    margin: 10px 0; }
 
 .autentificator__title {
   position: relative;
