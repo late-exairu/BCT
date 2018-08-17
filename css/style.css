@@ -100,7 +100,7 @@
 .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 130.6875em 124.25em; }
+  background-size: 132.8125em 126.375em; }
 
 /* =================================================================== */
 /* Functions
@@ -1619,6 +1619,10 @@ h6 {
   .exch-dropdown .current .rpl,
   .exch-dropdown .exch-dropdown__current .rpl {
     fill: #438bca; }
+  .exch-dropdown .current .usd,
+  .exch-dropdown .exch-dropdown__current .usd {
+    /*font-size: 16px; @include sprite(curr-dollar);*/
+    fill: #d22c33; }
 
 /* =================================================================== */
 /* exch-head */
@@ -1628,7 +1632,7 @@ h6 {
   --color-one: var(--clr-separatorD);
   --color-two: var(--clr-separatorD);
   --color-one: #ee9100;
-  --color-two: #707cb9;
+  --color-two: #c81820;
   position: relative;
   z-index: 10;
   height: calc(var(--exch-head-height) + 2px); }
@@ -2108,31 +2112,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -115.9375em -110.4375em; }
+    background-position: -118.0625em -112.5625em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -120.3125em -114.875em; }
+    background-position: -122.4375em -117em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -118.875em -113.375em; }
+    background-position: -121em -115.5em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -116.6875em -111.1875em; }
+    background-position: -118.8125em -113.3125em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -118.1875em -112.6875em; }
+    background-position: -120.3125em -114.8125em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -117.3125em -111.8125em; }
+    background-position: -119.4375em -113.9375em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -119.4375em -114.1875em; }
+    background-position: -121.5625em -116.3125em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -5548,6 +5552,9 @@ body.compensate-for-scrollbar {
 
 .clr-ripple {
   fill: #438bca; }
+
+.clr-dollar {
+  fill: #C81820; }
 
 .clr-red {
   color: #e05475; }
