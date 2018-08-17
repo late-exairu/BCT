@@ -12,6 +12,7 @@
 	--color-two: #707cb9;
 
 	position: relative;
+	z-index: 10;
 	height: calc(var(--exch-head-height) + 2px);
 
 	&__body{
@@ -19,6 +20,7 @@
 		display: flex;
 		margin: 0;
 		flex: 0 0 var(--exch-head-height);
+		transition: all .5s;
 	}
 
 	&__get,
@@ -89,7 +91,7 @@
 	&__btn{
 		font-family: $osans;
 		padding: 0 10px 0 5px;
-		height: var(--exch-head-height);
+		height: call(var(--exch-head-height) + 1px);
 		display: flex;
 		flex: 0 0 100px;
 		align-items: center;
@@ -126,6 +128,21 @@
 		fill: #fff;
 		/*margin: 0 0 0 12px;*/
 		margin: 0;
+	}
+
+	&.open{
+
+		.exch-head__body{
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		.exch-form{
+			transform: translateY(0);
+			display: block !important;
+			visibility: visible;
+			opacity: 1;
+		}
 	}
 }
 

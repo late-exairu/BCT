@@ -199,7 +199,11 @@
 	right: 0;
 	bottom: 0;
 	z-index: 10;
+	transform: translateY(-60px);
+	transition: all .5s;
 	height: calc(var(--exch-head-height) + 2px);
+	visibility: hidden;
+	opacity: 0;
 
 	&__body{
 		display: flex;
