@@ -33,11 +33,23 @@
 
 		&:hover{
 			background: var(--clr-backLL);
+			color: var(--clr-accent);
 			cursor: pointer;
 		}
 
 		&:first-child{
 			border: none;
+		}
+
+		&.active{
+			background: var(--clr-backA);
+			color: var(--clr-accent);
+			/*font-weight: 600;*/
+		}
+
+		&.disabled{
+			pointer-events: none;
+			opacity: 0.3;
 		}
 
 		&.head{
@@ -77,17 +89,6 @@
 			&.active{
 				font-weight: 700;
 			}
-		}
-
-		&.active{
-			background: var(--clr-backA);
-			color: var(--clr-accent);
-			/*font-weight: 600;*/
-		}
-
-		&.disabled{
-			pointer-events: none;
-			opacity: 0.3;
 		}
 	}
 
