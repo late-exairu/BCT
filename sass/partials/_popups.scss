@@ -10,10 +10,24 @@
 	width: auto;
 	box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
 	background: transparent;
-	/*overflow: hidden;*/
+
+	&__bottom{
+		width: 100%;
+		display: flex;
+		min-height: 44px;
+		color: var(--clr-text);
+		margin: 0;
+		padding: 4px 10px;
+		font-size: 15px;
+		font-weight: 700;
+		border-top: 3px solid var(--clr-separatorD);
+		align-items: center;
+		background: var(--clr-back);
+		border-radius: 0 0 var(--border-radius) var(--border-radius);
+	}
 
 	&.tables{
-		width: 762px;
+		width: 520px;
 
 		.c-block{
 			/*max-height: 214px;*/

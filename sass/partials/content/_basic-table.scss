@@ -158,6 +158,10 @@
 		&.clr-blue{
 			color: #0089cb;
 		}
+
+		&.bold{
+			font-weight: 700;
+		}
 	}
 
 	&__arrow-sort{
@@ -251,6 +255,10 @@
 		}
 	}
 
+	&.four-rows{
+		max-height: calc(var(--cell-height) * 4);
+	}
+
 	.icon-curr{
 		width: 24px;
 		height: 24px;
@@ -279,6 +287,10 @@
 	.smaller{
 		font-size: 10px;
 		margin: 0 0 0 3px;
+	}
+
+	.bold{
+		font-weight: 700;
 	}
 
 	.clr-gray{
