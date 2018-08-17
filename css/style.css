@@ -1047,7 +1047,7 @@ h6 {
       right: 0;
       bottom: -1px;
       height: 3px;
-      background: var(--clr-accent);
+      background: var(--clr-accentD);
       display: none; }
     .c-head-menu__item.current .c-head-menu__link {
       color: var(--clr-textD); }
