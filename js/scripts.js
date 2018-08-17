@@ -611,6 +611,10 @@ $(function () {
 	});
 
 
+	$('.exch-head__btn, .exch-form__btn').click(function () {
+		$('.exch-head__body,.exch-form').toggleClass('hidden');
+	});
+
 	/*---------------------------------------------------*/
 	/* JS for ADVANCED page */
 	/*---------------------------------------------------*/
