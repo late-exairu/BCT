@@ -40,6 +40,14 @@ $(function () {
 		}
 	});
 
+	$('.main-cols__right-top .exch-dropdown').hover(function name() {
+		$(this).addClass('open');
+	});
+
+	$('.main-cols__right-top .exch-dropdown').mouseleave(function name() {
+		$(this).removeClass('open');
+	});
+
 	/*---------------------------------------------------*/
 
 	$('input[placeholder], textarea[placeholder]').placeholder();
@@ -432,7 +440,7 @@ $(function () {
 	var mainChartFirstColor = '#2B569A';
 	var mainChartSecondColor = '#dbdbdb';
 
-	if ($('body').hasClass('dark-theme')){
+	if ($('body').hasClass('dark-theme')) {
 		mainChartFirstColor = '#2B569A';
 		mainChartSecondColor = '#4F6C82';
 	}
