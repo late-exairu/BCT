@@ -97,10 +97,10 @@
  * If you have already included it, you can eliminate the below
  * https://github.com/sass-mq/sass-mq/blob/master/_mq.scss
  */
-.icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.kraken:after {
+.icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 129.8125em 123.375em; }
+  background-size: 130.6875em 124.25em; }
 
 /* =================================================================== */
 /* Functions
@@ -1683,7 +1683,7 @@ h6 {
   .exch-head__btn {
     font-family: "open_sans", sans-serif;
     padding: 0 10px 0 5px;
-    height: var(--exch-head-height)1px();
+    height: calc(var(--exch-head-height) + 1px);
     display: flex;
     flex: 0 0 100px;
     align-items: center;
@@ -2094,8 +2094,7 @@ h6 {
   justify-content: center;
   height: 15px;
   width: 16px;
-  margin: 0 2px 0 0;
-  /*&.coinbase:after	{ @include sprite(trader-coinbase); }*/ }
+  margin: 0 2px 0 0; }
   .icon-trader:after {
     content: '';
     font-size: 16px;
@@ -2107,11 +2106,11 @@ h6 {
   .icon-trader.okex:after {
     width: 0.875em;
     height: 0.875em;
-    background-position: -119.4375em -114em; }
+    background-position: -120.3125em -114.875em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -118em -112.5em; }
+    background-position: -118.875em -113.375em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
@@ -2119,11 +2118,15 @@ h6 {
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
+    background-position: -118.1875em -112.6875em; }
+  .icon-trader.coinbase:after {
+    width: 0.84375em;
+    height: 0.84375em;
     background-position: -117.3125em -111.8125em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -118.5625em -113.3125em; }
+    background-position: -119.4375em -114.1875em; }
 
 /* =================================================================== */
 /* labeled-dropdown

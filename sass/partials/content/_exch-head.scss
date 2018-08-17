@@ -91,7 +91,7 @@
 	&__btn{
 		font-family: $osans;
 		padding: 0 10px 0 5px;
-		height: call(var(--exch-head-height) + 1px);
+		height: calc(var(--exch-head-height) + 1px);
 		display: flex;
 		flex: 0 0 100px;
 		align-items: center;

@@ -23,6 +23,6 @@
 	&.huobi:after		{ @include sprite(trader-huobi); }
 	&.bitfinex:after	{ @include sprite(trader-bitfinex); }
 	&.coinbene:after	{ @include sprite(trader-coinbene); }
-	/*&.coinbase:after	{ @include sprite(trader-coinbase); }*/
+	&.coinbase:after	{ @include sprite(trader-coinbase); }
 	&.kraken:after		{ @include sprite(trader-kraken); }
 }
