@@ -5504,7 +5504,24 @@ body.compensate-for-scrollbar {
 
 .fancybox-content {
   padding: 0;
-  background: transparent; }
+  background: transparent;
+  overflow: visible; }
+
+.fancybox-close-small {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--clr-accentD);
+  color: #fff; }
+  .fancybox-close-small svg {
+    margin: -3px 0 0 -3px;
+    width: 26px;
+    height: 26px;
+    fill: #fff; }
 
 /* =================================================================== */
 /* Globals
