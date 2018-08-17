@@ -53,7 +53,7 @@
 		}
 
 		&.head{
-			/*font-size: 11px;*/
+			font-size: 12px;
 			font-weight: 700;
 
 			.basic-table__col{
@@ -62,7 +62,6 @@
 				height: var(--cell-height);
 				padding: 4px 4px;
 				color: var(--clr-textL);
-				font-size: 12px;
 
 				&:first-child{
 					padding-left: 10px;
@@ -213,18 +212,19 @@
 	}
 
 	&.low-height{
-		font-size: 10px;
+		font-size: 11px;
+		--cell-height: 21px;
 
 		.basic-table__row{
 			&.head{
-				font-size: 10px;
+				font-size: 11px;
 				letter-spacing: -0.03em;
 				font-weight: 600;
 
 				.basic-table__col{
-					min-height: 19px;
+					min-height: var(--cell-height);
 					height: auto;
-					padding: 3px 5px 2px;
+					padding: 2px 5px 2px;
 
 					&:first-child{
 						padding-left: 10px;
@@ -234,8 +234,8 @@
 		}
 
 		.basic-table__col{
-			height: 19px;
-			padding: 3px 5px 2px;
+			height: var(--cell-height);
+			padding: 2px 5px 2px;
 
 			&:first-child{
 				padding-left: 10px;

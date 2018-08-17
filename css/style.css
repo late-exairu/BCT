@@ -562,8 +562,8 @@ a {
   width: 100%;
   height: 100%;
   /*dev size*/
-  /*max-width: 1280px;
-	max-height: 720px;*/ }
+  max-width: 1280px;
+  max-height: 720px; }
   .wrapper.no-bar {
     padding: 0; }
 
@@ -682,15 +682,14 @@ h6 {
       pointer-events: none;
       opacity: 0.3; }
     .basic-table__row.head {
-      /*font-size: 11px;*/
+      font-size: 12px;
       font-weight: 700; }
       .basic-table__row.head .basic-table__col {
         position: relative;
         height: 46px;
         height: var(--cell-height);
         padding: 4px 4px;
-        color: var(--clr-textL);
-        font-size: 12px; }
+        color: var(--clr-textL); }
         .basic-table__row.head .basic-table__col:first-child {
           padding-left: 10px; }
         .basic-table__row.head .basic-table__col.sorted-down, .basic-table__row.head .basic-table__col.sorted-up {
@@ -773,20 +772,21 @@ h6 {
   .basic-table.med-height .basic-table__col {
     height: 33px; }
   .basic-table.low-height {
-    font-size: 10px; }
+    font-size: 11px;
+    --cell-height: 21px; }
     .basic-table.low-height .basic-table__row.head {
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: -0.03em;
       font-weight: 600; }
       .basic-table.low-height .basic-table__row.head .basic-table__col {
-        min-height: 19px;
+        min-height: var(--cell-height);
         height: auto;
-        padding: 3px 5px 2px; }
+        padding: 2px 5px 2px; }
         .basic-table.low-height .basic-table__row.head .basic-table__col:first-child {
           padding-left: 10px; }
     .basic-table.low-height .basic-table__col {
-      height: 19px;
-      padding: 3px 5px 2px; }
+      height: var(--cell-height);
+      padding: 2px 5px 2px; }
       .basic-table.low-height .basic-table__col:first-child {
         padding-left: 10px; }
   .basic-table.bigger-font {
@@ -929,15 +929,25 @@ h6 {
       border-left: none; }
   .c-block__text-sep {
     font-family: "open_sans", sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--clr-textD);
     text-align: center;
     padding: 2px 5px;
+    min-height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     border-top: 1px solid var(--clr-separator);
     border-bottom: 1px solid var(--clr-separator);
     background: var(--clr-backLL); }
+    .c-block__text-sep span {
+      font-size: 10px;
+      font-weight: 300;
+      vertical-align: bottom;
+      align-self: flex-end;
+      margin: 0 0 1px 4px; }
 
 .c-block-btns {
   display: flex;
@@ -987,7 +997,7 @@ h6 {
   .c-block-head__title {
     font-size: 16px;
     margin: 0;
-    color: var(--clr-accentD);
+    color: var(--clr-text);
     font-weight: 700; }
     .c-block-head__title span {
       font-size: 14px; }
@@ -1025,7 +1035,7 @@ h6 {
   padding: 0;
   margin: -4px 0px -3px 6px;
   list-style: none;
-  font-size: 11px;
+  font-size: 12px;
   display: flex; }
   .c-head-menu__item {
     position: relative;
@@ -1050,7 +1060,7 @@ h6 {
     align-items: flex-end;
     text-decoration: none;
     height: 100%;
-    padding: 6px 8px 4px;
+    padding: 6px 12px 4px;
     color: var(--clr-textL);
     background: transparent;
     border: none;
@@ -1401,18 +1411,18 @@ h6 {
 .cubic-slider {
   position: relative;
   width: 100%;
-  margin: 7px 0; }
+  margin: 5px 0; }
   .cubic-slider .irs {
-    height: 16px; }
+    height: 20px; }
   .cubic-slider .irs-with-grid {
-    height: 16px; }
+    height: 20px; }
   .cubic-slider .irs-line {
-    top: 8px;
+    top: 9px;
     height: 1px;
     background: var(--clr-separatorD); }
   .cubic-slider .irs-bar,
   .cubic-slider .irs-bar-edge {
-    top: 8px;
+    top: 9px;
     height: 1px;
     width: 10px;
     background: var(--clr-separatorD); }
@@ -1420,7 +1430,7 @@ h6 {
     display: none; }
   .cubic-slider .irs-grid {
     bottom: auto;
-    top: 6px;
+    top: 7px;
     height: 5px;
     left: 0 !important;
     width: calc(100% - 1px) !important;
@@ -1435,7 +1445,7 @@ h6 {
     display: none; }
   .cubic-slider .single {
     width: 20px;
-    height: 16px;
+    height: 20px;
     border-radius: 3px;
     background: var(--clr-block);
     border: 1px solid var(--clr-separatorD);
@@ -2459,9 +2469,9 @@ Blocks from left bar
       min-width: 250px;
       max-width: 450px; }
     .main-cols__left.col-tables {
-      width: 33%;
-      flex: 0 0 33%;
-      min-width: 400px; }
+      width: 30%;
+      flex: 0 0 30%;
+      min-width: 360px; }
   .main-cols__left-top {
     display: flex;
     flex: 1 1;
@@ -4580,7 +4590,7 @@ body.compensate-for-scrollbar {
 .order-form {
   font-family: "open_sans", sans-serif;
   font-size: 13px;
-  padding: 10px 15px;
+  padding: 10px 10px;
   width: 100%; }
   .order-form__group {
     min-height: 105px;
@@ -4598,13 +4608,13 @@ body.compensate-for-scrollbar {
     display: flex;
     font-size: 11px;
     color: var(--clr-textD);
-    flex: 1 0 35%;
+    flex: 1 0 40%;
     align-items: center;
     font-weight: 500; }
   .order-form__input-wrap {
     position: relative;
     display: flex;
-    flex: 1 0 65%; }
+    flex: 1 0 60%; }
   .order-form__input {
     height: 22px;
     border: 1px solid var(--clr-separatorD);
@@ -4654,7 +4664,11 @@ body.compensate-for-scrollbar {
     .order-form__submit.btn-red {
       background: #e05475; }
   .order-form .cubic-slider {
-    margin: 7px 0 5px; }
+    margin: 5px 0 5px; }
+  .order-form input[type=number]::-webkit-inner-spin-button,
+  .order-form input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
 
 @media only screen and (min-height: 900px) {
   .main-cols .order-form {
@@ -4685,9 +4699,9 @@ body.compensate-for-scrollbar {
 
 @media only screen and (min-width: 1920px) {
   .main-cols .order-form__label {
-    flex: 1 0 25%; }
+    flex: 1 0 35%; }
   .main-cols .order-form__input-wrap {
-    flex: 1 0 75%; } }
+    flex: 1 0 65%; } }
 
 .exch-form {
   position: absolute;
@@ -5519,11 +5533,11 @@ body.compensate-for-scrollbar {
 .m-top {
   margin-top: var(--gap-size); }
 
-.m-bottom {
-  margin-bottom: var(--gap-size); }
-
 .m-right {
   margin-right: var(--gap-size); }
+
+.m-bottom {
+  margin-bottom: var(--gap-size); }
 
 .scroll-y {
   height: 100%;

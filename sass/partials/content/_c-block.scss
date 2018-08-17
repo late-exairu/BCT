@@ -37,14 +37,26 @@
 
 	&__text-sep{
 		font-family: $osans;
-		font-size: 11px;
+		font-size: 12px;
 		font-weight: 700;
 		color: var(--clr-textD);
 		text-align: center;
 		padding: 2px 5px;
+		min-height: 23px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		margin: 0;
 		border-top: 1px solid var(--clr-separator);
 		border-bottom: 1px solid var(--clr-separator);
 		background: var(--clr-backLL);
+
+		span{
+			font-size: 10px;
+			font-weight: 300;
+			vertical-align: bottom;
+			align-self: flex-end;
+			margin: 0 0 1px 4px;
+		}
 	}
 }
