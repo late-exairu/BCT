@@ -71,7 +71,7 @@
 		/*background-color: var(--clr-back);*/
 
 		&:hover{
-			.scroll-bar{
+			.scroll-bar:after{
 				background-color: var(--clr-icon);
 			}
 		}
@@ -96,17 +96,17 @@
 			}
 		}
 		&.scroll-y {
-			height: calc(100% - 10px);
 			right: 0px;
-			top: 5px;
+			top: 0;
+			bottom: 0;
 			width: 15px;
 			cursor: pointer;
 			opacity: 0.3;
 
 			.scroll-bar {
-				left: 5px;
+				left: 0px;
 				min-height: 10px;
-				width: 5px;
+				width: 15px;
 			}
 
 			&.scroll-scrollx_visible {
@@ -116,18 +116,31 @@
 			}
 		}
 		.scroll-bar {
-			transition: background 0.1s;
-			background-color: var(--clr-separatorD);
-			border-radius: 2px;
-			max-height: 60px;
-			height: 60px;
+			max-height: 70px;
+			height: 70px;
+			background: transparent;
+
+			&:after{
+				content: '';
+				transition: background 0.1s;
+				background-color: var(--clr-separatorD);
+				border-radius: 3px;
+				position: absolute;
+				left: 5px;
+				top: 5px;
+				right: 5px;
+				bottom: 5px;
+			}
 
 			&:hover {
-				background-color: var(--clr-iconD);
+				background: transparent;
+				&:after{
+					background-color: var(--clr-iconD);
+				}
 			}
 		}
 
-		&.scroll-draggable .scroll-bar {
+		&.scroll-draggable .scroll-bar:after {
 			background-color: var(--clr-textLL);
 		}
 
