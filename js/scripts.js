@@ -604,13 +604,16 @@ $(function () {
 	/* first popUp layer close */
 	/*---------------------------------------------------*/
 
-	$('.exch-form__btn, .js-fancybox-close').click(function () {
+	$('.exch-form__btn').click(function () {
+		// basic
 		if (!$('body').hasClass('advanced')) {
 			$('.js-tabs-panel').removeClass('active');
 			$('#panel-funds-history').addClass('active');
 		}
-		//$.fancybox.close();
-
+		//advanced
+		else {
+			$('.main-cols__right-bottom .portfolio-menu__item').eq(3).trigger('click');
+		}
 	});
 
 	// On before slide change
