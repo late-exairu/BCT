@@ -3527,7 +3527,7 @@ body.menubar-in #user-btn:before {
   z-index: 5;
   margin: 0;
   /*background-color: var(--clr-back);*/ }
-  .scrollbar-right .scroll-element:hover .scroll-bar {
+  .scrollbar-right .scroll-element:hover .scroll-bar:after {
     background-color: var(--clr-icon); }
   .scrollbar-right .scroll-element.scroll-x {
     bottom: 0;
@@ -3542,27 +3542,37 @@ body.menubar-in #user-btn:before {
     .scrollbar-right .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size, .scrollbar-right .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
       top: -19px; }
   .scrollbar-right .scroll-element.scroll-y {
-    height: calc(100% - 10px);
     right: 0px;
-    top: 5px;
+    top: 0;
+    bottom: 0;
     width: 15px;
     cursor: pointer;
     opacity: 0.3; }
     .scrollbar-right .scroll-element.scroll-y .scroll-bar {
-      left: 5px;
+      left: 0px;
       min-height: 10px;
-      width: 5px; }
+      width: 15px; }
     .scrollbar-right .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size, .scrollbar-right .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
       top: -19px; }
   .scrollbar-right .scroll-element .scroll-bar {
-    transition: background 0.1s;
-    background-color: var(--clr-separatorD);
-    border-radius: 2px;
-    max-height: 60px;
-    height: 60px; }
+    max-height: 70px;
+    height: 70px;
+    background: transparent; }
+    .scrollbar-right .scroll-element .scroll-bar:after {
+      content: '';
+      transition: background 0.1s;
+      background-color: var(--clr-separatorD);
+      border-radius: 3px;
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      right: 5px;
+      bottom: 5px; }
     .scrollbar-right .scroll-element .scroll-bar:hover {
-      background-color: var(--clr-iconD); }
-  .scrollbar-right .scroll-element.scroll-draggable .scroll-bar {
+      background: transparent; }
+      .scrollbar-right .scroll-element .scroll-bar:hover:after {
+        background-color: var(--clr-iconD); }
+  .scrollbar-right .scroll-element.scroll-draggable .scroll-bar:after {
     background-color: var(--clr-textLL); }
   .scrollbar-right .scroll-element div {
     overflow: hidden;
