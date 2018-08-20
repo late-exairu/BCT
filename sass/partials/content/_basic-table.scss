@@ -11,7 +11,7 @@
 	line-height: 1.2;
 	color: var(--clr-textD);
 	background: var(--clr-block);
-	--cell-height: 46px;
+	--cell-height: 47px;
 	border-radius: var(--border-radius);
 
 	&__body{
@@ -58,8 +58,7 @@
 
 			.basic-table__col{
 				position: relative;
-				height: 46px;
-				height: var(--cell-height);
+				height: calc(var(--cell-height) - 1px);
 				padding: 4px 4px;
 				color: var(--clr-textL);
 
@@ -133,7 +132,6 @@
 
 	&__col{
 		display: flex;
-		height: 46px;
 		height: var(--cell-height);
 		align-items: center;
 		padding: 2px 5px 2px 5px;
@@ -190,6 +188,12 @@
 
 			&:first-child{
 				border: none;
+			}
+
+			&.head{
+				.basic-table__col{
+					height: calc(var(--cell-height) - 2px);
+				}
 			}
 		}
 

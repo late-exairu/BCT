@@ -46,9 +46,9 @@
 
 	&__left-bottom{
 		display: flex;
-		flex: 0 0 230px;
+		flex: 0 0 186px;
 		flex-direction: column;
-		min-height: 230px;
+		min-height: 186px;
 	}
 
 	&__right{
@@ -70,9 +70,18 @@
 
 	&__right-bottom{
 		display: flex;
-		flex: 0 0 230px;
+		flex: 0 0 186px;
 		flex-direction: column;
-		min-height: 230px;
+		min-height: 186px;
+	}
+
+	&.advanced{
+
+		.main-cols__left-bottom,
+		.main-cols__right-bottom{
+			flex: 0 0 230px;
+			min-height: 230px;
+		}
 	}
 
 	@media only screen and (min-height : 900px) {
