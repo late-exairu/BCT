@@ -29,13 +29,13 @@ var portfolioChartData = null;
 var portfolioChartObj = null;
 var portfolioChartCurrentRange = 4;
 
-var portfolioChartMarginTop = 40;
-var portfolioChartMarginBottom = 100;
+var portfolioChartMarginTop = 10;
+var portfolioChartMarginBottom = 130;
 
-if($('body').hasClass('advanced')){
+/* if($('body').hasClass('advanced')){
     portfolioChartMarginTop = 10;
     portfolioChartMarginBottom = 130;
-}
+} */
 
 var portfolioChartOptions = {
     chart: {
