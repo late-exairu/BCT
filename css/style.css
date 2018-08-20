@@ -5268,7 +5268,7 @@ body.compensate-for-scrollbar {
     #circleChartText {
       width: 200px; }
       #circleChartText .wrap .value {
-        font-size: 46px; }
+        font-size: 40px; }
         #circleChartText .wrap .value span {
           top: 2px;
           font-size: 26px; }

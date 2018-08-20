@@ -95,9 +95,9 @@ var circleChartOptions = {
 $(window).resize(drawCircleChart);
 
 function drawCircleChart() {
-    var pieChartSize = $('#circleChart').width() - 20;
-    var centerX = $('#circleChart').width() / 2 - 20;
-    var centerY = $('#circleChart').height() / 2 - 20;
+    pieChartSize = $('#circleChart').width() - 20 - 28;
+    centerX = $('#circleChart').width() / 2 - 20;
+    centerY = $('#circleChart').height() / 2 - 20;
     circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
     circleChartObj.update({
         plotOptions: {
