@@ -29,13 +29,13 @@ var portfolioChartData = null;
 var portfolioChartObj = null;
 var portfolioChartCurrentRange = 4;
 
-var portfolioChartMarginTop = 10;
-var portfolioChartMarginBottom = 130;
+var portfolioChartMarginTop = -20;
+var portfolioChartMarginBottom = 180;
 
-/* if($('body').hasClass('advanced')){
-    portfolioChartMarginTop = 10;
-    portfolioChartMarginBottom = 130;
-} */
+if($('body').hasClass('advanced')){
+    portfolioChartMarginTop = -20;
+    portfolioChartMarginBottom = 200;
+} 
 
 var portfolioChartOptions = {
     chart: {
@@ -177,7 +177,7 @@ var portfolioChartOptions = {
             lineWidth: 3,
             color: '#2B569A',
             fillColor: {
-                linearGradient: [0, 0, 0, $('.js-account-stats').height() - 60],
+                linearGradient: [0, 0, 0, $('#panel-funds-portfolio').height() / 3 - 90],
                 stops: [
                     [0, Highcharts.Color('#2B569A').setOpacity(0.4).get('rgba')],
                     [1, Highcharts.Color('#2B569A').setOpacity(0).get('rgba')]

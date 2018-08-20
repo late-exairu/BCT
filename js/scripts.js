@@ -168,7 +168,7 @@ $(function () {
 		initializeSliderCharts();
 	});
 
-	$('.portfolio-stats__back').click(function () {
+	$('.portfolio-back').click(function () {
 		$('.js-tabs-panel').removeClass('active');
 		$('#panel-funds-wallet').addClass('active');
 		drawCircleChart();
@@ -237,19 +237,6 @@ $(function () {
 	/*---------------------------------------------------*/
 	function changeChartsColors(backColor, gridColor, labelColor, lineColor) {
 
-		// circleChart
-		var stylesForCircleChart = {
-			chart: {
-				backgroundColor: backColor,
-			}
-		};
-
-		changeChartStylesOptions(stylesForCircleChart, circleChartOptions);
-		changeChartStylesOptions(stylesForCircleChart, circleChartSmallOptions);
-
-		if (circleChartObj) circleChartObj.update(stylesForCircleChart);
-		if (circleChartSmallObj) circleChartSmallObj.update(stylesForCircleChart);
-
 		// portfolioChart
 		var stylesForPortfolioChart = {
 			chart: {
@@ -276,13 +263,13 @@ $(function () {
 				gridLineColor: gridColor
 			}
 		};
-		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartOptions);
+ 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartOptions);
 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartBTCOptions);
 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartETHOptions);
 
 		if (portfolioChartObj) portfolioChartObj.update(stylesForPortfolioChart);
 		if (portfolioChartBTCObj) portfolioChartBTCObj.update(stylesForPortfolioChart);
-		if (portfolioChartETHObj) portfolioChartETHObj.update(stylesForPortfolioChart);
+		if (portfolioChartETHObj) portfolioChartETHObj.update(stylesForPortfolioChart); 
 
 		// liquidityChart
 		var stylesForLiquidityChart = {

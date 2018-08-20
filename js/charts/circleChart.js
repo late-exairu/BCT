@@ -25,7 +25,7 @@ var circleChartOptions = {
         type: 'pie',
         spacingLeft: 0,
         spacingTop: 0,
-        backgroundColor: '#ffffff',
+        backgroundColor: 'rgba(255, 255, 255, 0.0)',
         marginLeft: 0
     },
     title: null,
