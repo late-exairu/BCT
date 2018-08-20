@@ -48,7 +48,11 @@
   --clr-backA:		#e6f1f8;
   /*background color accented*/
   --clr-block:		#ffffff;
-  /*basic block color basic*/ }
+  /*basic block color basic*/
+  --clr-text-tooltip: #2C589C;
+  /*basic tooltip text color*/
+  --clr-back-tooltip: #F9F9F9;
+  /*basic tooltip  background color*/ }
 
 .dark-theme {
   --clr-text:			#9ba6b2;
@@ -90,7 +94,11 @@
   --clr-backA:		#213040;
   /*background color accented*/
   --clr-block:		#18202d;
-  /*basic block color basic*/ }
+  /*basic block color basic*/
+  --clr-text-tooltip: #F9F9F9;
+  /*tooltip text color dark*/
+  --clr-back-tooltip: #2B569A;
+  /*tooltip  background color dark*/ }
 
 /**
  * The following variable and function originate from the sass-mq library.
@@ -5282,40 +5290,52 @@ body.compensate-for-scrollbar {
 .highcharts-tooltip {
   z-index: 9998 !important; }
 
-.highcharts-tooltip, .secondTooltip {
+.highcharts-tooltip,
+.secondTooltip {
   font-family: "open_sans", sans-serif; }
   .highcharts-tooltip div.tooltip,
-  .highcharts-tooltip div.tooltipCircle, .secondTooltip div.tooltip,
+  .highcharts-tooltip div.tooltipCircle,
+  .secondTooltip div.tooltip,
   .secondTooltip div.tooltipCircle {
     opacity: 1;
-    padding: 5px;
+    padding: 5px 10px;
     z-index: 9999 !important;
     font-size: 11px;
     border-radius: 3px;
     line-height: 20px;
-    background-color: var(--clr-block);
+    background-color: var(--clr-back-tooltip);
     color: var(--clr-textL);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25); }
     .highcharts-tooltip div.tooltip span,
-    .highcharts-tooltip div.tooltipCircle span, .secondTooltip div.tooltip span,
+    .highcharts-tooltip div.tooltipCircle span,
+    .secondTooltip div.tooltip span,
     .secondTooltip div.tooltipCircle span {
       color: var(--clr-textD); }
-  .highcharts-tooltip div.tooltipCircle, .secondTooltip div.tooltipCircle {
+  .highcharts-tooltip div.tooltip,
+  .secondTooltip div.tooltip {
+    color: var(--clr-text-tooltip);
+    font-weight: 600; }
+  .highcharts-tooltip div.tooltipCircle,
+  .secondTooltip div.tooltipCircle {
     font-family: "open_sans", sans-serif;
     padding: 5px 5px 5px 5px;
     min-width: 148px;
+    background-color: var(--clr-block);
     border: 1px solid var(--clr-separatorD);
     display: flex; }
-    .highcharts-tooltip div.tooltipCircle .mainInfo, .secondTooltip div.tooltipCircle .mainInfo {
+    .highcharts-tooltip div.tooltipCircle .mainInfo,
+    .secondTooltip div.tooltipCircle .mainInfo {
       border-right: 1px solid var(--clr-textD);
       padding-right: 5px;
       margin: -1px 0 0; }
-      .highcharts-tooltip div.tooltipCircle .mainInfo .currency, .secondTooltip div.tooltipCircle .mainInfo .currency {
+      .highcharts-tooltip div.tooltipCircle .mainInfo .currency,
+      .secondTooltip div.tooltipCircle .mainInfo .currency {
         display: block;
         color: #707CB9;
         font-size: 11px;
         line-height: 1; }
-      .highcharts-tooltip div.tooltipCircle .mainInfo .values, .secondTooltip div.tooltipCircle .mainInfo .values {
+      .highcharts-tooltip div.tooltipCircle .mainInfo .values,
+      .secondTooltip div.tooltipCircle .mainInfo .values {
         display: block;
         font-weight: bold;
         color: var(--clr-iconD);
@@ -5323,16 +5343,19 @@ body.compensate-for-scrollbar {
         line-height: 1;
         margin: 2px 0 0;
         white-space: nowrap; }
-    .highcharts-tooltip div.tooltipCircle .percent, .secondTooltip div.tooltipCircle .percent {
+    .highcharts-tooltip div.tooltipCircle .percent,
+    .secondTooltip div.tooltipCircle .percent {
       padding-left: 5px;
       font-size: 18px;
       font-weight: 300;
       line-height: 20px;
       color: var(--clr-textD); }
-      .highcharts-tooltip div.tooltipCircle .percent span, .secondTooltip div.tooltipCircle .percent span {
+      .highcharts-tooltip div.tooltipCircle .percent span,
+      .secondTooltip div.tooltipCircle .percent span {
         line-height: 20px;
         font-weight: 600; }
-  .highcharts-tooltip span svg, .secondTooltip span svg {
+  .highcharts-tooltip span svg,
+  .secondTooltip span svg {
     width: 20px;
     height: 20px;
     position: relative;
@@ -5344,6 +5367,36 @@ body.compensate-for-scrollbar {
   position: absolute;
   transform: translateX(-50%);
   z-index: 9998; }
+  .secondTooltip .tooltip {
+    color: var(--clr-text-tooltip); }
+
+.arrow_box:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-left-color: var(--clr-back-tooltip);
+  border-width: 7px;
+  margin-top: -7px; }
+
+.secondTooltip .arrow_box:after {
+  top: calc(0% - 6px);
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: var(--clr-back-tooltip);
+  border-width: 7px;
+  margin-left: -7px; }
 
 .circleDiagramParent {
   display: flex;

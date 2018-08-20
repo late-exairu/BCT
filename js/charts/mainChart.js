@@ -47,11 +47,18 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			lineWidth: 0.6,
 			marker: {
 				enabled: false,
-				fillColor: '',
+
+				                fillColor: '#FFFFFF',
+				                	lineWidth: 1,
+									lineColor: null,
+									symbol:'circle',
+									radius:3,
+
+/* 				fillColor: '',
 				lineWidth: 0,
 				width: 0,
 				lineColor: null,
-				symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)',
+				symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)', */
 				states: {
 					hover: {
 						enabled: true
@@ -195,7 +202,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		shared: true,
 		shadow: false,
 		useHTML: true,
-		shape: "box",
+		//shape: "box",
 		split: false,
 		style: {
 			color: '#ffffff',
@@ -212,12 +219,12 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
 			$('.secondTooltip').css({
 				'left': this.points[0].point.plotX + $('#mainChart').offset().left - 20,
-				'top': $('#mainChart').offset().top + $('#mainChart').height() + 5,
+				'top': $('#mainChart').offset().top + $('#mainChart').height() + 10,
 			});
 
 			$('.secondTooltip .tooltip').html(dayName + ', ' + month + ' ' + date.getDate()+ ', 22:15-22:29');
 
-			return '<div class="tooltip">' +
+			return '<div class="tooltip arrow_box">' +
 				"ETH/USDT (binance): " + TooltipValue + ' ' +
 				'</div>';
 		},
@@ -233,9 +240,9 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				xPos = 25;
 			}
 			return {
-				x: xPos - 20,
+				x: point.plotX - labelWidth - 40,
 				//y: point.plotY - 45
-				y: 70
+				y: point.plotY - 15
 			};
 		}
 	},
