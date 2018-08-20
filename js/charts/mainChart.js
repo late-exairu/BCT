@@ -186,6 +186,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	},
 
 	tooltip: {
+		animation:false,
+		hideDelay:0,
 		backgroundColor: 'rgba(0,0,0,0)',
 		borderColor: 'rgba(0,0,0,0)',
 		borderRadius: 0,
@@ -201,13 +203,22 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		formatter: function () {
 			var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 			var date = new Date(this.x);
 			var month = months[date.getMonth()];
-			var dayName = date.toString().split(' ')[0];
+			var dayName = days[date.getDay()];
 			var TooltipValue = (this.y * 90).toFixed(2);
 			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
+			$('.secondTooltip').css({
+				'left': this.points[0].point.plotX + $('#mainChart').offset().left - 20,
+				'top': $('#mainChart').offset().top + $('#mainChart').height() + 5,
+			});
+
+			$('.secondTooltip .tooltip').html(dayName + ', ' + month + ' ' + date.getDate()+ ', 22:15-22:29');
+
 			return '<div class="tooltip">' +
-				"<span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() +
+				"ETH/USDT (binance): " + TooltipValue + ' ' +
 				'</div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
@@ -457,4 +468,10 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			enableMouseTracking: false,
 		} */
 	]
+});
+
+$('#mainChart').mouseleave(function () {
+	$('.secondTooltip').css(
+		'left', '-9999px',
+	);
 });

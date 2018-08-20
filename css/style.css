@@ -5267,10 +5267,11 @@ body.compensate-for-scrollbar {
 .highcharts-tooltip {
   z-index: 9998 !important; }
 
-.highcharts-tooltip {
+.highcharts-tooltip, .secondTooltip {
   font-family: "open_sans", sans-serif; }
   .highcharts-tooltip div.tooltip,
-  .highcharts-tooltip div.tooltipCircle {
+  .highcharts-tooltip div.tooltipCircle, .secondTooltip div.tooltip,
+  .secondTooltip div.tooltipCircle {
     opacity: 1;
     padding: 5px;
     z-index: 9999 !important;
@@ -5281,24 +5282,25 @@ body.compensate-for-scrollbar {
     color: var(--clr-textL);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25); }
     .highcharts-tooltip div.tooltip span,
-    .highcharts-tooltip div.tooltipCircle span {
+    .highcharts-tooltip div.tooltipCircle span, .secondTooltip div.tooltip span,
+    .secondTooltip div.tooltipCircle span {
       color: var(--clr-textD); }
-  .highcharts-tooltip div.tooltipCircle {
+  .highcharts-tooltip div.tooltipCircle, .secondTooltip div.tooltipCircle {
     font-family: "open_sans", sans-serif;
     padding: 5px 5px 5px 5px;
     min-width: 148px;
     border: 1px solid var(--clr-separatorD);
     display: flex; }
-    .highcharts-tooltip div.tooltipCircle .mainInfo {
+    .highcharts-tooltip div.tooltipCircle .mainInfo, .secondTooltip div.tooltipCircle .mainInfo {
       border-right: 1px solid var(--clr-textD);
       padding-right: 5px;
       margin: -1px 0 0; }
-      .highcharts-tooltip div.tooltipCircle .mainInfo .currency {
+      .highcharts-tooltip div.tooltipCircle .mainInfo .currency, .secondTooltip div.tooltipCircle .mainInfo .currency {
         display: block;
         color: #707CB9;
         font-size: 11px;
         line-height: 1; }
-      .highcharts-tooltip div.tooltipCircle .mainInfo .values {
+      .highcharts-tooltip div.tooltipCircle .mainInfo .values, .secondTooltip div.tooltipCircle .mainInfo .values {
         display: block;
         font-weight: bold;
         color: var(--clr-iconD);
@@ -5306,21 +5308,27 @@ body.compensate-for-scrollbar {
         line-height: 1;
         margin: 2px 0 0;
         white-space: nowrap; }
-    .highcharts-tooltip div.tooltipCircle .percent {
+    .highcharts-tooltip div.tooltipCircle .percent, .secondTooltip div.tooltipCircle .percent {
       padding-left: 5px;
       font-size: 18px;
       font-weight: 300;
       line-height: 20px;
       color: var(--clr-textD); }
-      .highcharts-tooltip div.tooltipCircle .percent span {
+      .highcharts-tooltip div.tooltipCircle .percent span, .secondTooltip div.tooltipCircle .percent span {
         line-height: 20px;
         font-weight: 600; }
-  .highcharts-tooltip span svg {
+  .highcharts-tooltip span svg, .secondTooltip span svg {
     width: 20px;
     height: 20px;
     position: relative;
     margin: 0px 3px 0px 0px;
     flex: 0 0 20px; }
+
+.secondTooltip {
+  left: -9999px;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 9998; }
 
 .circleDiagramParent {
   display: flex;

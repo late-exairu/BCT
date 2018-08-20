@@ -100,7 +100,7 @@
 	z-index: 9998 !important;
 }
 
-.highcharts-tooltip {
+.highcharts-tooltip, .secondTooltip {
 	font-family: $osans;
 	div.tooltip,
 	div.tooltipCircle {
@@ -162,6 +162,13 @@
 		margin: 0px 3px 0px 0px;
 		flex: 0 0 20px;
 	}
+}
+
+.secondTooltip {
+	left: -9999px;
+	position: absolute;
+	transform: translateX(-50%);
+	z-index: 9998;
 }
 
 .circleDiagramParent {
