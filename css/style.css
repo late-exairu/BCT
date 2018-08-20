@@ -562,8 +562,8 @@ a {
   width: 100%;
   height: 100%;
   /*dev size*/
-  /*max-width: 1280px;
-	max-height: 720px;*/ }
+  max-width: 1280px;
+  max-height: 720px; }
   .wrapper.no-bar {
     padding: 0; }
 
@@ -1738,6 +1738,7 @@ h6 {
 /* graph-bar
 /* =================================================================== */
 .graph-bar {
+  --bar-height: 32px;
   font-family: "open_sans", sans-serif;
   position: absolute;
   left: 50px;
@@ -1752,7 +1753,8 @@ h6 {
   .graph-bar__group {
     position: relative;
     display: flex;
-    margin: 0 0 0 15px; }
+    margin: 0 0 10px 10px;
+    align-self: flex-start; }
     .graph-bar__group:first-child {
       margin: 0; }
     .graph-bar__group:after {
@@ -1772,18 +1774,25 @@ h6 {
   .graph-bar__left {
     margin: 0 auto 0 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start; }
+    .graph-bar__left .graph-bar__group {
+      margin: 0 10px 10px 0; }
+    .graph-bar__left .graph-info {
+      margin: 0; }
   .graph-bar__right {
     margin: 0 5px 0 0;
     display: flex;
     justify-content: flex-start; }
+    .graph-bar__right .graph-bar__group {
+      margin: 0 0 10px 10px; }
   .graph-bar__item {
     position: relative;
     /*border: 1px solid var(--clr-important);*/
     border: none;
     border-radius: var(--border-radius);
-    height: 32px;
-    min-width: 32px;
+    height: var(--bar-height);
+    min-width: var(--bar-height);
     margin: 0 0 0 6px;
     display: flex;
     align-items: center;
@@ -1880,10 +1889,11 @@ h6 {
     right: 115px; }
   @media only screen and (min-width: 1920px) {
     .graph-bar {
+      --bar-height: 42px;
       left: 62px; }
       .graph-bar__item {
-        min-width: 42px;
-        height: 42px;
+        min-width: var(--bar-height);
+        height: var(--bar-height);
         margin: 0 0 0 8px; }
       .graph-bar__icon {
         --icon-scale: 1; } }
@@ -1903,13 +1913,14 @@ h6 {
   z-index: 5;
   transition: all .1s;
   border: 1px solid var(--clr-separator);
-  border-radius: var(--border-radius); }
+  border-radius: var(--border-radius);
+  height: var(--bar-height); }
   .graph-info__item {
     display: flex;
     align-items: center;
     height: 100%;
     position: relative;
-    padding: 5px 12px;
+    padding: 5px 5px;
     margin: 0 0 0 1px;
     border-left: 1px solid var(--clr-separator); }
     .graph-info__item:first-child {

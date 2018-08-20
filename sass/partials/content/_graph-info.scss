@@ -16,6 +16,7 @@
 	transition: all .1s;
 	border: 1px solid var(--clr-separator);
 	border-radius: var(--border-radius);
+	height: var(--bar-height);
 
 	&:hover{
 
@@ -26,7 +27,7 @@
 		align-items: center;
 		height: 100%;
 		position: relative;
-		padding: 5px 12px;
+		padding: 5px 5px;
 		margin: 0 0 0 1px;
 		border-left: 1px solid var(--clr-separator);
 
