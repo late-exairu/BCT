@@ -88,8 +88,17 @@
 		
 		&__left-bottom,
 		&__right-bottom{
-			flex: 0 0 294px;
-			min-height: 294px;
+			flex: 0 0 281px;
+			min-height: 281px;
+		}
+	}
+
+	&.advanced{
+
+		.main-cols__left-bottom,
+		.main-cols__right-bottom{
+			flex: 0 0 283px;
+			min-height: 283px;
 		}
 	}
 }
