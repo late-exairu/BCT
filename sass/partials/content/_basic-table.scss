@@ -260,7 +260,10 @@
 	}
 
 	&.four-rows{
-		max-height: calc(var(--cell-height) * 4);
+		
+		.basic-table__body{
+			max-height: calc(var(--cell-height) * 4);
+		}
 	}
 
 	.icon-curr{

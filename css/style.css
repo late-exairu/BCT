@@ -803,7 +803,7 @@ h6 {
     font-size: 13px; }
     .basic-table.bigger-font .smaller {
       font-size: 11px; }
-  .basic-table.four-rows {
+  .basic-table.four-rows .basic-table__body {
     max-height: calc(var(--cell-height) * 4); }
   .basic-table .icon-curr {
     width: 24px;
@@ -5537,6 +5537,11 @@ body.compensate-for-scrollbar {
       /*max-height: 214px;*/ }
   .basic-popup.no-close-btn .fancybox-close-small {
     display: none; }
+
+.best-exch-popup {
+  width: 100%;
+  min-width: 320px;
+  max-width: 374px; }
 
 .exch-popup {
   width: 100%;
