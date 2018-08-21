@@ -384,10 +384,24 @@ $(function () {
 		$(this).parent().find('.basic-table__row').removeClass('active');
 		$(this).addClass('active');
 
+		// show order form
 		if ($(this).parents('#orderBook').length) {
 			$('#orders').css('display', 'flex');
 			$('.btn-table-toggle').addClass('open');
 		}
+
+		// select value in exch-dropdown
+		if ($(this).parents('#panel-funds-wallet').length) {
+			var icon = $(this).find('svg').eq(0)[0].childNodes[1].getAttribute('xlink:href');
+			$('.exch-head__get .exch-dropdown__list .exch-dropdown__item').each(function () {
+				if (icon == $(this).find('svg').eq(0)[0].childNodes[1].getAttribute('xlink:href')){
+					$(this).trigger('click');
+					$('.exch-dropdown').removeClass('open');
+					return false;
+				}
+			});
+		}
+
 	});
 
 	/*---------------------------------------------------*/
@@ -418,10 +432,10 @@ $(function () {
 				circleChartSmallObj = Highcharts.chart('circleChartSmall', circleChartSmallOptions);
 			} else if (currentSlide == 1) {
 				$('.portfolio-stats__amount-tip').text('Bitcoin');
-				$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-bitcoin" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-bitcoin" > < /use> </svg>');
+				$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-bitcoin" style="display: block;" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-bitcoin" > < /use> </svg>');
 			} else if (currentSlide == 2) {
 				$('.portfolio-stats__amount-tip').text('Ethereum');
-				$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-ethereum" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-ethereum" > < /use> </svg>');
+				$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-ethereum" style="display: block;" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-ethereum" > < /use> </svg>');
 			}
 		}
 		$('.portfolio-stats__dinamic').text(portfolioChartArrChanges[currentSlide][currentPeriod][0]);
