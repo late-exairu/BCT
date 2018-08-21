@@ -2544,16 +2544,16 @@ Blocks from left bar
     min-height: 186px; }
   .main-cols.advanced .main-cols__left-bottom,
   .main-cols.advanced .main-cols__right-bottom {
-    flex: 0 0 230px;
-    min-height: 230px; }
+    flex: 0 0 236px;
+    min-height: 236px; }
   @media only screen and (min-height: 900px) {
     .main-cols__left-bottom, .main-cols__right-bottom {
       flex: 0 0 281px;
-      min-height: 281px; } }
-  .main-cols.advanced .main-cols__left-bottom,
-  .main-cols.advanced .main-cols__right-bottom {
-    flex: 0 0 283px;
-    min-height: 283px; }
+      min-height: 281px; }
+    .main-cols.advanced .main-cols__left-bottom,
+    .main-cols.advanced .main-cols__right-bottom {
+      flex: 0 0 283px;
+      min-height: 283px; } }
 
 /* =================================================================== */
 /* menu-dropdown
@@ -4732,7 +4732,7 @@ body.compensate-for-scrollbar {
     .order-form__submit.btn-red {
       background: #e05475; }
   .order-form .cubic-slider {
-    margin: 5px 0 5px; }
+    margin: 8px 0 8px; }
   .order-form input[type=number]::-webkit-inner-spin-button,
   .order-form input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;

@@ -79,8 +79,8 @@
 
 		.main-cols__left-bottom,
 		.main-cols__right-bottom{
-			flex: 0 0 230px;
-			min-height: 230px;
+			flex: 0 0 236px;
+			min-height: 236px;
 		}
 	}
 
@@ -91,14 +91,14 @@
 			flex: 0 0 281px;
 			min-height: 281px;
 		}
-	}
 
-	&.advanced{
+		&.advanced{
 
-		.main-cols__left-bottom,
-		.main-cols__right-bottom{
-			flex: 0 0 283px;
-			min-height: 283px;
+			.main-cols__left-bottom,
+			.main-cols__right-bottom{
+				flex: 0 0 283px;
+				min-height: 283px;
+			}
 		}
 	}
 }
