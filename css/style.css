@@ -1267,23 +1267,8 @@ h6 {
       --inner-accent: #d4bf71; }
     .chat-talk__item.-clr-green {
       --inner-accent: #72c16e; }
-  .chat-talk__avatar-wrap {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    margin: 2px 14px 2px 0;
-    flex: 0 0 auto; }
-  .chat-talk__avatar {
-    font-size: 12px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    background: #f17cb1;
-    background: var(--inner-accent);
-    color: #fff; }
+  .chat-talk__user-pic {
+    margin: 2px 14px 2px 0; }
   .chat-talk__content {
     padding: 0 2px 0 2px;
     overflow: hidden;
@@ -1363,6 +1348,8 @@ h6 {
     padding: 12px;
     margin: 6px 0;
     color: var(--clr-textL); }
+  .chat-talk .user-pic {
+    margin: 2px 14px 2px 0; }
 
 /* =================================================================== */
 /* chats-list */
@@ -2794,7 +2781,16 @@ body.menubar-in #user-btn:before {
   align-items: center;
   background: var(--clr-block);
   border-top: 1px solid var(--clr-separator);
-  border-radius: 0 0 var(--border-radius) var(--border-radius); }
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  --inner-accent: #607580; }
+  .message-bar.-clr-pink {
+    --inner-accent: #f17cb1; }
+  .message-bar.-clr-yellow {
+    --inner-accent: #d4bf71; }
+  .message-bar.-clr-green {
+    --inner-accent: #72c16e; }
+  .message-bar__user-pic {
+    margin: 2px 2px 2px 0; }
   .message-bar__input {
     font-family: "open_sans", sans-serif;
     display: block;
@@ -2858,10 +2854,10 @@ body.menubar-in #user-btn:before {
       content: '';
       position: absolute;
       left: 0;
-      top: 0;
+      top: -1px;
       right: 0;
       bottom: 0;
-      opacity: 0.75;
+      opacity: 0.85;
       background: var(--clr-block);
       z-index: -1; }
 
@@ -5673,6 +5669,25 @@ body.compensate-for-scrollbar {
     width: 26px;
     height: 26px;
     fill: #fff; }
+
+.user-pic {
+  font-size: 12px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 2px 2px 2px 2px;
+  flex: 0 0 auto; }
+  .user-pic__avatar {
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: #f17cb1;
+    background: var(--inner-accent);
+    color: #fff; }
 
 /* =================================================================== */
 /* Globals

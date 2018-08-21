@@ -14,6 +14,25 @@
 	border-top: 1px solid var(--clr-separator);
 	border-radius: 0 0 var(--border-radius) var(--border-radius);
 
+
+	--inner-accent: #607580;
+
+	&.-clr-pink{
+		--inner-accent: #f17cb1;
+	}
+
+	&.-clr-yellow{
+		--inner-accent: #d4bf71;
+	}
+
+	&.-clr-green{
+		--inner-accent: #72c16e;
+	}
+
+	&__user-pic{
+		margin: 2px 2px 2px 0;
+	}
+
 	&__input{
 		font-family: $osans;
 		display: block;
@@ -103,10 +122,10 @@
 			content: '';
 			position: absolute;
 			left: 0;
-			top: 0;
+			top: -1px;
 			right: 0;
 			bottom: 0;
-			opacity: 0.75;
+			opacity: 0.85;
 			background: var(--clr-block);
 			z-index: -1;
 		}
