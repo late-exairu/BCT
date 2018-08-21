@@ -263,13 +263,13 @@ $(function () {
 				gridLineColor: gridColor
 			}
 		};
- 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartOptions);
+		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartOptions);
 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartBTCOptions);
 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartETHOptions);
 
 		if (portfolioChartObj) portfolioChartObj.update(stylesForPortfolioChart);
 		if (portfolioChartBTCObj) portfolioChartBTCObj.update(stylesForPortfolioChart);
-		if (portfolioChartETHObj) portfolioChartETHObj.update(stylesForPortfolioChart); 
+		if (portfolioChartETHObj) portfolioChartETHObj.update(stylesForPortfolioChart);
 
 		// liquidityChart
 		var stylesForLiquidityChart = {
@@ -380,7 +380,7 @@ $(function () {
 	/* show Orders form */
 	/*---------------------------------------------------*/
 
-	$('.basic-table__row:not(.head)').click(function () {
+	$('.basic-table').on('click', '.basic-table__row:not(.head)', function () {
 		$(this).parent().find('.basic-table__row').removeClass('active');
 		$(this).addClass('active');
 
@@ -485,7 +485,7 @@ $(function () {
 					});
 				}
 			}
-		});		
+		});
 	});
 
 	$('.graph-prices__list').mouseleave(function () {
@@ -622,7 +622,33 @@ $(function () {
 	if ($('body').hasClass('advanced')) {
 		changeTheme();
 		liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
-	}
 
+		var rowForMove = null;
+		var min = 500,
+			max = 1000;
+		function updateTable1() {
+			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row').first().remove();
+			$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body').append(rowForMove);
+			var rand = Math.floor(Math.random() * (max - min + 1) + min);
+			setTimeout(updateTable1, rand);
+		}
+
+		function updateTable2() {
+			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(1).find('.basic-table__row').last().remove();
+			$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(1).prepend(rowForMove);
+			var rand = Math.floor(Math.random() * (max - min + 1) + min);
+			setTimeout(updateTable2, rand);
+		}
+
+		function updateTable3() {
+			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(2).find('.basic-table__body .basic-table__body .basic-table__row').last().remove();
+			$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(2).find('.basic-table__body .basic-table__body').prepend(rowForMove);
+			var rand = Math.floor(Math.random() * (max - min + 1) + min);
+			setTimeout(updateTable3, rand);
+		}
+		updateTable1();
+		updateTable2();
+		updateTable3();
+	}
 
 });
