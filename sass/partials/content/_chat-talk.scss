@@ -34,25 +34,8 @@
 		}
 	}
 
-	&__avatar-wrap{
-		position: relative;
-		width: 30px;
-		height: 30px;
+	&__user-pic{
 		margin: 2px 14px 2px 0;
-		flex: 0 0 auto;
-	}
-
-	&__avatar{
-		font-size: 12px;
-		width: 30px;
-		height: 30px;
-		display: flex;
-		border-radius: 50%;
-		align-items: center;
-		justify-content: center;
-		background: #f17cb1;
-		background: var(--inner-accent);
-		color: #fff;
 	}
 
 	&__content{
@@ -162,5 +145,9 @@
 		padding: 12px;
 		margin: 6px 0;
 		color: var(--clr-textL);
+	}
+
+	.user-pic{
+		margin: 2px 14px 2px 0;
 	}
 }

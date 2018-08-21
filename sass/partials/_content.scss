@@ -48,3 +48,28 @@
 		fill: #fff;
 	}
 }
+
+
+
+
+.user-pic{
+	font-size: 12px;
+	position: relative;
+	width: 30px;
+	height: 30px;
+	margin: 2px 2px 2px 2px;
+	flex: 0 0 auto;
+
+	&__avatar{
+		font-size: 12px;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		background: #f17cb1;
+		background: var(--inner-accent);
+		color: #fff;
+	}
+}
