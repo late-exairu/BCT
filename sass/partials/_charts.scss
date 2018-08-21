@@ -116,6 +116,12 @@
 	div.tooltip {
 		color: var(--clr-text-tooltip);
 		font-weight: 600;
+		.textCenter{
+			text-align: center;
+		}
+		&.blackColor{
+			color:var(--clr-textD);
+		}
 	}
 	div.tooltipCircle {
 		font-family: $osans;
@@ -163,6 +169,26 @@
 		margin: 0px 3px 0px 0px;
 		flex: 0 0 20px;
 	}
+	div.font12{
+		font-size: 12px;
+		margin-bottom: -5px;
+	}
+	div.font10 {
+		font-size: 10px;
+		font-weight: 300;
+	}
+	.bold{
+		font-weight: bold;
+	}
+	.light{
+		font-weight: 100;
+		font-size: 10px;
+	}
+}
+
+.advanced .blackColor,
+.advanced .blackColor span{
+	color: white !important;
 }
 
 .secondTooltip {

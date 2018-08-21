@@ -141,14 +141,18 @@ var portfolioChartOptions = {
             fontSize: 8
         },
         formatter: function () {
-            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var months = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             var date = new Date(this.x);
             var month = months[date.getMonth()];
-            var dayName = date.toString().split(' ')[0];
+			var dayName = days[date.getDay()];
+			var year = date.getFullYear();
             var TooltipValue = (this.y * 45).toFixed(2);
             TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
-            return '<div class="tooltip">' +
-                "<span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() +
+            return '<div class="tooltip blackColor font10">' +
+                '<div class="textCenter font12 bold">' + TooltipValue + ' <span class="light">USD</span></div>' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year +
                 '</div>';
         },
         positioner: function (labelWidth, labelHeight, point, ) {
@@ -159,12 +163,11 @@ var portfolioChartOptions = {
                 xPos = graphWidth - labelWidth - 5;
             }
             // left side fix
-            else if (point.plotX < 50) {
+            else if (point.plotX < 80) {
                 xPos = 5;
             }
             return {
-                x: point.plotX - 60,
-                //y: point.plotY - 45
+                x: xPos,
                 y: 50
             };
         }
@@ -184,12 +187,12 @@ var portfolioChartOptions = {
                 ]
             },
             marker: {
-                enabled: false,
-                fillColor: '',
-                lineWidth: 0,
-                width: 0,
+				enabled: false,
+                fillColor: '#FFFFFF',
+                lineWidth: 1,
                 lineColor: null,
-                symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)',
+                symbol: 'circle',
+                radius: 3,
                 states: {
                     hover: {
                         enabled: true

@@ -5318,6 +5318,12 @@ body.compensate-for-scrollbar {
   .secondTooltip div.tooltip {
     color: var(--clr-text-tooltip);
     font-weight: 600; }
+    .highcharts-tooltip div.tooltip .textCenter,
+    .secondTooltip div.tooltip .textCenter {
+      text-align: center; }
+    .highcharts-tooltip div.tooltip.blackColor,
+    .secondTooltip div.tooltip.blackColor {
+      color: var(--clr-textD); }
   .highcharts-tooltip div.tooltipCircle,
   .secondTooltip div.tooltipCircle {
     font-family: "open_sans", sans-serif;
@@ -5364,6 +5370,25 @@ body.compensate-for-scrollbar {
     position: relative;
     margin: 0px 3px 0px 0px;
     flex: 0 0 20px; }
+  .highcharts-tooltip div.font12,
+  .secondTooltip div.font12 {
+    font-size: 12px;
+    margin-bottom: -5px; }
+  .highcharts-tooltip div.font10,
+  .secondTooltip div.font10 {
+    font-size: 10px;
+    font-weight: 300; }
+  .highcharts-tooltip .bold,
+  .secondTooltip .bold {
+    font-weight: bold; }
+  .highcharts-tooltip .light,
+  .secondTooltip .light {
+    font-weight: 100;
+    font-size: 10px; }
+
+.advanced .blackColor,
+.advanced .blackColor span {
+  color: white !important; }
 
 .secondTooltip {
   left: -9999px;
