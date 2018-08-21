@@ -47,13 +47,11 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			lineWidth: 0.6,
 			marker: {
 				enabled: false,
-
-				                fillColor: '#FFFFFF',
-				                	lineWidth: 1,
-									lineColor: null,
-									symbol:'circle',
-									radius:3,
-
+				fillColor: '#FFFFFF',
+				lineWidth: 1,
+				lineColor: null,
+				symbol:'circle',
+				radius:3,
 /* 				fillColor: '',
 				lineWidth: 0,
 				width: 0,
@@ -216,6 +214,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var month = months[date.getMonth()];
 			var dayName = days[date.getDay()];
 			var TooltipValue = (this.y * 90).toFixed(2);
+			var arrowDirection = 'right';
 			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
 			$('.secondTooltip').css({
 				'left': this.points[0].point.plotX + $('#mainChart').offset().left - 20,
@@ -224,24 +223,22 @@ var mainChartObj = Highcharts.chart('mainChart', {
 
 			$('.secondTooltip .tooltip').html(dayName + ', ' + month + ' ' + date.getDate()+ ', 22:15-22:29');
 
-			return '<div class="tooltip arrow_box">' +
+			if (this.points[0].point.plotX < 220){
+				arrowDirection = 'left';
+			}
+			return '<div class="tooltip arrow_box ' + arrowDirection+'">' +
 				"ETH/USDT (binance): " + TooltipValue + ' ' +
 				'</div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
 			var graphWidth = $(mainChartObj.container).width();
-			var xPos = point.plotX - (labelWidth / 2);
-			// right side fix
-			if ((point.plotX + labelWidth / 2) > graphWidth) {
-				xPos = graphWidth - labelWidth - 5;
-			}
+			var xPos = point.plotX - labelWidth - 40;
 			// left side fix
-			else if (point.plotX < 75) {
-				xPos = 25;
+			if (point.plotX < labelWidth + 40) {
+				xPos = point.plotX;
 			}
 			return {
-				x: point.plotX - labelWidth - 40,
-				//y: point.plotY - 45
+				x: xPos,
 				y: point.plotY - 15
 			};
 		}

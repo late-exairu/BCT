@@ -176,7 +176,6 @@
 }
 
 .arrow_box:after {
-	left: 100%;
 	top: 50%;
 	border: solid transparent;
 	content: " ";
@@ -185,9 +184,17 @@
 	position: absolute;
 	pointer-events: none;
 	border-color: rgba(136, 183, 213, 0);
-	border-left-color: var(--clr-back-tooltip);
 	border-width: 7px;
 	margin-top: -7px;
+}
+.arrow_box.right:after{
+	left: 100%;
+	border-left-color: var(--clr-back-tooltip);
+}
+
+.arrow_box.left:after {
+	right: 100%;
+	border-right-color: var(--clr-back-tooltip);
 }
 
 .secondTooltip .arrow_box:after {
