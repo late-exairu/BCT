@@ -108,7 +108,7 @@
 .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 132.8125em 126.375em; }
+  background-size: 133.375em 126.9375em; }
 
 /* =================================================================== */
 /* Functions
@@ -822,6 +822,9 @@ h6 {
     .basic-table .sprite-icon.paper-plane {
       width: 14px;
       height: 13px; }
+    .basic-table .sprite-icon.clock {
+      width: 9px;
+      height: 9px; }
   .basic-table .smaller {
     font-size: 10px;
     margin: 0 0 0 3px; }
@@ -2131,31 +2134,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -118.0625em -112.5625em; }
+    background-position: -118.625em -113.125em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -122.4375em -117em; }
+    background-position: -123em -117.5625em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -121em -115.5em; }
+    background-position: -121.5625em -116.0625em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -118.8125em -113.3125em; }
+    background-position: -119.375em -113.875em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -120.3125em -114.8125em; }
+    background-position: -120.875em -115.375em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -119.4375em -113.9375em; }
+    background-position: -120em -114.5em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -121.5625em -116.3125em; }
+    background-position: -122.125em -116.875em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -2513,7 +2516,8 @@ Blocks from left bar
     .main-cols__left.col-tables {
       width: 30%;
       flex: 0 0 30%;
-      min-width: 360px; }
+      min-width: 384px;
+      max-width: 450px; }
   .main-cols__left-top {
     display: flex;
     flex: 1 1;
@@ -5713,6 +5717,11 @@ body.compensate-for-scrollbar {
 
 .hidden {
   display: none; }
+
+.w-2 {
+  width: 2.5%;
+  min-width: 2.5%;
+  max-width: 2.5%; }
 
 .w-5 {
   width: 5%;
