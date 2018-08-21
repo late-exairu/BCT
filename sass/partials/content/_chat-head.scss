@@ -13,28 +13,29 @@
 	background: var(--clr-block);
 	border-bottom: 1px solid var(--clr-separator);
 
-	/*&__back{
-		position: absolute;
+	&__back{
+		position: relative;
 		display: flex;
-		left: 4px;
-		top: 50%;
-		width: 8px;
-		height: 13px;
+		width: 32px;
+		height: 100%;
+		margin: 0 14px 0 0;
+		border: none;
 		border-radius: 3px;
 		transition: all 0.1s;
 		align-items: center;
 		justify-content: center;
-		transform: translateY(-50%);
+		cursor: pointer;
+		background: transparent;
 
 		.sprite-icon{
 			display: block;
-			width: 13px;
-			height: 20px;
-			fill: var(--clr-accent);
+			width: 12px;
+			height: 19px;
+			fill: var(--clr-accentD);
 		}
 	}
 
-	&__avatar-wrap{
+	/*&__avatar-wrap{
 		position: relative;
 		width: 32px;
 		height: 32px;
@@ -54,6 +55,7 @@
 		height: 30px;
 		margin: 0 14px 0 0;
 		flex: 0 0 32px;
+		display: none;
 	}
 
 	&__desc{
