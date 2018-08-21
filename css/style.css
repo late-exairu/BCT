@@ -5371,6 +5371,8 @@ body.compensate-for-scrollbar {
   transform: translateX(-50%);
   z-index: 9998; }
   .secondTooltip .tooltip {
+    width: 185px;
+    text-align: center;
     color: var(--clr-text-tooltip); }
 
 .arrow_box:after {

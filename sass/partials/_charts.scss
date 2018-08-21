@@ -171,6 +171,8 @@
 	transform: translateX(-50%);
 	z-index: 9998;
 	.tooltip {
+		width: 185px;
+		text-align: center;
 		color: var(--clr-text-tooltip);
 	}
 }
@@ -187,7 +189,8 @@
 	border-width: 7px;
 	margin-top: -7px;
 }
-.arrow_box.right:after{
+
+.arrow_box.right:after {
 	left: 100%;
 	border-left-color: var(--clr-back-tooltip);
 }

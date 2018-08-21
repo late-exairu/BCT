@@ -216,9 +216,21 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var TooltipValue = (this.y * 90).toFixed(2);
 			var arrowDirection = 'right';
 			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
+
+			var secondTooltipX = this.points[0].point.plotX + $('#mainChart').offset().left - 20;
+			var secondTooltipY = $('#mainChart').offset().top + $('#mainChart').height() + 7;
+			// left side fix 
+			if (this.points[0].point.plotX < 120){
+				secondTooltipX = $('#mainChart').offset().left + 90;
+			}
+			// right side fix 
+			if (this.points[0].point.plotX > $('#mainChart').width() - 80) {
+				secondTooltipX = $('#mainChart').offset().left + $('#mainChart').width() - 90;
+			}
+
 			$('.secondTooltip').css({
-				'left': this.points[0].point.plotX + $('#mainChart').offset().left - 20,
-				'top': $('#mainChart').offset().top + $('#mainChart').height() + 10,
+				'left': secondTooltipX,
+				'top': secondTooltipY,
 			});
 
 			$('.secondTooltip .tooltip').html(dayName + ', ' + month + ' ' + date.getDate()+ ', 22:15-22:29');
