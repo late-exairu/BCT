@@ -155,12 +155,12 @@ var portfolioChartBTCOptions = {
                 ]
             },
             marker: {
-                enabled: false,
-                fillColor: '',
-                lineWidth: 0,
-                width: 0,
+				enabled: false,
+                fillColor: '#FFFFFF',
+                lineWidth: 1,
                 lineColor: null,
-                symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)',
+                symbol: 'circle',
+                radius: 3,
                 states: {
                     hover: {
                         enabled: true
