@@ -18,11 +18,11 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* redraw Charts after resize */
 	/*---------------------------------------------------*/
-	function redrawOtherCharts() {
-		if (circleChartObj) circleChartObj.reflow();
-		if (portfolioChartObj) portfolioChartObj.reflow();
-		if (liquidityChartObj) liquidityChartObj.reflow();
-	}
+	/* 	function redrawOtherCharts() {
+			if (circleChartObj) circleChartObj.reflow();
+			if (portfolioChartObj) portfolioChartObj.reflow();
+			if (liquidityChartObj) liquidityChartObj.reflow();
+		} */
 
 	/*---------------------------------------------------*/
 	/* js-dropdown */
@@ -386,6 +386,7 @@ $(function () {
 
 		if ($(this).parents('#orderBook').length) {
 			$('#orders').css('display', 'flex');
+			$('.btn-table-toggle').addClass('open');
 		}
 	});
 
@@ -626,6 +627,7 @@ $(function () {
 		var rowForMove = null;
 		var min = 500,
 			max = 1000;
+
 		function updateTable1() {
 			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row').first().remove();
 			$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body').append(rowForMove);
@@ -649,6 +651,18 @@ $(function () {
 		updateTable1();
 		updateTable2();
 		updateTable3();
+
+
+		$('.btn-table-toggle').click(function () {
+			$(this).toggleClass('open');
+			if ($(this).hasClass('open')) {
+				$('#orders').css('display', 'flex');
+			} else {
+				$('#orders').css('display', 'none');
+
+			}
+		});
+
 	}
 
 });
