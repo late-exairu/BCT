@@ -309,3 +309,42 @@
 		color: var(--clr-separatorD);
 	}
 }
+
+.btn-table-toggle{
+	height: 12px;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border: none;
+	background: var(--clr-back);
+	z-index: 1;
+	cursor: pointer;
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+	transition: all 0.1s;
+
+	&:after{
+		content:'';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 6px 6px 6px;
+		border-color: transparent transparent var(--clr-textL) transparent;
+	}
+
+	&:hover{
+		background: var(--clr-block);
+	}
+
+	&.open{
+
+		&:after{
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
+	}
+}
