@@ -402,6 +402,12 @@ $(function () {
 			});
 		}
 
+		if ($(this).parents('#panel-funds-history').length){
+			$.fancybox.open({
+				src: '#exchange-step_2'
+			});
+		}
+
 	});
 
 	/*---------------------------------------------------*/
