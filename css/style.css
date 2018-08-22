@@ -5350,7 +5350,6 @@ body.compensate-for-scrollbar {
     .highcharts-tooltip div.tooltip .textCenter {
       text-align: center; }
     .highcharts-tooltip div.tooltip.mainTooltip {
-      text-align: center;
       font-weight: 300;
       font-size: 10px; }
       .highcharts-tooltip div.tooltip.mainTooltip span {

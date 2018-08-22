@@ -239,7 +239,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				arrowDirection = 'left';
 			}
 			return '<div class="tooltip arrow_box mainTooltip ' + arrowDirection + '">' +
-				"<div><span class='bold'>ETH/USDT (Binance):</span> <span class='value bold'>" + TooltipValue + '</span> USD</div>' +
+				"<div><span class='bold'>ETH/USDT (Binance):</span> <span class='value bold'>" + TooltipValue + '</span></div>' +
 				dayName + ', ' + month + ' ' + date.getDate() + ', 04:02' + '</div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
