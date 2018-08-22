@@ -208,7 +208,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		formatter: function () {
 			var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+			var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 			var date = new Date(this.x);
 			var month = months[date.getMonth()];
@@ -217,7 +217,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var arrowDirection = 'right';
 			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
 
-			var secondTooltipX = this.points[0].point.plotX + $('#mainChart').offset().left - 20;
+/* 			var secondTooltipX = this.points[0].point.plotX + $('#mainChart').offset().left - 20;
 			var secondTooltipY = $('#mainChart').offset().top + $('#mainChart').height() + 7;
 			// left side fix 
 			if (this.points[0].point.plotX < 120){
@@ -233,14 +233,14 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				'top': secondTooltipY,
 			});
 
-			$('.secondTooltip .tooltip').html(dayName + ', ' + month + ' ' + date.getDate()+ ', 22:15-22:29');
+			$('.secondTooltip .tooltip').html(dayName + ', ' + month + ' ' + date.getDate()+ ', 22:15-22:29'); */
 
 			if (this.points[0].point.plotX < 220){
 				arrowDirection = 'left';
 			}
-			return '<div class="tooltip arrow_box ' + arrowDirection+'">' +
-				"ETH/USDT (binance): " + TooltipValue + ' ' +
-				'</div>';
+			return '<div class="tooltip arrow_box mainTooltip ' + arrowDirection + '">' +
+				"<div><span class='bold'>ETH/USDT (Binance):</span> <span class='value bold'>" + TooltipValue + '</span> USD</div>' +
+				dayName + ', ' + month + ' ' + date.getDate() + ', 04:02' + '</div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
 			var graphWidth = $(mainChartObj.container).width();

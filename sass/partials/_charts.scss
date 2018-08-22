@@ -10,7 +10,6 @@
 	height: 100%;
 	cursor: pointer;
 	margin: 0 70px 0 0;
-	
 	@media only screen and (min-height: 900px) {
 		flex: 0 0 250px;
 		width: 250px;
@@ -97,13 +96,12 @@
 	z-index: 9998 !important;
 }
 
-.highcharts-tooltip,
-.secondTooltip {
+.highcharts-tooltip {
 	font-family: $osans;
 	div.tooltip,
 	div.tooltipCircle {
 		opacity: 1;
-		padding: 5px 10px;
+		padding: 2px 5px;
 		z-index: 9999 !important;
 		font-size: 11px;
 		border-radius: 3px;
@@ -118,11 +116,25 @@
 	div.tooltip {
 		color: var(--clr-text-tooltip);
 		font-weight: 600;
-		.textCenter{
+		.textCenter {
 			text-align: center;
 		}
-		&.blackColor{
-			color:var(--clr-textD);
+		&.mainTooltip {
+			text-align: center;
+			font-weight: 300;
+			font-size: 10px;
+			span {
+				color: var(--clr-text-tooltip);
+			}
+			.value {
+				font-size: 12px;
+			}
+			div:first-child{
+				margin-bottom: -7px;
+			}
+		}
+		&.blackColor {
+			color: var(--clr-textD);
 		}
 	}
 	div.tooltipCircle {
@@ -171,29 +183,29 @@
 		margin: 0px 3px 0px 0px;
 		flex: 0 0 20px;
 	}
-	div.font12{
+	div.font12 {
 		font-size: 12px;
-		margin-bottom: -5px;
+		margin-bottom: -7px;
 	}
 	div.font10 {
 		font-size: 10px;
 		font-weight: 300;
 	}
-	.bold{
+	.bold {
 		font-weight: bold;
 	}
-	.light{
+	.light {
 		font-weight: 100;
 		font-size: 10px;
 	}
 }
 
 .advanced .blackColor,
-.advanced .blackColor span{
+.advanced .blackColor span {
 	color: white !important;
 }
 
-.secondTooltip {
+/* .secondTooltip {
 	left: -9999px;
 	position: absolute;
 	transform: translateX(-50%);
@@ -203,7 +215,7 @@
 		text-align: center;
 		color: var(--clr-text-tooltip);
 	}
-}
+} */
 
 .arrow_box:after {
 	top: 50%;
@@ -228,7 +240,7 @@
 	border-right-color: var(--clr-back-tooltip);
 }
 
-.secondTooltip .arrow_box:after {
+/* .secondTooltip .arrow_box:after {
 	top: calc(0% - 6px);
 	left: 50%;
 	border: solid transparent;
@@ -241,7 +253,7 @@
 	border-bottom-color: var(--clr-back-tooltip);
 	border-width: 7px;
 	margin-left: -7px;
-}
+} */
 
 .circleDiagramParent {
 	display: flex;
