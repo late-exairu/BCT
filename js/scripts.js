@@ -626,8 +626,21 @@ $(function () {
 	});
 
 	// convert/confirm buttons
-	$('.exch-head__btn, .exch-form__btn').click(function () {
-		$(this).closest('.exch-head').toggleClass('open');
+	$('.exch-head__btn, .exch-form__btn').click(function (e) {
+		e.preventDefault();
+ 		if ($(this).hasClass('exch-form__btn')) {
+			$('.exch-form').addClass('progress');
+			setTimeout(() => {
+			 	$('.exch-form').removeClass('progress');
+				$.fancybox.open({
+					src: '#exchange-step_2'
+				});
+				$(this).closest('.exch-head').toggleClass('open');
+			}, 1000);
+		}
+		else{
+			$(this).closest('.exch-head').toggleClass('open');
+		}
 	});
 
 	/*---------------------------------------------------*/
