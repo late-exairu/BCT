@@ -5328,6 +5328,8 @@ body.compensate-for-scrollbar {
     transform: translate(-50%, -50%); }
   .accounts-diagram-wrap:hover:after {
     background: var(--clr-accent); }
+  .accounts-diagram-wrap:hover #circleChartText {
+    color: var(--clr-accentD); }
   @media only screen and (min-height: 900px) {
     .accounts-diagram-wrap {
       flex: 0 0 250px;
@@ -5350,10 +5352,11 @@ body.compensate-for-scrollbar {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  z-index: 1; }
+  z-index: 1;
+  color: var(--clr-textD);
+  transition: all 0.1s; }
   #circleChartText .wrap {
     text-align: center;
-    color: var(--clr-textD);
     border-radius: 50%;
     position: relative;
     z-index: 1; }
