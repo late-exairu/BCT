@@ -1810,6 +1810,12 @@ h6 {
       z-index: 0; }
     .graph-bar__group:hover:after {
       opacity: 1; }
+    .graph-bar__group.vertical {
+      flex-direction: column; }
+      .graph-bar__group.vertical .graph-bar__item {
+        margin: 5px 0 0 0; }
+        .graph-bar__group.vertical .graph-bar__item:first-child {
+          margin: 0; }
   .graph-bar__left {
     margin: 0 auto 0 0;
     display: flex;
@@ -1820,6 +1826,9 @@ h6 {
     .graph-bar__left .graph-info {
       margin: 0; }
   .graph-bar__right {
+    position: absolute;
+    top: 0;
+    right: 0;
     margin: 0 5px 0 0;
     display: flex;
     justify-content: flex-start; }
