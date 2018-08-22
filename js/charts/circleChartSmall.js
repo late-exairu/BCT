@@ -16,7 +16,7 @@ var circleChartSmallOptions = {
         pie: {
             innerSize: '85%',
             borderWidth: 0,
-            startAngle: 20,
+            startAngle: 0,
             size: 32,
             center: [-4, -4],
         },
@@ -37,14 +37,14 @@ var circleChartSmallOptions = {
     series: [{
         name: 'Percent',
         data: [
-            ['Ethereum', 20],
-            ['Bitcoin', 80],
+            ['Ethereum', 25],
+            ['Bitcoin', 75],
         ],
         zones: [{
-            value: 21,
+            value: 26,
             color: '#707CB9'
         }, {
-            value: 81,
+            value: 76,
             color: '#F6921E'
         }]
     }]
