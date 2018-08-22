@@ -108,7 +108,7 @@
 .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 133.375em 126.9375em; }
+  background-size: 139.625em 130.0625em; }
 
 /* =================================================================== */
 /* Functions
@@ -1723,14 +1723,13 @@ h6 {
     left: 2px;
     fill: var(--color-one); }
   .exch-head__btn {
+    position: relative;
     font-family: "open_sans", sans-serif;
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
     flex: 0 0 100px;
     align-items: center;
-    background: var(--clr-accentD);
-    /*border-radius: 5px;*/
     color: #fff;
     cursor: pointer;
     margin: 0 0 0 var(--gap-size);
@@ -1742,12 +1741,19 @@ h6 {
     justify-content: center;
     border: none;
     line-height: 1;
-    border-radius: var(--border-radius);
-    background: url(../img/fake-bg.svg) center center;
-    background-size: 100%;
-    /*&:hover{
-			background: #026ba0;
-		}*/ }
+    background: transparent;
+    border-radius: var(--border-radius); }
+  .exch-head__btn-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    fill: #f00;
+    z-index: -1;
+    fill: var(--clr-accentD); }
   .exch-head__btn-text {
     position: relative;
     top: -1px; }
@@ -2155,31 +2161,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -118.625em -113.125em; }
+    background-position: -124.875em -116.25em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -123em -117.5625em; }
+    background-position: -129.25em -120.6875em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -121.5625em -116.0625em; }
+    background-position: -127.8125em -119.1875em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -119.375em -113.875em; }
+    background-position: -125.625em -117em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -120.875em -115.375em; }
+    background-position: -127.125em -118.5em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -120em -114.5em; }
+    background-position: -126.25em -117.625em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -122.125em -116.875em; }
+    background-position: -128.375em -120em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -4884,26 +4890,45 @@ body.compensate-for-scrollbar {
     background: var(--clr-block);
     z-index: 1; }
   .exch-form__sep {
-    position: relative;
     width: 40px;
     height: 50px;
     display: flex;
     flex: 0 0 40px;
-    margin: 0 calc(var(--gap-size) + 0px); }
-    .exch-form__sep > * {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%); }
+    flex-direction: column;
+    margin: 0 var(--gap-size);
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all .1s;
+    border-radius: var(--border-radius); }
+    .exch-form__sep .sprite-icon {
+      width: 24px;
+      height: 13px;
+      fill: var(--clr-accentD);
+      transition: all .1s; }
+  .exch-form__switch-left {
+    display: block;
+    width: 17px;
+    height: 14px;
+    position: relative;
+    left: -2px;
+    fill: var(--color-two); }
+  .exch-form__switch-right {
+    display: block;
+    width: 17px;
+    height: 14px;
+    position: relative;
+    left: 2px;
+    fill: var(--color-one); }
   .exch-form__btn {
+    position: relative;
     font-family: "open_sans", sans-serif;
     padding: 0 10px 0 5px;
-    height: var(--exch-head-height);
+    height: calc(var(--exch-head-height) + 1px);
     display: flex;
     flex: 0 0 100px;
     align-items: center;
-    background: var(--clr-accentD);
-    /*border-radius: 5px;*/
     color: #fff;
     cursor: pointer;
     margin: 0 0 0 var(--gap-size);
@@ -4915,12 +4940,41 @@ body.compensate-for-scrollbar {
     justify-content: center;
     border: none;
     line-height: 1;
-    border-radius: var(--border-radius);
-    background: url(../img/fake-bg.svg) center center;
-    background-size: 100%;
-    /*&:hover{
-			background: #026ba0;
-		}*/ }
+    background: transparent;
+    border-radius: var(--border-radius); }
+  .exch-form__btn-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    fill: #f00;
+    z-index: -1;
+    fill: var(--clr-accentD); }
+  .exch-form.progress .exch-form__label,
+  .exch-form.progress .exch-form__input {
+    color: var(--clr-important);
+    pointer-events: none; }
+  .exch-form.progress .exch-form__btn {
+    color: transparent; }
+    .exch-form.progress .exch-form__btn:after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: url(../../img/spin.svg); }
+  .exch-form.progress .exch-form__current {
+    background: var(--clr-block); }
+  .exch-form.progress .exch-form__send:after,
+  .exch-form.progress .exch-form__get:after {
+    background: transparent; }
+  .exch-form.progress .exch-form__btn-bg {
+    fill: var(--clr-block); }
 
 .chat-search {
   padding: 8px 10px 8px 12px;

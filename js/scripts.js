@@ -608,7 +608,7 @@ $(function () {
 	/* first popUp layer close */
 	/*---------------------------------------------------*/
 
-	$('.exch-form__btn').click(function () {
+	$('.exch-head__btn').click(function () {
 		// basic
 		if (!$('body').hasClass('advanced')) {
 			$('.js-tabs-panel').removeClass('active');

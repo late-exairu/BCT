@@ -298,30 +298,53 @@
 	}
 
 	&__sep{
-		position: relative;
 		width: 40px;
 		height: 50px;
 		display: flex;
 		flex: 0 0 40px;
-		margin: 0 calc(var(--gap-size) + 0px);
+		flex-direction: column;
+		margin: 0 var(--gap-size);
+		justify-content: center;
+		align-items: center;
+		background: transparent;
+		border: 1px solid transparent;
+		transition: all .1s;
+		border-radius: var(--border-radius);
 
-		& > *{
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
+		.sprite-icon{
+			width: 24px;
+			height: 13px;
+			fill: var(--clr-accentD);
+			transition: all .1s;
 		}
 	}
 
+	&__switch-left{
+		display: block;
+		width: 17px;
+		height: 14px;
+		position: relative;
+		left: -2px;
+		fill: var(--color-two);
+	}
+
+	&__switch-right{
+		display: block;
+		width: 17px;
+		height: 14px;
+		position: relative;
+		left: 2px;
+		fill: var(--color-one);
+	}
+
 	&__btn{
+		position: relative;
 		font-family: $osans;
 		padding: 0 10px 0 5px;
-		height: var(--exch-head-height);
+		height: calc(var(--exch-head-height) + 1px);
 		display: flex;
 		flex: 0 0 100px;
 		align-items: center;
-		background: var(--clr-accentD);
-		/*border-radius: 5px;*/
 		color: #fff;
 		cursor: pointer;
 		margin: 0 0 0 var(--gap-size);
@@ -333,13 +356,59 @@
 		justify-content: center;
 		border: none;
 		line-height: 1;
+		background: transparent;
 		border-radius: var(--border-radius);
-		background: url(../img/fake-bg.svg) center center;
-		background-size: 100%;
+	}
 
-		/*&:hover{
-			background: #026ba0;
-		}*/
+	&__btn-bg{
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		fill: #f00;
+		z-index: -1;
+		fill: var(--clr-accentD);
+	}
+
+	&.progress{
+		
+		.exch-form__label,
+		.exch-form__input{
+			color: var(--clr-important);
+			pointer-events: none;
+		}
+		.exch-form__btn{
+			color: transparent;
+
+			&:after{
+				content: '';
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				background: url(../../img/spin.svg);
+			}
+		}
+		
+		.exch-form__current{
+			background: var(--clr-block);
+		}
+		
+		.exch-form__send,
+		.exch-form__get{
+			&:after{
+				background: transparent;
+			}
+		}
+
+		.exch-form__btn-bg{
+			fill: var(--clr-block);
+		}
 	}
 }
 
