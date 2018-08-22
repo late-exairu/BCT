@@ -7,7 +7,7 @@
 	font-family: $osans;
 	position: relative;
 	display: flex;
-	padding: 0 2px;
+	padding: 0;
 	margin: 0 0 0 10px;
 	white-space: nowrap;
 	flex: 0 0 auto;
@@ -41,6 +41,10 @@
 			.gbar-info__nums{
 				margin: 2px 0 0 3px;
 			}
+		}
+
+		&.no-padding{
+			padding: 0;
 		}
 	}
 	

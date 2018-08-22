@@ -1,0 +1,81 @@
+
+/* =================================================================== */
+/* graph-range
+/* =================================================================== */
+
+
+.graph-range{
+	position: relative;
+	font-size: 12px;
+	height: 100%;
+	background: var(--clr-block);
+	cursor: pointer;
+	min-width: 44px;
+	text-align: center;
+	color: var(--clr-important);
+
+	&.open{
+		.graph-range__list{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&:hover{
+		.graph-range__list{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&__current{
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 0 var(--border-radius) var(--border-radius) 0;
+		background: var(--clr-back);
+
+		&:after{
+			content: '';
+			position: relative;
+			width: 6px;
+			height: 4px;
+			margin: 0 0 0 5px;
+
+			@include sprite(arrow-drop);
+		}
+	}
+
+	&__list{
+		position: absolute;
+		top: 100%;
+		left: -1px;
+		right: -1px;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		border: 1px solid var(--clr-separator);
+		background: var(--clr-block);
+		transition: all .1s;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&__item{
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover{
+			&:hover{
+				background: var(--clr-backLL);
+			}
+		}
+
+		&.active{
+			background: var(--clr-backA);
+		}
+	}
+}

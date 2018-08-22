@@ -105,7 +105,7 @@
  * If you have already included it, you can eliminate the below
  * https://github.com/sass-mq/sass-mq/blob/master/_mq.scss
  */
-.icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
+.graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
   background-size: 139.625em 130.0625em; }
@@ -1944,7 +1944,7 @@ h6 {
   font-family: "open_sans", sans-serif;
   position: relative;
   display: flex;
-  padding: 0 2px;
+  padding: 0;
   margin: 0 0 0 10px;
   white-space: nowrap;
   flex: 0 0 auto;
@@ -1968,6 +1968,8 @@ h6 {
       display: flex; }
       .graph-info__item.inline .gbar-info__nums {
         margin: 2px 0 0 3px; }
+    .graph-info__item.no-padding {
+      padding: 0; }
   .graph-info__title {
     font-size: 12px;
     color: var(--clr-important);
@@ -2144,6 +2146,63 @@ h6 {
   .graph-prices .labeled-dropdown {
     width: auto;
     margin: 0 0 0 0; }
+
+/* =================================================================== */
+/* graph-range
+/* =================================================================== */
+.graph-range {
+  position: relative;
+  font-size: 12px;
+  height: 100%;
+  background: var(--clr-block);
+  cursor: pointer;
+  min-width: 44px;
+  text-align: center;
+  color: var(--clr-important); }
+  .graph-range.open .graph-range__list {
+    opacity: 1;
+    visibility: visible; }
+  .graph-range:hover .graph-range__list {
+    opacity: 1;
+    visibility: visible; }
+  .graph-range__current {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0 var(--border-radius) var(--border-radius) 0;
+    background: var(--clr-back); }
+    .graph-range__current:after {
+      content: '';
+      position: relative;
+      width: 6px;
+      height: 4px;
+      margin: 0 0 0 5px;
+      width: 0.625em;
+      height: 0.375em;
+      background-position: -3.8125em -3.4375em; }
+  .graph-range__list {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid var(--clr-separator);
+    background: var(--clr-block);
+    transition: all .1s;
+    opacity: 0;
+    visibility: hidden; }
+  .graph-range__item {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .graph-range__item:hover:hover {
+      background: var(--clr-backLL); }
+    .graph-range__item.active {
+      background: var(--clr-backA); }
 
 /* =================================================================== */
 /* icon-trader */
