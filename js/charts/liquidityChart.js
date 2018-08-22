@@ -115,30 +115,35 @@ var liquidityChartOptions = {
             fontSize: 16
         },
         formatter: function () {
-            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var months = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             var date = new Date(this.x);
             var month = months[date.getMonth()];
-            var dayName = date.toString().split(' ')[0];
+            var dayName = days[date.getDay()];
+			var year = date.getFullYear();            
             // edit value to ~8k
             var TooltipValue = (this.y).toFixed(2);
-            return '<div class="tooltip">' +
-                "<span>" + TooltipValue + '</span> ' + dayName + ', ' + month + ' ' + date.getDate() +
-                '</div>';
+            return '<div class="tooltip font10">' +
+                "<div class='font12 textCenter bold'>$" + TooltipValue + '</div> <div>' +
+                dayName + ', ' + month + ' ' + date.getDate() +', ' +year +
+                '</div></div>';
         },
-        positioner: function (labelWidth, labelHeight, point, ) {
+        positioner: function (labelWidth, labelHeight, point ) {
             var graphWidth = $(liquidityChartObj.container).width();
             var xPos = point.plotX - (labelWidth / 2);
             // right side fix
-            if ((point.plotX + labelWidth) > graphWidth) {
-                xPos = graphWidth - labelWidth - 35;
+            if ((point.plotX + 80) > graphWidth) {
+                xPos = graphWidth - labelWidth - 10;
             }
             // left side fix
-            else if (point.plotX < 50) {
-                xPos = 5;
+            else if (point.plotX < 80) {
+                xPos = 25;
             }
             return {
-                x: xPos + 30,
-                y: point.plotY - 45
+                x: xPos - 10,
+                y: 0
             };
         }
     },
