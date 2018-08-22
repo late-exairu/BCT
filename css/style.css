@@ -685,7 +685,8 @@ h6 {
       opacity: 0.3; }
     .basic-table__row.head {
       font-size: 12px;
-      font-weight: 700; }
+      font-weight: 700;
+      cursor: default; }
       .basic-table__row.head:hover {
         background: var(--clr-block); }
       .basic-table__row.head .basic-table__col {
