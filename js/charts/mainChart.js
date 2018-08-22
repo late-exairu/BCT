@@ -247,11 +247,11 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var xPos = point.plotX - labelWidth - 40;
 			// left side fix
 			if (point.plotX < labelWidth + 40) {
-				xPos = point.plotX;
+				xPos = point.plotX - 9;
 			}
 			return {
-				x: xPos,
-				y: point.plotY - 15
+				x: xPos + 3,
+				y: point.plotY - 18
 			};
 		}
 	},
