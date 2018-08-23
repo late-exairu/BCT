@@ -763,6 +763,10 @@ h6 {
       color: #0089cb; }
     .basic-table__col.bold {
       font-weight: 700; }
+    .basic-table__col.text-cut {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
   .basic-table__arrow-sort {
     display: inline-block;
     width: 5px;
@@ -2621,8 +2625,8 @@ Blocks from left bar
     .main-cols__left.col-tables {
       width: 30%;
       flex: 0 0 30%;
-      min-width: 384px;
-      max-width: 450px; }
+      min-width: 400px;
+      max-width: 480px; }
   .main-cols__left-top {
     display: flex;
     flex: 1 1;
