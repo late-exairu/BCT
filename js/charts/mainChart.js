@@ -488,7 +488,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	]
 });
 
-$('#mainChart').mouseleave(function () {
+$('#mainChart,#portfolioChartGeneral').mouseleave(function () {
  	$('.lineForMainChart').css(
 		'left', '-9999px',
 	);

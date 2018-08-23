@@ -29,18 +29,19 @@ var portfolioChartData = null;
 var portfolioChartObj = null;
 var portfolioChartCurrentRange = 4;
 
-var portfolioChartMarginTop = -20;
+/* var portfolioChartMarginTop = -20;
 var portfolioChartMarginBottom = 180;
 
 if ($('body').hasClass('advanced')) {
     portfolioChartMarginTop = -20;
     portfolioChartMarginBottom = 200;
-}
+} */
 
 var portfolioChartOptions = {
     chart: {
         type: 'areaspline',
         backgroundColor: '#ffffff',
+        spacingTop: 0,
         marginTop: 0,
         marginBottom: 0,
         marginRight: 0,
@@ -58,7 +59,7 @@ var portfolioChartOptions = {
             year: '%Y'
         },
         crosshair: {
-            width: 1,
+            width: 0,
             //dashStyle: 'LongDash'
         },
         type: 'datetime',
@@ -153,6 +154,26 @@ var portfolioChartOptions = {
             var year = date.getFullYear();
             var TooltipValue = (this.y * 45).toFixed(2);
             TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
+
+
+            var lineForMainChartX = this.points[0].point.plotX + $('#portfolioChartGeneral').offset().left;
+            var lineForMainChartY = this.points[0].point.plotY + $('#portfolioChartGeneral').offset().top + 35;
+            var lineForMainChartHeight = $('#portfolioChartGeneral').height() - this.points[0].point.plotY - 40;
+
+            // right side fix
+            if (lineForMainChartX > $('#mainChart').offset().left + $('#mainChart').width()) {
+                lineForMainChartX = -9999;
+            }
+
+            $('.lineForMainChart').css({
+                'left': lineForMainChartX,
+                'top': lineForMainChartY,
+            });
+
+            $('.lineForMainChart .line').css({
+                'height': lineForMainChartHeight,
+            });
+
             return '<div class="tooltip blackColor font10">' +
                 '<div class="textCenter font12 bold">' + TooltipValue + ' <span class="light">USD</span></div>' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year +
                 '</div>';
@@ -197,12 +218,21 @@ var portfolioChartOptions = {
                 radius: 3,
                 states: {
                     hover: {
-                        enabled: true
+                        enabled: false
                     }
                 }
             },
+            events:{
+/*                 mouseOut: function (event) {
+                     	$('.lineForMainChart').css(
+                     	    'left', '-9999px',
+                         );
+                } */
+            }
         },
         series: {
+            stickyTracking: false,
+            trackByArea: true,
             states: {
                 hover: {
                     halo: {

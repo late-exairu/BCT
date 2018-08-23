@@ -3068,8 +3068,8 @@ body.menubar-in #user-btn:before {
   top: 15px;
   left: 8px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   width: 25px;
   height: 25px;
   margin: 0 5px 0 0;
@@ -3081,6 +3081,8 @@ body.menubar-in #user-btn:before {
     width: 12px;
     height: 19px;
     fill: var(--clr-accentD); }
+  .portfolio-back.portfolio-back-w-100 {
+    width: calc(100% - 8px); }
 
 #panel-funds-history .portfolio-back {
   position: static; }
