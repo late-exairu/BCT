@@ -14,7 +14,6 @@
 	border-top: 1px solid var(--clr-separator);
 	border-radius: 0 0 var(--border-radius) var(--border-radius);
 
-
 	--inner-accent: #607580;
 
 	&.-clr-pink{
@@ -27,6 +26,10 @@
 
 	&.-clr-green{
 		--inner-accent: #72c16e;
+	}
+
+	&.-clr-blue{
+		--inner-accent: #009FE3;
 	}
 
 	&__user-pic{

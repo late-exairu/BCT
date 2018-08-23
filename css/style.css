@@ -2874,6 +2874,8 @@ body.menubar-in #user-btn:before {
     --inner-accent: #d4bf71; }
   .message-bar.-clr-green {
     --inner-accent: #72c16e; }
+  .message-bar.-clr-blue {
+    --inner-accent: #009FE3; }
   .message-bar__user-pic {
     margin: 2px 2px 2px 0; }
   .message-bar__input {
