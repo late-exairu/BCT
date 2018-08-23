@@ -6026,30 +6026,22 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background-color: var(--clr-block);
     border: 1px solid var(--clr-separatorD);
     display: flex; }
-    .highcharts-tooltip div.tooltipCircle .mainInfo {
+    .highcharts-tooltip div.tooltipCircle .currency {
       border-right: 1px solid var(--clr-textD);
       padding-right: 5px;
-      margin: -1px 0 0; }
-      .highcharts-tooltip div.tooltipCircle .mainInfo .currency {
-        display: block;
-        color: #707CB9;
-        font-size: 11px;
-        line-height: 1; }
-      .highcharts-tooltip div.tooltipCircle .mainInfo .values {
-        display: block;
-        font-weight: bold;
-        color: var(--clr-iconD);
-        font-size: 8px;
-        line-height: 1;
-        margin: 2px 0 0;
-        white-space: nowrap; }
-    .highcharts-tooltip div.tooltipCircle .percent {
+      padding-left: 3px;
+      margin: -1px 0 0;
+      display: block;
+      color: #707CB9;
+      font-size: 14px;
+      line-height: 20px; }
+    .highcharts-tooltip div.tooltipCircle .price {
       padding-left: 5px;
-      font-size: 18px;
+      font-size: 13px;
       font-weight: 300;
       line-height: 20px;
       color: var(--clr-textD); }
-      .highcharts-tooltip div.tooltipCircle .percent span {
+      .highcharts-tooltip div.tooltipCircle .price span {
         line-height: 20px;
         font-weight: 600; }
   .highcharts-tooltip span svg {

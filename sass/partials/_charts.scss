@@ -173,29 +173,19 @@
 		background-color: var(--clr-block);
 		border: 1px solid var(--clr-separatorD);
 		display: flex;
-		.mainInfo {
+		.currency {
 			border-right: 1px solid var(--clr-textD);
 			padding-right: 5px;
+			padding-left: 3px;
 			margin: -1px 0 0;
-			.currency {
-				display: block;
-				color: #707CB9;
-				font-size: 11px;
-				line-height: 1;
-			}
-			.values {
-				display: block;
-				font-weight: bold;
-				color: var(--clr-iconD);
-				font-size: 8px;
-				line-height: 1;
-				margin: 2px 0 0;
-				white-space: nowrap;
-			}
+			display: block;
+			color: #707CB9;
+			font-size: 14px;
+			line-height: 20px;
 		}
-		.percent {
+		.price {
 			padding-left: 5px;
-			font-size: 18px;
+			font-size: 13px;
 			font-weight: 300;
 			line-height: 20px;
 			color: var(--clr-textD);
