@@ -32,17 +32,17 @@ var portfolioChartCurrentRange = 4;
 var portfolioChartMarginTop = -20;
 var portfolioChartMarginBottom = 180;
 
-if($('body').hasClass('advanced')){
+if ($('body').hasClass('advanced')) {
     portfolioChartMarginTop = -20;
     portfolioChartMarginBottom = 200;
-} 
+}
 
 var portfolioChartOptions = {
     chart: {
         type: 'areaspline',
         backgroundColor: '#ffffff',
-        marginTop: portfolioChartMarginTop,
-        marginBottom: portfolioChartMarginBottom,
+        marginTop: 0,
+        marginBottom: 0,
         marginRight: 0,
         marginLeft: 0
     },
@@ -127,6 +127,8 @@ var portfolioChartOptions = {
         enabled: false
     },
     tooltip: {
+        animation: false,
+        hideDelay: 0,
         backgroundColor: 'rgba(0,0,0,0)',
         borderColor: 'rgba(0,0,0,0)',
         borderRadius: 0,
@@ -144,11 +146,11 @@ var portfolioChartOptions = {
             var months = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
             ];
-			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             var date = new Date(this.x);
             var month = months[date.getMonth()];
-			var dayName = days[date.getDay()];
-			var year = date.getFullYear();
+            var dayName = days[date.getDay()];
+            var year = date.getFullYear();
             var TooltipValue = (this.y * 45).toFixed(2);
             TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
             return '<div class="tooltip blackColor font10">' +
@@ -168,7 +170,7 @@ var portfolioChartOptions = {
             }
             return {
                 x: xPos,
-                y: 50
+                y: 10
             };
         }
     },
@@ -187,7 +189,7 @@ var portfolioChartOptions = {
                 ]
             },
             marker: {
-				enabled: false,
+                enabled: false,
                 fillColor: '#FFFFFF',
                 lineWidth: 1,
                 lineColor: null,
@@ -216,3 +218,8 @@ var portfolioChartOptions = {
         data: portfolioChartData,
     }]
 };
+
+$.getJSON(location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'data/exampleData.json', function (data) {
+    portfolioChartData = data;
+    portfolioChartOptions.series[0].data = portfolioChartData;
+});

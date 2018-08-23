@@ -6121,8 +6121,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   /*border-bottom: 1px solid var(--clr-separator);*/ }
 
 #portfolioChartText {
+  pointer-events: none;
   position: absolute;
-  bottom: 30px;
+  bottom: 10px;
   left: 10px; }
   #portfolioChartText div {
     display: inline-block;

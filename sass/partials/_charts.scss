@@ -287,8 +287,9 @@
 }
 
 #portfolioChartText {
+	pointer-events: none;	
 	position: absolute;
-	bottom: 30px;
+	bottom: 10px;
 	left: 10px;
 	div {
 		display: inline-block;

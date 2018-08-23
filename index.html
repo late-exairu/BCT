@@ -857,7 +857,6 @@
 
 			<div class="main-cols__right-bottom m-top">
 				<div class="c-block d-flex-col flex-1-1 flex-h-fix js-account-stats">
-
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="js-tabs-panel" id="panel-funds-portfolio">
 							<button class="portfolio-back">
@@ -865,7 +864,7 @@
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-left"></use>
 								</svg>
 							</button>
-							<div class="portfolio-stats absolute">
+<!-- 							<div class="portfolio-stats absolute">
 								<div class="portfolio-stats__currency" id="circleChartSmall"></div>
 								<div class="portfolio-stats__amount">
 									<span>$</span>
@@ -882,12 +881,26 @@
 								<li class="portfolio-period__item">1M</li>
 								<li class="portfolio-period__item">1Y</li>
 								<li class="portfolio-period__item current">ALL</li>
-							</ul>
+							</ul> -->
 
 							<div class="portfolioChartParent w-100">
-								<div id="portfolioChartGeneral" style="width: 100%;"></div>
-								<div id="portfolioChartBTC" style="width: 100%;"></div>
-								<div id="portfolioChartETH" style="width: 100%;"></div>
+								<div id="portfolioChartGeneral" style="width: 100%;" class="h-100"></div>
+								<div id="portfolioChartText">
+									<div>
+										<span>$</span>
+										<span>6,709</span>
+										<span>.93</span>
+										<p>Portfolio value</p>
+									</div>
+									<div>
+										<span>$</span>
+										<span>709</span>
+										<span>.93</span>
+										<p>Change since last month</p>
+									</div>
+								</div>
+<!-- 								<div id="portfolioChartBTC" style="width: 100%;"></div>
+								<div id="portfolioChartETH" style="width: 100%;"></div> -->
 							</div>
 						</div><!-- js-tabs-panel END -->
 						<div class="js-tabs-panel active" id="panel-funds-wallet">
@@ -1499,17 +1512,17 @@
 <script src="js/libs/jquery.scrollbar.min.js"></script>
 <script src="js/libs/custom-select.js"></script>
 <script src="js/libs/jquery.fancybox.min.js"></script>
-<script src="js/libs/slick.js"></script>
+<!-- <script src="js/libs/slick.js"></script> -->
 <script src="js/libs/tippy.min.js"></script>
 
 <!-- Charts scripts-->
 <script src="js/charts/stylesUpdate.js"></script>
 <script src="js/charts/mainChart.js"></script>
 <script src="js/charts/circleChart.js"></script>
-<script src="js/charts/circleChartSmall.js"></script>
 <script src="js/charts/portfolioChartGeneral.js"></script>
-<script src="js/charts/portfolioChartBTC.js"></script>
-<script src="js/charts/portfolioChartETH.js"></script>
+<!-- <script src="js/charts/portfolioChartBTC.js"></script>
+<script src="js/charts/circleChartSmall.js"></script>
+<script src="js/charts/portfolioChartETH.js"></script> -->
 <script src="js/charts/liquidityChart.js"></script>
 <script src="js/scripts.js"></script>
 

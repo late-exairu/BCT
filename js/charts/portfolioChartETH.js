@@ -192,5 +192,4 @@ $.getJSON(location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'data
     portfolioChartOptions.series[0].data = portfolioChartData;
     portfolioChartBTCOptions.series[0].data = portfolioChartBTCData;
     portfolioChartETHOptions.series[0].data = portfolioChartETHData;
-
 });

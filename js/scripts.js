@@ -133,28 +133,28 @@ $(function () {
 	});
 
 
-	function initializeSliderCharts() {
-		$('.portfolioChartParent').slick({
-			arrows: false,
-			dots: false,
-			infinite: false,
-			fade: true
-		});
-		portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
-		portfolioChartBTCObj = Highcharts.stockChart('portfolioChartBTC', portfolioChartBTCOptions);
-		portfolioChartETHObj = Highcharts.stockChart('portfolioChartETH', portfolioChartETHOptions);
+	// function initializeSliderCharts() {
+	// 	$('.portfolioChartParent').slick({
+	// 		arrows: false,
+	// 		dots: false,
+	// 		infinite: false,
+	// 		fade: true
+	// 	});
+	// 	portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
+	// 	portfolioChartBTCObj = Highcharts.stockChart('portfolioChartBTC', portfolioChartBTCOptions);
+	// 	portfolioChartETHObj = Highcharts.stockChart('portfolioChartETH', portfolioChartETHOptions);
 
-		$('.portfolioChartParent').mousewheel(function (e) {
-			e.preventDefault();
+	// 	$('.portfolioChartParent').mousewheel(function (e) {
+	// 		e.preventDefault();
 
-			if (e.deltaY < 0) {
-				$(this).slick('slickNext');
-			} else {
-				$(this).slick('slickPrev');
-			}
-		});
+	// 		if (e.deltaY < 0) {
+	// 			$(this).slick('slickNext');
+	// 		} else {
+	// 			$(this).slick('slickPrev');
+	// 		}
+	// 	});
 
-	}
+	// }
 
 
 	/*---------------------------------------------------*/
@@ -165,7 +165,10 @@ $(function () {
 		$('.js-tabs-panel').removeClass('active');
 		$('#panel-funds-portfolio').addClass('active');
 		$('.main-cols__right-bottom .portfolio-menu__item').eq(1).trigger('click');
-		initializeSliderCharts();
+		//initializeSliderCharts();
+		if (!portfolioChartObj)
+		portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
+
 	});
 
 	$('.portfolio-back').click(function () {
@@ -193,9 +196,11 @@ $(function () {
 		}
 
 		// Portfolio tab
-		if ($(this).index() == 1) {
-			initializeSliderCharts();
-		}
+/* 		if ($(this).index() == 1) {
+			//initializeSliderCharts();
+			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
+
+		} */
 
 		// Wallet tab
 		if ($(this).index() == 2) {
@@ -264,12 +269,12 @@ $(function () {
 			}
 		};
 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartOptions);
-		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartBTCOptions);
-		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartETHOptions);
+/* 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartBTCOptions);
+		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartETHOptions); */
 
 		if (portfolioChartObj) portfolioChartObj.update(stylesForPortfolioChart);
-		if (portfolioChartBTCObj) portfolioChartBTCObj.update(stylesForPortfolioChart);
-		if (portfolioChartETHObj) portfolioChartETHObj.update(stylesForPortfolioChart);
+/* 		if (portfolioChartBTCObj) portfolioChartBTCObj.update(stylesForPortfolioChart);
+		if (portfolioChartETHObj) portfolioChartETHObj.update(stylesForPortfolioChart); */
 
 		// liquidityChart
 		var stylesForLiquidityChart = {
