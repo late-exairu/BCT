@@ -27,7 +27,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		marginRight: -25,
 		spacingTop: 0,
 		spacingLeft: -22,
-		spacingRight: 0,
+		spacingRight: -22,
 		spacingBottom: 0,
 		events: {
 			/* 			click: function (event) {
@@ -61,7 +61,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)', */
 				states: {
 					hover: {
-						enabled: true
+						enabled: false
 					}
 				}
 			},
@@ -89,7 +89,6 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			events: {
 				mouseOver: function (event) {
 					 					// if (this.type == 'areaspline') {
-										// 	// find highlighted chart and remove highlight
  										// 	mainChartObj.series.map(function (graph) {
 										// 		if (graph.type == 'areaspline') {
 										// 			if (graph.options.fillColor.linearGradient.y2 > 5) {
@@ -140,7 +139,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 										// 			}
 										// 		}
 										// 	}); 
-										// }
+										// }										
 				},
 			},
 		}
@@ -203,7 +202,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		shadow: false,
 		useHTML: true,
 		//shape: "box",
-		split: false,
+		//split: false,
 		style: {
 			color: '#ffffff',
 			fontSize: 8
@@ -219,24 +218,25 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var arrowDirection = 'right';
 			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
 
-/* 			var secondTooltipX = this.points[0].point.plotX + $('#mainChart').offset().left - 20;
-			var secondTooltipY = $('#mainChart').offset().top + $('#mainChart').height() + 7;
-			// left side fix 
-			if (this.points[0].point.plotX < 120){
-				secondTooltipX = $('#mainChart').offset().left + 90;
-			}
-			// right side fix 
-			if (this.points[0].point.plotX > $('#mainChart').width() - 80) {
-				secondTooltipX = $('#mainChart').offset().left + $('#mainChart').width() - 90;
+ 			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left - 20;
+			var lineForMainChartY = this.points[0].point.plotY + $('#mainChart').offset().top;
+			var lineForMainChartHeight = $('#mainChart').height() - this.points[0].point.plotY - 6;
+
+			// right side fix
+			if (lineForMainChartX > $('#mainChart').offset().left + $('#mainChart').width()){
+				lineForMainChartX = -9999;
 			}
 
-			$('.secondTooltip').css({
-				'left': secondTooltipX,
-				'top': secondTooltipY,
+			$('.lineForMainChart').css({
+				'left': lineForMainChartX,
+				'top': lineForMainChartY,
 			});
 
-			$('.secondTooltip .tooltip').html(dayName + ', ' + month + ' ' + date.getDate()+ ', 22:15-22:29'); */
+			$('.lineForMainChart .line').css({
+				'height': lineForMainChartHeight,
+			});
 
+			
 			if (this.points[0].point.plotX < 220){
 				arrowDirection = 'left';
 			}
@@ -489,7 +489,13 @@ var mainChartObj = Highcharts.chart('mainChart', {
 });
 
 $('#mainChart').mouseleave(function () {
-	$('.secondTooltip').css(
+ 	$('.lineForMainChart').css(
+		'left', '-9999px',
+	);
+});
+
+$(window).resize(function () {
+	$('.lineForMainChart').css(
 		'left', '-9999px',
 	);
 });
