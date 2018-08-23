@@ -810,6 +810,9 @@ h6 {
   .basic-table.bigger-font {
     font-size: 14px;
     --font-size: 14px; }
+    .basic-table.bigger-font .basic-table__row.head {
+      font-size: 12px;
+      font-weight: 700; }
     .basic-table.bigger-font .smaller {
       font-size: calc(var(--font-size) - 4px);
       margin: 4px 0 0 2px; }
@@ -5916,10 +5919,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     opacity: 0.1;
     transition: all 0.2s;
     transform: translate(-50%, -50%); }
-  .accounts-diagram-wrap:hover:after {
-    background: var(--clr-accent); }
   .accounts-diagram-wrap:hover #circleChartText {
     color: var(--clr-accentD); }
+  .accounts-diagram-wrap:active:after {
+    background: var(--clr-accent); }
   @media only screen and (min-height: 900px) {
     .accounts-diagram-wrap {
       flex: 0 0 250px;
