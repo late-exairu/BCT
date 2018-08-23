@@ -3063,14 +3063,16 @@ body.menubar-in #user-btn:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
+  width: 25px;
+  height: 25px;
   margin: 0 5px 0 0;
   background: transparent;
   border: none;
   cursor: pointer; }
   .portfolio-back .sprite-icon {
-    width: 8px;
-    height: 16px;
+    display: block;
+    width: 12px;
+    height: 19px;
     fill: var(--clr-accentD); }
 
 #panel-funds-history .portfolio-back {

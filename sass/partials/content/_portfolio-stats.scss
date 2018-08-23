@@ -55,25 +55,28 @@
 	}
 }
 
-	.portfolio-back {
-		position: absolute;
-		z-index: 1;
-		top: 15px;
-		left: 8px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 20px;
-		margin: 0 5px 0 0;
-		background: transparent;
-		border: none;
-		cursor: pointer;
-		.sprite-icon {
-			width: 8px;
-			height: 16px;
-			fill: var(--clr-accentD);
-		}
+.portfolio-back {
+	position: absolute;
+	z-index: 1;
+	top: 15px;
+	left: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25px;
+	height: 25px;
+	margin: 0 5px 0 0;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+
+	.sprite-icon {
+		display: block;
+		width: 12px;
+		height: 19px;
+		fill: var(--clr-accentD);
 	}
-	#panel-funds-history .portfolio-back{
-		position: static;
-	}
+}
+#panel-funds-history .portfolio-back{
+	position: static;
+}
