@@ -259,6 +259,13 @@
 		font-size: 14px;
 		--font-size: 14px;
 
+		.basic-table__row{
+			&.head{
+				font-size: 12px;
+				font-weight: 700;
+			}
+		}
+
 		.smaller{
 			font-size: calc(var(--font-size) - 4px);
 			margin: 4px 0 0 2px;
