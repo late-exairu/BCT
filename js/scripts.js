@@ -167,7 +167,7 @@ $(function () {
 		$('.main-cols__right-bottom .portfolio-menu__item').eq(1).trigger('click');
 		//initializeSliderCharts();
 		if (!portfolioChartObj)
-		portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
+			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 
 	});
 
@@ -196,11 +196,11 @@ $(function () {
 		}
 
 		// Portfolio tab
-/* 		if ($(this).index() == 1) {
-			//initializeSliderCharts();
-			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
+		/* 		if ($(this).index() == 1) {
+					//initializeSliderCharts();
+					portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 
-		} */
+				} */
 
 		// Wallet tab
 		if ($(this).index() == 2) {
@@ -269,12 +269,12 @@ $(function () {
 			}
 		};
 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartOptions);
-/* 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartBTCOptions);
-		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartETHOptions); */
+		/* 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartBTCOptions);
+				changeChartStylesOptions(stylesForPortfolioChart, portfolioChartETHOptions); */
 
 		if (portfolioChartObj) portfolioChartObj.update(stylesForPortfolioChart);
-/* 		if (portfolioChartBTCObj) portfolioChartBTCObj.update(stylesForPortfolioChart);
-		if (portfolioChartETHObj) portfolioChartETHObj.update(stylesForPortfolioChart); */
+		/* 		if (portfolioChartBTCObj) portfolioChartBTCObj.update(stylesForPortfolioChart);
+				if (portfolioChartETHObj) portfolioChartETHObj.update(stylesForPortfolioChart); */
 
 		// liquidityChart
 		var stylesForLiquidityChart = {
@@ -399,7 +399,7 @@ $(function () {
 		if ($(this).parents('#panel-funds-wallet').length) {
 			var icon = $(this).find('svg').eq(0)[0].childNodes[1].getAttribute('xlink:href');
 			$('.exch-head__get .exch-dropdown__list .exch-dropdown__item').each(function () {
-				if (icon == $(this).find('svg').eq(0)[0].childNodes[1].getAttribute('xlink:href')){
+				if (icon == $(this).find('svg').eq(0)[0].childNodes[1].getAttribute('xlink:href')) {
 					$(this).trigger('click');
 					$('.exch-dropdown').removeClass('open');
 					return false;
@@ -407,7 +407,7 @@ $(function () {
 			});
 		}
 
-		if ($(this).parents('#panel-funds-history').length){
+		if ($(this).parents('#panel-funds-history').length) {
 			$.fancybox.open({
 				src: '#exchange-step_2'
 			});
@@ -473,13 +473,17 @@ $(function () {
 		mainChartObj.series.map(function (item, index) {
 			if (item.type == 'areaspline') {
 				item.update({
+					color: mainChartSecondColor,
 					fillColor: {
 						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 						stops: [
 							[0, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')],
 							[1, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')]
 						]
-					}
+					},
+					lineWidth: 1,
+					enableMouseTracking: false,
+					zIndex: 1
 				});
 			}
 		});
@@ -488,40 +492,45 @@ $(function () {
 			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 				stops: gradientColor
-			}
+			},
+			color: mainChartFirstColor,
+			lineWidth: 3,
+			enableMouseTracking: true,
+			trackByArea: true,
+			zIndex: 10
 		});
 
 		mainGraphHighlighted = currentDataId;
 	});
 
-	$('.graph-prices .graph-prices__list .graph-prices__item').hover(function () {
-		var currentDataId = $(this).attr('data-id');
-		mainChartObj.series.map(function (item, index) {
-			if (item.type == 'areaspline') {
-				if (item.options.lineWidth > 1) {
-					item.update({
-						lineWidth: 1,
-						color: mainChartSecondColor
-					});
+	/* 	$('.graph-prices .graph-prices__list .graph-prices__item').hover(function () {
+			var currentDataId = $(this).attr('data-id');
+			mainChartObj.series.map(function (item, index) {
+				if (item.type == 'areaspline') {
+					if (item.options.lineWidth > 1) {
+						item.update({
+							lineWidth: 1,
+							color: mainChartSecondColor
+						});
+					}
+					if (item.options.id == currentDataId) {
+						item.update({
+							lineWidth: 3,
+							color: mainChartFirstColor
+						});
+					}
 				}
-				if (item.options.id == currentDataId) {
-					item.update({
-						lineWidth: 3,
-						color: mainChartFirstColor
-					});
-				}
-			}
-		});
-	});
+			});
+		}); */
 
-	$('.graph-prices__list').mouseleave(function () {
+/* 	$('.graph-prices__list').mouseleave(function () {
 		mainChartObj.series.map(function (item, index) {
 			if (item.type == 'areaspline') {
 				item.update({
 					lineWidth: 1,
 					color: mainChartSecondColor,
 					enableMouseTracking: false,
-					zIndex:1
+					zIndex: 1
 				});
 				if (item.options.id == mainGraphHighlighted) {
 					item.update({
@@ -534,7 +543,7 @@ $(function () {
 				}
 			}
 		});
-	});
+	}); */
 
 
 	/*---------------------------------------------------*/
@@ -642,17 +651,16 @@ $(function () {
 	// convert/confirm buttons
 	$('.exch-head__btn, .exch-form__btn').click(function (e) {
 		e.preventDefault();
- 		if ($(this).hasClass('exch-form__btn')) {
+		if ($(this).hasClass('exch-form__btn')) {
 			$('.exch-form').addClass('progress');
 			setTimeout(() => {
-			 	$('.exch-form').removeClass('progress');
+				$('.exch-form').removeClass('progress');
 				$.fancybox.open({
 					src: '#exchange-step_2'
 				});
 				$(this).closest('.exch-head').toggleClass('open');
 			}, 1000);
-		}
-		else{
+		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 		}
 	});
