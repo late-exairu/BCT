@@ -45,6 +45,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			borderWidth: 0,
 			groupPadding: 0,
 			lineWidth: 0.6,
+			stickyTracking: false,
+			trackByArea: true,
 			marker: {
 				enabled: false,
 				fillColor: '#FFFFFF',
@@ -86,59 +88,59 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			},
 			events: {
 				mouseOver: function (event) {
-					/* 					if (this.type == 'areaspline') {
-											// find highlighted chart and remove highlight
-											mainChartObj.series.map(function (graph) {
-												if (graph.type == 'areaspline') {
-													if (graph.options.fillColor.linearGradient.y2 > 5) {
-														graph.update({
-															fillColor: {
-																linearGradient: [0, 0, 0, 1],
-															},
-															color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
-														});
-													}
-												}
-											});
-											// highlight hover graph
-											this.update({
-												fillColor: {
-													linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
-												},
-												color: '#0576B9',
-												lineWidth: this.options.lineWidth,
-											}, );
-											// set id of current graph ( for change theme)
-											mainGraphHover = this.options.id;
-										} */
+					 					// if (this.type == 'areaspline') {
+										// 	// find highlighted chart and remove highlight
+ 										// 	mainChartObj.series.map(function (graph) {
+										// 		if (graph.type == 'areaspline') {
+										// 			if (graph.options.fillColor.linearGradient.y2 > 5) {
+										// 				graph.update({
+										// 					fillColor: {
+										// 						linearGradient: [0, 0, 0, 1],
+										// 					},
+										// 					color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
+										// 				});
+										// 			}
+										// 		}
+										// 	}); 
+										// 	// highlight hover graph
+ 										// 	this.update({
+										// 		fillColor: {
+										// 			linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
+										// 		},
+										// 		color: '#0576B9',
+										// 		lineWidth: this.options.lineWidth,
+										// 	}, );
+										// 	// set id of current graph ( for change theme)
+										// 	mainGraphHover = this.options.id; 
+										// }
 				},
 				click: function (event) {
 					//mainGraphHighlighted = this.options.id;
 				},
 				mouseOut: function (event) {
-					/* 					if (this.type == 'areaspline') {
-											// find highlighted chart and remove highlight
-											mainChartObj.series.map(function (graph) {
-												if (graph.type == 'areaspline') {
-													if (graph.options.fillColor.linearGradient.y2 > 5) {
-														graph.update({
-															fillColor: {
-																linearGradient: [0, 0, 0, 1],
-															},
-															color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
-														});
-													}
-													if (graph.options.id == mainGraphHighlighted) {
-														graph.update({
-															fillColor: {
-																linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
-															},
-															color: '#0576B9'
-														});
-													}
-												}
-											});
-										} */
+					 					// if (this.type == 'areaspline') {
+										// 	// find highlighted chart and remove highlight
+ 										// 	mainChartObj.series.map(function (graph) {
+										// 		if (graph.type == 'areaspline') {
+										// 			if (graph.options.fillColor.linearGradient.y2 > 5) {
+										// 				graph.update({
+										// 					fillColor: {
+										// 						linearGradient: [0, 0, 0, 1],
+										// 					},
+										// 					color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
+										// 				});
+										// 			}
+										// 			if (graph.options.id == mainGraphHighlighted) {
+										// 				graph.update({
+										// 					fillColor: {
+										// 						linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
+										// 					},
+										// 					color: '#0576B9'
+										// 				});
+										// 			}
+										// 		}
+										// 	}); 
+										// }
 				},
 			},
 		}
@@ -150,7 +152,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			year: '%b'
 		},
 		crosshair: {
-			width: 1,
+			width: 0,
 			color: '#2B569A'
 		},
 		labels: {
@@ -422,10 +424,10 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			name: "Series 4",
 			lineWidth: 3,
 			color: '#2B569A',
-			fillColor: {
+ 			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 				stops: gradientColor
-			},
+			}, 
 			id: 4,
 			enableMouseTracking: true,
 		},

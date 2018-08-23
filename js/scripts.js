@@ -516,12 +516,15 @@ $(function () {
 					lineWidth: 1,
 					color: mainChartSecondColor,
 					enableMouseTracking: false,
+					zIndex:1
 				});
 				if (item.options.id == mainGraphHighlighted) {
 					item.update({
 						lineWidth: 3,
 						color: mainChartFirstColor,
 						enableMouseTracking: true,
+						trackByArea: true,
+						zIndex: 10
 					});
 				}
 			}
