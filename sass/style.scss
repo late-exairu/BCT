@@ -116,12 +116,14 @@ h6 {
 @import "partials/content/portfolio-stats";
 @import "partials/content/search-bar";
 @import "partials/content/toolbar";
+@import "partials/content/tippy-tooltip";
 
 // -- Vendor Styles -- //
 
 @import "vendor/ionRangeSlider";
 @import "vendor/jquery.scrollbar";
 @import "vendor/jquery.fancybox.min";
+@import "vendor/tippy";
 
 // -- Basic Blocks -- //
 

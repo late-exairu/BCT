@@ -1,0 +1,40 @@
+
+/* =================================================================== */
+/* tippy-tooltip */
+/* =================================================================== */
+
+.tippy-tooltip{
+
+	&.bct-theme {
+		background: var(--clr-block);
+		color: var(--clr-textD);
+		border: none;
+		padding: 5px 7px 3px;
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35);
+	}
+}
+
+.tippy-popper[x-placement^=right] .tippy-tooltip.bct-theme .tippy-arrow {
+    border-right: 7px solid var(--clr-block);
+}
+
+.tippy-popper[x-placement^=left] .tippy-tooltip.bct-theme .tippy-arrow {
+    border-left: 7px solid var(--clr-block);
+}
+
+.tippy-popper[x-placement^=top] .tippy-tooltip.bct-theme .tippy-arrow {
+    border-top: 7px solid var(--clr-block);
+}
+
+.tippy-popper[x-placement^=bottom] .tippy-tooltip.bct-theme .tippy-arrow {
+    border-bottom: 7px solid var(--clr-block);
+}
+
+.basic-tooltip{
+	font-size: 10px;
+	line-height: 1;
+
+	span{
+		font-size: 12px;
+	}
+}

@@ -698,7 +698,26 @@ $(function () {
 
 			}
 		});
-
 	}
+
+	/*---------------------------------------------------*/
+	/* Tippy Tooltip */
+	/*---------------------------------------------------*/
+
+	// tippy('.tippy');
+
+	tippy('.tippy', {
+		html: '#ttpConvert', // DIRECT ELEMENT option
+		arrow: true,
+		animation: 'fade',
+		theme: 'bct'
+	})
+
+	// tippy('.tippy', {
+	// 	html: '#ttpDone', // DIRECT ELEMENT option
+	// 	arrow: true,
+	// 	animation: 'fade',
+	// 	theme: 'bct'
+	// })
 
 });
