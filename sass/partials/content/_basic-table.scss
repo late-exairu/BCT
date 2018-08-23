@@ -163,6 +163,12 @@
 		&.bold{
 			font-weight: 700;
 		}
+
+		&.text-cut{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
 	}
 
 	&__arrow-sort{
