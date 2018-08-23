@@ -272,6 +272,7 @@
 	position: absolute;
 	left: -9999px;
 	pointer-events: none;
+	z-index: 101;
 	.circle {
 		width: 11px;
 		height: 11px;

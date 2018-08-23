@@ -6113,7 +6113,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 .lineForMainChart {
   position: absolute;
   left: -9999px;
-  pointer-events: none; }
+  pointer-events: none;
+  z-index: 101; }
   .lineForMainChart .circle {
     width: 11px;
     height: 11px;
