@@ -601,8 +601,9 @@ h6 {
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 100%;
-    transition: all 0.2s; }
+    height: 100%; }
+    .b-graph__controls.shifted {
+      width: calc(100% - 110px); }
   .b-graph.fullScreen {
     position: fixed;
     top: 0px;
@@ -2025,9 +2026,9 @@ h6 {
   position: absolute;
   display: flex;
   min-height: 0;
-  top: 10px;
-  right: 10px;
-  bottom: 10px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
   padding: 0;
   width: 100px;
   background: var(--clr-block);

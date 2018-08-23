@@ -109,7 +109,11 @@ $(function () {
 	$('#js-graph-prices-toggle').click(function () {
 		$('.graph-prices').toggleClass('open');
 		$(this).toggleClass('open');
-		$(this).closest('.graph-bar').toggleClass('shifted');
+		$('.b-graph__controls').toggleClass('shifted');
+		redrawMainChart();
+/* 		$(".b-graph__controls").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd',
+			redrawMainChart
+		); */
 	});
 
 	/*---------------------------------------------------*/
@@ -419,7 +423,7 @@ $(function () {
 	/* change range on Portfolio Chart */
 	/*---------------------------------------------------*/
 
-	$('.portfolio-period .portfolio-period__item').click(function () {
+/* 	$('.portfolio-period .portfolio-period__item').click(function () {
 		$('.portfolio-period .portfolio-period__item').removeClass('current');
 		$(this).addClass('current');
 		portfolioChartCurrentRange = $(this).index();
@@ -452,7 +456,7 @@ $(function () {
 		$('.portfolio-stats__dinamic').text(portfolioChartArrChanges[currentSlide][currentPeriod][0]);
 		$('.portfolio-stats__amount-value').text(portfolioChartArrChanges[currentSlide][currentPeriod][1]);
 		$('.portfolio-stats__amount-cent').text(portfolioChartArrChanges[currentSlide][currentPeriod][2]);
-	}
+	} */
 
 	/*---------------------------------------------------*/
 	/* Graph prices list */

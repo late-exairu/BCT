@@ -1,11 +1,11 @@
 function redrawMainChart() {
-	/* 	var chartParent = $('.b-graph');
-		$(chartParent).css('width', '100%');
-		var chartParentWidth = parseInt($(chartParent).width());
-		 if ($('#js-graph-prices').hasClass('open')) {
-		 	chartParentWidth -= 160;
-		 }
-		$(chartParent).css('width', chartParentWidth); */
+/* 	 	 var chartParent = $('.b-graph__controls');
+		 $(chartParent).css('width', '100%');
+	 	 var chartParentWidth = parseInt($(chartParent).width());
+	 	 if ($('#js-graph-prices').hasClass('open')) {
+	 	 	chartParentWidth -= 160;
+	 	 }
+	 	$(chartParent).css('width', chartParentWidth);  */
 	mainChartObj.reflow();
 }
 

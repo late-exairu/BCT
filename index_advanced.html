@@ -1876,330 +1876,331 @@
 				</div>
 				<!-- exch-head END -->
 
-				<div class="c-block b-graph">
-					<div id="mainChart"></div>
+				<div class="b-graph">
+					<div class="c-block b-graph__controls">
+						<div id="mainChart"></div>
+						<div class="toolbar">
+							<div class="toolbar__scroll scroll-y scrollbar-left">
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-reload" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-reload"></use>
+										</svg>
+									</button>
+								</div>
 
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-cross" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-cross"></use>
+										</svg>
+									</button>
+								</div>
 
-					<div class="toolbar">
-						<div class="toolbar__scroll scroll-y scrollbar-left">
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-reload" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-reload"></use>
-									</svg>
-								</button>
-							</div>
+								<div class="toolbar__item"><!-- .active on click -->
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
+										</svg>
+									</button>
 
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-cross" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-cross"></use>
+									<svg class="toolbar__drop-arrow tool-trend" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-tool-drop"></use>
 									</svg>
-								</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-pitchfork" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-pitchfork"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-brush" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-brush"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-text" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-text"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-pattern" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-pattern"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-long-pos" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-long-pos"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-icon" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-icon"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__separator"></div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-measure" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-measure"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-zoom" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-zoom"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__separator"></div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-magnet" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-magnet"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-drawing" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-drawing"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-lock" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-lock"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-hide" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-hide"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__separator"></div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-show" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-show"></use>
+										</svg>
+									</button>
+								</div>
+								
+								<div class="toolbar__item">
+									<button class="toolbar__btn">
+										<svg class="toolbar-icon tool-remove" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-remove"></use>
+										</svg>
+									</button>
+								</div>
 							</div>
+								
+							<div class="sys-status"><!-- add .problem to change dot to red -->
+								<div class="sys-status__dot"></div>
+								<div class="sys-status__title">All Systems Operational</div>
+							</div>
+						</div><!-- toolbar END -->
 
-							<div class="toolbar__item"><!-- .active on click -->
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
-									</svg>
-								</button>
+							<!-- <div class="toolbar-drop">
+								<div class="toolbar-drop__item">
+									<button class="toolbar-drop__btn">
+										<div class="toolbar-drop__icon-wrap">
+											<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
+											</svg>
+										</div>
 
-								<svg class="toolbar__drop-arrow tool-trend" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-tool-drop"></use>
-								</svg>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-pitchfork" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-pitchfork"></use>
-									</svg>
+										<p class="toolbar-drop__title">Cross</p>
+									</button>
+								</div>
+						
+								<div class="toolbar-drop__item">
+									<button class="toolbar-drop__btn">
+										<div class="toolbar-drop__icon-wrap">
+											<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
+											</svg>
+										</div>
+									
+										<p class="toolbar-drop__title">Dot</p>
+									</button>
+								</div>
+						
+								<div class="toolbar-drop__item">
+									<button class="toolbar-drop__btn">
+										<div class="toolbar-drop__icon-wrap">
+											<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
+											</svg>
+										</div>
+									
+										<p class="toolbar-drop__title">Arrow</p>
+									</button>
+								</div>
+							</div> -->
+							<!-- toolbar-drop END -->
+
+						<div class="graph-bar">
+							<div class="graph-bar__left">
+								<div class="graph-bar__group">
+									<button class="graph-bar__item btn">
+										<svg class="graph-bar__icon clock" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#clock"></use>
+										</svg>
+									</button>
+									
+									<button class="graph-bar__item btn">
+										<svg class="graph-bar__icon graph" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#graph"></use>
+										</svg>
+
+										<svg class="graph-bar__icon arrows-td-short" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
+										</svg>
+									</button>
+									
+									<button class="graph-bar__item btn">
+										<svg class="graph-bar__icon undo" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#undo"></use>
+										</svg>
+									</button>
+									
+									<button class="graph-bar__item btn">
+										<svg class="graph-bar__icon redo" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#redo"></use>
+										</svg>
+									</button>
+									
+									<button class="graph-bar__item btn">
+										<svg class="graph-bar__icon camera" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#camera"></use>
+										</svg>
+									</button>
+									
+									<button class="graph-bar__item btn">
+										<svg class="graph-bar__icon gear" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#gear"></use>
+										</svg>
+									</button>
+									
+									<button class="graph-bar__item btn">
+										<svg class="graph-bar__icon graph-2" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#graph_2"></use>
+										</svg>
+									</button>
+								</div>
+
+								<div class="graph-info">
+									<div class="graph-info__item">
+										<p class="graph-info__title">1 BTC = 8199.75 USD</p>
+									</div>
+								
+									<div class="graph-info__item">
+										<p class="graph-info__title">-2.92%</p>
+									</div>
+								
+									<div class="graph-info__item">
+										<p class="graph-info__title">VOL: $10M</p>
+									</div>
+								
+									<div class="graph-info__item">
+										<p class="graph-info__title">M.CAP: $118B</p>
+									</div>
+								
+									<div class="graph-info__item no-padding">
+										<div class="graph-range">
+											<div class="graph-range__current">1D</div>
+											
+											<ul class="graph-range__list">
+												<li class="graph-range__item">1H</li>
+												<li class="graph-range__item active">1D</li>
+												<li class="graph-range__item">1W</li>
+												<li class="graph-range__item">1M</li>
+												<li class="graph-range__item">ALL</li>
+											</ul>
+										</div>
+									</div>
+								</div><!-- graph-info END -->
+								
+								<!-- <button class="graph-bar__item btn">
+									<div class="graph-bar__btn-text">Indicators</div>
 								</button>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-brush" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-brush"></use>
-									</svg>
+								
+								<button class="graph-bar__item btn">
+									<div class="graph-bar__btn-text">Algos</div>
 								</button>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-text" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-text"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-pattern" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-pattern"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-long-pos" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-long-pos"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-icon" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-icon"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__separator"></div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-measure" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-measure"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-zoom" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-zoom"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__separator"></div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-magnet" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-magnet"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-drawing" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-drawing"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-lock" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-lock"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-hide" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-hide"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__separator"></div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-show" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-show"></use>
-									</svg>
-								</button>
-							</div>
-							
-							<div class="toolbar__item">
-								<button class="toolbar__btn">
-									<svg class="toolbar-icon tool-remove" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-remove"></use>
-									</svg>
-								</button>
-							</div>
+								
+								<button class="graph-bar__item btn">
+									<div class="graph-bar__btn-text">MacD</div>
+								</button> -->
+								
+								<!-- <button class="graph-bar__item btn exchange-slider" href="#">
+									<p class="exchange-slider__title">Exchanges</p>
+									
+									<div class="exchange-slider__value">12</div>
+								</button> -->
+							</div><!-- graph-bar__left END -->
+
+							<div class="graph-bar__right">
+								<div class="graph-bar__group vertical">
+									<a class="graph-bar__item btn" href="index.html">
+										<svg class="graph-bar__icon mode" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#mode"></use>
+										</svg>
+									</a>
+
+									<button class="graph-bar__item btn" id="js-graph-size-toggle">
+										<svg class="graph-bar__icon expand" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#expand"></use>
+										</svg>
+									</button>
+
+									<button class="graph-bar__item btn" id="js-graph-prices-toggle">
+										<svg class="graph-bar__icon buck" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#buck"></use>
+										</svg>
+									</button>
+								</div>
+							</div><!-- graph-bar__right END -->
 						</div>
-							
-						<div class="sys-status"><!-- add .problem to change dot to red -->
-							<div class="sys-status__dot"></div>
-							<div class="sys-status__title">All Systems Operational</div>
-						</div>
-					</div><!-- toolbar END -->
-
-						<!-- <div class="toolbar-drop">
-							<div class="toolbar-drop__item">
-								<button class="toolbar-drop__btn">
-									<div class="toolbar-drop__icon-wrap">
-										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
-										</svg>
-									</div>
-
-									<p class="toolbar-drop__title">Cross</p>
-								</button>
-							</div>
-					
-							<div class="toolbar-drop__item">
-								<button class="toolbar-drop__btn">
-									<div class="toolbar-drop__icon-wrap">
-										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
-										</svg>
-									</div>
-								
-									<p class="toolbar-drop__title">Dot</p>
-								</button>
-							</div>
-					
-							<div class="toolbar-drop__item">
-								<button class="toolbar-drop__btn">
-									<div class="toolbar-drop__icon-wrap">
-										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
-										</svg>
-									</div>
-								
-									<p class="toolbar-drop__title">Arrow</p>
-								</button>
-							</div>
-						</div> -->
-						<!-- toolbar-drop END -->
-
-					<div class="graph-bar">
-						<div class="graph-bar__left">
-							<div class="graph-bar__group">
-								<button class="graph-bar__item btn">
-									<svg class="graph-bar__icon clock" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#clock"></use>
-									</svg>
-								</button>
-								
-								<button class="graph-bar__item btn">
-									<svg class="graph-bar__icon graph" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#graph"></use>
-									</svg>
-
-									<svg class="graph-bar__icon arrows-td-short" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop"></use>
-									</svg>
-								</button>
-								
-								<button class="graph-bar__item btn">
-									<svg class="graph-bar__icon undo" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#undo"></use>
-									</svg>
-								</button>
-								
-								<button class="graph-bar__item btn">
-									<svg class="graph-bar__icon redo" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#redo"></use>
-									</svg>
-								</button>
-								
-								<button class="graph-bar__item btn">
-									<svg class="graph-bar__icon camera" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#camera"></use>
-									</svg>
-								</button>
-								
-								<button class="graph-bar__item btn">
-									<svg class="graph-bar__icon gear" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#gear"></use>
-									</svg>
-								</button>
-								
-								<button class="graph-bar__item btn">
-									<svg class="graph-bar__icon graph-2" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#graph_2"></use>
-									</svg>
-								</button>
-							</div>
-
-							<div class="graph-info">
-								<div class="graph-info__item">
-									<p class="graph-info__title">1 BTC = 8199.75 USD</p>
-								</div>
-							
-								<div class="graph-info__item">
-									<p class="graph-info__title">-2.92%</p>
-								</div>
-							
-								<div class="graph-info__item">
-									<p class="graph-info__title">VOL: $10M</p>
-								</div>
-							
-								<div class="graph-info__item">
-									<p class="graph-info__title">M.CAP: $118B</p>
-								</div>
-							
-								<div class="graph-info__item no-padding">
-									<div class="graph-range">
-										<div class="graph-range__current">1D</div>
-										
-										<ul class="graph-range__list">
-											<li class="graph-range__item">1H</li>
-											<li class="graph-range__item active">1D</li>
-											<li class="graph-range__item">1W</li>
-											<li class="graph-range__item">1M</li>
-											<li class="graph-range__item">ALL</li>
-										</ul>
-									</div>
-								</div>
-							</div><!-- graph-info END -->
-							
-							<!-- <button class="graph-bar__item btn">
-								<div class="graph-bar__btn-text">Indicators</div>
-							</button>
-							
-							<button class="graph-bar__item btn">
-								<div class="graph-bar__btn-text">Algos</div>
-							</button>
-							
-							<button class="graph-bar__item btn">
-								<div class="graph-bar__btn-text">MacD</div>
-							</button> -->
-							
-							<!-- <button class="graph-bar__item btn exchange-slider" href="#">
-								<p class="exchange-slider__title">Exchanges</p>
-								
-								<div class="exchange-slider__value">12</div>
-							</button> -->
-						</div><!-- graph-bar__left END -->
-
-						<div class="graph-bar__right">
-							<div class="graph-bar__group vertical">
-								<a class="graph-bar__item btn" href="index.html">
-									<svg class="graph-bar__icon mode" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#mode"></use>
-									</svg>
-								</a>
-
-								<button class="graph-bar__item btn" id="js-graph-size-toggle">
-									<svg class="graph-bar__icon expand" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#expand"></use>
-									</svg>
-								</button>
-
-								<button class="graph-bar__item btn" id="js-graph-prices-toggle">
-									<svg class="graph-bar__icon buck" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#buck"></use>
-									</svg>
-								</button>
-							</div>
-						</div><!-- graph-bar__right END -->
-					</div>
+					</div><!-- c-block END -->
 
 					<div class="graph-prices d-flex-col" id="js-graph-prices">
-						<div class="graph-prices__label">Lowest<br/> Price</div>
+						<div class="graph-prices__label">Lowest
+							<br/> Price</div>
 
 						<div class="graph-prices__scroll scroll-y scrollbar-arrows">
 							<div class="graph-prices__list">
@@ -2208,7 +2209,9 @@
 										<div class="icon-trader binance"></div>
 										Binance
 									</div>
-									<div class="graph-prices__price">8191.75 <span>USD</span></div>
+									<div class="graph-prices__price">8191.75
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="1">
@@ -2216,7 +2219,9 @@
 										<div class="icon-trader okex"></div>
 										OKEx
 									</div>
-									<div class="graph-prices__price">8191.75 <span>USD</span></div>
+									<div class="graph-prices__price">8191.75
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="2">
@@ -2224,7 +2229,9 @@
 										<div class="icon-trader huobi"></div>
 										Huobi
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="3">
@@ -2232,7 +2239,9 @@
 										<div class="icon-trader bitfinex"></div>
 										Bitfinex
 									</div>
-									<div class="graph-prices__price">8189.87 <span>USD</span></div>
+									<div class="graph-prices__price">8189.87
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="5">
@@ -2240,7 +2249,9 @@
 										<div class="icon-trader coinbene"></div>
 										Coinbene
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="6">
@@ -2248,7 +2259,9 @@
 										<div class="icon-trader coinbase"></div>
 										Coinbase
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="7">
@@ -2256,7 +2269,9 @@
 										<div class="icon-trader kraken"></div>
 										Kraken
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item active" data-id="8">
@@ -2264,7 +2279,9 @@
 										<div class="icon-trader binance"></div>
 										Binance
 									</div>
-									<div class="graph-prices__price">8191.75 <span>USD</span></div>
+									<div class="graph-prices__price">8191.75
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="9">
@@ -2272,7 +2289,9 @@
 										<div class="icon-trader okex"></div>
 										OKEx
 									</div>
-									<div class="graph-prices__price">8191.75 <span>USD</span></div>
+									<div class="graph-prices__price">8191.75
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="10">
@@ -2280,7 +2299,9 @@
 										<div class="icon-trader huobi"></div>
 										Huobi
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="11">
@@ -2288,7 +2309,9 @@
 										<div class="icon-trader bitfinex"></div>
 										Bitfinex
 									</div>
-									<div class="graph-prices__price">8189.87 <span>USD</span></div>
+									<div class="graph-prices__price">8189.87
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="12">
@@ -2296,7 +2319,9 @@
 										<div class="icon-trader coinbene"></div>
 										Coinbene
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="13">
@@ -2304,7 +2329,9 @@
 										<div class="icon-trader coinbase"></div>
 										Coinbase
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="14">
@@ -2312,7 +2339,9 @@
 										<div class="icon-trader kraken"></div>
 										Kraken
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item active" data-id="15">
@@ -2320,7 +2349,9 @@
 										<div class="icon-trader binance"></div>
 										Binance
 									</div>
-									<div class="graph-prices__price">8191.75 <span>USD</span></div>
+									<div class="graph-prices__price">8191.75
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="16">
@@ -2328,7 +2359,9 @@
 										<div class="icon-trader okex"></div>
 										OKEx
 									</div>
-									<div class="graph-prices__price">8191.75 <span>USD</span></div>
+									<div class="graph-prices__price">8191.75
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="17">
@@ -2336,7 +2369,9 @@
 										<div class="icon-trader huobi"></div>
 										Huobi
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="18">
@@ -2344,7 +2379,9 @@
 										<div class="icon-trader bitfinex"></div>
 										Bitfinex
 									</div>
-									<div class="graph-prices__price">8189.87 <span>USD</span></div>
+									<div class="graph-prices__price">8189.87
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="19">
@@ -2352,7 +2389,9 @@
 										<div class="icon-trader coinbene"></div>
 										Coinbene
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="20">
@@ -2360,7 +2399,9 @@
 										<div class="icon-trader coinbase"></div>
 										Coinbase
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
 
 								<div class="graph-prices__item" data-id="21">
@@ -2368,13 +2409,20 @@
 										<div class="icon-trader kraken"></div>
 										Kraken
 									</div>
-									<div class="graph-prices__price">8188.45 <span>USD</span></div>
+									<div class="graph-prices__price">8188.45
+										<span>USD</span>
+									</div>
 								</div>
-							</div><!-- graph-prices__list END -->
-						</div><!-- graph-prices__scroll END -->
-					</div><!-- graph-prices END -->
-				</div><!-- c-block END -->
+							</div>
+							<!-- graph-prices__list END -->
+						</div>
+						<!-- graph-prices__scroll END -->
+					</div>
+					<!-- graph-prices END -->
+				</div>
+
 			</div><!-- main-cols__right-top END -->
+
 
 			<div class="main-cols__right-bottom m-top">
 				<div class="c-block d-flex-col flex-1-1 flex-h-fix js-account-stats">
