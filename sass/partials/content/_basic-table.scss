@@ -11,8 +11,9 @@
 	line-height: 1.2;
 	color: var(--clr-textD);
 	background: var(--clr-block);
-	--cell-height: 47px;
 	border-radius: var(--border-radius);
+	--cell-height: 47px;
+	--font-size: 12px;
 
 	&__body{
 
@@ -50,7 +51,7 @@
 		}
 
 		&.head{
-			font-size: 12px;
+			font-size: var(--font-size);
 			font-weight: 700;
 			cursor: default;
 
@@ -223,11 +224,12 @@
 
 	&.low-height{
 		font-size: 11px;
+		font-size: calc(var(--font-size) - 1px);
 		--cell-height: 21px;
 
 		.basic-table__row{
 			&.head{
-				font-size: 11px;
+				font-size: calc(var(--font-size) - 1px);
 				letter-spacing: -0.03em;
 				font-weight: 600;
 
@@ -255,9 +257,10 @@
 
 	&.bigger-font{
 		font-size: 14px;
+		--font-size: 14px;
 
 		.smaller{
-			font-size: 12px;
+			font-size: calc(var(--font-size) - 2px);
 		}
 	}
 
@@ -299,7 +302,7 @@
 	}
 
 	.smaller{
-		font-size: 10px;
+		font-size: calc(var(--font-size) - 2px);
 		margin: 0 0 0 3px;
 	}
 

@@ -108,7 +108,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 139.625em 130.0625em; }
+  background-size: 148.125em 138.5625em; }
 
 /* =================================================================== */
 /* Functions
@@ -661,8 +661,9 @@ h6 {
   line-height: 1.2;
   color: var(--clr-textD);
   background: var(--clr-block);
+  border-radius: var(--border-radius);
   --cell-height: 47px;
-  border-radius: var(--border-radius); }
+  --font-size: 12px; }
   .basic-table__row {
     width: 100%;
     min-width: 100%;
@@ -684,7 +685,7 @@ h6 {
       pointer-events: none;
       opacity: 0.3; }
     .basic-table__row.head {
-      font-size: 12px;
+      font-size: var(--font-size);
       font-weight: 700;
       cursor: default; }
       .basic-table__row.head:hover {
@@ -789,9 +790,10 @@ h6 {
     height: 33px; }
   .basic-table.low-height {
     font-size: 11px;
+    font-size: calc(var(--font-size) - 1px);
     --cell-height: 21px; }
     .basic-table.low-height .basic-table__row.head {
-      font-size: 11px;
+      font-size: calc(var(--font-size) - 1px);
       letter-spacing: -0.03em;
       font-weight: 600; }
       .basic-table.low-height .basic-table__row.head .basic-table__col {
@@ -806,9 +808,10 @@ h6 {
       .basic-table.low-height .basic-table__col:first-child {
         padding-left: 10px; }
   .basic-table.bigger-font {
-    font-size: 14px; }
+    font-size: 14px;
+    --font-size: 14px; }
     .basic-table.bigger-font .smaller {
-      font-size: 12px; }
+      font-size: calc(var(--font-size) - 2px); }
   .basic-table.four-rows .basic-table__body {
     max-height: calc(var(--cell-height) * 4); }
   .basic-table .icon-curr {
@@ -832,7 +835,7 @@ h6 {
       width: 9px;
       height: 9px; }
   .basic-table .smaller {
-    font-size: 10px;
+    font-size: calc(var(--font-size) - 2px);
     margin: 0 0 0 3px; }
   .basic-table .bold {
     font-weight: 700; }
@@ -2232,31 +2235,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -124.875em -116.25em; }
+    background-position: -133.375em -124.75em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -129.25em -120.6875em; }
+    background-position: -137.75em -129.1875em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -127.8125em -119.1875em; }
+    background-position: -136.3125em -127.6875em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -125.625em -117em; }
+    background-position: -134.125em -125.5em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -127.125em -118.5em; }
+    background-position: -135.625em -127em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -126.25em -117.625em; }
+    background-position: -134.75em -126.125em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -128.375em -120em; }
+    background-position: -136.875em -128.5em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -5892,7 +5895,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   max-height: 100%;
   height: 100%;
   cursor: pointer;
-  margin: 0 70px 0 0; }
+  margin: 0; }
+  .accounts-diagram-wrap.marged {
+    margin: 0 70px 0 0; }
   .accounts-diagram-wrap:after {
     content: '';
     position: absolute;
@@ -6373,6 +6378,18 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 .clr-dollar {
   fill: #C81820; }
+
+.clr-maker {
+  fill: #1abc9c; }
+
+.clr-monero {
+  fill: #ff6600; }
+
+.clr-dash {
+  fill: #008CE7; }
+
+.clr-xrp {
+  fill: #23292F; }
 
 .clr-red {
   color: #e05475; }
