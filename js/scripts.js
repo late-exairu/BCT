@@ -81,7 +81,7 @@ $(function () {
 			$('.exch-form__send .exch-form__coin').remove();
 			$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.graph-info__title').first().text('1 ' + telegramGroupName.slice(0, 3) + ' = ' + $(this).attr('data-course') + ' USD');
-			$('.chat-head__name').css('color',firstColor);
+			$('.chat-head__name').css('color', firstColor);
 		}
 		// second currency
 		else {
@@ -120,26 +120,34 @@ $(function () {
 
 	$('.advanced .b-graph').mousemove(function (e) {
 		var x = e.pageX - $('.b-graph').offset().left;
-		if ($('.b-graph').width() - x < 200) {
+		if ($('.b-graph').width() - x < 10) {
 			if (!$('.graph-prices').hasClass('open')) {
 				$('.graph-prices').addClass('open');
 				$('.b-graph__controls').addClass('shifted');
 				redrawMainChart();
 			}
-		} 
- 		else {
- 			if ($('.graph-prices').hasClass('open')) {
+		} else {
+			if ($('.b-graph').width() - x > 200) {
+				if ($('.graph-prices').hasClass('open')) {
+					$('.graph-prices').removeClass('open');
+					$('.b-graph__controls').removeClass('shifted');
+					redrawMainChart();
+				}
+			}
+		}
+	});
+
+	$('.advanced .b-graph').mouseleave(function (e) {
+		var x = e.pageX - $('.b-graph').offset().left;
+		if (x < $('.b-graph').width() - 5) {
+			if ($('.graph-prices').hasClass('open')) {
 				$('.graph-prices').removeClass('open');
 				$('.b-graph__controls').removeClass('shifted');
 				redrawMainChart();
 			}
-		} 
-	});
-
-	$('.advanced .b-graph').mouseleave(function (e) {
-		if ($('.graph-prices').hasClass('open')) {
-			$('.graph-prices').removeClass('open');
-			$('.b-graph__controls').removeClass('shifted');
+		} else {
+			$('.graph-prices').addClass('open');
+			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
 		}
 	});
@@ -799,39 +807,39 @@ $(function () {
 	var allOptions = $("ul.graph-range__list").children('li.graph-range__item');
 	var minDate = Date.UTC(2018, 5, 17);
 	var maxDate = Date.UTC(2018, 7, 05);
-	$("ul.graph-range__list").on("click", "li.graph-range__item", function() {
+	$("ul.graph-range__list").on("click", "li.graph-range__item", function () {
 		allOptions.removeClass('active');
 		$(this).addClass('active');
 		$(".graph-range__current").html($(this).html());
-		
-		switch($(".graph-range__current").html()) {
-			case "1H":				
-			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(0, {}, true);
+
+		switch ($(".graph-range__current").html()) {
+			case "1H":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(0, {}, true);
 				var HOUR = 1000 * 60 * 60;
 				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate);
-			break;
-			case "1D":				
-			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(1, {}, true);
+				break;
+			case "1D":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(1, {}, true);
 				var DAY = 1000 * 60 * 60 * 24;
 				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate);
-			break;
+				break;
 			case "1W":
-			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(2, {}, true);
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(2, {}, true);
 				var WEEK = 1000 * 60 * 60 * 24 * 7;
 				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate);
-			break;
+				break;
 			case "1M":
-			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(3, {}, true);
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(3, {}, true);
 				var d = new Date(maxDate);
 				d.setMonth(d.getMonth() - 1);
 				mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
-			break;
+				break;
 			case "ALL":
-			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(4, {}, true);
-				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);				
-			break;
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(4, {}, true);
+				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
+				break;
 		}
 		redrawMainChart();
-	});	
+	});
 
 });
