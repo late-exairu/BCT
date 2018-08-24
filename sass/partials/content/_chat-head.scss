@@ -8,7 +8,7 @@
 	position: relative;
 	display: flex;
 	padding: 4px 10px 4px 12px;
-	height: 49px;
+	height: 60px;
 	align-items: center;
 	background: var(--clr-block);
 	border-bottom: 1px solid var(--clr-separator);
@@ -29,8 +29,8 @@
 
 		.sprite-icon{
 			display: block;
-			width: 12px;
-			height: 19px;
+			width: 14px;
+			height: 24px;
 			fill: var(--clr-accentD);
 		}
 	}
@@ -76,9 +76,9 @@
 	}
 
 	&__info{
-		font-size: 12px;
+		font-size: 11px;
 		margin: 0 0 0;
-		color: var(--clr-text);
+		color: var(--clr-textD);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
