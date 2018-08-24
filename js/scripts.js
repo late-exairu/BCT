@@ -760,4 +760,15 @@ $(function () {
 	// 	theme: 'bct'
 	// })
 
+	/*---------------------------------------------------*/
+	/* Graph range select */
+	/*---------------------------------------------------*/
+	var allOptions = $("ul.graph-range__list").children('li.graph-range__item');
+	$("ul.graph-range__list").on("click", "li.graph-range__item", function() {
+		allOptions.removeClass('active');
+		$(this).addClass('active');
+		$(".graph-range__current").html($(this).html());
+		// allOptions.toggle();
+	});
+
 });
