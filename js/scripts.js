@@ -60,20 +60,7 @@ $(function () {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
 		var realCurrencyName = currencyName.slice(6).toLowerCase();
-		// first currency
-		if (telegramGroupName) {
-			$('.chat-head__name').text(telegramGroupName);
-			$('.chat-head__curr').remove();
-			$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
-			$('.exch-form__send .exch-form__coin').remove();
-			$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
-			$('.graph-info__title').first().text('1 ' + telegramGroupName.slice(0, 3) + ' = ' + $(this).attr('data-course') +' USD');
-		}
-		// second currency
-		else {
-			$('.exch-form__get .exch-form__coin').remove();
-			$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
-		}
+
 		var newCurr = $(this).children().clone();
 		$(newCurr).eq(1).text(currencyName);
 		var currDropdown = $(this).closest('.exch-dropdown');
@@ -85,6 +72,23 @@ $(function () {
 		var secondColor = $('.exch-dropdown__current .exch-dropdown__icon').eq(1).css('fill');
 		$(".exch-head").get(0).style.setProperty("--color-one", firstColor);
 		$(".exch-head").get(0).style.setProperty("--color-two", secondColor);
+
+		// first currency
+		if (telegramGroupName) {
+			$('.chat-head__name').text(telegramGroupName);
+			$('.chat-head__curr').remove();
+			$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+			$('.exch-form__send .exch-form__coin').remove();
+			$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+			$('.graph-info__title').first().text('1 ' + telegramGroupName.slice(0, 3) + ' = ' + $(this).attr('data-course') + ' USD');
+			$('.chat-head__name').css('color',firstColor);
+		}
+		// second currency
+		else {
+			$('.exch-form__get .exch-form__coin').remove();
+			$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+		}
+
 	});
 
 	/*---------------------------------------------------*/

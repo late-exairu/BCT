@@ -1207,7 +1207,7 @@ h6 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--clr-textD); }
+    color: #f79330; }
   .chat-head__info {
     font-size: 11px;
     margin: 0 0 0;
