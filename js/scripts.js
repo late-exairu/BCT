@@ -67,6 +67,7 @@ $(function () {
 			$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.exch-form__send .exch-form__coin').remove();
 			$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+			$('.graph-info__title').first().text('1 ' + telegramGroupName.slice(0, 3) + ' = ' + $(this).attr('data-course') +' USD');
 		}
 		// second currency
 		else {
