@@ -111,9 +111,32 @@ $(function () {
 		$(this).toggleClass('open');
 		$('.b-graph__controls').toggleClass('shifted');
 		redrawMainChart();
-/* 		$(".b-graph__controls").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd',
-			redrawMainChart
-		); */
+	});
+
+	$('.advanced .b-graph').mousemove(function (e) {
+		var x = e.pageX - $('.b-graph').offset().left;
+		if ($('.b-graph').width() - x < 200) {
+			if (!$('.graph-prices').hasClass('open')) {
+				$('.graph-prices').addClass('open');
+				$('.b-graph__controls').addClass('shifted');
+				redrawMainChart();
+			}
+		} 
+ 		else {
+ 			if ($('.graph-prices').hasClass('open')) {
+				$('.graph-prices').removeClass('open');
+				$('.b-graph__controls').removeClass('shifted');
+				redrawMainChart();
+			}
+		} 
+	});
+
+	$('.advanced .b-graph').mouseleave(function (e) {
+		if ($('.graph-prices').hasClass('open')) {
+			$('.graph-prices').removeClass('open');
+			$('.b-graph__controls').removeClass('shifted');
+			redrawMainChart();
+		}
 	});
 
 	/*---------------------------------------------------*/
@@ -423,40 +446,40 @@ $(function () {
 	/* change range on Portfolio Chart */
 	/*---------------------------------------------------*/
 
-/* 	$('.portfolio-period .portfolio-period__item').click(function () {
-		$('.portfolio-period .portfolio-period__item').removeClass('current');
-		$(this).addClass('current');
-		portfolioChartCurrentRange = $(this).index();
-		portfolioChartObj.rangeSelector.clickButton(portfolioChartCurrentRange, {}, true);
+	/* 	$('.portfolio-period .portfolio-period__item').click(function () {
+			$('.portfolio-period .portfolio-period__item').removeClass('current');
+			$(this).addClass('current');
+			portfolioChartCurrentRange = $(this).index();
+			portfolioChartObj.rangeSelector.clickButton(portfolioChartCurrentRange, {}, true);
 
-		portfolioChartBTCCurrentRange = $(this).index();
-		portfolioChartBTCObj.rangeSelector.clickButton(portfolioChartBTCCurrentRange, {}, true);
+			portfolioChartBTCCurrentRange = $(this).index();
+			portfolioChartBTCObj.rangeSelector.clickButton(portfolioChartBTCCurrentRange, {}, true);
 
-		portfolioChartETHCurrentRange = $(this).index();
-		portfolioChartETHObj.rangeSelector.clickButton(portfolioChartETHCurrentRange, {}, true);
+			portfolioChartETHCurrentRange = $(this).index();
+			portfolioChartETHObj.rangeSelector.clickButton(portfolioChartETHCurrentRange, {}, true);
 
-		updatePortfolioStats();
-	});
+			updatePortfolioStats();
+		});
 
-	function updatePortfolioStats(currencyChange) {
-		var currentSlide = $('.portfolioChartParent').slick('slickCurrentSlide');
-		var currentPeriod = $('.portfolio-period .portfolio-period__item.current').index();
-		if (currencyChange) {
-			if (currentSlide == 0) {
-				$('.portfolio-stats__amount-tip').text('Portfolio value');
-				circleChartSmallObj = Highcharts.chart('circleChartSmall', circleChartSmallOptions);
-			} else if (currentSlide == 1) {
-				$('.portfolio-stats__amount-tip').text('Bitcoin');
-				$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-bitcoin" style="display: block;" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-bitcoin" > < /use> </svg>');
-			} else if (currentSlide == 2) {
-				$('.portfolio-stats__amount-tip').text('Ethereum');
-				$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-ethereum" style="display: block;" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-ethereum" > < /use> </svg>');
+		function updatePortfolioStats(currencyChange) {
+			var currentSlide = $('.portfolioChartParent').slick('slickCurrentSlide');
+			var currentPeriod = $('.portfolio-period .portfolio-period__item.current').index();
+			if (currencyChange) {
+				if (currentSlide == 0) {
+					$('.portfolio-stats__amount-tip').text('Portfolio value');
+					circleChartSmallObj = Highcharts.chart('circleChartSmall', circleChartSmallOptions);
+				} else if (currentSlide == 1) {
+					$('.portfolio-stats__amount-tip').text('Bitcoin');
+					$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-bitcoin" style="display: block;" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-bitcoin" > < /use> </svg>');
+				} else if (currentSlide == 2) {
+					$('.portfolio-stats__amount-tip').text('Ethereum');
+					$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-ethereum" style="display: block;" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-ethereum" > < /use> </svg>');
+				}
 			}
-		}
-		$('.portfolio-stats__dinamic').text(portfolioChartArrChanges[currentSlide][currentPeriod][0]);
-		$('.portfolio-stats__amount-value').text(portfolioChartArrChanges[currentSlide][currentPeriod][1]);
-		$('.portfolio-stats__amount-cent').text(portfolioChartArrChanges[currentSlide][currentPeriod][2]);
-	} */
+			$('.portfolio-stats__dinamic').text(portfolioChartArrChanges[currentSlide][currentPeriod][0]);
+			$('.portfolio-stats__amount-value').text(portfolioChartArrChanges[currentSlide][currentPeriod][1]);
+			$('.portfolio-stats__amount-cent').text(portfolioChartArrChanges[currentSlide][currentPeriod][2]);
+		} */
 
 	/*---------------------------------------------------*/
 	/* Graph prices list */
@@ -527,27 +550,27 @@ $(function () {
 			});
 		}); */
 
-/* 	$('.graph-prices__list').mouseleave(function () {
-		mainChartObj.series.map(function (item, index) {
-			if (item.type == 'areaspline') {
-				item.update({
-					lineWidth: 1,
-					color: mainChartSecondColor,
-					enableMouseTracking: false,
-					zIndex: 1
-				});
-				if (item.options.id == mainGraphHighlighted) {
+	/* 	$('.graph-prices__list').mouseleave(function () {
+			mainChartObj.series.map(function (item, index) {
+				if (item.type == 'areaspline') {
 					item.update({
-						lineWidth: 3,
-						color: mainChartFirstColor,
-						enableMouseTracking: true,
-						trackByArea: true,
-						zIndex: 10
+						lineWidth: 1,
+						color: mainChartSecondColor,
+						enableMouseTracking: false,
+						zIndex: 1
 					});
+					if (item.options.id == mainGraphHighlighted) {
+						item.update({
+							lineWidth: 3,
+							color: mainChartFirstColor,
+							enableMouseTracking: true,
+							trackByArea: true,
+							zIndex: 10
+						});
+					}
 				}
-			}
-		});
-	}); */
+			});
+		}); */
 
 
 	/*---------------------------------------------------*/
