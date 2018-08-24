@@ -82,18 +82,18 @@ var portfolioChartOptions = {
             visibility: 'hidden'
         },
         buttons: [{
+                type: 'hour',
+                count: 1,
+            },
+            {
                 type: 'day',
                 count: 1,
             },
             {
                 type: 'week',
                 count: 1,
-            },
-            {
-                type: 'month',
-                count: 1,
             }, {
-                type: 'year',
+                type: 'month',
                 count: 1,
             },
             {
