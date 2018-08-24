@@ -120,6 +120,7 @@
 		align-items: center;
 		justify-content: center;
 		z-index: 1;
+		border-radius: 0 0 var(--border-radius) var(--border-radius);
 
 		&:after{
 			content: '';
@@ -128,9 +129,10 @@
 			top: -1px;
 			right: 0;
 			bottom: 0;
-			opacity: 0.85;
+			opacity: 1;
 			background: var(--clr-block);
 			z-index: -1;
+			border-radius: 0 0 var(--border-radius) var(--border-radius);
 		}
 	}
 }

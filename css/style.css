@@ -2037,7 +2037,7 @@ h6 {
   width: 100px;
   background: var(--clr-block);
   transition: all .2s;
-  border: 1px solid var(--clr-separator);
+  /*border: 1px solid var(--clr-separator);*/
   opacity: 0;
   visibility: hidden;
   will-change: transform;
@@ -2113,8 +2113,9 @@ h6 {
     align-items: center;
     margin: 0 0 1px;
     color: var(--clr-textD);
-    background: var(--clr-back);
-    text-align: center; }
+    background: var(--clr-block);
+    text-align: center;
+    border-bottom: 1px solid var(--clr-back-new); }
   .graph-prices__tier-icon {
     fill: #fff;
     width: 8px;
@@ -2139,11 +2140,12 @@ h6 {
     cursor: pointer;
     overflow: hidden;
     border-top: 1px solid var(--clr-separator);
-    color: var(--clr-textD); }
+    color: var(--clr-textD);
+    background: var(--clr-block); }
     .graph-prices__item:first-child {
       border: none; }
     .graph-prices__item:hover {
-      background: var(--clr-back); }
+      /*background: var(--clr-backL);*/ }
     .graph-prices__item.active {
       background: var(--clr-backA);
       color: var(--clr-accentD); }
@@ -2947,7 +2949,8 @@ body.menubar-in #user-btn:before {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1; }
+    z-index: 1;
+    border-radius: 0 0 var(--border-radius) var(--border-radius); }
     .message-bar__login:after {
       content: '';
       position: absolute;
@@ -2955,9 +2958,10 @@ body.menubar-in #user-btn:before {
       top: -1px;
       right: 0;
       bottom: 0;
-      opacity: 0.85;
+      opacity: 1;
       background: var(--clr-block);
-      z-index: -1; }
+      z-index: -1;
+      border-radius: 0 0 var(--border-radius) var(--border-radius); }
 
 /* =================================================================== */
 /* portfolio-menu */
