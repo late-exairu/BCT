@@ -744,21 +744,33 @@ $(function () {
 	/* Tippy Tooltip */
 	/*---------------------------------------------------*/
 
-	// tippy('.tippy');
-
-	tippy('.tippy', {
+	tippy('.tippy-convert', {
 		html: '#ttpConvert', // DIRECT ELEMENT option
 		arrow: true,
 		animation: 'fade',
 		theme: 'bct'
 	})
 
-	// tippy('.tippy', {
-	// 	html: '#ttpDone', // DIRECT ELEMENT option
-	// 	arrow: true,
-	// 	animation: 'fade',
-	// 	theme: 'bct'
-	// })
+	tippy('.tippy-done', {
+		html: '#ttpDone', // DIRECT ELEMENT option
+		arrow: true,
+		animation: 'fade',
+		theme: 'bct'
+	})
+
+	tippy('.tippy-convert-advanced', {
+		html: '#ttpConvert', // DIRECT ELEMENT option
+		arrow: true,
+		animation: 'fade',
+		theme: 'bct-advanced'
+	})
+
+	tippy('.tippy-done-advanced', {
+		html: '#ttpDone', // DIRECT ELEMENT option
+		arrow: true,
+		animation: 'fade',
+		theme: 'bct-advanced'
+	})
 
 	/*---------------------------------------------------*/
 	/* Graph range select */

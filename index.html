@@ -578,7 +578,7 @@
 							</div><!-- exch-dropdown END -->
 						</div><!-- exch-head__send END -->
 						
-						<button class="exch-head__btn tippy">
+						<button class="exch-head__btn tippy-convert">
 							CONVERT
 							<svg class="exch-head__btn-bg" role="img" aria-hidden="true">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#exch-bg"></use>
@@ -616,7 +616,7 @@
 								</svg>
 							</div>
 							
-							<button class="exch-form__btn tippy" type="submit">
+							<button class="exch-form__btn tippy-done" type="submit">
 								DONE
 								<svg class="exch-form__btn-bg" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#exch-bg"></use>
@@ -1480,13 +1480,17 @@
 <!---------- Tooltips ---------->
 <!------------------------------>
 
-<div class="basic-tooltip hidden" id="ttpConvert">
-	Search all exchanges:<br/>
-	<span>Find lowest price</span>
+<div id="ttpConvert">
+	<div class="basic-tooltip">
+		Search all exchanges:<br/>
+		<span>Find lowest price</span>
+	</div>
 </div>
 
-<div class="basic-tooltip hidden" id="ttpDone">
-	Confirm your Exchange
+<div id="ttpDone">
+	<div class="basic-tooltip">
+		Confirm your Exchange
+	</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
