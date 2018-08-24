@@ -72,10 +72,11 @@
 
 	.sprite-icon {
 		display: block;
-		width: 12px;
-		height: 19px;
+		width: 14px;
+		height: 24px;
 		fill: var(--clr-accentD);
 	}
+
 	&.portfolio-back-w-100{
 		width: calc(100% - 8px);
 	}

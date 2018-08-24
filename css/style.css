@@ -108,7 +108,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 148.125em 138.5625em; }
+  background-size: 149em 140.0625em; }
 
 /* =================================================================== */
 /* Functions
@@ -1153,7 +1153,7 @@ h6 {
   position: relative;
   display: flex;
   padding: 4px 10px 4px 12px;
-  height: 49px;
+  height: 60px;
   align-items: center;
   background: var(--clr-block);
   border-bottom: 1px solid var(--clr-separator);
@@ -1185,8 +1185,8 @@ h6 {
     background: transparent; }
     .chat-head__back .sprite-icon {
       display: block;
-      width: 12px;
-      height: 19px;
+      width: 14px;
+      height: 24px;
       fill: var(--clr-accentD); }
   .chat-head__curr {
     position: relative;
@@ -1209,9 +1209,9 @@ h6 {
     text-overflow: ellipsis;
     color: var(--clr-textD); }
   .chat-head__info {
-    font-size: 12px;
+    font-size: 11px;
     margin: 0 0 0;
-    color: var(--clr-text);
+    color: var(--clr-textD);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -2205,7 +2205,7 @@ h6 {
       margin: 0 0 0 5px;
       width: 0.625em;
       height: 0.375em;
-      background-position: -3.8125em -3.4375em; }
+      background-position: -4.6875em -4.9375em; }
   .graph-range__list {
     position: absolute;
     top: 100%;
@@ -2246,31 +2246,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -133.375em -124.75em; }
+    background-position: -134.25em -126.25em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -137.75em -129.1875em; }
+    background-position: -138.625em -130.6875em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -136.3125em -127.6875em; }
+    background-position: -137.1875em -129.1875em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -134.125em -125.5em; }
+    background-position: -135em -127em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -135.625em -127em; }
+    background-position: -136.5em -128.5em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -134.75em -126.125em; }
+    background-position: -135.625em -127.625em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -136.875em -128.5em; }
+    background-position: -137.75em -130em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -2873,7 +2873,7 @@ body.menubar-in #user-btn:before {
 /* =================================================================== */
 .message-bar {
   position: relative;
-  height: 50px;
+  height: 56px;
   padding: 0 10px;
   display: flex;
   align-items: center;
@@ -3093,8 +3093,8 @@ body.menubar-in #user-btn:before {
   cursor: pointer; }
   .portfolio-back .sprite-icon {
     display: block;
-    width: 12px;
-    height: 19px;
+    width: 14px;
+    height: 24px;
     fill: var(--clr-accentD); }
   .portfolio-back.portfolio-back-w-100 {
     width: calc(100% - 8px); }
@@ -3395,12 +3395,22 @@ body.menubar-in #user-btn:before {
 /* =================================================================== */
 /* tippy-tooltip */
 /* =================================================================== */
-.tippy-tooltip.bct-theme {
-  background: var(--clr-block);
-  color: var(--clr-textD);
-  border: none;
-  padding: 5px 7px 3px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35); }
+.tippy-tooltip {
+  font-size: 0.6rem !important; }
+  .tippy-tooltip span {
+    font-size: 0.7rem !important; }
+  .tippy-tooltip.bct-theme {
+    background: var(--clr-block);
+    color: var(--clr-textD);
+    border: none;
+    padding: 5px 7px 3px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35); }
+  .tippy-tooltip.bct-advanced-theme {
+    background: var(--clr-block);
+    color: var(--clr-textD);
+    border: 1px solid #286bb4;
+    padding: 5px 7px 3px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35); }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.bct-theme .tippy-arrow {
   border-right: 7px solid var(--clr-block); }
@@ -3414,11 +3424,11 @@ body.menubar-in #user-btn:before {
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.bct-theme .tippy-arrow {
   border-bottom: 7px solid var(--clr-block); }
 
-.basic-tooltip {
-  font-size: 10px;
-  line-height: 1; }
-  .basic-tooltip span {
-    font-size: 12px; }
+.tippy-popper[x-placement^=top] .tippy-tooltip.bct-advanced-theme .tippy-arrow {
+  border-top: 7px solid #286bb4 !important; }
+
+.tippy-popper[x-placement^=bottom] .tippy-tooltip.bct-advanced-theme .tippy-arrow {
+  border-bottom: 7px solid #286bb4 !important; }
 
 /* Ion.RangeSlider
 // css version 2.0.3
