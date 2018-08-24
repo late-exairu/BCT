@@ -43,7 +43,7 @@
 	width: 100px;
 	background: var(--clr-block);
 	transition: all .2s;
-	border: 1px solid var(--clr-separator);
+	/*border: 1px solid var(--clr-separator);*/
 	opacity: 0;
 	visibility: hidden;
 	will-change: transform;
@@ -116,8 +116,9 @@
 		align-items: center;
 		margin: 0 0 1px;
 		color: var(--clr-textD);
-		background: var(--clr-back);
+		background: var(--clr-block);
 		text-align: center;
+		border-bottom: 1px solid var(--clr-back-new);
 	}
 
 	&__tier-icon{
@@ -151,13 +152,14 @@
 		overflow: hidden;
 		border-top: 1px solid var(--clr-separator);
 		color: var(--clr-textD);
+		background: var(--clr-block);
 
 		&:first-child{
 			border: none;
 		}
 
 		&:hover{
-			background: var(--clr-back);
+			/*background: var(--clr-backL);*/
 		}
 
 		&.active{
