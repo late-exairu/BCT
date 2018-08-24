@@ -203,7 +203,7 @@ var portfolioChartOptions = {
             lineWidth: 3,
             color: '#2B569A',
             fillColor: {
-                linearGradient: [0, 0, 0, $('#panel-funds-portfolio').height() / 3 - 90],
+                linearGradient: [0, 0, 0, $('#portfolioChartGeneral').height() + 50],
                 stops: [
                     [0, Highcharts.Color('#2B569A').setOpacity(0.4).get('rgba')],
                     [1, Highcharts.Color('#2B569A').setOpacity(0).get('rgba')]
