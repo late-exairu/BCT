@@ -110,3 +110,14 @@
 		}
 	}
 }
+
+.message-bar__login iframe {
+	width: 93%% !important;
+	body {
+		width: 100% !important;
+		button.tgme_widget_login_button {
+			width: 100% !important;
+			border-radius: 2px !important;
+		}
+	}
+}

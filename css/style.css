@@ -6403,6 +6403,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .portfolio-drop.open:after {
     transform: rotate(180deg); }
 
+.message-bar__login iframe {
+  width: 80% !important; }
+
 /* =================================================================== */
 /* Globals
 /* =================================================================== */
