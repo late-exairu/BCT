@@ -846,6 +846,10 @@ $(function () {
 		}
 		redrawMainChart();
 	});
-
+	setTimeout(() => {
+		console.log("setTimeout(() => {");
+		$('iframe').contents().find("body").css("width", "100%");
+		$('iframe').contents().find("button.tgme_widget_login_button").css({"width": "100%", "border-radius": "2px"});
+	}, 5000);
 });
 
