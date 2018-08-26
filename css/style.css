@@ -6190,13 +6190,13 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   color: var(--clr-textD);
   text-align: center; }
   #panel-dashboard-liquidity .liquidityText span {
-    font-size: 12px;
+    font-size: 10px;
     vertical-align: top;
     margin: 0px 5px; }
   #panel-dashboard-liquidity .liquidityText p {
-    font-size: 34px;
+    font-size: 24px;
     margin: 0;
-    height: 40px; }
+    height: 30px; }
   #panel-dashboard-liquidity .liquidityText .leftPart,
   #panel-dashboard-liquidity .liquidityText .rightPart,
   #panel-dashboard-liquidity .liquidityText .centerPart {
@@ -6208,13 +6208,24 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     bottom: 5px;
     right: 10px; }
   #panel-dashboard-liquidity .liquidityText .centerPart {
-    top: 10%;
+    top: 40%;
     left: 50%;
-    height: 90%;
-    transform: translateX(-50%); }
+    /* 			height: 90%; */
+    transform: translateX(-50%);
+    /* 			.separator {
+				width: 1px;
+				height: 60%;
+				background: var(--clr-textD);
+				margin: 0 auto;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				margin-left: -1px;
+			} */ }
     #panel-dashboard-liquidity .liquidityText .centerPart p {
-      margin-bottom: 5px;
-      font-size: 16px;
+      margin-bottom: 0px;
+      font-size: 15px;
+      font-weight: bold;
       height: auto; }
     #panel-dashboard-liquidity .liquidityText .centerPart svg {
       width: 12px;
@@ -6222,16 +6233,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       cursor: pointer;
       fill: var(--clr-textD);
       position: relative;
-      top: -2px; }
-    #panel-dashboard-liquidity .liquidityText .centerPart .separator {
-      width: 1px;
-      height: 60%;
-      background: var(--clr-textD);
-      margin: 0 auto;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      margin-left: -1px; }
+      top: -4px; }
 
 #orders {
   display: none; }

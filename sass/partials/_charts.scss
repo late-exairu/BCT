@@ -338,14 +338,14 @@
 		color: var(--clr-textD);
 		text-align: center;
 		span {
-			font-size: 12px;
+			font-size: 10px;
 			vertical-align: top;
 			margin: 0px 5px;
 		}
 		p {
-			font-size: 34px;
+			font-size: 24px;
 			margin: 0;
-			height: 40px;
+			height: 30px;
 		}
 		.leftPart,
 		.rightPart,
@@ -361,13 +361,14 @@
 			right: 10px;
 		}
 		.centerPart {
-			top: 10%;
+			top: 40%;
 			left: 50%;
-			height: 90%;
+/* 			height: 90%; */
 			transform: translateX(-50%);
 			p {
-				margin-bottom: 5px;
-				font-size: 16px;
+				margin-bottom: 0px;
+				font-size: 15px;
+				font-weight: bold;
 				height: auto;
 			}
 			svg {
@@ -376,9 +377,9 @@
 				cursor: pointer;
 				fill: var(--clr-textD);
 				position: relative;
-				top: -2px;
+				top: -4px;
 			}
-			.separator {
+/* 			.separator {
 				width: 1px;
 				height: 60%;
 				background: var(--clr-textD);
@@ -387,7 +388,7 @@
 				bottom: 0;
 				left: 50%;
 				margin-left: -1px;
-			}
+			} */
 		}
 	}
 }
