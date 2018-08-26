@@ -9,7 +9,7 @@ var liquidityChartOptions = {
     chart: {
         type: 'area',
         marginBottom:0,
-        marginTop:0,
+        marginTop:40,
         marginLeft:-10,
         marginRight:-10
     },
@@ -143,7 +143,7 @@ var liquidityChartOptions = {
             }
             return {
                 x: xPos - 10,
-                y: 0
+                y: 20
             };
         }
     },

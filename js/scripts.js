@@ -28,7 +28,8 @@ $(function () {
 	/* js-dropdown */
 	/*---------------------------------------------------*/
 
-	$('.js-dropdown-toggle, .menu-dropdown__item').click(function () {
+	$('.js-dropdown-toggle, .menu-dropdown__item').click(function (e) {
+		e.stopPropagation();
 		var wrap = $(this).closest('.js-dropdown-wrap');
 		var drop = wrap.find('.js-dropdown');
 
@@ -222,10 +223,9 @@ $(function () {
 	/* ADVANCED account-js-menu */
 	/*---------------------------------------------------*/
 
-	$('.advanced .js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function () {
-		$('.js-account-stats .portfolio-menu .portfolio-menu__item').removeClass('current');
-		$(this).addClass('current');
-		$('.main-cols__right-bottom .c-block-head__title').text($(this).text());
+	$('.advanced .js-account-stats .portfolio-drop .menu-dropdown__item').on('click', function () {
+		$('.js-account-stats .portfolio-drop .menu-dropdown__item').removeClass('active');
+		$(this).addClass('active');
 
 		$('.js-tabs-panel').removeClass('active');
 		$('.js-tabs-panel').eq($(this).index()).addClass('active');
@@ -234,13 +234,6 @@ $(function () {
 		if ($(this).index() == 0) {
 			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
 		}
-
-		// Portfolio tab
-		/* 		if ($(this).index() == 1) {
-					//initializeSliderCharts();
-					portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
-
-				} */
 
 		// Wallet tab
 		if ($(this).index() == 2) {
