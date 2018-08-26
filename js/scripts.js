@@ -696,8 +696,20 @@ $(function () {
 			setTimeout(() => {
 				$('.exch-form').removeClass('progress');
 				$.fancybox.open({
-					src: '#exchange-step_2'
+					src: '#exchange-step_2',
+					opts : {
+						afterShow : function( instance, current ) {
+							var main_chart_width = $('#mainChart .highcharts-container').css("width");
+							var main_chart_height = $('#mainChart .highcharts-container').css("height");
+							var main_chart_left = $('.b-graph').position().left + $('.main-cols').position().left;
+							var main_chart_top = $('.b-graph').position().top;
+							$('.fancybox-container')
+							.css({"width": main_chart_width, "height": main_chart_height, "left": main_chart_left, "top": main_chart_top})
+							.css("display", "block");
+						}
+					}
 				});
+				$('.fancybox-container').css("display", "none");
 				$(this).closest('.exch-head').toggleClass('open');
 			}, 1000);
 		} else {
