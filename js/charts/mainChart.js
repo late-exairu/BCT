@@ -238,7 +238,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			});
 
 			
-			if (this.points[0].point.plotX < 200){
+			if (this.points[0].point.plotX < 220){
 				arrowDirection = 'left';
 			}
 			return '<div class="tooltip arrow_box mainTooltip ' + arrowDirection + '">' +
