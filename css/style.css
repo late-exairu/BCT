@@ -6404,7 +6404,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     transform: rotate(180deg); }
 
 .message-bar__login iframe {
-  width: 80% !important; }
+  width: 93% !important; }
+  .message-bar__login iframe body {
+    width: 100% !important; }
+    .message-bar__login iframe body button.tgme_widget_login_button {
+      width: 100% !important;
+      border-radius: 2px !important; }
 
 /* =================================================================== */
 /* Globals
