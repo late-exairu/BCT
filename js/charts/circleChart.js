@@ -15,9 +15,23 @@ var circleChartTooltipData = {
     }
 }
 
-var pieChartSize = $('#circleChart').width() - 20;
-var centerX = $('#circleChart').width() / 2 - 20;
-var centerY = $('#circleChart').height() / 2 - 20;
+var pieChartSize = null;
+var centerX = null;
+var centerY = null;
+
+// add hover effects for circleChart only when cursor inside the circle
+$('.accounts-diagram-wrap').mousemove(function (e) {
+    var parentOffset = $('.accounts-diagram').offset();
+    var relX = e.pageX - parentOffset.left - 20;
+    var relY = e.pageY - parentOffset.top - 20;
+    var r = pieChartSize / 2;
+    var InCircle = Math.sqrt((relX - centerX) * (relX - centerX) + (relY - centerY) * (relY - centerY)) < r;
+    if (InCircle){
+        $(this).addClass('hover');
+    }else{
+        $(this).removeClass('hover');
+    }
+});
 
 var circleChartObj = null;
 var circleChartOptions = {
@@ -36,6 +50,17 @@ var circleChartOptions = {
             startAngle: 0,
             size: pieChartSize,
             center: [centerX, centerY],
+            events: {
+                mouseOver: function () {
+                    console.log('IN');
+                },
+/*                 mouseOut: function (e) {
+                      $('.accounts-diagram').offset();
+                      var relX = e.pageX - parentOffset.left;
+                      var relY = e.pageY - parentOffset.top;
+                     console.log('OUT', centerX, centerY, relX,relY);
+                } */
+            }
         },
         series: {
             dataLabels: {
