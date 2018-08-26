@@ -214,6 +214,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var date = new Date(this.x);
 			var month = months[date.getMonth()];
 			var dayName = days[date.getDay()];
+            var year = date.getFullYear();
 			var TooltipValue = (this.y * 90).toFixed(2);
 			var arrowDirection = 'right';
 			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
@@ -237,12 +238,12 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			});
 
 			
-			if (this.points[0].point.plotX < 220){
+			if (this.points[0].point.plotX < 200){
 				arrowDirection = 'left';
 			}
 			return '<div class="tooltip arrow_box mainTooltip ' + arrowDirection + '">' +
 				"<div><span class='bold'>ETH/USDT (Binance):</span> <span class='value bold'>" + TooltipValue + '</span></div>' +
-				dayName + ', ' + month + ' ' + date.getDate() + ', 04:02' + '</div>';
+				dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + '</div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
 			var graphWidth = $(mainChartObj.container).width();

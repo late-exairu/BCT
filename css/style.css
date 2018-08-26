@@ -6188,7 +6188,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 #panel-dashboard-liquidity .liquidityText {
   color: var(--clr-textD);
-  text-align: center; }
+  text-align: center;
+  pointer-events: none; }
   #panel-dashboard-liquidity .liquidityText span {
     font-size: 10px;
     vertical-align: top;

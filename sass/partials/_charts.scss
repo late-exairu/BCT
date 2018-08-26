@@ -337,6 +337,7 @@
 	.liquidityText {
 		color: var(--clr-textD);
 		text-align: center;
+		pointer-events: none;
 		span {
 			font-size: 10px;
 			vertical-align: top;
