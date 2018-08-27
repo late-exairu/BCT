@@ -260,7 +260,8 @@ $(function () {
 			var backColor = '#18202d';
 			var gridColor = '#24425b';
 			var labelColor = '#9BA6B2';
-			var lineColor = '#4F6C82';
+			//var lineColor = '#4F6C82';
+			var lineColor = '#344756';
 		} else {
 			var backColor = '#ffffff';
 			var gridColor = '#ccd6eb';
