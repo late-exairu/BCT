@@ -165,7 +165,7 @@ $(function () {
 	/* js-orders-switch */
 	/*---------------------------------------------------*/
 
-	$('#orders .c-block-head ul li').click(function (params) {
+	$('#orders .c-block-head ul li').click(function () {
 		$('#orders .c-block-head ul li').removeClass('current');
 		$(this).addClass('current');
 		var currentIndex = $(this).index();
