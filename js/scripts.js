@@ -756,7 +756,7 @@ $(function () {
 			var rand = Math.floor(Math.random() * (max - min + 1) + min);
 			setTimeout(updateTable3, rand);
 		}
-		updateTable1();
+ 		updateTable1();
 		updateTable2();
 		updateTable3();
 

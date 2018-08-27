@@ -15,6 +15,11 @@ var gradientColor = [
 	[1, Highcharts.Color('#2B569A').setOpacity(0).get('rgba')]
 ];
 
+var mainChartMarginLeft = -20;
+if ($('body').hasClass('advanced')) {
+	mainChartMarginLeft = 35;
+}
+
 // id of graph for highlight
 var mainGraphHighlighted = 4;
 var mainGraphHover = null;
@@ -23,6 +28,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		enabled: false
 	},
 	chart: {
+		marginLeft: mainChartMarginLeft,
 		marginBottom: 0,
 		marginRight: -25,
 		spacingTop: 0,
@@ -219,7 +225,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var arrowDirection = 'right';
 			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
 
- 			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left - 20;
+ 			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left + mainChartMarginLeft;
 			var lineForMainChartY = this.points[0].point.plotY + $('#mainChart').offset().top;
 			var lineForMainChartHeight = $('#mainChart').height() - this.points[0].point.plotY - 6;
 
@@ -236,9 +242,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			$('.lineForMainChart .line').css({
 				'height': lineForMainChartHeight,
 			});
-
 			
-			if (this.points[0].point.plotX < 220){
+			if (this.points[0].point.plotX < 200) {
 				arrowDirection = 'left';
 			}
 			return '<div class="tooltip arrow_box mainTooltip ' + arrowDirection + '">' +
@@ -246,14 +251,14 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + '</div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
-			var graphWidth = $(mainChartObj.container).width();
-			var xPos = point.plotX - labelWidth - 40;
+			//var graphWidth = $(mainChartObj.container).width();
+			var xPos = point.plotX - labelWidth + mainChartMarginLeft - 15;
 			// left side fix
 			if (point.plotX < labelWidth + 40) {
-				xPos = point.plotX - 9;
+				xPos = point.plotX + mainChartMarginLeft + 15;
 			}
 			return {
-				x: xPos + 3,
+				x: xPos,
 				y: point.plotY - 18
 			};
 		}
