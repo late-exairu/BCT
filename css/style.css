@@ -611,7 +611,8 @@ h6 {
     right: 0;
     bottom: 0;
     z-index: 99;
-    border-radius: 0; }
+    border-radius: 0;
+    background: var(--clr-back-new); }
 
 /* =================================================================== */
 /* basic-select
