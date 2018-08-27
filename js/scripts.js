@@ -497,7 +497,7 @@ $(function () {
 
 	if ($('body').hasClass('dark-theme')) {
 		mainChartFirstColor = '#2B569A';
-		mainChartSecondColor = '#4F6C82';
+		mainChartSecondColor = '#344756';
 	}
 
 	$('.graph-prices .graph-prices__list .graph-prices__item').click(function () {
