@@ -50,17 +50,6 @@ var circleChartOptions = {
             startAngle: 0,
             size: pieChartSize,
             center: [centerX, centerY],
-            events: {
-                mouseOver: function () {
-                    console.log('IN');
-                },
-/*                 mouseOut: function (e) {
-                      $('.accounts-diagram').offset();
-                      var relX = e.pageX - parentOffset.left;
-                      var relY = e.pageY - parentOffset.top;
-                     console.log('OUT', centerX, centerY, relX,relY);
-                } */
-            }
         },
         series: {
             dataLabels: {

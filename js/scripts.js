@@ -514,7 +514,7 @@ $(function () {
 							[1, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')]
 						]
 					},
-					lineWidth: 1,
+					lineWidth: 0.5,
 					enableMouseTracking: false,
 					zIndex: 1
 				});
