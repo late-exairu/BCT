@@ -41,12 +41,16 @@ $(function () {
 		}
 	});
 
-	$('.main-cols__right-top .exch-dropdown').hover(function name() {
-		$(this).addClass('open');
+	var exchDroprownCountdown = null;
+	$('.main-cols__right-top .exch-dropdown').mouseenter(function name() {
+		exchDroprownCountdown = setTimeout(() => {
+			$(this).addClass('open');
+		}, 350);
 	});
 
 	$('.main-cols__right-top .exch-dropdown').mouseleave(function name() {
 		$(this).removeClass('open');
+		clearTimeout(exchDroprownCountdown);
 	});
 
 	/*---------------------------------------------------*/
@@ -637,16 +641,21 @@ $(function () {
 		arrows: false,
 		infobar: false,
 		touch: false,
-		afterShow : function() {
+		afterShow: function () {
 			var main_chart_width = $('#mainChart .highcharts-container').css("width");
 			var main_chart_height = $('#mainChart .highcharts-container').css("height");
 			var main_chart_left = $('.b-graph').position().left + $('.main-cols').position().left;
 			var main_chart_top = $('.b-graph').position().top;
 			$('.fancybox-container')
-			.css({"width": main_chart_width, "height": main_chart_height, "left": main_chart_left, "top": main_chart_top})
-			.css("display", "block");
+				.css({
+					"width": main_chart_width,
+					"height": main_chart_height,
+					"left": main_chart_left,
+					"top": main_chart_top
+				})
+				.css("display", "block");
 		},
-		beforeShow : function() {
+		beforeShow: function () {
 			$('.fancybox-container').css("display", "none");
 		}
 	});
@@ -703,17 +712,22 @@ $(function () {
 				$('.exch-form').removeClass('progress');
 				$.fancybox.open({
 					src: '#exchange-step_2',
-					opts : {
-						afterShow : function( instance, current ) {
+					opts: {
+						afterShow: function (instance, current) {
 							var main_chart_width = $('#mainChart .highcharts-container').css("width");
 							var main_chart_height = $('#mainChart .highcharts-container').css("height");
 							var main_chart_left = $('.b-graph').position().left + $('.main-cols').position().left;
 							var main_chart_top = $('.b-graph').position().top;
 							$('.fancybox-container')
-							.css({"width": main_chart_width, "height": main_chart_height, "left": main_chart_left, "top": main_chart_top})
-							.css("display", "block");
+								.css({
+									"width": main_chart_width,
+									"height": main_chart_height,
+									"left": main_chart_left,
+									"top": main_chart_top
+								})
+								.css("display", "block");
 						},
-						beforeShow : function() {
+						beforeShow: function () {
 							$('.fancybox-container').css("display", "none");
 						}
 					}
@@ -757,7 +771,7 @@ $(function () {
 			var rand = Math.floor(Math.random() * (max - min + 1) + min);
 			setTimeout(updateTable3, rand);
 		}
- 		updateTable1();
+		updateTable1();
 		updateTable2();
 		updateTable3();
 
@@ -862,4 +876,3 @@ $(function () {
 		redrawMainChart();
 	});
 });
-
