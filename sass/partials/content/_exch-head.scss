@@ -12,7 +12,7 @@
 	--color-two: #c81820;
 
 	position: relative;
-	z-index: 10;
+	z-index: 100000;
 	height: calc(var(--exch-head-height) + 2px);
 
 	&__body{
