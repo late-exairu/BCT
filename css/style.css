@@ -1888,6 +1888,21 @@ h6 {
         .graph-bar__item.btn:hover .graph-bar__text {
           fill: var(--clr-text);
           color: var(--clr-text); }
+          .graph-bar__item.btn:hover .graph-bar__icon.mode .st0,
+          .graph-bar__item.btn:hover .graph-bar__text.mode .st0 {
+            fill: #FFFFFF; }
+          .graph-bar__item.btn:hover .graph-bar__icon.mode .st1,
+          .graph-bar__item.btn:hover .graph-bar__text.mode .st1 {
+            fill: #3AB44A; }
+          .graph-bar__item.btn:hover .graph-bar__icon.mode .st2,
+          .graph-bar__item.btn:hover .graph-bar__text.mode .st2 {
+            fill: #EB2429; }
+          .graph-bar__item.btn:hover .graph-bar__icon.mode .st3,
+          .graph-bar__item.btn:hover .graph-bar__text.mode .st3 {
+            fill: #F4EB32; }
+          .graph-bar__item.btn:hover .graph-bar__icon.mode .st4,
+          .graph-bar__item.btn:hover .graph-bar__text.mode .st4 {
+            fill: #26A8E0; }
   .graph-bar__text {
     font-size: 13px;
     padding: 0 10px;
@@ -1953,6 +1968,16 @@ h6 {
     .graph-bar__icon.mode {
       width: calc(29px * var(--icon-scale));
       height: calc(28px * var(--icon-scale)); }
+      .graph-bar__icon.mode .st0 {
+        fill: var(--clr-important); }
+      .graph-bar__icon.mode .st1 {
+        fill: transparent; }
+      .graph-bar__icon.mode .st2 {
+        fill: transparent; }
+      .graph-bar__icon.mode .st3 {
+        fill: transparent; }
+      .graph-bar__icon.mode .st4 {
+        fill: transparent; }
   .graph-bar__separator {
     width: 0;
     height: 0;

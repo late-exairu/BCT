@@ -126,6 +126,14 @@
 				.graph-bar__text{
 					fill: var(--clr-text);
 					color: var(--clr-text);
+
+					&.mode{
+						.st0{ fill: #FFFFFF; }
+						.st1{ fill: #3AB44A; }
+						.st2{ fill: #EB2429; }
+						.st3{ fill: #F4EB32; }
+						.st4{ fill: #26A8E0; }
+					}
 				}
 			}
 		}
@@ -171,7 +179,16 @@
 		&.arrows-td 	{ width: calc(18px * var(--icon-scale)); height: calc(21px * var(--icon-scale)); fill: var(--clr-text); }
 		&.expand		{ width: calc(28px * var(--icon-scale)); height: calc(28px * var(--icon-scale)); }
 		&.buck			{ width: calc(14px * var(--icon-scale)); height: calc(27px * var(--icon-scale)); }
-		&.mode			{ width: calc(29px * var(--icon-scale)); height: calc(28px * var(--icon-scale)); }
+		&.mode	{
+			width: calc(29px * var(--icon-scale));
+			height: calc(28px * var(--icon-scale));
+
+			.st0{ fill: var(--clr-important); }
+			.st1{ fill: transparent; }
+			.st2{ fill: transparent; }
+			.st3{ fill: transparent; }
+			.st4{ fill: transparent; }
+		}
 	}
 
 	&__separator{
