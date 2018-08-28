@@ -707,8 +707,6 @@ $(function () {
 		e.preventDefault();
 		if ($(this).hasClass('exch-form__btn')) {
 			$('.exch-form').addClass('progress');
-			setTimeout(() => {
-				$('.exch-form').removeClass('progress');
 				$.fancybox.open({
 					src: '#exchange-step_2',
 					opts: {
@@ -728,11 +726,13 @@ $(function () {
 						},
 						beforeShow: function () {
 							$('.fancybox-container').css("display", "none");
+						},
+						beforeClose: function () {
+							$('.exch-form').removeClass('progress');
+							$('.exch-head').toggleClass('open');
 						}
 					}
 				});
-				$(this).closest('.exch-head').toggleClass('open');
-			}, 1000);
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 		}
