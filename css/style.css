@@ -604,6 +604,16 @@ h6 {
     height: 100%; }
     .b-graph__controls.shifted {
       width: calc(100% - 110px); }
+    .b-graph__controls:after {
+      content: '';
+      position: absolute;
+      top: 80px;
+      right: 4px;
+      width: 6px;
+      height: 56px;
+      border-radius: 3px;
+      background: #24425c;
+      z-index: 0; }
   .b-graph.fullScreen {
     position: fixed;
     top: 0px;
