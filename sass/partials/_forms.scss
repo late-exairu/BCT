@@ -22,11 +22,11 @@
 .order-form{
 	font-family: $osans;
 	font-size: 13px;
-	padding: 10px 10px;
+	padding: 8px 10px;
 	width: 100%;
 
 	&__group{
-		min-height: 105px;
+		min-height: 92px;
 		/*display: flex;
 		flex-direction: column;
 		justify-content: space-between;*/
@@ -34,7 +34,7 @@
 
 	&__line{
 		position: relative;
-		margin: 0 0 5px;
+		margin: 0 0 4px;
 		display: flex;
 
 		&:last-child{
@@ -59,7 +59,7 @@
 	}
 
 	&__input{
-		height: 22px;
+		height: 20px;
 		border: 1px solid var(--clr-separatorD);
 		background: var(--clr-block);
 		font-size: 11px;
@@ -112,16 +112,16 @@
 		justify-content: center;
 		align-items: center;
 		color: #fff;
-		background: #0576b9;
+		background: #00AAF8;
 		cursor: pointer;
 
 		&.btn-red{
-			background: #e05475;
+			background: #FF0600;
 		}
 	}
 
 	.cubic-slider{
-		margin: 8px 0 8px;
+		margin: 5px 0 5px;
 	}
 
 	input[type=number]::-webkit-inner-spin-button, 
@@ -135,14 +135,14 @@
 	@media only screen and (min-height : 900px) {
 
 		.order-form{
-			padding: 15px;
+			padding: 15px 10px;
 
 			&__group{
-				min-height: 128px;
+				min-height: 160px;
 			}
 
 			&__line{
-				margin: 0 0 5px;
+				margin: 0 0 15px;
 
 				&:last-child{
 					margin: 0;
@@ -159,15 +159,11 @@
 
 			.cubic-slider{
 				margin: 12px 0;
-
-				.single{
-					width: 24px;
-				}
 			}
 		}
 	}
 
-	@media only screen and (min-width : 1920px) {
+	/*@media only screen and (min-width : 1920px) {
 		
 		.order-form{
 
@@ -179,7 +175,7 @@
 				flex: 1 0 65%;
 			}
 		}
-	}
+	}*/
 }
 
 .exch-form{

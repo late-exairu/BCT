@@ -74,4 +74,8 @@
 			fill: var(--clr-text);
 		}
 	}
+
+	&.low{
+		min-height: 30px;
+	}
 }

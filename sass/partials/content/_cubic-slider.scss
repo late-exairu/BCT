@@ -10,22 +10,22 @@
 	margin: 5px 0;
 
 	.irs{
-		height: 20px;
+		height: 10px;
 	}
 
 	.irs-with-grid{
-		height: 20px;
+		height: 9px;
 	}
 
 	.irs-line{
-		top: 9px;
+		top: 4px;
 		height: 1px;
 		background: var(--clr-separatorD);
 	}
 
 	.irs-bar,
 	.irs-bar-edge{
-		top: 9px;
+		top: 4px;
 		height: 1px;
 		width: 10px;
 		background: var(--clr-separatorD);
@@ -37,7 +37,7 @@
 
 	.irs-grid{
 		bottom: auto;
-		top: 7px;
+		top: 2px;
 		height: 5px;
 		left: 0 !important;
 		width: calc(100% - 1px) !important;
@@ -60,9 +60,9 @@
 	}
 
 	.single{
-		width: 20px;
-		height: 20px;
-		border-radius: 3px;
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
 		background: var(--clr-block);
 		border: 1px solid var(--clr-separatorD);
 		padding: 0;
@@ -78,7 +78,7 @@
 			border-color: var(--clr-separatorD);
 		}
 
-		&:after{
+		/*&:after{
 			content: '';
 			position: absolute;
 			width: 2px;
@@ -88,6 +88,6 @@
 			right: 2px;
 			top: 50%;
 			transform: translateY(-50%)
-		}
+		}*/
 	}
 }
