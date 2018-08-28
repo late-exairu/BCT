@@ -849,18 +849,18 @@ $(function () {
 		switch ($(".graph-range__current").html()) {
 			case "1H":
 				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(0, {}, true);
-				var HOUR = 1000 * 60 * 60;
-				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate);
+				var HOUR = 1000 * 3600 * 24 * 7; //1000 * 3600;
+				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate - (1000 * 3600 * 24));
 				break;
 			case "1D":
 				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(1, {}, true);
-				var DAY = 1000 * 60 * 60 * 24;
-				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate);
+				var DAY = 1000 * 3600 * 24 * 7; //1000 * 3600 * 24;
+				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate - (1000 * 3600 * 24));
 				break;
 			case "1W":
 				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(2, {}, true);
-				var WEEK = 1000 * 60 * 60 * 24 * 7;
-				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate);
+				var WEEK = 1000 * 3600 * 24 * 7;
+				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - (1000 * 3600 * 24));
 				break;
 			case "1M":
 				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(3, {}, true);
