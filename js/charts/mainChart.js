@@ -51,7 +51,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	title: null,
 	plotOptions: {
 		series: {
-			pointWidth: $('#mainChart').width() / 110,
+			// pointWidth: $('#mainChart').width() / 110, // fixed A pixel value specifying
 			pointPadding: 0,
 			pointStart: Date.UTC(2018, 5, 17),
 			pointInterval: 24 * 3600 * 1000, // one day
