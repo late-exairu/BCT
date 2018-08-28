@@ -852,6 +852,8 @@ h6 {
     font-weight: 700; }
   .basic-table .clr-gray {
     color: var(--clr-separatorD); }
+  .basic-table.global-order .basic-table__row {
+    overflow: hidden; }
   .basic-table.global-order .basic-table__col:nth-child(1) {
     min-width: 56px !important; }
   .basic-table.global-order .basic-table__col:nth-child(2) {
