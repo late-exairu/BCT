@@ -108,7 +108,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 149em 140.0625em; }
+  background-size: 148.9375em 140.1875em; }
 
 /* =================================================================== */
 /* Functions
@@ -570,9 +570,8 @@ a {
   width: 100%;
   height: 100%;
   /*dev size*/
-  /*max-width: 1280px;
-	max-height: 720px;
-*/ }
+  max-width: 1280px;
+  max-height: 720px; }
   .wrapper.no-bar {
     padding: 0; }
 
@@ -2257,31 +2256,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -134.25em -126.25em; }
+    background-position: -134.1875em -126.375em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -138.625em -130.6875em; }
+    background-position: -138.5625em -130.8125em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -137.1875em -129.1875em; }
+    background-position: -137.125em -129.3125em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -135em -127em; }
+    background-position: -134.9375em -127.125em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -136.5em -128.5em; }
+    background-position: -136.4375em -128.625em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -135.625em -127.625em; }
+    background-position: -135.5625em -127.75em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -137.75em -130em; }
+    background-position: -137.6875em -130.125em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -2668,10 +2667,12 @@ Blocks from left bar
     flex: 0 0 186px;
     flex-direction: column;
     min-height: 186px; }
-  .main-cols.advanced .main-cols__left-bottom,
-  .main-cols.advanced .main-cols__right-bottom {
-    flex: 0 0 236px;
-    min-height: 236px; }
+  .main-cols.advanced {
+    /*.main-cols__left-bottom,
+		.main-cols__right-bottom{
+			flex: 0 0 236px;
+			min-height: 236px;
+		}*/ }
   @media only screen and (min-height: 900px) {
     .main-cols__left-bottom, .main-cols__right-bottom {
       flex: 0 0 281px;
@@ -2734,6 +2735,8 @@ Blocks from left bar
       transform: translate(0, 0); }
     .menu-dropdown.open.to-top {
       transform: translate(-50%, 0); }
+    .menu-dropdown.open.to-top-right {
+      transform: translate(-85%, 0); }
   .menu-dropdown.to-right {
     left: auto;
     right: 0;
@@ -2760,6 +2763,26 @@ Blocks from left bar
       bottom: -10px;
       border-width: 11px 7px 0 7px;
       border-color: var(--clr-block) transparent transparent transparent; }
+  .menu-dropdown.to-top-right {
+    top: auto;
+    bottom: calc(100% + 10px);
+    transform: translate(-85%, -30px); }
+    .menu-dropdown.to-top-right:before {
+      top: auto;
+      left: auto;
+      right: 13px;
+      bottom: -11px;
+      border-width: 11px 8px 0 8px;
+      border-color: var(--clr-separatorD) transparent transparent transparent;
+      transform: translate(0); }
+    .menu-dropdown.to-top-right:after {
+      top: auto;
+      left: auto;
+      right: 12px;
+      bottom: -10px;
+      border-width: 11px 7px 0 7px;
+      border-color: var(--clr-block) transparent transparent transparent;
+      transform: translate(0); }
   .menu-dropdown__item {
     position: relative;
     display: block;
