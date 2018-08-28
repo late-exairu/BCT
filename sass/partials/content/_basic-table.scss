@@ -153,11 +153,11 @@
 		}
 
 		&.clr-red{
-			color: #e05475;
+			color: #FF0600;
 		}
 
 		&.clr-blue{
-			color: #0089cb;
+			color: #00AAF8;
 		}
 
 		&.bold{
@@ -312,6 +312,7 @@
 		&.clock{
 			width: 9px;
 			height: 9px;
+			margin: 0 auto;
 		}
 	}
 
@@ -326,6 +327,15 @@
 
 	.clr-gray{
 		color: var(--clr-separatorD);
+	}
+
+	&.global-order{
+		.basic-table__col{
+			&:nth-child(1){ min-width: 56px !important;	}
+			&:nth-child(2){ min-width: 50px !important;	}
+			&:nth-child(3){ min-width: 55px !important;	}
+			&:nth-child(4){ min-width: 31px !important;	}
+		}
 	}
 }
 
