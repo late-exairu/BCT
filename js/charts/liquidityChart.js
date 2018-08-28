@@ -185,10 +185,11 @@ var liquidityChartOptions = {
         fillColor: {
             linearGradient: [0, 0, 0, $('.js-account-stats').height() - 90],
             stops: [
-                [0, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.4).get('rgba')],
-                [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                [0, Highcharts.Color(lineColor).setOpacity(0.4).get('rgba')],
+                [1, Highcharts.Color(lineColor).setOpacity(0).get('rgba')]
             ]
-        }
+        },
+        color: lineColor
     }, {
         name: "Graph 2",
         data: [null, null, null, null, null, null, null, null, null, null, null, null, null, null,
@@ -199,10 +200,10 @@ var liquidityChartOptions = {
         fillColor: {
             linearGradient: [0, 0, 0, $('.js-account-stats').height() - 90],
             stops: [
-                [0, Highcharts.Color('#e05475').setOpacity(0.4).get('rgba')],
-                [1, Highcharts.Color('#e05475').setOpacity(0).get('rgba')]
+                [0, Highcharts.Color(redColor).setOpacity(0.4).get('rgba')],
+                [1, Highcharts.Color(redColor).setOpacity(0).get('rgba')]
             ]
         },
-        color: '#e05475'
+        color: redColor
     }]
 };

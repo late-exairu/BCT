@@ -496,11 +496,10 @@ $(function () {
 	/* Graph prices list */
 	/*---------------------------------------------------*/
 
-	var mainChartFirstColor = '#2B569A';
+	var mainChartFirstColor = lineColor;
 	var mainChartSecondColor = '#dbdbdb';
 
 	if ($('body').hasClass('dark-theme')) {
-		mainChartFirstColor = '#2B569A';
 		mainChartSecondColor = '#344756';
 	}
 

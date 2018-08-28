@@ -9,15 +9,22 @@ function redrawMainChart() {
 	mainChartObj.reflow();
 }
 
+var lineColor = '#2B569A';
+var blueColor = '#2B569A';
+var redColor = '#E05475';
+var mainChartMarginLeft = -20;
+
 // color for highlight graphs on hover
 var gradientColor = [
-	[0, Highcharts.Color('#2B569A').setOpacity(0.4).get('rgba')],
-	[1, Highcharts.Color('#2B569A').setOpacity(0).get('rgba')]
+	[0, Highcharts.Color(lineColor).setOpacity(0.4).get('rgba')],
+	[1, Highcharts.Color(lineColor).setOpacity(0).get('rgba')]
 ];
 
-var mainChartMarginLeft = -20;
 if ($('body').hasClass('advanced')) {
 	mainChartMarginLeft = 35;
+	lineColor = '#00AAF8';
+	blueColor = '#0082AF';
+	redColor = '#750000';
 }
 
 // id of graph for highlight
@@ -429,7 +436,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			],
 			name: "Series 4",
 			lineWidth: 3,
-			color: '#2B569A',
+			color: lineColor,
  			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 				stops: gradientColor
@@ -439,7 +446,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		{
 			type: 'column',
-			color: '#2B569A',
+			color: blueColor,
 			data: [12, 11, 8, 12, 6, 7, 5, 7, 7, 2,
 				7, 9, 11, 6, 8, 2, 5, 9, 3, 2,
 				5, 5, 8, 9, 2, 7, 22, 8, 2, 4,
@@ -452,7 +459,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		{
 			type: 'column',
-			color: '#E05475',
+			color: redColor,
 			data: [8, 7, 6, 11, 16, 17, 9, 8, 9, 12,
 				6, 12, 9, 7, 5, 8, 7, 5, 9, 6,
 				8, 9, 6, 8, 12, 5, 12, 12, 12, 14,
