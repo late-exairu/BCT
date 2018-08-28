@@ -127,9 +127,17 @@
 			}
 		}
 
-		&:hover{
+		/*&:hover{
 			border-color: var(--clr-textL);
 			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+		}*/
+		&:active{
+			color: var(--clr-accent);
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+
+			.sprite-icon{
+				fill: var(--clr-accent);
+			}
 		}
 	}
 

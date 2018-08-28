@@ -71,7 +71,7 @@
   /*icon color basic*/
   --clr-iconD:		#6a717a;
   /*icon color dark*/
-  --clr-accent:		#4a9cd5;
+  --clr-accent:		#00aaf8;
   /*icon color accented*/
   --clr-accentL:		#0c1017;
   /*icon color accented light*/
@@ -660,8 +660,10 @@ h6 {
     pointer-events: none;
     fill: var(--clr-textL); }
   .basic-select:hover .basic-select__select {
-    border-color: var(--clr-textL);
+    /*border-color: var(--clr-textL);*/
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
+  .basic-select:active .basic-select__select {
+    color: var(--clr-accent); }
 
 /* =================================================================== */
 /* basic-table
@@ -742,7 +744,11 @@ h6 {
     cursor: pointer;
     background: transparent;
     transition: all 0.1s;
-    background: var(--clr-block); }
+    background: var(--clr-block);
+    /*&:hover{
+			border-color: var(--clr-textL);
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+		}*/ }
     .basic-table__btn.accented {
       color: var(--clr-accentD); }
     .basic-table__btn.simple {
@@ -754,9 +760,11 @@ h6 {
         border: none;
         box-shadow: none;
         color: var(--clr-accentD); }
-    .basic-table__btn:hover {
-      border-color: var(--clr-textL);
+    .basic-table__btn:active {
+      color: var(--clr-accent);
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
+      .basic-table__btn:active .sprite-icon {
+        fill: var(--clr-accent); }
   .basic-table__col {
     display: flex;
     height: var(--cell-height);

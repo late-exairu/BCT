@@ -44,8 +44,14 @@
 	&:hover{
 
 		.basic-select__select{
-			border-color: var(--clr-textL);
+			/*border-color: var(--clr-textL);*/
 			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+		}
+	}
+
+	&:active{
+		.basic-select__select{
+			color: var(--clr-accent);
 		}
 	}
 }
