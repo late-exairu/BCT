@@ -645,10 +645,18 @@ $(function () {
 			var main_chart_height = $('#mainChart .highcharts-container').css("height");
 			var main_chart_left = $('.b-graph').position().left + $('.main-cols').position().left;
 			var main_chart_top = $('.b-graph').position().top;
+			var body_width = $('body').css("width");
+			var body_height = $('body').css("height");
+			main_chart_width = parseInt(main_chart_width.substr(0, main_chart_width.length - 2));
+			main_chart_height = parseInt(main_chart_height.substr(0, main_chart_height.length - 2));
+			body_width = parseInt(body_width.substr(0, body_width.length - 2));
+			body_height = parseInt(body_height.substr(0, body_height.length - 2));
+			var main_chart_width_percent = (main_chart_width * 100 / body_width).toFixed(2) + "%";
+			var main_chart_height_percent = (main_chart_height * 100 / body_height).toFixed(2) + "%";
 			$('.fancybox-container')
 				.css({
-					"width": main_chart_width,
-					"height": main_chart_height,
+					"width": main_chart_width_percent,
+					"height": main_chart_height_percent,
 					"left": main_chart_left,
 					"top": main_chart_top
 				})
@@ -715,10 +723,18 @@ $(function () {
 							var main_chart_height = $('#mainChart .highcharts-container').css("height");
 							var main_chart_left = $('.b-graph').position().left + $('.main-cols').position().left;
 							var main_chart_top = $('.b-graph').position().top;
+							var body_width = $('body').css("width");
+							var body_height = $('body').css("height");
+							main_chart_width = parseInt(main_chart_width.substr(0, main_chart_width.length - 2));
+							main_chart_height = parseInt(main_chart_height.substr(0, main_chart_height.length - 2));
+							body_width = parseInt(body_width.substr(0, body_width.length - 2));
+							body_height = parseInt(body_height.substr(0, body_height.length - 2));
+							var main_chart_width_percent = (main_chart_width * 100 / body_width).toFixed(2) + "%";
+							var main_chart_height_percent = (main_chart_height * 100 / body_height).toFixed(2) + "%";
 							$('.fancybox-container')
 								.css({
-									"width": main_chart_width,
-									"height": main_chart_height,
+									"width": main_chart_width_percent,
+									"height": main_chart_height_percent,
 									"left": main_chart_left,
 									"top": main_chart_top
 								})
