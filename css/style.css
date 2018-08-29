@@ -593,7 +593,8 @@ h6 {
   padding: 0;
   overflow: hidden;
   display: flex;
-  flex: 1 1; }
+  flex: 1 1;
+  background: var(--clr-back-new); }
   .b-graph__controls {
     position: absolute;
     left: 0;
@@ -621,8 +622,7 @@ h6 {
     right: 0;
     bottom: 0;
     z-index: 99;
-    border-radius: 0;
-    background: var(--clr-back-new); }
+    border-radius: 0; }
 
 /* =================================================================== */
 /* basic-select

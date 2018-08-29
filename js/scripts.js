@@ -123,7 +123,7 @@ $(function () {
 		redrawMainChart();
 	});
 
-	$('.advanced .b-graph').mousemove(function (e) {
+	$('.b-graph').mousemove(function (e) {
 		var x = e.pageX - $('.b-graph').offset().left;
 		if ($('.b-graph').width() - x < 10) {
 			if (!$('.graph-prices').hasClass('open')) {
@@ -142,7 +142,7 @@ $(function () {
 		}
 	});
 
-	$('.advanced .b-graph').mouseleave(function (e) {
+	$('.b-graph').mouseleave(function (e) {
 		var x = e.pageX - $('.b-graph').offset().left;
 		if (x < $('.b-graph').width() - 5) {
 			if ($('.graph-prices').hasClass('open')) {

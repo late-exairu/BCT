@@ -10,6 +10,7 @@
 	overflow: hidden;
 	display: flex;
 	flex: 1 1;
+		background: var(--clr-back-new);
 
 	&__controls{
 		position: absolute;
@@ -46,6 +47,5 @@
 		bottom: 0;
 		z-index: 99;
 		border-radius: 0;
-		background: var(--clr-back-new);
 	}
 }
