@@ -110,3 +110,37 @@
 		}
 	}
 }
+
+.popup-tabs{
+	display: flex;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	list-style: none;
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	border-bottom: 1px solid var(--clr-separator);
+	margin: 0 0 10px;
+
+	&__item{
+		display: flex;
+		flex: 1 1;
+		height: 50px;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: var(--clr-text);
+		cursor: pointer;
+		background: var(--clr-backL);
+		font-weight: 700;
+		transition: all .1s;
+
+		&.active{
+			color: var(--clr-accent);
+			background: var(--clr-back);
+		}
+
+		&:hover{
+			color: var(--clr-accent);
+		}
+	}
+}
