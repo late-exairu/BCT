@@ -16,26 +16,26 @@ for (i = 0; i < x.length; i++) {
         create a new DIV that will act as an option item:*/
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
-        c.addEventListener("click", function (e) {
-            /*when an item is clicked, update the original select box,
-            and the selected item:*/
-            var y, i, k, s, h;
-            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-            h = this.parentNode.previousSibling;
-            for (i = 0; i < s.length; i++) {
-                if (s.options[i].innerHTML == this.innerHTML) {
-                    s.selectedIndex = i;
-                    h.innerHTML = this.innerHTML;
-                    y = this.parentNode.getElementsByClassName("same-as-selected");
-                    for (k = 0; k < y.length; k++) {
-                        y[k].removeAttribute("class");
-                    }
-                    this.setAttribute("class", "same-as-selected");
-                    break;
-                }
-            }
-            h.click();
-        });
+        // c.addEventListener("click", function (e) {
+        //     /*when an item is clicked, update the original select box,
+        //     and the selected item:*/
+        //     var y, i, k, s, h;
+        //     s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        //     h = this.parentNode.previousSibling;
+        //     for (i = 0; i < s.length; i++) {
+        //         if (s.options[i].innerHTML == this.innerHTML) {
+        //             s.selectedIndex = i;
+        //             h.innerHTML = this.innerHTML;
+        //             y = this.parentNode.getElementsByClassName("same-as-selected");
+        //             for (k = 0; k < y.length; k++) {
+        //                 y[k].removeAttribute("class");
+        //             }
+        //             this.setAttribute("class", "same-as-selected");
+        //             break;
+        //         }
+        //     }
+        //     h.click();
+        // });
         b.appendChild(c);
     }
     x[i].appendChild(b);
@@ -44,27 +44,50 @@ for (i = 0; i < x.length; i++) {
         and open/close the current select box:*/
         e.stopPropagation();
         closeAllSelect(this);
+        $('.select-selected').removeClass('active');
+        $(this).addClass('active');
         var select = this.nextSibling;
+        var realSelect = this.previousElementSibling;
         // show select
         if ($(select).hasClass('select-hide')){
-            var wrapperHeight = $('.wrapper').height();
-            var selectPosY = $(this).offset().top;
-            var selectPosHeight = $(this).height();
-            var heightForSubmenuBottom = wrapperHeight - selectPosY - selectPosHeight;
-            var heightForSubmenuTop = $(this.parentElement).position().top;
             select.classList.remove("select-hide");
+            var selectCopy = $(select).clone();
+            $(selectCopy).find('div').removeClass('same-as-selected');
+            $(selectCopy).find('div').eq($(realSelect).find("option:selected").index()).addClass('same-as-selected');
+            $('.absoluteSelect').html('');
+            $('.absoluteSelect').append(selectCopy);
+
+            var resultTopPosition = null;
+            var selectPosX = $(this).parent().offset().left;
+            var selectPosY = $(this).parent().offset().top;
+            var selectWidth = $(this).parent().width();
+            var selectHeight = $(this).parent().height();
+            var absoluteSelectHeight = $('.absoluteSelect').height();
+
+            var wrapperHeight = $('.wrapper').height();
+            var heightForSubmenuBottom = wrapperHeight - selectPosY - selectHeight;
+
             // choose position for subMenu
-            if (heightForSubmenuBottom > heightForSubmenuTop) {
-                select.classList.add('bottom');
+             if (heightForSubmenuBottom > absoluteSelectHeight) {
+                resultTopPosition = selectPosY + selectHeight;
             } else {
-                select.classList.add('top');
+                resultTopPosition = selectPosY - absoluteSelectHeight;
             }
+
+            $('.absoluteSelect').css({
+                'left':selectPosX,
+                'top': resultTopPosition,
+                'width': selectWidth,
+            });
+
         }
         // hide select
         else{
-            select.classList.add("select-hide");    
-            select.classList.remove("top");    
-            select.classList.remove("bottom");    
+            $('.absoluteSelect').html('');
+            $('.absoluteSelect').css({
+                'left': '-9999px',
+            });
+            select.classList.add("select-hide");       
         }
         this.classList.toggle("select-arrow-active");
     });
@@ -88,7 +111,21 @@ function closeAllSelect(elmnt) {
             x[i].classList.add("select-hide");
         }
     }
+    $('.absoluteSelect').html('');
+    $('.absoluteSelect').css({
+        'left': '-9999px',
+    });
 }
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
+window.addEventListener("resize", closeAllSelect);
+$('.scroll-y').scroll(closeAllSelect);
+
+$('.absoluteSelect').on('click','div div',function () {
+    var selectedItem = $(this);
+    var currentBlock = $('.select-selected.active');
+    var currentSelect = $('.select-selected.active').parent().find('select');
+    $(currentBlock).html($(selectedItem).html());
+    $(currentSelect).val($(selectedItem).html());
+});

@@ -1,46 +1,38 @@
-
 /* =================================================================== */
 /* selects
 /* =================================================================== */
-
-
 /*the container must be positioned relative:*/
-
 .custom-select {
     position: relative;
 }
 
 /*hide original SELECT element:*/
-
 .custom-select select {
     display: none;
 }
 
 /*style the arrow inside the select element:*/
-
 .select-selected:after {
     position: absolute;
     content: "";
     top: 50%;
     right: 7px;
     transform: translateY(-50%);
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 4px 3px 0 3px;
-	border-color: var(--clr-text) transparent transparent transparent;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 3px 0 3px;
+    border-color: var(--clr-text) transparent transparent transparent;
 }
 
 /*point the arrow upwards when the select box is open (active):*/
-
 .select-selected.select-arrow-active:after {
-	border-width: 0 3px 4px 3px;
+    border-width: 0 3px 4px 3px;
     border-color: transparent transparent var(--clr-textL) transparent;
     top: 50%;
 }
 
 /*style the items (options), including the selected item:*/
-
 .select-items div {
     color: var(--clr-textD);
     padding: 5px 10px;
@@ -53,9 +45,9 @@
 }
 
 /*style items (options):*/
-
 .select-items {
-    position: absolute;
+    display: none;
+    position: relative;
     background-color: var(--clr-block);
     border: 1px solid var(--clr-separatorD);
     left: 0;
@@ -65,6 +57,14 @@
     visibility: visible;
     transform: translateY(0);
     transition: all 0.2s;
+}
+
+.absoluteSelect {
+    position: absolute;
+    left: -9999px;
+    .select-items {
+        display: block;
+    }
 }
 
 .select-items.top {
@@ -78,9 +78,8 @@
 }
 
 /*hide the items when the select box is closed:*/
-
 .select-hide {
-	display: none;
+    display: none;
     opacity: 0;
     visibility: hidden;
     transform: translateY(30px);

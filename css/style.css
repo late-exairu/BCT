@@ -6001,7 +6001,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 /*style items (options):*/
 .select-items {
-  position: absolute;
+  display: none;
+  position: relative;
   background-color: var(--clr-block);
   border: 1px solid var(--clr-separatorD);
   left: 0;
@@ -6011,6 +6012,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   visibility: visible;
   transform: translateY(0);
   transition: all 0.2s; }
+
+.absoluteSelect {
+  position: absolute;
+  left: -9999px; }
+  .absoluteSelect .select-items {
+    display: block; }
 
 .select-items.top {
   top: auto;
