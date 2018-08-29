@@ -54,6 +54,7 @@ for (i = 0; i < x.length; i++) {
             var selectCopy = $(select).clone();
             $(selectCopy).find('div').removeClass('same-as-selected');
             $(selectCopy).find('div').eq($(realSelect).find("option:selected").index()).addClass('same-as-selected');
+            $(selectCopy).find('div').eq(0).addClass('hidden');
             $('.absoluteSelect').html('');
             $('.absoluteSelect').append(selectCopy);
 
