@@ -612,7 +612,7 @@ h6 {
       width: 6px;
       height: 56px;
       border-radius: 3px;
-      background: var(--clr-important);
+      background: var(--clr-separator);
       z-index: 0; }
   .b-graph.fullScreen {
     position: fixed;
