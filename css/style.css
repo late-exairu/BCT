@@ -3487,40 +3487,44 @@ body.menubar-in #user-btn:before {
 /* tippy-tooltip */
 /* =================================================================== */
 .tippy-tooltip {
-  font-size: 0.6rem !important; }
+  font-size: 0.6rem !important;
+  /*&.bct-advanced-theme {
+		background: var(--clr-block);
+		color: var(--clr-textD);
+		border: 1px solid var(--clr-separator);
+		padding: 5px 7px 3px;
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35);
+	}*/ }
   .tippy-tooltip span {
     font-size: 0.7rem !important; }
   .tippy-tooltip.bct-theme {
     background: var(--clr-block);
     color: var(--clr-textD);
     border: none;
-    padding: 5px 7px 3px;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35); }
-  .tippy-tooltip.bct-advanced-theme {
-    background: var(--clr-block);
-    color: var(--clr-textD);
-    border: 1px solid #286bb4;
+    border: 1px solid var(--clr-separator);
     padding: 5px 7px 3px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35); }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.bct-theme .tippy-arrow {
-  border-right: 7px solid var(--clr-block); }
+  border-right: 8px solid var(--clr-separator); }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.bct-theme .tippy-arrow {
-  border-left: 7px solid var(--clr-block); }
+  border-left: 8px solid var(--clr-separator); }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.bct-theme .tippy-arrow {
-  border-top: 7px solid var(--clr-block); }
+  border-top: 8px solid var(--clr-separator); }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.bct-theme .tippy-arrow {
-  border-bottom: 7px solid var(--clr-block); }
+  border-bottom: 8px solid var(--clr-separator); }
 
-.tippy-popper[x-placement^=top] .tippy-tooltip.bct-advanced-theme .tippy-arrow {
-  border-top: 7px solid #286bb4 !important; }
+/*.tippy-popper[x-placement^=top] .tippy-tooltip.bct-advanced-theme .tippy-arrow {
+    border-top: 7px solid #286bb4 !important;
+}
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.bct-advanced-theme .tippy-arrow {
-  border-bottom: 7px solid #286bb4 !important; }
-
+    border-bottom: 7px solid #286bb4 !important;
+}
+ */
 /* Ion.RangeSlider
 // css version 2.0.3
 // © 2013-2014 Denis Ineshin | IonDen.com
