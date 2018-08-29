@@ -715,40 +715,40 @@ $(function () {
 		e.preventDefault();
 		if ($(this).hasClass('exch-form__btn')) {
 			$('.exch-form').addClass('progress');
-				$.fancybox.open({
-					src: '#exchange-step_2',
-					opts: {
-						afterShow: function (instance, current) {
-							var main_chart_width = $('#mainChart .highcharts-container').css("width");
-							var main_chart_height = $('#mainChart .highcharts-container').css("height");
-							var main_chart_left = $('.b-graph').position().left + $('.main-cols').position().left;
-							var main_chart_top = $('.b-graph').position().top;
-							var body_width = $('body').css("width");
-							var body_height = $('body').css("height");
-							main_chart_width = parseInt(main_chart_width.substr(0, main_chart_width.length - 2));
-							main_chart_height = parseInt(main_chart_height.substr(0, main_chart_height.length - 2));
-							body_width = parseInt(body_width.substr(0, body_width.length - 2));
-							body_height = parseInt(body_height.substr(0, body_height.length - 2));
-							var main_chart_width_percent = (main_chart_width * 100 / body_width).toFixed(2) + "%";
-							var main_chart_height_percent = (main_chart_height * 100 / body_height).toFixed(2) + "%";
-							$('.fancybox-container')
-								.css({
-									"width": main_chart_width_percent,
-									"height": main_chart_height_percent,
-									"left": main_chart_left,
-									"top": main_chart_top
-								})
-								.css("display", "block");
-						},
-						beforeShow: function () {
-							$('.fancybox-container').css("display", "none");
-						},
-						beforeClose: function () {
-							$('.exch-form').removeClass('progress');
-							$('.exch-head').toggleClass('open');
-						}
+			$.fancybox.open({
+				src: '#exchange-step_2',
+				opts: {
+					afterShow: function (instance, current) {
+						var main_chart_width = $('#mainChart .highcharts-container').css("width");
+						var main_chart_height = $('#mainChart .highcharts-container').css("height");
+						var main_chart_left = $('.b-graph').position().left + $('.main-cols').position().left;
+						var main_chart_top = $('.b-graph').position().top;
+						var body_width = $('body').css("width");
+						var body_height = $('body').css("height");
+						main_chart_width = parseInt(main_chart_width.substr(0, main_chart_width.length - 2));
+						main_chart_height = parseInt(main_chart_height.substr(0, main_chart_height.length - 2));
+						body_width = parseInt(body_width.substr(0, body_width.length - 2));
+						body_height = parseInt(body_height.substr(0, body_height.length - 2));
+						var main_chart_width_percent = (main_chart_width * 100 / body_width).toFixed(2) + "%";
+						var main_chart_height_percent = (main_chart_height * 100 / body_height).toFixed(2) + "%";
+						$('.fancybox-container')
+							.css({
+								"width": main_chart_width_percent,
+								"height": main_chart_height_percent,
+								"left": main_chart_left,
+								"top": main_chart_top
+							})
+							.css("display", "block");
+					},
+					beforeShow: function () {
+						$('.fancybox-container').css("display", "none");
+					},
+					beforeClose: function () {
+						$('.exch-form').removeClass('progress');
+						$('.exch-head').toggleClass('open');
 					}
-				});
+				}
+			});
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 		}
@@ -803,6 +803,35 @@ $(function () {
 	}
 
 	/*---------------------------------------------------*/
+	/* transaction popup */
+	/*---------------------------------------------------*/
+
+	$('button[data-src="#transaction-popup"]').click(function () {
+		$('#transaction-popup > .c-block > .d-flex-col ').css('display','none');
+		// receive button
+		if ($(this).text().indexOf('Receive') != -1) {
+			$('#transaction-popup .popup-tabs__item').removeClass('active');
+			$('#transaction-popup .popup-tabs__item').eq(0).addClass('active');
+			$('#transaction-popup > .c-block > .d-flex-col ').eq(0).css('display', 'flex');
+		}
+		// send button
+		else {
+			$('#transaction-popup .popup-tabs__item').removeClass('active');
+			$('#transaction-popup .popup-tabs__item').eq(1).addClass('active');
+			$('#transaction-popup > .c-block > .d-flex-col ').eq(1).css('display', 'flex');
+		}
+	});
+
+	$('#transaction-popup .popup-tabs__item').click(function () {
+		$('#transaction-popup .popup-tabs__item').removeClass('active');
+		$(this).addClass('active');
+		$('#transaction-popup > .c-block > .d-flex-col ').css('display', 'none');
+		$('#transaction-popup > .c-block > .d-flex-col ').eq($(this).index()).css('display', 'flex');
+	});
+
+
+
+	/*---------------------------------------------------*/
 	/* Tippy Tooltip */
 	/*---------------------------------------------------*/
 
@@ -850,19 +879,19 @@ $(function () {
 		theme: 'bct'
 	})
 
-	tippy('.graph-bar__item.btn', {		
+	tippy('.graph-bar__item.btn', {
 		arrow: true,
 		animation: 'fade',
 		placement: 'right',
 		theme: 'bct'
 	})
 
-	tippy('[data="tippy"]', {		
+	tippy('[data="tippy"]', {
 		arrow: true,
 		animation: 'fade',
 		placement: 'right',
 		theme: 'bct'
-	})	
+	})
 
 	/*---------------------------------------------------*/
 	/* Graph range select */
