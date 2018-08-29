@@ -834,6 +834,13 @@ $(function () {
 		theme: 'bct-advanced'
 	})
 
+	tippy('.graph-bar__item.btn', {		
+		arrow: true,
+		animation: 'fade',
+		placement: 'bottom',
+		theme: 'bct-advanced'
+	})	
+
 	/*---------------------------------------------------*/
 	/* Graph range select */
 	/*---------------------------------------------------*/
