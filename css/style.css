@@ -3323,6 +3323,30 @@ body.menubar-in #user-btn:before {
     height: 1px;
     background: var(--clr-separator);
     margin: 0; }
+  .toolbar__scrolldown__btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: var(--clr-separator); }
+    .toolbar__scrolldown__btn:hover {
+      background: var(--clr-backL); }
+    .toolbar__scrolldown__btn .arrow__btn {
+      height: 12px;
+      width: 32px;
+      margin: 0 -1px 0 -1px;
+      display: flex;
+      align-items: center;
+      flex: 0 auto;
+      background: transparent;
+      justify-content: center;
+      padding: 0;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all .1s; }
+      .toolbar__scrolldown__btn .arrow__btn:hover .arrow-icon {
+        fill: var(--clr-textD); }
   @media only screen and (min-width: 1920px) {
     .toolbar {
       width: 42px; }
@@ -3434,6 +3458,9 @@ body.menubar-in #user-btn:before {
   .toolbar-icon.tool-remove {
     width: calc(21px * var(--icon-scale));
     height: calc(23px * var(--icon-scale)); }
+  .toolbar-icon.arrow-drop {
+    width: calc(10px * var(--icon-scale));
+    height: calc(6px * var(--icon-scale)); }
   @media only screen and (min-width: 1920px) {
     .toolbar-icon {
       --icon-scale: 1; } }
