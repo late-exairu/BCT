@@ -612,7 +612,7 @@ h6 {
       width: 6px;
       height: 56px;
       border-radius: 3px;
-      background: #24425c;
+      background: var(--clr-important);
       z-index: 0; }
   .b-graph.fullScreen {
     position: fixed;
@@ -1824,16 +1824,12 @@ h6 {
 /* =================================================================== */
 .graph-bar {
   --bar-height: 32px;
-  font-family: "open_sans", sans-serif;
   position: absolute;
   left: 50px;
   top: 10px;
-  right: 5px;
-  background: transparent;
+  font-family: "open_sans", sans-serif;
   display: flex;
-  padding: 0 50px 0 0;
   max-width: 100%;
-  border-radius: 0;
   transition: all .1s; }
   .graph-bar__group {
     position: relative;
@@ -1859,7 +1855,7 @@ h6 {
     .graph-bar__group.vertical {
       flex-direction: column; }
       .graph-bar__group.vertical .graph-bar__item {
-        margin: 5px 0 0 0; }
+        margin: 0 0 0 0; }
         .graph-bar__group.vertical .graph-bar__item:first-child {
           margin: 0; }
   .graph-bar__left {
@@ -1979,33 +1975,12 @@ h6 {
       width: calc(18px * var(--icon-scale));
       height: calc(21px * var(--icon-scale));
       fill: var(--clr-text); }
-    .graph-bar__icon.expand {
-      width: calc(28px * var(--icon-scale));
-      height: calc(28px * var(--icon-scale)); }
-    .graph-bar__icon.buck {
-      width: calc(14px * var(--icon-scale));
-      height: calc(27px * var(--icon-scale)); }
-    .graph-bar__icon.mode {
-      width: calc(29px * var(--icon-scale));
-      height: calc(28px * var(--icon-scale)); }
-      .graph-bar__icon.mode .st0 {
-        fill: var(--clr-important); }
-      .graph-bar__icon.mode .st1 {
-        fill: transparent; }
-      .graph-bar__icon.mode .st2 {
-        fill: transparent; }
-      .graph-bar__icon.mode .st3 {
-        fill: transparent; }
-      .graph-bar__icon.mode .st4 {
-        fill: transparent; }
   .graph-bar__separator {
     width: 0;
     height: 0;
     margin: 0 0 0 10px; }
   .graph-bar.basic {
     left: 10px; }
-  .graph-bar.shifted {
-    right: 115px; }
   @media only screen and (min-width: 1920px) {
     .graph-bar {
       --bar-height: 42px;
@@ -6550,6 +6525,159 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       background: var(--clr-back); }
     .popup-tabs__item:hover {
       color: var(--clr-accent); }
+
+.graph-top {
+  font-family: "open_sans", sans-serif;
+  position: absolute;
+  left: 92px;
+  top: 10px;
+  right: 5px;
+  background: transparent;
+  display: flex;
+  padding: 0 0 0 0;
+  max-width: 100%;
+  border-radius: 0;
+  transition: all .1s;
+  height: 32px; }
+  .graph-top__left {
+    margin: 0 auto 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; }
+    .graph-top__left .graph-top__group {
+      margin: 0 10px 10px 0; }
+    .graph-top__left .graph-info {
+      margin: 0; }
+  .graph-top__right {
+    margin: 0 5px 0 0;
+    display: flex;
+    justify-content: flex-start; }
+    .graph-top__right .graph-top__group {
+      margin: 0 0 10px 10px; }
+  .graph-top__group {
+    position: relative;
+    display: flex;
+    margin: 0 0 10px 10px;
+    align-self: flex-start;
+    height: 100%; }
+    .graph-top__group:first-child {
+      margin: 0; }
+    .graph-top__group:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: var(--border-radius);
+      background: var(--clr-back);
+      transition: all .2s;
+      opacity: 0.75;
+      z-index: 0; }
+    .graph-top__group:hover:after {
+      opacity: 1; }
+    .graph-top__group.vertical {
+      flex-direction: column; }
+      .graph-top__group.vertical .graph-top__item {
+        margin: 0 0 0 0; }
+        .graph-top__group.vertical .graph-top__item:first-child {
+          margin: 0; }
+  .graph-top__item {
+    position: relative;
+    /*border: 1px solid var(--clr-important);*/
+    border: none;
+    border-radius: var(--border-radius);
+    height: var(--bar-height);
+    min-width: var(--bar-height);
+    margin: 0 0 0 6px;
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    background: var(--clr-block);
+    background: transparent;
+    justify-content: center;
+    padding: 0 3px;
+    z-index: 1;
+    min-width: 32px; }
+    .graph-top__item:first-child {
+      margin: 0; }
+    .graph-top__item.btn {
+      cursor: pointer;
+      transition: all 0.1s; }
+      .graph-top__item.btn:hover {
+        background: var(--clr-backL);
+        border-color: var(--clr-textL); }
+        .graph-top__item.btn:hover .graph-top__icon,
+        .graph-top__item.btn:hover .graph-top__text {
+          fill: var(--clr-text);
+          color: var(--clr-text); }
+          .graph-top__item.btn:hover .graph-top__icon.mode .st0,
+          .graph-top__item.btn:hover .graph-top__text.mode .st0 {
+            fill: #FFFFFF; }
+          .graph-top__item.btn:hover .graph-top__icon.mode .st1,
+          .graph-top__item.btn:hover .graph-top__text.mode .st1 {
+            fill: #3AB44A; }
+          .graph-top__item.btn:hover .graph-top__icon.mode .st2,
+          .graph-top__item.btn:hover .graph-top__text.mode .st2 {
+            fill: #EB2429; }
+          .graph-top__item.btn:hover .graph-top__icon.mode .st3,
+          .graph-top__item.btn:hover .graph-top__text.mode .st3 {
+            fill: #F4EB32; }
+          .graph-top__item.btn:hover .graph-top__icon.mode .st4,
+          .graph-top__item.btn:hover .graph-top__text.mode .st4 {
+            fill: #26A8E0; }
+  .graph-top__text {
+    font-size: 13px;
+    padding: 0 10px;
+    color: var(--clr-important); }
+    .graph-top__text span {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--clr-textD); }
+  .graph-top__btn-text {
+    font-size: 21px;
+    font-weight: 600;
+    padding: 0 5px;
+    color: var(--clr-textD); }
+  .graph-top__icon {
+    height: 18px;
+    width: 18px;
+    fill: var(--clr-important);
+    transition: all 0.1s;
+    flex: 0 auto;
+    --icon-scale: 0.8; }
+    .graph-top__icon.expand {
+      width: calc(28px * var(--icon-scale));
+      height: calc(28px * var(--icon-scale)); }
+    .graph-top__icon.buck {
+      width: calc(14px * var(--icon-scale));
+      height: calc(27px * var(--icon-scale)); }
+    .graph-top__icon.mode {
+      width: calc(29px * var(--icon-scale));
+      height: calc(28px * var(--icon-scale)); }
+      .graph-top__icon.mode .st0 {
+        fill: var(--clr-important); }
+      .graph-top__icon.mode .st1 {
+        fill: transparent; }
+      .graph-top__icon.mode .st2 {
+        fill: transparent; }
+      .graph-top__icon.mode .st3 {
+        fill: transparent; }
+      .graph-top__icon.mode .st4 {
+        fill: transparent; }
+  .graph-top.basic {
+    left: 10px; }
+  @media only screen and (min-width: 1920px) {
+    .graph-top {
+      left: 114px;
+      height: 42px; }
+      .graph-top__item {
+        min-width: var(--bar-height);
+        height: var(--bar-height);
+        margin: 0 0 0 8px;
+        min-width: 42px; }
+      .graph-top__icon {
+        --icon-scale: 1; } }
 
 /* =================================================================== */
 /* Globals

@@ -6,17 +6,13 @@
 
 .graph-bar{
 	--bar-height: 32px;
-
-	font-family: $osans;
 	position: absolute;
 	left: 50px;
 	top: 10px;
-	right: 5px;
-	background: transparent;
+
+	font-family: $osans;
 	display: flex;
-	padding: 0 50px 0 0;
 	max-width: 100%;
-	border-radius: 0;
 	transition: all .1s;
 
 	&__group{
@@ -54,7 +50,7 @@
 			flex-direction: column;
 
 			.graph-bar__item{
-				margin: 5px 0 0 0;
+				margin: 0 0 0 0;
 
 				&:first-child{
 					margin: 0;
@@ -177,17 +173,6 @@
 		&.arrow-drop	{ width: calc(10px * var(--icon-scale)); height: calc(6px * var(--icon-scale)); }
 		&.graph-2		{ width: calc(22px * var(--icon-scale)); height: calc(16px * var(--icon-scale)); }
 		&.arrows-td 	{ width: calc(18px * var(--icon-scale)); height: calc(21px * var(--icon-scale)); fill: var(--clr-text); }
-		&.expand		{ width: calc(28px * var(--icon-scale)); height: calc(28px * var(--icon-scale)); }
-		&.buck			{ width: calc(14px * var(--icon-scale)); height: calc(27px * var(--icon-scale)); }
-		&.mode	{
-			width: calc(29px * var(--icon-scale));
-			height: calc(28px * var(--icon-scale));
-			.st0{ fill: var(--clr-important); }
-			.st1{ fill: transparent; }
-			.st2{ fill: transparent; }
-			.st3{ fill: transparent; }
-			.st4{ fill: transparent; }
-		}
 	}
 
 	&__separator{
@@ -200,13 +185,8 @@
 		left: 10px;
 	}
 
-	&.shifted {
-		right: 115px;
-	}
-
 	@media only screen and (min-width : 1920px) {
 		--bar-height: 42px;
-
 		left: 62px;
 
 		&__item{
