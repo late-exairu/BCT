@@ -3284,7 +3284,8 @@ body.menubar-in #user-btn:before {
     position: relative;
     overflow: hidden; }
     .toolbar__item:hover {
-      background: var(--clr-backL); }
+      background: var(--clr-backL);
+      border-radius: var(--border-radius); }
       .toolbar__item:hover .toolbar__drop-arrow {
         transform: translate(0, -50%) rotate(0); }
     .toolbar__item.active {
@@ -3329,7 +3330,9 @@ body.menubar-in #user-btn:before {
     left: 0;
     right: 0;
     height: 16px;
-    background: var(--clr-separator); }
+    background: var(--clr-separator);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius); }
     .toolbar__scrolldown__btn:hover {
       background: var(--clr-backL); }
     .toolbar__scrolldown__btn .arrow__btn {
@@ -3459,8 +3462,8 @@ body.menubar-in #user-btn:before {
     width: calc(21px * var(--icon-scale));
     height: calc(23px * var(--icon-scale)); }
   .toolbar-icon.scroll-down {
-    width: calc(10px * var(--icon-scale));
-    height: calc(10px * var(--icon-scale)); }
+    width: calc(9px * var(--icon-scale));
+    height: calc(9px * var(--icon-scale)); }
   @media only screen and (min-width: 1920px) {
     .toolbar-icon {
       --icon-scale: 1; } }
