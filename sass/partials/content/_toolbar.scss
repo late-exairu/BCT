@@ -116,10 +116,13 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		height: 16px;
+		height: 12px;
 		background: var(--clr-separator);
 		border-bottom-left-radius: var(--border-radius);
 		border-bottom-right-radius: var(--border-radius);
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		&:hover {
 			background: var(--clr-backL);
@@ -163,6 +166,11 @@
 		&__btn{
 			width: 42px;
 			height: 42px;
+		}
+
+
+		&__scrolldown__btn {
+			height: 16px;
 		}
 	}
 }
