@@ -833,14 +833,14 @@ $(function () {
 		html: '#ttpConvert', // DIRECT ELEMENT option
 		arrow: true,
 		animation: 'fade',
-		theme: 'bct-advanced'
+		theme: 'bct'
 	})
 
 	tippy('.tippy-done-advanced', {
 		html: '#ttpDone', // DIRECT ELEMENT option
 		arrow: true,
 		animation: 'fade',
-		theme: 'bct-advanced'
+		theme: 'bct'
 	})
 
 	tippy('.tippy-adv-mode', {
