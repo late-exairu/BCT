@@ -210,7 +210,7 @@ $(function () {
 		$('.js-tabs-panel').removeClass('active');
 		$('#panel-funds-portfolio').addClass('active');
 		$('.main-cols__right-bottom .portfolio-menu__item').eq(1).trigger('click');
-		//initializeSliderCharts();
+		$('.advanced .js-account-stats .portfolio-drop').addClass('hidden');
 		if (!portfolioChartObj)
 			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 
@@ -219,6 +219,7 @@ $(function () {
 	$('.portfolio-back').click(function () {
 		$('.js-tabs-panel').removeClass('active');
 		$('#panel-funds-wallet').addClass('active');
+		$('.advanced .js-account-stats .portfolio-drop').removeClass('hidden');
 		drawCircleChart();
 	});
 
@@ -231,6 +232,7 @@ $(function () {
 		$('.js-account-stats .portfolio-drop .menu-dropdown__item').removeClass('active');
 		$(this).addClass('active');
 
+		$('.advanced .js-account-stats .portfolio-drop .c-block-head__title').text($(this).text());
 		$('.js-tabs-panel').removeClass('active');
 		$('.js-tabs-panel').eq($(this).index()).addClass('active');
 
