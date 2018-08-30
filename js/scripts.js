@@ -658,8 +658,8 @@ $(function () {
 						$('.fancybox-container').css("display", "none");
 					},
 					beforeClose: function () {
-						$('.exch-form').removeClass('progress');
-						$('.exch-head').toggleClass('open');
+						//$('.exch-form').removeClass('progress');
+						//$('.exch-head').toggleClass('open');
 					}
 				}
 			});
@@ -821,6 +821,9 @@ $(function () {
 		$('#transaction-popup > .c-block > .d-flex-col ').eq($(this).index()).css('display', 'flex');
 	});
 
+	$('.js-fancybox-close').click(function () {
+		$.fancybox.close();
+	});
 
 
 	/*---------------------------------------------------*/
