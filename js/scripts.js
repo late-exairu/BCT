@@ -913,4 +913,12 @@ $(function () {
 		}
 		redrawMainChart();
 	});
+
+	/*---------------------------------------------------*/
+	/* Scroll down event for left toolbar */
+	/*---------------------------------------------------*/
+	$(".toolbar__scrolldown__btn").on("click", ".arrow__btn", function() {
+		var scrollbarLeft = $('.toolbar__scroll.scrollbar-left');
+		scrollbarLeft.animate({ scrollTop: scrollbarLeft.height() }, 1000);
+	});
 });
