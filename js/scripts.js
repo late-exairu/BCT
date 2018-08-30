@@ -879,13 +879,6 @@ $(function () {
 		theme: 'bct'
 	})
 
-	tippy('.graph-bar__item.btn', {
-		arrow: true,
-		animation: 'fade',
-		placement: 'right',
-		theme: 'bct'
-	})
-
 	tippy('[data="tippy"]', {
 		arrow: true,
 		animation: 'fade',

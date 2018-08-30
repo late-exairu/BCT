@@ -2219,7 +2219,9 @@ h6 {
   cursor: pointer;
   min-width: 44px;
   text-align: center;
-  color: var(--clr-important); }
+  color: var(--clr-important);
+  border-bottom-right-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius); }
   .graph-range.open .graph-range__list {
     opacity: 1;
     visibility: visible; }
@@ -2232,7 +2234,9 @@ h6 {
     justify-content: center;
     align-items: center;
     border: 0 var(--border-radius) var(--border-radius) 0;
-    background: var(--clr-back); }
+    background: var(--clr-back);
+    border-bottom-right-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius); }
     .graph-range__current:after {
       content: '';
       position: relative;

@@ -13,6 +13,8 @@
 	min-width: 44px;
 	text-align: center;
 	color: var(--clr-important);
+	border-bottom-right-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
 
 	&.open{
 		.graph-range__list{
@@ -35,6 +37,8 @@
 		align-items: center;
 		border: 0 var(--border-radius) var(--border-radius) 0;
 		background: var(--clr-back);
+		border-bottom-right-radius: var(--border-radius);
+    	border-top-right-radius: var(--border-radius);
 
 		&:after{
 			content: '';
