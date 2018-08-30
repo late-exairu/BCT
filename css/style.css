@@ -634,10 +634,12 @@ h6 {
   font-weight: 400;
   /*max-width: 266px;*/ }
   .basic-select__select {
+    font-size: 13px;
     -ms-appearance: none;
     appearance: none;
     cursor: pointer;
     width: 100%;
+    line-height: 1.2;
     height: 100%;
     align-items: center;
     display: flex;
@@ -732,6 +734,7 @@ h6 {
   .basic-table__btn {
     height: 28px;
     border: 1px solid var(--clr-separatorD);
+    font-size: 12px;
     border-radius: 3px;
     line-height: 1.2;
     color: var(--clr-textD);
