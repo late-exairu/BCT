@@ -3230,6 +3230,7 @@ body.menubar-in #user-btn:before {
   bottom: 10px;
   display: block;
   padding: 0;
+  padding-bottom: 12px;
   width: 32px;
   max-width: 100%;
   max-height: 100%;

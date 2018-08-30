@@ -883,7 +883,14 @@ $(function () {
 		arrow: true,
 		animation: 'fade',
 		placement: 'right',
-		theme: 'bct'
+		theme: 'bct',
+		popperOptions: {
+			modifiers: {
+			  preventOverflow:{
+				enabled: false
+			}
+		  }
+		}
 	})
 
 	/*---------------------------------------------------*/
