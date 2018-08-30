@@ -30,19 +30,19 @@
 }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.bct-theme .tippy-arrow {
-    border-right: 8px solid var(--clr-separator);
+    border-right: 7px solid var(--clr-separator);
 }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.bct-theme .tippy-arrow {
-    border-left: 8px solid var(--clr-separator);
+    border-left: 7px solid var(--clr-separator);
 }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.bct-theme .tippy-arrow {
-    border-top: 8px solid var(--clr-separator);
+    border-top: 7px solid var(--clr-separator);
 }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.bct-theme .tippy-arrow {
-    border-bottom: 8px solid var(--clr-separator);
+    border-bottom: 7px solid var(--clr-separator);
 }
 
 
