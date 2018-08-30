@@ -44,6 +44,11 @@
 	&__scroll{
 		margin: 0 0 0 -1px;
 		padding: 0 0 0 1px;
+
+		/* Hide scrollbar in the toolbar */
+		&.scrollbar-left>.scroll-element.scroll-y {
+			display: none;
+		}
 	}
 
 	&__item{

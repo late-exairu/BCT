@@ -3262,7 +3262,10 @@ body.menubar-in #user-btn:before {
     opacity: 1; }
   .toolbar__scroll {
     margin: 0 0 0 -1px;
-    padding: 0 0 0 1px; }
+    padding: 0 0 0 1px;
+    /* Hide scrollbar in the toolbar */ }
+    .toolbar__scroll.scrollbar-left > .scroll-element.scroll-y {
+      display: none; }
   .toolbar__item {
     position: relative;
     overflow: hidden; }
