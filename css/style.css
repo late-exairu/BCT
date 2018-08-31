@@ -3230,7 +3230,6 @@ body.menubar-in #user-btn:before {
   bottom: 10px;
   display: block;
   padding: 0;
-  padding-bottom: 12px;
   width: 32px;
   max-width: 100%;
   max-height: 100%;
@@ -3310,6 +3309,38 @@ body.menubar-in #user-btn:before {
     height: 1px;
     background: var(--clr-separator);
     margin: 0; }
+  .toolbar__scrollup__btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: var(--clr-separator);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 8; }
+    .toolbar__scrollup__btn:hover {
+      background: var(--clr-backL); }
+    .toolbar__scrollup__btn .arrow__btn {
+      height: 16px;
+      width: 32px;
+      margin: 0 -1px 0 -1px;
+      display: flex;
+      align-items: center;
+      flex: 0 auto;
+      background: transparent;
+      justify-content: center;
+      padding: 0;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all .1s; }
+      .toolbar__scrollup__btn .arrow__btn .scroll-down {
+        transform: rotate(180deg); }
+      .toolbar__scrollup__btn .arrow__btn:hover .arrow-icon {
+        fill: var(--clr-textD); }
   .toolbar__scrolldown__btn {
     position: absolute;
     bottom: 0;
@@ -3321,7 +3352,8 @@ body.menubar-in #user-btn:before {
     border-bottom-right-radius: var(--border-radius);
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    z-index: 8; }
     .toolbar__scrolldown__btn:hover {
       background: var(--clr-backL); }
     .toolbar__scrolldown__btn .arrow__btn {

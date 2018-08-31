@@ -99,9 +99,23 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* js-scrollbar-outer */
 	/*---------------------------------------------------*/
+	var scrollbarLeft = $('.toolbar__scroll.scrollbar-left');
 
 	$('.scrollbar-right').scrollbar();
-	$('.scrollbar-left').scrollbar();
+	$('.left-bar__scroll.scrollbar-left').scrollbar();
+	scrollbarLeft.scrollbar({		
+		"onScroll": function(y, x){			
+			if(y.scroll == y.maxScroll){				
+				$('.toolbar__scrollup__btn').show();
+				$('.toolbar__scrolldown__btn').hide();
+			}
+			else {
+				$('.toolbar__scrollup__btn').hide();
+				$('.toolbar__scrolldown__btn').show();
+			}
+		}
+		
+	});
 	$('.scrollbar-arrows').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",
@@ -110,6 +124,17 @@ $(function () {
 
 	$('#user-btn').on('click', function () {
 		$('body').toggleClass('menubar-in');
+	});
+
+	/*---------------------------------------------------*/
+	/* Scroll up/down event for left toolbar */
+	/*---------------------------------------------------*/		
+	$(".toolbar__scrollup__btn").on("click", ".arrow__btn", function() {				
+		scrollbarLeft.animate({ scrollTop: 0 }, "slow");
+	});
+
+	$(".toolbar__scrolldown__btn").on("click", ".arrow__btn", function() {		
+		scrollbarLeft.animate({ scrollTop: scrollbarLeft.height() }, "slow");
 	});
 
 	/*---------------------------------------------------*/
@@ -930,12 +955,5 @@ $(function () {
 		}
 		redrawMainChart();
 	});
-
-	/*---------------------------------------------------*/
-	/* Scroll down event for left toolbar */
-	/*---------------------------------------------------*/
-	$(".toolbar__scrolldown__btn").on("click", ".arrow__btn", function() {
-		var scrollbarLeft = $('.toolbar__scroll.scrollbar-left');
-		scrollbarLeft.animate({ scrollTop: scrollbarLeft.height() }, 1000);
-	});
+	
 });
