@@ -2421,6 +2421,7 @@ Blocks from left bar
 
  */
 .dark-theme .left-bar {
+  --clr-important: #24425B;
   --clr-back: #0C1017; }
 
 .left-bar {
@@ -2532,11 +2533,13 @@ Blocks from left bar
       height: 35px;
       flex: 0 0 35px; }
   .nav-bar__title {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--clr-important);
     text-align: center;
     margin: 0 auto;
-    transition: all .1s; }
+    transition: all .1s;
+    font-family: "open_sans_condensed", sans-serif;
+    font-weight: 800; }
 
 .user-bar {
   margin: auto 0 10px; }
@@ -5393,6 +5396,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   font-family: 'open_sans_condensed';
   src: url("../fonts/opensanscondensed-light-webfont.woff") format("woff");
   font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sans_condensed';
+  src: url("../fonts/opensanscondensed-bold-webfont.woff") format("woff");
+  font-weight: 800;
   font-style: normal; }
 
 /* =================================================================== */
