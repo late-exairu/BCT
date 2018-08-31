@@ -138,6 +138,18 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
+	/* Scroll up/down event for graph prices */
+	/*---------------------------------------------------*/	
+	var graphPricesScrollbar = 	$('.graph-prices__scroll.scrollbar-arrows');
+	$(".graph-prices__scrollup__btn").on("click", ".arrow__btn", function() {				
+		graphPricesScrollbar.animate({ scrollTop: 0 }, "slow");
+	});
+
+	$(".graph-prices__scrolldown__btn").on("click", ".arrow__btn", function() {		
+		graphPricesScrollbar.animate({ scrollTop: $(".graph-prices__scroll .graph-prices__list").height() - graphPricesScrollbar.outerHeight() }, "slow");
+	});
+
+	/*---------------------------------------------------*/
 	/* js-graph-prices-toggle */
 	/*---------------------------------------------------*/
 

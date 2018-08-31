@@ -49,6 +49,8 @@
   /*background color accented*/
   --clr-block:		#ffffff;
   /*basic block color basic*/
+  --clr-back-arrow:	#e7e7e7;
+  /*scroll arrow background color*/
   --clr-text-tooltip: #2C589C;
   /*basic tooltip text color*/
   --clr-back-tooltip: #F9F9F9;
