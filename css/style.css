@@ -95,6 +95,8 @@
   /*background color accented*/
   --clr-block:		#18202d;
   /*basic block color basic*/
+  --clr-back-arrow:	#10151d;
+  /*scroll arrow background color*/
   --clr-text-tooltip: #F9F9F9;
   /*tooltip text color dark*/
   --clr-back-tooltip: #2B569A;
@@ -2160,6 +2162,32 @@ h6 {
   .graph-prices__scroll {
     width: 100px;
     margin: 0; }
+  .graph-prices__scrollup__btn, .graph-prices__scrolldown__btn {
+    position: relative;
+    height: 12px;
+    background: var(--clr-back-arrow);
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .graph-prices__scrollup__btn:hover, .graph-prices__scrolldown__btn:hover {
+      background: var(--clr-backL); }
+    .graph-prices__scrollup__btn .arrow__btn, .graph-prices__scrolldown__btn .arrow__btn {
+      height: 16px;
+      width: 32px;
+      margin: 0 -1px 0 -1px;
+      display: flex;
+      align-items: center;
+      flex: 0 auto;
+      background: transparent;
+      justify-content: center;
+      padding: 0;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all .1s; }
+      .graph-prices__scrollup__btn .arrow__btn:hover .arrow-icon, .graph-prices__scrolldown__btn .arrow__btn:hover .arrow-icon {
+        fill: var(--clr-textD); }
+  .graph-prices__scrollup__btn .arrow__btn .scroll-down {
+    transform: rotate(180deg); }
   .graph-prices__list {
     padding: 0; }
   .graph-prices__item {
@@ -3312,7 +3340,7 @@ body.menubar-in #user-btn:before {
     height: 1px;
     background: var(--clr-separator);
     margin: 0; }
-  .toolbar__scrollup__btn {
+  .toolbar__scrollup__btn, .toolbar__scrolldown__btn {
     position: absolute;
     top: 0;
     left: 0;
@@ -3325,55 +3353,32 @@ body.menubar-in #user-btn:before {
     justify-content: center;
     align-items: center;
     z-index: 8; }
-    .toolbar__scrollup__btn:hover {
+    .toolbar__scrollup__btn:hover, .toolbar__scrolldown__btn:hover {
       background: var(--clr-backL); }
-    .toolbar__scrollup__btn .arrow__btn {
-      height: 16px;
-      width: 32px;
-      margin: 0 -1px 0 -1px;
-      display: flex;
-      align-items: center;
-      flex: 0 auto;
-      background: transparent;
-      justify-content: center;
-      padding: 0;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: all .1s; }
-      .toolbar__scrollup__btn .arrow__btn .scroll-down {
-        transform: rotate(180deg); }
-      .toolbar__scrollup__btn .arrow__btn:hover .arrow-icon {
-        fill: var(--clr-textD); }
+  .toolbar__scrollup__btn .arrow__btn > .scroll-down {
+    transform: rotate(180deg); }
   .toolbar__scrolldown__btn {
-    position: absolute;
+    top: auto;
     bottom: 0;
-    left: 0;
-    right: 0;
-    height: 12px;
-    background: var(--clr-separator);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius); }
+  .toolbar .arrow__btn {
+    height: 16px;
+    width: 32px;
+    margin: 0 -1px 0 -1px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 8; }
-    .toolbar__scrolldown__btn:hover {
-      background: var(--clr-backL); }
-    .toolbar__scrolldown__btn .arrow__btn {
-      height: 16px;
-      width: 32px;
-      margin: 0 -1px 0 -1px;
-      display: flex;
-      align-items: center;
-      flex: 0 auto;
-      background: transparent;
-      justify-content: center;
-      padding: 0;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: all .1s; }
-      .toolbar__scrolldown__btn .arrow__btn:hover .arrow-icon {
-        fill: var(--clr-textD); }
+    flex: 0 auto;
+    background: transparent;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all .1s; }
+    .toolbar .arrow__btn:hover .arrow-icon {
+      fill: var(--clr-textD); }
   @media only screen and (min-width: 1920px) {
     .toolbar {
       width: 42px; }
