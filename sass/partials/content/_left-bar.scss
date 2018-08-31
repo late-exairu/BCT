@@ -12,6 +12,7 @@ Blocks from left bar
  .dark-theme{
 
  	.left-bar{
+ 		--clr-important: #24425B;
  		--clr-back: #0C1017;
  	}
  }
@@ -139,11 +140,13 @@ Blocks from left bar
 	}
 
 	&__title{
-		font-size: 12px;
+		font-size: 13px;
 		color: var(--clr-important);
 		text-align: center;
 		margin: 0 auto;
 		transition: all .1s;
+		font-family: $osansC;
+		font-weight: 800;
 	}
 }
 
