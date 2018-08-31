@@ -654,7 +654,7 @@ $(function () {
 								"display": "block",
 								"position": "absolute"
 							})
-							.css("display", "block");						
+							.css("display", "block");
 					},
 					beforeShow: function () {
 						$('.fancybox-container').css("display", "none");
@@ -731,7 +731,7 @@ $(function () {
 									"display": "block",
 									"position": "absolute"
 								})
-								.css("display", "block");						
+								.css("display", "block");
 						},
 						beforeShow: function () {
 							$('.fancybox-container').css("display", "none");
@@ -801,19 +801,23 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('button[transaction-fancybox]').click(function () {
-		$('#transaction-popup > .c-block > .d-flex-col ').css('display','none');
+		$('#transaction-popup > .c-block > .d-flex-col ').css('display', 'none');
 		// receive button
-		if ($(this).text().indexOf('Receive') != -1) {
-			$('#transaction-popup .popup-tabs__item').removeClass('active');
-			$('#transaction-popup .popup-tabs__item').eq(0).addClass('active');
-			$('#transaction-popup > .c-block > .d-flex-col ').eq(0).css('display', 'flex');
-		}
+		//if ($(this).text().indexOf('Receive') != -1) {
+		var currencyName = $(this).closest('.basic-table__row').attr('data-currency');
+		$('#transaction-popup .popup-tabs__item').removeClass('active');
+		$('#transaction-popup .popup-tabs__item').eq(0).addClass('active').text('Receive ' + currencyName);
+		$('#transaction-popup .popup-tabs__item').eq(1).text('Send ' + currencyName);
+		$('#transaction-popup .transaction-form__input').eq(1).val('1000.000 ' + currencyName);
+		$('#transaction-popup .transaction-form__btn').text('Send ' + currencyName);
+		$('#transaction-popup > .c-block > .d-flex-col ').eq(0).css('display', 'flex');
+		//}
 		// send button
-		else {
-			$('#transaction-popup .popup-tabs__item').removeClass('active');
-			$('#transaction-popup .popup-tabs__item').eq(1).addClass('active');
-			$('#transaction-popup > .c-block > .d-flex-col ').eq(1).css('display', 'flex');
-		}
+		/* 		else {
+					$('#transaction-popup .popup-tabs__item').removeClass('active');
+					$('#transaction-popup .popup-tabs__item').eq(1).addClass('active');
+					$('#transaction-popup > .c-block > .d-flex-col ').eq(1).css('display', 'flex');
+				} */
 	});
 
 	$('#transaction-popup .popup-tabs__item').click(function () {
@@ -883,10 +887,10 @@ $(function () {
 		theme: 'bct',
 		popperOptions: {
 			modifiers: {
-			  preventOverflow:{
-				enabled: false
+				preventOverflow: {
+					enabled: false
+				}
 			}
-		  }
 		}
 	})
 
@@ -934,8 +938,10 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* Scroll down event for left toolbar */
 	/*---------------------------------------------------*/
-	$(".toolbar__scrolldown__btn").on("click", ".arrow__btn", function() {
+	$(".toolbar__scrolldown__btn").on("click", ".arrow__btn", function () {
 		var scrollbarLeft = $('.toolbar__scroll.scrollbar-left');
-		scrollbarLeft.animate({ scrollTop: scrollbarLeft.height() }, 1000);
+		scrollbarLeft.animate({
+			scrollTop: scrollbarLeft.height()
+		}, 1000);
 	});
 });
