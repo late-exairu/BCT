@@ -839,22 +839,14 @@ $(function () {
 
 	$('button[transaction-fancybox]').click(function () {
 		$('#transaction-popup > .c-block > .d-flex-col ').css('display', 'none');
-		// receive button
-		//if ($(this).text().indexOf('Receive') != -1) {
 		var currencyName = $(this).closest('.basic-table__row').attr('data-currency');
 		$('#transaction-popup .popup-tabs__item').removeClass('active');
 		$('#transaction-popup .popup-tabs__item').eq(0).addClass('active').text('Receive ' + currencyName);
 		$('#transaction-popup .popup-tabs__item').eq(1).text('Send ' + currencyName);
 		$('#transaction-popup .transaction-form__input').eq(1).val('1000.000 ' + currencyName);
 		$('#transaction-popup .transaction-form__btn').text('Send ' + currencyName);
+		$('#transaction-popup .transaction-form__qr-code-title').text('Your ' + currencyName + ' Address');
 		$('#transaction-popup > .c-block > .d-flex-col ').eq(0).css('display', 'flex');
-		//}
-		// send button
-		/* 		else {
-					$('#transaction-popup .popup-tabs__item').removeClass('active');
-					$('#transaction-popup .popup-tabs__item').eq(1).addClass('active');
-					$('#transaction-popup > .c-block > .d-flex-col ').eq(1).css('display', 'flex');
-				} */
 	});
 
 	$('#transaction-popup .popup-tabs__item').click(function () {
