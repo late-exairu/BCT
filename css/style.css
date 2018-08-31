@@ -1632,6 +1632,9 @@ h6 {
     align-items: center;
     transition: all .1s;
     color: var(--clr-textD); }
+    .exch-dropdown__current span, .exch-dropdown__item span {
+      color: var(--clr-textLL);
+      text-decoration: underline; }
   .exch-dropdown__hangle {
     position: absolute;
     right: 0;

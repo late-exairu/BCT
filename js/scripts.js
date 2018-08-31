@@ -53,6 +53,36 @@ $(function () {
 		clearTimeout(exchDroprownCountdown);
 	});
 
+	$('.main-cols__right-top .exch-dropdown .exch-dropdown__current').click(function () {
+		$(this).addClass('hidden');
+		$(this).parent().find('.exch-search').removeClass('hidden').find('input').focus();
+	});
+
+	$('.exch-search__input').keyup(function name() {
+		var searchString = $(this).val().toUpperCase();
+		$(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__item').each(function name(index, item) {
+			// show all
+			$(item).removeClass('hidden');
+			// remove old span tags
+			$(item).find('.exch-dropdown__title').text($(item).find('.exch-dropdown__title').text().replace(/<[^>]+>/g, ''));
+			if (searchString.trim() != '') {
+				// if item not contain searchString
+				if ($(item).find('.exch-dropdown__title').text().toUpperCase().indexOf(searchString) == -1) {
+					$(item).addClass('hidden');
+				} 
+				// if contain			
+				else {
+					var searchStringGlobal = new RegExp(searchString, "g");
+					// add span tags for highlight
+					var newTextValue = $(item).find('.exch-dropdown__title').text().toUpperCase().replace(searchStringGlobal, '<span>' + searchString + '</span>')
+					$(item).find('.exch-dropdown__title').html(newTextValue);
+				}
+			}
+
+		});
+
+	});
+
 	/*---------------------------------------------------*/
 
 	$('input[placeholder], textarea[placeholder]').placeholder();
@@ -72,11 +102,14 @@ $(function () {
 		currDropdown.find('.exch-dropdown__item').removeClass('current');
 		$(this).addClass('current');
 		$(currDropdown).find('.exch-dropdown__current > svg, .exch-dropdown__current > p').remove();
-		$(newCurr).insertBefore($(currDropdown).find('.exch-dropdown__hangle'));
+		$(newCurr).insertBefore($(currDropdown).find('.exch-dropdown__hangle').eq(0));
 		var firstColor = $('.exch-dropdown__current .exch-dropdown__icon').eq(0).css('fill');
 		var secondColor = $('.exch-dropdown__current .exch-dropdown__icon').eq(1).css('fill');
 		$(".exch-head").get(0).style.setProperty("--color-one", firstColor);
 		$(".exch-head").get(0).style.setProperty("--color-two", secondColor);
+
+		$(this).closest('.exch-dropdown').find('.exch-dropdown__current').removeClass('hidden');
+		$(this).closest('.exch-dropdown').find('.exch-search').addClass('hidden');
 
 		// first currency
 		if (telegramGroupName) {
@@ -93,6 +126,9 @@ $(function () {
 			$('.exch-form__get .exch-form__coin').remove();
 			$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 		}
+
+		$(this).closest('.exch-dropdown').removeClass('open');
+
 
 	});
 
@@ -652,7 +688,7 @@ $(function () {
 								"display": "block",
 								"position": "absolute"
 							})
-							.css("display", "block");						
+							.css("display", "block");
 					},
 					beforeShow: function () {
 						$('.fancybox-container').css("display", "none");
@@ -729,7 +765,7 @@ $(function () {
 									"display": "block",
 									"position": "absolute"
 								})
-								.css("display", "block");						
+								.css("display", "block");
 						},
 						beforeShow: function () {
 							$('.fancybox-container').css("display", "none");
@@ -799,7 +835,7 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('button[transaction-fancybox]').click(function () {
-		$('#transaction-popup > .c-block > .d-flex-col ').css('display','none');
+		$('#transaction-popup > .c-block > .d-flex-col ').css('display', 'none');
 		// receive button
 		if ($(this).text().indexOf('Receive') != -1) {
 			$('#transaction-popup .popup-tabs__item').removeClass('active');
@@ -881,10 +917,10 @@ $(function () {
 		theme: 'bct',
 		popperOptions: {
 			modifiers: {
-			  preventOverflow:{
-				enabled: false
+				preventOverflow: {
+					enabled: false
+				}
 			}
-		  }
 		}
 	})
 
@@ -932,8 +968,10 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* Scroll down event for left toolbar */
 	/*---------------------------------------------------*/
-	$(".toolbar__scrolldown__btn").on("click", ".arrow__btn", function() {
+	$(".toolbar__scrolldown__btn").on("click", ".arrow__btn", function () {
 		var scrollbarLeft = $('.toolbar__scroll.scrollbar-left');
-		scrollbarLeft.animate({ scrollTop: scrollbarLeft.height() }, 1000);
+		scrollbarLeft.animate({
+			scrollTop: scrollbarLeft.height()
+		}, 1000);
 	});
 });
