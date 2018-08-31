@@ -1,11 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+<svg xmlns="http://www.w3.org/2000/svg" width="14.938" height="1.719" viewBox="0 0 14.938 1.719">
   <defs>
     <style>
       .cls-1 {
-        fill: #2e2e2e;
         fill-rule: evenodd;
       }
     </style>
   </defs>
-  <path id="chart-minus" class="cls-1" d="M219.5,1022.01A10.51,10.51,0,1,1,230,1011.5,10.514,10.514,0,0,1,219.5,1022.01Zm0-19.98a9.47,9.47,0,1,0,9.5,9.47A9.5,9.5,0,0,0,219.5,1002.03Zm7.273,9.99H212.227v-1.04h14.546v1.04Z" transform="translate(-209 -1001)"/>
+  <path class="cls-1" d="M943.552,596.8H930.144a0.862,0.862,0,0,1,0-1.714h13.408A0.862,0.862,0,0,1,943.552,596.8Z" transform="translate(-929.375 -595.094)"/>
 </svg>
