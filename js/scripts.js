@@ -134,7 +134,7 @@ $(function () {
 	});
 
 	$(".toolbar__scrolldown__btn").on("click", ".arrow__btn", function() {		
-		scrollbarLeft.animate({ scrollTop: scrollbarLeft.height() }, "slow");
+		scrollbarLeft.animate({ scrollTop: scrollbarLeft.prop("scrollHeight") - scrollbarLeft.outerHeight() }, "slow");
 	});
 
 	/*---------------------------------------------------*/
