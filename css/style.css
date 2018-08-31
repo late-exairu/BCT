@@ -632,7 +632,7 @@ h6 {
   position: relative;
   height: 28px;
   font-weight: 400;
-  /*max-width: 266px;*/ }
+  max-width: 220px; }
   .basic-select__select {
     font-size: 13px;
     -ms-appearance: none;
@@ -6417,7 +6417,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 .best-exch-popup {
   width: 100%;
   min-width: 320px;
-  max-width: 374px; }
+  max-width: 574px; }
 
 .exch-popup {
   width: 100%;
@@ -6709,6 +6709,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
         min-width: 42px; }
       .graph-top__icon {
         --icon-scale: 1; } }
+
+.proggress-bar {
+  width: 100%; }
+  .proggress-bar__perc {
+    height: 6px;
+    background: var(--clr-accent); }
 
 /* =================================================================== */
 /* Globals
