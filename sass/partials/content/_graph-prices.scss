@@ -166,11 +166,19 @@
 				}
 			}			
 		}
+
+		.scroll-down-icon {
+			fill: var(--clr-icon-arrow);
+			transition: all 0.1s;
+			--icon-scale: 0.8;
+			width: calc(9px * var(--icon-scale)); 
+			height: calc(9px * var(--icon-scale));
+		}		
 	}
 
 	&__scrollup__btn{
 		.arrow__btn {
-			.scroll-down {
+			.scroll-down-icon {
 				transform: rotate(180deg);
 			}
 		}
