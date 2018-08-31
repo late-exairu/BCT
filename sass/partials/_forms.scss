@@ -589,11 +589,19 @@
 		}
 	}
 
+	&__qr-code-title{
+		font-size: 16px;
+		font-weight: 700;
+		text-align: center;
+		margin: 0 0 10px;
+		padding: 0;
+	}
+
 	&__qr-code-wrap{
 		padding: 5px;
 		width: 140px;
 		height: 140px;
-		margin: 0 auto;
+		margin: 0 auto 10px;
 		background: #fff;
 		border-radius: var(--border-radius);
 
