@@ -99,9 +99,23 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* js-scrollbar-outer */
 	/*---------------------------------------------------*/
+	var scrollbarLeft = $('.toolbar__scroll.scrollbar-left');
 
 	$('.scrollbar-right').scrollbar();
-	$('.scrollbar-left').scrollbar();
+	$('.left-bar__scroll.scrollbar-left').scrollbar();
+	scrollbarLeft.scrollbar({		
+		"onScroll": function(y, x){			
+			if(y.scroll == y.maxScroll){				
+				$('.toolbar__scrollup__btn').show();
+				$('.toolbar__scrolldown__btn').hide();
+			}
+			else {
+				$('.toolbar__scrollup__btn').hide();
+				$('.toolbar__scrolldown__btn').show();
+			}
+		}
+		
+	});
 	$('.scrollbar-arrows').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",
@@ -110,6 +124,29 @@ $(function () {
 
 	$('#user-btn').on('click', function () {
 		$('body').toggleClass('menubar-in');
+	});
+
+	/*---------------------------------------------------*/
+	/* Scroll up/down event for left toolbar */
+	/*---------------------------------------------------*/		
+	$(".toolbar__scrollup__btn").on("click", ".arrow__btn", function() {				
+		scrollbarLeft.animate({ scrollTop: 0 }, "slow");
+	});
+
+	$(".toolbar__scrolldown__btn").on("click", ".arrow__btn", function() {		
+		scrollbarLeft.animate({ scrollTop: scrollbarLeft.prop("scrollHeight") - scrollbarLeft.outerHeight() }, "slow");
+	});
+
+	/*---------------------------------------------------*/
+	/* Scroll up/down event for graph prices */
+	/*---------------------------------------------------*/	
+	var graphPricesScrollbar = 	$('.graph-prices__scroll.scrollbar-arrows');
+	$(".graph-prices__scrollup__btn").on("click", ".arrow__btn", function() {				
+		graphPricesScrollbar.animate({ scrollTop: 0 }, "slow");
+	});
+
+	$(".graph-prices__scrolldown__btn").on("click", ".arrow__btn", function() {		
+		graphPricesScrollbar.animate({ scrollTop: $(".graph-prices__scroll .graph-prices__list").height() - graphPricesScrollbar.outerHeight() }, "slow");
 	});
 
 	/*---------------------------------------------------*/

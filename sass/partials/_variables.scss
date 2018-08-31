@@ -41,9 +41,11 @@ $osansC:			'open_sans_condensed', sans-serif;
 	--clr-back-new:		#E8E8E8;	/*background color basic*/
 	--clr-backA:		#e6f1f8;	/*background color accented*/
 	--clr-block:		#ffffff;	/*basic block color basic*/
+	--clr-back-arrow:	#e7e7e7;	/*scroll arrow background color*/
 
 	--clr-text-tooltip: #2C589C;	/*basic tooltip text color*/
 	--clr-back-tooltip: #F9F9F9;	/*basic tooltip  background color*/
+	--clr-icon-arrow:	#f9f9f9;	/*basic arrow down fill color*/
 }
 
 .dark-theme{
@@ -70,8 +72,10 @@ $osansC:			'open_sans_condensed', sans-serif;
 	--clr-back-new:		#131A23;	/*background color basic*/
 	--clr-backA:		#213040;	/*background color accented*/
 	--clr-block:		#18202d;	/*basic block color basic*/
+	--clr-back-arrow:	#10151d;	/*scroll arrow background color*/
 
 	--clr-text-tooltip: #F9F9F9;	/*tooltip text color dark*/
 	--clr-back-tooltip: #2B569A;	/*tooltip  background color dark*/
+	--clr-icon-arrow:	#9BA6B2;	/*arrow down fill color*/
 
 }

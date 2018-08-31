@@ -49,10 +49,14 @@
   /*background color accented*/
   --clr-block:		#ffffff;
   /*basic block color basic*/
+  --clr-back-arrow:	#e7e7e7;
+  /*scroll arrow background color*/
   --clr-text-tooltip: #2C589C;
   /*basic tooltip text color*/
   --clr-back-tooltip: #F9F9F9;
-  /*basic tooltip  background color*/ }
+  /*basic tooltip  background color*/
+  --clr-icon-arrow:	#f9f9f9;
+  /*basic arrow down fill color*/ }
 
 .dark-theme {
   --clr-text:			#9ba6b2;
@@ -95,10 +99,14 @@
   /*background color accented*/
   --clr-block:		#18202d;
   /*basic block color basic*/
+  --clr-back-arrow:	#10151d;
+  /*scroll arrow background color*/
   --clr-text-tooltip: #F9F9F9;
   /*tooltip text color dark*/
   --clr-back-tooltip: #2B569A;
-  /*tooltip  background color dark*/ }
+  /*tooltip  background color dark*/
+  --clr-icon-arrow:	#9BA6B2;
+  /*arrow down fill color*/ }
 
 /**
  * The following variable and function originate from the sass-mq library.
@@ -632,7 +640,7 @@ h6 {
   position: relative;
   height: 28px;
   font-weight: 400;
-  /*max-width: 266px;*/ }
+  max-width: 220px; }
   .basic-select__select {
     font-size: 13px;
     -ms-appearance: none;
@@ -2160,6 +2168,38 @@ h6 {
   .graph-prices__scroll {
     width: 100px;
     margin: 0; }
+  .graph-prices__scrollup__btn, .graph-prices__scrolldown__btn {
+    position: relative;
+    height: 12px;
+    background: var(--clr-back-arrow);
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .graph-prices__scrollup__btn:hover, .graph-prices__scrolldown__btn:hover {
+      background: var(--clr-backL); }
+    .graph-prices__scrollup__btn .arrow__btn, .graph-prices__scrolldown__btn .arrow__btn {
+      height: 16px;
+      width: 32px;
+      margin: 0 -1px 0 -1px;
+      display: flex;
+      align-items: center;
+      flex: 0 auto;
+      background: transparent;
+      justify-content: center;
+      padding: 0;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all .1s; }
+      .graph-prices__scrollup__btn .arrow__btn:hover .arrow-icon, .graph-prices__scrolldown__btn .arrow__btn:hover .arrow-icon {
+        fill: var(--clr-textD); }
+    .graph-prices__scrollup__btn .scroll-down-icon, .graph-prices__scrolldown__btn .scroll-down-icon {
+      fill: var(--clr-icon-arrow);
+      transition: all 0.1s;
+      --icon-scale: 0.8;
+      width: calc(9px * var(--icon-scale));
+      height: calc(9px * var(--icon-scale)); }
+  .graph-prices__scrollup__btn .arrow__btn .scroll-down-icon {
+    transform: rotate(180deg); }
   .graph-prices__list {
     padding: 0; }
   .graph-prices__item {
@@ -2421,6 +2461,7 @@ Blocks from left bar
 
  */
 .dark-theme .left-bar {
+  --clr-important: #24425B;
   --clr-back: #0C1017; }
 
 .left-bar {
@@ -2532,11 +2573,13 @@ Blocks from left bar
       height: 35px;
       flex: 0 0 35px; }
   .nav-bar__title {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--clr-important);
     text-align: center;
     margin: 0 auto;
-    transition: all .1s; }
+    transition: all .1s;
+    font-family: "open_sans_condensed", sans-serif;
+    font-weight: 800; }
 
 .user-bar {
   margin: auto 0 10px; }
@@ -3230,7 +3273,6 @@ body.menubar-in #user-btn:before {
   bottom: 10px;
   display: block;
   padding: 0;
-  padding-bottom: 12px;
   width: 32px;
   max-width: 100%;
   max-height: 100%;
@@ -3310,35 +3352,45 @@ body.menubar-in #user-btn:before {
     height: 1px;
     background: var(--clr-separator);
     margin: 0; }
-  .toolbar__scrolldown__btn {
+  .toolbar__scrollup__btn, .toolbar__scrolldown__btn {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     height: 12px;
     background: var(--clr-separator);
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
     display: flex;
     justify-content: center;
-    align-items: center; }
-    .toolbar__scrolldown__btn:hover {
+    align-items: center;
+    z-index: 8; }
+    .toolbar__scrollup__btn:hover, .toolbar__scrolldown__btn:hover {
       background: var(--clr-backL); }
-    .toolbar__scrolldown__btn .arrow__btn {
-      height: 16px;
-      width: 32px;
-      margin: 0 -1px 0 -1px;
-      display: flex;
-      align-items: center;
-      flex: 0 auto;
-      background: transparent;
-      justify-content: center;
-      padding: 0;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: all .1s; }
-      .toolbar__scrolldown__btn .arrow__btn:hover .arrow-icon {
-        fill: var(--clr-textD); }
+  .toolbar__scrollup__btn .arrow__btn > .scroll-down {
+    transform: rotate(180deg); }
+  .toolbar__scrolldown__btn {
+    top: auto;
+    bottom: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius); }
+  .toolbar .arrow__btn {
+    height: 16px;
+    width: 32px;
+    margin: 0 -1px 0 -1px;
+    display: flex;
+    align-items: center;
+    flex: 0 auto;
+    background: transparent;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all .1s; }
+    .toolbar .arrow__btn:hover .arrow-icon {
+      fill: var(--clr-textD); }
   @media only screen and (min-width: 1920px) {
     .toolbar {
       width: 42px; }
@@ -5395,6 +5447,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   font-weight: 300;
   font-style: normal; }
 
+@font-face {
+  font-family: 'open_sans_condensed';
+  src: url("../fonts/opensanscondensed-bold-webfont.woff") format("woff");
+  font-weight: 800;
+  font-style: normal; }
+
 /* =================================================================== */
 /* Icons
 /* =================================================================== */
@@ -6417,7 +6475,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 .best-exch-popup {
   width: 100%;
   min-width: 320px;
-  max-width: 374px; }
+  max-width: 574px; }
 
 .exch-popup {
   width: 100%;
@@ -6709,6 +6767,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
         min-width: 42px; }
       .graph-top__icon {
         --icon-scale: 1; } }
+
+.proggress-bar {
+  width: 100%; }
+  .proggress-bar__perc {
+    height: 6px;
+    background: var(--clr-accent); }
 
 /* =================================================================== */
 /* Globals

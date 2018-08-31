@@ -132,6 +132,57 @@
 		width: 100px;
 		margin: 0;
 	}
+
+	&__scrollup__btn,
+	&__scrolldown__btn{
+		position: relative;
+		height: 12px;
+		background: var(--clr-back-arrow);		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			background: var(--clr-backL);
+		}
+
+		.arrow__btn {
+			height: 16px;
+			width: 32px;
+			margin: 0 -1px 0 -1px;
+			display: flex;
+			align-items: center;
+			flex: 0 auto;
+			background: transparent;
+			justify-content: center;
+			padding: 0;
+			border: 1px solid transparent;
+			cursor: pointer;
+			transition: all .1s;			
+
+			&:hover{
+				.arrow-icon{
+					fill: var(--clr-textD);
+				}
+			}			
+		}
+
+		.scroll-down-icon {
+			fill: var(--clr-icon-arrow);
+			transition: all 0.1s;
+			--icon-scale: 0.8;
+			width: calc(9px * var(--icon-scale)); 
+			height: calc(9px * var(--icon-scale));
+		}		
+	}
+
+	&__scrollup__btn{
+		.arrow__btn {
+			.scroll-down-icon {
+				transform: rotate(180deg);
+			}
+		}
+	}
 	
 	&__list{
 		padding: 0;

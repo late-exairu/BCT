@@ -2004,6 +2004,14 @@
 
 						<div id="mainChart"></div>
 						<div class="toolbar">
+							<div class="toolbar__scrollup__btn">
+								<button class="arrow__btn" data="tippy" title="Scroll Up">
+									<svg class="toolbar-icon scroll-down" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#scroll-down"></use>
+									</svg>
+								</button>
+							</div>
+
 							<div class="toolbar__scroll scroll-y scrollbar-left">
 								<div class="toolbar__item">
 									<button class="toolbar__btn" data="tippy" title="Reload">
@@ -2334,6 +2342,14 @@
 					<div class="graph-prices d-flex-col" id="js-graph-prices">
 						<div class="graph-prices__label">Lowest<br/> Price</div>
 
+						<div class="graph-prices__scrollup__btn" data="tippy" title="Scroll Up">
+							<button class="arrow__btn">
+								<svg class="scroll-down-icon" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#scroll-down"></use>
+								</svg>
+							</button>
+						</div>
+
 						<div class="graph-prices__scroll scroll-y scrollbar-arrows">
 							<div class="graph-prices__list">
 								<div class="graph-prices__item active" data-id="4">
@@ -2548,6 +2564,14 @@
 							</div>
 							<!-- graph-prices__list END -->
 						</div>
+
+						<div class="graph-prices__scrolldown__btn" data="tippy" title="Scroll Down">
+								<button class="arrow__btn">
+									<svg class="scroll-down-icon" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#scroll-down"></use>
+									</svg>
+								</button>
+							</div>
 						<!-- graph-prices__scroll END -->
 					</div><!-- graph-prices END -->
 				</div><!-- b-graph END -->
@@ -2999,8 +3023,8 @@
 										<!-- basic-table__row END -->
 
 										<div class="basic-table__row">
-											<div class="basic-table__col w-20">Just now</div>
-											<div class="basic-table__col w-17">Aug 14</div>
+											<div class="basic-table__col w-20">Aug 30</div>
+											<div class="basic-table__col w-17">BCT/USD</div>
 											<div class="basic-table__col w-12">Sell</div>
 											<div class="basic-table__col w-20">8,125.45 USD</div>
 											<div class="basic-table__col w-20">0.0412 BTC</div>
@@ -3009,7 +3033,7 @@
 										<!-- basic-table__row END -->
 										
 										<div class="basic-table__row">
-											<div class="basic-table__col w-20">Aug 3</div>
+											<div class="basic-table__col w-20">Aug 16</div>
 											<div class="basic-table__col w-17">BCT/USD</div>
 											<div class="basic-table__col w-12">Buy</div>
 											<div class="basic-table__col w-20">9,219.45 USD</div>
@@ -3302,49 +3326,74 @@
 		<div class="basic-table bordered four-rows d-flex-col h-100 flex-h-fix">
 			<div class="basic-table bordered four-rows flex-1-1 scroll-y scrollbar-right outer">
 				<div class="basic-table__row head">
-					<div class="basic-table__col w-50 centered">COMPLETED</div>
-					<div class="basic-table__col w-50 centered">PRICE PER COIN</div>
+					<div class="basic-table__col w-27">COMPLETED</div>
+					<div class="basic-table__col w-27">PRICE PER COIN</div>
+					<div class="basic-table__col w-45">RATIO</div>
 				</div><!-- basic-table__row END -->
 
 				<div class="basic-table__body h-100 scroll-y scrollbar-right outer">
 					<div class="basic-table__row">
-						<div class="basic-table__col w-50 centered">0.23BCT &nbsp;<b>on</b>&nbsp; Huobi</div>
-						<div class="basic-table__col w-50 centered">$7500.19</div>
+						<div class="basic-table__col w-27">0.23BCT on Huobi</div>
+						<div class="basic-table__col w-27">$7500.19</div>
+						<div class="basic-table__col w-45">
+							<div class="proggress-bar"><div class="proggress-bar__perc w-30"></div></div>
+						</div>
 					</div><!-- basic-table__row END -->
 					
 					<div class="basic-table__row">
-						<div class="basic-table__col w-50 centered">0.21BCT &nbsp;<b>on</b>&nbsp; Okex</div>
-						<div class="basic-table__col w-50 centered">$7504.86</div>
+						<div class="basic-table__col w-27">0.21BCT on Okex</div>
+						<div class="basic-table__col w-27">$7504.86</div>
+						<div class="basic-table__col w-45">
+							<div class="proggress-bar"><div class="proggress-bar__perc w-25"></div></div>
+						</div>
 					</div><!-- basic-table__row END -->
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-50 centered">0.18BCT &nbsp;<b>on</b>&nbsp; Bitrex</div>
-						<div class="basic-table__col w-50 centered">$7507.35</div>
+						<div class="basic-table__col w-27">0.18BCT on Bitrex</div>
+						<div class="basic-table__col w-27">$7507.35</div>
+						<div class="basic-table__col w-45">
+							<div class="proggress-bar"><div class="proggress-bar__perc w-50"></div></div>
+						</div>
 					</div><!-- basic-table__row END -->
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-50 centered">0.41BCT &nbsp;<b>on</b>&nbsp; KuCoin</div>
-						<div class="basic-table__col w-50 centered">$7516.75</div>
+						<div class="basic-table__col w-27">0.41BCT on KuCoin</div>
+						<div class="basic-table__col w-27">$7516.75</div>
+						<div class="basic-table__col w-45">
+							<div class="proggress-bar"><div class="proggress-bar__perc w-80"></div></div>
+						</div>
 					</div><!-- basic-table__row END -->
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-50 centered">0.37BCT &nbsp;<b>on</b>&nbsp; Binance</div>
-						<div class="basic-table__col w-50 centered">$7516.75</div>
+						<div class="basic-table__col w-27">0.37BCT on Binance</div>
+						<div class="basic-table__col w-27">$7516.75</div>
+						<div class="basic-table__col w-45">
+							<div class="proggress-bar"><div class="proggress-bar__perc w-70"></div></div>
+						</div>
 					</div><!-- basic-table__row END -->
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-50 centered">0.18BCT &nbsp;<b>on</b>&nbsp; BitBix</div>
-						<div class="basic-table__col w-50 centered">$7507.35</div>
+						<div class="basic-table__col w-27">0.18BCT on BitBix</div>
+						<div class="basic-table__col w-27">$7507.35</div>
+						<div class="basic-table__col w-45">
+							<div class="proggress-bar"><div class="proggress-bar__perc w-65"></div></div>
+						</div>
 					</div><!-- basic-table__row END -->
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-50 centered">0.41BCT &nbsp;<b>on</b>&nbsp; BitLab</div>
-						<div class="basic-table__col w-50 centered">$7516.75</div>
+						<div class="basic-table__col w-27">0.41BCT on BitLab</div>
+						<div class="basic-table__col w-27">$7516.75</div>
+						<div class="basic-table__col w-45">
+							<div class="proggress-bar"><div class="proggress-bar__perc w-60"></div></div>
+						</div>
 					</div><!-- basic-table__row END -->
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-50 centered">0.37BCT &nbsp;<b>on</b>&nbsp; Squirrel</div>
-						<div class="basic-table__col w-50 centered">$7516.75</div>
+						<div class="basic-table__col w-27">0.37BCT on Squirrel</div>
+						<div class="basic-table__col w-27">$7516.75</div>
+						<div class="basic-table__col w-45">
+							<div class="proggress-bar"><div class="proggress-bar__perc w-90"></div></div>
+						</div>
 					</div><!-- basic-table__row END -->
 				</div>
 			</div><!-- basic-table END -->
