@@ -734,13 +734,13 @@ $(function () {
 					},
 					beforeClose: function () {
 						//$('.exch-form').removeClass('progress');
-						//$('.exch-head').toggleClass('open');
+						// $('.exch-head').toggleClass('open');
 					}
 				}
 			});
 		}
 	});
-
+	
 	/*---------------------------------------------------*/
 	/* Chat Search toggle */
 	/*---------------------------------------------------*/
@@ -894,6 +894,38 @@ $(function () {
 
 	$('.js-fancybox-close').click(function () {
 		$.fancybox.close();
+	});
+
+	/*---------------------------------------------------*/
+	/* autentificator fancybox */
+	/*---------------------------------------------------*/
+	$('[autentificator-fancybox]').click(function (e) {
+		e.preventDefault();
+		// Open this fancybox force
+		$.fancybox.open({
+			src: '#autentificator-popup',
+			opts: {
+				afterShow: function (instance, current) {
+					var fancybox_body = $('.fancybox-container')[0];
+					$('.b-graph .c-block')[0].append(fancybox_body);
+					$('.b-graph .c-block .fancybox-container')
+						.css({
+							"width": "100%",
+							"height": "100%",
+							"display": "block",
+							"position": "absolute"
+						})
+						.css("display", "block");
+				},
+				beforeShow: function () {
+					$('.fancybox-container').css("display", "none");
+				},
+				beforeClose: function () {
+					//$('.exch-form').removeClass('progress');
+					//$('.exch-head').toggleClass('open');
+				}
+			}
+		});		
 	});
 
 
