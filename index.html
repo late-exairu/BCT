@@ -453,62 +453,106 @@
 			<div class="main-cols__right-top">
 				<div class="exch-head m-bottom">
 					<div class="exch-head__body">
-						<div class="exch-head__get">
-							<div class="exch-dropdown js-select">
-								<div class="exch-dropdown__current">
-									<svg class="exch-dropdown__icon clr-bitcoin" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-									</svg><p class="exch-dropdown__title">BTC - Bitcoin</p>
-						
-									<div class="exch-dropdown__hangle">
-										<svg class="sprite-icon" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+						<div class="exch-head__send">
+							<div class="exch-dropdown">
+								<div class="exch-dropdown__border">
+									<div class="exch-dropdown__current">
+										<svg class="exch-dropdown__icon clr-bitcoin" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
+										</svg><p class="exch-dropdown__title">BTC - Bitcoin</p>
+																
+										<div class="exch-dropdown__hangle">
+											<svg class="sprite-icon" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+											</svg>
+										</div>
+									</div> 
+
+									<div class="exch-search hidden">
+										<svg class="exch-search__icon" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#search"></use>
 										</svg>
+
+										<input class="exch-search__input" type="text" name="" placeholder="Type to search...">
+																
+										<div class="exch-dropdown__hangle">
+											<svg class="sprite-icon" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+											</svg>
+										</div>
 									</div>
-								</div>
+								</div><!-- exch-dropdown__border END -->
 						
 								<div class="exch-dropdown__list">
 									<div class="exch-dropdown__scroll scroll-y scrollbar-right">
+
+										<div class="exch-dropdown__list-title">Recent</div>
+
 										<div class="exch-dropdown__item current" data-name="BTC - Bitcoin" data-telegram="BTC Bitcoin Room" data-course="8199.75">
 											<svg class="exch-dropdown__icon btc" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-											</svg><p class="exch-dropdown__title">Bitcoin</p>
+											</svg><p class="exch-dropdown__title">BTC - Bitcoin</p>
 										</div>
 							
 										<div class="exch-dropdown__item" data-name="ETH - Ethereum" data-telegram="ETH Ethereum Room" data-course="272.44">
 											<svg class="exch-dropdown__icon eth" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ethereum"></use>
-											</svg><p class="exch-dropdown__title">Ethereum</p>
+											</svg><p class="exch-dropdown__title">ETH - Ethereum</p>
 										</div>
 
 										<div class="exch-dropdown__item" data-name="USD - Dollar" data-telegram="USD Dollar Room" data-course="1">
 											<svg class="exch-dropdown__icon usd" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-dollar"></use>
-											</svg>
-											<p class="exch-dropdown__title">US Dollar</p>
+											</svg><p class="exch-dropdown__title">USD - US Dollar</p>
 										</div>
+
+										<div class="exch-dropdown__list-title">All Currencies</div>
 							
 										<div class="exch-dropdown__item" data-name="BCC - Bitcoincash" data-telegram="BCC Bitcoincash Room" data-course="522.30">
 											<svg class="exch-dropdown__icon bcc" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
-											</svg><p class="exch-dropdown__title">Bitcoincash</p>
+											</svg><p class="exch-dropdown__title">BCC - Bitcoincash</p>
 										</div>
 							
 										<div class="exch-dropdown__item" data-name="LTC - Litecoin" data-telegram="LTC Litecoin Room" data-course="55.56">
 											<svg class="exch-dropdown__icon ltc" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
-											</svg><p class="exch-dropdown__title">Litecoin</p>
+											</svg><p class="exch-dropdown__title">LTC - Litecoin</p>
 										</div>
 							
 										<div class="exch-dropdown__item" data-name="RPL - Ripple" data-telegram="RPL Ripple Room" data-course="0.32">
 											<svg class="exch-dropdown__icon rpl" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
-											</svg><p class="exch-dropdown__title">Ripple</p>
+											</svg><p class="exch-dropdown__title">RPL - Ripple</p>
+										</div>
+							
+										<div class="exch-dropdown__item" data-name="XMR - Monero" data-telegram="XMR Monero Room" data-course="100.05 ">
+											<svg class="exch-dropdown__icon xmr" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-monero"></use>
+											</svg><p class="exch-dropdown__title">XMR - Monero</p>
+										</div>
+							
+										<div class="exch-dropdown__item" data-name="MKR - Maker" data-telegram="MKR Maker Room" data-course="441.20 ">
+											<svg class="exch-dropdown__icon mkr" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-maker"></use>
+											</svg><p class="exch-dropdown__title">MKR - Maker</p>
+										</div>
+							
+										<div class="exch-dropdown__item" data-name="DASH - Dash" data-telegram="DASH Dash Room" data-course="180.77">
+											<svg class="exch-dropdown__icon dash" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-dash"></use>
+											</svg><p class="exch-dropdown__title">DASH - Dash</p>
+										</div>
+							
+										<div class="exch-dropdown__item" data-name="XRP - XRP" data-telegram="XRP XRP Room" data-course="0.33">
+											<svg class="exch-dropdown__icon xrp" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-xrp"></use>
+											</svg><p class="exch-dropdown__title">XRP - XRP</p>
 										</div>
 									</div>
 								</div><!-- exch-dropdown__list END -->
 							</div><!-- exch-dropdown END -->
-						</div><!-- exch-head__get END -->
+						</div><!-- exch-head__send END -->
 										
 						<button class="exch-head__switch">
 							<svg class="exch-head__switch-right" role="img" aria-hidden="true">
@@ -520,63 +564,106 @@
 							</svg>
 						</button><!-- exch-head__switch -->
 										
-						<div class="exch-head__send">
-							<div class="exch-dropdown js-select">
-								<div class="exch-dropdown__current send">
-									<svg class="exch-dropdown__icon clr-dollar" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-dollar"></use>
-									</svg>
-									<p class="exch-dropdown__title">USD - Dollar</p>
-						
-									<div class="exch-dropdown__hangle">
-										<svg class="sprite-icon" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
-										</svg>
+						<div class="exch-head__get">
+							<div class="exch-dropdown">
+								<div class="exch-dropdown__border get">
+									<div class="exch-dropdown__current">
+										<svg class="exch-dropdown__icon clr-dollar" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-dollar"></use>
+										</svg><p class="exch-dropdown__title">USD - US Dollar</p>
+																
+										<div class="exch-dropdown__hangle">
+											<svg class="sprite-icon" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+											</svg>
+										</div>
 									</div>
-								</div>
+
+									<div class="exch-search hidden">
+										<svg class="exch-search__icon" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#search"></use>
+										</svg>
+
+										<input class="exch-search__input" type="text" name="" placeholder="Type to search...">
+																
+										<div class="exch-dropdown__hangle">
+											<svg class="sprite-icon" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+											</svg>
+										</div>
+									</div>
+								</div><!-- exch-dropdown__border END -->
 						
 								<div class="exch-dropdown__list">
 									<div class="exch-dropdown__scroll scroll-y scrollbar-right">
-										<div class="exch-dropdown__item" data-name="BTC - Bitcoin">
+
+										<div class="exch-dropdown__list-title">Recent</div>
+
+										<div class="exch-dropdown__item" data-name="BTC - Bitcoin" data-telegram="BTC Bitcoin Room" data-course="8199.75">
 											<svg class="exch-dropdown__icon btc" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
-											</svg><p class="exch-dropdown__title">Bitcoin</p>
+											</svg><p class="exch-dropdown__title">BTC - Bitcoin</p>
 										</div>
 							
-										<div class="exch-dropdown__item" data-name="ETH - Ethereum">
+										<div class="exch-dropdown__item" data-name="ETH - Ethereum" data-telegram="ETH Ethereum Room" data-course="272.44">
 											<svg class="exch-dropdown__icon eth" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ethereum"></use>
-											</svg><p class="exch-dropdown__title">Ethereum</p>
+											</svg><p class="exch-dropdown__title">ETH - Ethereum</p>
 										</div>
 
-										<div class="exch-dropdown__item current" data-name="USD - Dollar">
+										<div class="exch-dropdown__item current" data-name="USD - Dollar" data-telegram="USD Dollar Room" data-course="1">
 											<svg class="exch-dropdown__icon usd" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-dollar"></use>
-											</svg>
-											<p class="exch-dropdown__title">US Dollar</p>
+											</svg><p class="exch-dropdown__title">USD - US Dollar</p>
 										</div>
+
+										<div class="exch-dropdown__list-title">All Currencies</div>
 							
-										<div class="exch-dropdown__item" data-name="BCC - Bitcoincash">
+										<div class="exch-dropdown__item" data-name="BCC - Bitcoincash" data-telegram="BCC Bitcoincash Room" data-course="522.30">
 											<svg class="exch-dropdown__icon bcc" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoincash"></use>
-											</svg><p class="exch-dropdown__title">Bitcoincash</p>
+											</svg><p class="exch-dropdown__title">BCC - Bitcoincash</p>
 										</div>
 							
-										<div class="exch-dropdown__item" data-name="LTC - Litecoin">
+										<div class="exch-dropdown__item" data-name="LTC - Litecoin" data-telegram="LTC Litecoin Room" data-course="55.56">
 											<svg class="exch-dropdown__icon ltc" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-litecoin"></use>
-											</svg><p class="exch-dropdown__title">Litecoin</p>
+											</svg><p class="exch-dropdown__title">LTC - Litecoin</p>
 										</div>
 							
-										<div class="exch-dropdown__item" data-name="RPL - Ripple">
+										<div class="exch-dropdown__item" data-name="RPL - Ripple" data-telegram="RPL Ripple Room" data-course="0.32">
 											<svg class="exch-dropdown__icon rpl" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ripple"></use>
-											</svg><p class="exch-dropdown__title">Ripple</p>
+											</svg><p class="exch-dropdown__title">RPL - Ripple</p>
+										</div>
+							
+										<div class="exch-dropdown__item" data-name="XMR - Monero" data-telegram="XMR Monero Room" data-course="100.05 ">
+											<svg class="exch-dropdown__icon xmr" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-monero"></use>
+											</svg><p class="exch-dropdown__title">XMR - Monero</p>
+										</div>
+							
+										<div class="exch-dropdown__item" data-name="MKR - Maker" data-telegram="MKR Maker Room" data-course="441.20 ">
+											<svg class="exch-dropdown__icon mkr" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-maker"></use>
+											</svg><p class="exch-dropdown__title">MKR - Maker</p>
+										</div>
+							
+										<div class="exch-dropdown__item" data-name="DASH - Dash" data-telegram="DASH Dash Room" data-course="180.77">
+											<svg class="exch-dropdown__icon dash" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-dash"></use>
+											</svg><p class="exch-dropdown__title">DASH - Dash</p>
+										</div>
+							
+										<div class="exch-dropdown__item" data-name="XRP - XRP" data-telegram="XRP XRP Room" data-course="0.33">
+											<svg class="exch-dropdown__icon xrp" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-xrp"></use>
+											</svg><p class="exch-dropdown__title">XRP - XRP</p>
 										</div>
 									</div>
 								</div><!-- exch-dropdown__list END -->
 							</div><!-- exch-dropdown END -->
-						</div><!-- exch-head__send END -->
+						</div><!-- exch-head__get END -->
 						
 						<button class="exch-head__btn tippy-convert">
 							CONVERT

@@ -116,7 +116,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 148.1875em 138.6875em; }
+  background-size: 149.375em 139.875em; }
 
 /* =================================================================== */
 /* Functions
@@ -1590,19 +1590,19 @@ h6 {
       visibility: visible; }
     .exch-dropdown.open .exch-dropdown__hangle .sprite-icon {
       transform: rotate(180deg); }
-    .exch-dropdown.open .exch-dropdown__current:before {
+    .exch-dropdown.open .exch-dropdown__border:before {
       border-radius: 4px 0 0 0; }
-    .exch-dropdown.open .exch-dropdown__current:after {
+    .exch-dropdown.open .exch-dropdown__border:after {
       border-radius: 5px 0 0 0; }
-    .exch-dropdown.open .exch-dropdown__current.send:before {
+    .exch-dropdown.open .exch-dropdown__border.send:before {
       border-radius: 0 4px 0 0; }
-    .exch-dropdown.open .exch-dropdown__current.send:after {
+    .exch-dropdown.open .exch-dropdown__border.send:after {
       border-radius: 0 5px 0 0; }
-  .exch-dropdown__current {
+  .exch-dropdown__border {
     position: relative;
     /*border-radius: 4px;*/
     overflow: hidden; }
-    .exch-dropdown__current:before {
+    .exch-dropdown__border:before {
       content: '';
       position: absolute;
       left: 1px;
@@ -1613,7 +1613,7 @@ h6 {
       z-index: -1;
       border-radius: 4px 0 0 4px;
       background: var(--clr-block); }
-    .exch-dropdown__current:after {
+    .exch-dropdown__border:after {
       content: '';
       position: absolute;
       left: 0;
@@ -1624,12 +1624,16 @@ h6 {
       border-radius: 5px 0 0 5px;
       width: calc(200% + 60px);
       background: linear-gradient(to right, var(--color-one) 0%, var(--color-two) 100%); }
-    .exch-dropdown__current.send:before {
+    .exch-dropdown__border.get:before {
       border-radius: 0 4px 4px 0; }
-    .exch-dropdown__current.send:after {
+    .exch-dropdown__border.get:after {
       left: auto;
       right: 0;
       border-radius: 0 5px 5px 0; }
+  .exch-dropdown__border {
+    position: relative;
+    width: 100%;
+    height: 100%; }
   .exch-dropdown__current, .exch-dropdown__item {
     width: 100%;
     height: 100%;
@@ -1638,6 +1642,9 @@ h6 {
     align-items: center;
     transition: all .1s;
     color: var(--clr-textD); }
+    .exch-dropdown__current span, .exch-dropdown__item span {
+      color: var(--clr-textLL);
+      text-decoration: underline; }
   .exch-dropdown__hangle {
     position: absolute;
     right: 0;
@@ -1652,13 +1659,23 @@ h6 {
       height: 7px;
       fill: var(--clr-accentD);
       transition: all 0.2s; }
+  .exch-dropdown__list-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    font-size: 18px;
+    font-weight: bold;
+    background: var(--clr-back);
+    color: var(--clr-textD);
+    border-top: 1px solid var(--clr-separator); }
   .exch-dropdown__list {
     position: absolute;
-    height: 146px;
+    height: 400px;
     z-index: 5;
     left: 0;
     right: 0;
-    top: calc(100% - 0px);
+    top: calc(100% + 10px);
     padding: 0;
     margin: 0;
     list-style: none;
@@ -1670,10 +1687,18 @@ h6 {
     /*border-top: 1px solid var(--clr-separator);*/ }
     .exch-dropdown__list .exch-dropdown__title {
       font-size: 18px;
-      font-weight: 600; }
+      font-weight: 700; }
+    .exch-dropdown__list:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -12px;
+      right: 0;
+      height: 12px; }
   .exch-dropdown__item {
-    height: 36px;
-    cursor: pointer; }
+    height: 45px;
+    cursor: pointer;
+    border-top: 1px solid var(--clr-separator); }
     .exch-dropdown__item:hover {
       background: var(--clr-backLL); }
     .exch-dropdown__item.current {
@@ -1685,7 +1710,27 @@ h6 {
     height: 22px;
     margin: 0 8px 0 0;
     flex: 0 0 22px;
-    fill: var(--clr-textL); }
+    /*fill: var(--clr-textL);*/ }
+    .exch-dropdown__icon.btc {
+      fill: #f79330; }
+    .exch-dropdown__icon.eth {
+      fill: #707cb9; }
+    .exch-dropdown__icon.bcc {
+      fill: #83c55f; }
+    .exch-dropdown__icon.ltc {
+      fill: #b1b0b0; }
+    .exch-dropdown__icon.rpl {
+      fill: #438bca; }
+    .exch-dropdown__icon.usd {
+      fill: #d22c33; }
+    .exch-dropdown__icon.mkr {
+      fill: #1abc9c; }
+    .exch-dropdown__icon.xmr {
+      fill: #ff6600; }
+    .exch-dropdown__icon.dash {
+      fill: #008CE7; }
+    .exch-dropdown__icon.xrp {
+      fill: #23292F; }
   .exch-dropdown__title {
     padding: 0px 0 0;
     margin: 0;
@@ -1695,24 +1740,82 @@ h6 {
     letter-spacing: -0.03em;
     text-transform: uppercase; }
   .exch-dropdown .current .btc,
-  .exch-dropdown .exch-dropdown__current .btc {
+  .exch-dropdown .exch-dropdown__border .btc {
     fill: #f79330; }
   .exch-dropdown .current .eth,
-  .exch-dropdown .exch-dropdown__current .eth {
+  .exch-dropdown .exch-dropdown__border .eth {
     fill: #707cb9; }
   .exch-dropdown .current .bcc,
-  .exch-dropdown .exch-dropdown__current .bcc {
+  .exch-dropdown .exch-dropdown__border .bcc {
     fill: #83c55f; }
   .exch-dropdown .current .ltc,
-  .exch-dropdown .exch-dropdown__current .ltc {
+  .exch-dropdown .exch-dropdown__border .ltc {
     fill: #b1b0b0; }
   .exch-dropdown .current .rpl,
-  .exch-dropdown .exch-dropdown__current .rpl {
+  .exch-dropdown .exch-dropdown__border .rpl {
     fill: #438bca; }
   .exch-dropdown .current .usd,
-  .exch-dropdown .exch-dropdown__current .usd {
-    /*font-size: 16px; @include sprite(curr-dollar);*/
+  .exch-dropdown .exch-dropdown__border .usd {
     fill: #d22c33; }
+  .exch-dropdown .current .mkr,
+  .exch-dropdown .exch-dropdown__border .mkr {
+    fill: #1abc9c; }
+  .exch-dropdown .current .xmr,
+  .exch-dropdown .exch-dropdown__border .xmr {
+    fill: #ff6600; }
+  .exch-dropdown .current .dash,
+  .exch-dropdown .exch-dropdown__border .dash {
+    fill: #008CE7; }
+  .exch-dropdown .current .xrp,
+  .exch-dropdown .exch-dropdown__border .xrp {
+    fill: #23292F; }
+
+.exch-search {
+  display: flex;
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  bottom: 1px;
+  right: 1px; }
+  .exch-search__icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 19px;
+    height: 19px;
+    fill: var(--clr-text);
+    z-index: 1; }
+  .exch-search__input {
+    font-family: "open_sans", sans-serif;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: var(--clr-textD);
+    padding: 0 40px 0 46px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: transparent; }
+    .exch-search__input::placeholder {
+      color: var(--clr-text); }
+  .exch-search__hangle {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .exch-search__hangle .sprite-icon {
+      width: 8px;
+      height: 7px;
+      fill: var(--clr-accentD);
+      transition: all 0.2s; }
 
 /* =================================================================== */
 /* exch-head */
@@ -2327,31 +2430,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -133.4375em -124.875em; }
+    background-position: -134.625em -126.0625em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -137.8125em -129.3125em; }
+    background-position: -139em -130.5em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -136.375em -127.8125em; }
+    background-position: -137.5625em -129em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -134.1875em -125.625em; }
+    background-position: -135.375em -126.8125em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -135.6875em -127.125em; }
+    background-position: -136.875em -128.3125em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -134.8125em -126.25em; }
+    background-position: -136em -127.4375em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -136.9375em -128.625em; }
+    background-position: -138.125em -129.8125em; }
 
 /* =================================================================== */
 /* labeled-dropdown
