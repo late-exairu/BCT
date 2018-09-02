@@ -209,14 +209,14 @@
 		&:before{
 			content: '';
 			position: absolute;
-			left: 1px;
-			top: 1px;
-			bottom: 1px;
-			right: 1px;
-			background: #f00;
+			left: 0px;
+			top: 0px;
+			bottom: 0px;
+			right: 0px;
 			z-index: -1;
 			border-radius: 4px 0 0 4px;
 			background: var(--clr-block);
+			border: 1px solid var(--clr-separatorW);
 		}
 
 		&:after{
@@ -303,7 +303,7 @@
 		justify-content: center;
 		align-items: center;
 		background: transparent;
-		border: 1px solid transparent;
+		border: 1px solid var(--clr-separatorW);
 		transition: all .1s;
 		border-radius: var(--border-radius);
 

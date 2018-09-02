@@ -35,6 +35,8 @@
   /*separators and borders color basic*/
   --clr-separatorD:	#bfc0c0;
   /*separators and borders color dark*/
+  --clr-separatorW:	#ffffff;
+  /*separators and borders color dark*/
   --clr-important:	#bfc0c0;
   /*important and borders color dark*/
   --clr-backL:		#e5e6e5;
@@ -86,6 +88,8 @@
   --clr-separator:	#24425b;
   /*separators and borders color basic*/
   --clr-separatorD:	#24425b;
+  /*separators and borders color dark*/
+  --clr-separatorW:	#24425b;
   /*separators and borders color dark*/
   --clr-important:	#9BA6B2;
   /*important and borders color dark*/
@@ -1613,14 +1617,14 @@ h6 {
     .exch-dropdown__border:before {
       content: '';
       position: absolute;
-      left: 1px;
-      top: 1px;
-      bottom: 1px;
-      right: 1px;
-      background: #f00;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
       z-index: -1;
       border-radius: 4px 0 0 4px;
-      background: var(--clr-block); }
+      background: var(--clr-block);
+      border: 1px solid var(--clr-separatorW); }
     .exch-dropdown__border:after {
       content: '';
       position: absolute;
@@ -1866,7 +1870,7 @@ h6 {
     align-items: center;
     cursor: pointer;
     background: transparent;
-    border: 1px solid var(--clr-separatorD);
+    border: 1px solid var(--clr-separatorW);
     transition: all .1s;
     border-radius: var(--border-radius); }
     .exch-head__switch:hover {
@@ -5766,14 +5770,14 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     .exch-form__get:before, .exch-form__send:before {
       content: '';
       position: absolute;
-      left: 1px;
-      top: 1px;
-      bottom: 1px;
-      right: 1px;
-      background: #f00;
+      left: 0px;
+      top: 0px;
+      bottom: 0px;
+      right: 0px;
       z-index: -1;
       border-radius: 4px 0 0 4px;
-      background: var(--clr-block); }
+      background: var(--clr-block);
+      border: 1px solid var(--clr-separatorW); }
     .exch-form__get:after, .exch-form__send:after {
       content: '';
       position: absolute;
@@ -5837,7 +5841,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     justify-content: center;
     align-items: center;
     background: transparent;
-    border: 1px solid transparent;
+    border: 1px solid var(--clr-separatorW);
     transition: all .1s;
     border-radius: var(--border-radius); }
     .exch-form__sep .sprite-icon {
