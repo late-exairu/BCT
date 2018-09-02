@@ -82,7 +82,7 @@
 		z-index: 1;
 		.value {
 			display: block;
-			font-size: 26.5px;
+			font-size: 28.5px;
 			line-height: 1.2;
 			font-weight: 300;
 			line-height: 1.18;
@@ -91,12 +91,12 @@
 			span {
 				top: 2px;
 				position: relative;
-				font-size: 17px;
+				font-size: 19px;
 				vertical-align: top;
 			}
 		}
 		.title {
-			font-size: 10px;
+			font-size: 13px;
 			line-height: 1.26;
 			text-transform: uppercase;
 			vertical-align: top;
@@ -119,6 +119,18 @@
 				font-size: 16px;
 			}
 		}
+	}
+}
+.advanced #circleChartText{
+	.value {
+		font-size: 26.5px;
+		span {
+			font-size: 16px;
+		}
+	}
+
+	.title {
+		font-size: 10px;
 	}
 }
 

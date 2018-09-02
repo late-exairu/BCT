@@ -6271,7 +6271,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     z-index: 1; }
     #circleChartText .wrap .value {
       display: block;
-      font-size: 26.5px;
+      font-size: 28.5px;
       line-height: 1.2;
       font-weight: 300;
       line-height: 1.18;
@@ -6280,10 +6280,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       #circleChartText .wrap .value span {
         top: 2px;
         position: relative;
-        font-size: 17px;
+        font-size: 19px;
         vertical-align: top; }
     #circleChartText .wrap .title {
-      font-size: 10px;
+      font-size: 13px;
       line-height: 1.26;
       text-transform: uppercase;
       vertical-align: top;
@@ -6300,6 +6300,14 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
           font-size: 26px; }
       #circleChartText .wrap .title {
         font-size: 16px; } }
+
+.advanced #circleChartText .value {
+  font-size: 26.5px; }
+  .advanced #circleChartText .value span {
+    font-size: 16px; }
+
+.advanced #circleChartText .title {
+  font-size: 10px; }
 
 #mainChart {
   padding-top: 0;

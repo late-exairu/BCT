@@ -26,9 +26,9 @@ $('.accounts-diagram-wrap').mousemove(function (e) {
     var relY = e.pageY - parentOffset.top - 20;
     var r = pieChartSize / 2;
     var InCircle = Math.sqrt((relX - centerX) * (relX - centerX) + (relY - centerY) * (relY - centerY)) < r;
-    if (InCircle){
+    if (InCircle) {
         $(this).addClass('hover');
-    }else{
+    } else {
         $(this).removeClass('hover');
     }
 });
@@ -45,7 +45,7 @@ var circleChartOptions = {
     title: null,
     plotOptions: {
         pie: {
-            innerSize: '85%',
+            innerSize: '88%',
             borderWidth: 0,
             startAngle: 0,
             size: pieChartSize,
@@ -106,7 +106,14 @@ var circleChartOptions = {
 $(window).resize(drawCircleChart);
 
 function drawCircleChart() {
-    pieChartSize = $('#circleChart').width() - 20 - 28;
+    if ($('body').hasClass('advanced')) {
+        pieChartSize = $('#circleChart').width() - 20 - 28;
+        console.log('1');
+    } else {
+        pieChartSize = $('#circleChart').width() - 20;
+        console.log('2');
+
+    }
     centerX = $('#circleChart').width() / 2 - 20;
     centerY = $('#circleChart').height() / 2 - 20;
     circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
