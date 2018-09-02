@@ -340,9 +340,17 @@
 
 .proggress-bar{
 	width: 100%;
+	max-width: 80%;
+
+	&.rounded{
+		.proggress-bar__perc{
+			border-radius: 3px;
+		}
+	}
 
 	&__perc{
 		height: 6px;
 		background: var(--clr-accent);
+		width: 6px;
 	}
 }

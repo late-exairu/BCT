@@ -47,7 +47,18 @@
 
 		&.disabled{
 			pointer-events: none;
-			opacity: 0.3;
+			color: var(--clr-textLL);
+
+			.basic-table__curr{
+				fill: var(--clr-textLL);
+			}
+
+			.proggress-bar{
+
+				&__perc{
+					background: var(--clr-textLL);
+				}
+			}
 		}
 
 		&.head{

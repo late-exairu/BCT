@@ -707,7 +707,11 @@ h6 {
         background: var(--clr-backLL); }
     .basic-table__row.disabled {
       pointer-events: none;
-      opacity: 0.3; }
+      color: var(--clr-textLL); }
+      .basic-table__row.disabled .basic-table__curr {
+        fill: var(--clr-textLL); }
+      .basic-table__row.disabled .proggress-bar__perc {
+        background: var(--clr-textLL); }
     .basic-table__row.head {
       font-size: var(--font-size);
       font-weight: 700;
@@ -6879,10 +6883,14 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
         --icon-scale: 1; } }
 
 .proggress-bar {
-  width: 100%; }
+  width: 100%;
+  max-width: 80%; }
+  .proggress-bar.rounded .proggress-bar__perc {
+    border-radius: 3px; }
   .proggress-bar__perc {
     height: 6px;
-    background: var(--clr-accent); }
+    background: var(--clr-accent);
+    width: 6px; }
 
 /* =================================================================== */
 /* Globals
@@ -6927,6 +6935,36 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 .clr-xrp {
   fill: #23292F; }
+
+.back-bitcoin {
+  background: #f79330; }
+
+.back-bitcoincash {
+  background: #83c55f; }
+
+.back-ethereum {
+  background: #707cb9; }
+
+.back-litecoin {
+  background: #b1b0b0; }
+
+.back-ripple {
+  background: #438bca; }
+
+.back-dollar {
+  background: #C81820; }
+
+.back-maker {
+  background: #1abc9c; }
+
+.back-monero {
+  background: #ff6600; }
+
+.back-dash {
+  background: #008CE7; }
+
+.back-xrp {
+  background: #23292F; }
 
 .clr-red {
   color: #FF0600; }
