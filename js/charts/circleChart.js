@@ -108,11 +108,8 @@ $(window).resize(drawCircleChart);
 function drawCircleChart() {
     if ($('body').hasClass('advanced')) {
         pieChartSize = $('#circleChart').width() - 20 - 28;
-        console.log('1');
     } else {
         pieChartSize = $('#circleChart').width() - 20;
-        console.log('2');
-
     }
     centerX = $('#circleChart').width() / 2 - 20;
     centerY = $('#circleChart').height() / 2 - 20;
