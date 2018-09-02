@@ -689,7 +689,6 @@ $(function () {
 	var progressbar_array = new Array();
 	for (var i = 0; i < progressbar_list.length; i++) {
 		var progressbar = $( ".graph-prices__list .progressbar:eq(" + i + ")");
-
 		progressbar.progressbar({
 			value: false,
 			change: function() {

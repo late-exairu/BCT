@@ -240,6 +240,7 @@
 			background: linear-gradient(to right, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.8) );
 		}
 		.progress-label {
+			color: var(--clr-textD);
 			font-size: 11px;
 			line-height: 17px;
 			position: absolute;
@@ -250,7 +251,7 @@
 	}
 
 	&__item:nth-child(1) .ui-progressbar .ui-progressbar-value {
-		background: linear-gradient(to right, rgba(247, 223, 6, 0.2), rgba(247, 223, 6, 1) );
+		background: linear-gradient(to right, rgba(247, 223, 6, 0.1), rgba(247, 223, 6, 0.9) );
 	}
 
 	&__item:nth-child(2) .ui-progressbar .ui-progressbar-value {
@@ -278,7 +279,7 @@
 	}
 
 	&__item:nth-child(8) .ui-progressbar .ui-progressbar-value {
-		background: linear-gradient(to right, rgba(247, 223, 6, 0.2), rgba(247, 223, 6, 1) );
+		background: linear-gradient(to right, rgba(247, 223, 6, 0.1), rgba(247, 223, 6, 0.9) );
 	}
 
 	&__item:nth-child(9) .ui-progressbar .ui-progressbar-value {
