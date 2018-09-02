@@ -51,9 +51,11 @@
   /*basic block color basic*/
   --clr-back-arrow:	#e7e7e7;
   /*scroll arrow background color*/
-  --clr-text-tooltip: #2C589C;
+  --clr-text-tooltip: #2E2E2E;
   /*basic tooltip text color*/
   --clr-back-tooltip: #F9F9F9;
+  /*basic tooltip  background color*/
+  --clr-line: #000000;
   /*basic tooltip  background color*/
   --clr-icon-arrow:	#f9f9f9;
   /*basic arrow down fill color*/ }
@@ -105,6 +107,8 @@
   /*tooltip text color dark*/
   --clr-back-tooltip: #2C3137;
   /*tooltip  background color dark*/
+  --clr-line: #BFC0C0;
+  /*basic tooltip  background color*/
   --clr-icon-arrow:	#9BA6B2;
   /*arrow down fill color*/ }
 
@@ -6350,6 +6354,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       font-size: 10px; }
       .highcharts-tooltip div.tooltip.mainTooltip span {
         color: var(--clr-text-tooltip); }
+      .highcharts-tooltip div.tooltip.mainTooltip .currencies {
+        font-size: 13px; }
       .highcharts-tooltip div.tooltip.mainTooltip .value {
         font-size: 12px; }
       .highcharts-tooltip div.tooltip.mainTooltip div:first-child {
@@ -6446,11 +6452,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     width: 11px;
     height: 11px;
     background: white;
-    border: 1.6px solid #2B569A;
+    border: 1.2px solid var(--clr-line);
     border-radius: 50%;
     transform: translateX(-50%) translateY(-50%); }
   .lineForMainChart .line {
-    background: var(--clr-text-tooltip);
+    background: var(--clr-line);
     width: 1px;
     height: 1px;
     margin-top: -6px;
