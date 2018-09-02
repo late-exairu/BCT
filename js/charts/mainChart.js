@@ -9,16 +9,10 @@ function redrawMainChart() {
 	mainChartObj.reflow();
 }
 
-var lineColor = '#2B569A';
-var blueColor = '#2B569A';
-var redColor = '#E05475';
 var mainChartMarginLeft = -20;
-
-// color for highlight graphs on hover
-var gradientColor = [
-	[0, Highcharts.Color(lineColor).setOpacity(0.4).get('rgba')],
-	[1, Highcharts.Color(lineColor).setOpacity(0).get('rgba')]
-];
+var lineColor = '#00AAF8';
+var blueColor = '#0082AF';
+var redColor = '#A00600';
 
 if ($('body').hasClass('advanced')) {
 	mainChartMarginLeft = 35;
@@ -26,6 +20,12 @@ if ($('body').hasClass('advanced')) {
 	blueColor = '#0082AF';
 	redColor = '#750000';
 }
+
+// color for highlight graphs on hover
+var gradientColor = [
+	[0, Highcharts.Color(lineColor).setOpacity(0.4).get('rgba')],
+	[1, Highcharts.Color(lineColor).setOpacity(0).get('rgba')]
+];
 
 // id of graph for highlight
 var mainGraphHighlighted = 4;
