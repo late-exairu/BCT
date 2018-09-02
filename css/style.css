@@ -722,7 +722,7 @@ h6 {
         position: relative;
         height: calc(var(--cell-height) - 1px);
         padding: 4px 4px;
-        color: var(--clr-textL);
+        color: var(--clr-textD);
         /*&.sorted-down,
 				&.sorted-up{
 					background: var(--clr-backA);
