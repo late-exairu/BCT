@@ -103,7 +103,7 @@
   /*scroll arrow background color*/
   --clr-text-tooltip: #F9F9F9;
   /*tooltip text color dark*/
-  --clr-back-tooltip: #2B569A;
+  --clr-back-tooltip: #2C3137;
   /*tooltip  background color dark*/
   --clr-icon-arrow:	#9BA6B2;
   /*arrow down fill color*/ }
@@ -6271,7 +6271,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     z-index: 1; }
     #circleChartText .wrap .value {
       display: block;
-      font-size: 26.5px;
+      font-size: 28.5px;
       line-height: 1.2;
       font-weight: 300;
       line-height: 1.18;
@@ -6280,10 +6280,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       #circleChartText .wrap .value span {
         top: 2px;
         position: relative;
-        font-size: 17px;
+        font-size: 19px;
         vertical-align: top; }
     #circleChartText .wrap .title {
-      font-size: 10px;
+      font-size: 13px;
       line-height: 1.26;
       text-transform: uppercase;
       vertical-align: top;
@@ -6300,6 +6300,14 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
           font-size: 26px; }
       #circleChartText .wrap .title {
         font-size: 16px; } }
+
+.advanced #circleChartText .value {
+  font-size: 26.5px; }
+  .advanced #circleChartText .value span {
+    font-size: 16px; }
+
+.advanced #circleChartText .title {
+  font-size: 10px; }
 
 #mainChart {
   padding-top: 0;
@@ -6395,6 +6403,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 .advanced .blackColor span {
   color: white !important; }
 
+.advanced .gray {
+  color: #575D63; }
+
 /* .secondTooltip {
 	left: -9999px;
 	position: absolute;
@@ -6482,8 +6493,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 #panel-dashboard-liquidity .liquidityText {
   color: var(--clr-textD);
-  text-align: center;
-  pointer-events: none; }
+  text-align: center; }
   #panel-dashboard-liquidity .liquidityText span {
     font-size: 10px;
     vertical-align: top;
@@ -6498,37 +6508,39 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     position: absolute; }
   #panel-dashboard-liquidity .liquidityText .leftPart {
     bottom: 5px;
-    left: 10px; }
+    left: 10px;
+    pointer-events: none; }
   #panel-dashboard-liquidity .liquidityText .rightPart {
     bottom: 5px;
-    right: 10px; }
+    right: 10px;
+    pointer-events: none; }
   #panel-dashboard-liquidity .liquidityText .centerPart {
+    cursor: pointer;
     top: 40%;
     left: 50%;
-    /* 			height: 90%; */
+    background: var(--clr-back-new);
+    border: 1px solid var(--clr-separator);
     transform: translateX(-50%);
-    /* 			.separator {
-				width: 1px;
-				height: 60%;
-				background: var(--clr-textD);
-				margin: 0 auto;
-				position: absolute;
-				bottom: 0;
-				left: 50%;
-				margin-left: -1px;
-			} */ }
+    height: 22px;
+    width: 47px;
+    border-radius: 3px; }
     #panel-dashboard-liquidity .liquidityText .centerPart p {
       margin-bottom: 0px;
       font-size: 15px;
       font-weight: bold;
       height: auto; }
     #panel-dashboard-liquidity .liquidityText .centerPart svg {
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
       cursor: pointer;
       fill: var(--clr-textD);
       position: relative;
       top: -4px; }
+    #panel-dashboard-liquidity .liquidityText .centerPart .separator {
+      width: 1px;
+      height: 21px;
+      background: var(--clr-separator);
+      display: inline-block; }
 
 #orders {
   display: none; }
