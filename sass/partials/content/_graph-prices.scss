@@ -232,9 +232,12 @@
 			border: 0;
 			.ui-progressbar-value {
 				//background: var(--clr-back-new);
-				background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,0.6) );
+				background: linear-gradient(to right, rgba(255,0,0,0.1), rgba(255,0,0,0.8) );
 				border: 0;
 			}
+		}
+		.ui-progressbar .ui-progressbar-value {
+			background: linear-gradient(to right, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.8) );
 		}
 		.progress-label {
 			font-size: 11px;
@@ -244,6 +247,50 @@
 			text-align: center;
 			left: 0px;
 		}
+	}
+
+	&__item:nth-child(1) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(247, 223, 6, 0.2), rgba(247, 223, 6, 1) );
+	}
+
+	&__item:nth-child(2) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8) );
+	}
+	
+	&__item:nth-child(3) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(3, 40, 141, 0.1), rgba(3, 40, 141, 0.8) );
+	}
+
+	&__item:nth-child(4) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(11, 194, 20, 0.1), rgba(11, 194, 20, 0.8) );
+	}
+	
+	&__item:nth-child(5) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8) );
+	}
+
+	&__item:nth-child(6) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8) );
+	}
+	
+	&__item:nth-child(7) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8) );
+	}
+
+	&__item:nth-child(8) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(247, 223, 6, 0.2), rgba(247, 223, 6, 1) );
+	}
+
+	&__item:nth-child(9) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8) );
+	}
+
+	&__item:nth-child(10) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8) );
+	}
+
+	&__item:nth-child(11) .ui-progressbar .ui-progressbar-value {
+		background: linear-gradient(to right, rgba(11, 194, 20, 0.1), rgba(11, 194, 20, 0.8) );
 	}
 
 	&__trader{

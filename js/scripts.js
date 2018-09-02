@@ -685,9 +685,24 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* exchange progressbar */
 	/*---------------------------------------------------*/
-	var progressbar = $( ".progressbar" );
-    var progressLabel = $( ".progress-label" );
- 
+	var progressbar_list = $( ".progressbar");
+	var progressbar_array = new Array();
+	for (var i = 0; i < progressbar_list.length; i++) {
+		var progressbar = $( ".graph-prices__list .progressbar:eq(" + i + ")");
+
+		progressbar.progressbar({
+			value: false,
+			change: function() {
+				//progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+			},
+			complete: function() {
+				//progressLabel.text( "Complete!" );
+			}
+		});
+		progressbar_array.push(progressbar);
+	}
+	var progressLabel = $( ".progress-label" );
+	 
     progressbar.progressbar({
       value: false,
       change: function() {
@@ -698,13 +713,13 @@ $(function () {
       }
     });
  
-    function progress() {
-      var val = progressbar.progressbar( "value" ) || 0;
+    function progress(i) {
+      var val = progressbar_array[i].progressbar( "value" ) || 0;
  
-      progressbar.progressbar( "value", val + 2 );
+      progressbar_array[i].progressbar( "value", val + 2 );
  
       if ( val < 99 ) {
-        setTimeout( progress, 80 );
+        setTimeout( progress, 80, i);
       }
     }
  
@@ -815,8 +830,12 @@ $(function () {
 	// convert/confirm buttons
 	$('.exch-head__btn, .exch-form__btn').click(function (e) {
 		e.preventDefault();
-		progressbar.progressbar( "value", 0);
-		setTimeout( progress, 1000 );
+
+		for (var i = 0; i < progressbar_array.length; i++) {
+			var progressbar = progressbar_array[i];
+			progressbar.progressbar( "value", 0);
+			setTimeout( progress, 1000 + 500 * i, i );
+		}
 		if ($(this).hasClass('exch-form__btn')) {
 			$('.exch-form').addClass('progress');
 			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
