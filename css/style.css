@@ -2317,7 +2317,7 @@ h6 {
   .graph-prices__item {
     position: relative;
     text-align: center;
-    height: 50px;
+    height: 80px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -2337,13 +2337,31 @@ h6 {
     .graph-prices__item.active {
       background: var(--clr-backA);
       color: var(--clr-accentD); }
+    .graph-prices__item .ui-corner-all, .graph-prices__item .ui-corner-bottom, .graph-prices__item .ui-corner-left, .graph-prices__item .ui-corner-bl {
+      border-radius: 0px;
+      height: 1; }
+    .graph-prices__item .ui-progressbar {
+      width: 100%;
+      height: 1em;
+      text-align: center;
+      background: transparent;
+      border: 0; }
+      .graph-prices__item .ui-progressbar .ui-progressbar-value {
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.6));
+        border: 0; }
+    .graph-prices__item .progress-label {
+      font-size: 11px;
+      line-height: 17px;
+      position: absolute;
+      width: 100px;
+      text-align: center;
+      left: 0px; }
   .graph-prices__trader {
     display: flex;
     font-size: 13px;
     font-weight: 600;
     line-height: 1.18;
     text-align: left;
-    align-self: flex-start;
     padding: 0 5px; }
   .graph-prices__price {
     margin: 0;

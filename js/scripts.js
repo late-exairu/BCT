@@ -683,6 +683,32 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
+	/* exchange progressbar */
+	/*---------------------------------------------------*/
+	var progressbar = $( ".progressbar" );
+    var progressLabel = $( ".progress-label" );
+ 
+    progressbar.progressbar({
+      value: false,
+      change: function() {
+        //progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+      },
+      complete: function() {
+        //progressLabel.text( "Complete!" );
+      }
+    });
+ 
+    function progress() {
+      var val = progressbar.progressbar( "value" ) || 0;
+ 
+      progressbar.progressbar( "value", val + 2 );
+ 
+      if ( val < 99 ) {
+        setTimeout( progress, 80 );
+      }
+    }
+ 
+	/*---------------------------------------------------*/
 	/* Currency switch */
 	/*---------------------------------------------------*/
 
@@ -789,6 +815,8 @@ $(function () {
 	// convert/confirm buttons
 	$('.exch-head__btn, .exch-form__btn').click(function (e) {
 		e.preventDefault();
+		progressbar.progressbar( "value", 0);
+		setTimeout( progress, 1000 );
 		if ($(this).hasClass('exch-form__btn')) {
 			$('.exch-form').addClass('progress');
 			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
