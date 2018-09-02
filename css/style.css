@@ -1924,9 +1924,8 @@ h6 {
     bottom: 0;
     height: 100%;
     width: 100%;
-    fill: #f00;
     z-index: -1;
-    fill: var(--clr-accentD); }
+    fill: #009FE3; }
   .exch-head__btn-text {
     position: relative;
     top: -1px; }
@@ -5892,9 +5891,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     bottom: 0;
     height: 100%;
     width: 100%;
-    fill: #f00;
     z-index: -1;
-    fill: var(--clr-accentD); }
+    fill: #009FE3; }
   .exch-form.progress .exch-form__label,
   .exch-form.progress .exch-form__input {
     color: var(--clr-important);
