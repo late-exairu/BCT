@@ -674,7 +674,9 @@ $(function () {
 	$('#js-graph-size-toggle').click(function () {
 		if ($('.b-graph.fullScreen').length) {
 			$('.b-graph').removeClass('fullScreen');
+			$('.exch-head').css("z-index", "100000");
 		} else {
+			$('.exch-head').css("z-index", "5");
 			$('.b-graph').addClass('fullScreen');
 		}
 		redrawMainChart();
