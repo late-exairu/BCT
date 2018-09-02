@@ -238,6 +238,9 @@
 .advanced .blackColor span {
 	color: white !important;
 }
+.advanced .gray{
+	color:#575D63;
+}
 
 /* .secondTooltip {
 	left: -9999px;
@@ -343,7 +346,6 @@
 	.liquidityText {
 		color: var(--clr-textD);
 		text-align: center;
-		pointer-events: none;
 		span {
 			font-size: 10px;
 			vertical-align: top;
@@ -362,16 +364,24 @@
 		.leftPart {
 			bottom: 5px;
 			left: 10px;
+			pointer-events: none;
+
 		}
 		.rightPart {
 			bottom: 5px;
 			right: 10px;
+			pointer-events: none;
 		}
 		.centerPart {
+			cursor: pointer;
 			top: 40%;
 			left: 50%;
-/* 			height: 90%; */
+			background: var(--clr-back-new);
+			border: 1px solid var(--clr-separator);
 			transform: translateX(-50%);
+			height: 22px;
+			width: 47px;
+			border-radius: 3px;
 			p {
 				margin-bottom: 0px;
 				font-size: 15px;
@@ -379,23 +389,19 @@
 				height: auto;
 			}
 			svg {
-				width: 12px;
-				height: 12px;
+				width: 14px;
+				height: 14px;
 				cursor: pointer;
 				fill: var(--clr-textD);
 				position: relative;
 				top: -4px;
 			}
-/* 			.separator {
+ 			.separator {
 				width: 1px;
-				height: 60%;
-				background: var(--clr-textD);
-				margin: 0 auto;
-				position: absolute;
-				bottom: 0;
-				left: 50%;
-				margin-left: -1px;
-			} */
+				height: 21px;
+				background: var(--clr-separator);
+				display: inline-block;
+			}
 		}
 	}
 }
