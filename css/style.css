@@ -1905,7 +1905,7 @@ h6 {
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
-    flex: 0 0 188px;
+    flex: 0 0 172px;
     align-items: center;
     color: #fff;
     cursor: pointer;
@@ -3362,7 +3362,7 @@ body.menubar-in #user-btn:before {
     display: block;
     width: 14px;
     height: 24px;
-    fill: var(--clr-accentD); }
+    fill: var(--clr-textD); }
   .portfolio-back.portfolio-back-w-100 {
     width: calc(100% - 8px); }
 
@@ -5871,7 +5871,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
-    flex: 0 0 188px;
+    flex: 0 0 172px;
     align-items: center;
     color: #fff;
     cursor: pointer;
