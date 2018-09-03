@@ -209,7 +209,7 @@ $(function () {
 			}
 		} else {
 			if ($('.b-graph').width() - x > 200) {
-				if ($('.graph-prices').hasClass('open')) {
+				if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
 					$('.graph-prices').removeClass('open');
 					$('.b-graph__controls').removeClass('shifted');
 					redrawMainChart();
@@ -221,7 +221,7 @@ $(function () {
 	$('.b-graph').mouseleave(function (e) {
 		var x = e.pageX - $('.b-graph').offset().left;
 		if (x < $('.b-graph').width() - 5) {
-			if ($('.graph-prices').hasClass('open')) {
+			if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
 				$('.graph-prices').removeClass('open');
 				$('.b-graph__controls').removeClass('shifted');
 				redrawMainChart();
@@ -848,14 +848,15 @@ $(function () {
 				if (i == progressbar_array.length - 1){
 					setTimeout(function () {
 						$('.exch-form').removeClass('progress');
-						$('.exch-head').toggleClass('open');
+						$('.exch-head').removeClass('open');
+						$('.graph-prices').removeClass('noClose');
 					}, 4000 + 1000 + 500 * i, i);
 				}
 			}
 			$('.exch-form').addClass('progress');
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active');
 			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
-			$('.graph-prices').addClass('open');
+			$('.graph-prices').addClass('open noClose');
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
 
