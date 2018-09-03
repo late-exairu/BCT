@@ -2329,9 +2329,10 @@ h6 {
     transition: all .1s;
     cursor: pointer;
     overflow: hidden;
+    border-top: 1px solid #F7F7F7;
     color: var(--clr-textD);
     background: var(--clr-block);
-    padding-top: 5px; }
+    padding-top: 9px; }
     .graph-prices__item:first-child {
       border: none; }
     .graph-prices__item:hover {
@@ -2350,7 +2351,8 @@ h6 {
       border: 0; }
       .graph-prices__item .ui-progressbar .ui-progressbar-value {
         background: linear-gradient(to right, rgba(40, 107, 180, 0), rgba(40, 107, 180, 0.8));
-        border: 0; }
+        border: 0;
+        margin: 0; }
     .graph-prices__item .progress-label {
       color: var(--clr-textD);
       font-size: 11px;
@@ -2369,7 +2371,7 @@ h6 {
   .graph-prices__price {
     margin: 0;
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.7;
     font-weight: 700; }
     .graph-prices__price span {
       font-size: 11px;
