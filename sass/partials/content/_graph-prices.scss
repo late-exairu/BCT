@@ -200,7 +200,7 @@
 		transition: all .1s;
 		cursor: pointer;
 		overflow: hidden;
-		border-top: 1px solid #F7F7F7;
+		border-top: 1px solid var(--clr-separatorP);
 		color: var(--clr-textD);
 		background: var(--clr-block);
 		padding-top: 9px;

@@ -141,9 +141,12 @@ $(function () {
 	$('.left-bar__scroll.scrollbar-left').scrollbar();
 	scrollbarLeft.scrollbar({		
 		"onScroll": function(y, x){			
-			if(y.scroll == y.maxScroll){				
+			if(y.scroll == y.maxScroll){
 				$('.toolbar__scrollup__btn').show();
 				$('.toolbar__scrolldown__btn').hide();
+				if(y.maxScroll == 0){
+					$('.toolbar__scrollup__btn').hide();
+				}
 			}
 			else {
 				$('.toolbar__scrollup__btn').hide();
