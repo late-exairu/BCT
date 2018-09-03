@@ -2324,7 +2324,7 @@ h6 {
   .graph-prices__item {
     position: relative;
     text-align: center;
-    height: 98px;
+    height: 88px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -2367,18 +2367,18 @@ h6 {
       left: 0px; }
   .graph-prices__trader {
     display: flex;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.18;
     text-align: left;
     padding: 0 5px; }
   .graph-prices__price {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.7;
     font-weight: 700; }
     .graph-prices__price span {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 400; }
   .graph-prices__item:nth-child(1) .ui-progressbar .ui-progressbar-value {
     background: linear-gradient(to right, rgba(243, 187, 49, 0), rgba(243, 187, 49, 0.9)); }
