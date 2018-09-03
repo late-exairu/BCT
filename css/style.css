@@ -6885,29 +6885,28 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       margin: 0; }
     .graph-top__item.btn {
       cursor: pointer;
-      transition: all 0.1s; }
-      .graph-top__item.btn:hover {
-        background: var(--clr-backL);
-        border-color: var(--clr-textL); }
-        .graph-top__item.btn:hover .graph-top__icon,
-        .graph-top__item.btn:hover .graph-top__text {
-          fill: var(--clr-text);
-          color: var(--clr-text); }
-          .graph-top__item.btn:hover .graph-top__icon.mode .st0,
-          .graph-top__item.btn:hover .graph-top__text.mode .st0 {
-            fill: #FFFFFF; }
-          .graph-top__item.btn:hover .graph-top__icon.mode .st1,
-          .graph-top__item.btn:hover .graph-top__text.mode .st1 {
-            fill: #3AB44A; }
-          .graph-top__item.btn:hover .graph-top__icon.mode .st2,
-          .graph-top__item.btn:hover .graph-top__text.mode .st2 {
-            fill: #EB2429; }
-          .graph-top__item.btn:hover .graph-top__icon.mode .st3,
-          .graph-top__item.btn:hover .graph-top__text.mode .st3 {
-            fill: #F4EB32; }
-          .graph-top__item.btn:hover .graph-top__icon.mode .st4,
-          .graph-top__item.btn:hover .graph-top__text.mode .st4 {
-            fill: #26A8E0; }
+      transition: all 0.1s;
+      background: var(--clr-backL);
+      border-color: var(--clr-textL); }
+      .graph-top__item.btn .graph-top__icon,
+      .graph-top__item.btn .graph-top__text {
+        fill: var(--clr-text);
+        color: var(--clr-text); }
+        .graph-top__item.btn .graph-top__icon.mode .st0,
+        .graph-top__item.btn .graph-top__text.mode .st0 {
+          fill: #FFFFFF; }
+        .graph-top__item.btn .graph-top__icon.mode .st1,
+        .graph-top__item.btn .graph-top__text.mode .st1 {
+          fill: #3AB44A; }
+        .graph-top__item.btn .graph-top__icon.mode .st2,
+        .graph-top__item.btn .graph-top__text.mode .st2 {
+          fill: #EB2429; }
+        .graph-top__item.btn .graph-top__icon.mode .st3,
+        .graph-top__item.btn .graph-top__text.mode .st3 {
+          fill: #F4EB32; }
+        .graph-top__item.btn .graph-top__icon.mode .st4,
+        .graph-top__item.btn .graph-top__text.mode .st4 {
+          fill: #26A8E0; }
   .graph-top__text {
     font-size: 13px;
     padding: 0 10px;
