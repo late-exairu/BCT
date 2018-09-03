@@ -526,9 +526,13 @@ $(function () {
 		}
 
 		if ($(this).parents('#panel-funds-history').length) {
-			$.fancybox.open({
+/* 			$.fancybox.open({
 				src: '#exchange-step_2'
-			});
+			}); */
+
+			$('.graph-prices').addClass('open');
+			$('.b-graph__controls').addClass('shifted');
+			redrawMainChart();
 		}
 
 	});
@@ -823,7 +827,8 @@ $(function () {
 		}
 		//advanced
 		else {
-			$('.main-cols__right-bottom .portfolio-menu__item').eq(3).trigger('click');
+			$('#tab-funds-history').trigger('click');
+			$('.menu-dropdown').removeClass('open');
 		}
 	});
 
@@ -832,7 +837,7 @@ $(function () {
 		updatePortfolioStats(true);
 	});
 
-	// convert/confirm buttons
+	// convert/go buttons
 	$('.exch-head__btn, .exch-form__btn').click(function (e) {
 		e.preventDefault();
 		if ($(this).hasClass('exch-form__btn')) {
@@ -840,10 +845,22 @@ $(function () {
 				var progressbar = progressbar_array[i];
 				progressbar.progressbar( "value", 0);
 				setTimeout( progress, 1000 + 500 * i, i );
+				if (i == progressbar_array.length - 1){
+					setTimeout(function () {
+						$('.exch-form').removeClass('progress');
+						$('.exch-head').toggleClass('open');
+					}, 4000 + 1000 + 500 * i, i);
+				}
 			}
 			$('.exch-form').addClass('progress');
-			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
-			if (fancies_length < 1) {
+			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active');
+			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
+			$('.graph-prices').addClass('open');
+			$('.b-graph__controls').addClass('shifted');
+			redrawMainChart();
+
+/*			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
+ 			if (fancies_length < 1) {
 				$.fancybox.open({
 					src: '#exchange-step_2',
 					opts: {
@@ -868,7 +885,7 @@ $(function () {
 						}
 					}
 				});
-			}
+			} */
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 		}
