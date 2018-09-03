@@ -271,22 +271,20 @@
 			cursor: pointer;
 			transition: all 0.1s;
 
-			&:hover{
-				background: var(--clr-backL);
-				border-color: var(--clr-textL);
+			background: var(--clr-backL);
+			border-color: var(--clr-textL);
 
-				.graph-top__icon,
-				.graph-top__text{
-					fill: var(--clr-text);
-					color: var(--clr-text);
+			.graph-top__icon,
+			.graph-top__text{
+				fill: var(--clr-text);
+				color: var(--clr-text);
 
-					&.mode{
-						.st0{ fill: #FFFFFF; }
-						.st1{ fill: #3AB44A; }
-						.st2{ fill: #EB2429; }
-						.st3{ fill: #F4EB32; }
-						.st4{ fill: #26A8E0; }
-					}
+				&.mode{
+					.st0{ fill: #FFFFFF; }
+					.st1{ fill: #3AB44A; }
+					.st2{ fill: #EB2429; }
+					.st3{ fill: #F4EB32; }
+					.st4{ fill: #26A8E0; }
 				}
 			}
 		}
