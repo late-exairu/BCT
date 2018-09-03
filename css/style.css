@@ -2336,7 +2336,7 @@ h6 {
     .graph-prices__item:first-child {
       border: none; }
     .graph-prices__item:hover {
-      /*background: var(--clr-backL);*/ }
+      background: var(--clr-backLL); }
     .graph-prices__item.active {
       background: var(--clr-backA);
       color: var(--clr-accentD); }

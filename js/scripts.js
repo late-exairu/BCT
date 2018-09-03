@@ -829,13 +829,12 @@ $(function () {
 	// convert/confirm buttons
 	$('.exch-head__btn, .exch-form__btn').click(function (e) {
 		e.preventDefault();
-
-		for (var i = 0; i < progressbar_array.length; i++) {
-			var progressbar = progressbar_array[i];
-			progressbar.progressbar( "value", 0);
-			setTimeout( progress, 1000 + 500 * i, i );
-		}
 		if ($(this).hasClass('exch-form__btn')) {
+			for (var i = 0; i < progressbar_array.length; i++) {
+				var progressbar = progressbar_array[i];
+				progressbar.progressbar( "value", 0);
+				setTimeout( progress, 1000 + 500 * i, i );
+			}
 			$('.exch-form').addClass('progress');
 			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
 			if (fancies_length < 1) {
