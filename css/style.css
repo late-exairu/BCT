@@ -787,10 +787,10 @@ h6 {
         border: none;
         box-shadow: none;
         color: var(--clr-accentD); }
-    .basic-table__btn:active {
+    .basic-table__btn:active, .basic-table__btn.active {
       color: var(--clr-accent);
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
-      .basic-table__btn:active .sprite-icon {
+      .basic-table__btn:active .sprite-icon, .basic-table__btn.active .sprite-icon {
         fill: var(--clr-accent); }
   .basic-table__col {
     display: flex;

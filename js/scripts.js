@@ -782,6 +782,7 @@ $(function () {
 					beforeClose: function () {
 						//$('.exch-form').removeClass('progress');
 						// $('.exch-head').toggleClass('open');
+						$('button[transaction-fancybox]').removeClass('active');
 					}
 				}
 			});
@@ -935,6 +936,8 @@ $(function () {
 		$('#transaction-popup .transaction-form__btn').text('Send ' + currencyName);
 		$('#transaction-popup .transaction-form__qr-code-title').text('Your ' + currencyName + ' Address');
 		$('#transaction-popup > .c-block > .d-flex-col ').eq(0).css('display', 'flex');
+		$('button[transaction-fancybox]').removeClass('active');
+		$(this).addClass('active');
 	});
 
 	$('#transaction-popup .popup-tabs__item').click(function () {
