@@ -620,7 +620,7 @@ h6 {
     width: 100%;
     height: 100%; }
     .b-graph__controls.shifted {
-      width: calc(100% - 110px); }
+      width: calc(100% - 198px); }
     .b-graph__controls:after {
       content: '';
       position: absolute;
@@ -2193,7 +2193,7 @@ h6 {
   right: 0px;
   bottom: 0px;
   padding: 0;
-  width: 100px;
+  width: 188px;
   background: var(--clr-block);
   transition: all .2s;
   /*border: 1px solid var(--clr-separator);*/
@@ -2281,7 +2281,7 @@ h6 {
     height: 11px;
     margin: 0 0 0 4px; }
   .graph-prices__scroll {
-    width: 100px;
+    width: 188px;
     margin: 0; }
   .graph-prices__scrollup__btn, .graph-prices__scrolldown__btn {
     position: relative;
@@ -2320,19 +2320,18 @@ h6 {
   .graph-prices__item {
     position: relative;
     text-align: center;
-    height: 80px;
+    height: 98px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     margin: 0;
-    padding: 4px 5px;
     transition: all .1s;
     cursor: pointer;
     overflow: hidden;
-    border-top: 1px solid var(--clr-separator);
     color: var(--clr-textD);
-    background: var(--clr-block); }
+    background: var(--clr-block);
+    padding-top: 5px; }
     .graph-prices__item:first-child {
       border: none; }
     .graph-prices__item:hover {
@@ -2345,60 +2344,58 @@ h6 {
       height: 1; }
     .graph-prices__item .ui-progressbar {
       width: 100%;
-      height: 1em;
+      height: 24px;
       text-align: center;
       background: transparent;
       border: 0; }
       .graph-prices__item .ui-progressbar .ui-progressbar-value {
-        background: linear-gradient(to right, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.8));
+        background: linear-gradient(to right, rgba(40, 107, 180, 0), rgba(40, 107, 180, 0.8));
         border: 0; }
-    .graph-prices__item .ui-progressbar .ui-progressbar-value {
-      background: linear-gradient(to right, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.8)); }
     .graph-prices__item .progress-label {
       color: var(--clr-textD);
       font-size: 11px;
-      line-height: 17px;
+      line-height: 22px;
       position: absolute;
-      width: 100px;
+      width: 100%;
       text-align: center;
       left: 0px; }
-  .graph-prices__item:nth-child(1) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(247, 223, 6, 0.1), rgba(247, 223, 6, 0.9)); }
-  .graph-prices__item:nth-child(2) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8)); }
-  .graph-prices__item:nth-child(3) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(3, 40, 141, 0.1), rgba(3, 40, 141, 0.8)); }
-  .graph-prices__item:nth-child(4) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(11, 194, 20, 0.1), rgba(11, 194, 20, 0.8)); }
-  .graph-prices__item:nth-child(5) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8)); }
-  .graph-prices__item:nth-child(6) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8)); }
-  .graph-prices__item:nth-child(7) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8)); }
-  .graph-prices__item:nth-child(8) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(247, 223, 6, 0.1), rgba(247, 223, 6, 0.9)); }
-  .graph-prices__item:nth-child(9) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8)); }
-  .graph-prices__item:nth-child(10) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(40, 107, 180, 0.1), rgba(40, 107, 180, 0.8)); }
-  .graph-prices__item:nth-child(11) .ui-progressbar .ui-progressbar-value {
-    background: linear-gradient(to right, rgba(11, 194, 20, 0.1), rgba(11, 194, 20, 0.8)); }
   .graph-prices__trader {
     display: flex;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
     line-height: 1.18;
     text-align: left;
     padding: 0 5px; }
   .graph-prices__price {
     margin: 0;
-    font-size: 12px;
-    line-height: 1.18;
+    font-size: 14px;
+    line-height: 1.8;
     font-weight: 700; }
     .graph-prices__price span {
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 400; }
+  .graph-prices__item:nth-child(1) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(247, 223, 6, 0), rgba(247, 223, 6, 0.9)); }
+  .graph-prices__item:nth-child(2) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(40, 107, 180, 0), rgba(40, 107, 180, 0.8)); }
+  .graph-prices__item:nth-child(3) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(3, 40, 141, 0), rgba(3, 40, 141, 0.8)); }
+  .graph-prices__item:nth-child(4) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(11, 194, 20, 0), rgba(11, 194, 20, 0.8)); }
+  .graph-prices__item:nth-child(5) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(40, 107, 180, 0), rgba(40, 107, 180, 0.8)); }
+  .graph-prices__item:nth-child(6) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(40, 107, 180, 0), rgba(40, 107, 180, 0.8)); }
+  .graph-prices__item:nth-child(7) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(40, 107, 180, 0), rgba(40, 107, 180, 0.8)); }
+  .graph-prices__item:nth-child(8) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(247, 223, 6, 0), rgba(247, 223, 6, 0.9)); }
+  .graph-prices__item:nth-child(9) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(40, 107, 180, 0), rgba(40, 107, 180, 0.8)); }
+  .graph-prices__item:nth-child(10) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(40, 107, 180, 0), rgba(40, 107, 180, 0.8)); }
+  .graph-prices__item:nth-child(11) .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, rgba(11, 194, 20, 0), rgba(11, 194, 20, 0.8)); }
   .graph-prices .graph-bar__item {
     width: 250px;
     margin: 0 0 20px 0; }
@@ -2474,12 +2471,12 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 15px;
-  width: 16px;
+  height: 20px;
+  width: 25px;
   margin: 0 2px 0 0; }
   .icon-trader:after {
     content: '';
-    font-size: 16px;
+    font-size: 24px;
     display: block; }
   .icon-trader.binance:after {
     width: 0.725em;
