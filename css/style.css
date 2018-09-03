@@ -5868,7 +5868,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
-    flex: 0 0 100px;
+    flex: 0 0 171px;
     align-items: center;
     color: #fff;
     cursor: pointer;
