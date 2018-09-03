@@ -124,7 +124,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 153.75em 139.875em; }
+  background-size: 156.0625em 142.4375em; }
 
 /* =================================================================== */
 /* Functions
@@ -2483,31 +2483,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -139em -126.0625em; }
+    background-position: -141.3125em -128.625em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -143.375em -130.5em; }
+    background-position: -145.6875em -133.0625em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -141.9375em -129em; }
+    background-position: -144.25em -131.5625em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -139.75em -126.8125em; }
+    background-position: -142.0625em -129.375em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -141.25em -128.3125em; }
+    background-position: -143.5625em -130.875em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -140.375em -127.4375em; }
+    background-position: -142.6875em -130em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -142.5em -129.8125em; }
+    background-position: -144.8125em -132.375em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -6733,8 +6733,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    background: #f17cb1;
-    background: var(--inner-accent);
     color: #fff; }
 
 .portfolio-drop {
