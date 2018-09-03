@@ -128,7 +128,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 149.375em 139.875em; }
+  background-size: 153.75em 139.875em; }
 
 /* =================================================================== */
 /* Functions
@@ -1905,7 +1905,7 @@ h6 {
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
-    flex: 0 0 171px;
+    flex: 0 0 188px;
     align-items: center;
     color: #fff;
     cursor: pointer;
@@ -1923,10 +1923,10 @@ h6 {
   .exch-head__btn-bg {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     right: 0;
     bottom: 0;
-    height: 100%;
     width: 100%;
     z-index: -1;
     fill: #009FE3; }
@@ -2487,31 +2487,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -134.625em -126.0625em; }
+    background-position: -139em -126.0625em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -139em -130.5em; }
+    background-position: -143.375em -130.5em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -137.5625em -129em; }
+    background-position: -141.9375em -129em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -135.375em -126.8125em; }
+    background-position: -139.75em -126.8125em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -136.875em -128.3125em; }
+    background-position: -141.25em -128.3125em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -136em -127.4375em; }
+    background-position: -140.375em -127.4375em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -138.125em -129.8125em; }
+    background-position: -142.5em -129.8125em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -5871,7 +5871,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
-    flex: 0 0 171px;
+    flex: 0 0 188px;
     align-items: center;
     color: #fff;
     cursor: pointer;
@@ -5889,10 +5889,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .exch-form__btn-bg {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     right: 0;
     bottom: 0;
-    height: 100%;
     width: 100%;
     z-index: -1;
     fill: #009FE3; }
@@ -6737,8 +6737,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    background: #f17cb1;
-    background: var(--inner-accent);
     color: #fff; }
 
 .portfolio-drop {

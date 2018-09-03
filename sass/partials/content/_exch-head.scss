@@ -94,7 +94,7 @@
 		padding: 0 10px 0 5px;
 		height: calc(var(--exch-head-height) + 1px);
 		display: flex;
-		flex: 0 0 171px;
+		flex: 0 0 188px;
 		align-items: center;
 		color: #fff;
 		cursor: pointer;
@@ -114,10 +114,10 @@
 	&__btn-bg{
 		position: absolute;
 		left: 0;
-		top: 0;
+		top: 50%;
+		transform: translateY(-50%);
 		right: 0;
 		bottom: 0;
-		height: 100%;
 		width: 100%;
 		z-index: -1;
 		fill: #009FE3;

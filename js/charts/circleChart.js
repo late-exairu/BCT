@@ -4,12 +4,12 @@
 
 var circleChartTooltipData = {
     Bitcoin: {
-        price: '$6,140.13',
+        price: '$7,540.79',
         value: '1 BTC',
         percent: '75'
     },
     Ethereum: {
-        price: '$219.37',
+        price: '$150.00',
         value: '0.5 ETH',
         percent: '25'
     }
