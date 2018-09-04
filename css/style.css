@@ -3785,6 +3785,8 @@ body.menubar-in #user-btn:before {
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35); }
   .tippy-tooltip .tippy-content {
     white-space: pre-line; }
+    .tippy-tooltip .tippy-content.text-left {
+      text-align: left; }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.bct-theme .tippy-arrow {
   border-right: 7px solid var(--clr-separator); }

@@ -30,6 +30,10 @@
 
 	.tippy-content {
 		white-space: pre-line;
+
+		&.text-left {
+			text-align: left;
+		}
 	}
 }
 

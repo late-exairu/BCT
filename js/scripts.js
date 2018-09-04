@@ -1126,7 +1126,7 @@ $(function () {
 			var expectExchanger = instance.reference.previousElementSibling.innerText;
 
 			// init textContent
-			instance.popper.querySelector('.tippy-content').textContent = "";
+			instance.popper.querySelector('.tippy-content').textContent = "";			
 			// generate exchangers as listed
 			for (let index = 0; index < exchangers.length; index++) {
 				if (exchangers[index] != expectExchanger) {
@@ -1135,7 +1135,9 @@ $(function () {
 
 					if (length <= 0) break;
 				}				
-			}
+			}			
+			// text align to left
+			instance.popper.querySelector('.tippy-content').style.textAlign = "left";
 		}
 	})
 
