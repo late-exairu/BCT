@@ -133,12 +133,31 @@
 
 		&:hover {
 			background: var(--clr-backL);
-		}		
+		}
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 7px 5px 0 5px;
+			border-color: var(--clr-textD) transparent transparent transparent;
+		}	
 	}
 
 	&__scrollup__btn{
 		.arrow__btn > .scroll-down{
 			transform: rotate(180deg);
+		}
+
+		&:after{
+			border-width: 0 5px 7px 5px;
+			border-color: transparent transparent var(--clr-textD) transparent;
 		}
 	}
 

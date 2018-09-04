@@ -137,13 +137,14 @@
 	&__scrolldown__btn{
 		position: relative;
 		height: 12px;
-		background: var(--clr-back-arrow);		
+		background: var(--clr-back);		
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		z-index: 1;
 
 		&:hover {
-			background: var(--clr-backL);
+			background: var(--clr-block);
 		}
 
 		.arrow__btn {
@@ -158,13 +159,27 @@
 			padding: 0;
 			border: 1px solid transparent;
 			cursor: pointer;
-			transition: all .1s;			
+			transition: all .1s;
 
 			&:hover{
 				.arrow-icon{
 					fill: var(--clr-textD);
 				}
 			}			
+		}
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 8px 6px 0 6px;
+			border-color: var(--clr-textD) transparent transparent transparent;
 		}
 
 		.scroll-down-icon {
@@ -181,6 +196,11 @@
 			.scroll-down-icon {
 				transform: rotate(180deg);
 			}
+		}
+
+		&:after{
+			border-width: 0 6px 8px 6px;
+			border-color: transparent transparent var(--clr-textD) transparent;
 		}
 	}
 	
