@@ -41,17 +41,13 @@ $(function () {
 		}
 	});
 	
-	var exchDroprownCountdown = null;
 	$('.main-cols__right-top .exch-dropdown .exch-dropdown__border').click(function name() {
-			exchDroprownCountdown = setTimeout(() => {
-			$(this).parent().addClass('open');
-			}, 350);
-		});
+		$(this).parent().addClass('open');
+	});
 	
 	$(document).click(function() {
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
-			clearTimeout(exchDroprownCountdown);
-		});
+	});
 	
 	$('.main-cols__right-top .exch-dropdown').click(function(event) {
 		event.stopPropagation();
