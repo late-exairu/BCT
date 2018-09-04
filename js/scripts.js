@@ -225,7 +225,6 @@ $(function () {
 	$('.b-graph').mouseleave(function (e) {
 		var x = e.pageX - $('.b-graph').offset().left;
 		if (x < $('.b-graph').width() - 5) {
-			console.log('test');
 			if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
 				$('.graph-prices').removeClass('open');
 				$('.b-graph__controls').removeClass('shifted');
