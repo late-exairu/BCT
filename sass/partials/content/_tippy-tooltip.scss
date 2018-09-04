@@ -3,7 +3,7 @@
 /* tippy-tooltip */
 /* =================================================================== */
 
-.tippy-tooltip{
+.tippy-tooltip {
 
 	font-size: 0.6rem !important;
 	
@@ -29,14 +29,15 @@
 	}*/
 
 	.tippy-content {
-		white-space: pre-line;
 
 		&.text-left {
 			text-align: left;
 		}
 	}
 }
-
+.basic-table .tippy-tooltip .tippy-content{
+	white-space: pre-line;
+}
 .tippy-popper[x-placement^=right] .tippy-tooltip.bct-theme .tippy-arrow {
     border-right: 7px solid var(--clr-separator);
 }

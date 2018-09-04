@@ -1138,6 +1138,7 @@ $(function () {
 			}			
 			// text align to left
 			instance.popper.querySelector('.tippy-content').style.textAlign = "left";
+			instance.popper.querySelector('.tippy-content').style['white-space'] = "pre-line";
 		}
 	})
 
@@ -1180,5 +1181,24 @@ $(function () {
 				break;
 		}
 		redrawMainChart();
+	});
+
+
+	var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
+	$("div.portfolio-graph-range__current").on("click", function () {
+		$('ul.portfolio-graph-range__list').addClass('open');
+		$('div.portfolio-graph-range__current').css('border', '0px');
+		$('ul.portfolio-graph-range__list').css('border-bottom', 'solid 1px');
+		$('div.portfolio-graph-range').css('border', 'solid 1px');
+	});
+	$("ul.portfolio-graph-range__list").on("click", "li.portfolio-graph-range__item", function () {
+		allPortfolioOptions.removeClass('active');
+		$(this).addClass('active');
+		$(".portfolio-graph-range__current").html($(this).html());
+		
+		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+		$('div.portfolio-graph-range').css('border', '0px');
+		$('ul.portfolio-graph-range__list').removeClass('open');
+		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
 	});
 });
