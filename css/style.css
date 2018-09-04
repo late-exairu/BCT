@@ -3669,6 +3669,24 @@ body.menubar-in #user-btn:before {
   /*@media only screen and (min-width : 1366px) {
 		--icon-scale: 1.35;
 	}*/ }
+  .toolbar-icon.tool-graph {
+    width: calc(25px * var(--icon-scale));
+    height: calc(25px * var(--icon-scale)); }
+  .toolbar-icon.tool-undo {
+    width: calc(25px * var(--icon-scale));
+    height: calc(25px * var(--icon-scale)); }
+  .toolbar-icon.tool-redo {
+    width: calc(25px * var(--icon-scale));
+    height: calc(25px * var(--icon-scale)); }
+  .toolbar-icon.tool-camera {
+    width: calc(25px * var(--icon-scale));
+    height: calc(25px * var(--icon-scale)); }
+  .toolbar-icon.tool-gear {
+    width: calc(25px * var(--icon-scale));
+    height: calc(25px * var(--icon-scale)); }
+  .toolbar-icon.tool-graph2 {
+    width: calc(25px * var(--icon-scale));
+    height: calc(25px * var(--icon-scale)); }
   .toolbar-icon.tool-reload {
     width: calc(25px * var(--icon-scale));
     height: calc(25px * var(--icon-scale)); }
