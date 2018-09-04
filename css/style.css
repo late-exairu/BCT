@@ -6922,18 +6922,53 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 .view-mode {
   position: absolute;
-  top: 92%;
-  left: 92%;
-  width: 8%;
-  text-align: right;
-  padding-right: 40px; }
-  .view-mode .graph-top__group {
-    height: 33px;
-    width: 34px;
-    background-color: #bbbbbb;
+  right: 28px;
+  bottom: 18px; }
+  .view-mode__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
     border-radius: 5px;
-    box-shadow: 0px 2px 7px #888888;
-    display: inline-flex; }
+    background: var(--clr-back);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
+    .view-mode__link:hover .sprite-icon {
+      width: 18px;
+      height: 20px; }
+      .view-mode__link:hover .sprite-icon .st0 {
+        fill: var(--clr-accentD); }
+      .view-mode__link:hover .sprite-icon .st1 {
+        fill: #3AB44A; }
+      .view-mode__link:hover .sprite-icon .st2 {
+        fill: #EB2429; }
+      .view-mode__link:hover .sprite-icon .st3 {
+        fill: #F4EB32; }
+      .view-mode__link:hover .sprite-icon .st4 {
+        fill: #26A8E0; }
+  .view-mode .sprite-icon {
+    width: 18px;
+    height: 20px; }
+    .view-mode .sprite-icon .st0 {
+      fill: #FFFFFF; }
+    .view-mode .sprite-icon .st1 {
+      fill: #3AB44A; }
+    .view-mode .sprite-icon .st2 {
+      fill: #EB2429; }
+    .view-mode .sprite-icon .st3 {
+      fill: #F4EB32; }
+    .view-mode .sprite-icon .st4 {
+      fill: #26A8E0; }
+    .view-mode .sprite-icon .st0 {
+      fill: var(--clr-textL); }
+    .view-mode .sprite-icon .st1 {
+      fill: transparent; }
+    .view-mode .sprite-icon .st2 {
+      fill: transparent; }
+    .view-mode .sprite-icon .st3 {
+      fill: transparent; }
+    .view-mode .sprite-icon .st4 {
+      fill: transparent; }
 
 .graph-top {
   font-family: "open_sans", sans-serif;

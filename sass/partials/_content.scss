@@ -147,18 +147,49 @@
 
 .view-mode {
 	position: absolute;
-    top: 92%;
-    left: 92%;
-	width: 8%;
-	text-align: right;
-	padding-right: 40px;
-	.graph-top__group {
-		height: 33px;
-		width: 34px;
-		background-color: #bbbbbb;
+    right: 28px;
+    bottom: 18px;
+
+	&__link{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 32px;
+		width: 32px;
 		border-radius: 5px;
-		box-shadow: 0px 2px 7px #888888;
-		display: inline-flex;
+    	background: var(--clr-back);
+    	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+
+    	&:hover{
+
+			.sprite-icon{
+				width: 18px;
+				height: 20px;
+
+				.st0{ fill: var(--clr-accentD); }
+				.st1{ fill: #3AB44A; }
+				.st2{ fill: #EB2429; }
+				.st3{ fill: #F4EB32; }
+				.st4{ fill: #26A8E0; }
+			}
+    	}
+	}
+
+	.sprite-icon{
+		width: 18px;
+		height: 20px;
+
+		.st0{ fill: #FFFFFF; }
+		.st1{ fill: #3AB44A; }
+		.st2{ fill: #EB2429; }
+		.st3{ fill: #F4EB32; }
+		.st4{ fill: #26A8E0; }
+
+		.st0{ fill: var(--clr-textL); }
+		.st1{ fill: transparent; }
+		.st2{ fill: transparent; }
+		.st3{ fill: transparent; }
+		.st4{ fill: transparent; }
 	}
 }
 .graph-top{
