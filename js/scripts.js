@@ -1195,7 +1195,26 @@ $(function () {
 		allPortfolioOptions.removeClass('active');
 		$(this).addClass('active');
 		$(".portfolio-graph-range__current").html($(this).html());
-		
+		console.log()
+
+		switch ($(".portfolio-graph-range__current").html()) {
+			case "HOUR":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(0, {}, true);
+				break;
+			case "DAY":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(1, {}, true);
+				break;
+			case "WEEK":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(2, {}, true);
+				break;
+			case "MONTH":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(3, {}, true);
+				break;
+			case "YEAR":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(4, {}, true);
+				break;
+		}
+
 		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
 		$('div.portfolio-graph-range').css('border', '0px');
 		$('ul.portfolio-graph-range__list').removeClass('open');
