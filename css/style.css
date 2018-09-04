@@ -3670,14 +3670,14 @@ body.menubar-in #user-btn:before {
 		--icon-scale: 1.35;
 	}*/ }
   .toolbar-icon.tool-graph {
-    width: calc(25px * var(--icon-scale));
-    height: calc(25px * var(--icon-scale)); }
+    width: calc(23px * var(--icon-scale));
+    height: calc(23px * var(--icon-scale)); }
   .toolbar-icon.tool-undo {
-    width: calc(25px * var(--icon-scale));
-    height: calc(25px * var(--icon-scale)); }
+    width: calc(23px * var(--icon-scale));
+    height: calc(23px * var(--icon-scale)); }
   .toolbar-icon.tool-redo {
-    width: calc(25px * var(--icon-scale));
-    height: calc(25px * var(--icon-scale)); }
+    width: calc(23px * var(--icon-scale));
+    height: calc(23px * var(--icon-scale)); }
   .toolbar-icon.tool-camera {
     width: calc(25px * var(--icon-scale));
     height: calc(25px * var(--icon-scale)); }
@@ -3685,8 +3685,8 @@ body.menubar-in #user-btn:before {
     width: calc(25px * var(--icon-scale));
     height: calc(25px * var(--icon-scale)); }
   .toolbar-icon.tool-graph2 {
-    width: calc(25px * var(--icon-scale));
-    height: calc(25px * var(--icon-scale)); }
+    width: calc(23px * var(--icon-scale));
+    height: calc(23px * var(--icon-scale)); }
   .toolbar-icon.tool-reload {
     width: calc(25px * var(--icon-scale));
     height: calc(25px * var(--icon-scale)); }
