@@ -1704,6 +1704,18 @@ h6 {
     .exch-dropdown__list .exch-dropdown__title {
       font-size: 18px;
       font-weight: 700; }
+    .exch-dropdown__list:before {
+      content: '';
+      position: absolute;
+      right: 14px;
+      height: -8px;
+      top: -7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 7px 8px 7px;
+      border-color: transparent transparent #ffffff transparent;
+      z-index: 1; }
     .exch-dropdown__list:after {
       content: '';
       position: absolute;

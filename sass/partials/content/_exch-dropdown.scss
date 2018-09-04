@@ -175,6 +175,20 @@
 			font-weight: 700;
 		}
 
+		&:before{
+			content: '';
+			position: absolute;
+			right: 14px;
+			height: -8px;
+			top: -7px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 7px 8px 7px;
+			border-color: transparent transparent #ffffff transparent;
+			z-index: 1;
+		}
+
 		&:after{
 			content: '';
 			position: absolute;
