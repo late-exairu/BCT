@@ -718,12 +718,21 @@ h6 {
       .basic-table__row.active:hover {
         background: var(--clr-backLL); }
     .basic-table__row.disabled {
+      opacity: 0.5;
       pointer-events: none;
-      color: var(--clr-textLL); }
+      color: var(--clr-icon); }
       .basic-table__row.disabled .basic-table__curr {
-        fill: var(--clr-textLL); }
+        fill: var(--clr-icon); }
+      .basic-table__row.disabled .basic-table__btn {
+        color: var(--clr-icon); }
+        .basic-table__row.disabled .basic-table__btn .sprite-icon {
+          fill: var(--clr-icon); }
+      .basic-table__row.disabled .basic-select__select {
+        color: var(--clr-icon); }
+      .basic-table__row.disabled .select-selected:after {
+        border-color: var(--clr-icon) transparent transparent; }
       .basic-table__row.disabled .proggress-bar__perc {
-        background: var(--clr-textLL); }
+        background: var(--clr-icon); }
     .basic-table__row.head {
       font-size: var(--font-size);
       font-weight: 700;
