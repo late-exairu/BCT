@@ -2315,7 +2315,8 @@ h6 {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1; }
+    z-index: 1;
+    cursor: pointer; }
     .graph-prices__scrollup__btn:hover, .graph-prices__scrolldown__btn:hover {
       background: var(--clr-block); }
     .graph-prices__scrollup__btn .arrow__btn, .graph-prices__scrolldown__btn .arrow__btn {
@@ -2339,6 +2340,7 @@ h6 {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      cursor: pointer;
       width: 0;
       height: 0;
       border-style: solid;
@@ -2353,6 +2355,7 @@ h6 {
   .graph-prices__scrollup__btn .arrow__btn .scroll-down-icon {
     transform: rotate(180deg); }
   .graph-prices__scrollup__btn:after {
+    cursor: pointer;
     border-width: 0 6px 8px 6px;
     border-color: transparent transparent var(--clr-textD) transparent; }
   .graph-prices__list {
@@ -3570,6 +3573,7 @@ body.menubar-in #user-btn:before {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      cursor: pointer;
       width: 0;
       height: 0;
       border-style: solid;
@@ -3578,6 +3582,7 @@ body.menubar-in #user-btn:before {
   .toolbar__scrollup__btn .arrow__btn > .scroll-down {
     transform: rotate(180deg); }
   .toolbar__scrollup__btn:after {
+    cursor: pointer;
     border-width: 0 5px 7px 5px;
     border-color: transparent transparent var(--clr-textD) transparent; }
   .toolbar__scrolldown__btn {

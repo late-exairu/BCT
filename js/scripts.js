@@ -176,11 +176,11 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* Scroll up/down event for left toolbar */
 	/*---------------------------------------------------*/		
-	$(".toolbar__scrollup__btn").on("click", ".arrow__btn", function() {				
+	$(".toolbar__scrollup__btn").on("click", function() {				
 		scrollbarLeft.animate({ scrollTop: 0 }, "slow");
 	});
 
-	$(".toolbar__scrolldown__btn").on("click", ".arrow__btn", function() {		
+	$(".toolbar__scrolldown__btn").on("click", function() {		
 		scrollbarLeft.animate({ scrollTop: scrollbarLeft.prop("scrollHeight") - scrollbarLeft.outerHeight() }, "slow");
 	});
 
@@ -188,11 +188,11 @@ $(function () {
 	/* Scroll up/down event for graph prices */
 	/*---------------------------------------------------*/	
 	var graphPricesScrollbar = 	$('.graph-prices__scroll.scrollbar-arrows');
-	$(".graph-prices__scrollup__btn").on("click", ".arrow__btn", function() {				
+	$(".graph-prices__scrollup__btn").on("click", function() {				
 		graphPricesScrollbar.animate({ scrollTop: '-=200' }, "slow");
 	});
 
-	$(".graph-prices__scrolldown__btn").on("click", ".arrow__btn", function() {				
+	$(".graph-prices__scrolldown__btn").on("click", function() {				
 		graphPricesScrollbar.animate({ scrollTop: '+=200' }, "slow");
 	});
 

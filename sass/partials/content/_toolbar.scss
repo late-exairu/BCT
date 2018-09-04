@@ -141,6 +141,7 @@
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
+			cursor: pointer;
 
 			width: 0;
 			height: 0;
@@ -156,6 +157,7 @@
 		}
 
 		&:after{
+			cursor: pointer;
 			border-width: 0 5px 7px 5px;
 			border-color: transparent transparent var(--clr-textD) transparent;
 		}
