@@ -321,14 +321,13 @@
 }
 
 #portfolioChartText {
-	pointer-events: none;	
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
-	div {
+	div.portfolio-graph-info {
+		pointer-events: none;	
 		display: inline-block;
 		color: #00AAF8; 
-		border-right: 1px solid #e8e8e8;
 		padding: 0px 15px;
 		text-align: center;
 		span {
@@ -346,8 +345,64 @@
 			margin-top: 0px;
 			margin-bottom: 0;
 		}
-		&:last-child {
-			border-right: 0;
+		&:first-child {
+			border-right: 1px solid #e8e8e8;
+		}
+	}
+	.portfolio-graph-range {
+		display: inline-block;
+		z-index: 1;
+		width: 70px;
+		font-size: 11px;
+		border-radius: 5px;
+		background: transparent;
+		font-weight: 600;
+		margin-left: -14px;
+
+		&__current {
+			width: 100%;
+			padding: 4px 0 3px 5px;
+			border: 1px solid;
+			border-radius: 5px;
+			cursor: pointer;
+			&:hover {
+				background: rgba(0, 0, 0, 0.05);
+			}
+			&:after {
+				content: "";
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 4px 6px;
+				border-color: transparent transparent #666;
+				display: block;
+				position: absolute;
+				margin-top: -10px;
+				margin-left: 49px;
+			}
+		}
+		&__list {
+			width: 100%;
+			display: block;
+			margin: 0;
+			padding: 0;
+			visibility: hidden;
+		}
+		&__list.open {
+			visibility: visible;
+		}
+		&__item {
+			width: 100%;
+			display: block !important;
+			padding: 3px 0 3px 5px;
+			cursor: pointer;
+			//height: 20px;
+			&:hover {
+				background: rgba(0, 0, 0, 0.05);
+			}
+		}
+		&__item.active {
+			background: rgba(0, 0, 0, 0.1);
 		}
 	}
 }

@@ -3408,52 +3408,6 @@ body.menubar-in #user-btn:before {
 #panel-funds-history .portfolio-back {
   position: static; }
 
-.portfolio-graph-range {
-  position: absolute;
-  z-index: 1;
-  top: 58px;
-  left: 254px;
-  width: 70px;
-  font-size: 11px;
-  border-radius: 5px;
-  background: transparent;
-  font-weight: 600;
-  cursor: pointer; }
-  .portfolio-graph-range__current {
-    width: 100%;
-    padding: 4px 0 3px 5px;
-    border: 1px solid;
-    border-radius: 5px; }
-    .portfolio-graph-range__current:hover {
-      background: rgba(0, 0, 0, 0.05); }
-    .portfolio-graph-range__current:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 4px 6px;
-      border-color: transparent transparent #666;
-      display: block;
-      position: absolute;
-      left: 54px;
-      margin-top: -10px; }
-  .portfolio-graph-range__list {
-    width: 100%;
-    display: block;
-    margin: 0;
-    padding: 0;
-    visibility: hidden; }
-  .portfolio-graph-range__list.open {
-    visibility: visible; }
-  .portfolio-graph-range__item {
-    width: 100%;
-    display: block !important;
-    padding: 3px 0 3px 5px; }
-    .portfolio-graph-range__item:hover {
-      background: rgba(0, 0, 0, 0.05); }
-  .portfolio-graph-range__item.active {
-    background: rgba(0, 0, 0, 0.1); }
-
 /* =================================================================== */
 /* search-bar */
 /* =================================================================== */
@@ -6643,30 +6597,74 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   /*border-bottom: 1px solid var(--clr-separator);*/ }
 
 #portfolioChartText {
-  pointer-events: none;
   position: absolute;
   bottom: 10px;
   left: 10px; }
-  #portfolioChartText div {
+  #portfolioChartText div.portfolio-graph-info {
+    pointer-events: none;
     display: inline-block;
     color: #00AAF8;
-    border-right: 1px solid #e8e8e8;
     padding: 0px 15px;
     text-align: center; }
-    #portfolioChartText div span {
+    #portfolioChartText div.portfolio-graph-info span {
       font-size: 16px;
       vertical-align: top;
       line-height: 26px; }
-      #portfolioChartText div span:nth-child(2) {
+      #portfolioChartText div.portfolio-graph-info span:nth-child(2) {
         font-size: 26px;
         line-height: initial; }
-    #portfolioChartText div p {
+    #portfolioChartText div.portfolio-graph-info p {
       font-size: 10px;
       color: var(--clr-textD);
       margin-top: 0px;
       margin-bottom: 0; }
-    #portfolioChartText div:last-child {
-      border-right: 0; }
+    #portfolioChartText div.portfolio-graph-info:first-child {
+      border-right: 1px solid #e8e8e8; }
+  #portfolioChartText .portfolio-graph-range {
+    display: inline-block;
+    z-index: 1;
+    width: 70px;
+    font-size: 11px;
+    border-radius: 5px;
+    background: transparent;
+    font-weight: 600;
+    margin-left: -14px; }
+    #portfolioChartText .portfolio-graph-range__current {
+      width: 100%;
+      padding: 4px 0 3px 5px;
+      border: 1px solid;
+      border-radius: 5px;
+      cursor: pointer; }
+      #portfolioChartText .portfolio-graph-range__current:hover {
+        background: rgba(0, 0, 0, 0.05); }
+      #portfolioChartText .portfolio-graph-range__current:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 4px 6px;
+        border-color: transparent transparent #666;
+        display: block;
+        position: absolute;
+        margin-top: -10px;
+        margin-left: 49px; }
+    #portfolioChartText .portfolio-graph-range__list {
+      width: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+      visibility: hidden; }
+    #portfolioChartText .portfolio-graph-range__list.open {
+      visibility: visible; }
+    #portfolioChartText .portfolio-graph-range__item {
+      width: 100%;
+      display: block !important;
+      padding: 3px 0 3px 5px;
+      cursor: pointer; }
+      #portfolioChartText .portfolio-graph-range__item:hover {
+        background: rgba(0, 0, 0, 0.05); }
+    #portfolioChartText .portfolio-graph-range__item.active {
+      background: rgba(0, 0, 0, 0.1); }
 
 #panel-funds-account,
 #panel-dashboard-liquidity {
