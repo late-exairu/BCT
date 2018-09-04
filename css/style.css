@@ -6301,13 +6301,21 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 /*style the items (options), including the selected item:*/
 .select-items div {
   color: var(--clr-textD);
+  height: 26px;
   padding: 5px 10px;
-  border: 1px solid transparent;
-  border-color: transparent transparent var(--clr-separator) transparent;
+  border-top: 1px solid var(--clr-separator);
   cursor: pointer;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden; }
+  .select-items div:hover {
+    background-color: var(--clr-back);
+    /*color: var(--clr-accent);*/ }
+  .select-items div:first-child {
+    border: none; }
+  .select-items div.same-as-selected {
+    background-color: var(--clr-back);
+    color: var(--clr-accent); }
 
 /*style items (options):*/
 .select-items {
@@ -6321,7 +6329,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  font-size: 12px;
+  border-radius: 4px; }
 
 .absoluteSelect {
   position: absolute;
@@ -6343,10 +6353,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   opacity: 0;
   visibility: hidden;
   transform: translateY(30px); }
-
-.select-items div:hover,
-.same-as-selected {
-  background-color: var(--clr-backL); }
 
 .highcharts-credits {
   display: none; }
