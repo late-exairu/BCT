@@ -6870,7 +6870,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 .graph-top {
   font-family: "open_sans", sans-serif;
   position: absolute;
-  left: 92px;
+  left: 53px;
   top: 10px;
   right: 5px;
   background: transparent;
@@ -7009,7 +7009,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     left: 10px; }
   @media only screen and (min-width: 1920px) {
     .graph-top {
-      left: 114px;
+      left: 65px;
       height: 42px; }
       .graph-top__item {
         min-width: var(--bar-height);
