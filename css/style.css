@@ -3672,6 +3672,9 @@ body.menubar-in #user-btn:before {
   .toolbar-icon.tool-graph {
     width: calc(23px * var(--icon-scale));
     height: calc(23px * var(--icon-scale)); }
+  .toolbar-icon.tool-expand {
+    width: calc(23px * var(--icon-scale));
+    height: calc(23px * var(--icon-scale)); }
   .toolbar-icon.tool-undo {
     width: calc(23px * var(--icon-scale));
     height: calc(23px * var(--icon-scale)); }
