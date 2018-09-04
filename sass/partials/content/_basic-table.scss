@@ -46,17 +46,34 @@
 		}
 
 		&.disabled{
+			opacity: 0.5;
 			pointer-events: none;
-			color: var(--clr-textLL);
+			color: var(--clr-icon);
 
 			.basic-table__curr{
-				fill: var(--clr-textLL);
+				fill: var(--clr-icon);
+			}
+
+			.basic-table__btn{
+				color: var(--clr-icon);
+
+				.sprite-icon{
+					fill: var(--clr-icon);
+				}
+			}
+
+			.basic-select__select{
+				color: var(--clr-icon);
+			}
+
+			.select-selected:after {
+				border-color: var(--clr-icon) transparent transparent;
 			}
 
 			.proggress-bar{
 
 				&__perc{
-					background: var(--clr-textLL);
+					background: var(--clr-icon);
 				}
 			}
 		}

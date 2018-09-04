@@ -718,12 +718,21 @@ h6 {
       .basic-table__row.active:hover {
         background: var(--clr-backLL); }
     .basic-table__row.disabled {
+      opacity: 0.5;
       pointer-events: none;
-      color: var(--clr-textLL); }
+      color: var(--clr-icon); }
       .basic-table__row.disabled .basic-table__curr {
-        fill: var(--clr-textLL); }
+        fill: var(--clr-icon); }
+      .basic-table__row.disabled .basic-table__btn {
+        color: var(--clr-icon); }
+        .basic-table__row.disabled .basic-table__btn .sprite-icon {
+          fill: var(--clr-icon); }
+      .basic-table__row.disabled .basic-select__select {
+        color: var(--clr-icon); }
+      .basic-table__row.disabled .select-selected:after {
+        border-color: var(--clr-icon) transparent transparent; }
       .basic-table__row.disabled .proggress-bar__perc {
-        background: var(--clr-textLL); }
+        background: var(--clr-icon); }
     .basic-table__row.head {
       font-size: var(--font-size);
       font-weight: 700;
@@ -1704,6 +1713,18 @@ h6 {
     .exch-dropdown__list .exch-dropdown__title {
       font-size: 18px;
       font-weight: 700; }
+    .exch-dropdown__list:before {
+      content: '';
+      position: absolute;
+      right: 14px;
+      height: -8px;
+      top: -7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 7px 8px 7px;
+      border-color: transparent transparent #ffffff transparent;
+      z-index: 1; }
     .exch-dropdown__list:after {
       content: '';
       position: absolute;
@@ -1905,7 +1926,7 @@ h6 {
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
-    flex: 0 0 188px;
+    flex: 0 0 172px;
     align-items: center;
     color: #fff;
     cursor: pointer;
@@ -2290,12 +2311,13 @@ h6 {
   .graph-prices__scrollup__btn, .graph-prices__scrolldown__btn {
     position: relative;
     height: 12px;
-    background: var(--clr-back-arrow);
+    background: var(--clr-back);
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    z-index: 1; }
     .graph-prices__scrollup__btn:hover, .graph-prices__scrolldown__btn:hover {
-      background: var(--clr-backL); }
+      background: var(--clr-block); }
     .graph-prices__scrollup__btn .arrow__btn, .graph-prices__scrolldown__btn .arrow__btn {
       height: 16px;
       width: 32px;
@@ -2311,6 +2333,17 @@ h6 {
       transition: all .1s; }
       .graph-prices__scrollup__btn .arrow__btn:hover .arrow-icon, .graph-prices__scrolldown__btn .arrow__btn:hover .arrow-icon {
         fill: var(--clr-textD); }
+    .graph-prices__scrollup__btn:after, .graph-prices__scrolldown__btn:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 6px 0 6px;
+      border-color: var(--clr-textD) transparent transparent transparent; }
     .graph-prices__scrollup__btn .scroll-down-icon, .graph-prices__scrolldown__btn .scroll-down-icon {
       fill: var(--clr-icon-arrow);
       transition: all 0.1s;
@@ -2319,12 +2352,15 @@ h6 {
       height: calc(9px * var(--icon-scale)); }
   .graph-prices__scrollup__btn .arrow__btn .scroll-down-icon {
     transform: rotate(180deg); }
+  .graph-prices__scrollup__btn:after {
+    border-width: 0 6px 8px 6px;
+    border-color: transparent transparent var(--clr-textD) transparent; }
   .graph-prices__list {
     padding: 0; }
   .graph-prices__item {
     position: relative;
     text-align: center;
-    height: 98px;
+    height: 88px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -2367,18 +2403,18 @@ h6 {
       left: 0px; }
   .graph-prices__trader {
     display: flex;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.18;
     text-align: left;
     padding: 0 5px; }
   .graph-prices__price {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.7;
     font-weight: 700; }
     .graph-prices__price span {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 400; }
   .graph-prices__item:nth-child(1) .ui-progressbar .ui-progressbar-value {
     background: linear-gradient(to right, rgba(243, 187, 49, 0), rgba(243, 187, 49, 0.9)); }
@@ -3362,7 +3398,7 @@ body.menubar-in #user-btn:before {
     display: block;
     width: 14px;
     height: 24px;
-    fill: var(--clr-accentD); }
+    fill: var(--clr-textD); }
   .portfolio-back.portfolio-back-w-100 {
     width: calc(100% - 8px); }
 
@@ -3528,8 +3564,22 @@ body.menubar-in #user-btn:before {
     z-index: 8; }
     .toolbar__scrollup__btn:hover, .toolbar__scrolldown__btn:hover {
       background: var(--clr-backL); }
+    .toolbar__scrollup__btn:after, .toolbar__scrolldown__btn:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7px 5px 0 5px;
+      border-color: var(--clr-textD) transparent transparent transparent; }
   .toolbar__scrollup__btn .arrow__btn > .scroll-down {
     transform: rotate(180deg); }
+  .toolbar__scrollup__btn:after {
+    border-width: 0 5px 7px 5px;
+    border-color: transparent transparent var(--clr-textD) transparent; }
   .toolbar__scrolldown__btn {
     top: auto;
     bottom: 0;
@@ -5871,7 +5921,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
-    flex: 0 0 188px;
+    flex: 0 0 172px;
     align-items: center;
     color: #fff;
     cursor: pointer;
