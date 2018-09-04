@@ -35,13 +35,27 @@
 /*style the items (options), including the selected item:*/
 .select-items div {
     color: var(--clr-textD);
+    height: 26px;
     padding: 5px 10px;
-    border: 1px solid transparent;
-    border-color: transparent transparent var(--clr-separator) transparent;
+    border-top: 1px solid var(--clr-separator);
     cursor: pointer;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+
+    &:hover{
+    	background-color: var(--clr-back);
+    	/*color: var(--clr-accent);*/
+    }
+
+    &:first-child{
+    	border: none;
+    }
+
+    &.same-as-selected {
+		background-color: var(--clr-back);
+		color: var(--clr-accent);
+	}
 }
 
 /*style items (options):*/
@@ -57,6 +71,8 @@
     visibility: visible;
     transform: translateY(0);
     transition: all 0.2s;
+	font-size: 12px;
+	border-radius: 4px;
 }
 
 .absoluteSelect {
@@ -83,9 +99,4 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(30px);
-}
-
-.select-items div:hover,
-.same-as-selected {
-    background-color: var(--clr-backL);
 }
