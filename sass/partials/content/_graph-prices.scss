@@ -40,7 +40,7 @@
 	right: 0px;
 	bottom: 0px;
 	padding: 0;
-	width: 188px;
+	width: 172px;
 	background: var(--clr-block);
 	transition: all .2s;
 	/*border: 1px solid var(--clr-separator);*/
@@ -129,13 +129,16 @@
 	}
 
 	&__scroll{
-		width: 188px;
+		width: 172px;
 		margin: 0;
 	}
 
 	&__scrollup__btn,
 	&__scrolldown__btn{
-		position: relative;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		height: 12px;
 		background: var(--clr-back);		
 		display: flex;
@@ -194,6 +197,9 @@
 	}
 
 	&__scrollup__btn{
+		bottom: auto;
+		top: 0;
+
 		.arrow__btn {
 			.scroll-down-icon {
 				transform: rotate(180deg);
@@ -273,7 +279,7 @@
 
 	&__trader{
 		display: flex;
-		font-size: 18px;
+		font-size: 16px;
     	font-weight: 700;
 		line-height: 1.18;
 		text-align: left;
@@ -283,8 +289,9 @@
 	&__price{
 		margin: 0;
 		font-size: 12px;
-	   	line-height: 1.7;
+	   	line-height: 1.2;
 		font-weight: 700;
+		margin: 5px 0 0;
 
 		span{
 			font-size: 10px;
@@ -352,5 +359,9 @@
 	.labeled-dropdown{
 		width: auto;
 		margin: 0 0 0 0;
+	}
+
+	.icon-trader{
+		margin: 5px 0 2px;
 	}
 }
