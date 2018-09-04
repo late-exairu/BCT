@@ -1940,7 +1940,8 @@ h6 {
     border: none;
     line-height: 1;
     background: transparent;
-    border-radius: var(--border-radius); }
+    border-radius: var(--border-radius);
+    overflow: hidden; }
   .exch-head__btn-bg {
     position: absolute;
     left: 0;

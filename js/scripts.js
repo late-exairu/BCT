@@ -212,7 +212,7 @@ $(function () {
 				redrawMainChart();
 			}
 		} else {
-			if ($('.b-graph').width() - x > 200) {
+			if ($('.b-graph').width() - x > 300) {
 				if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
 					$('.graph-prices').removeClass('open');
 					$('.b-graph__controls').removeClass('shifted');
@@ -225,6 +225,7 @@ $(function () {
 	$('.b-graph').mouseleave(function (e) {
 		var x = e.pageX - $('.b-graph').offset().left;
 		if (x < $('.b-graph').width() - 5) {
+			console.log('test');
 			if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
 				$('.graph-prices').removeClass('open');
 				$('.b-graph__controls').removeClass('shifted');
