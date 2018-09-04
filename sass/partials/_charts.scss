@@ -321,11 +321,11 @@
 }
 
 #portfolioChartText {
+	pointer-events: none;	
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
 	div.portfolio-graph-info {
-		pointer-events: none;	
 		display: inline-block;
 		color: #00AAF8; 
 		padding: 0px 15px;
@@ -360,6 +360,7 @@
 		margin-left: -14px;
 
 		&__current {
+			pointer-events: all;	
 			width: 100%;
 			padding: 4px 0 3px 5px;
 			border: 1px solid;
@@ -392,6 +393,7 @@
 			visibility: visible;
 		}
 		&__item {
+			pointer-events: all;	
 			width: 100%;
 			display: block !important;
 			padding: 3px 0 3px 5px;

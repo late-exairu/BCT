@@ -6597,11 +6597,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   /*border-bottom: 1px solid var(--clr-separator);*/ }
 
 #portfolioChartText {
+  pointer-events: none;
   position: absolute;
   bottom: 10px;
   left: 10px; }
   #portfolioChartText div.portfolio-graph-info {
-    pointer-events: none;
     display: inline-block;
     color: #00AAF8;
     padding: 0px 15px;
@@ -6630,6 +6630,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     font-weight: 600;
     margin-left: -14px; }
     #portfolioChartText .portfolio-graph-range__current {
+      pointer-events: all;
       width: 100%;
       padding: 4px 0 3px 5px;
       border: 1px solid;
@@ -6657,6 +6658,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     #portfolioChartText .portfolio-graph-range__list.open {
       visibility: visible; }
     #portfolioChartText .portfolio-graph-range__item {
+      pointer-events: all;
       width: 100%;
       display: block !important;
       padding: 3px 0 3px 5px;
