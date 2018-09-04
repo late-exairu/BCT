@@ -1926,7 +1926,7 @@ h6 {
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
-    flex: 0 0 172px;
+    flex: 0 0 188px;
     align-items: center;
     color: #fff;
     cursor: pointer;
@@ -3715,6 +3715,27 @@ body.menubar-in #user-btn:before {
   /*@media only screen and (min-width : 1366px) {
 		--icon-scale: 1.35;
 	}*/ }
+  .toolbar-icon.tool-graph {
+    width: calc(23px * var(--icon-scale));
+    height: calc(23px * var(--icon-scale)); }
+  .toolbar-icon.tool-expand {
+    width: calc(25px * var(--icon-scale));
+    height: calc(25px * var(--icon-scale)); }
+  .toolbar-icon.tool-undo {
+    width: calc(23px * var(--icon-scale));
+    height: calc(23px * var(--icon-scale)); }
+  .toolbar-icon.tool-redo {
+    width: calc(23px * var(--icon-scale));
+    height: calc(23px * var(--icon-scale)); }
+  .toolbar-icon.tool-camera {
+    width: calc(25px * var(--icon-scale));
+    height: calc(25px * var(--icon-scale)); }
+  .toolbar-icon.tool-gear {
+    width: calc(25px * var(--icon-scale));
+    height: calc(25px * var(--icon-scale)); }
+  .toolbar-icon.tool-graph2 {
+    width: calc(23px * var(--icon-scale));
+    height: calc(23px * var(--icon-scale)); }
   .toolbar-icon.tool-reload {
     width: calc(25px * var(--icon-scale));
     height: calc(25px * var(--icon-scale)); }
@@ -5977,7 +5998,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
-    flex: 0 0 172px;
+    flex: 0 0 188px;
     align-items: center;
     color: #fff;
     cursor: pointer;
@@ -6917,7 +6938,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 .graph-top {
   font-family: "open_sans", sans-serif;
   position: absolute;
-  left: 92px;
+  left: 53px;
   top: 10px;
   right: 5px;
   background: transparent;
@@ -7056,7 +7077,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     left: 10px; }
   @media only screen and (min-width: 1920px) {
     .graph-top {
-      left: 114px;
+      left: 65px;
       height: 42px; }
       .graph-top__item {
         min-width: var(--bar-height);
