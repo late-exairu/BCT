@@ -40,19 +40,23 @@ $(function () {
 			drop.addClass('open');
 		}
 	});
-
+	
 	var exchDroprownCountdown = null;
-	$('.main-cols__right-top .exch-dropdown').mouseenter(function name() {
-		exchDroprownCountdown = setTimeout(() => {
-			$(this).addClass('open');
-		}, 350);
+	$('.main-cols__right-top .exch-dropdown .exch-dropdown__border').click(function name() {
+			exchDroprownCountdown = setTimeout(() => {
+			$(this).parent().addClass('open');
+			}, 350);
+		});
+	
+	$(document).click(function() {
+		$('.main-cols__right-top .exch-dropdown').removeClass('open');
+			clearTimeout(exchDroprownCountdown);
+		});
+	
+	$('.main-cols__right-top .exch-dropdown').click(function(event) {
+		event.stopPropagation();
 	});
-
-	$('.main-cols__right-top .exch-dropdown').mouseleave(function name() {
-		$(this).removeClass('open');
-		clearTimeout(exchDroprownCountdown);
-	});
-
+	
 	$('.main-cols__right-top .exch-dropdown .exch-dropdown__current').click(function () {
 		$(this).addClass('hidden');
 		$(this).parent().find('.exch-search').removeClass('hidden').find('input').focus();
