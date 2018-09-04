@@ -68,9 +68,12 @@ for (i = 0; i < x.length; i++) {
             var wrapperHeight = $('.wrapper').height();
             var heightForSubmenuBottom = wrapperHeight - selectPosY - selectHeight;
 
+            var positionClass = 'to-top';
+
             // choose position for subMenu
              if (heightForSubmenuBottom > absoluteSelectHeight) {
                 resultTopPosition = selectPosY + selectHeight;
+                positionClass = '';
             } else {
                 resultTopPosition = selectPosY - absoluteSelectHeight;
             }
@@ -80,6 +83,7 @@ for (i = 0; i < x.length; i++) {
                 'top': resultTopPosition,
                 'width': selectWidth,
             });
+            $('.absoluteSelect').removeClass('to-top').addClass(positionClass);
 
         }
         // hide select
