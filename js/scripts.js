@@ -1072,6 +1072,73 @@ $(function () {
 		}
 	})
 
+	const exchangers = [
+		"BITFINEX",
+		"ETORO",
+		"24 OPTION",
+		"COINBULL",
+		"LUNO",
+		"PAXFOREX",
+		"BINANCE",
+		"COINBACE",
+		"LOCALBITCOINS",
+		"CEX IO",
+		"CHANGELLY",
+		"COINMAMA",
+		"XTRADE",
+		"CAPITAL.COM",
+		"PAXFUL",
+		"KRAKEN",
+		"POLONIEX",
+		"GEMINI",
+		"BITHUMB",
+		"XCOINS",
+		"COBINHOOD",
+		"COINCHECK",
+		"COINEXCHANGE",
+		"SHAPESHIFT",
+		"BITSO",
+		"INDACOIN",
+		"CITYINDEX",
+		"BITBAY",
+		"BITSTAMP",
+		"CRYPTOPIA",
+		"GDAX",
+		"CUCOIN"
+	]
+
+	tippy('[data="tippy-exchangers"]', {
+		html: '#ttpExchagers',
+		arrow: true,
+		animation: 'fade',
+		placement: 'right',
+		theme: 'bct',
+		popperOptions: {
+			modifiers: {
+				preventOverflow: {
+					enabled: false
+				}
+			}
+		},
+		onShow: function(instance) {
+			// get length and expect exchanger
+			var length = instance.reference.innerText.substr(1);
+			var expectExchanger = instance.reference.previousElementSibling.innerText;
+
+			// init textContent
+			instance.popper.querySelector('.tippy-content').textContent = "";
+			// generate exchangers as listed
+			for (let index = 0; index < exchangers.length; index++) {
+				if (exchangers[index] != expectExchanger) {
+					instance.popper.querySelector('.tippy-content').textContent += exchangers[index] + '\n';
+					length--;
+
+					if (length <= 0) break;
+				}				
+			}
+		}
+	})
+
 	/*---------------------------------------------------*/
 	/* Graph range select */
 	/*---------------------------------------------------*/
