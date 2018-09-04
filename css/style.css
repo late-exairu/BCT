@@ -1723,7 +1723,7 @@ h6 {
       height: 0;
       border-style: solid;
       border-width: 0 7px 8px 7px;
-      border-color: transparent transparent #ffffff transparent;
+      border-color: transparent transparent var(--clr-back) transparent;
       z-index: 1; }
     .exch-dropdown__list:after {
       content: '';
