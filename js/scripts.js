@@ -113,6 +113,10 @@ $(function () {
 
 		// first currency
 		if (telegramGroupName) {
+			if ($(this).index() == 1 || $(this).index() == 2){
+				$('.chat-talk').addClass('hidden');
+				$('.chat-talk').eq($(this).index() - 1).removeClass('hidden');
+			}
 			$('.chat-head__name').text(telegramGroupName);
 			$('.chat-head__curr').remove();
 			$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
