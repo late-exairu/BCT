@@ -6642,7 +6642,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   color: var(--clr-textD);
   height: 26px;
   padding: 5px 10px;
-  border-top: 1px solid var(--clr-separator);
+  border-bottom: 1px solid var(--clr-separator);
   cursor: pointer;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -6650,7 +6650,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .select-items div:hover {
     background-color: var(--clr-back);
     /*color: var(--clr-accent);*/ }
-  .select-items div:first-child {
+  .select-items div:last-child {
     border: none; }
   .select-items div.same-as-selected {
     background-color: var(--clr-back);
@@ -6663,6 +6663,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   background-color: var(--clr-block);
   border: 1px solid var(--clr-separatorD);
   left: 0;
+  top: 4px;
   right: 0;
   z-index: 99;
   opacity: 1;
@@ -6670,7 +6671,56 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   transform: translateY(0);
   transition: all 0.2s;
   font-size: 12px;
-  border-radius: 4px; }
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
+  .select-items:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4px 5px 4px;
+    border-color: transparent transparent var(--clr-separator) transparent; }
+  .select-items:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: 6px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 3px 4px 3px;
+    border-color: transparent transparent var(--clr-back) transparent;
+    z-index: 1; }
+
+.to-top .select-items {
+  top: auto;
+  bottom: 4px; }
+  .to-top .select-items:after {
+    content: '';
+    position: absolute;
+    top: auto;
+    bottom: -5px;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    border-color: var(--clr-separator) transparent transparent transparent; }
+  .to-top .select-items:before {
+    content: '';
+    position: absolute;
+    top: auto;
+    bottom: -4px;
+    right: 6px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 3px 0 3px;
+    border-color: var(--clr-back) transparent transparent transparent;
+    z-index: 1; }
 
 .absoluteSelect {
   position: absolute;

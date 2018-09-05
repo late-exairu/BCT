@@ -37,7 +37,7 @@
     color: var(--clr-textD);
     height: 26px;
     padding: 5px 10px;
-    border-top: 1px solid var(--clr-separator);
+    border-bottom: 1px solid var(--clr-separator);
     cursor: pointer;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -45,10 +45,10 @@
 
     &:hover{
     	background-color: var(--clr-back);
-    	/*color: var(--clr-accent);*/
+		/*color: var(--clr-accent);*/
     }
 
-    &:first-child{
+    &:last-child{
     	border: none;
     }
 
@@ -65,6 +65,7 @@
     background-color: var(--clr-block);
     border: 1px solid var(--clr-separatorD);
     left: 0;
+    top: 4px;
     right: 0;
     z-index: 99;
     opacity: 1;
@@ -73,6 +74,66 @@
     transition: all 0.2s;
 	font-size: 12px;
 	border-radius: 4px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+
+	&:after{
+		content: '';
+		position: absolute;
+		top: -5px;
+		right: 5px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 4px 5px 4px;
+		border-color: transparent transparent var(--clr-separator) transparent;
+	}
+
+	&:before{
+		content: '';
+		position: absolute;
+		top: -4px;
+		right: 6px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 3px 4px 3px;
+		border-color: transparent transparent var(--clr-back) transparent;
+		z-index: 1;
+	}
+}
+
+.to-top{
+	.select-items{
+    	top: auto;
+    	bottom: 4px;
+		
+		&:after{
+			content: '';
+			position: absolute;
+			top: auto;
+			bottom: -5px;
+			right: 5px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 5px 4px 0 4px;
+			border-color: var(--clr-separator) transparent transparent transparent;
+		}
+
+		&:before{
+			content: '';
+			position: absolute;
+			top: auto;
+			bottom: -4px;
+			right: 6px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 4px 3px 0 3px;
+			border-color: var(--clr-back) transparent transparent transparent;
+			z-index: 1;
+		}
+	}
 }
 
 .absoluteSelect {
