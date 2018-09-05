@@ -42,15 +42,31 @@ $(function () {
 	});
 	
 	$('.main-cols__right-top .exch-dropdown .exch-dropdown__border').click(function name() {
+		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 		$(this).parent().addClass('open');
 	});
 	
 	$(document).click(function() {
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
+
+		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+		$('div.portfolio-graph-range').css('border', '0px');
+		$('ul.portfolio-graph-range__list').removeClass('open');
+		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
 	});
 	
 	$('.main-cols__right-top .exch-dropdown').click(function(event) {
 		event.stopPropagation();
+		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+		$('div.portfolio-graph-range').css('border', '0px');
+		$('ul.portfolio-graph-range__list').removeClass('open');
+		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+	});
+
+
+	$('div.portfolio-graph-range').click(function(event) {
+		event.stopPropagation();
+		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 	});
 	
 	$('.main-cols__right-top .exch-dropdown .exch-dropdown__current').click(function () {
