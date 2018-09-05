@@ -7161,6 +7161,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .basic-btn.btn-red {
     background: #e05475; }
 
+#telegram-login-BCTerminalBot {
+  width: 100% !important;
+  height: 56px !important; }
+
 /* =================================================================== */
 /* popups */
 /* =================================================================== */
