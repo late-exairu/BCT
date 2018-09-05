@@ -220,7 +220,7 @@
 	&__item{
 		position: relative;
 		text-align: center;
-		height: 88px;
+		height: 78px;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
@@ -232,7 +232,7 @@
 		border-top: 1px solid var(--clr-separatorP);
 		color: var(--clr-textD);
 		background: var(--clr-block);
-		padding-top: 9px;
+		padding-top: 7px;
 
 		&:first-child{
 			border: none;
@@ -255,10 +255,11 @@
 			//position: relative;
 			width: 100%;
 
-			height: 24px;
+			height: 22px;
 			text-align: center;
 			background: transparent;
 			border: 0;
+			margin-top: 10px;
 			.ui-progressbar-value {
 				//background: var(--clr-back-new);
 				background: linear-gradient(to right, rgba(40, 107, 180, 0), rgba(40, 107, 180, 0.8));
@@ -279,8 +280,8 @@
 
 	&__trader{
 		display: flex;
-		font-size: 16px;
-    	font-weight: 700;
+		font-size: 17px;
+	   	font-weight: 650;
 		line-height: 1.18;
 		text-align: left;
 		padding: 0 5px;

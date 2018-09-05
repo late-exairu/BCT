@@ -846,6 +846,8 @@ $(function () {
 	$('.exch-head__btn, .exch-form__btn').click(function (e) {
 		e.preventDefault();
 		if ($(this).hasClass('exch-form__btn')) {
+			$('.icon-trader').addClass('hidden');
+			$('.progressbar').removeClass('hidden');
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
 				progressbar.progressbar( "value", 0);
