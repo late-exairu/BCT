@@ -219,15 +219,17 @@
 }
 
 .toolbar-drop{
+	display: none;
 	position: absolute;
-	left: 38px;
-	top: 100px;
+	left: 32px;
+	top: 0;
 	border: 1px solid var(--clr-separator);
 	background: var(--clr-block);
-	z-index: 6;
+	z-index: 1;
 	border-radius: var(--border-radius);
 	border: 1px solid var(--clr-separator);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	float: left;
 
 	&__item{
 		display: block;
@@ -244,7 +246,7 @@
 		align-items: center;
 		flex: 1 1 auto;
 		background: transparent;
-		justify-content: center;
+		justify-content: left;
 		padding: 2px 15px 2px 5px;
 		border: none;
 		cursor: pointer;
