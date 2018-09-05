@@ -928,10 +928,10 @@ $(function () {
 			var rand = Math.floor(Math.random() * (max - min + 1) + min);
 			setTimeout(updateTable3, rand);
 		}
-		updateTable1();
-		updateTable2();
-		updateTable3();
 
+ 		updateTable1();
+		updateTable2();
+		updateTable3(); 
 
 		$('.btn-table-toggle').click(function () {
 			$(this).toggleClass('open');
@@ -942,6 +942,18 @@ $(function () {
 
 			}
 		});
+
+		function calculateHeightOfFirstTable() {
+			var tableBodyHeight = $('.calculated-height-js').parent().height();
+			var calculatedHeight = (Math.floor((tableBodyHeight - 23) / 2 / 22) - 1) * 22;
+			// add table head height
+			calculatedHeight += $('.calculated-height-js .basic-table__row.head')[0].getBoundingClientRect().height;
+			$('.calculated-height-js').css('min-height', calculatedHeight);
+			$('.calculated-height-js').css('max-height', calculatedHeight);
+		}
+		calculateHeightOfFirstTable();
+		$(window).resize(calculateHeightOfFirstTable);
+		
 	}
 
 	/*---------------------------------------------------*/
