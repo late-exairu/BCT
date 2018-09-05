@@ -513,6 +513,7 @@ $(function () {
 		if ($(this).parents('#orderBook').length) {
 			$('#orders').css('display', 'flex');
 			$('.btn-table-toggle').addClass('open');
+			calculateHeightOfFirstTable();
 		}
 
 		// select value in exch-dropdown
@@ -941,20 +942,20 @@ $(function () {
 				$('#orders').css('display', 'none');
 
 			}
-		});
-
-		function calculateHeightOfFirstTable() {
-			var tableBodyHeight = $('.calculated-height-js').parent().height();
-			var calculatedHeight = (Math.floor((tableBodyHeight - 23) / 2 / 22) - 1) * 22;
-			// add table head height
-			calculatedHeight += $('.calculated-height-js .basic-table__row.head')[0].getBoundingClientRect().height;
-			$('.calculated-height-js').css('min-height', calculatedHeight);
-			$('.calculated-height-js').css('max-height', calculatedHeight);
-		}
-		calculateHeightOfFirstTable();
-		$(window).resize(calculateHeightOfFirstTable);
-		
+			calculateHeightOfFirstTable();
+		});		
 	}
+
+	function calculateHeightOfFirstTable() {
+		var tableBodyHeight = $('.calculated-height-js').parent().height();
+		var calculatedHeight = (Math.floor((tableBodyHeight - 23) / 2 / 22) - 1) * 22;
+		// add table head height
+		calculatedHeight += $('.calculated-height-js .basic-table__row.head')[0].getBoundingClientRect().height;
+		$('.calculated-height-js').css('min-height', calculatedHeight);
+		$('.calculated-height-js').css('max-height', calculatedHeight);
+	}
+	calculateHeightOfFirstTable();
+	$(window).resize(calculateHeightOfFirstTable);
 
 	/*---------------------------------------------------*/
 	/* transaction popup */
