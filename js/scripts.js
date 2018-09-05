@@ -613,18 +613,23 @@ $(function () {
 				});
 			}
 		});
-
-		mainChartObj.series[currentDataId - 1].update({
-			fillColor: {
-				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-				stops: gradientColor
-			},
-			color: mainChartFirstColor,
-			lineWidth: 3,
-			enableMouseTracking: true,
-			trackByArea: true,
-			zIndex: 10
-		});
+		if (mainChartObj.series[currentDataId - 1] == undefined) {
+			mainGraphHighlighted = currentDataId;
+			return false;
+		}
+		if (mainChartObj.series[currentDataId - 1].hasOwnProperty('type') && mainChartObj.series[currentDataId - 1].type == 'areaspline') {
+			mainChartObj.series[currentDataId - 1].update({
+				fillColor: {
+					linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+					stops: gradientColor
+				},
+				color: mainChartFirstColor,
+				lineWidth: 3,
+				enableMouseTracking: true,
+				trackByArea: true,
+				zIndex: 10
+			});
+		}
 
 		mainGraphHighlighted = currentDataId;
 	});
