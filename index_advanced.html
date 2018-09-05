@@ -2194,7 +2194,7 @@
 									</button>
 								</div>
 
-								<div class="toolbar__item"><!-- .active on click -->
+								<div class="toolbar__item" data-dropdown="#dropdown-standard"><!-- .active on click -->
 									<button class="toolbar__btn" data="tippy" title="Trend Line">
 										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
@@ -2339,9 +2339,12 @@
 							</div> -->
 						</div><!-- toolbar END -->
 
-						<!-- <div class="toolbar-drop">
+						<!------------------------------>
+						<!------ Toolbar dropdown ------>
+						<!------------------------------>
+						<div class="toolbar-drop dropdown-menu dropdown-anchor-left-top" id="dropdown-standard">
 							<div class="toolbar-drop__item">
-								<button class="toolbar-drop__btn">
+								<a class="toolbar-drop__btn">
 									<div class="toolbar-drop__icon-wrap">
 										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
@@ -2349,11 +2352,11 @@
 									</div>
 
 									<p class="toolbar-drop__title">Cross</p>
-								</button>
+								</a>
 							</div>
 					
 							<div class="toolbar-drop__item">
-								<button class="toolbar-drop__btn">
+								<a class="toolbar-drop__btn">
 									<div class="toolbar-drop__icon-wrap">
 										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
@@ -2361,11 +2364,11 @@
 									</div>
 								
 									<p class="toolbar-drop__title">Dot</p>
-								</button>
+								</a>
 							</div>
 					
 							<div class="toolbar-drop__item">
-								<button class="toolbar-drop__btn">
+								<a class="toolbar-drop__btn">
 									<div class="toolbar-drop__icon-wrap">
 										<svg class="toolbar-icon tool-trend" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#tool-trend"></use>
@@ -2373,9 +2376,9 @@
 									</div>
 								
 									<p class="toolbar-drop__title">Arrow</p>
-								</button>
+								</a>
 							</div>
-						</div> -->
+						</div>
 						<!-- toolbar-drop END -->
 
 
@@ -3705,6 +3708,8 @@
 
 <div class="absoluteSelect"></div>
 
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <script src="js/libs/jquery.mousewheel.min.js"></script>
@@ -3717,6 +3722,7 @@
 <script src="js/libs/jquery.scrollbar.min.js"></script>
 <script src="js/libs/custom-select.js"></script>
 <script src="js/libs/jquery.fancybox.min.js"></script>
+<script src="js/libs/jquery.sweet-dropdown.js"></script>
 <!-- <script src="js/libs/slick.js"></script> -->
 <script src="js/libs/tippy.min.js"></script>
 
