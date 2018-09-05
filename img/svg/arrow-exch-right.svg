@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16.938" height="12.906" viewBox="0 0 16.938 12.906">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #00a2ff;
-        fill-rule: evenodd;
-      }
-    </style>
-  </defs>
-  <path class="cls-1" d="M800.416,14.843l-5.428-5.465a0.982,0.982,0,0,0-1.4,0,1,1,0,0,0,0,1.405l3.743,3.769H784.7a1,1,0,0,0,0,1.987h12.639l-3.743,3.769a1,1,0,0,0,0,1.4,0.981,0.981,0,0,0,1.4,0l5.428-5.465A1,1,0,0,0,800.416,14.843Z" transform="translate(-783.781 -9.094)"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.02 18.06"><defs><style>.cls-1{fill:#f6921e;}</style></defs><title>Asset 3</title><g id="Layer_2" data-name="Layer 2"><g id="Слой_1" data-name="Слой 1"><polygon class="cls-1" points="16.02 9.03 6.99 0 6.99 6.76 0 6.76 0 11.3 6.99 11.3 6.99 18.06 16.02 9.03"/></g></g></svg>
