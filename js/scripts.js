@@ -950,6 +950,7 @@ $(function () {
 		var tableBodyHeight = $('.calculated-height-js').parent().height();
 		var calculatedHeight = (Math.floor((tableBodyHeight - 23) / 2 / 22) - 1) * 22;
 		// add table head height
+		if ($('.calculated-height-js .basic-table__row.head')[0])
 		calculatedHeight += $('.calculated-height-js .basic-table__row.head')[0].getBoundingClientRect().height;
 		$('.calculated-height-js').css('min-height', calculatedHeight);
 		$('.calculated-height-js').css('max-height', calculatedHeight);
