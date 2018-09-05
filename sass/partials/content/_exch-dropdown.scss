@@ -294,6 +294,7 @@
 		border: none;
 		border-radius: var(--border-radius);
 		background: transparent;
+		margin: auto;
 
 		&::placeholder{
 			color: var(--clr-text);
