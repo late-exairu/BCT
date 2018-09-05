@@ -701,8 +701,10 @@ $(function () {
 	/*---------------------------------------------------*/
 	var progressbar_list = $( ".progressbar");
 	var progressbar_array = new Array();
+	var progressbar_labels = new Array();
 	for (var i = 0; i < progressbar_list.length; i++) {
 		var progressbar = $( ".graph-prices__list .progressbar:eq(" + i + ")");
+		var progressbar_label = $( ".graph-prices__list .progressbar .progress-label:eq(" + i + ")");
 		progressbar.progressbar({
 			value: false,
 			change: function() {
@@ -713,24 +715,16 @@ $(function () {
 			}
 		});
 		progressbar_array.push(progressbar);
+		progressbar_labels.push(progressbar_label);
 	}
-	var progressLabel = $( ".progress-label" );
-	 
-    progressbar.progressbar({
-      value: false,
-      change: function() {
-        //progressLabel.text( progressbar.progressbar( "value" ) + "%" );
-      },
-      complete: function() {
-        //progressLabel.text( "Complete!" );
-      }
-    });
  
     function progress(i) {
-      var val = progressbar_array[i].progressbar( "value" ) || 0;
- 
+      var val = progressbar_array[i].progressbar("value") || 0;
+	  if (val == 10) {
+		progressbar_labels[i].css('visibility', 'visible');
+	  }
       progressbar_array[i].progressbar( "value", val + 2 );
- 
+	  progressbar_labels[i].css("width", (val + 2) + '%');
       if ( val < 99 ) {
         setTimeout( progress, 80, i);
       }
@@ -847,6 +841,7 @@ $(function () {
 		e.preventDefault();
 		if ($(this).hasClass('exch-form__btn')) {
 			$('.icon-trader').addClass('hidden');
+			$('.graph-prices__item .progress-label').css('visibility', 'hidden');
 			$('.progressbar').removeClass('hidden');
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
