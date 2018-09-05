@@ -285,6 +285,7 @@
 		font-family: $osans;
 		font-size: 18px;
 		position: absolute;
+		width: 100%;
 		left: 0;
 		top: 0;
 		right: 0;
@@ -294,7 +295,7 @@
 		border: none;
 		border-radius: var(--border-radius);
 		background: transparent;
-		margin: auto;
+		margin: auto 0;
 
 		&::placeholder{
 			color: var(--clr-text);
