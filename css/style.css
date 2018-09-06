@@ -7159,19 +7159,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .basic-btn.btn-red {
     background: #e05475; }
 
-#telegram-login-BCTerminalBot {
-  width: 100% !important;
-  height: 56px !important; }
-  #telegram-login-BCTerminalBot .tgme_widget body_widget_login {
-    display: block;
-    width: 100%; }
-  #telegram-login-BCTerminalBot .btn.tgme_widget_login_button {
-    width: 100%;
-    display: block;
-    min-height: 56px;
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important; }
-
 /* =================================================================== */
 /* popups */
 /* =================================================================== */
