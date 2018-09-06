@@ -460,3 +460,79 @@
 		border-bottom-right-radius: 5px;
 	}
 }
+
+.user-portfolio{
+	display: flex;
+	position: absolute;
+	left: 12px;
+	top: 6px;
+	z-index: 100;
+
+	&__userpic{
+		.user-pic,
+		.user-pic__avatar{
+			width: 36px;
+			height: 36px;
+		}
+	}
+
+	&__desc{
+		padding: 4px 8px;
+		line-height: 1.2;
+	}
+
+	&__name{
+		font-size: 11px;
+		margin: 0;
+		font-weight: 600;
+		color: var(--clr-textD);
+	}
+
+	.user-menu{
+		margin: 0 0 0 -2px;
+	}
+}
+
+.user-menu{
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+
+	&__item{
+		width: 18px;
+		height: 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: transparent;
+		border: none;
+		padding: 0;
+
+		&:hover{
+			cursor: pointer;
+
+			.sprite-icon{
+				fill: var(--clr-accentD);
+			}
+		}
+
+		&.current{
+			.sprite-icon{
+				fill: var(--clr-accentD);
+			}
+		}
+
+		.sprite-icon{
+			flex: 1 0 14px;
+			width: 14px;
+			height: 9px;
+			fill: var(--clr-textD);
+
+			&.portfolio-wallet			{ height: 9px; }
+			&.portfolio-liquidity		{ height: 9px; }
+			&.portfolio-order-history	{ height: 9px; }
+			&.portfolio-order-open		{ height: 10px; }
+		}
+	}
+}
