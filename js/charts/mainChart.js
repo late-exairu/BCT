@@ -9,13 +9,13 @@ function redrawMainChart() {
 	mainChartObj.reflow();
 }
 
-var mainChartMarginLeft = -20;
+var mainChartMarginLeft = -25;
 var lineColor = '#00AAF8';
 var blueColor = '#2190EA';
 var redColor = '#CA0000';
 
 if ($('body').hasClass('advanced')) {
-	mainChartMarginLeft = 35;
+	mainChartMarginLeft = 15;
 	lineColor = '#00AAF8';
 	blueColor = '#0082AF';
 	redColor = '#750000';

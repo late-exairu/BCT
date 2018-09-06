@@ -175,10 +175,25 @@ $(function () {
 		}
 		
 	});
+
 	$('.scrollbar-arrows').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",
-		"showArrows": true
+		"showArrows": true,
+		"onScroll": function(y, x){			
+			if(y.scroll == y.maxScroll){
+				$('.graph-prices__scrollup__btn').show();
+				$('.graph-prices__scrolldown__btn').hide();
+			} 
+			else if(y.scroll > 0 && y.scroll < y.maxScroll){
+				$('.graph-prices__scrollup__btn').show();
+				$('.graph-prices__scrolldown__btn').show();
+			}
+			else {
+				$('.graph-prices__scrollup__btn').hide();
+				$('.graph-prices__scrolldown__btn').show();
+			}
+		}
 	});
 
 	$('#user-btn').on('click', function () {
