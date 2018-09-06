@@ -887,10 +887,20 @@ $(function () {
 				setTimeout( progress, 1000 + 500 * i, i );
 				if (i == progressbar_array.length - 1){
 					setTimeout(function () {
-						$('.exch-form').removeClass('progress');
-						$('.exch-head').removeClass('open');
-						$('.graph-prices').removeClass('noClose');
-					}, 4000 + 1000 + 500 * i, i);
+                        $('.exch-form').addClass('completed');
+                        $('.exch-form__btn > span').html('COMPLETED');
+                        $('.exch-form__btn').attr("disabled", true);
+
+                        $(window).click(function() {
+							if ($('.exch-form').hasClass('completed')){
+                                $('.exch-form').removeClass('progress');
+                                $('.exch-head').removeClass('open');
+                                $('.graph-prices').removeClass('noClose');
+                                $('.exch-form__btn').attr("disabled", false);
+                                $('.exch-form').removeClass('completed');
+                            }
+                        });
+                    }, 4000 + 1000 + 500 * i, i);
 				}
 			}
 			$('.exch-form').addClass('progress');

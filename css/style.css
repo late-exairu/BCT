@@ -6352,6 +6352,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background: transparent; }
   .exch-form.progress .exch-form__btn-bg {
     fill: var(--clr-block); }
+  .exch-form.completed .exch-form__btn {
+    color: var(--clr-important); }
+    .exch-form.completed .exch-form__btn:after {
+      content: '';
+      width: 0;
+      height: 0; }
 
 .chat-search {
   padding: 8px 10px 8px 12px;

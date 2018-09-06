@@ -407,6 +407,18 @@
 			fill: var(--clr-block);
 		}
 	}
+
+	&.completed{
+		.exch-form__btn{
+			color: var(--clr-important);
+
+			&:after{
+				content: '';
+				width: 0;
+				height: 0;
+			}
+		}
+	}
 }
 
 .chat-search{
