@@ -5,23 +5,20 @@
 
 
 .chats-list{
-	padding: 8px 0 0;
-	// height: calc(100vh - 204px);
-	overflow-y: auto;
-	flex: 1;
+	padding: 0;
 
 	&__item{
 		position: relative;
 		display: flex;
-		padding: 10px 10px 10px 25px;
-		height: 75px;
+		padding: 6px 15px 6px 15px;
+		height: 52px;
 
 		&:after{
 			content: '';
 			position: absolute;
-			left: 85px;
+			left: 60px;
 			bottom: -1px;
-			right: 20px;
+			right: 15px;
 			height: 1px;
 			background: var(--clr-separator);
 		}
@@ -35,15 +32,15 @@
 
 	&__avatar-wrap{
 		position: relative;
-		width: 52px;
-		height: 52px;
-		margin: 0 15px 0 0;
+		width: 32px;
+		height: 32px;
+		margin: auto 4px auto 0;
 		flex: 0 0 auto;
 	}
 
 	&__avatar{
-		width: 52px;
-		height: 52px;
+		width: 32px;
+		height: 32px;
 		border-radius: 50%;
 	}
 
@@ -58,7 +55,7 @@
 		font-family: $osans;
 		margin: 0;
 		font-weight: 600;
-		font-size: 18px;
+		font-size: 12px;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -67,8 +64,8 @@
 
 	&__last{
 		font-family: $osans;
-		font-size: 15px;
-		margin: 5px 0 0;
+		font-size: 12px;
+		margin: 2px 0 0;
 		color: var(--clr-textL);
 		white-space: nowrap;
 		overflow: hidden;
@@ -86,27 +83,27 @@
 	}
 
 	&__time{
-		font-family: $osansC;
-		margin: 0 0 4px;
-		font-size: 14px;
+		font-family: $osans;
+		margin: 0 0 2px;
+		font-size: 10px;
 		white-space: nowrap;
-		min-height: 15px;
+		min-height: 12px;
 		color: var(--clr-textL);
 	}
 
 	&__comms{
 		font-family: $osans;
 		margin: 0;
-		font-size: 13px;
+		font-size: 10px;
 		white-space: nowrap;
 		background: var(--clr-textL);
 		color: #fff;
 		display: flex;
-		height: 18px;
-		line-height: 18px;
-		padding: 0 5px;
-		border-radius: 9px;
-		margin: auto 0 2px auto;
+		height: 12px;
+		line-height: 12px;
+		padding: 1px 5px 0;
+		border-radius: 6px;
+		margin: auto 0 0 auto;
 		justify-content: center;
 		flex: 0 0 auto;
 
