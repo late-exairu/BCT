@@ -40,13 +40,13 @@ $(function () {
 			drop.addClass('open');
 		}
 	});
-	
+
 	$('.main-cols__right-top .exch-dropdown .exch-dropdown__border').click(function name() {
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 		$(this).parent().addClass('open');
 	});
-	
-	$(document).click(function() {
+
+	$(document).click(function () {
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 
 		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
@@ -54,8 +54,8 @@ $(function () {
 		$('ul.portfolio-graph-range__list').removeClass('open');
 		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
 	});
-	
-	$('.main-cols__right-top .exch-dropdown').click(function(event) {
+
+	$('.main-cols__right-top .exch-dropdown').click(function (event) {
 		event.stopPropagation();
 		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
 		$('div.portfolio-graph-range').css('border', '0px');
@@ -64,11 +64,11 @@ $(function () {
 	});
 
 
-	$('div.portfolio-graph-range').click(function(event) {
+	$('div.portfolio-graph-range').click(function (event) {
 		event.stopPropagation();
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 	});
-	
+
 	$('.main-cols__right-top .exch-dropdown .exch-dropdown__current').click(function () {
 		$(this).addClass('hidden');
 		$(this).parent().find('.exch-search').removeClass('hidden').find('input').focus();
@@ -85,7 +85,7 @@ $(function () {
 				// if item not contain searchString
 				if ($(item).find('.exch-dropdown__title').text().toUpperCase().indexOf(searchString) == -1) {
 					$(item).addClass('hidden');
-				} 
+				}
 				// if contain			
 				else {
 					var searchStringGlobal = new RegExp(searchString, "g");
@@ -129,7 +129,7 @@ $(function () {
 
 		// first currency
 		if (telegramGroupName) {
-			if ($(this).index() == 1 || $(this).index() == 2){
+			if ($(this).index() == 1 || $(this).index() == 2) {
 				$('.chat-talk').addClass('hidden');
 				$('.chat-talk').eq($(this).index() - 1).removeClass('hidden');
 			}
@@ -161,37 +161,34 @@ $(function () {
 
 	$('.scrollbar-right').scrollbar();
 	$('.left-bar__scroll.scrollbar-left').scrollbar();
-	scrollbarLeft.scrollbar({		
-		"onScroll": function(y, x){			
-			if(y.scroll == y.maxScroll){
+	scrollbarLeft.scrollbar({
+		"onScroll": function (y, x) {
+			if (y.scroll == y.maxScroll) {
 				$('.toolbar__scrollup__btn').show();
 				$('.toolbar__scrolldown__btn').hide();
-				if(y.maxScroll == 0){
+				if (y.maxScroll == 0) {
 					$('.toolbar__scrollup__btn').hide();
 				}
-			}
-			else {
+			} else {
 				$('.toolbar__scrollup__btn').hide();
 				$('.toolbar__scrolldown__btn').show();
 			}
 		}
-		
+
 	});
 
 	$('.scrollbar-arrows').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",
 		"showArrows": true,
-		"onScroll": function(y, x){			
-			if(y.scroll == y.maxScroll){
+		"onScroll": function (y, x) {
+			if (y.scroll == y.maxScroll) {
 				$('.graph-prices__scrollup__btn').show();
 				$('.graph-prices__scrolldown__btn').hide();
-			} 
-			else if(y.scroll > 0 && y.scroll < y.maxScroll){
+			} else if (y.scroll > 0 && y.scroll < y.maxScroll) {
 				$('.graph-prices__scrollup__btn').show();
 				$('.graph-prices__scrolldown__btn').show();
-			}
-			else {
+			} else {
 				$('.graph-prices__scrollup__btn').hide();
 				$('.graph-prices__scrolldown__btn').show();
 			}
@@ -204,25 +201,33 @@ $(function () {
 
 	/*---------------------------------------------------*/
 	/* Scroll up/down event for left toolbar */
-	/*---------------------------------------------------*/		
-	$(".toolbar__scrollup__btn").on("click", function() {				
-		scrollbarLeft.animate({ scrollTop: 0 }, "slow");
+	/*---------------------------------------------------*/
+	$(".toolbar__scrollup__btn").on("click", function () {
+		scrollbarLeft.animate({
+			scrollTop: 0
+		}, "slow");
 	});
 
-	$(".toolbar__scrolldown__btn").on("click", function() {		
-		scrollbarLeft.animate({ scrollTop: scrollbarLeft.prop("scrollHeight") - scrollbarLeft.outerHeight() }, "slow");
+	$(".toolbar__scrolldown__btn").on("click", function () {
+		scrollbarLeft.animate({
+			scrollTop: scrollbarLeft.prop("scrollHeight") - scrollbarLeft.outerHeight()
+		}, "slow");
 	});
 
 	/*---------------------------------------------------*/
 	/* Scroll up/down event for graph prices */
-	/*---------------------------------------------------*/	
-	var graphPricesScrollbar = 	$('.graph-prices__scroll.scrollbar-arrows');
-	$(".graph-prices__scrollup__btn").on("click", function() {				
-		graphPricesScrollbar.animate({ scrollTop: '-=200' }, "slow");
+	/*---------------------------------------------------*/
+	var graphPricesScrollbar = $('.graph-prices__scroll.scrollbar-arrows');
+	$(".graph-prices__scrollup__btn").on("click", function () {
+		graphPricesScrollbar.animate({
+			scrollTop: '-=200'
+		}, "slow");
 	});
 
-	$(".graph-prices__scrolldown__btn").on("click", function() {				
-		graphPricesScrollbar.animate({ scrollTop: '+=200' }, "slow");
+	$(".graph-prices__scrolldown__btn").on("click", function () {
+		graphPricesScrollbar.animate({
+			scrollTop: '+=200'
+		}, "slow");
 	});
 
 	/*---------------------------------------------------*/
@@ -564,9 +569,9 @@ $(function () {
 		}
 
 		if ($(this).parents('#panel-funds-history').length) {
-/* 			$.fancybox.open({
-				src: '#exchange-step_2'
-			}); */
+			/* 			$.fancybox.open({
+							src: '#exchange-step_2'
+						}); */
 
 			$('.graph-prices').addClass('open');
 			$('.b-graph__controls').addClass('shifted');
@@ -737,37 +742,37 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* exchange progressbar */
 	/*---------------------------------------------------*/
-	var progressbar_list = $( ".progressbar");
+	var progressbar_list = $(".progressbar");
 	var progressbar_array = new Array();
 	var progressbar_labels = new Array();
 	for (var i = 0; i < progressbar_list.length; i++) {
-		var progressbar = $( ".graph-prices__list .progressbar:eq(" + i + ")");
-		var progressbar_label = $( ".graph-prices__list .progressbar .progress-label:eq(" + i + ")");
+		var progressbar = $(".graph-prices__list .progressbar:eq(" + i + ")");
+		var progressbar_label = $(".graph-prices__list .progressbar .progress-label:eq(" + i + ")");
 		progressbar.progressbar({
 			value: false,
-			change: function() {
+			change: function () {
 				//progressLabel.text( progressbar.progressbar( "value" ) + "%" );
 			},
-			complete: function() {
+			complete: function () {
 				//progressLabel.text( "Complete!" );
 			}
 		});
 		progressbar_array.push(progressbar);
 		progressbar_labels.push(progressbar_label);
 	}
- 
-    function progress(i) {
-      var val = progressbar_array[i].progressbar("value") || 0;
-	  if (val == 10) {
-		progressbar_labels[i].css('visibility', 'visible');
-	  }
-      progressbar_array[i].progressbar( "value", val + 2 );
-	  progressbar_labels[i].css("width", (val + 2) + '%');
-      if ( val < 99 ) {
-        setTimeout( progress, 80, i);
-      }
-    }
- 
+
+	function progress(i) {
+		var val = progressbar_array[i].progressbar("value") || 0;
+		if (val == 10) {
+			progressbar_labels[i].css('visibility', 'visible');
+		}
+		progressbar_array[i].progressbar("value", val + 2);
+		progressbar_labels[i].css("width", (val + 2) + '%');
+		if (val < 99) {
+			setTimeout(progress, 80, i);
+		}
+	}
+
 	/*---------------------------------------------------*/
 	/* Currency switch */
 	/*---------------------------------------------------*/
@@ -829,7 +834,7 @@ $(function () {
 			});
 		}
 	});
-	
+
 	/*---------------------------------------------------*/
 	/* Chat Search toggle */
 	/*---------------------------------------------------*/
@@ -883,24 +888,24 @@ $(function () {
 			$('.progressbar').removeClass('hidden');
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
-				progressbar.progressbar( "value", 0);
-				setTimeout( progress, 1000 + 500 * i, i );
-				if (i == progressbar_array.length - 1){
+				progressbar.progressbar("value", 0);
+				setTimeout(progress, 1000 + 500 * i, i);
+				if (i == progressbar_array.length - 1) {
 					setTimeout(function () {
-                        $('.exch-form').addClass('completed');
-                        $('.exch-form__btn > span').html('COMPLETED');
-                        $('.exch-form__btn').attr("disabled", true);
+						$('.exch-form').addClass('completed');
+						$('.exch-form__btn > span').html('COMPLETED');
+						$('.exch-form__btn').attr("disabled", true);
 
-                        $(window).click(function() {
-							if ($('.exch-form').hasClass('completed')){
-                                $('.exch-form').removeClass('progress');
-                                $('.exch-head').removeClass('open');
-                                $('.graph-prices').removeClass('noClose');
-                                $('.exch-form__btn').attr("disabled", false);
-                                $('.exch-form').removeClass('completed');
-                            }
-                        });
-                    }, 4000 + 1000 + 500 * i, i);
+						$(window).click(function () {
+							if ($('.exch-form').hasClass('completed')) {
+								$('.exch-form').removeClass('progress');
+								$('.exch-head').removeClass('open');
+								$('.graph-prices').removeClass('noClose');
+								$('.exch-form__btn').attr("disabled", false);
+								$('.exch-form').removeClass('completed');
+							}
+						});
+					}, 4000 + 1000 + 500 * i, i);
 				}
 			}
 			$('.exch-form').addClass('progress');
@@ -910,35 +915,41 @@ $(function () {
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
 
-/*			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
- 			if (fancies_length < 1) {
-				$.fancybox.open({
-					src: '#exchange-step_2',
-					opts: {
-						afterShow: function (instance, current) {
-							var fancybox_body = $('.fancybox-container')[0];
-							$('.b-graph .c-block')[0].append(fancybox_body);
-							$('.b-graph .c-block .fancybox-container')
-								.css({
-									"width": "100%",
-									"height": "100%",
-									"display": "block",
-									"position": "absolute"
-								})
-								.css("display", "block");
-						},
-						beforeShow: function () {
-							$('.fancybox-container').css("display", "none");
-						},
-						beforeClose: function () {
-							$('.exch-form').removeClass('progress');
-							$('.exch-head').toggleClass('open');
-						}
-					}
-				});
-			} */
+			/*			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
+			 			if (fancies_length < 1) {
+							$.fancybox.open({
+								src: '#exchange-step_2',
+								opts: {
+									afterShow: function (instance, current) {
+										var fancybox_body = $('.fancybox-container')[0];
+										$('.b-graph .c-block')[0].append(fancybox_body);
+										$('.b-graph .c-block .fancybox-container')
+											.css({
+												"width": "100%",
+												"height": "100%",
+												"display": "block",
+												"position": "absolute"
+											})
+											.css("display", "block");
+									},
+									beforeShow: function () {
+										$('.fancybox-container').css("display", "none");
+									},
+									beforeClose: function () {
+										$('.exch-form').removeClass('progress');
+										$('.exch-head').toggleClass('open');
+									}
+								}
+							});
+						} */
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
+			var sendCurrency = $('.exch-form__send input').attr('data-currency');
+			var getCurrency = $('.exch-form__get input').attr('data-currency');
+			var firstValue = ownWallet[sendCurrency].toFixed(2) + ' ' + sendCurrency;
+			var secondValue = ((ownWallet[sendCurrency] * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2) + ' ' + getCurrency;
+			$('.exch-form__send input').val(numberWithCommas(firstValue));
+			$('.exch-form__get input').val(numberWithCommas(secondValue));
 		}
 	});
 
@@ -950,6 +961,37 @@ $(function () {
 	$('.exch-form input').blur(function () {
 		var newValue = $(this).val() + ' ' + $(this).attr('data-currency');
 		$(this).val(newValue);
+	});
+
+	$('.exch-form input').keydown(function (e) {
+		var key = e.charCode || e.keyCode || 0;
+		// allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
+		// home, end, period, and numpad decimal
+		return (
+			key == 8 ||
+			key == 9 ||
+			key == 13 ||
+			key == 46 ||
+			key == 110 ||
+			key == 190 ||
+			(key >= 35 && key <= 40) ||
+			(key >= 48 && key <= 57) ||
+			(key >= 96 && key <= 105));
+	});
+
+	$('.exch-form input').keyup(function () {
+		var sendCurrency = $('.exch-form__send input').attr('data-currency');
+		var getCurrency = $('.exch-form__get input').attr('data-currency');
+
+		if ($(this).parent().hasClass('exch-form__send')) {
+			var firstValue = $(this).val();
+			var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2) + ' ' + getCurrency;
+			$('.exch-form__get input').val(numberWithCommas(secondValue));
+		} else {
+			var secondValue = $(this).val();
+			var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2) + ' ' + sendCurrency;
+			$('.exch-form__send input').val(numberWithCommas(firstValue));
+		}
 	});
 
 	/*---------------------------------------------------*/
@@ -985,9 +1027,9 @@ $(function () {
 			setTimeout(updateTable3, rand);
 		}
 
- 		updateTable1();
+		updateTable1();
 		updateTable2();
-		updateTable3(); 
+		updateTable3();
 
 		$('.btn-table-toggle').click(function () {
 			$(this).toggleClass('open');
@@ -998,7 +1040,7 @@ $(function () {
 
 			}
 			calculateHeightOfFirstTable();
-		});		
+		});
 	}
 
 	function calculateHeightOfFirstTable() {
@@ -1006,7 +1048,7 @@ $(function () {
 		var calculatedHeight = (Math.floor((tableBodyHeight - 23) / 2 / 22) - 1) * 22;
 		// add table head height
 		if ($('.calculated-height-js .basic-table__row.head')[0])
-		calculatedHeight += $('.calculated-height-js .basic-table__row.head')[0].getBoundingClientRect().height;
+			calculatedHeight += $('.calculated-height-js .basic-table__row.head')[0].getBoundingClientRect().height;
 		$('.calculated-height-js').css('min-height', calculatedHeight);
 		$('.calculated-height-js').css('max-height', calculatedHeight);
 	}
@@ -1071,7 +1113,7 @@ $(function () {
 					//$('.exch-head').toggleClass('open');
 				}
 			}
-		});		
+		});
 	});
 
 
@@ -1185,13 +1227,13 @@ $(function () {
 				}
 			}
 		},
-		onShow: function(instance) {
+		onShow: function (instance) {
 			// get length and expect exchanger
 			var length = instance.reference.innerText.substr(1);
 			var expectExchanger = instance.reference.previousElementSibling.innerText;
 
 			// init textContent
-			instance.popper.querySelector('.tippy-content').textContent = "";			
+			instance.popper.querySelector('.tippy-content').textContent = "";
 			// generate exchangers as listed
 			for (let index = 0; index < exchangers.length; index++) {
 				if (exchangers[index] != expectExchanger) {
@@ -1199,8 +1241,8 @@ $(function () {
 					length--;
 
 					if (length <= 0) break;
-				}				
-			}			
+				}
+			}
 			// text align to left
 			instance.popper.querySelector('.tippy-content').style.textAlign = "left";
 			instance.popper.querySelector('.tippy-content').style['white-space'] = "pre-line";
@@ -1256,8 +1298,7 @@ $(function () {
 			$('div.portfolio-graph-range').css('border', '0px');
 			$('ul.portfolio-graph-range__list').removeClass('open');
 			$('div.portfolio-graph-range__current').css('border', 'solid 1px');
-		}
-		else {
+		} else {
 			$('ul.portfolio-graph-range__list').addClass('open');
 			$('div.portfolio-graph-range__current').css('border', '0px');
 			$('ul.portfolio-graph-range__list').css('border-bottom', 'solid 1px');
