@@ -372,8 +372,10 @@
 			border: 1px solid;
 			border-radius: 5px;
 			cursor: pointer;
+			background: var(--clr-back);
 			&:hover {
 				background: rgba(0, 0, 0, 0.05);
+				background: var(--clr-back);
 			}
 			&:after {
 				content: "";
@@ -394,6 +396,8 @@
 			margin: 0;
 			padding: 0;
 			visibility: hidden;
+			background: var(--clr-back);
+			border-radius: 5px 5px 0 0;
 		}
 		&__list.open {
 			visibility: visible;

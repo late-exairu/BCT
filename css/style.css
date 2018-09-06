@@ -7151,9 +7151,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       padding: 4px 0 3px 5px;
       border: 1px solid;
       border-radius: 5px;
-      cursor: pointer; }
+      cursor: pointer;
+      background: var(--clr-back); }
       #portfolioChartText .portfolio-graph-range__current:hover {
-        background: rgba(0, 0, 0, 0.05); }
+        background: rgba(0, 0, 0, 0.05);
+        background: var(--clr-back); }
       #portfolioChartText .portfolio-graph-range__current:after {
         content: "";
         width: 0;
@@ -7170,7 +7172,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       display: block;
       margin: 0;
       padding: 0;
-      visibility: hidden; }
+      visibility: hidden;
+      background: var(--clr-back);
+      border-radius: 5px 5px 0 0; }
     #portfolioChartText .portfolio-graph-range__list.open {
       visibility: visible; }
     #portfolioChartText .portfolio-graph-range__item {
