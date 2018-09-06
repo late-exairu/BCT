@@ -7587,7 +7587,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     border: none;
     overflow: hidden;
     height: 40px;
-    width: 100%;
+    width: 100% !important;
     padding-left: calc((100% - 223px)/2);
     background-color: #54a9eb;
     border-bottom-left-radius: 5px;
