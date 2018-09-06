@@ -111,6 +111,7 @@ $(function () {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
 		var realCurrencyName = currencyName.slice(6).toLowerCase();
+		if (realCurrencyName == 'us dollar') realCurrencyName = 'dollar';
 
 		var newCurr = $(this).children().clone();
 		$(newCurr).eq(1).text(currencyName);
@@ -569,13 +570,18 @@ $(function () {
 		}
 
 		if ($(this).parents('#panel-funds-history').length) {
-			/* 			$.fancybox.open({
-							src: '#exchange-step_2'
-						}); */
-
 			$('.graph-prices').addClass('open');
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
+			var convertedText = $(this).find('.basic-table__col').eq(1).html();
+			var convertedArr = convertedText.split('-&gt;');
+			var firstCurrency = convertedArr[0].trim().slice(-3);
+			var secondCurrency = convertedArr[1].trim().slice(-3);
+			$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurrency + '"]').trigger('click');
+			$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurrency + '"]').trigger('click');
+			$('.exch-form__send input').val(numberWithCommas(convertedArr[0].trim()));
+			$('.exch-form__get input').val(numberWithCommas(convertedArr[1].trim()));
+
 		}
 
 	});
@@ -961,7 +967,7 @@ $(function () {
 
 	$('.exch-form input').blur(function () {
 		var newValue = $(this).val() + ' ' + $(this).attr('data-currency');
-		$(this).val(newValue);
+		$(this).val(numberWithCommas(newValue));
 	});
 
 	$('.exch-form input').keydown(function (e) {
