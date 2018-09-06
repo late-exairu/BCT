@@ -72,22 +72,22 @@
 
 	&__switch-left{
 		display: block;
-		width: 22px;
-		height: 20px;
+		width: 19px;
+		height: 17px;
 		position: relative;
 		left: -7px;
-		bottom: -4px;
-		fill: #241f5d;//var(--color-two);
+		bottom: -3px;
+		fill: var(--color-two);
 	}
 
 	&__switch-right{
 		display: block;
-		width: 22px;
-		height: 20px;
+		width: 19px;
+		height: 17px;
 		position: relative;
 		left: 7px;
-		top: -4px;
-		fill: #f6921e;//var(--color-one);
+		top: -3px;
+		fill: var(--color-one);
 	}
 
 	&__btn{
