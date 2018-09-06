@@ -1,3 +1,7 @@
+const numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 var ownWallet = {
     'BTC': 1.00,
     'ETH': 7.50,
@@ -43,12 +47,12 @@ var totalBalanceTrunc = Math.trunc(totalBalance);
 var totalBalanceFraction = (totalBalance - Math.trunc(totalBalance)).toFixed(2).substr(1);
 
 
-$('.totalBalanceTrunc').html(totalBalanceTrunc);
+$('.totalBalanceTrunc').html(numberWithCommas(totalBalanceTrunc));
 $('.totalBalanceFraction').html(totalBalanceFraction);
 
-$('.pricePerCoinBTC').html('$' + currenciesPrice['BTC']);
-$('.clearPricePerCoinBTC').html(currenciesPrice['BTC']);
-$('.pricePerCoinETH').html('$' + currenciesPrice['ETH']);
+$('.pricePerCoinBTC').html('$' + numberWithCommas(currenciesPrice['BTC']));
+$('.clearPricePerCoinBTC').html(numberWithCommas(currenciesPrice['BTC']));
+$('.pricePerCoinETH').html('$' + numberWithCommas(currenciesPrice['ETH']));
 
 $('.walletBTC').html(ownWallet['BTC'].toFixed(2) + '&nbsp;');
 $('.walletETH').html(ownWallet['ETH'].toFixed(2) + '&nbsp;');
