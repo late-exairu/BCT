@@ -1249,10 +1249,4 @@ $(function () {
 		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
 	});
 
-	// $('iframe#telegram-login-BCTerminalBot').load( function() {
-	// 	$('iframe').contents().find("head")
-	// 	  .append($("<style type='text/css'>  .tgme_widget body_widget_login{display:block;width:100%;}" +
-	// 	  	".btn.tgme_widget_login_button{width: 100%;display: block;min-height: 56px;border-top-left-radius: 0!important;border-top-right-radius: 0!important;}" +
-	// 	    "</style>"));
-	// });
 });
