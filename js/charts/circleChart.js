@@ -4,14 +4,14 @@
 
 var circleChartTooltipData = {
     Bitcoin: {
-        price: '$7,540.79',
-        value: '1 BTC',
-        percent: '75'
+        price: '$' + eachBalance['BTC'],
+       // value: '1 BTC',
+       // percent: '75'
     },
     Ethereum: {
-        price: '$150.00',
-        value: '0.5 ETH',
-        percent: '25'
+        price: '$' + eachBalance['ETH'],
+       // value: '0.5 ETH',
+       // percent: '25'
     }
 }
 
@@ -40,7 +40,7 @@ var circleChartOptions = {
         spacingLeft: 0,
         spacingTop: 0,
         backgroundColor: 'rgba(255, 255, 255, 0.0)',
-        marginLeft: 0
+        marginLeft: 0,
     },
     title: null,
     plotOptions: {
@@ -50,6 +50,7 @@ var circleChartOptions = {
             startAngle: 0,
             size: pieChartSize,
             center: [centerX, centerY],
+            colors: ['#707CB9', '#F6921E']
         },
         series: {
             dataLabels: {
@@ -89,16 +90,9 @@ var circleChartOptions = {
     series: [{
         name: 'Percent',
         data: [
-            ['Ethereum', 25],
-            ['Bitcoin', 75],
+            ['Ethereum', eachPercent['ETH']],
+            ['Bitcoin', eachPercent['BTC']],
         ],
-        zones: [{
-            value: 26,
-            color: '#707CB9'
-        }, {
-            value: 76,
-            color: '#F6921E'
-        }]
     }]
 };
 
