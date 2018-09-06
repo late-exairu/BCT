@@ -898,6 +898,7 @@ $(function () {
                                 $('.graph-prices').removeClass('noClose');
                                 $('.exch-form__btn').attr("disabled", false);
                                 $('.exch-form').removeClass('completed');
+                                $('.exch-form__btn > span').html('CONFIRM');
                             }
                         });
                     }, 4000 + 1000 + 500 * i, i);
