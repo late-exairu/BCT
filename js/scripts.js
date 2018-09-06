@@ -1214,10 +1214,18 @@ $(function () {
 
 	var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
 	$("div.portfolio-graph-range__current").on("click", function () {
-		$('ul.portfolio-graph-range__list').addClass('open');
-		$('div.portfolio-graph-range__current').css('border', '0px');
-		$('ul.portfolio-graph-range__list').css('border-bottom', 'solid 1px');
-		$('div.portfolio-graph-range').css('border', 'solid 1px');
+		if ($('ul.portfolio-graph-range__list').hasClass('open')) {
+			$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+			$('div.portfolio-graph-range').css('border', '0px');
+			$('ul.portfolio-graph-range__list').removeClass('open');
+			$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+		}
+		else {
+			$('ul.portfolio-graph-range__list').addClass('open');
+			$('div.portfolio-graph-range__current').css('border', '0px');
+			$('ul.portfolio-graph-range__list').css('border-bottom', 'solid 1px');
+			$('div.portfolio-graph-range').css('border', 'solid 1px');
+		}
 	});
 	$("ul.portfolio-graph-range__list").on("click", "li.portfolio-graph-range__item", function () {
 		allPortfolioOptions.removeClass('active');
