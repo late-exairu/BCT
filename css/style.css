@@ -1524,6 +1524,41 @@ h6 {
       background: var(--clr-accent); }
 
 /* =================================================================== */
+/* chats-search */
+/* =================================================================== */
+.chats-search {
+  padding: 10px 10px 10px 10px;
+  height: 60px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background: var(--clr-block);
+  border-bottom: 1px solid var(--clr-separator);
+  display: flex;
+  align-items: center; }
+  .chats-search__menu {
+    width: 22px;
+    height: 22px;
+    margin: auto 20px auto 10px;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: transparent; }
+    .chats-search__menu .sprite-icon {
+      width: 17px;
+      height: 10px;
+      margin: 0;
+      fill: var(--clr-accent); }
+  .chats-search__input {
+    width: 180px;
+    background: var(--clr-back-new);
+    border: none;
+    height: 22px;
+    border-radius: var(--border-radius);
+    padding: 0 15px;
+    font-size: 10px;
+    line-height: 22px;
+    color: var(--clr-text); }
+
+/* =================================================================== */
 /* cubic-slider */
 /* =================================================================== */
 .cubic-slider {
@@ -2520,6 +2555,161 @@ h6 {
       background: var(--clr-backLL); }
     .graph-range__item.active {
       background: var(--clr-backA); }
+
+/* =================================================================== */
+/* graph-top */
+/* =================================================================== */
+.graph-top {
+  font-family: "open_sans", sans-serif;
+  position: absolute;
+  left: 53px;
+  top: 10px;
+  right: 5px;
+  background: transparent;
+  display: flex;
+  padding: 0 0 0 0;
+  max-width: 100%;
+  border-radius: 0;
+  transition: all .1s;
+  height: 32px; }
+  .graph-top__left {
+    margin: 0 auto 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; }
+    .graph-top__left .graph-top__group {
+      margin: 0 10px 10px 0; }
+    .graph-top__left .graph-info {
+      margin: 0; }
+  .graph-top__right {
+    margin: 0 5px 0 0;
+    display: flex;
+    justify-content: flex-start; }
+    .graph-top__right .graph-top__group {
+      margin: 0 0 10px 10px; }
+  .graph-top__group {
+    position: relative;
+    display: flex;
+    margin: 0 0 10px 10px;
+    align-self: flex-start;
+    height: 100%; }
+    .graph-top__group:first-child {
+      margin: 0; }
+    .graph-top__group:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: var(--border-radius);
+      background: var(--clr-back);
+      transition: all .2s;
+      opacity: 0.75;
+      z-index: 0; }
+    .graph-top__group:hover:after {
+      opacity: 1; }
+    .graph-top__group.vertical {
+      flex-direction: column; }
+      .graph-top__group.vertical .graph-top__item {
+        margin: 0 0 0 0; }
+        .graph-top__group.vertical .graph-top__item:first-child {
+          margin: 0; }
+  .graph-top__item {
+    position: relative;
+    /*border: 1px solid var(--clr-important);*/
+    border: none;
+    border-radius: var(--border-radius);
+    height: var(--bar-height);
+    min-width: var(--bar-height);
+    margin: 0 0 0 6px;
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    background: var(--clr-block);
+    background: transparent;
+    justify-content: center;
+    padding: 0 3px;
+    z-index: 1;
+    min-width: 32px; }
+    .graph-top__item:first-child {
+      margin: 0; }
+    .graph-top__item.btn {
+      cursor: pointer;
+      transition: all 0.1s;
+      background: var(--clr-backL);
+      border-color: var(--clr-textL); }
+      .graph-top__item.btn .graph-top__icon,
+      .graph-top__item.btn .graph-top__text {
+        fill: var(--clr-text);
+        color: var(--clr-text); }
+        .graph-top__item.btn .graph-top__icon.mode .st0,
+        .graph-top__item.btn .graph-top__text.mode .st0 {
+          fill: #FFFFFF; }
+        .graph-top__item.btn .graph-top__icon.mode .st1,
+        .graph-top__item.btn .graph-top__text.mode .st1 {
+          fill: #3AB44A; }
+        .graph-top__item.btn .graph-top__icon.mode .st2,
+        .graph-top__item.btn .graph-top__text.mode .st2 {
+          fill: #EB2429; }
+        .graph-top__item.btn .graph-top__icon.mode .st3,
+        .graph-top__item.btn .graph-top__text.mode .st3 {
+          fill: #F4EB32; }
+        .graph-top__item.btn .graph-top__icon.mode .st4,
+        .graph-top__item.btn .graph-top__text.mode .st4 {
+          fill: #26A8E0; }
+  .graph-top__text {
+    font-size: 13px;
+    padding: 0 10px;
+    color: var(--clr-important); }
+    .graph-top__text span {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--clr-textD); }
+  .graph-top__btn-text {
+    font-size: 21px;
+    font-weight: 600;
+    padding: 0 5px;
+    color: var(--clr-textD); }
+  .graph-top__icon {
+    height: 18px;
+    width: 18px;
+    fill: var(--clr-important);
+    transition: all 0.1s;
+    flex: 0 auto;
+    --icon-scale: 0.8; }
+    .graph-top__icon.expand {
+      width: calc(28px * var(--icon-scale));
+      height: calc(28px * var(--icon-scale)); }
+    .graph-top__icon.buck {
+      width: calc(14px * var(--icon-scale));
+      height: calc(27px * var(--icon-scale)); }
+    .graph-top__icon.mode {
+      width: calc(29px * var(--icon-scale));
+      height: calc(28px * var(--icon-scale)); }
+      .graph-top__icon.mode .st0 {
+        fill: var(--clr-important); }
+      .graph-top__icon.mode .st1 {
+        fill: transparent; }
+      .graph-top__icon.mode .st2 {
+        fill: transparent; }
+      .graph-top__icon.mode .st3 {
+        fill: transparent; }
+      .graph-top__icon.mode .st4 {
+        fill: transparent; }
+  .graph-top.basic {
+    left: 10px; }
+  @media only screen and (min-width: 1920px) {
+    .graph-top {
+      left: 65px;
+      height: 42px; }
+      .graph-top__item {
+        min-width: var(--bar-height);
+        height: var(--bar-height);
+        margin: 0 0 0 8px;
+        min-width: 42px; }
+      .graph-top__icon {
+        --icon-scale: 1; } }
 
 /* =================================================================== */
 /* icon-trader */
@@ -3842,6 +4032,67 @@ body.menubar-in #user-btn:before {
     border-bottom: 7px solid #286bb4 !important;
 }
  */
+/* =================================================================== */
+/* user-menu */
+/* =================================================================== */
+.user-menu {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  .user-menu__item {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0; }
+    .user-menu__item:hover {
+      cursor: pointer; }
+      .user-menu__item:hover .sprite-icon {
+        fill: var(--clr-accentD); }
+    .user-menu__item.current .sprite-icon {
+      fill: var(--clr-accentD); }
+    .user-menu__item .sprite-icon {
+      flex: 1 0 14px;
+      width: 14px;
+      height: 9px;
+      fill: var(--clr-textD); }
+      .user-menu__item .sprite-icon.portfolio-wallet {
+        height: 9px; }
+      .user-menu__item .sprite-icon.portfolio-liquidity {
+        height: 9px; }
+      .user-menu__item .sprite-icon.portfolio-order-history {
+        height: 9px; }
+      .user-menu__item .sprite-icon.portfolio-order-open {
+        height: 10px; }
+
+/* =================================================================== */
+/* user-portfolio */
+/* =================================================================== */
+.user-portfolio {
+  display: flex;
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  z-index: 100; }
+  .user-portfolio__userpic .user-pic,
+  .user-portfolio__userpic .user-pic__avatar {
+    width: 36px;
+    height: 36px; }
+  .user-portfolio__desc {
+    padding: 4px 8px;
+    line-height: 1.2; }
+  .user-portfolio__name {
+    font-size: 11px;
+    margin: 0;
+    font-weight: 600;
+    color: var(--clr-textD); }
+  .user-portfolio .user-menu {
+    margin: 0 0 0 -2px; }
+
 /* Ion.RangeSlider
 // css version 2.0.3
 // © 2013-2014 Denis Ineshin | IonDen.com
@@ -7052,9 +7303,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       padding: 4px 0 3px 5px;
       border: 1px solid;
       border-radius: 5px;
-      cursor: pointer; }
+      cursor: pointer;
+      background: var(--clr-back); }
       #portfolioChartText .portfolio-graph-range__current:hover {
-        background: rgba(0, 0, 0, 0.05); }
+        background: rgba(0, 0, 0, 0.05);
+        background: var(--clr-back); }
       #portfolioChartText .portfolio-graph-range__current:after {
         content: "";
         width: 0;
@@ -7071,7 +7324,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       display: block;
       margin: 0;
       padding: 0;
-      visibility: hidden; }
+      visibility: hidden;
+      background: var(--clr-back);
+      border-radius: 5px 5px 0 0; }
     #portfolioChartText .portfolio-graph-range__list.open {
       visibility: visible; }
     #portfolioChartText .portfolio-graph-range__item {
