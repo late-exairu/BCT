@@ -1908,20 +1908,20 @@ h6 {
       transition: all .1s; }
   .exch-head__switch-left {
     display: block;
-    width: 22px;
-    height: 20px;
+    width: 19px;
+    height: 17px;
     position: relative;
     left: -7px;
-    bottom: -4px;
-    fill: #241f5d; }
+    bottom: -3px;
+    fill: var(--color-two); }
   .exch-head__switch-right {
     display: block;
-    width: 22px;
-    height: 20px;
+    width: 19px;
+    height: 17px;
     position: relative;
     left: 7px;
-    top: -4px;
-    fill: #f6921e; }
+    top: -3px;
+    fill: var(--color-one); }
   .exch-head__btn {
     position: relative;
     font-family: "open_sans", sans-serif;
@@ -6285,20 +6285,20 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       transition: all .1s; }
   .exch-form__switch-left {
     display: block;
-    width: 22px;
-    height: 20px;
+    width: 19px;
+    height: 17px;
     position: relative;
     left: -7px;
-    bottom: -4px;
-    fill: #241f5d; }
+    bottom: -3px;
+    fill: var(--color-two); }
   .exch-form__switch-right {
     display: block;
-    width: 22px;
-    height: 20px;
+    width: 19px;
+    height: 17px;
     position: relative;
     left: 7px;
-    top: -4px;
-    fill: #f6921e; }
+    top: -3px;
+    fill: var(--color-one); }
   .exch-form__btn {
     position: relative;
     font-family: "open_sans", sans-serif;
