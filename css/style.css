@@ -128,7 +128,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 154.8125em 141.25em; }
+  background-size: 157.8125em 143.75em; }
 
 /* =================================================================== */
 /* Functions
@@ -2538,31 +2538,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -140.0625em -127.4375em; }
+    background-position: -143.0625em -129.9375em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -144.4375em -131.875em; }
+    background-position: -147.4375em -134.375em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -143em -130.375em; }
+    background-position: -146em -132.875em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -140.8125em -128.1875em; }
+    background-position: -143.8125em -130.6875em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -142.3125em -129.6875em; }
+    background-position: -145.3125em -132.1875em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -141.4375em -128.8125em; }
+    background-position: -144.4375em -131.3125em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -143.5625em -131.1875em; }
+    background-position: -146.5625em -133.6875em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -7387,158 +7387,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     .view-mode .sprite-icon .st4 {
       fill: transparent; }
 
-.graph-top {
-  font-family: "open_sans", sans-serif;
-  position: absolute;
-  left: 53px;
-  top: 10px;
-  right: 5px;
-  background: transparent;
-  display: flex;
-  padding: 0 0 0 0;
-  max-width: 100%;
-  border-radius: 0;
-  transition: all .1s;
-  height: 32px; }
-  .graph-top__left {
-    margin: 0 auto 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; }
-    .graph-top__left .graph-top__group {
-      margin: 0 10px 10px 0; }
-    .graph-top__left .graph-info {
-      margin: 0; }
-  .graph-top__right {
-    margin: 0 5px 0 0;
-    display: flex;
-    justify-content: flex-start; }
-    .graph-top__right .graph-top__group {
-      margin: 0 0 10px 10px; }
-  .graph-top__group {
-    position: relative;
-    display: flex;
-    margin: 0 0 10px 10px;
-    align-self: flex-start;
-    height: 100%; }
-    .graph-top__group:first-child {
-      margin: 0; }
-    .graph-top__group:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: var(--border-radius);
-      background: var(--clr-back);
-      transition: all .2s;
-      opacity: 0.75;
-      z-index: 0; }
-    .graph-top__group:hover:after {
-      opacity: 1; }
-    .graph-top__group.vertical {
-      flex-direction: column; }
-      .graph-top__group.vertical .graph-top__item {
-        margin: 0 0 0 0; }
-        .graph-top__group.vertical .graph-top__item:first-child {
-          margin: 0; }
-  .graph-top__item {
-    position: relative;
-    /*border: 1px solid var(--clr-important);*/
-    border: none;
-    border-radius: var(--border-radius);
-    height: var(--bar-height);
-    min-width: var(--bar-height);
-    margin: 0 0 0 6px;
-    display: flex;
-    align-items: center;
-    flex: 1 0 auto;
-    background: var(--clr-block);
-    background: transparent;
-    justify-content: center;
-    padding: 0 3px;
-    z-index: 1;
-    min-width: 32px; }
-    .graph-top__item:first-child {
-      margin: 0; }
-    .graph-top__item.btn {
-      cursor: pointer;
-      transition: all 0.1s;
-      background: var(--clr-backL);
-      border-color: var(--clr-textL); }
-      .graph-top__item.btn .graph-top__icon,
-      .graph-top__item.btn .graph-top__text {
-        fill: var(--clr-text);
-        color: var(--clr-text); }
-        .graph-top__item.btn .graph-top__icon.mode .st0,
-        .graph-top__item.btn .graph-top__text.mode .st0 {
-          fill: #FFFFFF; }
-        .graph-top__item.btn .graph-top__icon.mode .st1,
-        .graph-top__item.btn .graph-top__text.mode .st1 {
-          fill: #3AB44A; }
-        .graph-top__item.btn .graph-top__icon.mode .st2,
-        .graph-top__item.btn .graph-top__text.mode .st2 {
-          fill: #EB2429; }
-        .graph-top__item.btn .graph-top__icon.mode .st3,
-        .graph-top__item.btn .graph-top__text.mode .st3 {
-          fill: #F4EB32; }
-        .graph-top__item.btn .graph-top__icon.mode .st4,
-        .graph-top__item.btn .graph-top__text.mode .st4 {
-          fill: #26A8E0; }
-  .graph-top__text {
-    font-size: 13px;
-    padding: 0 10px;
-    color: var(--clr-important); }
-    .graph-top__text span {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--clr-textD); }
-  .graph-top__btn-text {
-    font-size: 21px;
-    font-weight: 600;
-    padding: 0 5px;
-    color: var(--clr-textD); }
-  .graph-top__icon {
-    height: 18px;
-    width: 18px;
-    fill: var(--clr-important);
-    transition: all 0.1s;
-    flex: 0 auto;
-    --icon-scale: 0.8; }
-    .graph-top__icon.expand {
-      width: calc(28px * var(--icon-scale));
-      height: calc(28px * var(--icon-scale)); }
-    .graph-top__icon.buck {
-      width: calc(14px * var(--icon-scale));
-      height: calc(27px * var(--icon-scale)); }
-    .graph-top__icon.mode {
-      width: calc(29px * var(--icon-scale));
-      height: calc(28px * var(--icon-scale)); }
-      .graph-top__icon.mode .st0 {
-        fill: var(--clr-important); }
-      .graph-top__icon.mode .st1 {
-        fill: transparent; }
-      .graph-top__icon.mode .st2 {
-        fill: transparent; }
-      .graph-top__icon.mode .st3 {
-        fill: transparent; }
-      .graph-top__icon.mode .st4 {
-        fill: transparent; }
-  .graph-top.basic {
-    left: 10px; }
-  @media only screen and (min-width: 1920px) {
-    .graph-top {
-      left: 65px;
-      height: 42px; }
-      .graph-top__item {
-        min-width: var(--bar-height);
-        height: var(--bar-height);
-        margin: 0 0 0 8px;
-        min-width: 42px; }
-      .graph-top__icon {
-        --icon-scale: 1; } }
-
 .proggress-bar {
   width: 100%;
   max-width: 80%;
@@ -7554,38 +7402,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     height: 6px;
     background: var(--clr-accent);
     width: 6px; }
-
-.chats-search {
-  padding: 10px 10px 10px 10px;
-  height: 60px;
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
-  background: var(--clr-block);
-  border-bottom: 1px solid var(--clr-separator);
-  display: flex;
-  align-items: center; }
-  .chats-search__menu {
-    width: 22px;
-    height: 22px;
-    margin: auto 20px auto 10px;
-    padding: 0;
-    cursor: pointer;
-    border: none;
-    background: transparent; }
-    .chats-search__menu .sprite-icon {
-      width: 17px;
-      height: 10px;
-      margin: 0;
-      fill: var(--clr-accent); }
-  .chats-search__input {
-    width: 180px;
-    background: var(--clr-back-new);
-    border: none;
-    height: 22px;
-    border-radius: var(--border-radius);
-    padding: 0 15px;
-    font-size: 10px;
-    line-height: 22px;
-    color: var(--clr-text); }
 
 .message-bar__login {
   align-items: flex-end; }
