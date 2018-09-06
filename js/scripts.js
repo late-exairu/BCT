@@ -138,6 +138,7 @@ $(function () {
 			$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.exch-form__send .exch-form__coin').remove();
 			$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+			$('.exch-form__send input').attr('data-currency', $(this).attr('data-currency'));
 			$('.graph-info__title').first().text('1 ' + $(this).attr('data-currency') + ' = ' + numberWithCommas(currenciesPrice[$(this).attr('data-currency')]) + ' USD');
 			$('.chat-head__name').css('color', firstColor);
 		}
@@ -145,6 +146,7 @@ $(function () {
 		else {
 			$('.exch-form__get .exch-form__coin').remove();
 			$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+			$('.exch-form__get input').attr('data-currency', $(this).attr('data-currency'));
 		}
 
 		$(this).closest('.exch-dropdown').removeClass('open');
@@ -928,6 +930,16 @@ $(function () {
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 		}
+	});
+
+	$('.exch-form input').focus(function () {
+		var newValue = $(this).val().replace(/[^\d.-]/g, '');
+		$(this).val(newValue);
+	});
+
+	$('.exch-form input').blur(function () {
+		var newValue = $(this).val() + ' ' + $(this).attr('data-currency');
+		$(this).val(newValue);
 	});
 
 	/*---------------------------------------------------*/
