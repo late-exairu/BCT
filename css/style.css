@@ -7581,6 +7581,18 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     line-height: 22px;
     color: var(--clr-text); }
 
+.message-bar__login {
+  align-items: flex-end; }
+  .message-bar__login iframe {
+    border: none;
+    overflow: hidden;
+    height: 40px;
+    width: 100%;
+    padding-left: calc((100% - 223px)/2);
+    background-color: #54a9eb;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
+
 /* =================================================================== */
 /* Globals
 /* =================================================================== */
