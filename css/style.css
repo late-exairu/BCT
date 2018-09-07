@@ -7117,7 +7117,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   padding-top: 0;
   padding-left: 0;
   height: 100%;
-  width: 100%; }
+  width: 102.04%;
+  margin-left: -2.041%; }
 
 .label {
   z-index: 1 !important; }
