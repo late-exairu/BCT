@@ -916,6 +916,10 @@ $(function () {
 								$('.exch-form__btn').attr("disabled", false);
 								$('.exch-form').removeClass('completed');
                                 $('.exch-form__btn > span').html('CONFIRM');
+
+                                for (var j = 0; j < progressbar_array.length; j++) {
+                                    progressbar_array[j].progressbar("value", 0);
+                                }
                             }
 						});
 					}, 4000 + 1000 + 500 * i, i);
