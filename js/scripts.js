@@ -526,8 +526,9 @@ $(function () {
 							enableMouseTracking: item.options.enableMouseTracking
 						});
 					} else {
+						var inactiveLinecolor = index < 4 ? lineColor : 'rgba(0, 0, 0, 0)';
 						item.setOptions({
-							color: lineColor,
+							color: inactiveLinecolor,
 							lineWidth: item.options.lineWidth,
 							id: item.options.id,
 							enableMouseTracking: item.options.enableMouseTracking
@@ -637,6 +638,7 @@ $(function () {
 
 	var mainChartFirstColor = lineColor;
 	var mainChartSecondColor = '#dbdbdb';
+	var mainChartColorForHidden = 'rgba(0, 0, 0, 0)';
 
 	if ($('body').hasClass('dark-theme')) {
 		mainChartSecondColor = '#344756';
@@ -648,8 +650,9 @@ $(function () {
 		var currentDataId = $(this).attr('data-id');
 		mainChartObj.series.map(function (item, index) {
 			if (item.type == 'areaspline') {
+				var inactiveLinecolor = index < 4 ? mainChartSecondColor : mainChartColorForHidden;
 				item.update({
-					color: mainChartSecondColor,
+					color: inactiveLinecolor,
 					fillColor: {
 						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 						stops: [
