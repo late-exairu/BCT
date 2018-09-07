@@ -1036,11 +1036,11 @@ $(function () {
 
 		if ($(this).parent().hasClass('exch-form__send')) {
 			var firstValue = $(this).val();
-			var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2) + ' ' + getCurrency;
+			var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
 			$('.exch-form__get input').val(numberWithCommas(secondValue));
 		} else {
 			var secondValue = $(this).val();
-			var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2) + ' ' + sendCurrency;
+			var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
 			$('.exch-form__send input').val(numberWithCommas(firstValue));
 		}
 	});
