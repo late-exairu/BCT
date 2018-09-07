@@ -9,7 +9,7 @@ function redrawMainChart() {
 	mainChartObj.reflow();
 }
 
-var mainChartMarginLeft = -25;
+var mainChartMarginLeft = -42;
 var lineColor = '#00AAF8';
 var blueColor = '#2190EA';
 var redColor = '#CA0000';
@@ -37,7 +37,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	chart: {
 		marginLeft: mainChartMarginLeft,
 		marginBottom: 0,
-		marginRight: -25,
+		marginRight: -42,
 		spacingTop: 0,
 		spacingLeft: -22,
 		spacingRight: -22,
