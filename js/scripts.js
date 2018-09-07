@@ -598,8 +598,8 @@ $(function () {
 			var secondCurrency = convertedArr[1].trim().slice(-3);
 			$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurrency + '"]').trigger('click');
 			$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurrency + '"]').trigger('click');
-			$('.exch-form__send input').val(numberWithCommas(convertedArr[0].trim()));
-			$('.exch-form__get input').val(numberWithCommas(convertedArr[1].trim()));
+			$('.exch-form__send input').val(numberWithCommas(convertedArr[0].trim().slice(0, -4)));
+			$('.exch-form__get input').val(numberWithCommas(convertedArr[1].trim().slice(0, -4)));
 
 		}
 
