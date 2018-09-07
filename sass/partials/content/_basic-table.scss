@@ -270,6 +270,7 @@
 		font-size: 11px;
 		font-size: calc(var(--font-size) - 1px);
 		--cell-height: 21px;
+		font-weight: 600;
 
 		.basic-table__row{
 			&.head{

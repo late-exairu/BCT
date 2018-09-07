@@ -851,7 +851,8 @@ h6 {
   .basic-table.low-height {
     font-size: 11px;
     font-size: calc(var(--font-size) - 1px);
-    --cell-height: 21px; }
+    --cell-height: 21px;
+    font-weight: 600; }
     .basic-table.low-height .basic-table__row.head {
       font-size: calc(var(--font-size) - 1px);
       letter-spacing: -0.03em;
