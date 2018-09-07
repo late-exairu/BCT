@@ -1,5 +1,7 @@
 $(function () {
 
+	var svgArrowTemplate = '<svg class="basic-table__arrow-conv" role="img" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right-2"></use> </svg>';
+
 	if (localStorage.getItem('telegramAuth') == 'true') {
 		$('.message-bar__login').addClass('hidden');
 	}
@@ -590,7 +592,8 @@ $(function () {
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
 			var convertedText = $(this).find('.basic-table__col').eq(1).html();
-			var convertedArr = convertedText.split('-&gt;');
+			convertedText = convertedText.replace(/\s\s+/g, ' ');
+			var convertedArr = convertedText.split(svgArrowTemplate);
 			var firstCurrency = convertedArr[0].trim().slice(-3);
 			var secondCurrency = convertedArr[1].trim().slice(-3);
 			$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurrency + '"]').trigger('click');
@@ -913,8 +916,8 @@ $(function () {
 			$('.graph-prices__item .progress-label').css('visibility', 'hidden');
 			$('.progressbar').removeClass('hidden');
 
-			var firstValue = $('.exch-form__send input').val().trim().slice(0,-3).replace(',','');
-			var secondValue = $('.exch-form__get input').val().trim().slice(0,-3).replace(',', '')
+			var firstValue = $('.exch-form__send input').val().trim().replace(',','');
+			var secondValue = $('.exch-form__get input').val().trim().replace(',', '')
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
 			var firstValueResult = 0;
@@ -929,7 +932,7 @@ $(function () {
 					setTimeout(function () {
 						firstValueResult += firstValuePart;
 						secondValueResult += secondValuePart;
-						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html(firstValueResult.toFixed(2) + ' ' + sendCurrency + ' -> ' + secondValueResult.toFixed(2) + ' ' + getCurrency)
+						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html(firstValueResult.toFixed(2) + ' ' + sendCurrency + svgArrowTemplate + secondValueResult.toFixed(2) + ' ' + getCurrency)
 					}, 4000 + 1000 + 500 * i, i);
 				}
 
@@ -963,7 +966,7 @@ $(function () {
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active');
 			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
 			if (!$('body').hasClass('advanced'))
-			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + ' -> 0.00 ' + getCurrency)
+			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency)
 			$('.graph-prices').addClass('open noClose');
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
