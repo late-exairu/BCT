@@ -548,11 +548,17 @@ $(function () {
 		$(this).parent().find('.basic-table__row').removeClass('active');
 		$(this).addClass('active');
 
+		var price = $(this)[0].children[0].innerText;
+		price = price.replace(/,/g,'');
+		var amount= $(this)[0].children[1].innerText;
+
 		// show order form
 		if ($(this).parents('#orderBook').length) {
 			$('#orders').css('display', 'flex');
 			$('.btn-table-toggle').addClass('open');
 			calculateHeightOfFirstTable();
+			$('#orders .forms-wrap .order-form__input.amount').val(amount);
+			$('#orders .forms-wrap .order-form__input.price').val(price);
 		}
 
 		// select value in exch-dropdown
