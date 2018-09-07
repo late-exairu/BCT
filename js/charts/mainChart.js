@@ -37,7 +37,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	chart: {
 		marginLeft: mainChartMarginLeft,
 		marginBottom: 0,
-		marginRight: -60,
+		marginRight: -45,
 		spacingTop: 0,
 		spacingLeft: -22,
 		spacingRight: -22,
