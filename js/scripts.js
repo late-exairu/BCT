@@ -47,7 +47,7 @@ $(function () {
 	});
 
 	$('body, .exch-search .exch-dropdown__hangle').click(function (event) {
-		event.stopPropagation();
+		if ($(this).hasClass('exch-dropdown__hangle')) event.stopPropagation();
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 
 		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
