@@ -1,11 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="14.94" height="12.938" viewBox="0 0 14.94 12.938">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #2b559a;
-        fill-rule: evenodd;
-      }
-    </style>
-  </defs>
-  <path class="cls-1" d="M1693.81,78.693l7.48-12.956h-14.96Z" transform="translate(-1686.34 -65.75)"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="15px" height="8.9px" viewBox="0 0 15 8.9" style="enable-background:new 0 0 15 8.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#BFC0C0;}
+</style>
+<path class="st0" d="M7.5,8.9L0.3,1.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l5.8,5.8l5.8-5.8c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L7.5,8.9z"
+	/>
 </svg>
