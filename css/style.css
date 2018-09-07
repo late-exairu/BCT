@@ -1459,6 +1459,21 @@ h6 {
     display: flex;
     padding: 6px 15px 6px 15px;
     height: 52px; }
+    .chats-list__item:hover {
+      cursor: pointer; }
+      .chats-list__item:hover:before {
+        opacity: 1; }
+    .chats-list__item:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: -1px;
+      right: 0;
+      background: var(--clr-backLL);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity .1s; }
     .chats-list__item:after {
       content: '';
       position: absolute;
@@ -1466,6 +1481,7 @@ h6 {
       bottom: -1px;
       right: 15px;
       height: 1px;
+      z-index: 0;
       background: var(--clr-separator); }
     .chats-list__item:last-child:after {
       display: none; }
@@ -1476,17 +1492,21 @@ h6 {
     margin: auto 4px auto 0;
     flex: 0 0 auto; }
   .chats-list__avatar {
+    position: relative;
     width: 32px;
     height: 32px;
-    border-radius: 50%; }
+    border-radius: 50%;
+    z-index: 2; }
   .chats-list__desc {
+    position: relative;
     padding: 3px 10px;
     overflow: hidden;
     min-width: 100px;
-    flex: 1 1 auto; }
+    flex: 1 1 auto;
+    z-index: 2; }
   .chats-list__name {
     font-family: "open_sans", sans-serif;
-    margin: 0;
+    margin: 1px 0 0;
     font-weight: 600;
     font-size: 12px;
     white-space: nowrap;
@@ -1502,13 +1522,15 @@ h6 {
     overflow: hidden;
     text-overflow: ellipsis; }
   .chats-list__info {
+    position: relative;
     display: flex;
     flex-direction: column;
     text-align: right;
     margin: 0 0 0 auto;
     padding: 7px 0 5px;
     flex: 0 0 auto;
-    align-items: flex-start; }
+    align-items: flex-start;
+    z-index: 2; }
   .chats-list__time {
     font-family: "open_sans", sans-serif;
     margin: 0 0 2px;
