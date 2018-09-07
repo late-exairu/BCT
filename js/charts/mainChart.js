@@ -329,6 +329,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			}, 
 			id: 4,
 			enableMouseTracking: true,
+			trackByArea: true,
+			zIndex: 10
 		},
 		{
 			type: 'areaspline',
