@@ -894,14 +894,33 @@ $(function () {
 	// convert/go buttons
 	$('.exch-head__btn, .exch-form__btn').click(function (e) {
 		e.preventDefault();
+		var sendCurrency = $('.exch-form__send input').attr('data-currency');
+		var getCurrency = $('.exch-form__get input').attr('data-currency');
 		if ($(this).hasClass('exch-form__btn')) {
 			$('.icon-trader').addClass('hidden');
 			$('.graph-prices__item .progress-label').css('visibility', 'hidden');
 			$('.progressbar').removeClass('hidden');
+
+			var firstValue = $('.exch-form__send input').val().trim().slice(0,-3).replace(',','');
+			var secondValue = $('.exch-form__get input').val().trim().slice(0,-3).replace(',', '')
+			var firstValuePart = firstValue / progressbar_array.length;
+			var secondValuePart = secondValue / progressbar_array.length;
+			var firstValueResult = 0;
+			var secondValueResult = 0;
+
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
 				progressbar.progressbar("value", 0);
 				setTimeout(progress, 1000 + 500 * i, i);
+
+				if(!$('body').hasClass('advanced')){
+					setTimeout(function () {
+						firstValueResult += firstValuePart;
+						secondValueResult += secondValuePart;
+						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html(firstValueResult.toFixed(2) + ' ' + sendCurrency + ' -> ' + secondValueResult.toFixed(2) + ' ' + getCurrency)
+					}, 4000 + 1000 + 500 * i, i);
+				}
+
 				if (i == progressbar_array.length - 1) {
 					setTimeout(function () {
 						$('.exch-form').addClass('completed');
@@ -931,6 +950,8 @@ $(function () {
 			$('.exch-form').addClass('progress');
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active');
 			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
+			if (!$('body').hasClass('advanced'))
+			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + ' -> 0.00 ' + getCurrency)
 			$('.graph-prices').addClass('open noClose');
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
@@ -964,8 +985,6 @@ $(function () {
 						} */
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
-			var sendCurrency = $('.exch-form__send input').attr('data-currency');
-			var getCurrency = $('.exch-form__get input').attr('data-currency');
 			var firstValue = ownWallet[sendCurrency].toFixed(2) + ' ' + sendCurrency;
 			var secondValue = ((ownWallet[sendCurrency] * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2) + ' ' + getCurrency;
 			$('.exch-form__send input').val(numberWithCommas(firstValue));
