@@ -606,6 +606,20 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
+	/* chat events */
+	/*---------------------------------------------------*/
+
+	$('.chat-head__back').click(function () {
+		$('.main-cols__left-top .d-flex .c-block__col').toggleClass('hidden');
+	});
+
+	$('.chats-list__item').click(function () {
+		var chatName = $(this).find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
+		$('.chat-head__name').text(chatName);
+		$('.main-cols__left-top .d-flex .c-block__col, .chat-talk').toggleClass('hidden');
+	});
+
+	/*---------------------------------------------------*/
 	/* change range on Portfolio Chart */
 	/*---------------------------------------------------*/
 
