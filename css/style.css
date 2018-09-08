@@ -7127,10 +7127,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   position: inherit !important; }
 
 .highcharts-tooltip {
-  z-index: 9998 !important; }
-
-.highcharts-tooltip {
-  font-family: "open_sans", sans-serif; }
+  font-family: "open_sans", sans-serif;
+  z-index: 9998 !important;
+  margin-left: -2.041%; }
   .highcharts-tooltip div.tooltip,
   .highcharts-tooltip div.tooltipCircle {
     opacity: 1;

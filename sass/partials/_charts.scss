@@ -157,11 +157,9 @@
 }
 
 .highcharts-tooltip {
-	z-index: 9998 !important;
-}
-
-.highcharts-tooltip {
 	font-family: $osans;
+	z-index: 9998 !important;
+	margin-left: -2.041%;
 	div.tooltip,
 	div.tooltipCircle {
 		opacity: 1;
