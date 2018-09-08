@@ -59,7 +59,7 @@
   /*basic tooltip text color*/
   --clr-back-tooltip: #F9F9F9;
   /*basic tooltip  background color*/
-  --clr-line: #000000;
+  --clr-line:			#000000;
   /*basic tooltip  background color*/
   --clr-icon-arrow:	#f9f9f9;
   /*basic arrow down fill color*/ }
@@ -67,7 +67,7 @@
 .dark-theme {
   --clr-text:			#9ba6b2;
   /*text color basic*/
-  --clr-textLL:		#c6c8c8;
+  --clr-textLL:		#24425B;
   /*text color lighter*/
   --clr-textL:		#9ba6b2;
   /*text color light*/
@@ -115,7 +115,7 @@
   /*tooltip text color dark*/
   --clr-back-tooltip: #2C3137;
   /*tooltip  background color dark*/
-  --clr-line: #BFC0C0;
+  --clr-line:			#BFC0C0;
   /*basic tooltip  background color*/
   --clr-icon-arrow:	#9BA6B2;
   /*arrow down fill color*/ }
@@ -128,7 +128,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 157.8125em 143.75em; }
+  background-size: 159.25em 144.625em; }
 
 /* =================================================================== */
 /* Functions
@@ -719,6 +719,8 @@ h6 {
       color: var(--clr-accent); }
       .basic-table__row.active:hover {
         background: var(--clr-backLL); }
+      .basic-table__row.active .basic-table__arrow-conv {
+        fill: var(--clr-accent); }
     .basic-table__row.disabled {
       opacity: 0.5;
       pointer-events: none;
@@ -831,6 +833,12 @@ h6 {
     height: 3px;
     margin: 0 0 5px 7px;
     fill: var(--clr-iconD); }
+  .basic-table__arrow-conv {
+    display: inline-block;
+    width: 11px;
+    height: 6px;
+    margin: 0 5px 0 5px;
+    fill: var(--clr-text); }
   .basic-table__tip {
     font-size: 10px;
     padding: 3px 0 0;
@@ -1451,6 +1459,21 @@ h6 {
     display: flex;
     padding: 6px 15px 6px 15px;
     height: 52px; }
+    .chats-list__item:hover {
+      cursor: pointer; }
+      .chats-list__item:hover:before {
+        opacity: 1; }
+    .chats-list__item:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: -1px;
+      right: 0;
+      background: var(--clr-backLL);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity .1s; }
     .chats-list__item:after {
       content: '';
       position: absolute;
@@ -1458,6 +1481,7 @@ h6 {
       bottom: -1px;
       right: 15px;
       height: 1px;
+      z-index: 0;
       background: var(--clr-separator); }
     .chats-list__item:last-child:after {
       display: none; }
@@ -1468,17 +1492,21 @@ h6 {
     margin: auto 4px auto 0;
     flex: 0 0 auto; }
   .chats-list__avatar {
+    position: relative;
     width: 32px;
     height: 32px;
-    border-radius: 50%; }
+    border-radius: 50%;
+    z-index: 2; }
   .chats-list__desc {
+    position: relative;
     padding: 3px 10px;
     overflow: hidden;
     min-width: 100px;
-    flex: 1 1 auto; }
+    flex: 1 1 auto;
+    z-index: 2; }
   .chats-list__name {
     font-family: "open_sans", sans-serif;
-    margin: 0;
+    margin: 1px 0 0;
     font-weight: 600;
     font-size: 12px;
     white-space: nowrap;
@@ -1494,13 +1522,15 @@ h6 {
     overflow: hidden;
     text-overflow: ellipsis; }
   .chats-list__info {
+    position: relative;
     display: flex;
     flex-direction: column;
     text-align: right;
     margin: 0 0 0 auto;
     padding: 7px 0 5px;
     flex: 0 0 auto;
-    align-items: flex-start; }
+    align-items: flex-start;
+    z-index: 2; }
   .chats-list__time {
     font-family: "open_sans", sans-serif;
     margin: 0 0 2px;
@@ -1649,8 +1679,10 @@ h6 {
     .exch-dropdown.open .exch-dropdown__list {
       opacity: 1;
       visibility: visible; }
-    .exch-dropdown.open .exch-dropdown__hangle .sprite-icon {
-      transform: rotate(180deg); }
+    .exch-dropdown.open .exch-dropdown__hangle .sprite-icon.arrow {
+      display: none; }
+    .exch-dropdown.open .exch-dropdown__hangle .sprite-icon.close {
+      display: block; }
     .exch-dropdown.open .exch-dropdown__border:before {
       border-radius: 4px 0 0 0; }
     .exch-dropdown.open .exch-dropdown__border:after {
@@ -1695,16 +1727,24 @@ h6 {
     position: relative;
     width: 100%;
     height: 100%; }
-  .exch-dropdown__current, .exch-dropdown__item {
+  .exch-dropdown__current {
     width: 100%;
     height: 100%;
-    padding: 0 40px 0 12px;
+    padding: 0 40px 0 10px;
     display: flex;
     align-items: center;
     transition: all .1s;
     color: var(--clr-textD); }
-    .exch-dropdown__current span, .exch-dropdown__item span {
-      color: var(--clr-textLL);
+  .exch-dropdown__item {
+    width: 100%;
+    height: 100%;
+    padding: 0 40px 0 10px;
+    display: flex;
+    align-items: center;
+    transition: all .1s;
+    color: var(--clr-textD); }
+    .exch-dropdown__item span {
+      color: var(--clr-text);
       text-decoration: underline; }
   .exch-dropdown__hangle {
     position: absolute;
@@ -1715,21 +1755,32 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center; }
+    .exch-dropdown__hangle:hover .sprite-icon {
+      fill: var(--clr-textL); }
     .exch-dropdown__hangle .sprite-icon {
-      width: 8px;
-      height: 7px;
-      fill: var(--clr-accentD);
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 15px;
+      height: 9px;
+      fill: var(--clr-textLL);
       transition: all 0.2s; }
+      .exch-dropdown__hangle .sprite-icon.arrow {
+        display: block; }
+      .exch-dropdown__hangle .sprite-icon.close {
+        height: 15px;
+        display: none; }
   .exch-dropdown__list-title {
+    position: relative;
     display: flex;
-    justify-content: center;
+    padding: 0 15px;
     align-items: center;
     height: 45px;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
     background: var(--clr-back);
-    color: var(--clr-textD);
-    border-top: 1px solid var(--clr-separator); }
+    color: var(--clr-text);
+    margin: 0 0 -1px; }
   .exch-dropdown__list {
     position: absolute;
     height: 400px;
@@ -1745,10 +1796,9 @@ h6 {
     transition: all 0.2s;
     background: var(--clr-block);
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
-    /*border-top: 1px solid var(--clr-separator);*/ }
+    border-radius: var(--border-radius); }
     .exch-dropdown__list .exch-dropdown__title {
-      font-size: 18px;
-      font-weight: 700; }
+      font-size: 18px; }
     .exch-dropdown__list:before {
       content: '';
       position: absolute;
@@ -1769,20 +1819,26 @@ h6 {
       right: 0;
       height: 12px; }
   .exch-dropdown__item {
+    font-size: 18px;
     height: 45px;
     cursor: pointer;
+    color: var(--clr-textD);
     border-top: 1px solid var(--clr-separator); }
+    .exch-dropdown__item span {
+      font-weight: 700; }
+    .exch-dropdown__item .exch-dropdown__icon {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px; }
     .exch-dropdown__item:hover {
       background: var(--clr-backLL); }
     .exch-dropdown__item.current {
       color: var(--clr-accentD); }
-      .exch-dropdown__item.current .exch-dropdown__title {
-        font-weight: 600; }
   .exch-dropdown__icon {
-    width: 22px;
-    height: 22px;
-    margin: 0 8px 0 0;
-    flex: 0 0 22px;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    flex: 0 0 30px;
     /*fill: var(--clr-textL);*/ }
     .exch-dropdown__icon.btc {
       fill: #f79330; }
@@ -1808,10 +1864,15 @@ h6 {
     padding: 0px 0 0;
     margin: 0;
     line-height: 1;
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    text-transform: uppercase; }
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: -0.03em; }
+    .exch-dropdown__title span {
+      position: relative;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 700;
+      left: -1px; }
   .exch-dropdown .current .btc,
   .exch-dropdown .exch-dropdown__border .btc {
     fill: #f79330; }
@@ -1857,7 +1918,7 @@ h6 {
     transform: translateY(-50%);
     width: 19px;
     height: 19px;
-    fill: var(--clr-text);
+    fill: var(--clr-textD);
     z-index: 1; }
   .exch-search__input {
     font-family: "open_sans", sans-serif;
@@ -2731,31 +2792,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -143.0625em -129.9375em; }
+    background-position: -144.5em -130.8125em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -147.4375em -134.375em; }
+    background-position: -148.875em -135.25em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -146em -132.875em; }
+    background-position: -147.4375em -133.75em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -143.8125em -130.6875em; }
+    background-position: -145.25em -131.5625em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -145.3125em -132.1875em; }
+    background-position: -146.75em -133.0625em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -144.4375em -131.3125em; }
+    background-position: -145.875em -132.1875em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -146.5625em -133.6875em; }
+    background-position: -148em -134.5625em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -6454,7 +6515,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     overflow: hidden;
     flex: 1 1;
     height: 100%;
-    padding: 1px; }
+    padding: 1px;
+    border-radius: var(--border-radius); }
     .exch-form__get:before, .exch-form__send:before {
       content: '';
       position: absolute;
@@ -6490,11 +6552,25 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .exch-form__label {
     position: absolute;
     left: 12px;
-    top: 8px;
-    font-size: 10px;
+    top: 16px;
+    font-size: 15px;
     color: var(--clr-textD);
     pointer-events: none;
     z-index: 2; }
+  .exch-form__curr {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 18px;
+    font-weight: 700;
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-textD);
+    background: var(--clr-textLL);
+    z-index: 1; }
   .exch-form__coin {
     position: absolute;
     right: 10px;
@@ -6505,13 +6581,15 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     pointer-events: none;
     z-index: 2; }
   .exch-form__input {
+    font-family: "open_sans", sans-serif;
     position: relative;
     font-size: 18px;
     font-weight: 700;
     height: 100%;
     width: 100%;
     height: 100%;
-    padding: 18px 50px 2px 10px;
+    text-align: right;
+    padding: 4px 86px 4px 10px;
     border: 1px solid var(--clr-separatorD);
     border: none;
     border-radius: var(--border-radius);
@@ -6585,8 +6663,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     z-index: -1;
     fill: #0069be; }
   .exch-form.progress .exch-form__label,
-  .exch-form.progress .exch-form__input {
-    color: var(--clr-important);
+  .exch-form.progress .exch-form__input,
+  .exch-form.progress .exch-form__switch-left,
+  .exch-form.progress .exch-form__switch-right {
+    fill: var(--clr-textLL);
+    color: var(--clr-textLL);
     pointer-events: none; }
   .exch-form.progress .exch-form__btn {
     color: transparent; }
@@ -6601,17 +6682,22 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       background: url(../img/spin.svg); }
   .exch-form.progress .exch-form__current {
     background: var(--clr-block); }
+  .exch-form.progress .exch-form__curr {
+    color: var(--clr-block);
+    background: var(--clr-textLL); }
   .exch-form.progress .exch-form__send:after,
   .exch-form.progress .exch-form__get:after {
     background: transparent; }
   .exch-form.progress .exch-form__btn-bg {
     fill: var(--clr-block); }
   .exch-form.completed .exch-form__btn {
-    color: var(--clr-important); }
+    color: var(--clr-block); }
     .exch-form.completed .exch-form__btn:after {
       content: '';
       width: 0;
       height: 0; }
+  .exch-form.completed .exch-form__btn-bg {
+    fill: var(--clr-textLL); }
 
 .chat-search {
   padding: 8px 10px 8px 12px;

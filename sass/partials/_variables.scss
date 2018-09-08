@@ -47,14 +47,14 @@ $osansC:			'open_sans_condensed', sans-serif;
 
 	--clr-text-tooltip: #2E2E2E;	/*basic tooltip text color*/
 	--clr-back-tooltip: #F9F9F9;	/*basic tooltip  background color*/
-	--clr-line: #000000; 			/*basic tooltip  background color*/
+	--clr-line:			#000000; 	/*basic tooltip  background color*/
 	--clr-icon-arrow:	#f9f9f9;	/*basic arrow down fill color*/
 }
 
 .dark-theme{
 
 	--clr-text:			#9ba6b2; 	/*text color basic*/
-	--clr-textLL:		#c6c8c8; 	/*text color lighter*/
+	--clr-textLL:		#24425B; 	/*text color lighter*/
 	--clr-textL:		#9ba6b2; 	/*text color light*/
 	--clr-textD:		#9ba6b2;	/*text color dark*/
 	--clr-textA:		#286bb4;	/*text color accented*/
@@ -81,7 +81,7 @@ $osansC:			'open_sans_condensed', sans-serif;
 
 	--clr-text-tooltip: #F9F9F9;	/*tooltip text color dark*/
 	--clr-back-tooltip: #2C3137;	/*tooltip  background color dark*/
-	--clr-line: #BFC0C0;			/*basic tooltip  background color*/
+	--clr-line:			#BFC0C0;	/*basic tooltip  background color*/
 	--clr-icon-arrow:	#9BA6B2;	/*arrow down fill color*/
 
 }

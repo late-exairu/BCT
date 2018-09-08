@@ -13,6 +13,27 @@
 		padding: 6px 15px 6px 15px;
 		height: 52px;
 
+		&:hover{
+			cursor: pointer;
+
+			&:before{
+				opacity: 1;
+			}
+		}
+
+		&:before{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: -1px;
+			right: 0;
+			background: var(--clr-backLL);
+			z-index: 1;
+			opacity: 0;
+			transition: opacity .1s;
+		}
+
 		&:after{
 			content: '';
 			position: absolute;
@@ -20,6 +41,7 @@
 			bottom: -1px;
 			right: 15px;
 			height: 1px;
+			z-index: 0;
 			background: var(--clr-separator);
 		}
 
@@ -39,21 +61,25 @@
 	}
 
 	&__avatar{
+		position: relative;
 		width: 32px;
 		height: 32px;
 		border-radius: 50%;
+		z-index: 2;
 	}
 
 	&__desc{
+		position: relative;
 		padding: 3px 10px;
 		overflow: hidden;
 		min-width: 100px;
 		flex: 1 1 auto;
+		z-index: 2;
 	}
 
 	&__name{
 		font-family: $osans;
-		margin: 0;
+		margin: 1px 0 0;
 		font-weight: 600;
 		font-size: 12px;
 		white-space: nowrap;
@@ -73,6 +99,7 @@
 	}
 
 	&__info{
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		text-align: right;
@@ -80,6 +107,7 @@
 		padding: 7px 0 5px;
 		flex: 0 0 auto;
 		align-items: flex-start;
+		z-index: 2;
 	}
 
 	&__time{

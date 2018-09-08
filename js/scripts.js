@@ -1,5 +1,7 @@
 $(function () {
 
+	var svgArrowTemplate = '<svg class="basic-table__arrow-conv" role="img" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right-2"></use> </svg>';
+
 	if (localStorage.getItem('telegramAuth') == 'true') {
 		$('.message-bar__login').addClass('hidden');
 	}
@@ -46,13 +48,18 @@ $(function () {
 		$(this).parent().addClass('open');
 	});
 
-	$(document).click(function () {
+	$('body, .exch-search .exch-dropdown__hangle').click(function (event) {
+		if ($(this).hasClass('exch-dropdown__hangle')) event.stopPropagation();
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 
 		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
 		$('div.portfolio-graph-range').css('border', '0px');
 		$('ul.portfolio-graph-range__list').removeClass('open');
 		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+
+		$('.exch-dropdown .exch-search').addClass('hidden');
+		$('.exch-dropdown .exch-dropdown__current').removeClass('hidden');
+
 	});
 
 	$('.main-cols__right-top .exch-dropdown').click(function (event) {
@@ -110,11 +117,13 @@ $(function () {
 	$('.exch-dropdown__list .exch-dropdown__item').click(function () {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
-		var realCurrencyName = currencyName.slice(6).toLowerCase();
+		var currencyAbbr = $(this).attr('data-currency');
+		//var realCurrencyName = currencyName.slice(6).toLowerCase();
+		var realCurrencyName = currencyName;
 		if (realCurrencyName == 'us dollar') realCurrencyName = 'dollar';
 
 		var newCurr = $(this).children().clone();
-		$(newCurr).eq(1).text(currencyName);
+		$(newCurr).eq(1).html('<span>' + currencyAbbr + '</span><br> ' + currencyName);
 		var currDropdown = $(this).closest('.exch-dropdown');
 		currDropdown.find('.exch-dropdown__item').removeClass('current');
 		$(this).addClass('current');
@@ -139,15 +148,17 @@ $(function () {
 			$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.exch-form__send .exch-form__coin').remove();
 			$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
-			$('.exch-form__send input').attr('data-currency', $(this).attr('data-currency'));
-			$('.graph-info__title').first().text('1 ' + $(this).attr('data-currency') + ' = ' + numberWithCommas(currenciesPrice[$(this).attr('data-currency')]) + ' USD');
+			$('.exch-form__send input').attr('data-currency', currencyAbbr);
+			$('.exch-form__send .exch-form__curr').html(currencyAbbr);
+			$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USD');
 			$('.chat-head__name').css('color', firstColor);
 		}
 		// second currency
 		else {
 			$('.exch-form__get .exch-form__coin').remove();
 			$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
-			$('.exch-form__get input').attr('data-currency', $(this).attr('data-currency'));
+			$('.exch-form__get input').attr('data-currency', currencyAbbr);
+			$('.exch-form__get .exch-form__curr').html(currencyAbbr);
 		}
 
 		$(this).closest('.exch-dropdown').removeClass('open');
@@ -581,16 +592,31 @@ $(function () {
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
 			var convertedText = $(this).find('.basic-table__col').eq(1).html();
-			var convertedArr = convertedText.split('-&gt;');
+			convertedText = convertedText.replace(/\s\s+/g, ' ');
+			var convertedArr = convertedText.split(svgArrowTemplate);
 			var firstCurrency = convertedArr[0].trim().slice(-3);
 			var secondCurrency = convertedArr[1].trim().slice(-3);
 			$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurrency + '"]').trigger('click');
 			$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurrency + '"]').trigger('click');
-			$('.exch-form__send input').val(numberWithCommas(convertedArr[0].trim()));
-			$('.exch-form__get input').val(numberWithCommas(convertedArr[1].trim()));
+			$('.exch-form__send input').val(numberWithCommas(convertedArr[0].trim().slice(0, -4)));
+			$('.exch-form__get input').val(numberWithCommas(convertedArr[1].trim().slice(0, -4)));
 
 		}
 
+	});
+
+	/*---------------------------------------------------*/
+	/* chat events */
+	/*---------------------------------------------------*/
+
+	$('.chat-head__back').click(function () {
+		$('.main-cols__left-top .d-flex .c-block__col').toggleClass('hidden');
+	});
+
+	$('.chats-list__item').click(function () {
+		var chatName = $(this).find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
+		$('.chat-head__name').text(chatName);
+		$('.main-cols__left-top .d-flex .c-block__col, .chat-talk').toggleClass('hidden');
 	});
 
 	/*---------------------------------------------------*/
@@ -793,10 +819,10 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.exch-head__switch').click(function () {
-		var firstCurr = $('.exch-head__get .exch-dropdown__current .exch-dropdown__title').text();
-		var secondCurr = $('.exch-head__send .exch-dropdown__current .exch-dropdown__title').text();
-		$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-name="' + firstCurr + '"]').trigger('click');
-		$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-name="' + secondCurr + '"]').trigger('click');
+		var firstCurr = $('.exch-form__send input').attr('data-currency');
+		var secondCurr = $('.exch-form__get input').attr('data-currency');
+		$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurr + '"]').trigger('click');
+		$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurr + '"]').trigger('click');
 		$('.exch-dropdown').removeClass('open');
 	});
 
@@ -904,8 +930,8 @@ $(function () {
 			$('.graph-prices__item .progress-label').css('visibility', 'hidden');
 			$('.progressbar').removeClass('hidden');
 
-			var firstValue = $('.exch-form__send input').val().trim().slice(0,-3).replace(',','');
-			var secondValue = $('.exch-form__get input').val().trim().slice(0,-3).replace(',', '')
+			var firstValue = $('.exch-form__send input').val().trim().replace(',','');
+			var secondValue = $('.exch-form__get input').val().trim().replace(',', '')
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
 			var firstValueResult = 0;
@@ -920,7 +946,7 @@ $(function () {
 					setTimeout(function () {
 						firstValueResult += firstValuePart;
 						secondValueResult += secondValuePart;
-						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html(firstValueResult.toFixed(2) + ' ' + sendCurrency + ' -> ' + secondValueResult.toFixed(2) + ' ' + getCurrency)
+						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html(firstValueResult.toFixed(2) + ' ' + sendCurrency + svgArrowTemplate + secondValueResult.toFixed(2) + ' ' + getCurrency)
 					}, 4000 + 1000 + 500 * i, i);
 				}
 
@@ -954,7 +980,7 @@ $(function () {
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active');
 			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
 			if (!$('body').hasClass('advanced'))
-			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + ' -> 0.00 ' + getCurrency)
+			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency)
 			$('.graph-prices').addClass('open noClose');
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
@@ -988,8 +1014,8 @@ $(function () {
 						} */
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
-			var firstValue = ownWallet[sendCurrency].toFixed(2) + ' ' + sendCurrency;
-			var secondValue = ((ownWallet[sendCurrency] * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2) + ' ' + getCurrency;
+			var firstValue = ownWallet[sendCurrency].toFixed(2);
+			var secondValue = ((ownWallet[sendCurrency] * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
 			$('.exch-form__send input').val(numberWithCommas(firstValue));
 			$('.exch-form__get input').val(numberWithCommas(secondValue));
 		}
@@ -1001,8 +1027,8 @@ $(function () {
 	});
 
 	$('.exch-form input').blur(function () {
-		var newValue = $(this).val() + ' ' + $(this).attr('data-currency');
-		$(this).val(numberWithCommas(newValue));
+		var newValue = numberWithCommas($(this).val())
+		$(this).val(newValue);
 	});
 
 	$('.exch-form input').keydown(function (e) {
@@ -1027,11 +1053,11 @@ $(function () {
 
 		if ($(this).parent().hasClass('exch-form__send')) {
 			var firstValue = $(this).val();
-			var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2) + ' ' + getCurrency;
+			var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
 			$('.exch-form__get input').val(numberWithCommas(secondValue));
 		} else {
 			var secondValue = $(this).val();
-			var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2) + ' ' + sendCurrency;
+			var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
 			$('.exch-form__send input').val(numberWithCommas(firstValue));
 		}
 	});
