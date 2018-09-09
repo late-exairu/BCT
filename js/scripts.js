@@ -307,33 +307,36 @@ $(function () {
 		$('#orders .forms-wrap').eq(currentIndex).addClass('current');
 	});
 
-
-	// function initializeSliderCharts() {
-	// 	$('.portfolioChartParent').slick({
-	// 		arrows: false,
-	// 		dots: false,
-	// 		infinite: false,
-	// 		fade: true
-	// 	});
-	// 	portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
-	// 	portfolioChartBTCObj = Highcharts.stockChart('portfolioChartBTC', portfolioChartBTCOptions);
-	// 	portfolioChartETHObj = Highcharts.stockChart('portfolioChartETH', portfolioChartETHOptions);
-
-	// 	$('.portfolioChartParent').mousewheel(function (e) {
-	// 		e.preventDefault();
-
-	// 		if (e.deltaY < 0) {
-	// 			$(this).slick('slickNext');
-	// 		} else {
-	// 			$(this).slick('slickPrev');
-	// 		}
-	// 	});
-
-	// }
-
-
 	/*---------------------------------------------------*/
 	/* BASIC account-js-menu */
+	/*---------------------------------------------------*/
+
+
+	$('.user-portfolio .user-menu .user-menu__item').on('click', function () {
+		// turn off last one
+		if ($(this).index() != 3) {
+			$('.user-portfolio .user-menu .user-menu__item').removeClass('current');
+			$(this).addClass('current');
+			$('.js-tabs-panel').removeClass('active');
+			$('.js-tabs-panel').eq($(this).index()).addClass('active');
+		}
+
+		// Wallet
+		if ($(this).index() == 0) {
+			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
+			drawCircleChart();
+
+		}
+
+		// Portfolio tab
+		if ($(this).index() == 1) {
+			if (!portfolioChartObj)
+				portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
+		}
+	});
+
+	/*---------------------------------------------------*/
+	/* ADVANCED account-js-menu */
 	/*---------------------------------------------------*/
 
 	$('.accounts-diagram-wrap').click(function () {
@@ -344,6 +347,9 @@ $(function () {
 		if (!portfolioChartObj)
 			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 
+		// basic page menu 
+		$('.user-portfolio .user-menu .user-menu__item').removeClass('current');
+		$('.user-portfolio .user-menu .user-menu__item').eq(1).addClass('current');
 	});
 
 	$('.portfolio-back').click(function () {
@@ -352,11 +358,6 @@ $(function () {
 		$('.advanced .js-account-stats .portfolio-drop').removeClass('hidden');
 		drawCircleChart();
 	});
-
-
-	/*---------------------------------------------------*/
-	/* ADVANCED account-js-menu */
-	/*---------------------------------------------------*/
 
 	$('.advanced .js-account-stats .portfolio-drop .menu-dropdown__item').on('click', function () {
 		$('.js-account-stats .portfolio-drop .menu-dropdown__item').removeClass('active');
@@ -561,8 +562,8 @@ $(function () {
 		$(this).addClass('active');
 
 		var price = $(this)[0].children[0].innerText;
-		price = price.replace(/,/g,'');
-		var amount= $(this)[0].children[1].innerText;
+		price = price.replace(/,/g, '');
+		var amount = $(this)[0].children[1].innerText;
 
 		// show order form
 		if ($(this).parents('#orderBook').length) {
@@ -905,8 +906,9 @@ $(function () {
 	$('.exch-head__btn').click(function () {
 		// basic
 		if (!$('body').hasClass('advanced')) {
-			$('.js-tabs-panel').removeClass('active');
-			$('#panel-funds-history').addClass('active');
+			//$('.js-tabs-panel').removeClass('active');
+			//$('#panel-funds-history').addClass('active');
+			$('.user-portfolio .user-menu .user-menu__item').eq(2).trigger('click');
 		}
 		//advanced
 		else {
@@ -930,7 +932,7 @@ $(function () {
 			$('.graph-prices__item .progress-label').css('visibility', 'hidden');
 			$('.progressbar').removeClass('hidden');
 
-			var firstValue = $('.exch-form__send input').val().trim().replace(',','');
+			var firstValue = $('.exch-form__send input').val().trim().replace(',', '');
 			var secondValue = $('.exch-form__get input').val().trim().replace(',', '')
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
@@ -942,7 +944,7 @@ $(function () {
 				progressbar.progressbar("value", 0);
 				setTimeout(progress, 1000 + 500 * i, i);
 
-				if(!$('body').hasClass('advanced')){
+				if (!$('body').hasClass('advanced')) {
 					setTimeout(function () {
 						firstValueResult += firstValuePart;
 						secondValueResult += secondValuePart;
@@ -963,15 +965,15 @@ $(function () {
 								$('.graph-prices').removeClass('noClose');
 								$('.exch-form__btn').attr("disabled", false);
 								$('.exch-form').removeClass('completed');
-                                $('.exch-form__btn > span').html('CONFIRM');
+								$('.exch-form__btn > span').html('CONFIRM');
 
-                                $('.icon-trader').removeClass('hidden');
-                                $('.graph-prices__item .progress-label').css('visibility', 'visible');
-                                $('.progressbar').addClass('hidden');
-                                for (var j = 0; j < progressbar_array.length; j++) {
-                                    progressbar_array[j].progressbar("value", 0);
-                                }
-                            }
+								$('.icon-trader').removeClass('hidden');
+								$('.graph-prices__item .progress-label').css('visibility', 'visible');
+								$('.progressbar').addClass('hidden');
+								for (var j = 0; j < progressbar_array.length; j++) {
+									progressbar_array[j].progressbar("value", 0);
+								}
+							}
 						});
 					}, 4000 + 1000 + 500 * i, i);
 				}
@@ -980,7 +982,7 @@ $(function () {
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active');
 			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
 			if (!$('body').hasClass('advanced'))
-			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency)
+				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency)
 			$('.graph-prices').addClass('open noClose');
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();

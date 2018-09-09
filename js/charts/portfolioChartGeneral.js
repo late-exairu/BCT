@@ -183,11 +183,11 @@ var portfolioChartOptions = {
             var xPos = point.plotX - (labelWidth / 2);
             // right side fix
             if ((point.plotX + labelWidth / 2) > graphWidth) {
-                xPos = graphWidth - labelWidth - 5;
+                xPos = graphWidth - labelWidth + 15;
             }
             // left side fix
-            else if (point.plotX < 80) {
-                xPos = 5;
+            else if (point.plotX < 100) {
+                xPos = 30;
             }
             return {
                 x: xPos,

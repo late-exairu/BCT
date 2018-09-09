@@ -100,11 +100,7 @@ var circleChartOptions = {
 $(window).resize(drawCircleChart);
 
 function drawCircleChart() {
-    if ($('body').hasClass('advanced')) {
-        pieChartSize = $('#circleChart').width() - 20 - 28;
-    } else {
-        pieChartSize = $('#circleChart').width() - 20;
-    }
+    pieChartSize = $('#circleChart').width() - 20 - 28;
     centerX = $('#circleChart').width() / 2 - 20;
     centerY = $('#circleChart').height() / 2 - 20;
     circleChartObj = Highcharts.chart('circleChart', circleChartOptions);
