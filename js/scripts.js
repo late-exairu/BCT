@@ -325,7 +325,6 @@ $(function () {
 		if ($(this).index() == 0) {
 			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
 			drawCircleChart();
-
 		}
 
 		// Portfolio tab
@@ -375,6 +374,34 @@ $(function () {
 		// Wallet tab
 		if ($(this).index() == 2) {
 			drawCircleChart();
+		}
+	});
+
+
+	/*---------------------------------------------------*/
+	/* functions for zoomin, zoomout of liquid graph */
+	/*---------------------------------------------------*/
+	$('.js-tabs-panel .liquidityText .centerPart svg').click(function () {
+		var current_Xmin = liquidityChartObj.xAxis[0].min;
+		var current_Xmax = liquidityChartObj.xAxis[0].max;
+		var current_Xrange = current_Xmax - current_Xmin;
+
+		var current_center = (current_Xmin + current_Xmax) / 2;
+		if ($(this).index() == 2) {
+			if (current_Xrange <= 24 * 3600 * 1000 * 3) return false;
+			var new_Xmin = current_center - current_Xrange / 4;
+			var new_Xmax = current_center + current_Xrange / 4;
+			liquidityChartOptions.xAxis.min = new_Xmin;
+			liquidityChartOptions.xAxis.max = new_Xmax;
+			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
+		}
+		else if ($(this).index() == 0) {
+			if (current_Xrange >= 24 * 3600 * 1000 * 30 * 4) return false;
+			var new_Xmin = current_center - current_Xrange;
+			var new_Xmax = current_center + current_Xrange;
+			liquidityChartOptions.xAxis.min = new_Xmin;
+			liquidityChartOptions.xAxis.max = new_Xmax;
+			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
 		}
 	});
 

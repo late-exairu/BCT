@@ -54,6 +54,8 @@ var liquidityChartOptions = {
                 fontSize: '10px'
             }
         },
+        max: null,
+        min: null,
     },
     yAxis: [{
         gridLineWidth: 0,
@@ -77,7 +79,7 @@ var liquidityChartOptions = {
         tickLength: 0,
         tickWidth: 0,
         //minorTickLength: 0,
-        max: 1600,
+        max: null,
     }, {
         gridLineWidth: 0,
         labels: {
@@ -97,7 +99,7 @@ var liquidityChartOptions = {
         },
         tickAmount: 10,
        // minorTickLength: 0,
-        max: 1600,
+        max: null,
         linkedTo: 0,
         opposite: true,
     }],
