@@ -983,6 +983,7 @@ $(function () {
 					setTimeout(function () {
 						$('.exch-form').addClass('completed');
 						$('.exch-form__btn > span').html('COMPLETED');
+						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
 						$('.exch-form__btn').attr("disabled", true);
 
 						$(window).click(function () {
@@ -1008,8 +1009,10 @@ $(function () {
 			$('.exch-form').addClass('progress');
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active');
 			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
-			if (!$('body').hasClass('advanced'))
-				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency)
+			if (!$('body').hasClass('advanced')){
+				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('<img src="http://localhost:3000/img/spin.svg">');
+				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency);
+			}
 			$('.graph-prices').addClass('open noClose');
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
