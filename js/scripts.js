@@ -840,6 +840,11 @@ $(function () {
 		if (val < 99) {
 			setTimeout(progress, 80, i);
 		}
+		else if (i > 2) {
+			graphPricesScrollbar.animate({
+				scrollTop: '+=80'
+			}, "slow");
+		}
 	}
 
 	/*---------------------------------------------------*/
@@ -966,10 +971,13 @@ $(function () {
 			var firstValueResult = 0;
 			var secondValueResult = 0;
 
+			graphPricesScrollbar.animate({
+				scrollTop: 0
+			}, "slow");
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
 				progressbar.progressbar("value", 0);
-				setTimeout(progress, 1000 + 500 * i, i);
+				setTimeout(progress, 1000 + 1200 * i, i);
 
 				if (!$('body').hasClass('advanced')) {
 					setTimeout(function () {
