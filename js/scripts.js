@@ -394,8 +394,7 @@ $(function () {
 			liquidityChartOptions.xAxis.min = new_Xmin;
 			liquidityChartOptions.xAxis.max = new_Xmax;
 			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
-		}
-		else if ($(this).index() == 0) {
+		} else if ($(this).index() == 0) {
 			if (current_Xrange >= 24 * 3600 * 1000 * 30 * 4) return false;
 			var new_Xmin = current_center - current_Xrange;
 			var new_Xmax = current_center + current_Xrange;
@@ -647,6 +646,14 @@ $(function () {
 		$('.main-cols__left-top .d-flex .c-block__col, .chat-talk').toggleClass('hidden');
 	});
 
+	$('.chats-list__item .chats-list__name a').click(function (event) {
+		event.stopPropagation();
+		var userPortfolioName = $(this).closest('.chats-list__item').find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
+		var userPortfolioImage = $(this).closest('.chats-list__item').find('.chats-list__avatar-wrap img').attr('src');
+		$('.user-portfolio__name').text(userPortfolioName);
+		$('.user-portfolio .user-pic__avatar').attr('src', userPortfolioImage);
+	});
+
 	/*---------------------------------------------------*/
 	/* change range on Portfolio Chart */
 	/*---------------------------------------------------*/
@@ -839,8 +846,7 @@ $(function () {
 		progressbar_labels[i].css("width", (val + 2) + '%');
 		if (val < 99) {
 			setTimeout(progress, 80, i);
-		}
-		else if (i > 2) {
+		} else if (i > 2) {
 			graphPricesScrollbar.animate({
 				scrollTop: '+=80'
 			}, "slow");
@@ -1017,7 +1023,7 @@ $(function () {
 			$('.exch-form').addClass('progress');
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active');
 			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
-			if (!$('body').hasClass('advanced')){
+			if (!$('body').hasClass('advanced')) {
 				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('<img src="http://localhost:3000/img/spin.svg">');
 				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency);
 			}
