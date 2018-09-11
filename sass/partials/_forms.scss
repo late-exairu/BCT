@@ -682,6 +682,29 @@
 			height: 10px;
 			fill: var(--clr-text);
 			transition: all .1s;
+
+			&.copy{
+				display: block;
+			}
+
+			&.copied{
+				width: 17px;
+				height: 17px;
+				display: none;
+				fill: #6BBE45;
+			}
+		}
+
+		&.copied{
+			.sprite-icon{
+				&.copy{
+					display: none;
+				}
+
+				&.copied{
+					display: block;
+				}
+			}
 		}
 
 		&:active{
