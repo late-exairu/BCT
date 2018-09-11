@@ -1167,6 +1167,10 @@ $(function () {
 	});
 
 	$('.transaction-form__to-clipdoard').click(function () {
+		 var copyText = document.querySelector(".transaction-form__input.with-copy");
+		 copyText.select();
+		 document.execCommand("copy");
+		$(".transaction-form__input.with-copy").trigger('blur');
 		$(this).addClass('copied');
 	});
 
