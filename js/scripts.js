@@ -160,11 +160,65 @@ $(function () {
 			$('.exch-form__get input').attr('data-currency', currencyAbbr);
 			$('.exch-form__get .exch-form__curr').html(currencyAbbr);
 		}
+		updateMainChartGraph(currencyAbbr);
 
 		$(this).closest('.exch-dropdown').removeClass('open');
 
 
 	});
+
+	function updateMainChartGraph(dataCurrency) {
+		var currentDataId = 1;
+		mainChartObj.series.map(function (item, index) {
+			if (item.type == 'column') {
+				switch(dataCurrency) {
+					case 'BTC':
+						if (item.name == 'Series 5') item.setData(columnData[0]);
+						if (item.name == 'Series 6') item.setData(columnData[1]);
+						currentDataId = 2;
+					break;
+					case 'XMR':
+					case 'ETH':
+						if (item.name == 'Series 5') item.setData(columnData[2]);
+						if (item.name == 'Series 6') item.setData(columnData[3]);
+						currentDataId = 11;
+					break;
+					case 'RPL':
+					case 'USD':
+						if (item.name == 'Series 5') item.setData(columnData[4]);
+						if (item.name == 'Series 6') item.setData(columnData[5]);
+						currentDataId = 4;
+					break;					
+					case 'BCH':
+						if (item.name == 'Series 5') item.setData(columnData[6]);
+						if (item.name == 'Series 6') item.setData(columnData[7]);
+						currentDataId = 5;
+					break;
+					case 'LTC':
+						if (item.name == 'Series 5') item.setData(columnData[8]);
+						if (item.name == 'Series 6') item.setData(columnData[9]);
+						currentDataId = 6;
+					break;
+					case 'MKR':
+						if (item.name == 'Series 5') item.setData(columnData[10]);
+						if (item.name == 'Series 6') item.setData(columnData[11]);
+						currentDataId = 7;
+					break;
+					case 'DASH':
+						if (item.name == 'Series 5') item.setData(columnData[12]);
+						if (item.name == 'Series 6') item.setData(columnData[13]);
+						currentDataId = 8;
+					break;
+					case 'XRP':
+						if (item.name == 'Series 5') item.setData(columnData[14]);
+						if (item.name == 'Series 6') item.setData(columnData[15]);
+						currentDataId = 9;
+					break;
+				}
+			}			
+		});
+		updateMainChartSpline(currentDataId);
+	}
 
 	/*---------------------------------------------------*/
 	/* js-scrollbar-outer */
@@ -708,7 +762,11 @@ $(function () {
 	$('.graph-prices .graph-prices__list .graph-prices__item').click(function () {
 		$('.graph-prices__list .graph-prices__item').removeClass('active');
 		$(this).addClass('active');
-		var currentDataId = $(this).attr('data-id');
+		var currentDataId = $(this).attr('data-id');	
+		updateMainChartSpline(currentDataId);
+	});
+
+	function updateMainChartSpline(currentDataId) {
 		mainChartObj.series.map(function (item, index) {
 			if (item.type == 'areaspline') {
 				var inactiveLinecolor = index < 4 ? mainChartSecondColor : mainChartColorForHidden;
@@ -746,7 +804,7 @@ $(function () {
 		}
 
 		mainGraphHighlighted = currentDataId;
-	});
+	}
 
 	/* 	$('.graph-prices .graph-prices__list .graph-prices__item').hover(function () {
 			var currentDataId = $(this).attr('data-id');

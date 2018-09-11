@@ -128,7 +128,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 159.25em 144.625em; }
+  background-size: 162em 147em; }
 
 /* =================================================================== */
 /* Functions
@@ -768,6 +768,8 @@ h6 {
           padding-left: 10px; }
       .basic-table__row.head.active {
         font-weight: 700; }
+    .basic-table__row.recent {
+      font-size: calc(var(--font-size) + 3px); }
   .basic-table__btn {
     height: 28px;
     border: 1px solid var(--clr-separatorD);
@@ -1738,7 +1740,7 @@ h6 {
   .exch-dropdown__item {
     width: 100%;
     height: 100%;
-    padding: 0 40px 0 10px;
+    padding: 0 46px 0 10px;
     display: flex;
     align-items: center;
     transition: all .1s;
@@ -1751,17 +1753,14 @@ h6 {
     right: 0;
     top: 0;
     bottom: 0;
-    width: 32px;
+    width: 40px;
     display: flex;
     align-items: center;
     justify-content: center; }
     .exch-dropdown__hangle:hover .sprite-icon {
       fill: var(--clr-textL); }
     .exch-dropdown__hangle .sprite-icon {
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
       width: 15px;
       height: 9px;
       fill: var(--clr-textLL);
@@ -1964,7 +1963,26 @@ h6 {
   --color-two: #c81820;
   position: relative;
   z-index: 100000;
-  height: calc(var(--exch-head-height) + 2px); }
+  height: calc(var(--exch-head-height) + 2px);
+  /*&__switch-left{
+		display: block;
+		width: 19px;
+		height: 17px;
+		position: relative;
+		left: -7px;
+		bottom: -3px;
+		fill: var(--color-two);
+	}
+
+	&__switch-right{
+		display: block;
+		width: 19px;
+		height: 17px;
+		position: relative;
+		left: 7px;
+		top: -3px;
+		fill: var(--color-one);
+	}*/ }
   .exch-head__body {
     position: relative;
     display: flex;
@@ -2005,22 +2023,12 @@ h6 {
       height: 13px;
       fill: var(--clr-accentD);
       transition: all .1s; }
-  .exch-head__switch-left {
+  .exch-head__switch-arrows {
     display: block;
-    width: 19px;
-    height: 17px;
+    width: 27px;
+    height: 22px;
     position: relative;
-    left: -7px;
-    bottom: -3px;
-    fill: var(--color-two); }
-  .exch-head__switch-right {
-    display: block;
-    width: 19px;
-    height: 17px;
-    position: relative;
-    left: 7px;
-    top: -3px;
-    fill: var(--color-one); }
+    fill: var(--clr-accent); }
   .exch-head__btn {
     position: relative;
     font-family: "open_sans", sans-serif;
@@ -2792,31 +2800,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -144.5em -130.8125em; }
+    background-position: -147.25em -133.1875em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -148.875em -135.25em; }
+    background-position: -151.625em -137.625em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -147.4375em -133.75em; }
+    background-position: -150.1875em -136.125em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -145.25em -131.5625em; }
+    background-position: -148em -133.9375em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -146.75em -133.0625em; }
+    background-position: -149.5em -135.4375em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -145.875em -132.1875em; }
+    background-position: -148.625em -134.5625em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -148em -134.5625em; }
+    background-position: -150.75em -136.9375em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -4461,13 +4469,16 @@ body.menubar-in #user-btn:before {
         width: 0; }
 
 /*************** RIGHT SCROLLBAR ***************/
+.scrollbar-right:hover .scroll-element .scroll-bar {
+  opacity: 1; }
+
 .scrollbar-right .scroll-element {
   position: absolute;
   z-index: 5;
   margin: 0;
   /*background-color: var(--clr-back);*/ }
   .scrollbar-right .scroll-element:hover .scroll-bar:after {
-    background-color: var(--clr-icon); }
+    background-color: var(--clr-separatorD); }
   .scrollbar-right .scroll-element.scroll-x {
     bottom: 0;
     height: 8px;
@@ -4485,8 +4496,7 @@ body.menubar-in #user-btn:before {
     top: 0;
     bottom: 0;
     width: 15px;
-    cursor: pointer;
-    opacity: 0.3; }
+    cursor: pointer; }
     .scrollbar-right .scroll-element.scroll-y .scroll-bar {
       left: 0px;
       min-height: 10px;
@@ -4496,21 +4506,27 @@ body.menubar-in #user-btn:before {
   .scrollbar-right .scroll-element .scroll-bar {
     max-height: 70px;
     height: 70px;
-    background: transparent; }
+    background: transparent;
+    opacity: 0;
+    transition: all .1s;
+    /*&:hover {
+				background: transparent;
+				&:after{
+					background-color: var(--clr-separatorD);
+				}
+			}*/ }
     .scrollbar-right .scroll-element .scroll-bar:after {
       content: '';
       transition: background 0.1s;
-      background-color: var(--clr-separatorD);
-      border-radius: 3px;
+      background-color: var(--clr-separator);
+      border-radius: 4px;
       position: absolute;
-      left: 5px;
-      top: 5px;
-      right: 5px;
-      bottom: 5px; }
-    .scrollbar-right .scroll-element .scroll-bar:hover {
-      background: transparent; }
-      .scrollbar-right .scroll-element .scroll-bar:hover:after {
-        background-color: var(--clr-iconD); }
+      left: 4px;
+      top: 4px;
+      right: 4px;
+      bottom: 4px;
+      border: 1px solid var(--clr-block);
+      transition: all .1s; }
   .scrollbar-right .scroll-element.scroll-draggable .scroll-bar:after {
     background-color: var(--clr-textLL); }
   .scrollbar-right .scroll-element div {
@@ -6504,7 +6520,26 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   transition: all .5s;
   height: calc(var(--exch-head-height) + 2px);
   visibility: hidden;
-  opacity: 0; }
+  opacity: 0;
+  /*&__switch-left{
+		display: block;
+		width: 19px;
+		height: 17px;
+		position: relative;
+		left: -7px;
+		bottom: -3px;
+		fill: var(--color-two);
+	}
+
+	&__switch-right{
+		display: block;
+		width: 19px;
+		height: 17px;
+		position: relative;
+		left: 7px;
+		top: -3px;
+		fill: var(--color-one);
+	}*/ }
   .exch-form__body {
     display: flex;
     align-items: center;
@@ -6615,22 +6650,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       height: 13px;
       fill: var(--clr-accentD);
       transition: all .1s; }
-  .exch-form__switch-left {
+  .exch-form__switch-arrows {
     display: block;
-    width: 19px;
-    height: 17px;
+    width: 27px;
+    height: 22px;
     position: relative;
-    left: -7px;
-    bottom: -3px;
-    fill: var(--color-two); }
-  .exch-form__switch-right {
-    display: block;
-    width: 19px;
-    height: 17px;
-    position: relative;
-    left: 7px;
-    top: -3px;
-    fill: var(--color-one); }
+    fill: var(--clr-textLL); }
   .exch-form__btn {
     position: relative;
     font-family: "open_sans", sans-serif;
@@ -6862,6 +6887,17 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       height: 10px;
       fill: var(--clr-text);
       transition: all .1s; }
+      .transaction-form__to-clipdoard .sprite-icon.copy {
+        display: block; }
+      .transaction-form__to-clipdoard .sprite-icon.copied {
+        width: 17px;
+        height: 17px;
+        display: none;
+        fill: #6BBE45; }
+    .transaction-form__to-clipdoard.copied .sprite-icon.copy {
+      display: none; }
+    .transaction-form__to-clipdoard.copied .sprite-icon.copied {
+      display: block; }
     .transaction-form__to-clipdoard:active .sprite-icon {
       fill: var(--clr-accent); }
   .transaction-form__curr {

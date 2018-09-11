@@ -64,6 +64,15 @@
 /*************** RIGHT SCROLLBAR ***************/
 
 .scrollbar-right {
+
+	&:hover{
+		.scroll-element{
+			.scroll-bar{
+				opacity: 1;
+			}
+		}
+	}
+
 	.scroll-element {
 		position: absolute;
 		z-index: 5;
@@ -72,7 +81,7 @@
 
 		&:hover{
 			.scroll-bar:after{
-				background-color: var(--clr-icon);
+				background-color: var(--clr-separatorD);
 			}
 		}
 
@@ -101,7 +110,6 @@
 			bottom: 0;
 			width: 15px;
 			cursor: pointer;
-			opacity: 0.3;
 
 			.scroll-bar {
 				left: 0px;
@@ -119,25 +127,29 @@
 			max-height: 70px;
 			height: 70px;
 			background: transparent;
+			opacity: 0;
+			transition: all .1s;
 
 			&:after{
 				content: '';
 				transition: background 0.1s;
-				background-color: var(--clr-separatorD);
-				border-radius: 3px;
+				background-color: var(--clr-separator);
+				border-radius: 4px;
 				position: absolute;
-				left: 5px;
-				top: 5px;
-				right: 5px;
-				bottom: 5px;
+				left: 4px;
+				top: 4px;
+				right: 4px;
+				bottom: 4px;
+				border: 1px solid var(--clr-block);
+				transition: all .1s;
 			}
 
-			&:hover {
+			/*&:hover {
 				background: transparent;
 				&:after{
-					background-color: var(--clr-iconD);
+					background-color: var(--clr-separatorD);
 				}
-			}
+			}*/
 		}
 
 		&.scroll-draggable .scroll-bar:after {
