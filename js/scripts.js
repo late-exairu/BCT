@@ -1108,6 +1108,10 @@ $(function () {
 		}
 	});
 
+	$('.transaction-form__to-clipdoard').click(function () {
+		$(this).addClass('copied');
+	});
+
 	/*---------------------------------------------------*/
 	/* JS for ADVANCED page */
 	/*---------------------------------------------------*/
@@ -1185,6 +1189,7 @@ $(function () {
 		$('#transaction-popup > .c-block > .d-flex-col ').eq(0).css('display', 'flex');
 		$('button[transaction-fancybox]').removeClass('active');
 		$(this).addClass('active');
+		$('.transaction-form__to-clipdoard').removeClass('copied');
 	});
 
 	$('#transaction-popup .popup-tabs__item').click(function () {

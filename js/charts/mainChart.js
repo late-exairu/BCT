@@ -1,11 +1,11 @@
 function redrawMainChart() {
-/* 	 	 var chartParent = $('.b-graph__controls');
-		 $(chartParent).css('width', '100%');
-	 	 var chartParentWidth = parseInt($(chartParent).width());
-	 	 if ($('#js-graph-prices').hasClass('open')) {
-	 	 	chartParentWidth -= 160;
-	 	 }
-	 	$(chartParent).css('width', chartParentWidth);  */
+	/* 	 	 var chartParent = $('.b-graph__controls');
+			 $(chartParent).css('width', '100%');
+		 	 var chartParentWidth = parseInt($(chartParent).width());
+		 	 if ($('#js-graph-prices').hasClass('open')) {
+		 	 	chartParentWidth -= 160;
+		 	 }
+		 	$(chartParent).css('width', chartParentWidth);  */
 	mainChartObj.reflow();
 }
 
@@ -65,13 +65,13 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				fillColor: '#FFFFFF',
 				lineWidth: 1,
 				lineColor: null,
-				symbol:'circle',
-				radius:3,
-/* 				fillColor: '',
-				lineWidth: 0,
-				width: 0,
-				lineColor: null,
-				symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)', */
+				symbol: 'circle',
+				radius: 3,
+				/* 				fillColor: '',
+								lineWidth: 0,
+								width: 0,
+								lineColor: null,
+								symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)', */
 				states: {
 					hover: {
 						enabled: false
@@ -101,60 +101,70 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			},
 			events: {
 				mouseOver: function (event) {
-					 					// if (this.type == 'areaspline') {
- 										// 	mainChartObj.series.map(function (graph) {
-										// 		if (graph.type == 'areaspline') {
-										// 			if (graph.options.fillColor.linearGradient.y2 > 5) {
-										// 				graph.update({
-										// 					fillColor: {
-										// 						linearGradient: [0, 0, 0, 1],
-										// 					},
-										// 					color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
-										// 				});
-										// 			}
-										// 		}
-										// 	}); 
-										// 	// highlight hover graph
- 										// 	this.update({
-										// 		fillColor: {
-										// 			linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
-										// 		},
-										// 		color: '#0576B9',
-										// 		lineWidth: this.options.lineWidth,
-										// 	}, );
-										// 	// set id of current graph ( for change theme)
-										// 	mainGraphHover = this.options.id; 
-										// }
+					// if (this.type == 'areaspline') {
+					// 	mainChartObj.series.map(function (graph) {
+					// 		if (graph.type == 'areaspline') {
+					// 			if (graph.options.fillColor.linearGradient.y2 > 5) {
+					// 				graph.update({
+					// 					fillColor: {
+					// 						linearGradient: [0, 0, 0, 1],
+					// 					},
+					// 					color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
+					// 				});
+					// 			}
+					// 		}
+					// 	}); 
+					// 	// highlight hover graph
+					// 	this.update({
+					// 		fillColor: {
+					// 			linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
+					// 		},
+					// 		color: '#0576B9',
+					// 		lineWidth: this.options.lineWidth,
+					// 	}, );
+					// 	// set id of current graph ( for change theme)
+					// 	mainGraphHover = this.options.id; 
+					// }
 				},
 				click: function (event) {
 					//mainGraphHighlighted = this.options.id;
 				},
 				mouseOut: function (event) {
-					 					// if (this.type == 'areaspline') {
-										// 	// find highlighted chart and remove highlight
- 										// 	mainChartObj.series.map(function (graph) {
-										// 		if (graph.type == 'areaspline') {
-										// 			if (graph.options.fillColor.linearGradient.y2 > 5) {
-										// 				graph.update({
-										// 					fillColor: {
-										// 						linearGradient: [0, 0, 0, 1],
-										// 					},
-										// 					color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
-										// 				});
-										// 			}
-										// 			if (graph.options.id == mainGraphHighlighted) {
-										// 				graph.update({
-										// 					fillColor: {
-										// 						linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
-										// 					},
-										// 					color: '#0576B9'
-										// 				});
-										// 			}
-										// 		}
-										// 	}); 
-										// }										
+					// if (this.type == 'areaspline') {
+					// 	// find highlighted chart and remove highlight
+					// 	mainChartObj.series.map(function (graph) {
+					// 		if (graph.type == 'areaspline') {
+					// 			if (graph.options.fillColor.linearGradient.y2 > 5) {
+					// 				graph.update({
+					// 					fillColor: {
+					// 						linearGradient: [0, 0, 0, 1],
+					// 					},
+					// 					color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
+					// 				});
+					// 			}
+					// 			if (graph.options.id == mainGraphHighlighted) {
+					// 				graph.update({
+					// 					fillColor: {
+					// 						linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
+					// 					},
+					// 					color: '#0576B9'
+					// 				});
+					// 			}
+					// 		}
+					// 	}); 
+					// }										
 				},
 			},
+		},
+		column: {
+			events: {
+				mouseOver: function (event) {
+					//console.log('column over',event);
+				},
+				mouseOut: function (event) {
+					//console.log('column out');
+				}
+			}
 		}
 	},
 	xAxis: {
@@ -205,13 +215,14 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	},
 
 	tooltip: {
-		animation:false,
-		hideDelay:0,
+		animation: false,
+		hideDelay: 0,
 		backgroundColor: 'rgba(0,0,0,0)',
 		borderColor: 'rgba(0,0,0,0)',
 		borderRadius: 0,
 		padding: 0,
 		shared: true,
+		split: true,
 		shadow: false,
 		useHTML: true,
 		//shape: "box",
@@ -227,17 +238,17 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var date = new Date(this.x);
 			var month = months[date.getMonth()];
 			var dayName = days[date.getDay()];
-            var year = date.getFullYear();
+			var year = date.getFullYear();
 			var TooltipValue = (this.y * 90).toFixed(2);
 			var arrowDirection = 'right';
 			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
 
- 			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left + mainChartMarginLeft;
+			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left + mainChartMarginLeft;
 			var lineForMainChartY = this.points[0].point.plotY + $('#mainChart').offset().top;
 			var lineForMainChartHeight = $('#mainChart').height() - this.points[0].point.plotY - 6;
 
 			// right side fix
-			if (lineForMainChartX > $('#mainChart').offset().left + $('#mainChart').width()){
+			if (lineForMainChartX > $('#mainChart').offset().left + $('#mainChart').width()) {
 				lineForMainChartX = -9999;
 			}
 
@@ -249,7 +260,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			$('.lineForMainChart .line').css({
 				'height': lineForMainChartHeight,
 			});
-			
+
 			if (this.points[0].point.plotX < 220) {
 				arrowDirection = 'left';
 			}
@@ -323,10 +334,10 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			name: "Series 4",
 			lineWidth: 3,
 			color: lineColor,
- 			fillColor: {
+			fillColor: {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 				stops: gradientColor
-			}, 
+			},
 			id: 4,
 			enableMouseTracking: true,
 			trackByArea: true,
@@ -418,7 +429,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		{
 			type: 'areaspline',
-			data: [	64, 66, 66, 68, 100, 112, 98, 97, 95, 68,
+			data: [64, 66, 66, 68, 100, 112, 98, 97, 95, 68,
 				77, 79, 80, 82, 87, 85, 83, 87, 82, 88,
 				83, 80, 78, 105, 117, 122, 131, 127, 106, 123,
 				27, 24, 25, 26, 14, 55, 57, 52, 38, 27,
@@ -429,10 +440,10 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			color: 'rgba(0, 0, 0, 0)',
 			id: 11,
 			enableMouseTracking: false,
-		}, 
+		},
 		{
 			type: 'areaspline',
-			data: [18, 20, 25, 29, 30, 20, 24, 25, 26, 14, 
+			data: [18, 20, 25, 29, 30, 20, 24, 25, 26, 14,
 				18, 27, 29, 32, 20, 42, 87, 84, 98, 22,
 				25, 27, 28, 22, 42, 87, 84, 98, 102, 104,
 				24, 36, 41, 52, 51, 58, 39, 17, 33, 24,
@@ -459,7 +470,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			enableMouseTracking: false,
 		},
 		{
-		type: 'areaspline',
+			type: 'areaspline',
 			data: [22, 27, 15, 5, 12, 23, 32, 17, 32, 22,
 				15, 21, 33, 15, 27, 42, 58, 37, 40, 44,
 				50, 45, 39, 27, 24, 23, 32, 43, 17, 22,
@@ -502,7 +513,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		{
 			type: 'areaspline',
-			data: [ 94, 103, 102, 45, 60, 70, 72, 77, 79, 62,
+			data: [94, 103, 102, 45, 60, 70, 72, 77, 79, 62,
 				77, 79, 80, 82, 87, 85, 83, 87, 82, 88,
 				44, 50, 50, 55, 57, 52, 38, 27, 60, 64,
 				70, 75, 79, 87, 53, 107, 62, 38, 40, 35,
@@ -540,7 +551,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			],
 			name: "Series 5",
 			id: 5,
-			enableMouseTracking: false,
+			enableMouseTracking: true,
+			zIndex: 11
 		},
 		{
 			type: 'column',
@@ -553,13 +565,14 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			],
 			name: "Series 6",
 			id: 6,
-			enableMouseTracking: false,
+			enableMouseTracking: true,
+			zIndex: 11
 		}
 	]
 });
 
 $('#mainChart,#portfolioChartGeneral').mouseleave(function () {
- 	$('.lineForMainChart').css(
+	$('.lineForMainChart').css(
 		'left', '-9999px',
 	);
 });
