@@ -334,7 +334,15 @@
 		}
 	}
 
-	&__switch-left{
+	&__switch-arrows{
+		display: block;
+		width: 27px;
+		height: 22px;
+		position: relative;
+		fill: var(--clr-textLL);
+	}
+
+	/*&__switch-left{
 		display: block;
 		width: 19px;
 		height: 17px;
@@ -352,7 +360,7 @@
 		left: 7px;
 		top: -3px;
 		fill: var(--color-one);
-	}
+	}*/
 
 	&__btn{
 		position: relative;

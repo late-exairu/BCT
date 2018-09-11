@@ -128,7 +128,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 159.25em 144.625em; }
+  background-size: 160.9375em 145.9375em; }
 
 /* =================================================================== */
 /* Functions
@@ -1738,7 +1738,7 @@ h6 {
   .exch-dropdown__item {
     width: 100%;
     height: 100%;
-    padding: 0 40px 0 10px;
+    padding: 0 46px 0 10px;
     display: flex;
     align-items: center;
     transition: all .1s;
@@ -1751,17 +1751,14 @@ h6 {
     right: 0;
     top: 0;
     bottom: 0;
-    width: 32px;
+    width: 40px;
     display: flex;
     align-items: center;
     justify-content: center; }
     .exch-dropdown__hangle:hover .sprite-icon {
       fill: var(--clr-textL); }
     .exch-dropdown__hangle .sprite-icon {
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
       width: 15px;
       height: 9px;
       fill: var(--clr-textLL);
@@ -1964,7 +1961,26 @@ h6 {
   --color-two: #c81820;
   position: relative;
   z-index: 100000;
-  height: calc(var(--exch-head-height) + 2px); }
+  height: calc(var(--exch-head-height) + 2px);
+  /*&__switch-left{
+		display: block;
+		width: 19px;
+		height: 17px;
+		position: relative;
+		left: -7px;
+		bottom: -3px;
+		fill: var(--color-two);
+	}
+
+	&__switch-right{
+		display: block;
+		width: 19px;
+		height: 17px;
+		position: relative;
+		left: 7px;
+		top: -3px;
+		fill: var(--color-one);
+	}*/ }
   .exch-head__body {
     position: relative;
     display: flex;
@@ -2005,22 +2021,12 @@ h6 {
       height: 13px;
       fill: var(--clr-accentD);
       transition: all .1s; }
-  .exch-head__switch-left {
+  .exch-head__switch-arrows {
     display: block;
-    width: 19px;
-    height: 17px;
+    width: 27px;
+    height: 22px;
     position: relative;
-    left: -7px;
-    bottom: -3px;
-    fill: var(--color-two); }
-  .exch-head__switch-right {
-    display: block;
-    width: 19px;
-    height: 17px;
-    position: relative;
-    left: 7px;
-    top: -3px;
-    fill: var(--color-one); }
+    fill: var(--clr-accent); }
   .exch-head__btn {
     position: relative;
     font-family: "open_sans", sans-serif;
@@ -2792,31 +2798,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -144.5em -130.8125em; }
+    background-position: -146.1875em -132.125em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -148.875em -135.25em; }
+    background-position: -150.5625em -136.5625em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -147.4375em -133.75em; }
+    background-position: -149.125em -135.0625em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -145.25em -131.5625em; }
+    background-position: -146.9375em -132.875em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -146.75em -133.0625em; }
+    background-position: -148.4375em -134.375em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -145.875em -132.1875em; }
+    background-position: -147.5625em -133.5em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -148em -134.5625em; }
+    background-position: -149.6875em -135.875em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -6504,7 +6510,26 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   transition: all .5s;
   height: calc(var(--exch-head-height) + 2px);
   visibility: hidden;
-  opacity: 0; }
+  opacity: 0;
+  /*&__switch-left{
+		display: block;
+		width: 19px;
+		height: 17px;
+		position: relative;
+		left: -7px;
+		bottom: -3px;
+		fill: var(--color-two);
+	}
+
+	&__switch-right{
+		display: block;
+		width: 19px;
+		height: 17px;
+		position: relative;
+		left: 7px;
+		top: -3px;
+		fill: var(--color-one);
+	}*/ }
   .exch-form__body {
     display: flex;
     align-items: center;
@@ -6615,22 +6640,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       height: 13px;
       fill: var(--clr-accentD);
       transition: all .1s; }
-  .exch-form__switch-left {
+  .exch-form__switch-arrows {
     display: block;
-    width: 19px;
-    height: 17px;
+    width: 27px;
+    height: 22px;
     position: relative;
-    left: -7px;
-    bottom: -3px;
-    fill: var(--color-two); }
-  .exch-form__switch-right {
-    display: block;
-    width: 19px;
-    height: 17px;
-    position: relative;
-    left: 7px;
-    top: -3px;
-    fill: var(--color-one); }
+    fill: var(--clr-textLL); }
   .exch-form__btn {
     position: relative;
     font-family: "open_sans", sans-serif;
