@@ -768,6 +768,8 @@ h6 {
           padding-left: 10px; }
       .basic-table__row.head.active {
         font-weight: 700; }
+    .basic-table__row.recent {
+      font-size: calc(var(--font-size) + 3px); }
   .basic-table__btn {
     height: 28px;
     border: 1px solid var(--clr-separatorD);

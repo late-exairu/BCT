@@ -123,6 +123,10 @@
 				font-weight: 700;
 			}
 		}
+
+		&.recent{
+			font-size: calc(var(--font-size) + 3px);
+		}
 	}
 
 	&__btn{
