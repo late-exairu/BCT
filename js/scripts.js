@@ -152,6 +152,8 @@ $(function () {
 			$('.exch-form__send .exch-form__curr').html(currencyAbbr);
 			$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USD');
 			$('.chat-head__name').css('color', firstColor);
+
+			updateMainChartLinebar(currencyAbbr);			
 		}
 		// second currency
 		else {
@@ -165,6 +167,37 @@ $(function () {
 
 
 	});
+
+	function updateMainChartLinebar(dataCurrency) {
+		mainChartObj.series.map(function (item, index) {
+			if (item.type == 'column') {
+				switch(dataCurrency) {
+					case 'BTC':
+						if (item.name == 'Series 5') item.setData(columnData[0]);
+						if (item.name == 'Series 6') item.setData(columnData[1]);
+					break;
+					case 'XMR':
+					case 'ETH':
+						if (item.name == 'Series 5') item.setData(columnData[2]);
+						if (item.name == 'Series 6') item.setData(columnData[3]);
+					break;
+					case 'RPL':
+					case 'USD':
+						if (item.name == 'Series 5') item.setData(columnData[4]);
+						if (item.name == 'Series 6') item.setData(columnData[5]);
+					break;					
+					case 'BCH':
+						if (item.name == 'Series 5') item.setData(columnData[6]);
+						if (item.name == 'Series 6') item.setData(columnData[7]);
+					break;
+					case 'LTC':
+						if (item.name == 'Series 5') item.setData(columnData[8]);
+						if (item.name == 'Series 6') item.setData(columnData[9]);
+					break;
+				}
+			}
+		});
+	}
 
 	/*---------------------------------------------------*/
 	/* js-scrollbar-outer */
