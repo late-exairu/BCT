@@ -7291,29 +7291,29 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       color: var(--clr-textD); }
   .highcharts-tooltip div.tooltipCircle {
     font-family: "open_sans", sans-serif;
-    padding: 5px 5px 5px 5px;
+    padding: 5px 10px 5px 10px;
     min-width: 148px;
-    background-color: var(--clr-block);
-    border: 1px solid var(--clr-separatorD);
-    display: flex; }
+    background-color: var(--clr-back);
+    /*border: 1px solid var(--clr-separatorD);*/
+    display: flex;
+    line-height: 20px; }
     .highcharts-tooltip div.tooltipCircle .currency {
+      font-size: 13px;
       border-right: 1px solid var(--clr-textD);
       padding-right: 5px;
-      padding-left: 3px;
+      padding-left: 5px;
       margin: -1px 0 0;
       display: block;
-      color: #707CB9;
-      font-size: 14px;
+      color: var(--clr-textD);
       line-height: 20px; }
     .highcharts-tooltip div.tooltipCircle .price {
       padding-left: 5px;
-      font-size: 13px;
-      font-weight: 300;
+      font-size: 12px;
       line-height: 20px;
       color: var(--clr-textD); }
       .highcharts-tooltip div.tooltipCircle .price span {
         line-height: 20px;
-        font-weight: 600; }
+        /*font-weight: 600;*/ }
   .highcharts-tooltip span svg {
     width: 20px;
     height: 20px;
