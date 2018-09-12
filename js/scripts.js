@@ -203,7 +203,7 @@ $(function () {
 					case 'BTC':
 						if (item.name == 'Series 5') item.setData(columnData[0]);
 						if (item.name == 'Series 6') item.setData(columnData[1]);
-						currentDataId = 2;
+						currentDataId = 4;
 						break;
 					case 'XMR':
 						if (item.name == 'Series 5') item.setData(columnData[8]);
@@ -213,7 +213,7 @@ $(function () {
 					case 'ETH':
 						if (item.name == 'Series 5') item.setData(columnData[2]);
 						if (item.name == 'Series 6') item.setData(columnData[3]);
-						currentDataId = 4;
+						currentDataId = 2;
 						break;
 					case 'RPL':
 						if (item.name == 'Series 5') item.setData(columnData[7]);
