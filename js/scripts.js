@@ -184,10 +184,10 @@ $(function () {
 			$('.exch-form__get input').attr('data-currency', currencyAbbr);
 			$('.exch-form__get .exch-form__curr').html(currencyAbbr);
 		}
-		updateMainChartGraph(currencyAbbr);
-
 		$(this).closest('.exch-dropdown').removeClass('open');
-
+		setTimeout(() => {
+			updateMainChartGraph(currencyAbbr);
+		}, 50)
 
 	});
 
@@ -202,41 +202,49 @@ $(function () {
 						currentDataId = 2;
 						break;
 					case 'XMR':
+						if (item.name == 'Series 5') item.setData(columnData[8]);
+						if (item.name == 'Series 6') item.setData(columnData[0]);
+						currentDataId = 3;
+						break;
 					case 'ETH':
 						if (item.name == 'Series 5') item.setData(columnData[2]);
 						if (item.name == 'Series 6') item.setData(columnData[3]);
-						currentDataId = 11;
+						currentDataId = 4;
 						break;
 					case 'RPL':
+						if (item.name == 'Series 5') item.setData(columnData[7]);
+						if (item.name == 'Series 6') item.setData(columnData[10]);
+						currentDataId = 5;
+						break;
 					case 'USD':
 						if (item.name == 'Series 5') item.setData(columnData[4]);
 						if (item.name == 'Series 6') item.setData(columnData[5]);
-						currentDataId = 4;
+						currentDataId = 6;
 						break;
 					case 'BCH':
 						if (item.name == 'Series 5') item.setData(columnData[6]);
 						if (item.name == 'Series 6') item.setData(columnData[7]);
-						currentDataId = 5;
+						currentDataId = 7;
 						break;
 					case 'LTC':
 						if (item.name == 'Series 5') item.setData(columnData[8]);
 						if (item.name == 'Series 6') item.setData(columnData[9]);
-						currentDataId = 6;
+						currentDataId = 8;
 						break;
 					case 'MKR':
 						if (item.name == 'Series 5') item.setData(columnData[10]);
 						if (item.name == 'Series 6') item.setData(columnData[11]);
-						currentDataId = 7;
+						currentDataId = 9;
 						break;
 					case 'DASH':
 						if (item.name == 'Series 5') item.setData(columnData[12]);
 						if (item.name == 'Series 6') item.setData(columnData[13]);
-						currentDataId = 8;
+						currentDataId = 10;
 						break;
 					case 'XRP':
 						if (item.name == 'Series 5') item.setData(columnData[14]);
 						if (item.name == 'Series 6') item.setData(columnData[15]);
-						currentDataId = 9;
+						currentDataId = 11;
 						break;
 				}
 			}
