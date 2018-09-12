@@ -4344,7 +4344,7 @@ body.menubar-in #user-btn:before {
 .irs-bar,
 .irs-bar-edge,
 .irs-slider {
-  background: url(../img/sprite-skin-simple.png) repeat-x; }
+  background: var(--clr-separatorD); }
 
 .irs {
   height: 40px; }
@@ -6434,6 +6434,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     flex: 1 0 40%;
     align-items: center;
     font-weight: 500; }
+    .order-form__label.overflow {
+      letter-spacing: -0.1px; }
   .order-form__input-wrap {
     position: relative;
     display: flex;
@@ -7400,8 +7402,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   left: 10px; }
   #portfolioChartText div.portfolio-graph-info {
     display: inline-block;
-    color: #00AAF8;
-    padding: 0px 15px;
+    color: var(--clr-textD);
+    padding: 0 10px 0 15px;
     text-align: center; }
     #portfolioChartText div.portfolio-graph-info span {
       font-size: 16px;
@@ -7415,59 +7417,28 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       color: var(--clr-textD);
       margin-top: 0px;
       margin-bottom: 0; }
-    #portfolioChartText div.portfolio-graph-info:first-child {
-      border-right: 1px solid #e8e8e8; }
+    #portfolioChartText div.portfolio-graph-info:last-child {
+      color: #00AAF8;
+      padding: 0; }
+      #portfolioChartText div.portfolio-graph-info:last-child span {
+        font-size: 14px;
+        line-height: inherit; }
   #portfolioChartText .portfolio-graph-range {
-    display: inline-block;
-    z-index: 1;
-    width: 70px;
+    color: var(--clr-textD);
     font-size: 11px;
-    border-radius: 5px;
     background: transparent;
     font-weight: 600;
-    margin-left: -14px; }
-    #portfolioChartText .portfolio-graph-range__current {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    z-index: 1; }
+    #portfolioChartText .portfolio-graph-range .cubic-slider {
       pointer-events: all;
-      width: 100%;
-      padding: 4px 0 3px 5px;
-      border: 1px solid;
-      border-radius: 5px;
       cursor: pointer;
-      background: var(--clr-back); }
-      #portfolioChartText .portfolio-graph-range__current:hover {
-        background: rgba(0, 0, 0, 0.05);
-        background: var(--clr-back); }
-      #portfolioChartText .portfolio-graph-range__current:after {
-        content: "";
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 4px 6px;
-        border-color: transparent transparent #666;
-        display: block;
-        position: absolute;
-        margin-top: -10px;
-        margin-left: 49px; }
-    #portfolioChartText .portfolio-graph-range__list {
-      width: 100%;
-      display: block;
-      margin: 0;
-      padding: 0;
-      visibility: hidden;
-      background: var(--clr-back);
-      border-radius: 5px 5px 0 0; }
-    #portfolioChartText .portfolio-graph-range__list.open {
-      visibility: visible; }
-    #portfolioChartText .portfolio-graph-range__item {
-      pointer-events: all;
-      width: 100%;
-      display: block !important;
-      padding: 3px 0 3px 5px;
-      cursor: pointer; }
-      #portfolioChartText .portfolio-graph-range__item:hover {
-        background: rgba(0, 0, 0, 0.05); }
-    #portfolioChartText .portfolio-graph-range__item.active {
-      background: rgba(0, 0, 0, 0.1); }
+      flex: 1;
+      margin: 0; }
+    #portfolioChartText .portfolio-graph-range__current {
+      padding: 0 3px; }
 
 #panel-funds-account,
 #panel-dashboard-liquidity {

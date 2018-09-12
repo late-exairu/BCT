@@ -313,8 +313,9 @@
 	left: 10px;
 	div.portfolio-graph-info {
 		display: inline-block;
-		color: #00AAF8; 
-		padding: 0px 15px;
+		// color: #00AAF8; 
+		color: var(--clr-textD);
+		padding: 0 10px 0 15px;
 		text-align: center;
 		span {
 			font-size: 16px;
@@ -331,70 +332,36 @@
 			margin-top: 0px;
 			margin-bottom: 0;
 		}
-		&:first-child {
-			border-right: 1px solid #e8e8e8;
+
+		&:last-child {
+			color: #00AAF8; 
+			padding: 0;
+
+			span {
+				font-size: 14px;
+				line-height: inherit;				
+			}
 		}
 	}
 	.portfolio-graph-range {
-		display: inline-block;
-		z-index: 1;
-		width: 70px;
-		font-size: 11px;
-		border-radius: 5px;
+		color: var(--clr-textD);
+		font-size: 11px;		
 		background: transparent;
 		font-weight: 600;
-		margin-left: -14px;
+		margin-top: 5px;	
+		display: flex;
+		align-items: center;				
+		z-index: 1;
 
-		&__current {
-			pointer-events: all;	
-			width: 100%;
-			padding: 4px 0 3px 5px;
-			border: 1px solid;
-			border-radius: 5px;
-			cursor: pointer;
-			background: var(--clr-back);
-			&:hover {
-				background: rgba(0, 0, 0, 0.05);
-				background: var(--clr-back);
-			}
-			&:after {
-				content: "";
-				width: 0;
-				height: 0;
-				border-style: solid;
-				border-width: 0 4px 6px;
-				border-color: transparent transparent #666;
-				display: block;
-				position: absolute;
-				margin-top: -10px;
-				margin-left: 49px;
-			}
-		}
-		&__list {
-			width: 100%;
-			display: block;
+		.cubic-slider{			
+			pointer-events: all;
+			cursor: pointer;			
+			flex: 1;
 			margin: 0;
-			padding: 0;
-			visibility: hidden;
-			background: var(--clr-back);
-			border-radius: 5px 5px 0 0;
 		}
-		&__list.open {
-			visibility: visible;
-		}
-		&__item {
-			pointer-events: all;	
-			width: 100%;
-			display: block !important;
-			padding: 3px 0 3px 5px;
-			cursor: pointer;
-			//height: 20px;
-			&:hover {
-				background: rgba(0, 0, 0, 0.05);
-			}
-		}
-		&__item.active {
-			background: rgba(0, 0, 0, 0.1);
+
+		&__current{			
+			padding: 0 3px;
 		}
 	}
 }

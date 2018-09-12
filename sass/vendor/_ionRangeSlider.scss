@@ -162,7 +162,9 @@
 .irs-bar,
 .irs-bar-edge,
 .irs-slider {
-    background: url(../img/sprite-skin-simple.png) repeat-x;
+    // fix console error
+    // background: url(../img/sprite-skin-simple.png) repeat-x;
+    background: var(--clr-separatorD);
 }
 
 .irs {

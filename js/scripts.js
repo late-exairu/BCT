@@ -52,10 +52,10 @@ $(function () {
 		if ($(this).hasClass('exch-dropdown__hangle')) event.stopPropagation();
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 
-		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
-		$('div.portfolio-graph-range').css('border', '0px');
-		$('ul.portfolio-graph-range__list').removeClass('open');
-		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+		// $('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+		// $('div.portfolio-graph-range').css('border', '0px');
+		// $('ul.portfolio-graph-range__list').removeClass('open');
+		// $('div.portfolio-graph-range__current').css('border', 'solid 1px');
 
 		$('.exch-dropdown .exch-search').addClass('hidden');
 		$('.exch-dropdown .exch-dropdown__current').removeClass('hidden');
@@ -1483,48 +1483,61 @@ $(function () {
 	});
 
 
-	var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
-	$("div.portfolio-graph-range__current").on("click", function () {
-		if ($('ul.portfolio-graph-range__list').hasClass('open')) {
-			$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
-			$('div.portfolio-graph-range').css('border', '0px');
-			$('ul.portfolio-graph-range__list').removeClass('open');
-			$('div.portfolio-graph-range__current').css('border', 'solid 1px');
-		} else {
-			$('ul.portfolio-graph-range__list').addClass('open');
-			$('div.portfolio-graph-range__current').css('border', '0px');
-			$('ul.portfolio-graph-range__list').css('border-bottom', 'solid 1px');
-			$('div.portfolio-graph-range').css('border', 'solid 1px');
-		}
-	});
-	$("ul.portfolio-graph-range__list").on("click", "li.portfolio-graph-range__item", function () {
-		allPortfolioOptions.removeClass('active');
-		$(this).addClass('active');
-		$(".portfolio-graph-range__current").html($(this).html());
-		console.log()
+	// var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
+	// $("div.portfolio-graph-range__current").on("click", function () {
+	// 	if ($('ul.portfolio-graph-range__list').hasClass('open')) {
+	// 		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+	// 		$('div.portfolio-graph-range').css('border', '0px');
+	// 		$('ul.portfolio-graph-range__list').removeClass('open');
+	// 		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+	// 	} else {
+	// 		$('ul.portfolio-graph-range__list').addClass('open');
+	// 		$('div.portfolio-graph-range__current').css('border', '0px');
+	// 		$('ul.portfolio-graph-range__list').css('border-bottom', 'solid 1px');
+	// 		$('div.portfolio-graph-range').css('border', 'solid 1px');
+	// 	}
+	// });
+	// $("ul.portfolio-graph-range__list").on("click", "li.portfolio-graph-range__item", function () {
+	// 	allPortfolioOptions.removeClass('active');
+	// 	$(this).addClass('active');
+	// 	$(".portfolio-graph-range__current").html($(this).html());
+	// 	console.log()
 
-		switch ($(".portfolio-graph-range__current").html()) {
-			case "HOUR":
-				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(0, {}, true);
-				break;
-			case "DAY":
-				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(1, {}, true);
-				break;
-			case "WEEK":
-				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(2, {}, true);
-				break;
-			case "MONTH":
-				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(3, {}, true);
-				break;
-			case "YEAR":
-				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(4, {}, true);
-				break;
-		}
+	// 	switch ($(".portfolio-graph-range__current").html()) {
+	// 		case "HOUR":
+	// 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(0, {}, true);
+	// 			break;
+	// 		case "DAY":
+	// 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(1, {}, true);
+	// 			break;
+	// 		case "WEEK":
+	// 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(2, {}, true);
+	// 			break;
+	// 		case "MONTH":
+	// 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(3, {}, true);
+	// 			break;
+	// 		case "YEAR":
+	// 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(4, {}, true);
+	// 			break;
+	// 	}
 
-		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
-		$('div.portfolio-graph-range').css('border', '0px');
-		$('ul.portfolio-graph-range__list').removeClass('open');
-		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+	// 	$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+	// 	$('div.portfolio-graph-range').css('border', '0px');
+	// 	$('ul.portfolio-graph-range__list').removeClass('open');
+	// 	$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+	// });
+
+	/* Portfolio graph range slider for Orders */
+	var $portfolioGraphRange = $(".portfolio-graph-range__control");
+
+	$portfolioGraphRange.ionRangeSlider({
+		type: "single",		
+		hide_min_max: true,
+    	hide_from_to: true,
+		grid: false,
+		from: 1,
+		values: ["1h", "1d", "1w", "1m", "1y"],
+		extra_classes: 'cubic-slide'
 	});
 
 });
