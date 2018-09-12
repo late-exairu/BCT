@@ -39,7 +39,7 @@
 
 		&:last-child{
 			margin: 0;
-		}
+		}		
 	}
 
 	&__label{
@@ -50,6 +50,10 @@
 		flex: 1 0 40%;
 		align-items: center;
 		font-weight: 500;
+
+		&.overflow {
+			letter-spacing: -0.1px;
+		}
 	}
 
 	&__input-wrap{
