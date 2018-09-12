@@ -3,6 +3,7 @@ $(function () {
 	var svgArrowTemplate = '<svg class="basic-table__arrow-conv" role="img" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right-2"></use> </svg>';
 
 	if (localStorage.getItem('telegramAuth') == 'true') {
+		if (document.querySelector('.message-bar__login'))
 		document.querySelector('.message-bar__login').classList.add('hidden');
 		if (localStorage.getItem('telegramPhoto'))
 		document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
