@@ -724,7 +724,8 @@ $(function () {
 		var userPortfolioName = $(this).closest('.chats-list__item').find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
 		var userPortfolioImage = $(this).closest('.chats-list__item').find('.chats-list__avatar-wrap img').attr('src');
 		$('.user-portfolio__name').text(userPortfolioName);
-		$('.user-portfolio .user-pic__avatar').attr('src', userPortfolioImage);
+		$('.user-portfolio .user-pic__avatar').attr('src', userPortfolioImage).removeClass('hidden');
+		$('div.user-pic__avatar').remove();
 	});
 
 	/*---------------------------------------------------*/
