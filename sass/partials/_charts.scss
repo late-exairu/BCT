@@ -184,30 +184,31 @@
 	}
 	div.tooltipCircle {
 		font-family: $osans;
-		padding: 5px 5px 5px 5px;
+		padding: 5px 10px 5px 10px;
 		min-width: 148px;
-		background-color: var(--clr-block);
-		border: 1px solid var(--clr-separatorD);
+		background-color: var(--clr-back);
+		/*border: 1px solid var(--clr-separatorD);*/
 		display: flex;
+		line-height: 20px;
+		
 		.currency {
+			font-size: 13px;
 			border-right: 1px solid var(--clr-textD);
 			padding-right: 5px;
-			padding-left: 3px;
+			padding-left: 5px;
 			margin: -1px 0 0;
 			display: block;
-			color: #707CB9;
-			font-size: 14px;
+			color: var(--clr-textD);
 			line-height: 20px;
 		}
 		.price {
 			padding-left: 5px;
-			font-size: 13px;
-			font-weight: 300;
+			font-size: 12px;
 			line-height: 20px;
 			color: var(--clr-textD);
 			span {
 				line-height: 20px;
-				font-weight: 600;
+				/*font-weight: 600;*/
 			}
 		}
 	}
