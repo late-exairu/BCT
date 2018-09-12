@@ -2423,7 +2423,7 @@ h6 {
       height: 0;
       border-style: solid;
       border-width: 6px 0 6px 6px;
-      border-color: transparent transparent transparent #fff; }
+      border-color: transparent transparent transparent var(--clr-icon-arrow); }
   .graph-prices__tier-icon {
     fill: #fff;
     width: 8px;
