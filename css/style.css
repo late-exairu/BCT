@@ -727,6 +727,8 @@ h6 {
         border-color: var(--clr-icon) transparent transparent; }
       .basic-table__row.disabled .proggress-bar__perc {
         background: var(--clr-icon); }
+      .basic-table__row.disabled .clr-blue {
+        color: var(--clr-icon); }
     .basic-table__row.head {
       font-size: var(--font-size);
       font-weight: 700;
@@ -1257,9 +1259,9 @@ h6 {
     background: transparent; }
     .chat-head__back .sprite-icon {
       display: block;
-      width: 14px;
-      height: 24px;
-      fill: #2e2e2e; }
+      width: 10px;
+      height: 14px;
+      fill: var(--clr-textL); }
   .chat-head__curr {
     position: relative;
     width: 30px;
@@ -3684,9 +3686,9 @@ body.menubar-in #user-btn:before {
   cursor: pointer; }
   .portfolio-back .sprite-icon {
     display: block;
-    width: 14px;
-    height: 24px;
-    fill: var(--clr-textD); }
+    width: 10px;
+    height: 14px;
+    fill: var(--clr-textL); }
   .portfolio-back.portfolio-back-w-100 {
     width: calc(100% - 8px); }
 
