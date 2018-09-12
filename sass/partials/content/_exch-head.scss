@@ -58,8 +58,12 @@
 		border-radius: var(--border-radius);
 
 		&:hover{
-			background: var(--clr-back);
-			border-color: var(--clr-block);
+			/*background: var(--clr-back);
+			border-color: var(--clr-block);*/
+
+			.exch-head__switch-arrows{
+				fill: var(--clr-accentD);
+			}
 		}
 
 		.sprite-icon{
@@ -76,6 +80,7 @@
 		height: 22px;
 		position: relative;
 		fill: var(--clr-accent);
+		transition: all .1s;
 	}
 
 	/*&__switch-left{

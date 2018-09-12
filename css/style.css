@@ -2016,8 +2016,10 @@ h6 {
     transition: all .1s;
     border-radius: var(--border-radius); }
     .exch-head__switch:hover {
-      background: var(--clr-back);
-      border-color: var(--clr-block); }
+      /*background: var(--clr-back);
+			border-color: var(--clr-block);*/ }
+      .exch-head__switch:hover .exch-head__switch-arrows {
+        fill: var(--clr-accentD); }
     .exch-head__switch .sprite-icon {
       width: 24px;
       height: 13px;
@@ -2028,7 +2030,8 @@ h6 {
     width: 27px;
     height: 22px;
     position: relative;
-    fill: var(--clr-accent); }
+    fill: var(--clr-accent);
+    transition: all .1s; }
   .exch-head__btn {
     position: relative;
     font-family: "open_sans", sans-serif;
