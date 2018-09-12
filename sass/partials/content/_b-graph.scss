@@ -27,18 +27,6 @@
 		&.shifted {
 			width: calc(100% - 182px);
 		}
-
-		&:after{
-			content: '';
-			position: absolute;
-			top: 80px;
-			right: 4px;
-			width: 6px;
-			height: 56px;
-			border-radius: 3px;
-			background: var(--clr-separator);
-			z-index: 0;
-		}
 	}
 
 	&.fullScreen {
