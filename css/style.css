@@ -2398,10 +2398,10 @@ h6 {
     border-bottom: 1px solid var(--clr-back-new); }
   .graph-prices__controls__btn {
     position: absolute;
-    left: 1px;
-    top: 1px;
-    bottom: 1px;
-    width: 8px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 12px;
     background: var(--clr-separator);
     display: flex;
     justify-content: center;
@@ -2409,7 +2409,8 @@ h6 {
     z-index: 2;
     cursor: pointer;
     border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius); }
+    border-bottom-left-radius: var(--border-radius);
+    border: solid 2px white; }
     .graph-prices__controls__btn:after {
       content: "";
       width: 0;
@@ -2417,6 +2418,31 @@ h6 {
       border-style: solid;
       border-width: 6px 0 6px 6px;
       border-color: transparent transparent transparent var(--clr-icon-arrow); }
+  .graph-prices__controls__btn__open {
+    position: absolute;
+    left: calc(100% - 12px);
+    top: 0px;
+    bottom: 0px;
+    width: 12px;
+    background: var(--clr-separator);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    visibility: hidden;
+    cursor: pointer;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border: solid 2px white; }
+    .graph-prices__controls__btn__open:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 6px 6px 0;
+      border-color: transparent var(--clr-icon-arrow) transparent transparent; }
+    .graph-prices__controls__btn__open.open {
+      visibility: visible; }
   .graph-prices__tier-icon {
     fill: #fff;
     width: 8px;
