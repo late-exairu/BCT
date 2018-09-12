@@ -4,11 +4,25 @@ $(function () {
 
 	if (localStorage.getItem('telegramAuth') == 'true') {
 		if (document.querySelector('.message-bar__login'))
-		document.querySelector('.message-bar__login').classList.add('hidden');
-		if (localStorage.getItem('telegramPhoto') && document.querySelector('.user-portfolio .user-pic__avatar'))
-		document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
+			document.querySelector('.message-bar__login').classList.add('hidden');
+		if (localStorage.getItem('telegramPhoto')) {
+			if (document.querySelector('.user-portfolio .user-pic__avatar')) {
+				document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
+			}
+		} else {
+			if (document.querySelector('.user-portfolio .user-pic__avatar')) {
+				document.querySelector('.user-portfolio .user-pic__avatar').classList.add('hidden');
+				var avatarAbbr = document.createElement('div');
+				avatarAbbr.classList.add('user-pic__avatar');
+				avatarAbbr.textContent = localStorage.getItem('telegramFirstName')[0] + localStorage.getItem('telegramLastName')[0];
+				avatarAbbr.style.borderRadius = '50%';
+				avatarAbbr.style.background = '#0088cc';
+				avatarAbbr.style.fontSize = '19px';
+				document.querySelector('.user-portfolio .user-pic').appendChild(avatarAbbr);
+			}
+		}
 		if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
-		document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
+			document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
 	}
 
 	/* Cubic slider for Orders */
