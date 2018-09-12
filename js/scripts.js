@@ -5,9 +5,9 @@ $(function () {
 	if (localStorage.getItem('telegramAuth') == 'true') {
 		if (document.querySelector('.message-bar__login'))
 		document.querySelector('.message-bar__login').classList.add('hidden');
-		if (localStorage.getItem('telegramPhoto'))
+		if (localStorage.getItem('telegramPhoto') && document.querySelector('.user-portfolio .user-pic__avatar'))
 		document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
-		if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName'))
+		if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
 		document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
 	}
 
