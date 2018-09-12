@@ -2,7 +2,7 @@ $(function () {
 
 	var svgArrowTemplate = '<svg class="basic-table__arrow-conv" role="img" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right-2"></use> </svg>';
 
-	if (localStorage.getItem('telegramAuth') == 'true') {
+	if (localStorage.getItem('telegramAuth') == 'true' && localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 		if (document.querySelector('.message-bar__login'))
 			document.querySelector('.message-bar__login').classList.add('hidden');
 		if (localStorage.getItem('telegramPhoto')) {
@@ -23,6 +23,11 @@ $(function () {
 		}
 		if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
 			document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
+	}
+	else{
+		localStorage.removeItem('telegramAuth');
+		localStorage.removeItem('telegramFirstName');
+		localStorage.removeItem('telegramLastName');
 	}
 
 	/* Cubic slider for Orders */
