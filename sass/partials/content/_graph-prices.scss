@@ -121,6 +121,31 @@
 		border-bottom: 1px solid var(--clr-back-new);
 	}
 
+	&__controls__btn{
+		position: absolute;
+		left: 1px;
+		top: 1px;
+		bottom: 1px;
+		width: 8px;
+		background: var(--clr-separator);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 2;
+		cursor: pointer;
+		border-top-left-radius: var(--border-radius);
+		border-bottom-left-radius: var(--border-radius);
+
+		&:after {
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 6px 0 6px 6px;
+			border-color: transparent transparent transparent #fff;
+		}
+	}
+
 	&__tier-icon{
 		fill: #fff;
 		width: 8px;

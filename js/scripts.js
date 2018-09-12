@@ -859,6 +859,17 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
+	/* Graph prices list show/hidden */
+	/*---------------------------------------------------*/
+	$('.graph-prices .graph-prices__controls__btn').click(function () {
+		if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
+			$('.graph-prices').removeClass('open');
+			$('.b-graph__controls').removeClass('shifted');
+			redrawMainChart();
+		}
+	});
+
+	/*---------------------------------------------------*/
 	/* Main graph size change */
 	/*---------------------------------------------------*/
 
