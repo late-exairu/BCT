@@ -5,7 +5,7 @@ $(function () {
 	if (localStorage.getItem('telegramAuth') == 'true') {
 		document.querySelector('.message-bar__login').classList.add('hidden');
 		document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
-		document.querySelector('.user-portfolio .user-portfolio__name').textContent(localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName'));
+		document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
 	}
 
 	/* Cubic slider for Orders */
