@@ -6434,6 +6434,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     flex: 1 0 40%;
     align-items: center;
     font-weight: 500; }
+    .order-form__label.overflow {
+      letter-spacing: -0.1px; }
   .order-form__input-wrap {
     position: relative;
     display: flex;

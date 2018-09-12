@@ -11,8 +11,8 @@ function redrawMainChart() {
 
 var mainChartMarginLeft = 0;
 var lineColor = '#00AAF8';
-var blueColor = '#2190EA';
-var redColor = '#CA0000';
+var blueColor = '#1296E6';
+var redColor = '#EE363E';
 
 if ($('body').hasClass('advanced')) {
 	mainChartMarginLeft = 15;
