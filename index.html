@@ -1131,6 +1131,7 @@
 										function onTelegramAuth(user) {
 											 //alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
 								 
+											 console.log(user);
 											localStorage.setItem('telegramAuth','true');
 											localStorage.setItem('telegramFirstName', user.first_name);
 											localStorage.setItem('telegramLastName', user.last_name);
