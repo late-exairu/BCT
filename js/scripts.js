@@ -191,68 +191,100 @@ $(function () {
 		$(this).closest('.exch-dropdown').removeClass('open');
 		setTimeout(() => {
 			updateMainChartGraph(currencyAbbr);
-		}, 50)
+		}, 10)
 
 	});
 
 	function updateMainChartGraph(dataCurrency) {
 		var currentDataId = 1;
-		mainChartObj.series.map(function (item, index) {
-			if (item.type == 'column') {
-				switch (dataCurrency) {
-					case 'BTC':
-						if (item.name == 'Series 5') item.setData(columnData[0]);
-						if (item.name == 'Series 6') item.setData(columnData[1]);
-						currentDataId = 4;
-						break;
-					case 'XMR':
-						if (item.name == 'Series 5') item.setData(columnData[8]);
-						if (item.name == 'Series 6') item.setData(columnData[0]);
-						currentDataId = 3;
-						break;
-					case 'ETH':
-						if (item.name == 'Series 5') item.setData(columnData[2]);
-						if (item.name == 'Series 6') item.setData(columnData[3]);
-						currentDataId = 2;
-						break;
-					case 'RPL':
-						if (item.name == 'Series 5') item.setData(columnData[7]);
-						if (item.name == 'Series 6') item.setData(columnData[10]);
-						currentDataId = 5;
-						break;
-					case 'USD':
-						if (item.name == 'Series 5') item.setData(columnData[4]);
-						if (item.name == 'Series 6') item.setData(columnData[5]);
-						currentDataId = 6;
-						break;
-					case 'BCH':
-						if (item.name == 'Series 5') item.setData(columnData[6]);
-						if (item.name == 'Series 6') item.setData(columnData[7]);
-						currentDataId = 7;
-						break;
-					case 'LTC':
-						if (item.name == 'Series 5') item.setData(columnData[8]);
-						if (item.name == 'Series 6') item.setData(columnData[9]);
-						currentDataId = 8;
-						break;
-					case 'MKR':
-						if (item.name == 'Series 5') item.setData(columnData[10]);
-						if (item.name == 'Series 6') item.setData(columnData[11]);
-						currentDataId = 9;
-						break;
-					case 'DASH':
-						if (item.name == 'Series 5') item.setData(columnData[12]);
-						if (item.name == 'Series 6') item.setData(columnData[13]);
-						currentDataId = 10;
-						break;
-					case 'XRP':
-						if (item.name == 'Series 5') item.setData(columnData[14]);
-						if (item.name == 'Series 6') item.setData(columnData[15]);
-						currentDataId = 11;
-						break;
-				}
-			}
-		});
+		switch (dataCurrency) {
+			case 'BTC':
+				currentDataId = 4;
+				break;
+			case 'XMR':
+				currentDataId = 3;
+				break;
+			case 'ETH':
+				currentDataId = 2;
+				break;
+			case 'RPL':
+				currentDataId = 5;
+				break;
+			case 'USD':
+				currentDataId = 6;
+				break;
+			case 'BCH':
+				currentDataId = 7;
+				break;
+			case 'LTC':
+				currentDataId = 8;
+				break;
+			case 'MKR':
+				currentDataId = 9;
+				break;
+			case 'DASH':
+				currentDataId = 10;
+				break;
+			case 'XRP':
+				currentDataId = 11;
+				break;
+		}
+		// mainChartObj.series.map(function (item, index) {
+		// 	if (item.type == 'column') {
+		// 		switch (dataCurrency) {
+		// 			case 'BTC':
+		// 				if (item.name == 'Series 5') item.setData(columnData[0]);
+		// 				if (item.name == 'Series 6') item.setData(columnData[1]);
+		// 				currentDataId = 4;
+		// 				break;
+		// 			case 'XMR':
+		// 				if (item.name == 'Series 5') item.setData(columnData[8]);
+		// 				if (item.name == 'Series 6') item.setData(columnData[0]);
+		// 				currentDataId = 3;
+		// 				break;
+		// 			case 'ETH':
+		// 				if (item.name == 'Series 5') item.setData(columnData[2]);
+		// 				if (item.name == 'Series 6') item.setData(columnData[3]);
+		// 				currentDataId = 2;
+		// 				break;
+		// 			case 'RPL':
+		// 				if (item.name == 'Series 5') item.setData(columnData[7]);
+		// 				if (item.name == 'Series 6') item.setData(columnData[10]);
+		// 				currentDataId = 5;
+		// 				break;
+		// 			case 'USD':
+		// 				if (item.name == 'Series 5') item.setData(columnData[4]);
+		// 				if (item.name == 'Series 6') item.setData(columnData[5]);
+		// 				currentDataId = 6;
+		// 				break;
+		// 			case 'BCH':
+		// 				if (item.name == 'Series 5') item.setData(columnData[6]);
+		// 				if (item.name == 'Series 6') item.setData(columnData[7]);
+		// 				currentDataId = 7;
+		// 				break;
+		// 			case 'LTC':
+		// 				if (item.name == 'Series 5') item.setData(columnData[8]);
+		// 				if (item.name == 'Series 6') item.setData(columnData[9]);
+		// 				currentDataId = 8;
+		// 				break;
+		// 			case 'MKR':
+		// 				if (item.name == 'Series 5') item.setData(columnData[10]);
+		// 				if (item.name == 'Series 6') item.setData(columnData[11]);
+		// 				currentDataId = 9;
+		// 				break;
+		// 			case 'DASH':
+		// 				if (item.name == 'Series 5') item.setData(columnData[12]);
+		// 				if (item.name == 'Series 6') item.setData(columnData[13]);
+		// 				currentDataId = 10;
+		// 				break;
+		// 			case 'XRP':
+		// 				if (item.name == 'Series 5') item.setData(columnData[14]);
+		// 				if (item.name == 'Series 6') item.setData(columnData[15]);
+		// 				currentDataId = 11;
+		// 				break;
+		// 		}
+		// 	}
+		// });
 		updateMainChartSpline(currentDataId);
 	}
 
@@ -800,46 +832,59 @@ $(function () {
 	$('.graph-prices .graph-prices__list .graph-prices__item').click(function () {
 		$('.graph-prices__list .graph-prices__item').removeClass('active');
 		$(this).addClass('active');
-		var currentDataId = $(this).attr('data-id');
+		var currentDataId = parseInt($(this).attr('data-id'));
 		updateMainChartSpline(currentDataId);
 	});
 
 	function updateMainChartSpline(currentDataId) {
-		mainChartObj.series.map(function (item, index) {
-			if (item.type == 'areaspline') {
-				var inactiveLinecolor = index < 4 ? mainChartSecondColor : mainChartColorForHidden;
-				item.update({
-					color: inactiveLinecolor,
-					fillColor: {
-						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-						stops: [
-							[0, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')],
-							[1, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')]
-						]
-					},
-					lineWidth: 0.5,
-					enableMouseTracking: false,
-					zIndex: 1
-				});
-			}
+		// mainChartObj.series.map(function (item, index) {
+		// 	if (item.type == 'areaspline') {
+		// 		var inactiveLinecolor = index < 4 ? mainChartSecondColor : mainChartColorForHidden;
+		// 		item.update({
+		// 			color: inactiveLinecolor,
+		// 			fillColor: {
+		// 				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+		// 				stops: [
+		// 					[0, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')],
+		// 					[1, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')]
+		// 				]
+		// 			},
+		// 			lineWidth: 0.5,
+		// 			enableMouseTracking: false,
+		// 			zIndex: 1
+		// 		});
+		// 	}
+		// });
+		var inactiveLinecolor = mainGraphHighlighted <= 4 ? mainChartSecondColor : mainChartColorForHidden;
+		mainChartObj.series[mainGraphHighlighted - 1].update({
+			color: inactiveLinecolor,
+			fillColor: {
+				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+				stops: [
+					[0, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')],
+					[1, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')]
+				]
+			},
+			lineWidth: 0.5,
+			enableMouseTracking: false,
+			zIndex: 1
 		});
 		if (mainChartObj.series[currentDataId - 1] == undefined) {
 			mainGraphHighlighted = currentDataId;
 			return false;
 		}
-		if (mainChartObj.series[currentDataId - 1].hasOwnProperty('type') && mainChartObj.series[currentDataId - 1].type == 'areaspline') {
-			mainChartObj.series[currentDataId - 1].update({
-				fillColor: {
-					linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-					stops: gradientColor
-				},
-				color: mainChartFirstColor,
-				lineWidth: 3,
-				enableMouseTracking: true,
-				trackByArea: true,
-				zIndex: 10
-			});
-		}
+
+		mainChartObj.series[currentDataId - 1].update({
+			fillColor: {
+				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+				stops: gradientColor
+			},
+			color: mainChartFirstColor,
+			lineWidth: 3,
+			enableMouseTracking: true,
+			trackByArea: true,
+			zIndex: 10
+		});
 
 		mainGraphHighlighted = currentDataId;
 	}
