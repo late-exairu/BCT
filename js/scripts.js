@@ -3,7 +3,11 @@ $(function () {
 	var svgArrowTemplate = '<svg class="basic-table__arrow-conv" role="img" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right-2"></use> </svg>';
 
 	if (localStorage.getItem('telegramAuth') == 'true') {
-		$('.message-bar__login').addClass('hidden');
+		document.querySelector('.message-bar__login').classList.add('hidden');
+		if (localStorage.getItem('telegramPhoto'))
+		document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
+		if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName'))
+		document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
 	}
 
 	/* Cubic slider for Orders */
@@ -171,51 +175,51 @@ $(function () {
 		var currentDataId = 1;
 		mainChartObj.series.map(function (item, index) {
 			if (item.type == 'column') {
-				switch(dataCurrency) {
+				switch (dataCurrency) {
 					case 'BTC':
 						if (item.name == 'Series 5') item.setData(columnData[0]);
 						if (item.name == 'Series 6') item.setData(columnData[1]);
 						currentDataId = 2;
-					break;
+						break;
 					case 'XMR':
 					case 'ETH':
 						if (item.name == 'Series 5') item.setData(columnData[2]);
 						if (item.name == 'Series 6') item.setData(columnData[3]);
 						currentDataId = 11;
-					break;
+						break;
 					case 'RPL':
 					case 'USD':
 						if (item.name == 'Series 5') item.setData(columnData[4]);
 						if (item.name == 'Series 6') item.setData(columnData[5]);
 						currentDataId = 4;
-					break;					
+						break;
 					case 'BCH':
 						if (item.name == 'Series 5') item.setData(columnData[6]);
 						if (item.name == 'Series 6') item.setData(columnData[7]);
 						currentDataId = 5;
-					break;
+						break;
 					case 'LTC':
 						if (item.name == 'Series 5') item.setData(columnData[8]);
 						if (item.name == 'Series 6') item.setData(columnData[9]);
 						currentDataId = 6;
-					break;
+						break;
 					case 'MKR':
 						if (item.name == 'Series 5') item.setData(columnData[10]);
 						if (item.name == 'Series 6') item.setData(columnData[11]);
 						currentDataId = 7;
-					break;
+						break;
 					case 'DASH':
 						if (item.name == 'Series 5') item.setData(columnData[12]);
 						if (item.name == 'Series 6') item.setData(columnData[13]);
 						currentDataId = 8;
-					break;
+						break;
 					case 'XRP':
 						if (item.name == 'Series 5') item.setData(columnData[14]);
 						if (item.name == 'Series 6') item.setData(columnData[15]);
 						currentDataId = 9;
-					break;
+						break;
 				}
-			}			
+			}
 		});
 		updateMainChartSpline(currentDataId);
 	}
@@ -762,7 +766,7 @@ $(function () {
 	$('.graph-prices .graph-prices__list .graph-prices__item').click(function () {
 		$('.graph-prices__list .graph-prices__item').removeClass('active');
 		$(this).addClass('active');
-		var currentDataId = $(this).attr('data-id');	
+		var currentDataId = $(this).attr('data-id');
 		updateMainChartSpline(currentDataId);
 	});
 
@@ -1178,9 +1182,9 @@ $(function () {
 	});
 
 	$('.transaction-form__to-clipdoard').click(function () {
-		 var copyText = document.querySelector(".transaction-form__input.with-copy");
-		 copyText.select();
-		 document.execCommand("copy");
+		var copyText = document.querySelector(".transaction-form__input.with-copy");
+		copyText.select();
+		document.execCommand("copy");
 		$(".transaction-form__input.with-copy").trigger('blur');
 		$(this).addClass('copied');
 	});
@@ -1531,9 +1535,9 @@ $(function () {
 	var $portfolioGraphRange = $(".portfolio-graph-range__control");
 
 	$portfolioGraphRange.ionRangeSlider({
-		type: "single",		
+		type: "single",
 		hide_min_max: true,
-    	hide_from_to: true,
+		hide_from_to: true,
 		grid: false,
 		from: 1,
 		values: ["1h", "1d", "1w", "1m", "1y"],

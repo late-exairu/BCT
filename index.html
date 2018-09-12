@@ -1129,9 +1129,17 @@
 									<script async src="https://telegram.org/js/telegram-widget.js?4" data-telegram-login="BCTerminalBot" data-size="large" data-radius="5" data-onauth="onTelegramAuth(user)"></script>
 									<script type="text/javascript">
 										function onTelegramAuth(user) {
-											 alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
- 											 document.querySelector('.message-bar__login').classList.add('hidden');											 
-											 localStorage.setItem('telegramAuth','true');
+											 //alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
+								 
+											 console.log(user);
+											localStorage.setItem('telegramAuth','true');
+											localStorage.setItem('telegramFirstName', user.first_name);
+											localStorage.setItem('telegramLastName', user.last_name);
+											localStorage.setItem('telegramPhoto', user.photo_url);
+
+											document.querySelector('.message-bar__login').classList.add('hidden');
+											document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', user.photo_url);
+											document.querySelector('.user-portfolio .user-portfolio__name').textContent = user.first_name + ' ' + user.last_name;
 										}
 									</script>									
 								</div><!-- message-bar__login END -->

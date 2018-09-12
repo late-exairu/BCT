@@ -349,8 +349,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				arrowDirection = 'left';
 			}
 			return '<div class="tooltip arrow_box mainTooltip ' + arrowDirection + '">' +
-				"<div><span class='currencies bold'>ETH/USDT</span> (Binance): <span class='value bold'>" + TooltipValue + '</span></div>' +
-				dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + '</div>';
+				"<div><span class='currencies bold'>ETH/USDT</span> (Binance): &nbsp;<span class='value bold'>" + TooltipValue + '</span></div>' +
+				'&nbsp;&nbsp;&nbsp;' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + '</div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
 			//var graphWidth = $(mainChartObj.container).width();
