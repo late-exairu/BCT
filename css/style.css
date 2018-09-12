@@ -2412,7 +2412,7 @@ h6 {
     cursor: pointer;
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
-    border: solid 2px white; }
+    border: solid 2px var(--clr-block); }
     .graph-prices__controls__btn:after {
       content: "";
       width: 0;
@@ -2435,7 +2435,7 @@ h6 {
     cursor: pointer;
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
-    border: solid 2px white; }
+    border: solid 2px var(--clr-block); }
     .graph-prices__controls__btn__open:after {
       content: "";
       width: 0;
