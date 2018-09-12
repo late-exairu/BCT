@@ -1141,6 +1141,7 @@
 											}
 											else{
 												document.querySelector('.user-portfolio .user-pic__avatar').classList.add('hidden');
+												document.querySelector('.message-bar__user-pic .user-pic__avatar').classList.add('hidden');
 												var avatarAbbr = document.createElement('div');
 												avatarAbbr.classList.add('user-pic__avatar');
 												avatarAbbr.textContent = localStorage.getItem('telegramFirstName')[0] + localStorage.getItem('telegramLastName')[0];
@@ -1148,6 +1149,7 @@
 												avatarAbbr.style.background = '#0088cc';
 												avatarAbbr.style.fontSize = '19px';
 												document.querySelector('.user-portfolio .user-pic').appendChild(avatarAbbr);
+												document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr.cloneNode(true));
 											}
 
 											document.querySelector('.user-portfolio .user-portfolio__name').textContent = user.first_name + ' ' + user.last_name;
