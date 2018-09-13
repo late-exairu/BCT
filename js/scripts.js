@@ -1147,26 +1147,22 @@ $(function () {
 			var firstValueResult = 0;
 			var secondValueResult = 0;
 
+			// update wallet and table
 			ownWallet[sendCurrency] -= firstValue;
 			ownWallet[getCurrency] += (+secondValue);
-
-			if (ownWallet[getCurrency] != 0){
+			if (ownWallet[getCurrency] != 0) {
 				if ($('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').hasClass('disabled')) {
 					$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').removeClass('disabled');
-					var insertedRow = $('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').remove();
-					var lastActiveRow = $('#panel-funds-wallet .basic-table__row:not(".disabled")').last();
-					$(insertedRow).insertAfter(lastActiveRow);
+					$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
 				}
 			}
 			if (ownWallet[sendCurrency] == 0) {
 				$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').addClass('disabled');
-				var insertedRow = $('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').remove();
-				var lastActiveRow = $('#panel-funds-wallet .basic-table__row:not(".disabled")').last();
-				$(insertedRow).insertAfter(lastActiveRow);
+				$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
 			}
-
 			updateWalletData();
 			drawCircleChart();
+			// end update wallet and table
 
 			graphPricesScrollbar.animate({
 				scrollTop: 0
