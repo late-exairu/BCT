@@ -1636,7 +1636,7 @@ $(function () {
 		hide_min_max: true,
 		hide_from_to: true,
 		grid: false,
-		from: 1,
+		from: 4,
 		values: ["1h", "1d", "1w", "1m", "1y"],
 		onChange: function(e){
 			// update current range text			
@@ -1644,23 +1644,7 @@ $(function () {
 		},
 		onFinish: function(e){
 			// update chart			
-			switch (e.from) {
-				case 0:
-					if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(0, {}, true);
-					break;
-				case 1:
-					if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(1, {}, true);
-					break;
-				case 2:
-					if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(2, {}, true);
-					break;
-				case 3:
-					if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(3, {}, true);
-					break;
-				case 4:
-					if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(4, {}, true);
-					break;
-			}
+			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(e.from, {}, true);
 		}
 	});
 
