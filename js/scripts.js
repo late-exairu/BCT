@@ -1150,6 +1150,7 @@ $(function () {
 			graphPricesScrollbar.animate({
 				scrollTop: 0
 			}, "slow");
+
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
 				progressbar.progressbar("value", 0);
@@ -1196,6 +1197,18 @@ $(function () {
 			if (!$('body').hasClass('advanced')) {
 				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('<img src="http://localhost:3000/img/spin.svg">');
 				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency);
+				var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+				var differenceMax = (currenciesPrice[sendCurrency] / currenciesPrice[getCurrency]) / 1250;
+				var differenceMin = differenceMax / 500;
+				var difference = (Math.random() * (differenceMax - differenceMin) + differenceMin) * plusOrMinus;
+				var result = (currenciesPrice[sendCurrency] / currenciesPrice[getCurrency]) + difference;
+				if (result > 1){
+					result = result.toFixed(2);
+				}
+				else{
+					result = result.toFixed(5);
+				}
+				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(2).html(result + ' ' + getCurrency);
 			}
 			$('.graph-prices').addClass('open noClose');
 			$('.b-graph__controls').addClass('shifted');
