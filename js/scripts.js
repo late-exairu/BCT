@@ -986,7 +986,7 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
-	/* exchange progressbar */
+	/* exchange progressbar */  
 	/*---------------------------------------------------*/
 	var progressbar_list = $(".progressbar");
 	var progressbar_array = new Array();
@@ -1151,10 +1151,23 @@ $(function () {
 				scrollTop: 0
 			}, "slow");
 
+			var remain_total_value = firstValue;
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
 				progressbar.progressbar("value", 0);
 				setTimeout(progress, 1000 + 1200 * i, i);
+
+				var rand = 0;
+				if (i == progressbar_array.length - 1) {
+					rand = Math.floor(remain_total_value * 100) / 100;
+				}
+				else {
+					var conversion_part = remain_total_value / (progressbar_array.length - i);
+					rand = Math.floor(Math.random() * 2 * conversion_part * 100) / 100;
+					if (rand == 0) rand = 0.01;
+					remain_total_value -= rand;
+				}
+				progressbar_labels[i].text(rand + ' BCT');
 
 				if (!$('body').hasClass('advanced')) {
 					setTimeout(function () {
@@ -1191,6 +1204,7 @@ $(function () {
 					}, 4000 + 1000 + 1200 * i, i);
 				}
 			}
+
 			$('.exch-form').addClass('progress');
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active');
 			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
