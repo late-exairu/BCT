@@ -986,7 +986,7 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
-	/* exchange progressbar */
+	/* exchange progressbar */  
 	/*---------------------------------------------------*/
 	var progressbar_list = $(".progressbar");
 	var progressbar_array = new Array();
@@ -1154,6 +1154,11 @@ $(function () {
 				var progressbar = progressbar_array[i];
 				progressbar.progressbar("value", 0);
 				setTimeout(progress, 1000 + 1200 * i, i);
+
+
+				var rand = Math.floor(Math.random() * 0.2 * 100) / 100;
+				if (rand == 0) rand = 0.01;
+				progressbar_labels[i].text(rand);
 
 				if (!$('body').hasClass('advanced')) {
 					setTimeout(function () {
