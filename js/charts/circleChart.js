@@ -81,7 +81,7 @@ function drawCircleChart() {
                 startAngle: 0,
                 size: pieChartSize,
                 center: [centerX, centerY],
-                colors: ['#707CB9', '#F6921E', '#c81820', '#83c55f', '#b1b0b0', '#438bca', '#f60', '#1abc9c', '#008ce7', '#23292f']
+                colors: ['#707CB9', '#F6921E', '#2a3e81', '#83c55f', '#b1b0b0', '#438bca', '#f60', '#1abc9c', '#008ce7', '#23292f']
             },
             series: {
                 dataLabels: {

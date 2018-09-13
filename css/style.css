@@ -140,7 +140,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 162em 147em; }
+  background-size: 160.75em 145.75em; }
 
 /* =================================================================== */
 /* Functions
@@ -741,6 +741,8 @@ h6 {
         background: var(--clr-icon); }
       .basic-table__row.disabled .clr-blue {
         color: var(--clr-icon); }
+      .basic-table__row.disabled .icon-curr {
+        opacity: 0.25; }
     .basic-table__row.head {
       font-size: var(--font-size);
       font-weight: 700;
@@ -1293,7 +1295,7 @@ h6 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #f79330; }
+    color: #2a3e81; }
   .chat-head__info {
     font-size: 11px;
     margin: 0 0 0;
@@ -1854,7 +1856,7 @@ h6 {
     .exch-dropdown__icon.rpl {
       fill: #438bca; }
     .exch-dropdown__icon.usd {
-      fill: #d22c33; }
+      fill: #2a3e81; }
     .exch-dropdown__icon.mkr {
       fill: #1abc9c; }
     .exch-dropdown__icon.xmr {
@@ -1893,7 +1895,7 @@ h6 {
     fill: #438bca; }
   .exch-dropdown .current .usd,
   .exch-dropdown .exch-dropdown__border .usd {
-    fill: #d22c33; }
+    fill: #2a3e81; }
   .exch-dropdown .current .mkr,
   .exch-dropdown .exch-dropdown__border .mkr {
     fill: #1abc9c; }
@@ -2843,31 +2845,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -147.25em -133.1875em; }
+    background-position: -146em -131.9375em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -151.625em -137.625em; }
+    background-position: -150.375em -136.375em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -150.1875em -136.125em; }
+    background-position: -148.9375em -134.875em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -148em -133.9375em; }
+    background-position: -146.75em -132.6875em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -149.5em -135.4375em; }
+    background-position: -148.25em -134.1875em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -148.625em -134.5625em; }
+    background-position: -147.375em -133.3125em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -150.75em -136.9375em; }
+    background-position: -149.5em -135.6875em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -7900,7 +7902,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   fill: #438bca; }
 
 .clr-dollar {
-  fill: #C81820; }
+  fill: #2a3e81; }
 
 .clr-maker {
   fill: #1abc9c; }
@@ -7930,7 +7932,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   background: #438bca; }
 
 .back-dollar {
-  background: #C81820; }
+  background: #2a3e81; }
 
 .back-maker {
   background: #1abc9c; }
