@@ -1159,7 +1159,7 @@ $(function () {
 						firstValueResult += firstValuePart;
 						secondValueResult += secondValuePart;
 						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html(firstValueResult.toFixed(2) + ' ' + sendCurrency + svgArrowTemplate + secondValueResult.toFixed(2) + ' ' + getCurrency)
-					}, 4000 + 1000 + 500 * i, i);
+					}, 4000 + 1000 + 1200 * i, i);
 				}
 
 				if (i == progressbar_array.length - 1) {
