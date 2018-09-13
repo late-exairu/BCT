@@ -348,8 +348,12 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			if (this.points[0].point.plotX < 220) {
 				arrowDirection = 'left';
 			}
+
+			var currency_send = $('.exch-dropdown__current > p > span')[0].innerText;
+			var currency_get = $('.exch-dropdown__current > p > span')[1].innerText;
+
 			return '<div class="tooltip arrow_box mainTooltip ' + arrowDirection + '">' +
-				"<div><span class='currencies bold'>ETH/USDT</span> (Binance): &nbsp;<span class='value bold'>" + TooltipValue + '</span></div>' +
+				"<div><span class='currencies bold'>" + currency_send + "/" + currency_get + "</span> (Binance): &nbsp;<span class='value bold'>" + TooltipValue + '</span></div>' +
 				'&nbsp;&nbsp;&nbsp;' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + '</div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
