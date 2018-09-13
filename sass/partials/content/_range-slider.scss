@@ -1,0 +1,89 @@
+
+/* =================================================================== */
+/* range-slider */
+/* =================================================================== */
+
+
+.range-slider{
+	position: relative;
+	width: 100%;
+    margin: 5px 0;
+    
+    /* skin details */
+    .irs-line-mid,
+    .irs-line-left,
+    .irs-line-right,
+    .irs-bar,
+    .irs-bar-edge,
+    .irs-slider {
+        // fix console error
+        // background: url(../img/sprite-skin-simple.png) repeat-x;
+        background: #dcdedf;
+    }
+
+	.irs{
+		height: 10px;
+	}
+
+	.irs-with-grid{
+		height: 9px;
+	}
+
+	.irs-line{
+		top: 4px;
+		height: 1px;
+		background: var(--clr-separatorD);
+	}
+
+	.irs-bar,
+	.irs-bar-edge{
+		top: 4px;
+		height: 1px;
+		width: 3px;
+		background: #565656;
+	}
+
+	.irs-single{
+		display: none;
+	}
+
+	.irs-grid{
+		bottom: auto;
+		top: 2px;
+		height: 5px;
+		left: 0 !important;
+		width: calc(100% - 1px) !important;
+		right: 0;
+
+	}
+
+	.irs-grid-pol {
+		width: 1px;
+		height: 5px;
+		background: var(--clr-separatorD);
+
+		&.small{
+			display: none;
+		}
+	}
+
+	.irs-grid-text{
+		display: none;
+	}
+
+	.single{
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		background: var(--clr-separatorD);
+		border: 0 none;
+		padding: 0;
+		color: #fff;
+		text-align: center;
+		line-height: 17px;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1;
+		cursor: pointer;
+	}
+}

@@ -4178,6 +4178,67 @@ body.menubar-in #user-btn:before {
   .user-portfolio .user-menu {
     margin: 0 0 0 -2px; }
 
+/* =================================================================== */
+/* range-slider */
+/* =================================================================== */
+.range-slider {
+  position: relative;
+  width: 100%;
+  margin: 5px 0;
+  /* skin details */ }
+  .range-slider .irs-line-mid,
+  .range-slider .irs-line-left,
+  .range-slider .irs-line-right,
+  .range-slider .irs-bar,
+  .range-slider .irs-bar-edge,
+  .range-slider .irs-slider {
+    background: #dcdedf; }
+  .range-slider .irs {
+    height: 10px; }
+  .range-slider .irs-with-grid {
+    height: 9px; }
+  .range-slider .irs-line {
+    top: 4px;
+    height: 1px;
+    background: var(--clr-separatorD); }
+  .range-slider .irs-bar,
+  .range-slider .irs-bar-edge {
+    top: 4px;
+    height: 1px;
+    width: 3px;
+    background: #565656; }
+  .range-slider .irs-single {
+    display: none; }
+  .range-slider .irs-grid {
+    bottom: auto;
+    top: 2px;
+    height: 5px;
+    left: 0 !important;
+    width: calc(100% - 1px) !important;
+    right: 0; }
+  .range-slider .irs-grid-pol {
+    width: 1px;
+    height: 5px;
+    background: var(--clr-separatorD); }
+    .range-slider .irs-grid-pol.small {
+      display: none; }
+  .range-slider .irs-grid-text {
+    display: none; }
+  .range-slider .single {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--clr-separatorD);
+    border: 0 none;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer; }
+
 /* Ion.RangeSlider
 // css version 2.0.3
 // © 2013-2014 Denis Ineshin | IonDen.com
@@ -7431,7 +7492,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     display: flex;
     align-items: center;
     z-index: 1; }
-    #portfolioChartText .portfolio-graph-range .cubic-slider {
+    #portfolioChartText .portfolio-graph-range .range-slider {
       pointer-events: all;
       cursor: pointer;
       flex: 1;

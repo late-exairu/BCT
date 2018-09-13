@@ -1637,8 +1637,7 @@ $(function () {
 		hide_from_to: true,
 		grid: false,
 		from: 1,
-		values: ["1h", "1d", "1w", "1m", "1y"],
-		extra_classes: 'cubic-slide'
+		values: ["1h", "1d", "1w", "1m", "1y"]		
 	});
 
 });
