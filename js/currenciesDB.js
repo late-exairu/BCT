@@ -5,7 +5,7 @@ const numberWithCommas = (x) => {
 var ownWallet = {
     'BTC': 1.00,
     'ETH': 7.50,
-    'USD': 0.00,
+    'USD': 100000.00,
     'BCH': 0.00,
     'LTC': 0.00,
     'RPL': 0.00,
@@ -56,6 +56,7 @@ $('.pricePerCoinETH').html('$' + numberWithCommas(currenciesPrice['ETH']));
 
 $('.walletBTC').html(ownWallet['BTC'].toFixed(2) + '&nbsp;');
 $('.walletETH').html(ownWallet['ETH'].toFixed(2) + '&nbsp;');
+$('.walletUSD').html(ownWallet['USD'].toFixed(2) + '&nbsp;');
 
 $('.walletBTCPercent').html(eachPercent['BTC'].toFixed(0) + '%');
 $('.walletETHPercent').html(eachPercent['ETH'].toFixed(0) + '%');
