@@ -1180,7 +1180,7 @@ $(function () {
 				if (i == progressbar_array.length - 1) {
 					setTimeout(function () {
 						$('.exch-form').addClass('completed');
-						$('.exch-form__btn > span').html('COMPLETED');
+						$('.exch-form__btn > span').html('DONE');
 						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
 						$('.exch-form__btn').attr("disabled", true);
 
