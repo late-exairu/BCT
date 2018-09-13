@@ -351,9 +351,10 @@ var mainChartObj = Highcharts.chart('mainChart', {
 
 			var currency_send = $('.exch-dropdown__current > p > span')[0].innerText;
 			var currency_get = $('.exch-dropdown__current > p > span')[1].innerText;
-
+			var current_trader = $(".graph-prices__list .graph-prices__item.active .graph-prices__trader")[0].innerText;
+			
 			return '<div class="tooltip arrow_box mainTooltip ' + arrowDirection + '">' +
-				"<div><span class='currencies bold'>" + currency_send + "/" + currency_get + "</span> (Binance): &nbsp;<span class='value bold'>" + TooltipValue + '</span></div>' +
+				"<div><span class='currencies bold'>" + currency_send + "/" + currency_get + "</span> (" + current_trader + "): &nbsp;<span class='value bold'>" + TooltipValue + '</span></div>' +
 				'&nbsp;&nbsp;&nbsp;' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + '</div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {

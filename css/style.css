@@ -2329,7 +2329,7 @@ h6 {
 .graph-prices {
   font-family: "open_sans", sans-serif;
   position: absolute;
-  display: flex;
+  display: none;
   min-height: 0;
   top: 0px;
   right: 0px;
@@ -2340,7 +2340,6 @@ h6 {
   transition: all .2s;
   /*border: 1px solid var(--clr-separator);*/
   opacity: 0;
-  visibility: hidden;
   will-change: transform;
   transform: translateX(30px);
   border-radius: var(--border-radius);
@@ -2395,7 +2394,7 @@ h6 {
 		border-radius: 2px;
 	}*/ }
   .graph-prices.open {
-    visibility: visible;
+    display: flex;
     opacity: 1;
     transform: translateX(0); }
   .graph-prices__label {
