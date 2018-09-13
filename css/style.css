@@ -7310,10 +7310,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       #circleChartText .wrap .value span {
         top: 2px;
         position: relative;
-        font-size: 16px;
+        font-size: 13px;
         vertical-align: top; }
       #circleChartText .wrap .value span.bigger {
-        font-size: 26.5px; }
+        font-size: 22px;
+        margin: 0px -3px; }
     #circleChartText .wrap .title {
       font-size: 10px;
       line-height: 1.26;

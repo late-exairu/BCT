@@ -5,13 +5,12 @@
 var circleChartTooltipData = {
     Bitcoin: {
         price: '$' + eachBalance['BTC'],
-       // value: '1 BTC',
-       // percent: '75'
     },
     Ethereum: {
         price: '$' + eachBalance['ETH'],
-       // value: '0.5 ETH',
-       // percent: '25'
+    },
+    'US Dollar':{
+        price: '$' + eachBalance['USD'],
     }
 }
 
@@ -50,7 +49,7 @@ var circleChartOptions = {
             startAngle: 0,
             size: pieChartSize,
             center: [centerX, centerY],
-            colors: ['#707CB9', '#F6921E']
+            colors: ['#707CB9', '#F6921E', '#c81820']
         },
         series: {
             dataLabels: {
@@ -92,6 +91,7 @@ var circleChartOptions = {
         data: [
             ['Ethereum', eachPercent['ETH']],
             ['Bitcoin', eachPercent['BTC']],
+            ['US Dollar', eachPercent['USD']],
         ],
     }]
 };
