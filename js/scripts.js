@@ -1147,6 +1147,27 @@ $(function () {
 			var firstValueResult = 0;
 			var secondValueResult = 0;
 
+			ownWallet[sendCurrency] -= firstValue;
+			ownWallet[getCurrency] += (+secondValue);
+
+			if (ownWallet[getCurrency] != 0){
+				if ($('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').hasClass('disabled')) {
+					$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').removeClass('disabled');
+					var insertedRow = $('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').remove();
+					var lastActiveRow = $('#panel-funds-wallet .basic-table__row:not(".disabled")').last();
+					$(insertedRow).insertAfter(lastActiveRow);
+				}
+			}
+			if (ownWallet[sendCurrency] == 0) {
+				$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').addClass('disabled');
+				var insertedRow = $('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').remove();
+				var lastActiveRow = $('#panel-funds-wallet .basic-table__row:not(".disabled")').last();
+				$(insertedRow).insertAfter(lastActiveRow);
+			}
+
+			updateWalletData();
+			drawCircleChart();
+
 			graphPricesScrollbar.animate({
 				scrollTop: 0
 			}, "slow");
