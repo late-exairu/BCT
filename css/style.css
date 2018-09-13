@@ -7327,10 +7327,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     #circleChartText {
       width: 200px; }
       #circleChartText .wrap .value span {
-        top: 2px;
-        font-size: 26px; }
+        top: 4px;
+        font-size: 22px; }
       #circleChartText .wrap .value span.bigger {
-        font-size: 40px; }
+        top: 0;
+        font-size: 34px; }
       #circleChartText .wrap .title {
         font-size: 16px; } }
 
