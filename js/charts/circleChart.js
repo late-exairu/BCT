@@ -49,7 +49,7 @@ var circleChartOptions = {
             startAngle: 0,
             size: pieChartSize,
             center: [centerX, centerY],
-            colors: ['#707CB9', '#F6921E', '#c81820']
+            colors: ['#707CB9', '#F6921E', '#2a3e81']
         },
         series: {
             dataLabels: {
