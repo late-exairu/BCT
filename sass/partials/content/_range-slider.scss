@@ -18,7 +18,7 @@
     .irs-slider {
         // fix console error
         // background: url(../img/sprite-skin-simple.png) repeat-x;
-        background: #dcdedf;
+        background: var(--clr-time-line);
     }
 
 	.irs{
@@ -32,7 +32,7 @@
 	.irs-line{
 		top: 4px;
 		height: 1px;
-		background: var(--clr-separatorD);
+		background: var(--clr-time-line);
 	}
 
 	.irs-bar,
@@ -40,7 +40,7 @@
 		top: 4px;
 		height: 1px;
 		width: 3px;
-		background: #565656;
+		background: var(--clr-time-bar);
 	}
 
 	.irs-single{
@@ -60,7 +60,7 @@
 	.irs-grid-pol {
 		width: 1px;
 		height: 5px;
-		background: var(--clr-separatorD);
+		background: var(--clr-time-slider);
 
 		&.small{
 			display: none;
@@ -75,7 +75,7 @@
 		width: 5px;
 		height: 5px;
 		border-radius: 50%;
-		background: var(--clr-separatorD);
+		background: var(--clr-time-slider);
 		border: 0 none;
 		padding: 0;
 		color: #fff;

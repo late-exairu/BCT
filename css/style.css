@@ -62,7 +62,13 @@
   --clr-line:			#000000;
   /*basic tooltip  background color*/
   --clr-icon-arrow:	#f9f9f9;
-  /*basic arrow down fill color*/ }
+  /*basic arrow down fill color*/
+  --clr-time-line:	#E8E8E8;
+  /*time control background color*/
+  --clr-time-bar:		#2E2E2E;
+  /*time control bar background color*/
+  --clr-time-slider:	#737373;
+  /*time control slider color*/ }
 
 .dark-theme {
   --clr-text:			#9ba6b2;
@@ -118,7 +124,13 @@
   --clr-line:			#BFC0C0;
   /*basic tooltip  background color*/
   --clr-icon-arrow:	#9BA6B2;
-  /*arrow down fill color*/ }
+  /*arrow down fill color*/
+  --clr-time-line:	#E8E8E8;
+  /*time control background color*/
+  --clr-time-bar:		#2E2E2E;
+  /*time control bar background color*/
+  --clr-time-slider:	#737373;
+  /*time control slider color*/ }
 
 /**
  * The following variable and function originate from the sass-mq library.
@@ -2645,7 +2657,6 @@ h6 {
 /* graph-range-slider
 /* =================================================================== */
 .graph-range-slider {
-  color: var(--clr-textD);
   font-size: 11px;
   background: transparent;
   font-weight: 600;
@@ -2659,7 +2670,8 @@ h6 {
     flex: 1;
     margin: 0; }
   .graph-range-slider__current {
-    padding: 0 3px; }
+    padding: 0 3px;
+    color: var(--clr-time-bar); }
 
 /* =================================================================== */
 /* graph-top */
@@ -4212,7 +4224,7 @@ body.menubar-in #user-btn:before {
   .range-slider .irs-bar,
   .range-slider .irs-bar-edge,
   .range-slider .irs-slider {
-    background: #dcdedf; }
+    background: var(--clr-time-line); }
   .range-slider .irs {
     height: 10px; }
   .range-slider .irs-with-grid {
@@ -4220,13 +4232,13 @@ body.menubar-in #user-btn:before {
   .range-slider .irs-line {
     top: 4px;
     height: 1px;
-    background: var(--clr-separatorD); }
+    background: var(--clr-time-line); }
   .range-slider .irs-bar,
   .range-slider .irs-bar-edge {
     top: 4px;
     height: 1px;
     width: 3px;
-    background: #565656; }
+    background: var(--clr-time-bar); }
   .range-slider .irs-single {
     display: none; }
   .range-slider .irs-grid {
@@ -4239,7 +4251,7 @@ body.menubar-in #user-btn:before {
   .range-slider .irs-grid-pol {
     width: 1px;
     height: 5px;
-    background: var(--clr-separatorD); }
+    background: var(--clr-time-slider); }
     .range-slider .irs-grid-pol.small {
       display: none; }
   .range-slider .irs-grid-text {
@@ -4248,7 +4260,7 @@ body.menubar-in #user-btn:before {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: var(--clr-separatorD);
+    background: var(--clr-time-slider);
     border: 0 none;
     padding: 0;
     color: #fff;
@@ -7518,7 +7530,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       flex: 1;
       margin: 0; }
     #portfolioChartText .portfolio-graph-range__current {
-      padding: 0 3px; }
+      padding: 0 3px;
+      color: var(--clr-time-bar); }
 
 #panel-funds-account,
 #panel-dashboard-liquidity {

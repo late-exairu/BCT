@@ -49,6 +49,10 @@ $osansC:			'open_sans_condensed', sans-serif;
 	--clr-back-tooltip: #F9F9F9;	/*basic tooltip  background color*/
 	--clr-line:			#000000; 	/*basic tooltip  background color*/
 	--clr-icon-arrow:	#f9f9f9;	/*basic arrow down fill color*/
+
+	--clr-time-line:	#E8E8E8;	/*time control background color*/
+	--clr-time-bar:		#2E2E2E;	/*time control bar background color*/
+	--clr-time-slider:	#737373;	/*time control slider color*/
 }
 
 .dark-theme{
@@ -84,4 +88,7 @@ $osansC:			'open_sans_condensed', sans-serif;
 	--clr-line:			#BFC0C0;	/*basic tooltip  background color*/
 	--clr-icon-arrow:	#9BA6B2;	/*arrow down fill color*/
 
+	--clr-time-line:	#E8E8E8;	/*time control background color*/
+	--clr-time-bar:		#2E2E2E;	/*time control bar background color*/
+	--clr-time-slider:	#737373;	/*time control slider color*/
 }
