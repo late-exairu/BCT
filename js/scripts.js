@@ -708,6 +708,7 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* show Orders form */
 	/*---------------------------------------------------*/
+	var isSelectedPrevConversion = false;
 
 	$('.basic-table').on('click', '.basic-table__row:not(.head)', function () {
 		$(this).parent().find('.basic-table__row').removeClass('active');
@@ -754,7 +755,7 @@ $(function () {
 			$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurrency + '"]').trigger('click');
 			$('.exch-form__send input').val(numberWithCommas(convertedArr[0].trim().slice(0, -4)));
 			$('.exch-form__get input').val(numberWithCommas(convertedArr[1].trim().slice(0, -4)));
-
+			isSelectedPrevConversion = true;
 		}
 
 	});
@@ -1230,10 +1231,18 @@ $(function () {
 						} */
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
-			var firstValue = ownWallet[sendCurrency].toFixed(2);
-			var secondValue = ((ownWallet[sendCurrency] * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
+			var firstValue, secondValue;
+			// if selected previous conversion
+			if (isSelectedPrevConversion){
+				firstValue = $('.exch-form__send input').val();
+				secondValue = $('.exch-form__get input').val();
+			} else {
+				firstValue = ownWallet[sendCurrency].toFixed(2);
+				secondValue = ((ownWallet[sendCurrency] * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
+			}			
 			$('.exch-form__send input').val(numberWithCommas(firstValue));
 			$('.exch-form__get input').val(numberWithCommas(secondValue));
+			isSelectedPrevConversion = false;
 		}
 	});
 
