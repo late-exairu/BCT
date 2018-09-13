@@ -1648,4 +1648,24 @@ $(function () {
 		}
 	});
 
+	/* main graph range slider for Orders */
+	var $mainGraphRange = $(".graph-range-slider__control");
+
+	$mainGraphRange.ionRangeSlider({
+		type: "single",
+		hide_min_max: true,
+		hide_from_to: true,
+		grid: false,
+		from: 4,
+		values: ["1h", "1d", "1w", "1m", "1y"],
+		onChange: function(e){
+			// update current range text			
+			$('.graph-range-slider__current').html(e.from_value);
+		},
+		onFinish: function(e){
+			// update chart			
+			// if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(e.from, {}, true);
+		}
+	});
+
 });

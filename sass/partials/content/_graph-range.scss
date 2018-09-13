@@ -83,3 +83,29 @@
 		}
 	}
 }
+
+
+/* =================================================================== */
+/* graph-range-slider
+/* =================================================================== */
+.graph-range-slider{
+	color: var(--clr-textD);
+	font-size: 11px;		
+	background: transparent;
+	font-weight: 600;
+	width: 92px;	
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+
+	.range-slider{			
+		pointer-events: all;
+		cursor: pointer;			
+		flex: 1;
+		margin: 0;
+	}
+
+	&__current{			
+		padding: 0 3px;
+	}
+}
