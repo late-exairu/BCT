@@ -8,6 +8,75 @@
 	position: relative;
 	width: 100%;
     margin: 5px 0;
+    height: 10px;
+
+    // input[type=range] {
+    //     -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    //     width: 100%; /* Specific width is required for Firefox. */
+    //     background: transparent; /* Otherwise white in Chrome */
+    //     margin: 4px 0;
+
+    //     &::-webkit-slider-thumb{
+    //         -webkit-appearance: none;            
+    //         height: 6px;
+    //         width: 6px;
+    //         border-radius: 50%;
+    //         background: var(--clr-time-slider);
+    //         cursor: pointer;
+    //         margin-top: -2px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */            
+    //     }
+
+    //     &:focus {
+    //         outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */            
+    //     }
+
+    //     &::-webkit-slider-runnable-track {
+    //         width: 100%;
+    //         height: 2px;
+    //         cursor: pointer;            
+    //         background: var(--clr-time-line);
+    //     }
+
+    //     /* All the same stuff for Firefox */
+    //     &::-moz-range-thumb {                        
+    //         height: 6px;
+    //         width: 6px;
+    //         border-radius: 50%;
+    //         background: var(--clr-time-slider);
+    //         cursor: pointer;
+    //     }
+    //     &::-moz-range-track {
+    //         width: 100%;
+    //         height: 2px;
+    //         cursor: pointer;            
+    //         background: var(--clr-time-line);                        
+    //     } 
+
+    //     /* All the same stuff for IE */
+    //     &::-ms-thumb {
+    //         height: 6px;
+    //         width: 6px;
+    //         border-radius: 50%;
+    //         background: var(--clr-time-slider);
+    //         cursor: pointer;
+    //     }
+    //     &::-ms-track {
+    //         width: 100%;
+    //         height: 2px;
+    //         cursor: pointer;
+          
+    //         /* Hides the slider so custom styles can be added */
+    //         background: transparent; 
+    //         border-color: transparent;
+    //         color: transparent;
+    //     }
+    //     &::-ms-fill-lower {
+    //         background: var(--clr-time-line);
+    //     }
+    //     &::-ms-fill-upper {
+    //         background: var(--clr-time-line);
+    //     }
+    // }
     
     /* skin details */
     .irs-line-mid,
@@ -31,15 +100,15 @@
 
 	.irs-line{
 		top: 4px;
-		height: 1px;
+		height: 2px;
 		background: var(--clr-time-line);
 	}
 
 	.irs-bar,
 	.irs-bar-edge{
 		top: 4px;
-		height: 1px;
-		width: 3px;
+		height: 2px;
+		width: 4px;
 		background: var(--clr-time-bar);
 	}
 
@@ -72,11 +141,11 @@
 	}
 
 	.single{
-		width: 5px;
-		height: 5px;
+		width: 8px;
+		height: 8px;
 		border-radius: 50%;
 		background: var(--clr-time-slider);
-		border: 0 none;
+		border: 1px solid #fff;
 		padding: 0;
 		color: #fff;
 		text-align: center;

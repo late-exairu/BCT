@@ -2665,7 +2665,6 @@ h6 {
   align-items: center;
   margin-right: 10px; }
   .graph-range-slider .range-slider {
-    pointer-events: all;
     cursor: pointer;
     flex: 1;
     margin: 0; }
@@ -4217,6 +4216,7 @@ body.menubar-in #user-btn:before {
   position: relative;
   width: 100%;
   margin: 5px 0;
+  height: 10px;
   /* skin details */ }
   .range-slider .irs-line-mid,
   .range-slider .irs-line-left,
@@ -4231,13 +4231,13 @@ body.menubar-in #user-btn:before {
     height: 9px; }
   .range-slider .irs-line {
     top: 4px;
-    height: 1px;
+    height: 2px;
     background: var(--clr-time-line); }
   .range-slider .irs-bar,
   .range-slider .irs-bar-edge {
     top: 4px;
-    height: 1px;
-    width: 3px;
+    height: 2px;
+    width: 4px;
     background: var(--clr-time-bar); }
   .range-slider .irs-single {
     display: none; }
@@ -4257,11 +4257,11 @@ body.menubar-in #user-btn:before {
   .range-slider .irs-grid-text {
     display: none; }
   .range-slider .single {
-    width: 5px;
-    height: 5px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: var(--clr-time-slider);
-    border: 0 none;
+    border: 1px solid #fff;
     padding: 0;
     color: #fff;
     text-align: center;
@@ -7529,6 +7529,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       cursor: pointer;
       flex: 1;
       margin: 0; }
+      #portfolioChartText .portfolio-graph-range .range-slider input[type=range] {
+        width: 72px; }
     #portfolioChartText .portfolio-graph-range__current {
       padding: 0 3px;
       color: var(--clr-time-bar); }

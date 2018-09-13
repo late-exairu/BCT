@@ -1637,7 +1637,7 @@ $(function () {
 		hide_from_to: true,
 		grid: false,
 		from: 4,
-		values: ["1h", "1d", "1w", "1m", "1y"],
+		values: ["1h", "1d", "1w", "1m", "All"],
 		onChange: function(e){
 			// update current range text			
 			$('.portfolio-graph-range__current').html(e.from_value);
@@ -1657,7 +1657,7 @@ $(function () {
 		hide_from_to: true,
 		grid: false,
 		from: 4,
-		values: ["1h", "1d", "1w", "1m", "1y"],
+		values: ["1h", "1d", "1w", "1m", "All"],
 		onChange: function(e){
 			// update current range text			
 			$('.graph-range-slider__current').html(e.from_value);

@@ -359,6 +359,10 @@
 			cursor: pointer;			
 			flex: 1;
 			margin: 0;
+
+			input[type=range]{
+				width: 72px;
+			}
 		}
 
 		&__current{			
