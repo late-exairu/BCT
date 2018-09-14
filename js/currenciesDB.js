@@ -7,8 +7,8 @@ var ownWallet;
 
 var wallets = {
     ownWallet: {
-        'BTC': 1.00,
-        'ETH': 7.50,
+        'BTC': 0.00,
+        'ETH': 0.00,
         'USD': 100000.00,
         'BCH': 0.00,
         'LTC': 0.00,
@@ -149,16 +149,16 @@ function updateWalletData() {
     $('.pricePerCoinDASH').html('$' + numberWithCommas(currenciesPrice['DASH']));
     $('.pricePerCoinXRP').html('$' + numberWithCommas(currenciesPrice['XRP']));
 
-    $('.walletBTC').html(currentWallet['BTC'].toFixed(2) + '&nbsp;');
-    $('.walletETH').html(currentWallet['ETH'].toFixed(2) + '&nbsp;');
-    $('.walletUSD').html(currentWallet['USD'].toFixed(2) + '&nbsp;');
-    $('.walletBCH').html(currentWallet['BCH'].toFixed(2) + '&nbsp;');
-    $('.walletLTC').html(currentWallet['LTC'].toFixed(2) + '&nbsp;');
-    $('.walletRPL').html(currentWallet['RPL'].toFixed(2) + '&nbsp;');
-    $('.walletXMR').html(currentWallet['XMR'].toFixed(2) + '&nbsp;');
-    $('.walletMKR').html(currentWallet['MKR'].toFixed(2) + '&nbsp;');
-    $('.walletDASH').html(currentWallet['DASH'].toFixed(2) + '&nbsp;');
-    $('.walletXRP').html(currentWallet['XRP'].toFixed(2) + '&nbsp;');
+    $('.walletBTC').html(numberWithCommas(currentWallet['BTC'].toFixed(2)) + '&nbsp;');
+    $('.walletETH').html(numberWithCommas(currentWallet['ETH'].toFixed(2)) + '&nbsp;');
+    $('.walletUSD').html(numberWithCommas(currentWallet['USD'].toFixed(2)) + '&nbsp;');
+    $('.walletBCH').html(numberWithCommas(currentWallet['BCH'].toFixed(2)) + '&nbsp;');
+    $('.walletLTC').html(numberWithCommas(currentWallet['LTC'].toFixed(2)) + '&nbsp;');
+    $('.walletRPL').html(numberWithCommas(currentWallet['RPL'].toFixed(2)) + '&nbsp;');
+    $('.walletXMR').html(numberWithCommas(currentWallet['XMR'].toFixed(2)) + '&nbsp;');
+    $('.walletMKR').html(numberWithCommas(currentWallet['MKR'].toFixed(2)) + '&nbsp;');
+    $('.walletDASH').html(numberWithCommas(currentWallet['DASH'].toFixed(2)) + '&nbsp;');
+    $('.walletXRP').html(numberWithCommas(currentWallet['XRP'].toFixed(2)) + '&nbsp;');
 
 
     /*     $('.walletBTCPercent').html(eachPercent['BTC'].toFixed(0) + '%');

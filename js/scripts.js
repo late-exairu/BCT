@@ -5,6 +5,7 @@ $(function () {
 	if (localStorage.getItem('telegramAuth') == 'true' && localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 		if (document.querySelector('.message-bar__login'))
 			document.querySelector('.message-bar__login').classList.add('hidden');
+			document.querySelector('.message-bar__login-demo').classList.add('hidden');
 		if (localStorage.getItem('telegramPhoto')) {
 			if (document.querySelector('.user-portfolio .user-pic__avatar')) {
 				document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
