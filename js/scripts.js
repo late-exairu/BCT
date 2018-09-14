@@ -92,10 +92,10 @@ $(function () {
 
 	$('.main-cols__right-top .exch-dropdown').click(function (event) {
 		event.stopPropagation();
-		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
-		$('div.portfolio-graph-range').css('border', '0px');
-		$('ul.portfolio-graph-range__list').removeClass('open');
-		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+		// $('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+		// $('div.portfolio-graph-range').css('border', '0px');
+		// $('ul.portfolio-graph-range__list').removeClass('open');
+		// $('div.portfolio-graph-range__current').css('border', 'solid 1px');
 	});
 
 
@@ -1147,6 +1147,23 @@ $(function () {
 			var firstValueResult = 0;
 			var secondValueResult = 0;
 
+			// update wallet and table
+			ownWallet[sendCurrency] -= firstValue;
+			ownWallet[getCurrency] += (+secondValue);
+			if (ownWallet[getCurrency] != 0) {
+				if ($('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').hasClass('disabled')) {
+					$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').removeClass('disabled');
+					$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
+				}
+			}
+			if (ownWallet[sendCurrency] == 0) {
+				$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').addClass('disabled');
+				$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
+			}
+			updateWalletData();
+			drawCircleChart();
+			// end update wallet and table
+
 			graphPricesScrollbar.animate({
 				scrollTop: 0
 			}, "slow");
@@ -1180,7 +1197,7 @@ $(function () {
 				if (i == progressbar_array.length - 1) {
 					setTimeout(function () {
 						$('.exch-form').addClass('completed');
-						$('.exch-form__btn > span').html('COMPLETED');
+						$('.exch-form__btn > span').html('DONE');
 						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
 						$('.exch-form__btn').attr("disabled", true);
 
