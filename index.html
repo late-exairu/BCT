@@ -1823,7 +1823,20 @@
 									<!-- basic-table__row END -->
 									
 									<div class="basic-table__body h-100 scroll-y scrollbar-right outer">
-										<div class="basic-table__row" data-currency="BTC">
+
+										<div class="basic-table__row" data-currency="USD">
+											<div class="basic-table__col w-35">
+												<svg class="basic-table__curr icon-curr clr-dollar" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-dollar"></use>
+												</svg>
+												<span class="walletUSD"></span> USD <span class="smaller">(US Dollar)</span>
+											</div>
+											<div class="basic-table__col w-25">$1</div>
+											<div class="basic-table__col w-40">$1 <span class="smaller clr-blue">+0%</span></div>
+										</div>
+										<!-- basic-table__row END -->
+										
+										<div class="basic-table__row disabled" data-currency="BTC">
 											<div class="basic-table__col w-35">
 												<svg class="basic-table__curr icon-curr clr-bitcoin" role="img" aria-hidden="true">
 													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
@@ -1835,7 +1848,7 @@
 										</div>
 										<!-- basic-table__row END -->
 
-										<div class="basic-table__row" data-currency="ETH">
+										<div class="basic-table__row disabled" data-currency="ETH">
 											<div class="basic-table__col w-35">
 												<svg class="basic-table__curr icon-curr clr-ethereum" role="img" aria-hidden="true">
 													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ethereum"></use>
@@ -1844,18 +1857,6 @@
 											</div>
 											<div class="basic-table__col w-25 pricePerCoinETH"></div>
 											<div class="basic-table__col w-40">$202.37 <span class="smaller clr-blue">+0.26%</span></div>
-										</div>
-										<!-- basic-table__row END -->
-
-										<div class="basic-table__row" data-currency="USD">
-											<div class="basic-table__col w-35">
-												<svg class="basic-table__curr icon-curr clr-dollar" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-dollar"></use>
-												</svg>
-												<span class="walletUSD"></span> USD <span class="smaller">(US Dollar)</span>
-											</div>
-											<div class="basic-table__col w-25">$1</div>
-											<div class="basic-table__col w-40">$1 <span class="smaller clr-blue">+0%</span></div>
 										</div>
 										<!-- basic-table__row END -->
 

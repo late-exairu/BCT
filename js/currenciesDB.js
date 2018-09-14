@@ -3,9 +3,9 @@ const numberWithCommas = (x) => {
 }
 
 var ownWallet = {
-    'BTC': 1.00,
-    'ETH': 7.50,
     'USD': 100000.00,
+    'BTC': 0.00,
+    'ETH': 0.00,
     'BCH': 0.00,
     'LTC': 0.00,
     'RPL': 0.00,
@@ -15,9 +15,9 @@ var ownWallet = {
     'XRP': 0.00,
 }
 var currenciesPrice = {
+    'USD': 1,
     'BTC': 6465.98,
     'ETH': 228.61,
-    'USD': 1,
     'BCH': 508.43,
     'LTC': 55.73,
     'RPL': 0.29,
