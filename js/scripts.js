@@ -1184,7 +1184,7 @@ $(function () {
 					if (rand == 0) rand = 0.01;
 					remain_total_value -= rand;
 				}
-				progressbar_labels[i].text(rand + ' BCT');
+				progressbar_labels[i].text(rand + ' ' + sendCurrency);
 
 				if (!$('body').hasClass('advanced')) {
 					setTimeout(function () {
