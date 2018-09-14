@@ -1744,7 +1744,29 @@ $(function () {
 		},
 		onFinish: function (e) {
 			// update chart			
-			// if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(e.from, {}, true);
+			switch (e.from) {
+				case 0:
+					var HOUR = 1000 * 3600 * 24 * 7; //1000 * 3600;
+					mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate - (1000 * 3600 * 24));
+					break;
+				case 1:
+					var DAY = 1000 * 3600 * 24 * 7; //1000 * 3600 * 24;
+					mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate - (1000 * 3600 * 24));
+					break;
+				case 2:
+					var WEEK = 1000 * 3600 * 24 * 7;
+					mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - (1000 * 3600 * 24));
+					break;
+				case 3:
+					var d = new Date(maxDate);
+					d.setMonth(d.getMonth() - 1);
+					mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
+					break;
+				case 4:
+					mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
+					break;
+			}
+			redrawMainChart();
 		}
 	});
 
