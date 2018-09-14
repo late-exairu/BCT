@@ -23,9 +23,10 @@ $(function () {
 					avatarAbbr.style.borderRadius = '50%';
 					avatarAbbr.style.background = '#0088cc';
 					avatarAbbr.style.fontSize = '19px';
-					document.querySelector('.user-portfolio .user-pic').appendChild(avatarAbbr);
-					document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr.cloneNode(true));
-
+					if (!document.querySelector('.user-portfolio .user-pic div')) {
+						document.querySelector('.user-portfolio .user-pic').appendChild(avatarAbbr);
+						document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr.cloneNode(true));
+					}
 				}
 			}
 			if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
@@ -36,6 +37,7 @@ $(function () {
 			localStorage.removeItem('telegramLastName');
 		}
 	}
+
 	setOwnName();
 
 	/* Cubic slider for Orders */
@@ -764,11 +766,14 @@ $(function () {
 			// show exchanges of previous conversion
 			var remain_total_value = convertedArr[0].trim().slice(0, -4).replace(',', '');
 			$('.icon-trader').addClass('hidden');
-			$('.graph-prices__item .progress-label').css({'visibility': 'visible', 'width': '102%'});
+			$('.graph-prices__item .progress-label').css({
+				'visibility': 'visible',
+				'width': '102%'
+			});
 			$('.progressbar').removeClass('hidden');
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
-				progressbar.progressbar("value", 100);	
+				progressbar.progressbar("value", 100);
 				var rand = 0;
 				if (i == progressbar_array.length - 1) {
 					rand = Math.floor(remain_total_value * 100) / 100;
@@ -778,7 +783,7 @@ $(function () {
 					if (rand == 0) rand = 0.01;
 					remain_total_value -= rand;
 				}
-				progressbar_labels[i].text(rand + ' ' + firstCurrency);			
+				progressbar_labels[i].text(rand + ' ' + firstCurrency);
 			}
 			// end show exnchanges
 		}
@@ -1193,16 +1198,16 @@ $(function () {
 			// update wallet and table
 			ownWallet[sendCurrency] -= firstValue;
 			ownWallet[getCurrency] += (+secondValue);
-/* 			if (ownWallet[getCurrency] != 0) {
-				if ($('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').hasClass('disabled')) {
-					$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').removeClass('disabled');
-					$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
-				}
-			}
-			if (ownWallet[sendCurrency] == 0) {
-				$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').addClass('disabled');
-				$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
-			} */
+			/* 			if (ownWallet[getCurrency] != 0) {
+							if ($('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').hasClass('disabled')) {
+								$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').removeClass('disabled');
+								$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
+							}
+						}
+						if (ownWallet[sendCurrency] == 0) {
+							$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').addClass('disabled');
+							$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
+						} */
 			updateWalletData();
 			drawCircleChart();
 			// end update wallet and table
@@ -1330,6 +1335,12 @@ $(function () {
 			$('.exch-form__send input').val(numberWithCommas(firstValue));
 			$('.exch-form__get input').val(numberWithCommas(secondValue));
 			isSelectedPrevConversion = false;
+
+			setOwnName();
+			currentWallet = ownWallet;
+			updateWalletData();
+			drawCircleChart();
+			$('.user-portfolio-close').addClass('hidden');
 		}
 	});
 
