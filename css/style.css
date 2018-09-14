@@ -7891,7 +7891,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
   line-height: 56px; }
   .message-bar__login-demo .tgme_widget_login_button_icon {
     width: 24px;
