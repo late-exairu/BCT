@@ -742,6 +742,17 @@ $(function () {
 
 		if ($(this).parents('#panel-funds-history').length) {
 			$('.graph-prices').addClass('open');
+
+			// show exchanges of previous conversion
+			$('.icon-trader').addClass('hidden');
+			$('.graph-prices__item .progress-label').css({'visibility': 'visible', 'width': '102%'});
+			$('.progressbar').removeClass('hidden');
+			for (var i = 0; i < progressbar_array.length; i++) {
+				var progressbar = progressbar_array[i];
+				progressbar.progressbar("value", 100);				
+			}
+			// end show exnchanges
+			
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
