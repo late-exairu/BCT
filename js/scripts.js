@@ -27,8 +27,7 @@ $(function () {
 		}
 		if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
 			document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
-	}
-	else{
+	} else {
 		localStorage.removeItem('telegramAuth');
 		localStorage.removeItem('telegramFirstName');
 		localStorage.removeItem('telegramLastName');
@@ -775,7 +774,14 @@ $(function () {
 	});
 
 	$('.chats-list__item .chats-list__name a').click(function (event) {
+		event.preventDefault();
 		event.stopPropagation();
+		var newWallet = $(this).attr('href');
+		currentWallet = wallets[newWallet];
+
+		updateWalletData();
+		drawCircleChart();
+
 		var userPortfolioName = $(this).closest('.chats-list__item').find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
 		var userPortfolioImage = $(this).closest('.chats-list__item').find('.chats-list__avatar-wrap img').attr('src');
 		$('.user-portfolio__name').text(userPortfolioName);
@@ -986,7 +992,7 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
-	/* exchange progressbar */  
+	/* exchange progressbar */
 	/*---------------------------------------------------*/
 	var progressbar_list = $(".progressbar");
 	var progressbar_array = new Array();
@@ -1150,7 +1156,7 @@ $(function () {
 			// update wallet and table
 			ownWallet[sendCurrency] -= firstValue;
 			ownWallet[getCurrency] += (+secondValue);
-			if (ownWallet[getCurrency] != 0) {
+/* 			if (ownWallet[getCurrency] != 0) {
 				if ($('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').hasClass('disabled')) {
 					$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').removeClass('disabled');
 					$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
@@ -1159,7 +1165,7 @@ $(function () {
 			if (ownWallet[sendCurrency] == 0) {
 				$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').addClass('disabled');
 				$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
-			}
+			} */
 			updateWalletData();
 			drawCircleChart();
 			// end update wallet and table
@@ -1177,8 +1183,7 @@ $(function () {
 				var rand = 0;
 				if (i == progressbar_array.length - 1) {
 					rand = Math.floor(remain_total_value * 100) / 100;
-				}
-				else {
+				} else {
 					var conversion_part = remain_total_value / (progressbar_array.length - i);
 					rand = Math.floor(Math.random() * 2 * conversion_part * 100) / 100;
 					if (rand == 0) rand = 0.01;
@@ -1233,10 +1238,9 @@ $(function () {
 				var differenceMin = differenceMax / 500;
 				var difference = (Math.random() * (differenceMax - differenceMin) + differenceMin) * plusOrMinus;
 				var result = (currenciesPrice[sendCurrency] / currenciesPrice[getCurrency]) + difference;
-				if (result > 1){
+				if (result > 1) {
 					result = result.toFixed(2);
-				}
-				else{
+				} else {
 					result = result.toFixed(5);
 				}
 				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(2).html(result + ' ' + getCurrency);
@@ -1277,13 +1281,13 @@ $(function () {
 			$(this).closest('.exch-head').toggleClass('open');
 			var firstValue, secondValue;
 			// if selected previous conversion
-			if (isSelectedPrevConversion){
+			if (isSelectedPrevConversion) {
 				firstValue = $('.exch-form__send input').val();
 				secondValue = $('.exch-form__get input').val();
 			} else {
 				firstValue = ownWallet[sendCurrency].toFixed(2);
 				secondValue = ((ownWallet[sendCurrency] * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
-			}			
+			}
 			$('.exch-form__send input').val(numberWithCommas(firstValue));
 			$('.exch-form__get input').val(numberWithCommas(secondValue));
 			isSelectedPrevConversion = false;
@@ -1691,11 +1695,11 @@ $(function () {
 		grid: false,
 		from: 4,
 		values: ["1h", "1d", "1w", "1m", "All"],
-		onChange: function(e){
+		onChange: function (e) {
 			// update current range text			
 			$('.portfolio-graph-range__current').html(e.from_value);
 		},
-		onFinish: function(e){
+		onFinish: function (e) {
 			// update chart			
 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(e.from, {}, true);
 		}
@@ -1711,11 +1715,11 @@ $(function () {
 		grid: false,
 		from: 4,
 		values: ["1h", "1d", "1w", "1m", "All"],
-		onChange: function(e){
+		onChange: function (e) {
 			// update current range text			
 			$('.graph-range-slider__current').html(e.from_value);
 		},
-		onFinish: function(e){
+		onFinish: function (e) {
 			// update chart			
 			// if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(e.from, {}, true);
 		}
