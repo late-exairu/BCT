@@ -1160,11 +1160,11 @@ $(function () {
 	});
 
 	// convert/go buttons
-	$('.exch-head__btn, .exch-form__btn').click(function (e) {
+	$('.exch-head__btn, .exch-form__submit').click(function (e) {
 		e.preventDefault();
 		var sendCurrency = $('.exch-form__send input').attr('data-currency');
 		var getCurrency = $('.exch-form__get input').attr('data-currency');
-		if ($(this).hasClass('exch-form__btn')) {
+		if ($(this).hasClass('exch-form__submit')) {
 			$('.icon-trader').addClass('hidden');
 			$('.graph-prices__item .progress-label').css('visibility', 'hidden');
 			$('.progressbar').removeClass('hidden');
@@ -1225,18 +1225,18 @@ $(function () {
 				if (i == progressbar_array.length - 1) {
 					setTimeout(function () {
 						$('.exch-form').addClass('completed');
-						$('.exch-form__btn > span').html('DONE');
+						$('.exch-form__submit > span').html('DONE');
 						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
-						$('.exch-form__btn').attr("disabled", true);
+						$('.exch-form__submit').attr("disabled", true);
 
 						$(window).click(function () {
 							if ($('.exch-form').hasClass('completed')) {
 								$('.exch-form').removeClass('progress');
 								$('.exch-head').removeClass('open');
 								$('.graph-prices').removeClass('noClose');
-								$('.exch-form__btn').attr("disabled", false);
+								$('.exch-form__submit').attr("disabled", false);
 								$('.exch-form').removeClass('completed');
-								$('.exch-form__btn > span').html('CONFIRM');
+								$('.exch-form__submit > span').html('CONFIRM');
 
 								if (!isSelectedPrevConversion) {
 									$('.icon-trader').removeClass('hidden');
