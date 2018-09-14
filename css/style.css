@@ -6690,9 +6690,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     fill: var(--clr-textLL);
     color: var(--clr-textLL);
     pointer-events: none; }
-  .exch-form.progress .exch-form__btn {
+  .exch-form.progress .exch-form__submit {
     color: transparent; }
-    .exch-form.progress .exch-form__btn:after {
+    .exch-form.progress .exch-form__submit:after {
       content: '';
       width: 40px;
       height: 40px;
@@ -6711,9 +6711,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background: transparent; }
   .exch-form.progress .exch-form__btn-bg {
     fill: var(--clr-block); }
-  .exch-form.completed .exch-form__btn {
+  .exch-form.completed .exch-form__submit {
     color: var(--clr-block); }
-    .exch-form.completed .exch-form__btn:after {
+    .exch-form.completed .exch-form__submit:after {
       content: '';
       width: 0;
       height: 0; }

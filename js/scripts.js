@@ -1184,6 +1184,7 @@ $(function () {
 		var sendCurrency = $('.exch-form__send input').attr('data-currency');
 		var getCurrency = $('.exch-form__get input').attr('data-currency');
 		if ($(this).hasClass('exch-form__submit')) {
+			$('.exch-form__close').addClass('hidden');
 			$('.icon-trader').addClass('hidden');
 			$('.graph-prices__item .progress-label').css('visibility', 'hidden');
 			$('.progressbar').removeClass('hidden');
@@ -1198,16 +1199,6 @@ $(function () {
 			// update wallet and table
 			ownWallet[sendCurrency] -= firstValue;
 			ownWallet[getCurrency] += (+secondValue);
-			/* 			if (ownWallet[getCurrency] != 0) {
-							if ($('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').hasClass('disabled')) {
-								$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').removeClass('disabled');
-								$('#panel-funds-wallet .basic-table__row[data-currency="' + getCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
-							}
-						}
-						if (ownWallet[sendCurrency] == 0) {
-							$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').addClass('disabled');
-							$('#panel-funds-wallet .basic-table__row[data-currency="' + sendCurrency + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
-						} */
 			updateWalletData();
 			drawCircleChart();
 			// end update wallet and table
@@ -1255,6 +1246,7 @@ $(function () {
 								$('.graph-prices').removeClass('noClose');
 								$('.exch-form__submit').attr("disabled", false);
 								$('.exch-form').removeClass('completed');
+								$('.exch-form__close').removeClass('hidden');
 								$('.exch-form__submit > span').html('CONFIRM');
 
 								if (!isSelectedPrevConversion) {
@@ -1342,6 +1334,11 @@ $(function () {
 			drawCircleChart();
 			$('.user-portfolio-close').addClass('hidden');
 		}
+	});
+
+	$('.exch-form__close').click(function (e) {
+		e.preventDefault();
+		$(this).closest('.exch-head').toggleClass('open');		
 	});
 
 	$('.exch-form input').focus(function () {

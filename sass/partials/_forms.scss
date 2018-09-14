@@ -448,7 +448,7 @@
 			color: var(--clr-textLL);
 			pointer-events: none;
 		}
-		.exch-form__btn{
+		.exch-form__submit{
 			color: transparent;
 
 			&:after{
@@ -486,7 +486,7 @@
 	}
 
 	&.completed{
-		.exch-form__btn{
+		.exch-form__submit{
 			color: var(--clr-block);
 
 			&:after{
