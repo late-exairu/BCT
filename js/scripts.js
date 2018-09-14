@@ -1503,12 +1503,12 @@ $(function () {
 		theme: 'bct'
 	})
 
-	tippy('.tippy-done', {
-		html: '#ttpDone', // DIRECT ELEMENT option
-		arrow: true,
-		animation: 'fade',
-		theme: 'bct'
-	})
+	// tippy('.tippy-done', {
+	// 	html: '#ttpDone', // DIRECT ELEMENT option
+	// 	arrow: true,
+	// 	animation: 'fade',
+	// 	theme: 'bct'
+	// })
 
 	tippy('.tippy-convert-advanced', {
 		html: '#ttpConvert', // DIRECT ELEMENT option

@@ -366,13 +366,47 @@
 		fill: var(--color-one);
 	}*/
 
-	&__btn{
+	&__btns{
+		height: calc(var(--exch-head-height) + 1px);
+		display: flex;
+		flex: 0 0 172px;
+		margin: 0 0 0 var(--gap-size);
+	}
+
+	&__close{
+		position: relative;
+		padding: 0;
+		height: calc(var(--exch-head-height) + 1px);
+		display: flex;
+		flex: 0 0 38px;
+		align-items: center;
+		color: #fff;
+		cursor: pointer;
+		text-decoration: none;
+		font-size: 16px;
+		font-weight: 700;
+		white-space: nowrap;
+		transition: all 0.1s;
+		justify-content: center;
+		border: none;
+		line-height: 1;
+		background: #FF0000;
+		border-radius: var(--border-radius);
+
+		.sprite-icon{
+			width: 22px;
+			height: 22px;
+			fill: #fff;
+		}
+	}
+
+	&__submit{
 		position: relative;
 		font-family: $osans;
 		padding: 0 10px 0 5px;
 		height: calc(var(--exch-head-height) + 1px);
 		display: flex;
-		flex: 0 0 172px;
+		flex: 1 0 114px;
 		align-items: center;
 		color: #fff;
 		cursor: pointer;
@@ -385,20 +419,23 @@
 		justify-content: center;
 		border: none;
 		line-height: 1;
-		background: transparent;
+		background: linear-gradient(to bottom, #009ee2 0%,#218fe9 100%);
 		border-radius: var(--border-radius);
 	}
 
-	&__btn-bg{
+	&__btn-triangle{
 		position: absolute;
-		left: 0;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 0;
-		bottom: 0;
-		width: 100%;
-		z-index: -1;
-		fill: #0069be;
+		left: auto;
+		top: 3px;
+		bottom: 3px;
+		right: -13px;
+		width: 14px;
+		z-index: 0;
+		/*fill: #0069be;*/
+
+		--color-stop-1: #a770ef;
+		--color-stop-2: #cf8bf3;
+		fill: url(#SVGID_1_) #f00;
 	}
 
 	&.progress{

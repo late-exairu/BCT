@@ -140,7 +140,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.okex:after, .icon-trader.huobi:after, .icon-trader.bitfinex:after, .icon-trader.coinbene:after, .icon-trader.coinbase:after, .icon-trader.kraken:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 160.75em 145.75em; }
+  background-size: 162.125em 147.125em; }
 
 /* =================================================================== */
 /* Functions
@@ -2679,31 +2679,31 @@ h6 {
   .icon-trader.binance:after {
     width: 0.725em;
     height: 0.725em;
-    background-position: -146em -131.9375em; }
+    background-position: -147.375em -133.3125em; }
   .icon-trader.okex:after {
     width: 0.86875em;
     height: 0.86875em;
-    background-position: -150.375em -136.375em; }
+    background-position: -151.75em -137.75em; }
   .icon-trader.huobi:after {
     width: 0.51875em;
     height: 0.80625em;
-    background-position: -148.9375em -134.875em; }
+    background-position: -150.3125em -136.25em; }
   .icon-trader.bitfinex:after {
     width: 0.625em;
     height: 0.61875em;
-    background-position: -146.75em -132.6875em; }
+    background-position: -148.125em -134.0625em; }
   .icon-trader.coinbene:after {
     width: 0.675em;
     height: 0.675em;
-    background-position: -148.25em -134.1875em; }
+    background-position: -149.625em -135.5625em; }
   .icon-trader.coinbase:after {
     width: 0.84375em;
     height: 0.84375em;
-    background-position: -147.375em -133.3125em; }
+    background-position: -148.75em -134.6875em; }
   .icon-trader.kraken:after {
     width: 0.8625em;
     height: 0.66875em;
-    background-position: -149.5em -135.6875em; }
+    background-position: -150.875em -137.0625em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -6599,13 +6599,41 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     height: 22px;
     position: relative;
     fill: var(--clr-textLL); }
-  .exch-form__btn {
+  .exch-form__btns {
+    height: calc(var(--exch-head-height) + 1px);
+    display: flex;
+    flex: 0 0 172px;
+    margin: 0 0 0 var(--gap-size); }
+  .exch-form__close {
+    position: relative;
+    padding: 0;
+    height: calc(var(--exch-head-height) + 1px);
+    display: flex;
+    flex: 0 0 38px;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: all 0.1s;
+    justify-content: center;
+    border: none;
+    line-height: 1;
+    background: #FF0000;
+    border-radius: var(--border-radius); }
+    .exch-form__close .sprite-icon {
+      width: 22px;
+      height: 22px;
+      fill: #fff; }
+  .exch-form__submit {
     position: relative;
     font-family: "open_sans", sans-serif;
     padding: 0 10px 0 5px;
     height: calc(var(--exch-head-height) + 1px);
     display: flex;
-    flex: 0 0 172px;
+    flex: 1 0 114px;
     align-items: center;
     color: #fff;
     cursor: pointer;
@@ -6618,18 +6646,20 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     justify-content: center;
     border: none;
     line-height: 1;
-    background: transparent;
+    background: linear-gradient(to bottom, #009ee2 0%, #218fe9 100%);
     border-radius: var(--border-radius); }
-  .exch-form__btn-bg {
+  .exch-form__btn-triangle {
     position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: -1;
-    fill: #0069be; }
+    left: auto;
+    top: 3px;
+    bottom: 3px;
+    right: -13px;
+    width: 14px;
+    z-index: 0;
+    /*fill: #0069be;*/
+    --color-stop-1: #a770ef;
+    --color-stop-2: #cf8bf3;
+    fill: url(#SVGID_1_) #f00; }
   .exch-form.progress .exch-form__label,
   .exch-form.progress .exch-form__input,
   .exch-form.progress .exch-form__switch-left,
