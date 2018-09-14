@@ -81,9 +81,9 @@ var wallets = {
 }
 
 var currenciesPrice = {
+    'USD': 1,
     'BTC': 6465.98,
     'ETH': 228.61,
-    'USD': 1,
     'BCH': 508.43,
     'LTC': 55.73,
     'RPL': 0.29,
