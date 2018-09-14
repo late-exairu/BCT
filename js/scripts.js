@@ -92,10 +92,10 @@ $(function () {
 
 	$('.main-cols__right-top .exch-dropdown').click(function (event) {
 		event.stopPropagation();
-		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
-		$('div.portfolio-graph-range').css('border', '0px');
-		$('ul.portfolio-graph-range__list').removeClass('open');
-		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+		// $('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+		// $('div.portfolio-graph-range').css('border', '0px');
+		// $('ul.portfolio-graph-range__list').removeClass('open');
+		// $('div.portfolio-graph-range__current').css('border', 'solid 1px');
 	});
 
 
