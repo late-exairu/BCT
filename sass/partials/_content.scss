@@ -218,8 +218,8 @@
 }
 
 .message-bar__login {
-	
 	align-items: flex-end;
+	cursor: pointer;
 	iframe {
 		border: none;
 		overflow: hidden;
@@ -230,5 +230,33 @@
 		background-color: #54a9eb;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
+	}
+}
+
+
+.message-bar__login-demo {
+	width: 100%;
+	height: 56px;
+	background-image: linear-gradient(#009EE2, #218FE9);
+	pointer-events: none;
+	position: absolute;
+	z-index: 20;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    color: white;
+	font-size: 14px;
+	line-height: 56px;
+	.tgme_widget_login_button_icon {
+		width: 24px;
+		height: 24px;
+		background: url(../img/tg_button_large.png) no-repeat;
+		margin: 0px 15px -2px -8px;
+		display: inline-block;
 	}
 }
