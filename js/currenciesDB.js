@@ -109,14 +109,12 @@ function updateWalletData() {
         totalBalance += eachBalance[key];
 
         if (currentWallet[key] != 0) {
-            console.log('!=0 ' + key);
             if ($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').removeClass('disabled');
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
             }
         }
         if (currentWallet[key] == 0) {
-            console.log('==0 ' + key);
             if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').addClass('disabled');
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
