@@ -1238,11 +1238,13 @@ $(function () {
 								$('.exch-form').removeClass('completed');
 								$('.exch-form__btn > span').html('CONFIRM');
 
-								$('.icon-trader').removeClass('hidden');
-								$('.graph-prices__item .progress-label').css('visibility', 'visible');
-								$('.progressbar').addClass('hidden');
-								for (var j = 0; j < progressbar_array.length; j++) {
-									progressbar_array[j].progressbar("value", 0);
+								if (!isSelectedPrevConversion) {
+									$('.icon-trader').removeClass('hidden');
+									$('.graph-prices__item .progress-label').css('visibility', 'visible');
+									$('.progressbar').addClass('hidden');
+									for (var j = 0; j < progressbar_array.length; j++) {
+										progressbar_array[j].progressbar("value", 0);
+									}
 								}
 							}
 						});
