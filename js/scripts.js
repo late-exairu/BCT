@@ -744,17 +744,6 @@ $(function () {
 
 		if ($(this).parents('#panel-funds-history').length) {
 			$('.graph-prices').addClass('open');
-
-			// show exchanges of previous conversion
-			$('.icon-trader').addClass('hidden');
-			$('.graph-prices__item .progress-label').css({'visibility': 'visible', 'width': '102%'});
-			$('.progressbar').removeClass('hidden');
-			for (var i = 0; i < progressbar_array.length; i++) {
-				var progressbar = progressbar_array[i];
-				progressbar.progressbar("value", 100);				
-			}
-			// end show exnchanges
-			
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
@@ -768,6 +757,27 @@ $(function () {
 			$('.exch-form__send input').val(numberWithCommas(convertedArr[0].trim().slice(0, -4)));
 			$('.exch-form__get input').val(numberWithCommas(convertedArr[1].trim().slice(0, -4)));
 			isSelectedPrevConversion = true;
+
+			// show exchanges of previous conversion
+			var remain_total_value = convertedArr[0].trim().slice(0, -4).replace(',', '');
+			$('.icon-trader').addClass('hidden');
+			$('.graph-prices__item .progress-label').css({'visibility': 'visible', 'width': '102%'});
+			$('.progressbar').removeClass('hidden');
+			for (var i = 0; i < progressbar_array.length; i++) {
+				var progressbar = progressbar_array[i];
+				progressbar.progressbar("value", 100);	
+				var rand = 0;
+				if (i == progressbar_array.length - 1) {
+					rand = Math.floor(remain_total_value * 100) / 100;
+				} else {
+					var conversion_part = remain_total_value / (progressbar_array.length - i);
+					rand = Math.floor(Math.random() * 2 * conversion_part * 100) / 100;
+					if (rand == 0) rand = 0.01;
+					remain_total_value -= rand;
+				}
+				progressbar_labels[i].text(rand + ' ' + firstCurrency);			
+			}
+			// end show exnchanges
 		}
 
 	});
