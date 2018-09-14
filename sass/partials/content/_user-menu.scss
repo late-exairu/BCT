@@ -11,8 +11,8 @@
 	list-style: none;
 
 	&__item{
-		width: 18px;
-		height: 18px;
+		width: 22px;
+		height: 22px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -35,15 +35,16 @@
 		}
 
 		.sprite-icon{
-			flex: 1 0 14px;
+			flex: 1 0 18px;
 			width: 14px;
 			height: 9px;
 			fill: var(--clr-textD);
 
-			&.portfolio-wallet			{ height: 9px; }
-			&.portfolio-liquidity		{ height: 9px; }
-			&.portfolio-order-history	{ height: 9px; }
-			&.portfolio-order-open		{ height: 10px; }
+			&.portfolio-wallet			{ height: 14px; }
+			&.portfolio-liquidity		{ height: 14px; }
+			&.portfolio-order-history	{ height: 14px; }
+			&.portfolio-order-open		{ height: 16px; }
+			&.portfolio-friend			{ height: 16px; }
 		}
 	}
 }

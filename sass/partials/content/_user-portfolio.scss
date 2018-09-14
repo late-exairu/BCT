@@ -3,6 +3,32 @@
 /* user-portfolio */
 /* =================================================================== */
 
+.user-portfolio-close{
+	position: absolute;
+	display: flex;
+	right: 6px;
+	top: 6px;
+	z-index: 100;
+	width: 32px;
+	height: 32px;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+
+	&:hover{
+		.sprite-icon{
+			fill: var(--clr-textD);
+		}
+	}
+
+	.sprite-icon{
+		fill: var(--clr-text);
+		width: 22px;
+		height: 22px;
+	}
+}
 
 .user-portfolio{
 	display: flex;
@@ -25,6 +51,7 @@
 	}
 
 	&__name{
+		text-align: center;
 		font-size: 11px;
 		margin: 0;
 		font-weight: 600;
