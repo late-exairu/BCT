@@ -4,6 +4,7 @@
 /* =================================================================== */
 
 .graph-info{
+	--bar-height: 16px;
 	font-family: $osans;
 	position: relative;
 	display: flex;
@@ -14,8 +15,6 @@
 	background: transparent;
 	z-index: 5;
 	transition: all .1s;
-	border: 1px solid var(--clr-separator);
-	border-radius: var(--border-radius);
 	height: var(--bar-height);
 	background: var(--clr-block);
 
@@ -28,11 +27,12 @@
 		align-items: center;
 		height: 100%;
 		position: relative;
-		padding: 5px 5px;
+		padding: 0 8px;
 		margin: 0 0 0 1px;
 		border-left: 1px solid var(--clr-separator);
 
 		&:first-child{
+			padding-left: 0;
 			border: none;
 		}
 
