@@ -174,8 +174,8 @@ var portfolioChartOptions = {
                 'height': lineForMainChartHeight,
             });
 
-            return '<div class="tooltip blackColor font10">' +
-                '<div class="textCenter font12 bold">' + TooltipValue + ' <span class="light">USD</span></div>' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year +
+            return '<div class="tooltip arrow_box blackColor font10 bottom">' +
+                '<div class="textCenter font12 bold">' + TooltipValue + ' <span class="light">USD</span></div>' + '<span class="bold">' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year + '</span>' +
                 '</div>';
         },
         positioner: function (labelWidth, labelHeight, point, ) {

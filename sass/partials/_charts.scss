@@ -281,6 +281,13 @@
 	border-right-color: var(--clr-back-tooltip);
 }
 
+.arrow_box.bottom:after {
+	bottom: 100%;
+    border-top-color: var(--clr-back-tooltip);
+    top: calc(100% + 7px);
+    left: calc(50% - 7px);
+}
+
 .lineForMainChart {
 	position: absolute;
 	left: -9999px;
