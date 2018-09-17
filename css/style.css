@@ -6444,6 +6444,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .order-form input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0; }
+  .order-form input[type=number] {
+    -moz-appearance: textfield; }
 
 .main-cols {
   /*@media only screen and (min-width : 1920px) {
