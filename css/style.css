@@ -6754,7 +6754,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     color: var(--clr-textLL);
     pointer-events: none; }
   .exch-form.progress .exch-form__submit {
-    color: transparent; }
+    color: transparent;
+    background: var(--clr-block);
+    margin: 0; }
     .exch-form.progress .exch-form__submit:after {
       content: '';
       width: 40px;
@@ -6775,7 +6777,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .exch-form.progress .exch-form__btn-bg {
     fill: var(--clr-block); }
   .exch-form.completed .exch-form__submit {
-    color: var(--clr-block); }
+    color: var(--clr-block);
+    background: var(--clr-textLL); }
     .exch-form.completed .exch-form__submit:after {
       content: '';
       width: 0;
