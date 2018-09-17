@@ -3397,6 +3397,9 @@ body.menubar-in #user-btn:before {
       .message-bar__btn .sprite-icon.chats-mic {
         width: 17px;
         height: 22px; }
+      .message-bar__btn .sprite-icon.chats-camera {
+        width: 24px;
+        height: 20px; }
   .message-bar__login {
     position: absolute;
     left: 0;
