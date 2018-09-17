@@ -153,6 +153,7 @@ var portfolioChartOptions = {
             var dayName = days[date.getDay()];
             var year = date.getFullYear();
             var TooltipValue = (this.y * 45).toFixed(2);
+            var arrowClasses = 'arrow_box bottom';
             TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
 
 
@@ -179,7 +180,11 @@ var portfolioChartOptions = {
                 'height': lineForPortfolioChartHeight,
             });
 
-            return '<div class="tooltip arrow_box blackColor font10 bottom">' +
+            if (this.points[0].point.plotX < 100 || this.points[0].point.plotX > $('#portfolioChartGeneral').width() - 100) {
+                arrowClasses = '';
+            }
+
+            return '<div class="tooltip blackColor font10 '+ arrowClasses + '">' +
                 '<div class="textCenter font12 bold">' + TooltipValue + ' <span class="light">USD</span></div>' + '<span class="bold">' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year + '</span>' +
                 '</div>';
         },
