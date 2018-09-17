@@ -263,3 +263,9 @@ $.getJSON(location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'data
     portfolioChartData = data;
     portfolioChartOptions.series[0].data = portfolioChartData;
 });
+
+$('#portfolioChartGeneral').mouseleave(function () {
+	$('.lineForPortfolioChart').css(
+		'left', '-9999px',
+	);
+});
