@@ -454,6 +454,8 @@
 		}
 		.exch-form__submit{
 			color: transparent;
+			background: var(--clr-block);
+			margin: 0;
 
 			&:after{
 				content: '';
@@ -492,6 +494,7 @@
 	&.completed{
 		.exch-form__submit{
 			color: var(--clr-block);
+			background: var(--clr-textLL);
 
 			&:after{
 				content: '';
