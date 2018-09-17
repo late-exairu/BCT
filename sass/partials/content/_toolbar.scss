@@ -291,8 +291,8 @@
 
 	&.tool-graph		{ width: calc(23px * var(--icon-scale)); height: calc(23px * var(--icon-scale)); }
 	&.tool-expand		{ width: calc(25px * var(--icon-scale)); height: calc(25px * var(--icon-scale)); }
-	&.tool-undo			{ width: calc(23px * var(--icon-scale)); height: calc(23px * var(--icon-scale)); }
-	&.tool-redo			{ width: calc(23px * var(--icon-scale)); height: calc(23px * var(--icon-scale)); }
+	&.tool-undo			{ width: calc(23px * var(--icon-scale)); height: calc(22px * var(--icon-scale)); }
+	&.tool-redo			{ width: calc(23px * var(--icon-scale)); height: calc(22px * var(--icon-scale)); }
 	&.tool-camera		{ width: calc(25px * var(--icon-scale)); height: calc(25px * var(--icon-scale)); }
 	&.tool-gear			{ width: calc(25px * var(--icon-scale)); height: calc(25px * var(--icon-scale)); }
 	&.tool-graph2		{ width: calc(23px * var(--icon-scale)); height: calc(23px * var(--icon-scale)); }

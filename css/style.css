@@ -3837,10 +3837,10 @@ body.menubar-in #user-btn:before {
     height: calc(25px * var(--icon-scale)); }
   .toolbar-icon.tool-undo {
     width: calc(23px * var(--icon-scale));
-    height: calc(23px * var(--icon-scale)); }
+    height: calc(22px * var(--icon-scale)); }
   .toolbar-icon.tool-redo {
     width: calc(23px * var(--icon-scale));
-    height: calc(23px * var(--icon-scale)); }
+    height: calc(22px * var(--icon-scale)); }
   .toolbar-icon.tool-camera {
     width: calc(25px * var(--icon-scale));
     height: calc(25px * var(--icon-scale)); }
