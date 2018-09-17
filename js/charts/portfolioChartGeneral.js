@@ -156,22 +156,27 @@ var portfolioChartOptions = {
             TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
 
 
-            var lineForMainChartX = this.points[0].point.plotX + $('#portfolioChartGeneral').offset().left;
-            var lineForMainChartY = this.points[0].point.plotY + $('#portfolioChartGeneral').offset().top + 35;
-            var lineForMainChartHeight = $('#portfolioChartGeneral').height() - this.points[0].point.plotY - 40;
+            var lineForPortfolioChartX = this.points[0].point.plotX + $('#portfolioChartGeneral').offset().left;
+            var lineForPortfolioChartY = $('#portfolioChartGeneral').offset().top + 52;
+            var lineForPortfolioChartHeight = $('#portfolioChartGeneral').height() - 58;
+            var circleForPortfolioChartY = this.points[0].point.plotY - 16;
 
             // right side fix
-            if (lineForMainChartX > $('#mainChart').offset().left + $('#mainChart').width()) {
-                lineForMainChartX = -9999;
+            if (lineForPortfolioChartX > $('#portfolioChartGeneral').offset().left + $('#portfolioChartGeneral').width()) {
+                lineForPortfolioChartX = -9999;
             }
 
-            $('.lineForMainChart').css({
-                'left': lineForMainChartX,
-                'top': lineForMainChartY,
+            $('.lineForPortfolioChart').css({
+                'left': lineForPortfolioChartX,
+                'top': lineForPortfolioChartY,
             });
 
-            $('.lineForMainChart .line').css({
-                'height': lineForMainChartHeight,
+            $('.lineForPortfolioChart .circle').css({                
+                'top': circleForPortfolioChartY,
+            });
+
+            $('.lineForPortfolioChart .line').css({
+                'height': lineForPortfolioChartHeight,
             });
 
             return '<div class="tooltip arrow_box blackColor font10 bottom">' +

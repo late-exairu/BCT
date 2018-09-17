@@ -382,6 +382,31 @@
 	}
 }
 
+.lineForPortfolioChart {
+	position: absolute;
+	left: 650px;
+	top: 650px;
+	pointer-events: none;
+	z-index: 101;
+	.circle {
+		position: relative;
+		width: 11px;
+		height: 11px;
+		background: white;
+		border: 1.2px solid var(--clr-line);
+		border-radius: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		z-index: 1;
+	}
+	.line {		
+		background: linear-gradient(to bottom, var(--clr-lineP) 0%,#ffffff 100%);
+		width: 1px;
+		height: 1px;
+		height: 100px;
+		margin-top: -6px;
+	}
+}
+
 #panel-funds-account,
 #panel-dashboard-liquidity {
 	position: relative;
