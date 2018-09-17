@@ -4054,7 +4054,7 @@ body.menubar-in #user-btn:before {
   display: flex;
   position: absolute;
   left: 12px;
-  top: 6px;
+  top: 3px;
   z-index: 100; }
   .user-portfolio__userpic .user-pic,
   .user-portfolio__userpic .user-pic__avatar {
@@ -7504,8 +7504,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 .lineForPortfolioChart {
   position: absolute;
-  left: 650px;
-  top: 650px;
+  left: -9999px;
   pointer-events: none;
   z-index: 101; }
   .lineForPortfolioChart .circle {
@@ -7521,7 +7520,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background: linear-gradient(to bottom, var(--clr-lineP) 0%, #ffffff 100%);
     width: 1px;
     height: 1px;
-    height: 100px;
     margin-top: -6px; }
 
 #panel-funds-account,
