@@ -1755,43 +1755,75 @@ $(function () {
 	/* main graph range slider for Orders */
 	var $mainGraphRange = $(".graph-range-slider__control");
 
-	$mainGraphRange.ionRangeSlider({
-		type: "single",
-		hide_min_max: true,
-		hide_from_to: true,
-		grid: false,
-		from: 4,
-		values: ["1h", "1d", "1w", "1m", "All"],
-		onChange: function (e) {
-			// update current range text			
-			$('.graph-range-slider__current').html(e.from_value);
-		},
-		onFinish: function (e) {
-			// update chart			
-			switch (e.from) {
-				case 0:
-					var HOUR = 1000 * 3600 * 24 * 7; //1000 * 3600;
-					mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate - (1000 * 3600 * 24));
-					break;
-				case 1:
-					var DAY = 1000 * 3600 * 24 * 7; //1000 * 3600 * 24;
-					mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate - (1000 * 3600 * 24));
-					break;
-				case 2:
-					var WEEK = 1000 * 3600 * 24 * 7;
-					mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - (1000 * 3600 * 24));
-					break;
-				case 3:
-					var d = new Date(maxDate);
-					d.setMonth(d.getMonth() - 1);
-					mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
-					break;
-				case 4:
-					mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
-					break;
-			}
-			redrawMainChart();
+	// $mainGraphRange.ionRangeSlider({
+	// 	type: "single",
+	// 	hide_min_max: true,
+	// 	hide_from_to: true,
+	// 	grid: false,
+	// 	from: 4,
+	// 	values: ["1h", "1d", "1w", "1m", "All"],
+	// 	onChange: function (e) {
+	// 		// update current range text			
+	// 		$('.graph-range-slider__current').html(e.from_value);
+	// 	},
+	// 	onFinish: function (e) {
+	// 		// update chart			
+	// 		switch (e.from) {
+	// 			case 0:
+	// 				var HOUR = 1000 * 3600 * 24 * 7; //1000 * 3600;
+	// 				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate - (1000 * 3600 * 24));
+	// 				break;
+	// 			case 1:
+	// 				var DAY = 1000 * 3600 * 24 * 7; //1000 * 3600 * 24;
+	// 				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate - (1000 * 3600 * 24));
+	// 				break;
+	// 			case 2:
+	// 				var WEEK = 1000 * 3600 * 24 * 7;
+	// 				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - (1000 * 3600 * 24));
+	// 				break;
+	// 			case 3:
+	// 				var d = new Date(maxDate);
+	// 				d.setMonth(d.getMonth() - 1);
+	// 				mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
+	// 				break;
+	// 			case 4:
+	// 				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
+	// 				break;
+	// 		}
+	// 		redrawMainChart();
+	// 	}
+	// });
+
+	$mainGraphRange.on( 'input', function( ) {
+		// $( this ).css( 'background', 'linear-gradient(to right, var(--clr-time-bar) 0%, var(--clr-time-bar) '+this.value*25 +'%, var(--clr-time-line) ' + this.value*25 + '%, var(--clr-time-line) 100%)' );
+		switch (parseInt(this.value)) {
+			case 0:
+				$('.graph-range-slider__current').html("1h");
+				var HOUR = 1000 * 3600 * 24 * 7; //1000 * 3600;
+				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate - (1000 * 3600 * 24));
+				break;
+			case 1:
+				$('.graph-range-slider__current').html("1d");
+				var DAY = 1000 * 3600 * 24 * 7; //1000 * 3600 * 24;
+				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate - (1000 * 3600 * 24));
+				break;
+			case 2:
+				$('.graph-range-slider__current').html("1w");
+				var WEEK = 1000 * 3600 * 24 * 7;
+				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - (1000 * 3600 * 24));
+				break;
+			case 3:
+			$('.graph-range-slider__current').html("1m");
+				var d = new Date(maxDate);
+				d.setMonth(d.getMonth() - 1);
+				mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
+				break;
+			case 4:
+				$('.graph-range-slider__current').html("All");
+				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
+				break;
 		}
-	});
+		redrawMainChart();
+	} );
 
 });

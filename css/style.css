@@ -2501,8 +2501,6 @@ h6 {
   .graph-range-slider__current {
     padding: 0 3px;
     color: var(--clr-time-bar); }
-  .graph-range-slider__control {
-    visibility: hidden; }
 
 /* =================================================================== */
 /* graph-top */
@@ -4072,10 +4070,71 @@ body.menubar-in #user-btn:before {
 /* =================================================================== */
 .range-slider {
   position: relative;
-  width: 100%;
   margin: 5px 0;
-  height: 10px;
+  height: 16px;
   /* skin details */ }
+  .range-slider input[type=range] {
+    -webkit-appearance: none;
+    /* Hides the slider so that custom slider can be made */
+    width: 100%;
+    /* Specific width is required for Firefox. */
+    background: transparent;
+    /* Otherwise white in Chrome */
+    padding: 7px 0;
+    cursor: pointer;
+    /* All the same stuff for Firefox */
+    /** FF*/
+    /* All the same stuff for IE */ }
+    .range-slider input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      background: var(--clr-time-slider);
+      cursor: pointer;
+      margin-top: -3px;
+      /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */ }
+    .range-slider input[type=range]:focus {
+      outline: none;
+      /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }
+    .range-slider input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 2px;
+      cursor: pointer;
+      background: var(--clr-time-line); }
+    .range-slider input[type=range]::-moz-range-thumb {
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background: var(--clr-time-slider);
+      border: 1px solid #fff;
+      cursor: pointer; }
+    .range-slider input[type=range]::-moz-range-track {
+      width: 100%;
+      height: 2px;
+      cursor: pointer;
+      background: var(--clr-time-line); }
+    .range-slider input[type=range]::-moz-range-progress {
+      background-color: var(--clr-time-bar); }
+    .range-slider input[type=range]::-ms-thumb {
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background: var(--clr-time-slider);
+      cursor: pointer; }
+    .range-slider input[type=range]::-ms-track {
+      width: 100%;
+      height: 2px;
+      cursor: pointer;
+      /* Hides the slider so custom styles can be added */
+      background: transparent;
+      border-color: transparent;
+      color: transparent; }
+    .range-slider input[type=range]::-ms-fill-lower {
+      background: var(--clr-time-bar); }
+    .range-slider input[type=range]::-ms-fill-upper {
+      background: var(--clr-time-line); }
   .range-slider .irs-line-mid,
   .range-slider .irs-line-left,
   .range-slider .irs-line-right,
