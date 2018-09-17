@@ -362,6 +362,7 @@
 		display: flex;
 		align-items: center;				
 		z-index: 1;
+		min-width: 95px;
 
 		.range-slider{			
 			pointer-events: all;

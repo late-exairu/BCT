@@ -4070,7 +4070,6 @@ body.menubar-in #user-btn:before {
 /* =================================================================== */
 .range-slider {
   position: relative;
-  margin: 5px 0;
   height: 16px;
   /* skin details */ }
   .range-slider input[type=range] {
@@ -7480,7 +7479,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     margin-top: 5px;
     display: flex;
     align-items: center;
-    z-index: 1; }
+    z-index: 1;
+    min-width: 95px; }
     #portfolioChartText .portfolio-graph-range .range-slider {
       pointer-events: all;
       cursor: pointer;

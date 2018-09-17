@@ -1734,28 +1734,28 @@ $(function () {
 
 	/* Portfolio graph range slider for Orders */
 	var $portfolioGraphRange = $(".portfolio-graph-range__control");
-
-	$portfolioGraphRange.ionRangeSlider({
-		type: "single",
-		hide_min_max: true,
-		hide_from_to: true,
-		grid: false,
-		from: 4,
-		values: ["1h", "1d", "1w", "1m", "All"],
-		onChange: function (e) {
-			// update current range text			
-			$('.portfolio-graph-range__current').html(e.from_value);
-		},
-		onFinish: function (e) {
-			// update chart			
-			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(e.from, {}, true);
+	$portfolioGraphRange.on( 'input', function( ) {
+		if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(this.value, {}, true);
+		switch (parseInt(this.value)) {
+			case 0:
+				$('.portfolio-graph-range__current').html("1h");
+				break;
+			case 1:
+				$('.portfolio-graph-range__current').html("1d");
+				break;
+			case 2:
+				$('.portfolio-graph-range__current').html("1w");
+				break;
+			case 3:
+				$('.portfolio-graph-range__current').html("1m");
+				break;
+			case 4:
+				$('.portfolio-graph-range__current').html("All");				
+				break;
 		}
-	});
-
-	/* main graph range slider for Orders */
-	var $mainGraphRange = $(".graph-range-slider__control");
-
-	// $mainGraphRange.ionRangeSlider({
+		redrawMainChart();
+	} );
+	// $portfolioGraphRange.ionRangeSlider({
 	// 	type: "single",
 	// 	hide_min_max: true,
 	// 	hide_from_to: true,
@@ -1764,36 +1764,16 @@ $(function () {
 	// 	values: ["1h", "1d", "1w", "1m", "All"],
 	// 	onChange: function (e) {
 	// 		// update current range text			
-	// 		$('.graph-range-slider__current').html(e.from_value);
+	// 		$('.portfolio-graph-range__current').html(e.from_value);
 	// 	},
 	// 	onFinish: function (e) {
 	// 		// update chart			
-	// 		switch (e.from) {
-	// 			case 0:
-	// 				var HOUR = 1000 * 3600 * 24 * 7; //1000 * 3600;
-	// 				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate - (1000 * 3600 * 24));
-	// 				break;
-	// 			case 1:
-	// 				var DAY = 1000 * 3600 * 24 * 7; //1000 * 3600 * 24;
-	// 				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate - (1000 * 3600 * 24));
-	// 				break;
-	// 			case 2:
-	// 				var WEEK = 1000 * 3600 * 24 * 7;
-	// 				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - (1000 * 3600 * 24));
-	// 				break;
-	// 			case 3:
-	// 				var d = new Date(maxDate);
-	// 				d.setMonth(d.getMonth() - 1);
-	// 				mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
-	// 				break;
-	// 			case 4:
-	// 				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
-	// 				break;
-	// 		}
-	// 		redrawMainChart();
+	// 		if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(e.from, {}, true);
 	// 	}
 	// });
 
+	/* main graph range slider for Orders */
+	var $mainGraphRange = $(".graph-range-slider__control");
 	$mainGraphRange.on( 'input', function( ) {
 		// $( this ).css( 'background', 'linear-gradient(to right, var(--clr-time-bar) 0%, var(--clr-time-bar) '+this.value*25 +'%, var(--clr-time-line) ' + this.value*25 + '%, var(--clr-time-line) 100%)' );
 		switch (parseInt(this.value)) {
