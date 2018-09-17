@@ -346,10 +346,12 @@
 		&:last-child {
 			color: #00AAF8; 
 			padding: 0;
+			vertical-align: bottom;
 
 			span {
-				font-size: 14px;
+				font-size: 13px;
 				line-height: inherit;				
+
 			}
 		}
 	}

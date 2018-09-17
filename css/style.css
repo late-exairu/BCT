@@ -7477,9 +7477,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       margin-bottom: 0; }
     #portfolioChartText div.portfolio-graph-info:last-child {
       color: #00AAF8;
-      padding: 0; }
+      padding: 0;
+      vertical-align: bottom; }
       #portfolioChartText div.portfolio-graph-info:last-child span {
-        font-size: 14px;
+        font-size: 13px;
         line-height: inherit; }
   #portfolioChartText .portfolio-graph-range {
     color: var(--clr-textD);
