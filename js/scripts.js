@@ -799,7 +799,8 @@ $(function () {
 	});
 
 	$('.chats-list__item').click(function () {
-		var chatName = $(this).find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
+		//var chatName = $(this).find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
+		var chatName = $(this).find('.chats-list__name').text();
 		$('.chat-head__name').text(chatName);
 		$('.main-cols__left-top .d-flex .c-block__col, .chat-talk').toggleClass('hidden');
 	});
