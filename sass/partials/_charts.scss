@@ -7,15 +7,16 @@
 	flex: 0 0 180px;
 	width: 180px;
 	max-height: 100%;
-    height: calc(100% - 45px);
-    margin: 0;
-    margin-top: 45px;
+	height: calc(100%);
+	margin: 0;
+	margin-top: 0px;
 	z-index: 101;
-	&.marged{
+
+	&.marged {
 		margin: 0 70px 0 0;
 	}
 
-	&:after{
+	&:after {
 		content: '';
 		position: absolute;
 		left: 50%;
@@ -30,14 +31,15 @@
 		transform: translate(-50%, -50%);
 	}
 
-	&.hover{
+	&.hover {
 		cursor: pointer;
+
 		#circleChartText {
 			color: var(--clr-accentD);
 		}
 	}
 
-	&:active:after{
+	&:active:after {
 		background: var(--clr-accent);
 	}
 
@@ -45,11 +47,16 @@
 		flex: 0 0 250px;
 		width: 250px;
 
-		&:after{
+		&:after {
 			width: 190px;
 			height: 190px;
 		}
 	}
+}
+
+.advanced .accounts-diagram-wrap {
+	height: calc(100% - 45px);
+	margin-top: 45px;
 }
 
 .accounts-diagram {
@@ -70,11 +77,19 @@
 	z-index: 1;
 	color: var(--clr-textD);
 	transition: all 0.1s;
+
 	.wrap {
 		text-align: center;
 		border-radius: 50%;
 		position: relative;
 		z-index: 1;
+
+		.walletTitle {
+			padding: 0;
+			margin: 0;
+			font-size: 18px;
+		}
+
 		.value {
 			display: block;
 			line-height: 1.2;
@@ -82,17 +97,20 @@
 			line-height: 1.18;
 			padding: 0;
 			margin: 0;
+
 			span {
 				top: 2px;
 				position: relative;
 				font-size: 13px;
 				vertical-align: top;
 			}
-			span.bigger{
+
+			span.bigger {
 				font-size: 22px;
 				margin: 0px -3px;
 			}
 		}
+
 		.title {
 			font-size: 10px;
 			line-height: 1.26;
@@ -103,19 +121,27 @@
 			margin: 0;
 		}
 	}
+
 	@media only screen and (min-height: 900px) {
 		width: 200px;
+
 		.wrap {
+			.walletTitle {
+				font-size: 27px;
+			}
+
 			.value {
 				span {
 					top: 4px;
 					font-size: 22px;
 				}
-				span.bigger{
+
+				span.bigger {
 					top: 0;
 					font-size: 34px;
 				}
 			}
+
 			.title {
 				font-size: 16px;
 			}
@@ -142,6 +168,7 @@
 .highcharts-tooltip {
 	z-index: 9998 !important;
 	margin-left: -2.041%;
+
 	div.tooltip,
 	div.tooltipCircle {
 		opacity: 1;
@@ -153,36 +180,46 @@
 		background-color: var(--clr-back-tooltip);
 		color: var(--clr-textL);
 		box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+
 		span {
 			color: var(--clr-textD);
 		}
 	}
+
 	div.tooltip {
 		color: var(--clr-text-tooltip);
 		font-weight: 600;
+
 		.textCenter {
 			text-align: center;
 		}
+
 		&.mainTooltip {
 			font-family: $osans;
 			font-size: 10px;
+
 			span {
 				color: var(--clr-text-tooltip);
 			}
+
 			.currencies {
 				font-size: 13px;
 			}
+
 			.value {
 				font-size: 13px;
 			}
+
 			div:first-child {
 				margin-bottom: -7px;
 			}
 		}
+
 		&.blackColor {
 			color: var(--clr-textD);
 		}
 	}
+
 	div.tooltipCircle {
 		font-family: $osans;
 		padding: 5px 10px 5px 10px;
@@ -191,7 +228,7 @@
 		/*border: 1px solid var(--clr-separatorD);*/
 		display: flex;
 		line-height: 20px;
-		
+
 		.currency {
 			font-size: 13px;
 			border-right: 1px solid var(--clr-textD);
@@ -202,17 +239,20 @@
 			color: var(--clr-textD);
 			line-height: 20px;
 		}
+
 		.price {
 			padding-left: 5px;
 			font-size: 12px;
 			line-height: 20px;
 			color: var(--clr-textD);
+
 			span {
 				line-height: 20px;
 				/*font-weight: 600;*/
 			}
 		}
 	}
+
 	span svg {
 		width: 20px;
 		height: 20px;
@@ -220,17 +260,21 @@
 		margin: 0px 3px 0px 0px;
 		flex: 0 0 20px;
 	}
+
 	div.font12 {
 		font-size: 12px;
 		margin-bottom: -7px;
 	}
+
 	div.font10 {
 		font-size: 10px;
 		font-weight: 300;
 	}
+
 	.bold {
 		font-weight: bold;
 	}
+
 	.light {
 		font-weight: 100;
 		font-size: 10px;
@@ -241,8 +285,9 @@
 .advanced .blackColor span {
 	color: white !important;
 }
-.advanced .gray{
-	color:#575D63;
+
+.advanced .gray {
+	color: #575D63;
 }
 
 /* .secondTooltip {
@@ -282,9 +327,9 @@
 
 .arrow_box.bottom:after {
 	bottom: 100%;
-    border-top-color: var(--clr-back-tooltip);
-    top: calc(100% + 7px);
-    left: calc(50% - 7px);
+	border-top-color: var(--clr-back-tooltip);
+	top: calc(100% + 7px);
+	left: calc(50% - 7px);
 }
 
 .lineForMainChart {
@@ -292,6 +337,7 @@
 	left: -9999px;
 	pointer-events: none;
 	z-index: 101;
+
 	.circle {
 		width: 11px;
 		height: 11px;
@@ -300,6 +346,7 @@
 		border-radius: 50%;
 		transform: translateX(-50%) translateY(-50%);
 	}
+
 	.line {
 		background: var(--clr-line);
 		width: 1px;
@@ -316,25 +363,29 @@
 }
 
 #portfolioChartText {
-	pointer-events: none;	
+	pointer-events: none;
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
+
 	div.portfolio-graph-info {
 		display: inline-block;
 		// color: #00AAF8; 
 		color: var(--clr-textD);
 		padding: 0 10px 0 15px;
 		text-align: center;
+
 		span {
 			font-size: 16px;
 			vertical-align: top;
 			line-height: 30px;
+
 			&:nth-child(2) {
 				font-size: 26px;
 				line-height: initial;
 			}
 		}
+
 		p {
 			font-size: 10px;
 			color: var(--clr-textD);
@@ -343,40 +394,41 @@
 		}
 
 		&:last-child {
-			color: #00AAF8; 
+			color: #00AAF8;
 			padding: 0;
 			vertical-align: bottom;
 
 			span {
 				font-size: 13px;
-				line-height: inherit;				
+				line-height: inherit;
 
 			}
 		}
 	}
+
 	.portfolio-graph-range {
 		color: var(--clr-textD);
-		font-size: 11px;		
+		font-size: 11px;
 		background: transparent;
 		font-weight: 600;
-		margin-top: 5px;	
+		margin-top: 5px;
 		display: flex;
-		align-items: center;				
+		align-items: center;
 		z-index: 1;
 		min-width: 95px;
 
-		.range-slider{			
+		.range-slider {
 			pointer-events: all;
-			cursor: pointer;			
+			cursor: pointer;
 			flex: 1;
 			margin: 0;
 
-			input[type=range]{
+			input[type=range] {
 				width: 72px;
 			}
 		}
 
-		&__current{			
+		&__current {
 			padding: 0 3px;
 			color: var(--clr-time-bar);
 		}
@@ -388,6 +440,7 @@
 	left: -9999px;
 	pointer-events: none;
 	z-index: 101;
+
 	.circle {
 		position: relative;
 		width: 11px;
@@ -398,10 +451,11 @@
 		transform: translateX(-50%) translateY(-50%);
 		z-index: 1;
 	}
-	.line {		
-		background: linear-gradient(to bottom, var(--clr-lineP) 0%,#ffffff 100%);
+
+	.line {
+		background: linear-gradient(to bottom, var(--clr-lineP) 0%, #ffffff 100%);
 		width: 1px;
-		height: 1px;		
+		height: 1px;
 		margin-top: -6px;
 	}
 }
@@ -415,32 +469,38 @@
 	.liquidityText {
 		color: var(--clr-textD);
 		text-align: center;
+
 		span {
 			font-size: 10px;
 			vertical-align: top;
 			margin: 0px 5px;
 		}
+
 		p {
 			font-size: 24px;
 			margin: 0;
 			height: 30px;
 		}
+
 		.leftPart,
 		.rightPart,
 		.centerPart {
 			position: absolute;
 		}
+
 		.leftPart {
 			bottom: 5px;
 			left: 10px;
 			pointer-events: none;
 
 		}
+
 		.rightPart {
 			bottom: 5px;
 			right: 10px;
 			pointer-events: none;
 		}
+
 		.centerPart {
 			cursor: pointer;
 			top: 40%;
@@ -451,12 +511,14 @@
 			height: 22px;
 			width: 47px;
 			border-radius: 3px;
+
 			p {
 				margin-bottom: 0px;
 				font-size: 15px;
 				font-weight: bold;
 				height: auto;
 			}
+
 			svg {
 				width: 14px;
 				height: 14px;
@@ -465,7 +527,8 @@
 				position: relative;
 				top: -4px;
 			}
- 			.separator {
+
+			.separator {
 				width: 1px;
 				height: 21px;
 				background: var(--clr-separator);
@@ -477,8 +540,10 @@
 
 #orders {
 	display: none;
+
 	.forms-wrap {
 		display: none;
+
 		&.current {
 			display: flex;
 		}

@@ -27,7 +27,12 @@ var circleChartOptions = null;
 $(window).resize(drawCircleChart);
 
 function drawCircleChart() {
-    pieChartSize = $('#circleChart').width() - 20 - 28;
+    if ($('body').hasClass('advanced')) {
+        pieChartSize = $('#circleChart').width() - 20 - 28;
+    } else {
+        pieChartSize = $('#circleChart').width() - 28;
+    }
+
     centerX = $('#circleChart').width() / 2 - 20;
     centerY = $('#circleChart').height() / 2 - 20;
 

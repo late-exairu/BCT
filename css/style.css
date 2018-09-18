@@ -7445,9 +7445,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   flex: 0 0 180px;
   width: 180px;
   max-height: 100%;
-  height: calc(100% - 45px);
+  height: calc(100%);
   margin: 0;
-  margin-top: 45px;
+  margin-top: 0px;
   z-index: 101; }
   .accounts-diagram-wrap.marged {
     margin: 0 70px 0 0; }
@@ -7478,6 +7478,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
         width: 190px;
         height: 190px; } }
 
+.advanced .accounts-diagram-wrap {
+  height: calc(100% - 45px);
+  margin-top: 45px; }
+
 .accounts-diagram {
   position: relative;
   height: 100%;
@@ -7500,6 +7504,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     border-radius: 50%;
     position: relative;
     z-index: 1; }
+    #circleChartText .wrap .walletTitle {
+      padding: 0;
+      margin: 0;
+      font-size: 18px; }
     #circleChartText .wrap .value {
       display: block;
       line-height: 1.2;
@@ -7526,6 +7534,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   @media only screen and (min-height: 900px) {
     #circleChartText {
       width: 200px; }
+      #circleChartText .wrap .walletTitle {
+        font-size: 27px; }
       #circleChartText .wrap .value span {
         top: 4px;
         font-size: 22px; }
