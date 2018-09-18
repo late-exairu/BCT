@@ -7575,7 +7575,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       .highcharts-tooltip div.tooltip.mainTooltip .currencies {
         font-size: 13px; }
       .highcharts-tooltip div.tooltip.mainTooltip .value {
-        font-size: 12px; }
+        font-size: 13px; }
       .highcharts-tooltip div.tooltip.mainTooltip div:first-child {
         margin-bottom: -7px; }
     .highcharts-tooltip div.tooltip.blackColor {

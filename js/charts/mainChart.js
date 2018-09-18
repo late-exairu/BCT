@@ -354,8 +354,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var current_trader = $(".graph-prices__list .graph-prices__item.active .graph-prices__trader")[0].innerText;
 			
 			return '<div class="tooltip arrow_box mainTooltip ' + arrowDirection + '">' +
-				"<div><span class='currencies bold'>" + currency_send + "/" + currency_get + "</span> (" + current_trader + "): &nbsp;<span class='value bold'>" + TooltipValue + '</span></div>' +
-				'&nbsp;&nbsp;&nbsp;' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + '</div>';
+				"<div><span class='currencies bold'>" + currency_send + "/" + currency_get + "</span> : <span class='value bold'>" + TooltipValue + '</span></div>' +
+				 dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + " (" + current_trader + ')</div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
 			//var graphWidth = $(mainChartObj.container).width();
