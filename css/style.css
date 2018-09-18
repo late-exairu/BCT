@@ -2891,25 +2891,25 @@ Blocks from left bar
     cursor: pointer; }
     .nav-bar__item.btn {
       height: 62px; }
-    .nav-bar__item:hover {
+    .nav-bar__item:hover, .nav-bar__item.active {
       /*background: var(--clr-text);*/ }
-      .nav-bar__item:hover .nav-bar__title {
+      .nav-bar__item:hover .nav-bar__title, .nav-bar__item.active .nav-bar__title {
         color: var(--clr-text); }
-      .nav-bar__item:hover .nav-bar__icon {
+      .nav-bar__item:hover .nav-bar__icon, .nav-bar__item.active .nav-bar__icon {
         opacity: 1; }
-        .nav-bar__item:hover .nav-bar__icon.ico {
+        .nav-bar__item:hover .nav-bar__icon.ico, .nav-bar__item.active .nav-bar__icon.ico {
           fill: #11487b; }
-        .nav-bar__item:hover .nav-bar__icon.charts {
+        .nav-bar__item:hover .nav-bar__icon.charts, .nav-bar__item.active .nav-bar__icon.charts {
           fill: #034e82; }
-        .nav-bar__item:hover .nav-bar__icon.stats {
+        .nav-bar__item:hover .nav-bar__icon.stats, .nav-bar__item.active .nav-bar__icon.stats {
           fill: #005998; }
-        .nav-bar__item:hover .nav-bar__icon.trading {
+        .nav-bar__item:hover .nav-bar__icon.trading, .nav-bar__item.active .nav-bar__icon.trading {
           fill: #83529a; }
-        .nav-bar__item:hover .nav-bar__icon.news {
+        .nav-bar__item:hover .nav-bar__icon.news, .nav-bar__item.active .nav-bar__icon.news {
           fill: #e63730; }
-        .nav-bar__item:hover .nav-bar__icon.other {
+        .nav-bar__item:hover .nav-bar__icon.other, .nav-bar__item.active .nav-bar__icon.other {
           fill: #9e2021; }
-        .nav-bar__item:hover .nav-bar__icon.reload {
+        .nav-bar__item:hover .nav-bar__icon.reload, .nav-bar__item.active .nav-bar__icon.reload {
           fill: var(--clr-textL);
           width: 35px;
           height: 35px;

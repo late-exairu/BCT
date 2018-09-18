@@ -106,7 +106,8 @@ Blocks from left bar
 			height: 62px;
 		}
 
-		&:hover{
+		&:hover,
+		&.active{
 			/*background: var(--clr-text);*/
 
 			.nav-bar__title{
