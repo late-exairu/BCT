@@ -8,7 +8,7 @@
 	position: absolute;
 	left: 10px;
 	top: 10px;
-	bottom: 10px;
+	bottom: 52px;
 	display: block;
 	padding: 0;	
 	width: 32px;
@@ -205,6 +205,7 @@
 
 	@media only screen and (min-width : 1920px) {
 		width: 42px;
+		bottom: 62px;
 
 		&__btn{
 			width: 42px;

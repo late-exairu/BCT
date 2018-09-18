@@ -3631,7 +3631,7 @@ body.menubar-in #user-btn:before {
   position: absolute;
   left: 10px;
   top: 10px;
-  bottom: 10px;
+  bottom: 52px;
   display: block;
   padding: 0;
   width: 32px;
@@ -3770,7 +3770,8 @@ body.menubar-in #user-btn:before {
       fill: var(--clr-textD); }
   @media only screen and (min-width: 1920px) {
     .toolbar {
-      width: 42px; }
+      width: 42px;
+      bottom: 62px; }
       .toolbar__btn {
         width: 42px;
         height: 42px; }
@@ -8020,8 +8021,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 .view-mode {
   position: absolute;
-  right: 28px;
-  bottom: 18px; }
+  left: 10px;
+  bottom: 10px; }
   .view-mode__link {
     display: flex;
     align-items: center;
@@ -8031,19 +8032,16 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     border-radius: 5px;
     background: var(--clr-back);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
-    .view-mode__link:hover .sprite-icon {
-      width: 18px;
-      height: 20px; }
-      .view-mode__link:hover .sprite-icon .st0 {
-        fill: var(--clr-accentD); }
-      .view-mode__link:hover .sprite-icon .st1 {
-        fill: #3AB44A; }
-      .view-mode__link:hover .sprite-icon .st2 {
-        fill: #EB2429; }
-      .view-mode__link:hover .sprite-icon .st3 {
-        fill: #F4EB32; }
-      .view-mode__link:hover .sprite-icon .st4 {
-        fill: #26A8E0; }
+    .view-mode__link:hover .sprite-icon .st0 {
+      fill: var(--clr-accentD); }
+    .view-mode__link:hover .sprite-icon .st1 {
+      fill: #3AB44A; }
+    .view-mode__link:hover .sprite-icon .st2 {
+      fill: #EB2429; }
+    .view-mode__link:hover .sprite-icon .st3 {
+      fill: #F4EB32; }
+    .view-mode__link:hover .sprite-icon .st4 {
+      fill: #26A8E0; }
   .view-mode .sprite-icon {
     width: 18px;
     height: 20px; }
@@ -8067,6 +8065,13 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       fill: transparent; }
     .view-mode .sprite-icon .st4 {
       fill: transparent; }
+  @media only screen and (min-width: 1920px) {
+    .view-mode__link {
+      height: 42px;
+      width: 42px; }
+    .view-mode .sprite-icon {
+      width: 26px;
+      height: 28px; } }
 
 .proggress-bar {
   width: 100%;
