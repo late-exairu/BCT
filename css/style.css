@@ -7451,7 +7451,19 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   z-index: 101; }
   .accounts-diagram-wrap.marged {
     margin: 0 70px 0 0; }
-  .accounts-diagram-wrap:after {
+  .accounts-diagram-wrap.hover {
+    cursor: pointer; }
+    .accounts-diagram-wrap.hover #circleChartText {
+      color: var(--clr-accentD); }
+  @media only screen and (min-height: 900px) {
+    .accounts-diagram-wrap {
+      flex: 0 0 250px;
+      width: 250px; } }
+
+.advanced .accounts-diagram-wrap {
+  height: calc(100% - 45px);
+  margin-top: 45px; }
+  .advanced .accounts-diagram-wrap:after {
     content: '';
     position: absolute;
     left: 50%;
@@ -7464,23 +7476,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     opacity: 0.1;
     transition: all 0.2s;
     transform: translate(-50%, -50%); }
-  .accounts-diagram-wrap.hover {
-    cursor: pointer; }
-    .accounts-diagram-wrap.hover #circleChartText {
-      color: var(--clr-accentD); }
-  .accounts-diagram-wrap:active:after {
+  .advanced .accounts-diagram-wrap:active:after {
     background: var(--clr-accent); }
   @media only screen and (min-height: 900px) {
-    .accounts-diagram-wrap {
-      flex: 0 0 250px;
-      width: 250px; }
-      .accounts-diagram-wrap:after {
-        width: 190px;
-        height: 190px; } }
-
-.advanced .accounts-diagram-wrap {
-  height: calc(100% - 45px);
-  margin-top: 45px; }
+    .advanced .accounts-diagram-wrap:after {
+      width: 190px;
+      height: 190px; } }
 
 .accounts-diagram {
   position: relative;

@@ -16,6 +16,24 @@
 		margin: 0 70px 0 0;
 	}
 
+	&.hover {
+		cursor: pointer;
+
+		#circleChartText {
+			color: var(--clr-accentD);
+		}
+	}
+
+	@media only screen and (min-height: 900px) {
+		flex: 0 0 250px;
+		width: 250px;
+	}
+}
+
+.advanced .accounts-diagram-wrap {
+	height: calc(100% - 45px);
+	margin-top: 45px;
+
 	&:after {
 		content: '';
 		position: absolute;
@@ -31,32 +49,16 @@
 		transform: translate(-50%, -50%);
 	}
 
-	&.hover {
-		cursor: pointer;
-
-		#circleChartText {
-			color: var(--clr-accentD);
-		}
-	}
-
 	&:active:after {
 		background: var(--clr-accent);
 	}
 
 	@media only screen and (min-height: 900px) {
-		flex: 0 0 250px;
-		width: 250px;
-
 		&:after {
 			width: 190px;
 			height: 190px;
 		}
 	}
-}
-
-.advanced .accounts-diagram-wrap {
-	height: calc(100% - 45px);
-	margin-top: 45px;
 }
 
 .accounts-diagram {

@@ -470,7 +470,7 @@ $(function () {
 	/* ADVANCED account-js-menu */
 	/*---------------------------------------------------*/
 
-	$('.accounts-diagram-wrap').click(function () {
+	$('.advanced .accounts-diagram-wrap').click(function () {
 		$('.js-tabs-panel').removeClass('active');
 		$('#panel-funds-portfolio').addClass('active');
 		$('.main-cols__right-bottom .portfolio-menu__item').eq(1).trigger('click');
@@ -479,8 +479,8 @@ $(function () {
 			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 
 		// basic page menu 
-		$('.user-portfolio .user-menu .user-menu__item').removeClass('current');
-		$('.user-portfolio .user-menu .user-menu__item').eq(1).addClass('current');
+/* 		$('.user-portfolio .user-menu .user-menu__item').removeClass('current');
+		$('.user-portfolio .user-menu .user-menu__item').eq(1).addClass('current'); */
 	});
 
 	$('.portfolio-back').click(function () {
@@ -1161,9 +1161,9 @@ $(function () {
 	$('.exch-head__btn').click(function () {
 		// basic
 		if (!$('body').hasClass('advanced')) {
-			//$('.js-tabs-panel').removeClass('active');
-			//$('#panel-funds-history').addClass('active');
-			$('.user-portfolio .user-menu .user-menu__item').eq(2).trigger('click');
+			$('.js-tabs-panel').removeClass('active');
+			$('#panel-funds-history').addClass('active');
+			//$('.user-portfolio .user-menu .user-menu__item').eq(2).trigger('click');
 		}
 		//advanced
 		else {
