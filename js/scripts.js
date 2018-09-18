@@ -1574,6 +1574,7 @@ $(function () {
 		animation: 'fade',
 		placement: 'right',
 		theme: 'bct',
+		allowTitleHTML: true,
 		popperOptions: {
 			modifiers: {
 				preventOverflow: {
