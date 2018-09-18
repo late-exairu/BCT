@@ -140,7 +140,6 @@
 }
 
 .highcharts-tooltip {
-	font-family: $osans;
 	z-index: 9998 !important;
 	margin-left: -2.041%;
 	div.tooltip,
@@ -165,7 +164,7 @@
 			text-align: center;
 		}
 		&.mainTooltip {
-			font-weight: 300;
+			font-family: $osans;
 			font-size: 10px;
 			span {
 				color: var(--clr-text-tooltip);

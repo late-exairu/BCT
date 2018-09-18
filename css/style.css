@@ -7548,7 +7548,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   position: inherit !important; }
 
 .highcharts-tooltip {
-  font-family: "open_sans", sans-serif;
   z-index: 9998 !important;
   margin-left: -2.041%; }
   .highcharts-tooltip div.tooltip,
@@ -7571,7 +7570,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     .highcharts-tooltip div.tooltip .textCenter {
       text-align: center; }
     .highcharts-tooltip div.tooltip.mainTooltip {
-      font-weight: 300;
+      font-family: "open_sans", sans-serif;
       font-size: 10px; }
       .highcharts-tooltip div.tooltip.mainTooltip span {
         color: var(--clr-text-tooltip); }
