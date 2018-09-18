@@ -18,7 +18,7 @@ var wallets = {
         'DASH': 0.00,
         'XRP': 0.00,
     },
-    joeJonsonWallet: {
+/*     joeJonsonWallet: {
         'BTC': 1.50,
         'ETH': 15.50,
         'USD': 30000.00,
@@ -77,7 +77,7 @@ var wallets = {
         'MKR': 0.00,
         'DASH': 0.00,
         'XRP': 0.00,
-    }
+    } */
 }
 
 var currenciesPrice = {

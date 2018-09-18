@@ -804,24 +804,22 @@ $(function () {
 		$('.main-cols__left-top .d-flex .c-block__col, .chat-talk').toggleClass('hidden');
 	});
 
+	/* 	
+	// show wallet of another user
 	$('.chats-list__item .chats-list__name a').click(function (event) {
 		event.preventDefault();
 		event.stopPropagation();
-
 		$('.user-portfolio-close').removeClass('hidden');
-
 		var newWallet = $(this).attr('href');
 		currentWallet = wallets[newWallet];
-
 		updateWalletData();
 		drawCircleChart();
-
 		var userPortfolioName = $(this).closest('.chats-list__item').find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
 		var userPortfolioImage = $(this).closest('.chats-list__item').find('.chats-list__avatar-wrap img').attr('src');
 		$('.user-portfolio__name').text(userPortfolioName);
 		$('.user-portfolio .user-pic__avatar').attr('src', userPortfolioImage).removeClass('hidden');
 		$('div.user-pic__avatar').remove();
-	});
+	}); */
 
 	$('.user-portfolio-close').click(function () {
 		$(this).addClass('hidden');
