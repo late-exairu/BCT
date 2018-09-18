@@ -394,7 +394,7 @@
 		justify-content: center;
 		border: none;
 		line-height: 1;
-		background: #FF0000;
+		background: linear-gradient(to bottom, #D23842 0%,#DD3842 100%);
 		border-radius: var(--border-radius);
 
 		.sprite-icon{
