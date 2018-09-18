@@ -1076,6 +1076,7 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.exch-head__switch').click(function () {
+		$(this).toggleClass('switched');
 		var firstCurr = $('.exch-form__send input').attr('data-currency');
 		var secondCurr = $('.exch-form__get input').attr('data-currency');
 		$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurr + '"]').trigger('click');

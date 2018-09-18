@@ -2023,13 +2023,16 @@ h6 {
     cursor: pointer;
     background: transparent;
     border: 0;
-    transition: all .1s;
-    border-radius: var(--border-radius); }
+    transition: all .3s;
+    border-radius: var(--border-radius);
+    transform: rotate(0deg); }
     .exch-head__switch:hover {
       /*background: var(--clr-back);
 			border-color: var(--clr-block);*/ }
       .exch-head__switch:hover .exch-head__switch-arrows {
-        fill: var(--clr-accentD); }
+        fill: var(--clr-accent); }
+    .exch-head__switch.switched {
+      transform: rotate(180deg); }
     .exch-head__switch .sprite-icon {
       width: 24px;
       height: 13px;
@@ -2040,7 +2043,7 @@ h6 {
     width: 27px;
     height: 22px;
     position: relative;
-    fill: var(--clr-accent);
+    fill: var(--clr-accentD);
     transition: all .1s; }
   .exch-head__btn {
     position: relative;
