@@ -1195,6 +1195,7 @@ $(function () {
 			var secondValuePart = secondValue / progressbar_array.length;
 			var firstValueResult = 0;
 			var secondValueResult = 0;
+			var exchanges = 0;
 
 			// update wallet and table
 			ownWallet[sendCurrency] -= firstValue;
@@ -1230,6 +1231,12 @@ $(function () {
 						secondValueResult += secondValuePart;
 						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html(firstValueResult.toFixed(2) + ' ' + sendCurrency + svgArrowTemplate + secondValueResult.toFixed(2) + ' ' + getCurrency)
 					}, 4000 + 1000 + 1200 * i, i);
+
+					// increase exchanges numbers
+					setTimeout(function () {						
+						exchanges++;
+						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(3).html(exchanges + " Exchanges");												
+					}, 4000 + 1000 + 1200 * i, i)
 				}
 
 				if (i == progressbar_array.length - 1) {
