@@ -1186,6 +1186,7 @@ $(function () {
 		if ($(this).hasClass('exch-form__submit')) {
 			$('.exch-form__close').addClass('hidden');
 			$('.icon-trader').addClass('hidden');
+			$('.graph-prices__item').removeClass('active');
 			$('.graph-prices__item .progress-label').css('visibility', 'hidden');
 			$('.progressbar').removeClass('hidden');
 
@@ -1254,7 +1255,7 @@ $(function () {
 								$('.exch-form__submit').attr("disabled", false);
 								$('.exch-form').removeClass('completed');
 								$('.exch-form__close').removeClass('hidden');
-								$('.exch-form__submit > span').html('CONFIRM');
+								$('.exch-form__submit > span').html('CONFIRM');								
 
 								if (!isSelectedPrevConversion) {
 									$('.icon-trader').removeClass('hidden');
