@@ -147,8 +147,8 @@
 
 .view-mode {
 	position: absolute;
-    right: 28px;
-    bottom: 18px;
+    left: 10px;
+    bottom: 10px;
 
 	&__link{
 		display: flex;
@@ -163,9 +163,6 @@
     	&:hover{
 
 			.sprite-icon{
-				width: 18px;
-				height: 20px;
-
 				.st0{ fill: var(--clr-accentD); }
 				.st1{ fill: #3AB44A; }
 				.st2{ fill: #EB2429; }
@@ -190,6 +187,19 @@
 		.st2{ fill: transparent; }
 		.st3{ fill: transparent; }
 		.st4{ fill: transparent; }
+	}
+
+	@media only screen and (min-width : 1920px) {
+
+		&__link{
+			height: 42px;
+			width: 42px;
+		}
+
+		.sprite-icon{
+			width: 26px;
+			height: 28px;
+		}
 	}
 }
 
