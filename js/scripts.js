@@ -525,15 +525,15 @@ $(function () {
 		var current_center = (current_Xmin + current_Xmax) / 2;
 		if ($(this).index() == 2) {
 			if (current_Xrange <= 24 * 3600 * 1000 * 3) return false;
-			var new_Xmin = current_center - current_Xrange / 4;
-			var new_Xmax = current_center + current_Xrange / 4;
+			var new_Xmin = current_center - current_Xrange / 3;
+			var new_Xmax = current_center + current_Xrange / 3;
 			liquidityChartOptions.xAxis.min = new_Xmin;
 			liquidityChartOptions.xAxis.max = new_Xmax;
 			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
 		} else if ($(this).index() == 0) {
-			if (current_Xrange >= 24 * 3600 * 1000 * 30 * 4) return false;
-			var new_Xmin = current_center - current_Xrange;
-			var new_Xmax = current_center + current_Xrange;
+			if (current_Xrange >= 24 * 3600 * 1000 * 90) return false;
+			var new_Xmin = current_center - current_Xrange * 2 / 3;
+			var new_Xmax = current_center + current_Xrange * 2 / 3;
 			liquidityChartOptions.xAxis.min = new_Xmin;
 			liquidityChartOptions.xAxis.max = new_Xmax;
 			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
