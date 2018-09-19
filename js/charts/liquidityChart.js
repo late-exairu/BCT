@@ -54,8 +54,8 @@ var liquidityChartOptions = {
                 fontSize: '10px'
             }
         },
-        max: null,
-        min: null,
+        max: 1535118447475,
+        min: 1532859152524
     },
     yAxis: [{
         gridLineWidth: 0,
@@ -179,7 +179,14 @@ var liquidityChartOptions = {
     },
     series: [{
         name: "Graph 1",
-        data: [1580, 1500, 1400, 1300, 1200, 1000, 600, 500, 400, 300, 300, 150, 100, 0,
+        data: [
+            13190, 13010, 12882, 12730, 12400, 10300, 10100, 9976, 9900, 9353, 9300, 7006, 6960, 6860,
+            5740, 5700, 5643, 5550, 4800, 4680, 4510, 4000, 3899, 3788, 3600, 3500, 3430, 3300,
+            3160, 3000, 2899, 2800, 2610, 2540, 2430, 2300, 2200, 2000, 1850, 1720, 1650, 1600,
+            1580, 1500, 1400, 1300, 1200, 1000, 600, 500, 400, 300, 300, 150, 100, 0,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null, null, null, null, null, null, null
         ],
         pointStart: Date.UTC(2018, 5, 17),
@@ -194,8 +201,15 @@ var liquidityChartOptions = {
         color: lineColor
     }, {
         name: "Graph 2",
-        data: [null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-            0, 100, 200, 300, 400, 500, 600, 700, 800, 960, 1000, 1200, 1400, 1560
+        data: [
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            0, 100, 200, 300, 400, 500, 600, 700, 800, 960, 1000, 1200, 1400, 1560,
+            1600, 1680, 1810, 1970, 2120, 2200, 2330, 2420, 2550, 2750, 2798, 2950, 3000, 3058,
+            3100, 3199, 3431, 3550, 3639, 3770, 3830, 3900, 3960, 5111, 5231, 5420, 5545, 5630,
+            5699, 6722, 6899, 7086, 7123, 7300, 7376, 7454, 7573, 7844, 7970, 9105, 9239, 9320
         ],
         pointStart: Date.UTC(2018, 5, 17),
         pointInterval: 24 * 3600 * 1000,
