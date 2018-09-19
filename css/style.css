@@ -8498,6 +8498,34 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background: var(--clr-accent);
     width: 6px; }
 
+.cols-ico {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  padding: var(--gap-size); }
+  .cols-ico__col {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 32%; }
+    .cols-ico__col iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: hidden;
+      border-radius: 0;
+      border: 0 solid var(--clr-separator); }
+  .cols-ico__title {
+    padding: 3px 10px;
+    background: var(--clr-back);
+    font-size: 12px;
+    line-height: 1.2;
+    border-radius: var(--border-radius) var(--border-radius) 0 0; }
+  .cols-ico__content {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--clr-back); }
+
 .message-bar__login {
   align-items: flex-end;
   cursor: pointer; }
