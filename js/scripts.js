@@ -1519,12 +1519,14 @@ $(function () {
 	$('button[transaction-fancybox]').click(function () {
 		$('#transaction-popup > .c-block > .d-flex-col ').css('display', 'none');
 		var currencyName = $(this).closest('.basic-table__row').attr('data-currency');
+		var currencyFullName = $('.exch-dropdown__list').eq(0).find('.exch-dropdown__item[data-currency="'+currencyName+'"]').attr('data-name');
 		$('#transaction-popup .popup-tabs__item').removeClass('active');
 		$('#transaction-popup .popup-tabs__item').eq(0).addClass('active').text('Receive ' + currencyName);
 		$('#transaction-popup .popup-tabs__item').eq(1).text('Send ' + currencyName);
 		$('#transaction-popup .transaction-form__input').eq(1).val('1000.000 ' + currencyName);
 		$('#transaction-popup .transaction-form__btn').text('Send ' + currencyName);
 		$('#transaction-popup .transaction-form__qr-code-title').text('Your ' + currencyName + ' Address');
+		$('#transaction-popup .transaction-form__label').text('To ' + currencyFullName + ' Address:');
 		$('#transaction-popup > .c-block > .d-flex-col ').eq(0).css('display', 'flex');
 		$('button[transaction-fancybox]').removeClass('active');
 		$(this).addClass('active');

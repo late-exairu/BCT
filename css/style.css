@@ -7368,7 +7368,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
         font-size: 12px;
         background: transparent;
         border: none;
-        padding: 5px 5px;
+        padding: 5px 3px;
         width: calc(50% - 12px); }
     .transaction-form__line.inline {
       flex-direction: row; }
