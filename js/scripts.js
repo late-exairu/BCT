@@ -423,6 +423,15 @@ $(function () {
 		}
 	});
 
+	$('body').mousemove(function (e) {
+		if (e.pageY < $('.b-graph').offset().top || e.pageY > $('.b-graph').offset().top + $('.b-graph').height()) {
+			$('.graph-prices').removeClass('open');
+			$('.b-graph__controls').removeClass('shifted');
+			redrawMainChart();
+			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
+		}
+	});
+
 	/*---------------------------------------------------*/
 	/* js-select */
 	/*---------------------------------------------------*/
