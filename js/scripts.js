@@ -1341,7 +1341,7 @@ $(function () {
 			isSelectedPrevConversion = false;
 
 			dynamicGetValue = setInterval(function () {
-				secondValue *= (Math.random() * (1025 - 975) + 975) / 1000;
+				secondValue *= (Math.random() * (101 - 99) + 99) / 100;
 				$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
 			}, 1000);
 
@@ -1395,7 +1395,7 @@ $(function () {
 
 			clearInterval(dynamicGetValue);
 			dynamicGetValue = setInterval(function () {
-				secondValue *= (Math.random() * (1025 - 975) + 975) / 1000;
+				secondValue *= (Math.random() * (101 - 99) + 99) / 100;
 				$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
 			}, 1000);
 
