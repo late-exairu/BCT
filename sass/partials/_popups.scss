@@ -89,5 +89,14 @@
 		.transaction-form__line{
 			margin-bottom: 13px;
 		}
+
+		&__btn{			
+			position: relative;
+			background: transparent;
+			width: 105px;
+			height: 32px;
+			margin: 0 auto;
+			z-index: 99995;
+		}
 	}
 }

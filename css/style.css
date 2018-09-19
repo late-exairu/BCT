@@ -7519,6 +7519,17 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       /*&:hover{
 				background: var(--clr-accent);
 			}*/ }
+  .transaction-form__btn-bg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    fill: #009fe3; }
   .transaction-form .cubic-slider {
     margin: 10px 0; }
   .transaction-form .bold {
@@ -8198,6 +8209,13 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   padding: 13px 10px; }
   #send-btc-popup .transaction-form .transaction-form__line {
     margin-bottom: 13px; }
+  #send-btc-popup .transaction-form__btn {
+    position: relative;
+    background: transparent;
+    width: 105px;
+    height: 32px;
+    margin: 0 auto;
+    z-index: 99995; }
 
 /* =================================================================== */
 /* Content */

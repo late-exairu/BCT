@@ -861,12 +861,25 @@
 		}*/
 
 		&.submit{
-			background: var(--clr-accentD);
+			background: var(--clr-accentD);			
 
 			/*&:hover{
 				background: var(--clr-accent);
 			}*/
 		}
+	}
+
+	&__btn-bg{
+		position: absolute;
+		left: 0;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: -1;
+		fill: #009fe3;
 	}
 
 	.cubic-slider{
