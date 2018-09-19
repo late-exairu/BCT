@@ -479,8 +479,8 @@ $(function () {
 			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 
 		// basic page menu 
-/* 		$('.user-portfolio .user-menu .user-menu__item').removeClass('current');
-		$('.user-portfolio .user-menu .user-menu__item').eq(1).addClass('current'); */
+		/* 		$('.user-portfolio .user-menu .user-menu__item').removeClass('current');
+				$('.user-portfolio .user-menu .user-menu__item').eq(1).addClass('current'); */
 	});
 
 	$('.portfolio-back').click(function () {
@@ -1178,6 +1178,8 @@ $(function () {
 		updatePortfolioStats(true);
 	});
 
+	var dynamicGetValue;
+
 	// convert/go buttons
 	$('.exch-head__btn, .exch-form__submit').click(function (e) {
 		e.preventDefault();
@@ -1189,6 +1191,8 @@ $(function () {
 			$('.graph-prices__item').removeClass('active');
 			$('.graph-prices__item .progress-label').css('visibility', 'hidden');
 			$('.progressbar').removeClass('hidden');
+
+			clearInterval(dynamicGetValue);
 
 			var firstValue = $('.exch-form__send input').val().trim().replace(',', '');
 			var secondValue = $('.exch-form__get input').val().trim().replace(',', '')
@@ -1234,9 +1238,9 @@ $(function () {
 					}, 4000 + 1000 + 1200 * i, i);
 
 					// increase exchanges numbers
-					setTimeout(function () {						
+					setTimeout(function () {
 						exchanges++;
-						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(3).html(exchanges + " Exchanges");												
+						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(3).html(exchanges + " Exchanges");
 					}, 4000 + 1000 + 1200 * i, i)
 				}
 
@@ -1255,7 +1259,7 @@ $(function () {
 								$('.exch-form__submit').attr("disabled", false);
 								$('.exch-form').removeClass('completed');
 								$('.exch-form__close').removeClass('hidden');
-								$('.exch-form__submit > span').html('CONFIRM');								
+								$('.exch-form__submit > span').html('CONFIRM');
 
 								if (!isSelectedPrevConversion) {
 									$('.icon-trader').removeClass('hidden');
@@ -1336,6 +1340,11 @@ $(function () {
 			$('.exch-form__get input').val(numberWithCommas(secondValue));
 			isSelectedPrevConversion = false;
 
+			dynamicGetValue = setInterval(function () {
+				secondValue *= (Math.random() * (1025 - 975) + 975) / 1000;
+				$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
+			}, 1000);
+
 			setOwnName();
 			currentWallet = ownWallet;
 			updateWalletData();
@@ -1346,7 +1355,7 @@ $(function () {
 
 	$('.exch-form__close').click(function (e) {
 		e.preventDefault();
-		$(this).closest('.exch-head').toggleClass('open');		
+		$(this).closest('.exch-head').toggleClass('open');
 	});
 
 	$('.exch-form input').focus(function () {
@@ -1383,6 +1392,13 @@ $(function () {
 			var firstValue = $(this).val();
 			var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
 			$('.exch-form__get input').val(numberWithCommas(secondValue));
+
+			clearInterval(dynamicGetValue);
+			dynamicGetValue = setInterval(function () {
+				secondValue *= (Math.random() * (1025 - 975) + 975) / 1000;
+				$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
+			}, 1000);
+
 		} else {
 			var secondValue = $(this).val();
 			var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
@@ -1743,7 +1759,7 @@ $(function () {
 
 	/* Portfolio graph range slider for Orders */
 	var $portfolioGraphRange = $(".portfolio-graph-range__control");
-	$portfolioGraphRange.on( 'input', function( ) {
+	$portfolioGraphRange.on('input', function () {
 		if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(this.value, {}, true);
 		switch (parseInt(this.value)) {
 			case 0:
@@ -1759,11 +1775,11 @@ $(function () {
 				$('.portfolio-graph-range__current').html("1m");
 				break;
 			case 4:
-				$('.portfolio-graph-range__current').html("All");				
+				$('.portfolio-graph-range__current').html("All");
 				break;
 		}
 		redrawMainChart();
-	} );
+	});
 	// $portfolioGraphRange.ionRangeSlider({
 	// 	type: "single",
 	// 	hide_min_max: true,
@@ -1783,7 +1799,7 @@ $(function () {
 
 	/* main graph range slider for Orders */
 	var $mainGraphRange = $(".graph-range-slider__control");
-	$mainGraphRange.on( 'input', function( ) {
+	$mainGraphRange.on('input', function () {
 		// $( this ).css( 'background', 'linear-gradient(to right, var(--clr-time-bar) 0%, var(--clr-time-bar) '+this.value*25 +'%, var(--clr-time-line) ' + this.value*25 + '%, var(--clr-time-line) 100%)' );
 		switch (parseInt(this.value)) {
 			case 0:
@@ -1802,7 +1818,7 @@ $(function () {
 				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - (1000 * 3600 * 24));
 				break;
 			case 3:
-			$('.graph-range-slider__current').html("1m");
+				$('.graph-range-slider__current').html("1m");
 				var d = new Date(maxDate);
 				d.setMonth(d.getMonth() - 1);
 				mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
@@ -1813,6 +1829,6 @@ $(function () {
 				break;
 		}
 		redrawMainChart();
-	} );
+	});
 
 });
