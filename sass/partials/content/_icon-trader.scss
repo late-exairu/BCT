@@ -9,20 +9,33 @@
 	align-items: center;
 	justify-content: center;
 	height: 20px;
-    width: 25px;
+    width: 20px;
 	margin: 0 2px 0 0;
 
 	&:after {
 		content: '';
-		font-size: 24px;
+		font-size: 16px;
 		display: block;
 	};
 
 	&.binance:after		{ @include sprite(trader-binance); }
-	&.okex:after		{ @include sprite(trader-okex); }
-	&.huobi:after		{ @include sprite(trader-huobi); }
 	&.bitfinex:after	{ @include sprite(trader-bitfinex); }
-	&.coinbene:after	{ @include sprite(trader-coinbene); }
+	&.bitflyer:after	{ @include sprite(trader-bitflyer); }
+	&.bithumb:after		{ @include sprite(trader-bithumb); }
+	&.bitstamp:after	{ @include sprite(trader-bitstamp); }
+	&.bittrex:after		{ @include sprite(trader-bittrex); }
+	&.cexio:after		{ @include sprite(trader-cexio); }
 	&.coinbase:after	{ @include sprite(trader-coinbase); }
+	&.coinone:after		{ @include sprite(trader-coinone); }
+	&.exmo:after		{ @include sprite(trader-exmo); }
+	&.gateio:after		{ @include sprite(trader-gateio); }
+	&.gemini:after		{ @include sprite(trader-gemini); }
+	&.hitbtc:after		{ @include sprite(trader-hitbtc); }
+	&.houbi:after		{ @include sprite(trader-houbi); }
 	&.kraken:after		{ @include sprite(trader-kraken); }
+	&.livecoin:after	{ @include sprite(trader-livecoin); }
+	&.poloniex:after	{ @include sprite(trader-poloniex); }
+	&.quoine:after		{ @include sprite(trader-quoine); }
+	&.upbit:after		{ @include sprite(trader-upbit); }
+	&.yobit:after		{ @include sprite(trader-yobit); }
 }
