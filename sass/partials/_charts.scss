@@ -197,7 +197,7 @@
 		}
 
 		&.mainTooltip {
-			font-family: $osans;
+			// font-family: $osans;
 			font-size: 10px;
 
 			span {
@@ -205,11 +205,11 @@
 			}
 
 			.currencies {
-				font-size: 13px;
+				font-size: 12px;
 			}
 
 			.value {
-				font-size: 13px;
+				font-size: 12px;
 			}
 
 			div:first-child {
