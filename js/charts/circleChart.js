@@ -43,8 +43,8 @@ function drawCircleChart() {
         Ethereum: {
             price: '$' + eachBalance['ETH'],
         },
-        'US Dollar': {
-            price: '$' + eachBalance['USD'],
+        Tether: {
+            price: '$' + eachBalance['USDT'],
         },
         'Bitcoin Cash': {
             price: '$' + eachBalance['BCH'],
@@ -128,7 +128,7 @@ function drawCircleChart() {
             data: [
                 ['Ethereum', eachPercent['ETH']],
                 ['Bitcoin', eachPercent['BTC']],
-                ['US Dollar', eachPercent['USD']],
+                ['Tether', eachPercent['USDT']],
                 ['Bitcoin Cash', eachPercent['BCH']],
                 ['Litecoin', eachPercent['LTC']],
                 ['Ripple', eachPercent['RPL']],

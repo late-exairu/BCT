@@ -1901,7 +1901,7 @@ h6 {
       fill: #b1b0b0; }
     .exch-dropdown__icon.rpl {
       fill: #438bca; }
-    .exch-dropdown__icon.usd {
+    .exch-dropdown__icon.usdt {
       fill: #2a3e81; }
     .exch-dropdown__icon.mkr {
       fill: #1abc9c; }
@@ -1939,8 +1939,8 @@ h6 {
   .exch-dropdown .current .rpl,
   .exch-dropdown .exch-dropdown__border .rpl {
     fill: #438bca; }
-  .exch-dropdown .current .usd,
-  .exch-dropdown .exch-dropdown__border .usd {
+  .exch-dropdown .current .usdt,
+  .exch-dropdown .exch-dropdown__border .usdt {
     fill: #2a3e81; }
   .exch-dropdown .current .mkr,
   .exch-dropdown .exch-dropdown__border .mkr {
@@ -4415,8 +4415,8 @@ body.menubar-in #user-btn:before {
   .coin-dropdown .current .rpl,
   .coin-dropdown .coin-dropdown__border .rpl {
     fill: #438bca; }
-  .coin-dropdown .current .usd,
-  .coin-dropdown .coin-dropdown__border .usd {
+  .coin-dropdown .current .usdt,
+  .coin-dropdown .coin-dropdown__border .usdt {
     fill: #2a3e81; }
   .coin-dropdown .current .mkr,
   .coin-dropdown .coin-dropdown__border .mkr {

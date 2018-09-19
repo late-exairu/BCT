@@ -9,7 +9,7 @@ var wallets = {
     ownWallet: {
         'BTC': 0.00,
         'ETH': 0.00,
-        'USD': 100000.00,
+        'USDT': 100000.00,
         'BCH': 0.00,
         'LTC': 0.00,
         'RPL': 0.00,
@@ -81,7 +81,7 @@ var wallets = {
 }
 
 var currenciesPrice = {
-    'USD': 1,
+    'USDT': 1,
     'BTC': 6465.98,
     'ETH': 228.61,
     'BCH': 508.43,
@@ -151,7 +151,7 @@ function updateWalletData() {
 
     $('.walletBTC').html(numberWithCommas(currentWallet['BTC'].toFixed(2)) + '&nbsp;');
     $('.walletETH').html(numberWithCommas(currentWallet['ETH'].toFixed(2)) + '&nbsp;');
-    $('.walletUSD').html(numberWithCommas(currentWallet['USD'].toFixed(2)) + '&nbsp;');
+    $('.walletUSDT').html(numberWithCommas(currentWallet['USDT'].toFixed(2)) + '&nbsp;');
     $('.walletBCH').html(numberWithCommas(currentWallet['BCH'].toFixed(2)) + '&nbsp;');
     $('.walletLTC').html(numberWithCommas(currentWallet['LTC'].toFixed(2)) + '&nbsp;');
     $('.walletRPL').html(numberWithCommas(currentWallet['RPL'].toFixed(2)) + '&nbsp;');

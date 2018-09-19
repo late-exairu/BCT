@@ -153,8 +153,8 @@ $(function () {
 		var telegramGroupName = $(this).attr('data-telegram');
 		var currencyAbbr = $(this).attr('data-currency');
 		//var realCurrencyName = currencyName.slice(6).toLowerCase();
-		var realCurrencyName = currencyName;
-		if (realCurrencyName == 'us dollar') realCurrencyName = 'dollar';
+		//var realCurrencyName = currencyName;
+		//if (realCurrencyName == 'us dollar') realCurrencyName = 'dollar';
 
 		var newCurr = $(this).children().clone();
 		$(newCurr).eq(1).html('<span>' + currencyAbbr + '</span><br> ' + currencyName);
@@ -178,10 +178,10 @@ $(function () {
 				$('.chat-talk').eq($(this).index() - 1).removeClass('hidden');
 			}
 			$('.chat-head__name').text(telegramGroupName);
-			$('.chat-head__curr').remove();
-			$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
-			$('.exch-form__send .exch-form__coin').remove();
-			$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+			//$('.chat-head__curr').remove();
+			//$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+			//$('.exch-form__send .exch-form__coin').remove();
+			//$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.exch-form__send input').attr('data-currency', currencyAbbr);
 			$('.exch-form__send .exch-form__curr').html(currencyAbbr);
 			$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USD');
@@ -189,8 +189,8 @@ $(function () {
 		}
 		// second currency
 		else {
-			$('.exch-form__get .exch-form__coin').remove();
-			$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
+			//$('.exch-form__get .exch-form__coin').remove();
+			//$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.exch-form__get input').attr('data-currency', currencyAbbr);
 			$('.exch-form__get .exch-form__curr').html(currencyAbbr);
 			if ($('body').hasClass('advanced')) {
