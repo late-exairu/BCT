@@ -184,7 +184,7 @@ $(function () {
 			//$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.exch-form__send input').attr('data-currency', currencyAbbr);
 			$('.exch-form__send .exch-form__curr').html(currencyAbbr);
-			$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USD');
+			$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USDT');
 			$('.chat-head__name').css('color', firstColor);
 		}
 		// second currency
