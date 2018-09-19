@@ -350,11 +350,11 @@
 	}
 
 	.line {
-		background: var(--clr-line);
+		background: linear-gradient(to bottom, var(--clr-lineP) 0%, #ffffff 100%);
 		width: 1px;
 		height: 1px;
 		margin-top: -6px;
-		transform: translateX(-50%);
+		// transform: translateX(-50%);
 	}
 }
 
