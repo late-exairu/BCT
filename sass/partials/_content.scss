@@ -227,6 +227,43 @@
 	}
 }
 
+.cols-ico{
+	display: flex;
+	height: 100%;
+	flex-wrap: wrap;
+	padding: var(--gap-size);
+
+	&__col{
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		min-width: 32%;
+
+		iframe{
+			width: 100%;
+			height: 100%;
+			display: block;
+			overflow: hidden;
+			border-radius: 0;
+			border: 0 solid var(--clr-separator);
+		}
+	}
+
+	&__title{
+		padding: 3px 10px;
+		background: var(--clr-back);
+		font-size: 12px;
+		line-height: 1.2;
+		border-radius: var(--border-radius) var(--border-radius) 0 0;
+	}
+
+	&__content{
+		width: 100%;
+		height: 100%;
+		border: 1px solid var(--clr-back);
+	}
+}
+
 .message-bar__login {
 	align-items: flex-end;
 	cursor: pointer;
