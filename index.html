@@ -2580,10 +2580,42 @@
 
 		<div class="d-flex-col flex-1-1 flex-h-fix">
 			<form class="transaction-form">
-				<div class="transaction-form__line convert">
-					<input class="transaction-form__input" type="text" name="" value="1000.000 BTC">
-					<div class="transaction-form__sep">≈</div>
-					<input class="transaction-form__input" type="text" name="" value="8197500.000 USD">
+				<div class="transaction-form__line inline">
+					<div class="transaction-form__input-group">
+						<input class="transaction-form__input" type="text" name="" value="1.00">
+						<div class="input-group-append">
+							<span class="input-group-text">BTC</span>
+						</div>
+					</div>
+					<div class="coin-dropdown">
+						<div class="coin-dropdown__border">
+							<div class="coin-dropdown__current">
+								<svg class="coin-dropdown__icon clr-dollar" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
+								</svg><p class="coin-dropdown__title">Bitcoin</p>
+
+								<div class="coin-dropdown__hangle">
+									<svg class="sprite-icon" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+									</svg>
+								</div>
+							</div>
+						</div>						
+
+						<div class="coin-dropdown__list">
+							<div class="coin-dropdown__item current" data-name="Bitcoin">
+								<svg class="coin-dropdown__icon btc" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-bitcoin"></use>
+								</svg><p class="coin-dropdown__title">Bitcoin</p>
+							</div>
+
+							<div class="coin-dropdown__item" data-name="Ethereum">
+								<svg class="coin-dropdown__icon eth" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#curr-ethereum"></use>
+								</svg><p class="coin-dropdown__title">Ethereum</p>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="transaction-form__line inner">

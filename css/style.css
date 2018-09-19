@@ -4241,6 +4241,196 @@ body.menubar-in #user-btn:before {
     z-index: 1;
     cursor: pointer; }
 
+/* =================================================================== */
+/* coin-dropdown */
+/* =================================================================== */
+.coin-dropdown {
+  position: relative;
+  font-family: "open_sans", sans-serif;
+  z-index: 8;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  /*border: 1px solid var(--clr-separatorD);*/
+  /*border-radius: calc(var(--border-radius) - 1px);*/
+  background: var(--clr-back);
+  transition: all 0.1s; }
+  .coin-dropdown.open {
+    /*border-radius: calc(var(--border-radius) - 1px) calc(var(--border-radius) - 1px) 0 0;*/ }
+    .coin-dropdown.open .coin-dropdown__list {
+      opacity: 1;
+      visibility: visible; }
+    .coin-dropdown.open .coin-dropdown__hangle .sprite-icon {
+      transform: rotate(-180deg); }
+    .coin-dropdown.open .coin-dropdown__border {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: 1px solid var(--clr-separatorW); }
+  .coin-dropdown__border {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--clr-separatorD);
+    overflow: hidden; }
+    .coin-dropdown__border:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+      background: var(--clr-block); }
+  .coin-dropdown__current {
+    width: 100%;
+    height: 100%;
+    padding: 0 25px 0 8px;
+    display: flex;
+    align-items: center;
+    transition: all .1s;
+    color: var(--clr-textD); }
+  .coin-dropdown__item {
+    width: 100%;
+    height: 100%;
+    padding: 0 25px 0 8px;
+    display: flex;
+    align-items: center;
+    transition: all .1s;
+    color: var(--clr-textD); }
+    .coin-dropdown__item span {
+      color: var(--clr-text);
+      text-decoration: underline; }
+  .coin-dropdown__hangle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .coin-dropdown__hangle:hover .sprite-icon {
+      fill: var(--clr-textL); }
+    .coin-dropdown__hangle .sprite-icon {
+      position: relative;
+      width: 10px;
+      height: 6px;
+      fill: var(--clr-textLL);
+      transition: all 0.2s; }
+      .coin-dropdown__hangle .sprite-icon.arrow {
+        display: block; }
+      .coin-dropdown__hangle .sprite-icon.close {
+        height: 15px;
+        display: none; }
+  .coin-dropdown__list-title {
+    position: relative;
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+    height: 45px;
+    font-size: 16px;
+    background: var(--clr-back);
+    color: var(--clr-text);
+    margin: 0 0 -1px; }
+  .coin-dropdown__list {
+    position: absolute;
+    height: 28px;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    background: var(--clr-block);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border: 1px solid var(--clr-separatorD); }
+  .coin-dropdown__item {
+    font-size: 18px;
+    height: 28px;
+    cursor: pointer;
+    color: var(--clr-textD); }
+    .coin-dropdown__item span {
+      font-weight: 700; }
+    .coin-dropdown__item .coin-dropdown__icon {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px; }
+    .coin-dropdown__item.current {
+      display: none; }
+  .coin-dropdown__icon {
+    width: 16px;
+    height: 16px;
+    margin: 0 5px 0 0;
+    flex: 0 0 16px;
+    /*fill: var(--clr-textL);*/ }
+    .coin-dropdown__icon.btc {
+      fill: #f79330; }
+    .coin-dropdown__icon.eth {
+      fill: #707cb9; }
+    .coin-dropdown__icon.bcc {
+      fill: #83c55f; }
+    .coin-dropdown__icon.ltc {
+      fill: #b1b0b0; }
+    .coin-dropdown__icon.rpl {
+      fill: #438bca; }
+    .coin-dropdown__icon.mkr {
+      fill: #1abc9c; }
+    .coin-dropdown__icon.xmr {
+      fill: #ff6600; }
+    .coin-dropdown__icon.dash {
+      fill: #008CE7; }
+    .coin-dropdown__icon.xrp {
+      fill: #23292F; }
+  .coin-dropdown__title {
+    padding: 0px 0 0;
+    margin: 0;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: -0.03em; }
+    .coin-dropdown__title span {
+      position: relative;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 700;
+      left: -1px; }
+  .coin-dropdown .current .btc,
+  .coin-dropdown .coin-dropdown__border .btc {
+    fill: #f79330; }
+  .coin-dropdown .current .eth,
+  .coin-dropdown .coin-dropdown__border .eth {
+    fill: #707cb9; }
+  .coin-dropdown .current .bcc,
+  .coin-dropdown .coin-dropdown__border .bcc {
+    fill: #83c55f; }
+  .coin-dropdown .current .ltc,
+  .coin-dropdown .coin-dropdown__border .ltc {
+    fill: #b1b0b0; }
+  .coin-dropdown .current .rpl,
+  .coin-dropdown .coin-dropdown__border .rpl {
+    fill: #438bca; }
+  .coin-dropdown .current .usd,
+  .coin-dropdown .coin-dropdown__border .usd {
+    fill: #2a3e81; }
+  .coin-dropdown .current .mkr,
+  .coin-dropdown .coin-dropdown__border .mkr {
+    fill: #1abc9c; }
+  .coin-dropdown .current .xmr,
+  .coin-dropdown .coin-dropdown__border .xmr {
+    fill: #ff6600; }
+  .coin-dropdown .current .dash,
+  .coin-dropdown .coin-dropdown__border .dash {
+    fill: #008CE7; }
+  .coin-dropdown .current .xrp,
+  .coin-dropdown .coin-dropdown__border .xrp {
+    fill: #23292F; }
+
 /* Ion.RangeSlider
 // css version 2.0.3
 // © 2013-2014 Denis Ineshin | IonDen.com
@@ -7180,6 +7370,41 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
         border: none;
         padding: 5px 5px;
         width: calc(50% - 12px); }
+    .transaction-form__line.inline {
+      flex-direction: row; }
+  .transaction-form__input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: calc(50% - 5px); }
+    .transaction-form__input-group:first-child {
+      margin-right: 10px; }
+    .transaction-form__input-group > .transaction-form__input {
+      position: relative;
+      flex: 1 1 auto;
+      width: 1%;
+      font-weight: 700; }
+      .transaction-form__input-group > .transaction-form__input:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0; }
+    .transaction-form__input-group .input-group-append {
+      display: flex;
+      margin-left: -1px; }
+      .transaction-form__input-group .input-group-append > .input-group-text {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        color: var(--clr-textD);
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+        background-color: #d9dadb;
+        border: 1px solid var(--clr-separatorD);
+        border-radius: var(--border-radius);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0; }
   .transaction-form__label {
     color: var(--clr-text); }
   .transaction-form__sep {
@@ -7298,6 +7523,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     margin: 10px 0; }
   .transaction-form .bold {
     font-weight: bold; }
+  .transaction-form .coin-dropdown {
+    width: calc(50% - 5px); }
 
 .autentificator__title {
   position: relative;

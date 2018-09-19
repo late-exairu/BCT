@@ -1,0 +1,218 @@
+
+/* =================================================================== */
+/* coin-dropdown */
+/* =================================================================== */
+
+
+.coin-dropdown{
+	position: relative;
+	font-family: $osans;
+	z-index: 8;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	cursor: pointer;
+	/*border: 1px solid var(--clr-separatorD);*/
+	/*border-radius: calc(var(--border-radius) - 1px);*/
+	background: var(--clr-back);
+    transition: all 0.1s;
+
+	&.open{
+		/*border-radius: calc(var(--border-radius) - 1px) calc(var(--border-radius) - 1px) 0 0;*/
+
+		.coin-dropdown__list{
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.coin-dropdown__hangle{
+			.sprite-icon{
+				transform: rotate(-180deg);
+			}
+        }
+        
+        .coin-dropdown__border{
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom: 1px solid var(--clr-separatorW)
+        }
+	}
+
+	&__border{
+        position: relative;
+		width: 100%;
+		height: 100%;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--clr-separatorD);
+		overflow: hidden;
+
+		&:before{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			z-index: -1;
+			background: var(--clr-block);                        
+		}
+	}
+
+	&__current{
+		width: 100%;
+		height: 100%;
+		padding: 0 25px 0 8px;
+		display: flex;
+		align-items: center;
+		transition: all .1s;
+		color: var(--clr-textD);
+	}
+
+	&__item{
+		width: 100%;
+		height: 100%;
+		padding: 0 25px 0 8px;
+		display: flex;
+		align-items: center;
+		transition: all .1s;
+		color: var(--clr-textD);
+		
+		span{
+			color: var(--clr-text);
+			text-decoration: underline;
+		}
+	}
+
+	&__hangle{
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover{
+			.sprite-icon{
+				fill: var(--clr-textL);
+			}
+		}
+
+		.sprite-icon{
+			position: relative;
+			width: 10px;
+			height: 6px;
+			fill: var(--clr-textLL);
+			transition: all 0.2s;
+
+			&.arrow{ display: block; }
+			&.close{ height: 15px; display: none; }
+		}
+	}
+
+	&__list-title{
+		position: relative;
+		display: flex;
+		padding: 0 15px;
+		align-items: center;
+		height: 45px;
+		font-size: 16px;
+		background: var(--clr-back);
+		color: var(--clr-text);
+		margin: 0 0 -1px;
+	}
+
+	&__list{
+		position: absolute;
+		height: 28px;
+		z-index: 5;
+		left: 0;
+		right: 0;
+		top: 100%;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.2s;
+		background: var(--clr-block);
+        border-radius: 0 0 var(--border-radius) var(--border-radius);  
+        border: 1px solid var(--clr-separatorD);      
+	}
+
+	&__item{
+		font-size: 18px;
+		height: 28px;
+		cursor: pointer;
+		color: var(--clr-textD);
+
+		span{
+			font-weight: 700;
+		}
+
+		.coin-dropdown__icon{
+			width: 16px;
+			height: 16px;
+			flex: 0 0 16px;
+		}
+
+		&:hover{
+            // background-color: var(--clr-backLL);
+		}
+
+		&.current{
+			display: none;
+		}
+	}
+
+	&__icon{
+		width: 16px;
+		height: 16px;
+		margin: 0 5px 0 0;
+		flex: 0 0 16px;
+		/*fill: var(--clr-textL);*/
+
+		&.btc { fill: #f79330; }
+		&.eth { fill: #707cb9; }
+		&.bcc { fill: #83c55f; }
+		&.ltc { fill: #b1b0b0; }
+		&.rpl { fill: #438bca; }
+    	&.mkr { fill: #1abc9c; }
+		&.xmr { fill: #ff6600; }
+		&.dash { fill: #008CE7; }
+		&.xrp { fill: #23292F; }
+	}
+
+	&__title{
+		padding: 0px 0 0;
+		margin: 0;
+		line-height: 1;
+		font-weight: 700;
+		font-size: 13px;
+		letter-spacing: -0.03em;
+
+		span{
+			position: relative;
+			text-transform: uppercase;
+			font-size: 18px;
+			font-weight: 700;
+			left: -1px;
+		}
+	}
+
+	.current,
+	.coin-dropdown__border {
+		.btc { fill: #f79330; }
+		.eth { fill: #707cb9; }
+		.bcc { fill: #83c55f; }
+		.ltc { fill: #b1b0b0; }
+		.rpl { fill: #438bca; }
+		.usd { fill: #2a3e81; }
+		.mkr { fill: #1abc9c; }
+		.xmr { fill: #ff6600; }
+		.dash { fill: #008CE7; }
+		.xrp { fill: #23292F; }
+	}
+
+}

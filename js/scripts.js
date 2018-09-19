@@ -1868,4 +1868,29 @@ $(function () {
 		redrawMainChart();
 	});	
 
+	/* .coin-dropdown handler */
+	$('.transaction-form .coin-dropdown .coin-dropdown__border').click(function () {
+		$('.transaction-form .coin-dropdown').removeClass('open');
+		$(this).parent().addClass('open');
+	});
+
+	$('.transaction-form .coin-dropdown .coin-dropdown__hangle').click(function () {
+		if ($(this).hasClass('coin-dropdown__hangle')) event.stopPropagation();
+		$('.transaction-form .coin-dropdown').toggleClass('open');
+		$('.coin-dropdown .coin-dropdown__current').removeClass('hidden');
+	});
+
+	$('.coin-dropdown__list .coin-dropdown__item').click(function () {
+		var currencyName = $(this).data('name');
+		var newCurr = $(this).children().clone();
+		$(newCurr).eq(1).html(currencyName);
+		var currDropdown = $(this).closest('.coin-dropdown');
+		currDropdown.find('.coin-dropdown__item').removeClass('current');
+		$(this).addClass('current');
+		$(currDropdown).find('.coin-dropdown__current > svg, .coin-dropdown__current > p').remove();
+		$(newCurr).insertBefore($(currDropdown).find('.coin-dropdown__hangle').eq(0));
+
+		// close dropdown
+		$(currDropdown).removeClass('open');
+	});
 });
