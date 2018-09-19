@@ -79,7 +79,7 @@
 									<div class="chats-list__info">
 										<p class="chats-list__time">12:48 AM</p>
 										<p class="chats-list__action">
-											<button class="chats-list__send">
+											<button class="chats-list__send" data-fancybox data-src="#send-popup">
 												<svg class="sprite-icon" role="img" aria-hidden="true">
 													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#send-bitcoin"></use>
 												</svg>
@@ -2563,6 +2563,35 @@
 					<button class="transaction-form__btn js-fancybox-close" type="reset">CANCEL</button>
 					<button class="transaction-form__btn submit">CONFIRM</button>
 				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="basic-popup transaction-popup" id="send-btc-popup" style="display: none;">
+	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
+		<div class="c-block-head">
+			<div class="c-block-head__left js-dropdown-wrap">
+				<h2 class="c-block-head__title">
+					Send BTC
+				</h2>
+			</div>
+		</div>
+
+		<div class="d-flex-col flex-1-1 flex-h-fix">
+			<form class="transaction-form">
+				<div class="transaction-form__line convert">
+					<input class="transaction-form__input" type="text" name="" value="1000.000 BTC">
+					<div class="transaction-form__sep">≈</div>
+					<input class="transaction-form__input" type="text" name="" value="8197500.000 USD">
+				</div>
+
+				<div class="transaction-form__line inner">
+					<label class="transaction-form__label">To <span class="bold">Bitcoin</span> Address:</label>
+					<input class="transaction-form__input bold" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
+				</div>
+
+				<button class="transaction-form__btn submit js-fancybox-close" data-fancybox data-src="#autentificator-popup">SEND</button>
 			</form>
 		</div>
 	</div>

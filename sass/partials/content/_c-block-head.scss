@@ -9,7 +9,7 @@
 	padding: 4px 10px 3px 12px;
 	display: flex;
 	justify-content: space-between;
-	background: var(--clr-back);
+	background: var(--clr-back-new);
 	border-radius: 5px 5px 0 0;
 
 	&.no-bg{
@@ -32,7 +32,7 @@
 	&__title{
 		font-size: 14px;
 		margin: 0;
-		color: var(--clr-text);
+		color: var(--clr-popup-title);
 		font-weight: 700;
 
 		span{

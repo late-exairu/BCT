@@ -81,3 +81,13 @@
 	min-width: 255px;
 	max-width: 255px;
 }
+
+#send-btc-popup{
+	.transaction-form{
+		padding: 13px 10px;
+
+		.transaction-form__line{
+			margin-bottom: 13px;
+		}
+	}
+}

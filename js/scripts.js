@@ -796,7 +796,7 @@ $(function () {
 
 	/*---------------------------------------------------*/
 	/* chat events */
-	/*---------------------------------------------------*/
+	/*---------------------------------------------------*/	
 
 	$('.chat-head__back').click(function () {
 		$('.main-cols__left-top .d-flex .c-block__col').toggleClass('hidden');
@@ -807,6 +807,39 @@ $(function () {
 		var chatName = $(this).find('.chats-list__name').text();
 		$('.chat-head__name').text(chatName);
 		$('.main-cols__left-top .d-flex .c-block__col, .chat-talk').toggleClass('hidden');
+	});
+
+	/** send bitcoin button event in the chat list */
+	$('.chats-list__send').click(function(e) {
+		event.preventDefault();
+		e.stopPropagation();		
+		var fancies_length = $('.b-graph .c-block .fancybox-container').length;
+		if (fancies_length < 1) {
+			$.fancybox.open({
+				src: '#send-btc-popup',
+				opts: {
+					afterShow: function (instance, current) {
+						var fancybox_body = $('.fancybox-container')[0];
+						$('.b-graph .c-block')[0].append(fancybox_body);
+						$('.b-graph .c-block .fancybox-container')
+							.css({
+								"width": "100%",
+								"height": "100%",
+								"display": "block",
+								"position": "absolute"
+							})
+							.css("display", "block");
+					},
+					beforeShow: function () {
+						$('.fancybox-container').css("display", "none");
+					},
+					beforeClose: function () {
+						//$('.exch-form').removeClass('progress');
+						// $('.exch-head').toggleClass('open');						
+					}
+				}
+			});
+		}
 	});
 
 	/* 	
@@ -1833,6 +1866,6 @@ $(function () {
 				break;
 		}
 		redrawMainChart();
-	});
+	});	
 
 });

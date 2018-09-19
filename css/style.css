@@ -70,7 +70,11 @@
   --clr-time-bar:		#2E2E2E;
   /*time control bar background color*/
   --clr-time-slider:	#737373;
-  /*time control slider color*/ }
+  /*time control slider color*/
+  --clr-popup-close:	#00aaf8;
+  /*popup close background color*/
+  --clr-popup-title:	#00aaf8;
+  /* popup title text color*/ }
 
 .dark-theme {
   --clr-text:			#9ba6b2;
@@ -134,7 +138,11 @@
   --clr-time-bar:		#9BA6B2;
   /*time control bar background color*/
   --clr-time-slider:	#18202d;
-  /*time control slider color*/ }
+  /*time control slider color*/
+  --clr-popup-close:	#286bb4;
+  /*popup close background color*/
+  --clr-popup-title:	#9ba6b2;
+  /* popup title text color*/ }
 
 /**
  * The following variable and function originate from the sass-mq library.
@@ -1136,7 +1144,7 @@ h6 {
   padding: 4px 10px 3px 12px;
   display: flex;
   justify-content: space-between;
-  background: var(--clr-back);
+  background: var(--clr-back-new);
   border-radius: 5px 5px 0 0; }
   .c-block-head.no-bg {
     background: transparent; }
@@ -1152,7 +1160,7 @@ h6 {
   .c-block-head__title {
     font-size: 14px;
     margin: 0;
-    color: var(--clr-text);
+    color: var(--clr-popup-title);
     font-weight: 700; }
     .c-block-head__title span {
       font-size: 14px; }
@@ -1594,7 +1602,8 @@ h6 {
     border: none;
     line-height: 1;
     background: #f6921e;
-    border-radius: 6px; }
+    border-radius: 6px;
+    z-index: 9; }
     .chats-list__send .sprite-icon {
       margin-right: 3px;
       width: 6px;
@@ -7287,6 +7296,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 			}*/ }
   .transaction-form .cubic-slider {
     margin: 10px 0; }
+  .transaction-form .bold {
+    font-weight: bold; }
 
 .autentificator__title {
   position: relative;
@@ -7956,6 +7967,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   min-width: 255px;
   max-width: 255px; }
 
+#send-btc-popup .transaction-form {
+  padding: 13px 10px; }
+  #send-btc-popup .transaction-form .transaction-form__line {
+    margin-bottom: 13px; }
+
 /* =================================================================== */
 /* Content */
 /* =================================================================== */
@@ -7985,7 +8001,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   height: 20px;
   padding: 0;
   border-radius: 50%;
-  background: var(--clr-accentD);
+  background: var(--clr-popup-close);
   color: #fff; }
   .fancybox-close-small svg {
     margin: -3px 0 0 -3px;
