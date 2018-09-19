@@ -2879,7 +2879,8 @@ Blocks from left bar
     line-height: 24px; }
 
 .nav-bar {
-  width: calc(100% + 1px); }
+  width: calc(100% + 1px);
+  margin: 10px 0 0; }
   .nav-bar__item {
     display: flex;
     flex-direction: column;
