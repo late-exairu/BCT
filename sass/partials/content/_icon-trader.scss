@@ -18,24 +18,36 @@
 		display: block;
 	};
 
-	&.binance:after		{ @include sprite(trader-binance); }
-	&.bitfinex:after	{ @include sprite(trader-bitfinex); }
-	&.bitflyer:after	{ @include sprite(trader-bitflyer); }
-	&.bithumb:after		{ @include sprite(trader-bithumb); }
-	&.bitstamp:after	{ @include sprite(trader-bitstamp); }
-	&.bittrex:after		{ @include sprite(trader-bittrex); }
-	&.cexio:after		{ @include sprite(trader-cexio); }
-	&.coinbase:after	{ @include sprite(trader-coinbase); }
-	&.coinone:after		{ @include sprite(trader-coinone); }
-	&.exmo:after		{ @include sprite(trader-exmo); }
-	&.gateio:after		{ @include sprite(trader-gateio); }
-	&.gemini:after		{ @include sprite(trader-gemini); }
-	&.hitbtc:after		{ @include sprite(trader-hitbtc); }
-	&.houbi:after		{ @include sprite(trader-houbi); }
-	&.kraken:after		{ @include sprite(trader-kraken); }
-	&.livecoin:after	{ @include sprite(trader-livecoin); }
-	&.poloniex:after	{ @include sprite(trader-poloniex); }
-	&.quoine:after		{ @include sprite(trader-quoine); }
-	&.upbit:after		{ @include sprite(trader-upbit); }
-	&.yobit:after		{ @include sprite(trader-yobit); }
+	&.binance:after			{ @include sprite(trader-binance); }
+	&.bitebtc:after			{ @include sprite(trader-bitebtc); }
+	&.bitfinex:after		{ @include sprite(trader-bitfinex); }
+	&.bitflyer:after		{ @include sprite(trader-bitflyer); }
+	&.bitflyer:after		{ @include sprite(trader-bitflyer); }
+	&.bithumb:after			{ @include sprite(trader-bithumb); }
+	&.bitstamp:after		{ @include sprite(trader-bitstamp); }
+	&.bittrex:after			{ @include sprite(trader-bittrex); }
+	&.cexio:after			{ @include sprite(trader-cexio); }
+	&.coinbase:after		{ @include sprite(trader-coinbase); }
+	&.coinone:after			{ @include sprite(trader-coinone); }
+	&.coinone:after			{ @include sprite(trader-coinone); }
+	&.cryptopia:after		{ @include sprite(trader-cryptopia); }
+	&.exmo:after			{ @include sprite(trader-exmo); }
+	&.exx:after				{ @include sprite(trader-exx); }
+	&.gateio:after			{ @include sprite(trader-gateio); }
+	&.gemini:after			{ @include sprite(trader-gemini); }
+	&.hitbtc:after			{ @include sprite(trader-hitbtc); }
+	&.houbi:after			{ @include sprite(trader-houbi); }
+	&.indodax:after			{ @include sprite(trader-indodax); }
+	&.itbit:after			{ @include sprite(trader-itbit); }
+	&.korbit:after			{ @include sprite(trader-korbit); }
+	&.kraken:after			{ @include sprite(trader-kraken); }
+	&.kucoin:after			{ @include sprite(trader-kucoin); }
+	&.liqui:after			{ @include sprite(trader-liqui); }
+	&.livecoin:after		{ @include sprite(trader-livecoin); }
+	&.localbitcoins:after	{ @include sprite(trader-localbitcoins); }
+	&.poloniex:after		{ @include sprite(trader-poloniex); }
+	&.quoine:after			{ @include sprite(trader-quoine); }
+	&.upbit:after			{ @include sprite(trader-upbit); }
+	&.vaultoro:after		{ @include sprite(trader-vaultoro); }
+	&.yobit:after			{ @include sprite(trader-yobit); }
 }
