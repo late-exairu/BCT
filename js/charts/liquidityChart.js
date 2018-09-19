@@ -127,7 +127,7 @@ var liquidityChartOptions = {
 			var year = date.getFullYear();            
             // edit value to ~8k
             var TooltipValue = (this.y).toFixed(2);
-            return '<div class="tooltip font10">' +
+            return '<div class="tooltip font10 liquidityTooltip">' +
                 "<div class='font12 textCenter bold'>$" + TooltipValue + '</div> <div class="gray">' +
                 dayName + ', ' + month + ' ' + date.getDate() +', ' +year +
                 '</div></div>';
