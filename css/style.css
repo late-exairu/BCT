@@ -1144,7 +1144,7 @@ h6 {
   padding: 4px 10px 3px 12px;
   display: flex;
   justify-content: space-between;
-  background: var(--clr-back-new);
+  background: var(--clr-back);
   border-radius: 5px 5px 0 0; }
   .c-block-head.no-bg {
     background: transparent; }
@@ -7847,6 +7847,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   margin-left: -2.041%; }
   .highcharts-tooltip div.tooltip,
   .highcharts-tooltip div.tooltipCircle {
+    font-family: "open_sans", sans-serif;
     opacity: 1;
     padding: 2px 5px;
     z-index: 9999 !important;
@@ -7865,13 +7866,15 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     .highcharts-tooltip div.tooltip .textCenter {
       text-align: center; }
     .highcharts-tooltip div.tooltip.mainTooltip {
-      font-size: 10px; }
+      font-family: "open_sans", sans-serif;
+      font-size: 11px; }
       .highcharts-tooltip div.tooltip.mainTooltip span {
         color: var(--clr-text-tooltip); }
       .highcharts-tooltip div.tooltip.mainTooltip .currencies {
         font-size: 12px; }
       .highcharts-tooltip div.tooltip.mainTooltip .value {
-        font-size: 12px; }
+        font-size: 12px;
+        font-weight: 700; }
       .highcharts-tooltip div.tooltip.mainTooltip div:first-child {
         margin-bottom: -7px; }
     .highcharts-tooltip div.tooltip.blackColor {
@@ -7901,6 +7904,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       .highcharts-tooltip div.tooltipCircle .price span {
         line-height: 20px;
         /*font-weight: 600;*/ }
+  .highcharts-tooltip div.liquidityTooltip {
+    font-family: "open_sans", sans-serif; }
   .highcharts-tooltip span svg {
     width: 20px;
     height: 20px;
@@ -7924,7 +7929,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   color: white !important; }
 
 .advanced .gray {
-  color: #575D63; }
+  color: #727679; }
 
 /* .secondTooltip {
 	left: -9999px;

@@ -173,6 +173,7 @@
 
 	div.tooltip,
 	div.tooltipCircle {
+		font-family: $osans;
 		opacity: 1;
 		padding: 2px 5px;
 		z-index: 9999 !important;
@@ -197,8 +198,8 @@
 		}
 
 		&.mainTooltip {
-			// font-family: $osans;
-			font-size: 10px;
+			font-family: $osans;
+			font-size: 11px;
 
 			span {
 				color: var(--clr-text-tooltip);
@@ -210,6 +211,7 @@
 
 			.value {
 				font-size: 12px;
+				font-weight: 700;
 			}
 
 			div:first-child {
@@ -255,6 +257,10 @@
 		}
 	}
 
+	div.liquidityTooltip {
+		font-family: $osans;
+	}
+
 	span svg {
 		width: 20px;
 		height: 20px;
@@ -289,7 +295,7 @@
 }
 
 .advanced .gray {
-	color: #575D63;
+	color: #727679;
 }
 
 /* .secondTooltip {
