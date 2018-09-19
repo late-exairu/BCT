@@ -197,7 +197,7 @@
 		}
 
 		&.mainTooltip {
-			font-family: $osans;
+			// font-family: $osans;
 			font-size: 10px;
 
 			span {
@@ -205,11 +205,11 @@
 			}
 
 			.currencies {
-				font-size: 13px;
+				font-size: 12px;
 			}
 
 			.value {
-				font-size: 13px;
+				font-size: 12px;
 			}
 
 			div:first-child {
@@ -350,11 +350,11 @@
 	}
 
 	.line {
-		background: var(--clr-line);
+		background: linear-gradient(to bottom, var(--clr-lineP) 0%, #ffffff 100%);
 		width: 1px;
 		height: 1px;
 		margin-top: -6px;
-		transform: translateX(-50%);
+		// transform: translateX(-50%);
 	}
 }
 

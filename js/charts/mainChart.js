@@ -350,12 +350,16 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			}
 
 			var currency_send = $('.exch-dropdown__current > p > span')[0].innerText;
-			var currency_get = $('.exch-dropdown__current > p > span')[1].innerText;
-			var current_trader = $(".graph-prices__list .graph-prices__item.active .graph-prices__trader")[0].innerText;
+			var currency_get = $('.exch-dropdown__current > p > span')[1].innerText;			
+			var current_trader = "";
+			if ($(".graph-prices__list .graph-prices__item.active .graph-prices__trader").length > 0) {
+				current_trader = $(".graph-prices__list .graph-prices__item.active .graph-prices__trader").html().trim();
+				current_trader = ' (' + current_trader + ')';
+			}
 			
-			return '<div class="tooltip arrow_box mainTooltip ' + arrowDirection + '">' +
-				"<div><span class='currencies bold'>" + currency_send + "/" + currency_get + "</span> : <span class='value bold'>" + TooltipValue + '</span></div>' +
-				 dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + " (" + current_trader + ')</div>';
+			return '<div class="tooltip font10 arrow_box mainTooltip ' + arrowDirection + '">' +
+				"<div class='textCenter'><span class='currencies font12 bold'>" + currency_send + "/" + currency_get + "</span> : <span class='value font12 bold'>" + TooltipValue + '</span></div> <div class="gray">' +
+				 dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + current_trader + '</div></div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
 			//var graphWidth = $(mainChartObj.container).width();
