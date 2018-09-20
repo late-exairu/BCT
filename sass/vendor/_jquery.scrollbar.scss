@@ -113,7 +113,6 @@
 
 			.scroll-bar {
 				left: 0px;
-				min-height: 10px;
 				width: 15px;
 			}
 
@@ -125,7 +124,8 @@
 		}
 		.scroll-bar {
 			max-height: 70px;
-			height: 70px;
+			min-height: 50px;
+			/*height: 70px;*/
 			background: transparent;
 			opacity: 0;
 			transition: all .1s;
