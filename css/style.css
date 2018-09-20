@@ -7311,8 +7311,20 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     justify-content: center;
     border: none;
     line-height: 1;
-    background: linear-gradient(to bottom, #009ee2 0%, #218fe9 100%);
-    border-radius: var(--border-radius); }
+    background: transparent;
+    border-radius: var(--border-radius);
+    overflow: hidden; }
+  .exch-form__submit-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    background: url(../img/confirm-bg.svg) no-repeat; }
+    .exch-form__submit-bg > use {
+      display: none; }
   .exch-form__btn-triangle {
     position: absolute;
     left: auto;
@@ -7334,7 +7346,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     pointer-events: none; }
   .exch-form.progress .exch-form__submit {
     color: transparent;
-    background: var(--clr-block);
     margin: 0; }
     .exch-form.progress .exch-form__submit:after {
       content: '';
@@ -7345,6 +7356,13 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       top: 50%;
       transform: translate(-50%, -50%);
       background: url(../img/spin.svg); }
+  .exch-form.progress .exch-form__submit-bg {
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    fill: #fff; }
+    .exch-form.progress .exch-form__submit-bg > use {
+      display: block; }
   .exch-form.progress .exch-form__current {
     background: var(--clr-block); }
   .exch-form.progress .exch-form__curr {
@@ -7356,12 +7374,18 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .exch-form.progress .exch-form__btn-bg {
     fill: var(--clr-block); }
   .exch-form.completed .exch-form__submit {
-    color: var(--clr-block);
-    background: var(--clr-textLL); }
+    color: var(--clr-block); }
     .exch-form.completed .exch-form__submit:after {
       content: '';
       width: 0;
       height: 0; }
+  .exch-form.completed .exch-form__submit-bg {
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    fill: var(--clr-textLL); }
+    .exch-form.completed .exch-form__submit-bg > use {
+      display: block; }
   .exch-form.completed .exch-form__btn-bg {
     fill: var(--clr-textLL); }
 
