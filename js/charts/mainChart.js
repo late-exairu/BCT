@@ -668,6 +668,7 @@ $('#mainChart').mouseleave(function () {
 	$('.lineForMainChart').css(
 		'left', '-9999px',
 	);
+	$(this).find('.mainTooltip').hide();
 });
 
 $(window).resize(function () {
@@ -675,4 +676,3 @@ $(window).resize(function () {
 		'left', '-9999px',
 	);
 });
-
