@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#0A6FB2;}
-	.st1{fill:#010102;}
-</style>
+	 width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
 <g>
-	<polygon class="st0" points="29.9,24 29.9,8 16,0 2.1,8 2.1,24 16,32 	"/>
+	<polygon style="fill:#0A6FB2;" points="29.9,24 29.9,8 16,0 2.1,8 2.1,24 16,32 	"/>
 	<g>
-		<path class="st1" d="M6.5,13.8L9,16.7h0v-2.9h0.8V18H8.9l-2.5-3h0v3H5.6v-4.2H6.5z"/>
-		<path class="st1" d="M17.4,13.9l2.5,2.9h0v-2.9h0.8v4.2h-0.9l-2.5-3h0v3h-0.8v-4.2H17.4z"/>
-		<path class="st1" d="M13.5,13.8l2.2,4.2h-0.9l-0.4-0.9H12L11.6,18h-0.9l2-4.2H13.5z M12.4,16.4h1.6l-0.8-1.6h0L12.4,16.4z"/>
+		<path style="fill:#010102;" d="M6.5,13.8L9,16.7l0,0v-2.9h0.8V18H8.9l-2.5-3l0,0v3H5.6v-4.2H6.5z"/>
+		<path style="fill:#010102;" d="M17.4,13.9l2.5,2.9l0,0v-2.9h0.8v4.2h-0.9l-2.5-3l0,0v3h-0.8v-4.2C16.5,13.9,17.4,13.9,17.4,13.9z"
+			/>
+		<path style="fill:#010102;" d="M13.5,13.8l2.2,4.2h-0.9l-0.4-0.9H12L11.6,18h-0.9l2-4.2H13.5z M12.4,16.4H14l-0.8-1.6l0,0
+			L12.4,16.4z"/>
 	</g>
-	<polygon class="st1" points="16,25.1 16,29.8 27.9,22.9 27.9,9.2 23.8,6.8 23.8,20.5 	"/>
+	<polygon style="fill:#010102;" points="16,25.1 16,29.8 27.9,22.9 27.9,9.2 23.8,6.8 23.8,20.5 	"/>
 </g>
 </svg>

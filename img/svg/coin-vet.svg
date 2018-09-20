@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:url(#SVGID_1_);}
-	.st1{opacity:0.1;fill:#FFFFFF;enable-background:new    ;}
-</style>
+	 width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
 <title>color/xrp</title>
 <desc>Created with Sketch.</desc>
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.702884e-02" y1="15.89" x2="32.017" y2="15.89" gradientTransform="matrix(1 0 0 -1 0 31.89)">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="3.735378e-02" y1="752.1225" x2="32.0373" y2="752.1225" gradientTransform="matrix(1 0 0 1 0 -736.11)">
 	<stop  offset="0" style="stop-color:#9D4ABE"/>
 	<stop  offset="3.000000e-02" style="stop-color:#9055C4"/>
 	<stop  offset="0.15" style="stop-color:#6B74D6"/>
@@ -19,10 +15,6 @@
 	<stop  offset="0.83" style="stop-color:#15BDFF"/>
 	<stop  offset="1" style="stop-color:#28BAD5"/>
 </linearGradient>
-<path class="st0" d="M13.8,29.7L0.1,1.9c-0.2-0.4,0.1-1,0.6-1h4.7C5.7,0.9,5.9,1,6,1.3l10,20.2c0.9,1.8,3.5,1.8,4.4,0l10-20.2
-	c0.1-0.2,0.4-0.4,0.6-0.4h0.6c0.4,0,0.6,0.4,0.4,0.7L18.1,29.7C17.2,31.6,14.7,31.6,13.8,29.7z"/>
-<g transform="translate(0-70)">
-	<path class="st1" d="M13.8,29.7L6,1.3C5.9,1,5.7,0.9,5.5,0.9H0.7c-0.5,0-0.8,0.5-0.6,1L13.8,29.7z"/>
-	<path class="st1" d="M16,21.5L0.1,1.9c-0.2-0.5,0.1-0.9,0.5-1h4.8c0.3,0,0.5,0.2,0.6,0.4L16,21.5z"/>
-</g>
+<path style="fill:url(#SVGID_1_);" d="M13.8,29.7L0.1,1.9c-0.2-0.4,0.1-1,0.6-1h4.7C5.7,0.9,5.9,1,6,1.3l10,20.2
+	c0.9,1.8,3.5,1.8,4.4,0l10-20.2c0.1-0.2,0.4-0.4,0.6-0.4h0.6c0.4,0,0.6,0.4,0.4,0.7L18.1,29.7C17.2,31.6,14.7,31.6,13.8,29.7z"/>
 </svg>
