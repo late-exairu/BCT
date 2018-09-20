@@ -793,9 +793,10 @@ $(function () {
 				} else {
 					var conversion_part = remain_total_value / (progressbar_array.length - i);
 					rand = Math.floor(Math.random() * 2 * conversion_part * 100) / 100;
-					if (rand == 0) rand = 0.01;
+					if (remain_total_value > 0.01 && rand == 0) rand = 0.01;
 					remain_total_value -= rand;
 				}
+				if (rand == 0) rand = "0.00";
 				progressbar_labels[i].text(rand + ' ' + firstCurrency);
 			}
 			// end show exnchanges
@@ -1272,9 +1273,10 @@ $(function () {
 				} else {
 					var conversion_part = remain_total_value / (progressbar_array.length - i);
 					rand = Math.floor(Math.random() * 2 * conversion_part * 100) / 100;
-					if (rand == 0) rand = 0.01;
+					if (remain_total_value > 0.01 && rand == 0) rand = 0.01;
 					remain_total_value -= rand;
 				}
+				if (rand == 0) rand = "0.00";
 				progressbar_labels[i].text(rand + ' ' + sendCurrency);
 
 				if (!$('body').hasClass('advanced')) {
