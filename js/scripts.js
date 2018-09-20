@@ -1,5 +1,29 @@
 $(function () {
 
+
+	var read = new XMLHttpRequest();
+	read.open('GET', 'coins_list.txt', false);
+	read.send();
+
+	var allCurrenciesRaw = read.responseText;
+	var allCurrenciesArr = allCurrenciesRaw.split('\n');
+	var allCurrenciesHtml = '';
+
+	allCurrenciesArr.map(item => {
+		var coinTitle = item.split('-')[0].trim();
+		var coinShort = item.split('-')[1].trim();
+		var coinLowerCaseShort = item.split('-')[1].trim().toLowerCase();
+		
+		allCurrenciesHtml += 
+			'<div class="exch-dropdown__item" data-name="' + coinTitle + '" data-telegram="' + coinShort + ' ' + coinTitle + ' Room" data-currency="' + coinShort+'">'+
+			'<svg class="exch-dropdown__icon" role="img" aria-hidden="true">'+
+		'<use xmlns: xlink="http://www.w3.org/1999/xlink" xlink: href="img/sprite-inline.svg#coin-' + coinLowerCaseShort+'"></use>'+
+		'</svg> <p class="exch-dropdown__title"><b>' + coinShort + '</b> - ' + coinTitle+'</p>'+
+		'</div >'
+	});
+
+	$('.exch-dropdown__scroll').append(allCurrenciesHtml);
+
 	var svgArrowTemplate = '<svg class="basic-table__arrow-conv" role="img" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right-2"></use> </svg>';
 
 	function setOwnName() {

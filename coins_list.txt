@@ -1,0 +1,98 @@
+Bitcoin - BTC
+Ethereum - ETH
+XRP - XRP
+Bitcoin Cash - BCH
+EOS - EOS
+Stellar - XLM
+Litecoin - LTC
+Tether - USDT
+Cardano - ADA
+Monero - XMR
+IOTA - IOT
+Tron - TRX
+Ethereum Classic - ETC
+Dash - DASH
+NEO - NEO
+Binance Coin - BNB
+NEM - XEM
+VeChain - VET
+Tezos - XTZ
+ZCash - ZEC
+OmiseGo - OMG
+Lisk - LSK
+QTUM - QTUM
+0x - ZRX
+Ontology - ONT
+Bitcoin Gold - BTG
+ByteCoin - BCN
+Decred - DCR
+Dogecoin - DOGE
+Bitshares - BTS
+Maker - MKR
+DigiByte - DGB
+Zilliqa - ZIL
+Nano - NANO
+ICON Project - ICX
+Steem - STEEM
+Aeternity - AE
+Waves - WAVES
+Augur - REP
+Basic Attention Token - BAT
+Verge - XVG
+Siacoin - SC
+MOAC - MOAC
+Populous - PPT
+Bitcoin Diamond - BCD
+Bytom - BTM
+Pundi X - NPXS
+RChain - RHOC
+Golem Network Token - GNT
+Stratis - STRAT
+Status Network Token - SNT
+Metaverse - ETP
+Hshare - HSR
+KuCoin Shares - KCS
+Waltonchain - WTC
+Mithril - MITH
+IOStoken - IOST
+Komodo - KMD
+Dentacoin - DCN
+ChainLink - LINK
+Digix DAO - DGD
+MaidSafe Coin - MAID
+Ardor - ARDR
+Huobi Token - HT
+Ino Coin - INO
+Aion - AION
+ZenCash - ZEN
+Wanchain - WAN
+MonaCoin - MONA
+aelf - ELF
+FunFair - FUN
+Nebulas Token - NAS
+Bancor Network Token - BNT
+GXShares - GXS
+Bitcoin Private - BTCP
+Kin - KIN
+Mixin - XIN
+Cortex - CTXC
+Power Ledger - POWR
+ReddCoin - RDD
+TaTaTu - TTU
+Emercoin - EMC
+Decentraland - MANA
+HoloToken - HOT
+ZCoin - XZC
+ARK - ARK
+Elastos - ELA
+Monaco - MCO
+PIVX Coin - PIVX
+Nxt - NXT
+Worldwide Asset eXchange - WAX
+KyberNetwork Crystal - KNC
+TrueUSD - TUSD
+TenX - PAY
+QASH - QASH
+Loopring - LRC
+Nuls - NULS
+U.CASH - UCASH
