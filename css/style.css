@@ -8308,6 +8308,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   min-width: 255px;
   max-width: 255px; }
 
+#send-btc-popup .c-block-head {
+  background: var(--clr-back-new); }
+
 #send-btc-popup .transaction-form {
   padding: 13px 10px; }
   #send-btc-popup .transaction-form .transaction-form__line {

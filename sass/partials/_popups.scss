@@ -83,6 +83,10 @@
 }
 
 #send-btc-popup{
+	.c-block-head {
+		background: var(--clr-back-new);
+	}	
+	
 	.transaction-form{
 		padding: 13px 10px;
 
