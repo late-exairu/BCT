@@ -424,7 +424,7 @@ $(function () {
 	});
 
 	$('body').mousemove(function (e) {
-		if (e.pageY < $('.b-graph').offset().top || e.pageY > $('.b-graph').offset().top + $('.b-graph').height()) {
+		if ((e.pageY < $('.b-graph').offset().top || e.pageY > $('.b-graph').offset().top + $('.b-graph').height()) && !$('.graph-prices').hasClass('noClose')) {
 			$('.graph-prices').removeClass('open');
 			$('.b-graph__controls').removeClass('shifted');
 			redrawMainChart();
@@ -1300,7 +1300,7 @@ $(function () {
 						// increase exchanges numbers
 						exchanges++;
 						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(3).html(exchanges + " Exchanges");
-					}, 3800 + 800 * i, i)
+					}, 4000 + 800 * i, i)
 				}
 
 				if (i == progressbar_array.length - 1) {
@@ -1348,7 +1348,7 @@ $(function () {
 								firstClickAfterExchangeDone = false;
 							}
 						});
-					}, 3800 + 800 * i, i);
+					}, 4000 + 800 * i, i);
 				}
 			}
 
