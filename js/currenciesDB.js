@@ -1,3 +1,36 @@
+var read = new XMLHttpRequest();
+read.open('GET', 'coins_list.txt', false);
+read.send();
+
+var allCurrenciesRaw = read.responseText;
+var allCurrenciesArr = allCurrenciesRaw.split('\n');
+var allCurrenciesHtmlFirstColumn = '';
+var allCurrenciesHtmlSecondColumn = '';
+
+allCurrenciesArr.map(item => {
+    var coinTitle = item.split('-')[0].trim();
+    var coinShort = item.split('-')[1].trim();
+    var coinLowerCaseShort = item.split('-')[1].trim().toLowerCase();
+
+    allCurrenciesHtmlFirstColumn +=
+        '<div class="exch-dropdown__item" data-name="' + coinTitle + '" data-telegram="' + coinShort + ' ' + coinTitle + ' Room" data-currency="' + coinShort + '">' +
+        '<svg class="exch-dropdown__icon" role="img" aria-hidden="true">' +
+        '<use xmlns: xlink="http://www.w3.org/1999/xlink" xlink: href="img/sprite-inline.svg#coin-' + coinLowerCaseShort + '"></use>' +
+        '</svg> <p class="exch-dropdown__title"><b>' + coinShort + '</b> - ' + coinTitle + '</p>' +
+        '</div >';
+
+    allCurrenciesHtmlSecondColumn +=
+        '<div class="exch-dropdown__item" data-name="' + coinTitle + '" data-currency="' + coinShort + '">' +
+        '<svg class="exch-dropdown__icon" role="img" aria-hidden="true">' +
+        '<use xmlns: xlink="http://www.w3.org/1999/xlink" xlink: href="img/sprite-inline.svg#coin-' + coinLowerCaseShort + '"></use>' +
+        '</svg> <p class="exch-dropdown__title"><b>' + coinShort + '</b> - ' + coinTitle + '</p>' +
+        '</div >';
+
+});
+
+$('.exch-dropdown__scroll').eq(0).append(allCurrenciesHtmlFirstColumn);
+$('.exch-dropdown__scroll').eq(1).append(allCurrenciesHtmlSecondColumn);
+
 const numberWithCommas = (x) => {
     if(x)
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -8,16 +41,16 @@ var ownWallet;
 
 var wallets = {
     ownWallet: {
+        'USDT': 100000.00,
         'BTC': 0.00,
         'ETH': 0.00,
-        'USDT': 100000.00,
-        'BCH': 0.00,
         'LTC': 0.00,
+/*         'BCH': 0.00,
         'RPL': 0.00,
         'XMR': 0.00,
         'MKR': 0.00,
         'DASH': 0.00,
-        'XRP': 0.00,
+        'XRP': 0.00, */
     },
 /*     joeJonsonWallet: {
         'BTC': 1.50,
@@ -109,6 +142,26 @@ function updateWalletData() {
         eachBalance[key] = +eachBalance[key].toFixed(2);
         totalBalance += eachBalance[key];
 
+        if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').length){
+            var currencyName = $('.exch-dropdown__item[data-currency="'+key+'"]').eq(0).attr('data-name');
+            if($('body').hasClass('advanced')){
+
+            }else{
+                var newRow = '<div class="basic-table__row disabled" data-currency="' + key + '">' +
+                                '<div class="basic-table__col w-35">'+
+                                    '<svg class="basic-table__curr icon-curr clr-litecoin" role="img" aria-hidden="true">'+
+                                        '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + key.toLowerCase() + '"></use>' +
+                                    '</svg>'+
+                                    '<span class="wallet'+key+'"></span> ' + key + ' <span class="smaller">(' + currencyName + ')</span>' +
+                                '</div>'+
+                                '<div class="basic-table__col w-32 pricePerCoin' + key + '"></div>' +
+                                '<div class="basic-table__col w-32"><span class="pricePerCoin' + key + '"></span> <span class="smaller clr-blue">+1.25%</span></div>' +
+                            '</div>';
+            }
+            $('#panel-funds-wallet .basic-table__body .basic-table__body').append(newRow);
+            console.log('add row');
+        }
+
         if (currentWallet[key] != 0) {
             if ($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').removeClass('disabled');
@@ -122,6 +175,9 @@ function updateWalletData() {
 
             }
         }
+
+        $('.pricePerCoin'+key).html('$' + numberWithCommas(currenciesPrice[key]));
+        $('.wallet'+key).html(numberWithCommas(currentWallet[key].toFixed(2)) + '&nbsp;');
 
     }
     totalBalance = totalBalance.toFixed(2);
@@ -138,9 +194,9 @@ function updateWalletData() {
     $('.totalBalanceTrunc').html(numberWithCommas(totalBalanceTrunc));
     $('.totalBalanceFraction').html(totalBalanceFraction);
 
-    $('.pricePerCoinBTC').html('$' + numberWithCommas(currenciesPrice['BTC']));
     $('.clearPricePerCoinBTC').html(numberWithCommas(currenciesPrice['BTC']));
 
+/*     $('.pricePerCoinBTC').html('$' + numberWithCommas(currenciesPrice['BTC']));
     $('.pricePerCoinETH').html('$' + numberWithCommas(currenciesPrice['ETH']));
     $('.pricePerCoinBCH').html('$' + numberWithCommas(currenciesPrice['BCH']));
     $('.pricePerCoinLTC').html('$' + numberWithCommas(currenciesPrice['LTC']));
@@ -159,7 +215,7 @@ function updateWalletData() {
     $('.walletXMR').html(numberWithCommas(currentWallet['XMR'].toFixed(2)) + '&nbsp;');
     $('.walletMKR').html(numberWithCommas(currentWallet['MKR'].toFixed(2)) + '&nbsp;');
     $('.walletDASH').html(numberWithCommas(currentWallet['DASH'].toFixed(2)) + '&nbsp;');
-    $('.walletXRP').html(numberWithCommas(currentWallet['XRP'].toFixed(2)) + '&nbsp;');
+    $('.walletXRP').html(numberWithCommas(currentWallet['XRP'].toFixed(2)) + '&nbsp;'); */
 
 
     /*     $('.walletBTCPercent').html(eachPercent['BTC'].toFixed(0) + '%');
