@@ -1102,16 +1102,16 @@ $(function () {
 
 	function progress(i) {
 		var val = progressbar_array[i].progressbar("value") || 0;
-		if (val == 10) {
+		if (val == 30) {
 			progressbar_labels[i].css('visibility', 'visible');
 		}
-		progressbar_array[i].progressbar("value", val + 2);
-		progressbar_labels[i].css("width", (val + 2) + '%');
+		progressbar_array[i].progressbar("value", val + 1);
+		progressbar_labels[i].css("width", (val + 1) + '%');
 		if (val < 99) {
-			setTimeout(progress, 80, i);
-		} else if (i > 2) {
+			setTimeout(progress, 28, i);
+		} else if (i > 1 && i % 3 == 0) {
 			graphPricesScrollbar.animate({
-				scrollTop: '+=80'
+				scrollTop: '+=230'
 			}, "slow");
 		}
 	}
@@ -1264,7 +1264,7 @@ $(function () {
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
 				progressbar.progressbar("value", 0);
-				setTimeout(progress, 1000 + 1200 * i, i);
+				setTimeout(progress, 1000 + 800 * i, i);
 
 				var rand = 0;
 				if (i == progressbar_array.length - 1) {
@@ -1300,7 +1300,7 @@ $(function () {
 						// increase exchanges numbers
 						exchanges++;
 						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(3).html(exchanges + " Exchanges");
-					}, 4000 + 1000 + 1200 * i, i)
+					}, 1000 + 800 * i, i)
 				}
 
 				if (i == progressbar_array.length - 1) {
@@ -1348,7 +1348,7 @@ $(function () {
 								firstClickAfterExchangeDone = false;
 							}
 						});
-					}, 4000 + 1000 + 1200 * i, i);
+					}, 1000 + 800 * i, i);
 				}
 			}
 
