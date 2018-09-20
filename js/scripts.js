@@ -1281,7 +1281,7 @@ $(function () {
 					setTimeout(function () {
 						firstValueResult += firstValuePart;
 						secondValueResult += secondValuePart;
-						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html(firstValueResult.toFixed(2) + ' ' + sendCurrency + svgArrowTemplate + secondValueResult.toFixed(2) + ' ' + getCurrency)
+						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + numberWithCommas(firstValueResult.toFixed(2)) + ' ' + sendCurrency + svgArrowTemplate + (getCurrency == 'USDT' ? '$' :'') + numberWithCommas(secondValueResult.toFixed(2)) + ' ' + getCurrency)
 					}, 4000 + 1000 + 1200 * i, i);
 
 					// increase exchanges numbers
@@ -1345,7 +1345,7 @@ $(function () {
 			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
 			if (!$('body').hasClass('advanced')) {
 				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('<img src="img/spin-blue.svg">');
-				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html('0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency);
+				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + '0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency);
 				var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
 				var differenceMax = (currenciesPrice[sendCurrency] / currenciesPrice[getCurrency]) / 1250;
 				var differenceMin = differenceMax / 500;
@@ -1356,7 +1356,7 @@ $(function () {
 				} else {
 					result = result.toFixed(5);
 				}
-				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(2).html(result + ' ' + getCurrency);
+				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(2).html((getCurrency == 'USDT' ? '$' + numberWithCommas(result) : result) + ' ' + getCurrency);
 			}
 			$('.graph-prices').addClass('open noClose');
 			$('.b-graph__controls').addClass('shifted');
