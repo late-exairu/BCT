@@ -1426,7 +1426,13 @@ $(function () {
 				firstValue = $('.exch-form__send input').val();
 				secondValue = $('.exch-form__get input').val();
 			} else {
+				if (!ownWallet[sendCurrency]){
+					ownWallet[sendCurrency] = 0;
+				}
 				firstValue = ownWallet[sendCurrency].toFixed(2);
+				if (!currenciesPrice[sendCurrency]){
+					currenciesPrice[sendCurrency] = 1;
+				}
 				secondValue = ((ownWallet[sendCurrency] * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
 			}
 			$('.exch-form__send input').val(numberWithCommas(firstValue));
