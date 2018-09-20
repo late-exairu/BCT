@@ -1300,7 +1300,7 @@ $(function () {
 						// increase exchanges numbers
 						exchanges++;
 						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(3).html(exchanges + " Exchanges");
-					}, 1000 + 800 * i, i)
+					}, 3800 + 800 * i, i)
 				}
 
 				if (i == progressbar_array.length - 1) {
@@ -1348,7 +1348,7 @@ $(function () {
 								firstClickAfterExchangeDone = false;
 							}
 						});
-					}, 1000 + 800 * i, i);
+					}, 3800 + 800 * i, i);
 				}
 			}
 
