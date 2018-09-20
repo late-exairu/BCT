@@ -777,7 +777,7 @@ $(function () {
 			isSelectedPrevConversion = true;
 
 			// show exchanges of previous conversion
-			var remain_total_value = convertedArr[0].trim().slice(0, -4).replace(',', '');
+			var remain_total_value = convertedArr[1].trim().slice(0, -4).replace(',', '');
 			$('.icon-trader').addClass('hidden');
 			$('.graph-prices__item .progress-label').css({
 				'visibility': 'visible',
@@ -797,7 +797,7 @@ $(function () {
 					remain_total_value -= rand;
 				}
 				if (rand == 0) rand = "0.00";
-				progressbar_labels[i].text(rand + ' ' + firstCurrency);
+				progressbar_labels[i].text(rand + ' ' + secondCurrency);
 			}
 			// end show exnchanges
 		}
@@ -1261,7 +1261,7 @@ $(function () {
 				scrollTop: 0
 			}, "slow");
 
-			var remain_total_value = firstValue;
+			var remain_total_value = secondValue;
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
 				progressbar.progressbar("value", 0);
@@ -1277,7 +1277,7 @@ $(function () {
 					remain_total_value -= rand;
 				}
 				if (rand == 0) rand = "0.00";
-				progressbar_labels[i].text(rand + ' ' + sendCurrency);
+				progressbar_labels[i].text(rand + ' ' + getCurrency);
 
 				if (!$('body').hasClass('advanced')) {
 					setTimeout(function () {
