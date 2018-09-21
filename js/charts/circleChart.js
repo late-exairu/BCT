@@ -36,39 +36,22 @@ function drawCircleChart() {
     centerX = $('#circleChart').width() / 2 - 20;
     centerY = $('#circleChart').height() / 2 - 20;
 
-    var circleChartTooltipData = {
-        Bitcoin: {
-            price: '$' + eachBalance['BTC'],
-        },
-        Ethereum: {
-            price: '$' + eachBalance['ETH'],
-        },
-        Tether: {
-            price: '$' + eachBalance['USDT'],
-        },
-        'Bitcoin Cash': {
-            price: '$' + eachBalance['BCH'],
-        },
-        Litecoin: {
-            price: '$' + eachBalance['LTC'],
-        },
-        Ripple: {
-            price: '$' + eachBalance['RPL'],
-        },
-        Monero: {
-            price: '$' + eachBalance['XMR'],
-        },
-        Maker: {
-            price: '$' + eachBalance['MKR'],
-        },
-        Dash: {
-            price: '$' + eachBalance['DASH'],
-        },
-        XRP: {
-            price: '$' + eachBalance['XRP'],
-        },
+    var circleChartArr = [];
 
+    var circleChartTooltipData = {};
+
+    for (const key in eachPercent) {
+        var tempArr = [];
+        var currencyName = $('.exch-dropdown__item[data-currency="' + key + '"]').eq(0).attr('data-name');
+        tempArr.push(currencyName);
+        tempArr.push(eachPercent[key]);
+        circleChartArr.push(tempArr);
+
+        circleChartTooltipData[currencyName] = {
+            price: '$' + eachBalance[key]
+        }
     }
+
 
     circleChartOptions = {
         chart: {
@@ -125,18 +108,7 @@ function drawCircleChart() {
         },
         series: [{
             name: 'Percent',
-            data: [
-                ['Ethereum', eachPercent['ETH']],
-                ['Bitcoin', eachPercent['BTC']],
-                ['Tether', eachPercent['USDT']],
-                ['Bitcoin Cash', eachPercent['BCH']],
-                ['Litecoin', eachPercent['LTC']],
-                ['Ripple', eachPercent['RPL']],
-                ['Monero', eachPercent['XMR']],
-                ['Maker', eachPercent['MKR']],
-                ['Dash', eachPercent['DASH']],
-                ['XRP', eachPercent['XRP']],
-            ],
+            data: circleChartArr,
         }]
     };
 
