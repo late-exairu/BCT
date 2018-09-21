@@ -2,13 +2,9 @@
 <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="20px" height="18.7px" viewBox="0 0 20 18.7" style="enable-background:new 0 0 20 18.7;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#1A78FF;fill-opacity:0.6;}
-	.st1{fill:#1A78FF;}
-</style>
 <g id="_2228384399520">
-	<polygon id="Star" class="st0" points="7.2,7 9.7,0 12.1,7 	"/>
-	<polygon id="Star_0" class="st0" points="9,14 13.3,11 15.7,18.7 	"/>
-	<polygon id="Star_1" class="st1" points="3.6,18.7 5.7,11.6 0,7 20,7 	"/>
+	<polygon id="Star" style="fill:#1A78FF;fill-opacity:0.6;" points="7.2,7 9.7,0 12.1,7 	"/>
+	<polygon id="Star_0" style="fill:#1A78FF;fill-opacity:0.6;" points="9,14 13.3,11 15.7,18.7 	"/>
+	<polygon id="Star_1" style="fill:#1A78FF;" points="3.6,18.7 5.7,11.6 0,7 20,7 	"/>
 </g>
 </svg>
