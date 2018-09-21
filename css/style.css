@@ -8219,9 +8219,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background: var(--clr-back-new);
     border: 1px solid var(--clr-separator);
     transform: translateX(-50%);
-    height: 22px;
+    height: 23px;
     width: 47px;
-    border-radius: 3px; }
+    border-radius: 3px;
+    /* Large Devices, Wide Screens */ }
     #panel-dashboard-liquidity .liquidityText .centerPart p {
       margin-bottom: 0px;
       font-size: 15px;
@@ -8236,9 +8237,19 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       top: -4px; }
     #panel-dashboard-liquidity .liquidityText .centerPart .separator {
       width: 1px;
-      height: 21px;
+      height: 22px;
       background: var(--clr-separator);
       display: inline-block; }
+    @media only screen and (min-width: 1200px) {
+      #panel-dashboard-liquidity .liquidityText .centerPart {
+        height: 34px;
+        width: 69px; }
+        #panel-dashboard-liquidity .liquidityText .centerPart svg {
+          width: 21px;
+          height: 21px;
+          top: -6px; }
+        #panel-dashboard-liquidity .liquidityText .centerPart .separator {
+          height: 33px; } }
 
 #orders {
   display: none; }
