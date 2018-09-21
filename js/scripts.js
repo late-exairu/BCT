@@ -188,6 +188,10 @@ $(function () {
 
 			// change price currency from prices__list of exchanges
 			$('.graph-prices__price > span').html(currencyAbbr);
+
+			// change currency in Orders Form
+			$('.order-form__submit.btn-blue').html('BUY ' + currencyAbbr);
+			$('.order-form__submit.btn-red').html('SELL ' + currencyAbbr);
 		}
 		// second currency
 		else {
