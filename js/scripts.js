@@ -1717,10 +1717,13 @@ $(function () {
 			modifiers: {
 				preventOverflow: {
 					enabled: false
+				},
+				hide: {
+					enabled: false
 				}
 			}
 		}
-	})
+	});
 
 	const exchangers = [
 		"BITFINEX",
@@ -1766,6 +1769,9 @@ $(function () {
 		popperOptions: {
 			modifiers: {
 				preventOverflow: {
+					enabled: false
+				},
+				hide: {
 					enabled: false
 				}
 			}
