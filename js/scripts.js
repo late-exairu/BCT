@@ -185,6 +185,9 @@ $(function () {
 			$('.exch-form__send .exch-form__curr').html(currencyAbbr);
 			$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USDT');
 			$('.chat-head__name').css('color', firstColor);
+
+			// change price currency from prices__list of exchanges
+			$('.graph-prices__price > span').html(currencyAbbr);
 		}
 		// second currency
 		else {
