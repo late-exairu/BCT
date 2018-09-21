@@ -163,7 +163,7 @@ var liquidityChartOptions = {
         },
         positioner: function (labelWidth, labelHeight, point ) {
             var graphWidth = $(liquidityChartObj.container).width();
-            var xPos = point.plotX - (labelWidth / 2) + 20;
+            var xPos = point.plotX - (labelWidth / 2);
             // right side fix
             if ((point.plotX + labelWidth / 2) > graphWidth) {
                 xPos = graphWidth - labelWidth + 5;

@@ -13856,7 +13856,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     #orders .forms-wrap.current {
       display: flex; }
 
-#portfolioChartGeneral .highcharts-tooltip {
+#portfolioChartGeneral .highcharts-tooltip,
+#liquidityChart .highcharts-tooltip {
   margin-left: auto; }
 
 /* =================================================================== */
