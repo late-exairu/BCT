@@ -504,7 +504,7 @@
 			top: 50%;
 			transform: translateY(-50%);
 			background: none;
-			fill: #fff;
+			fill: var(--clr-back);
 
 			> use {
 				display: block;

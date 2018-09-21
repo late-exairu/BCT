@@ -12958,7 +12958,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     top: 50%;
     transform: translateY(-50%);
     background: none;
-    fill: #fff; }
+    fill: var(--clr-back); }
     .exch-form.progress .exch-form__submit-bg > use {
       display: block; }
   .exch-form.progress .exch-form__current {
