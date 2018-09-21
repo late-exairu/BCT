@@ -10,8 +10,8 @@ var liquidityChartOptions = {
         type: 'area',
         marginBottom:0,
         marginTop:40,
-        marginLeft:-10,
-        marginRight:-10
+        marginLeft: 0,
+        marginRight: 0
     },
     title: null,
     legend: {
@@ -31,7 +31,7 @@ var liquidityChartOptions = {
                                 color: '#000000'
                             },
                         } */
-            width: 1,
+            width: 0,
             //dashStyle: 'LongDash'
         },
         type: 'datetime',
@@ -124,20 +124,49 @@ var liquidityChartOptions = {
             var date = new Date(this.x);
             var month = months[date.getMonth()];
             var dayName = days[date.getDay()];
-			var year = date.getFullYear();            
+            var year = date.getFullYear();            
+            var arrowClasses = 'arrow_box bottom';
             // edit value to ~8k
             var TooltipValue = (this.y).toFixed(2);
-            return '<div class="tooltip font10 liquidityTooltip">' +
+
+            var lineForPortfolioChartX = this.points[0].point.plotX + $('#liquidityChart').offset().left;
+            var lineForPortfolioChartY = $('#liquidityChart').offset().top + (this.points[0].point.plotY + 20);
+            var lineForPortfolioChartHeight = $('#liquidityChart').height() - (this.points[0].point.plotY + 26);
+            var circleForPortfolioChartY = 20;
+
+            // right side fix
+            if (lineForPortfolioChartX > $('#liquidityChart').offset().left + $('#liquidityChart').width()) {
+                lineForPortfolioChartX = -9999;
+            }
+
+            $('.lineForPortfolioChart').css({
+                'left': lineForPortfolioChartX,
+                'top': lineForPortfolioChartY,
+            });
+
+            $('.lineForPortfolioChart .circle').css({                
+                'top': circleForPortfolioChartY,
+            });
+
+            $('.lineForPortfolioChart .line').css({
+                'height': lineForPortfolioChartHeight,
+            });
+
+            if (this.points[0].point.plotX < 100 || this.points[0].point.plotX > $('#liquidityChart').width() - 100) {
+                arrowClasses = '';
+            }
+
+            return '<div class="tooltip font10 liquidityTooltip ' + arrowClasses + '">' +
                 "<div class='font12 textCenter bold'>$" + TooltipValue + '</div> <div class="gray">' +
                 dayName + ', ' + month + ' ' + date.getDate() +', ' +year +
                 '</div></div>';
         },
         positioner: function (labelWidth, labelHeight, point ) {
             var graphWidth = $(liquidityChartObj.container).width();
-            var xPos = point.plotX - (labelWidth / 2);
+            var xPos = point.plotX - (labelWidth / 2) + 20;
             // right side fix
-            if ((point.plotX + 80) > graphWidth) {
-                xPos = graphWidth - labelWidth + 15;
+            if ((point.plotX + labelWidth / 2) > graphWidth) {
+                xPos = graphWidth - labelWidth + 5;
             }
             // left side fix
             else if (point.plotX < 100) {
@@ -145,7 +174,7 @@ var liquidityChartOptions = {
             }
             return {
                 x: xPos,
-                y: 20
+                y: ((point.plotY - 20) > 20 ) ? point.plotY - 20 : 20
             };
         }
     },
@@ -155,13 +184,14 @@ var liquidityChartOptions = {
             step: 'center',
             marker: {
                 enabled: false,
-                fillColor: '',
-                lineWidth: 0,
+                fillColor: '#FFFFFF',
+                lineWidth: 1,
                 lineColor: null,
-                symbol: 'url(' + location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'img/svg/circle.svg)',
+                symbol: 'circle',
+                radius: 3,
                 states: {
                     hover: {
-                        enabled: true
+                        enabled: false
                     }
                 }
             }
@@ -223,3 +253,9 @@ var liquidityChartOptions = {
         color: redColor
     }]
 };
+
+$('#liquidityChart').mouseleave(function () {
+	$('.lineForPortfolioChart').css(
+		'left', '-9999px',
+	);
+});
