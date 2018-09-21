@@ -203,7 +203,28 @@ $(function () {
 		$(this).closest('.exch-dropdown').removeClass('open');
 		setTimeout(() => {
 			updateMainChartGraph(currencyAbbr);
-		}, 10)
+		}, 10);
+
+		var sendCurrency = $('.exch-form__send input').attr('data-currency');
+		var getCurrency = $('.exch-form__get input').attr('data-currency');
+		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];		
+
+		if (sendCurrency == getCurrency) {
+			$('.graph-prices__price').each(function(index, priceItem) {			
+				$(priceItem).html(priceRate + ' <span>' + sendCurrency + '</span>');
+			});
+		} else {
+			var rateArray = [];
+			for (var i = 0; i < progressbar_array.length; i++) {
+				var randRate = priceRate * (Math.random() * (101 - 99) + 99) / 100;
+				rateArray.push(randRate);
+			}
+			rateArray.sort(function(a, b){return a - b});
+	
+			$('.graph-prices__price').each(function(index, priceItem) {			
+				$(priceItem).html((sendCurrency == 'USDT' ? rateArray[index].toFixed(2) : rateArray[index].toFixed(5)) + ' <span>' + sendCurrency + '</span>');
+			});	
+		}
 
 	});
 
