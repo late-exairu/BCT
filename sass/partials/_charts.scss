@@ -544,18 +544,18 @@
 			}
 
 			/* Large Devices, Wide Screens */
-			@media only screen and (min-width : 1200px) {
-				height: 34px;
-				width: 69px;
+			@media only screen and (min-width : 1920px) {
+				height: 30px;
+				width: 60px;
 
 				svg {
-					width: 21px;
-					height: 21px;
+					width: 19px;
+					height: 17px;
 					top: -6px;
 				}
 	
 				.separator {
-					height: 33px;
+					height: 29px;
 				}
 			}
 		}

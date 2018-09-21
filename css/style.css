@@ -13838,16 +13838,16 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       height: 22px;
       background: var(--clr-separator);
       display: inline-block; }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1920px) {
       #panel-dashboard-liquidity .liquidityText .centerPart {
-        height: 34px;
-        width: 69px; }
+        height: 30px;
+        width: 60px; }
         #panel-dashboard-liquidity .liquidityText .centerPart svg {
-          width: 21px;
-          height: 21px;
+          width: 19px;
+          height: 17px;
           top: -6px; }
         #panel-dashboard-liquidity .liquidityText .centerPart .separator {
-          height: 33px; } }
+          height: 29px; } }
 
 #orders {
   display: none; }
