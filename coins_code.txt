@@ -1,5 +1,5 @@
 <div class="exch-dropdown__item" data-name="COIN-TITLE" data-telegram="COIN-SHORT COIN-TITLE Room" data-currency="COIN-SHORT">
-	<svg class="exch-dropdown__icon" role="img" aria-hidden="true">
+	<svg class="exch-dropdown__icon clr-coin-COIN-LOWERCASE-SHORT" role="img" aria-hidden="true">
 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-COIN-LOWERCASE-SHORT"></use>
 	</svg><p class="exch-dropdown__title"><b>COIN-SHORT</b> - COIN-TITLE</p>
 </div>
