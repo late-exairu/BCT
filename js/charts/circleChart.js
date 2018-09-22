@@ -37,12 +37,14 @@ function drawCircleChart() {
     centerY = $('#circleChart').height() / 2 - 20;
 
     var circleChartArr = [];
+    var circleChartColors = [];
 
     var circleChartTooltipData = {};
 
     for (const key in eachPercent) {
         var tempArr = [];
         var currencyName = $('.exch-dropdown__item[data-currency="' + key + '"]').eq(0).attr('data-name');
+        var currencyColor = $('.exch-dropdown__item[data-currency="' + key + '"] svg').eq(0).css('fill');
         tempArr.push(currencyName);
         tempArr.push(eachPercent[key]);
         circleChartArr.push(tempArr);
@@ -50,8 +52,8 @@ function drawCircleChart() {
         circleChartTooltipData[currencyName] = {
             price: '$' + eachBalance[key]
         }
+        circleChartColors.push(currencyColor);
     }
-
 
     circleChartOptions = {
         chart: {
@@ -69,7 +71,7 @@ function drawCircleChart() {
                 startAngle: 0,
                 size: pieChartSize,
                 center: [centerX, centerY],
-                colors: ['#707CB9', '#F6921E', '#2a3e81', '#83c55f', '#b1b0b0', '#438bca', '#f60', '#1abc9c', '#008ce7', '#23292f']
+                colors: circleChartColors
             },
             series: {
                 dataLabels: {
