@@ -30,6 +30,13 @@ $(function () {
 			}
 			if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
 				document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
+
+			if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')){
+				$('button[title="USERNAME"]').attr('title', localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName'));
+			}
+			else{
+				$('button[title="USERNAME"]').attr('title','');
+			}
 		} else {
 			localStorage.removeItem('telegramAuth');
 			localStorage.removeItem('telegramFirstName');
