@@ -14214,8 +14214,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background: url(../img/tg_button_large.png) no-repeat;
     margin: 0px 15px -2px -8px;
     display: inline-block; }
-  .message-bar__login-demo:hover {
-    opacity: .9; }
 
 /* =================================================================== */
 /* Globals
