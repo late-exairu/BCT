@@ -171,6 +171,8 @@ $(function () {
 				},
 				success: function (data) {
 					currenciesPrice[currencyAbbr] = +data.rate.toFixed(2);
+					if(telegramGroupName)
+					$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USDT');
 				}
 			})
 		}
