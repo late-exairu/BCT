@@ -1288,6 +1288,8 @@ h6 {
       width: 10px;
       height: 14px;
       fill: var(--clr-textL); }
+    .chat-head__back:hover .sprite-icon {
+      fill: var(--clr-textLL); }
   .chat-head__curr {
     position: relative;
     width: 30px;
@@ -7379,6 +7381,8 @@ h6 {
     position: relative;
     width: 100%;
     height: 100%; }
+    .exch-dropdown__border:hover:before {
+      background: var(--clr-backLL); }
   .exch-dropdown__current {
     width: 100%;
     height: 100%;
@@ -7707,6 +7711,8 @@ h6 {
     background: transparent;
     border-radius: var(--border-radius);
     overflow: hidden; }
+    .exch-head__btn:hover {
+      opacity: .9; }
   .exch-head__btn-bg {
     position: absolute;
     left: 0;
@@ -9886,6 +9892,12 @@ body.menubar-in #user-btn:before {
       background: var(--clr-time-bar); }
     .range-slider input[type=range]::-ms-fill-upper {
       background: var(--clr-time-line); }
+  .range-slider:hover input[type=range]::-webkit-slider-thumb {
+    background: var(--clr-time-bar); }
+  .range-slider:hover input[type=range]::-moz-range-thumb {
+    background: var(--clr-time-bar); }
+  .range-slider:hover input[type=range]::-ms-thumb {
+    background: var(--clr-time-bar); }
   .range-slider .irs-line-mid,
   .range-slider .irs-line-left,
   .range-slider .irs-line-right,
@@ -14202,6 +14214,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background: url(../img/tg_button_large.png) no-repeat;
     margin: 0px 15px -2px -8px;
     display: inline-block; }
+  .message-bar__login-demo:hover {
+    opacity: .9; }
 
 /* =================================================================== */
 /* Globals

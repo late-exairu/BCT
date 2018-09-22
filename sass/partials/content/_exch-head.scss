@@ -130,6 +130,12 @@
 		background: transparent;
 		border-radius: var(--border-radius);
 		overflow: hidden;
+
+		&:hover{
+			// .exch-head__btn-bg{				
+				opacity: .9;
+			// }
+		}
 	}
 
 	&__btn-bg{

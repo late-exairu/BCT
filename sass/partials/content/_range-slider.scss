@@ -84,6 +84,20 @@
             background: var(--clr-time-line);
         }
     }
+
+    &:hover{
+        input[type=range]{
+            &::-webkit-slider-thumb{
+                background: var(--clr-time-bar);
+            }
+            &::-moz-range-thumb{
+                background: var(--clr-time-bar);
+            }
+            &::-ms-thumb{
+                background: var(--clr-time-bar);
+            }
+        }
+    }
     
     /* skin details */
     .irs-line-mid,
@@ -151,7 +165,7 @@
 		width: 8px;
 		height: 8px;
 		border-radius: 50%;
-		background: var(--clr-time-slider);
+        background: var(--clr-time-slider);        
 		border: 1px solid #fff;
 		padding: 0;
 		color: #fff;
@@ -160,6 +174,6 @@
 		top: 50%;
 		transform: translateY(-50%);
 		z-index: 1;
-		cursor: pointer;
+        cursor: pointer;
 	}
 }

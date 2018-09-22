@@ -34,6 +34,12 @@
 			height: 14px;
 			fill: var(--clr-textL);
 		}
+
+		&:hover{
+			.sprite-icon{
+				fill: var(--clr-textLL);
+			}
+		}
 	}
 
 	/*&__avatar-wrap{
