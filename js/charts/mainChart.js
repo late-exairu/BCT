@@ -345,7 +345,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				'height': lineForMainChartHeight,
 			});
 
-			if (this.points[0].point.plotX < 220) {
+			// console.log('Point X: ', this.points[0].point.plotX)
+			if (this.points[0].point.plotX < 168) {
 				arrowDirection = 'left';
 			}
 
