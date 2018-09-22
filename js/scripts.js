@@ -162,6 +162,19 @@ $(function () {
 		//var realCurrencyName = currencyName;
 		//if (realCurrencyName == 'us dollar') realCurrencyName = 'dollar';
 
+		// check currency Price
+		if (!currenciesPrice[currencyAbbr]){
+			$.ajax({
+				url: 'https://rest.coinapi.io/v1/exchangerate/' + currencyAbbr + '/USD',
+				beforeSend: function (xhr) {
+					xhr.setRequestHeader("X-CoinAPI-Key", "2AF6DF26-A878-4D5A-8201-3E32197022DB")
+				},
+				success: function (data) {
+					currenciesPrice[currencyAbbr] = +data.rate.toFixed(2);
+				}
+			})
+		}
+
 		var newCurr = $(this).children().clone();
 		$(newCurr).eq(1).html('<span>' + currencyAbbr + '</span><br> ' + currencyName);
 		var currDropdown = $(this).closest('.exch-dropdown');
@@ -1441,12 +1454,14 @@ $(function () {
 					ownWallet[sendCurrency] = 0;
 				}
 				firstValue = ownWallet[sendCurrency].toFixed(2);
+
 				if (!currenciesPrice[sendCurrency]){
 					currenciesPrice[sendCurrency] = 1;
 				}
 				if (!currenciesPrice[getCurrency]) {
 					currenciesPrice[getCurrency] = 1;
 				}
+
 				secondValue = ((ownWallet[sendCurrency] * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
 			}
 			$('.exch-form__send input').val(numberWithCommas(firstValue));
