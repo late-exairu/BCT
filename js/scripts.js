@@ -1407,7 +1407,6 @@ $(function () {
 
 			$('.exch-form').addClass('progress');
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active recent');
-			//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
 			if (!$('body').hasClass('advanced')) {
 				var newRow = '<div class="basic-table__row recent active">' +
 					'<div class="basic-table__col w-17" ><img src="img/spin-blue.svg"></div>' +
@@ -1417,9 +1416,6 @@ $(function () {
 					'<div class="basic-table__col w-27">' + (getCurrency == 'USDT' ? '$' : '') + '0.00 ' + getCurrency + '</div>' +
 					'<div class="basic-table__col w-27">0 Exchanges</div>' +
 					'</div>';
-				//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('<img src="img/spin-blue.svg">');
-				//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + '0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency);				
-				//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(2).html((getCurrency == 'USDT' ? '$' : '') + '0.00 ' + getCurrency);
 			} else {
 				var newRow = '<div class="basic-table__row active recent">' +
 					'<div class="basic-table__col w-20"> Just now</div>' +
