@@ -31,11 +31,10 @@ $(function () {
 			if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
 				document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
 
-			if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')){
+			if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 				$('button[title="USERNAME"]').attr('title', localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName'));
-			}
-			else{
-				$('button[title="USERNAME"]').attr('title','');
+			} else {
+				$('button[title="USERNAME"]').attr('title', '');
 			}
 		} else {
 			localStorage.removeItem('telegramAuth');
@@ -163,7 +162,7 @@ $(function () {
 		//if (realCurrencyName == 'us dollar') realCurrencyName = 'dollar';
 
 		// check currency Price
-		if (!currenciesPrice[currencyAbbr]){
+		if (!currenciesPrice[currencyAbbr]) {
 			$.ajax({
 				url: 'https://rest.coinapi.io/v1/exchangerate/' + currencyAbbr + '/USD',
 				beforeSend: function (xhr) {
@@ -171,8 +170,8 @@ $(function () {
 				},
 				success: function (data) {
 					currenciesPrice[currencyAbbr] = +data.rate.toFixed(2);
-					if(telegramGroupName)
-					$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USDT');
+					if (telegramGroupName)
+						$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USDT');
 				}
 			})
 		}
@@ -233,10 +232,10 @@ $(function () {
 
 		var sendCurrency = $('.exch-form__send input').attr('data-currency');
 		var getCurrency = $('.exch-form__get input').attr('data-currency');
-		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];		
+		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
 
 		if (sendCurrency == getCurrency) {
-			$('.graph-prices__price').each(function(index, priceItem) {			
+			$('.graph-prices__price').each(function (index, priceItem) {
 				$(priceItem).html(priceRate + ' <span>' + sendCurrency + '</span>');
 			});
 		} else {
@@ -245,11 +244,13 @@ $(function () {
 				var randRate = priceRate * (Math.random() * (101 - 99) + 99) / 100;
 				rateArray.push(randRate);
 			}
-			rateArray.sort(function(a, b){return a - b});
-	
-			$('.graph-prices__price').each(function(index, priceItem) {			
+			rateArray.sort(function (a, b) {
+				return a - b
+			});
+
+			$('.graph-prices__price').each(function (index, priceItem) {
 				$(priceItem).html((sendCurrency == 'USDT' ? rateArray[index].toFixed(2) : rateArray[index].toFixed(5)) + ' <span>' + sendCurrency + '</span>');
-			});	
+			});
 		}
 
 	});
@@ -1333,7 +1334,7 @@ $(function () {
 					setTimeout(function () {
 						firstValueResult += firstValuePart;
 						secondValueResult += secondValuePart;
-						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + numberWithCommas(firstValueResult.toFixed(2)) + ' ' + sendCurrency + svgArrowTemplate + (getCurrency == 'USDT' ? '$' :'') + numberWithCommas(secondValueResult.toFixed(2)) + ' ' + getCurrency)
+						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + numberWithCommas(firstValueResult.toFixed(2)) + ' ' + sendCurrency + svgArrowTemplate + (getCurrency == 'USDT' ? '$' : '') + numberWithCommas(secondValueResult.toFixed(2)) + ' ' + getCurrency)
 
 						// change the average price too
 						var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
@@ -1405,13 +1406,31 @@ $(function () {
 			}
 
 			$('.exch-form').addClass('progress');
-			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active');
-			$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
+			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active recent');
+			//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).removeClass('hidden').addClass('active');
 			if (!$('body').hasClass('advanced')) {
-				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('<img src="img/spin-blue.svg">');
-				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + '0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency);				
-				$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(2).html((getCurrency == 'USDT' ? '$' : '') + '0.00 ' + getCurrency);
+				var newRow = '<div class="basic-table__row recent active">' +
+					'<div class="basic-table__col w-17" ><img src="img/spin-blue.svg"></div>' +
+					'<div class="basic-table__col w-27">' +
+					(sendCurrency == 'USDT' ? '$' : '') + '0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency +
+					'</div>' +
+					'<div class="basic-table__col w-27">' + (getCurrency == 'USDT' ? '$' : '') + '0.00 ' + getCurrency + '</div>' +
+					'<div class="basic-table__col w-27">0 Exchanges</div>' +
+					'</div>';
+				//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('<img src="img/spin-blue.svg">');
+				//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + '0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency);				
+				//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(2).html((getCurrency == 'USDT' ? '$' : '') + '0.00 ' + getCurrency);
+			} else {
+				var newRow = '<div class="basic-table__row active recent">' +
+					'<div class="basic-table__col w-20"> Just now</div>' +
+					'<div class="basic-table__col w-17">' + sendCurrency + '/' + getCurrency + '</div>' +
+					'<div class="basic-table__col w-12">Buy</div>' +
+					'<div class="basic-table__col w-20">' + firstValue + ' ' + sendCurrency + '</div>' +
+					'<div class="basic-table__col w-20">' + secondValue + ' ' + getCurrency + '</div>' +
+					'<div class="basic-table__col w-10">FILLED</div>' +
+					'</div >';
 			}
+			$('#panel-funds-history .basic-table__body .basic-table__body').prepend(newRow);
 			$('.graph-prices').addClass('open noClose');
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
@@ -1452,12 +1471,12 @@ $(function () {
 				firstValue = $('.exch-form__send input').val();
 				secondValue = $('.exch-form__get input').val();
 			} else {
-				if (!ownWallet[sendCurrency]){
+				if (!ownWallet[sendCurrency]) {
 					ownWallet[sendCurrency] = 0;
 				}
 				firstValue = ownWallet[sendCurrency].toFixed(2);
 
-				if (!currenciesPrice[sendCurrency]){
+				if (!currenciesPrice[sendCurrency]) {
 					currenciesPrice[sendCurrency] = 1;
 				}
 				if (!currenciesPrice[getCurrency]) {
