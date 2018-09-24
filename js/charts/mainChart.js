@@ -1,3 +1,5 @@
+var date50 = new Date(Date.now() + -31 * 24 * 3600 * 1000);
+
 function redrawMainChart() {
 	/* 	 	 var chartParent = $('.b-graph__controls');
 			 $(chartParent).css('width', '100%');
@@ -10,15 +12,15 @@ function redrawMainChart() {
 }
 
 var mainChartMarginLeft = 0;
-var lineColor = '#01B067';
-var blueColor = '#01B067';
-var redColor = '#CE2424';
+var lineColor = '#00AAF8';
+var blueColor = '#1296E6';
+var redColor = '#EE363E';
 
 if ($('body').hasClass('advanced')) {
 	mainChartMarginLeft = 15;
-	lineColor = '#01B067';
-	blueColor = '#01B067';
-	redColor = '#CE2424';
+	lineColor = '#00AAF8';
+	blueColor = '#0082AF';
+	redColor = '#750000';
 }
 
 // color for highlight graphs on hover
@@ -58,7 +60,7 @@ var columnData = [
 		10, 16, 14, 11, 9, 12, 11, 9, 13, 10,
 		15, 16, 13, 15, 19, 12, 19, 19, 19, 21,
 		16, 13, 9, 19, 22, 18, 20, 16, 22, 17,
-		15, 19, 23, 20, 25, 9, 15, 12, 10, 14],	
+		15, 19, 23, 20, 25, 9, 15, 12, 10, 14],
 	[24, 21, 17, 5, 8, 5, 11, 23, 19, 11,
 		28, 16, 18, 21, 8, 28, 19, 24, 11, 13,
 		11, 26, 9, 26, 12, 12, 4, 10, 7, 8,
@@ -114,6 +116,7 @@ var columnData = [
 // id of graph for highlight
 var mainGraphHighlighted = 4;
 var mainGraphHover = null;
+
 var mainChartObj = Highcharts.chart('mainChart', {
 	legend: {
 		enabled: false
@@ -137,7 +140,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		series: {
 			//pointWidth: $('#mainChart').width() / 110, // fixed A pixel value specifying
 			pointPadding: 0,
-			pointStart: Date.UTC(2018, 5, 17),
+			pointStart: Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDay()),
 			pointInterval: 24 * 3600 * 1000, // one day
 			borderWidth: 0,
 			groupPadding: 0,
@@ -197,7 +200,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 					// 				});
 					// 			}
 					// 		}
-					// 	}); 
+					// 	});
 					// 	// highlight hover graph
 					// 	this.update({
 					// 		fillColor: {
@@ -207,7 +210,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 					// 		lineWidth: this.options.lineWidth,
 					// 	}, );
 					// 	// set id of current graph ( for change theme)
-					// 	mainGraphHover = this.options.id; 
+					// 	mainGraphHover = this.options.id;
 					// }
 				},
 				click: function (event) {
@@ -235,8 +238,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 					// 				});
 					// 			}
 					// 		}
-					// 	}); 
-					// }										
+					// 	});
+					// }
 				},
 			},
 		},
@@ -274,28 +277,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		gridLineWidth: 0
 	},
 	yAxis: {
-		title: {
-			text: ''
-		},
-		opposite: true,
-		showLastLabel: false,
-		showFirstLabel: false,
-		labels: {
-			enabled: false,
-			align: 'right',
-			x: -20,
-			y: -20,
-			step: 2,
-			style: {
-				fontSize: '10px'
-			},
-			formatter: function () {
-				return (this.value + 8100) + '.00';
-			}
-		},
-		tickInterval: 7,
-		gridLineWidth: 0,
-		max: 150
+		min: 0,
+		endOnTick: false
 	},
 
 	tooltip: {
@@ -323,9 +306,8 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var month = months[date.getMonth()];
 			var dayName = days[date.getDay()];
 			var year = date.getFullYear();
-			var TooltipValue = (this.y * 90).toFixed(2);
+			var TooltipValue = this.y.toFixed(5);
 			var arrowDirection = 'right';
-			//TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
 
 			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left + mainChartMarginLeft;
 			var lineForMainChartY = this.points[0].point.plotY + $('#mainChart').offset().top;
@@ -351,18 +333,18 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			}
 
 			var currency_send = $('.exch-dropdown__current > p > span')[0].innerText;
-			var currency_get = $('.exch-dropdown__current > p > span')[1].innerText;			
-			var current_trader = "";
-			if ($(".graph-prices__list .graph-prices__item.active .graph-prices__trader").length > 0) {
-				current_trader = $(".graph-prices__list .graph-prices__item.active .graph-prices__trader").html().trim();
+			var currency_get = $('.exch-dropdown__current > p > span')[1].innerText;
+			var current_trader = '';
+			if ($('.graph-prices__list .graph-prices__item.active .graph-prices__trader').length > 0) {
+				current_trader = $('.graph-prices__list .graph-prices__item.active .graph-prices__trader').html().trim();
 				current_trader = ' (' + current_trader + ')';
 			}
-			
+
 			return '<div class="tooltip font10 arrow_box mainTooltip ' + arrowDirection + '">' +
-				"<div class='textCenter'><span class='currencies font12 bold'>" + currency_send + "/" + currency_get + "</span> : <span class='value font12 bold'>" + numberWithCommas(TooltipValue) + '</span></div> <div class="gray">' +
+				'<div class=\'textCenter\'><span class=\'currencies font12 bold\'>' + currency_send + '/' + currency_get + '</span> : <span class=\'value font12 bold\'>' + TooltipValue + '</span></div> <div class="gray">' +
 				 dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + current_trader + '</div></div>';
 		},
-		positioner: function (labelWidth, labelHeight, point, ) {
+		positioner: function (labelWidth, labelHeight, point,) {
 			//var graphWidth = $(mainChartObj.container).width();
 			var xPos = point.plotX - labelWidth + mainChartMarginLeft - 15;
 			// left side fix
@@ -376,293 +358,19 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		}
 	},
 	series: [{
-			type: 'areaspline',
-			data: [5, 20, 15, 35, 32, 14, 42, 57, 39, 42,
-				14, 25, 10, 35, 47, 12, 28, 15, 55, 14,
-				56, 46, 63, 78, 82, 92, 105, 78, 97, 48,
-				66, 62, 55, 57, 90, 101, 98, 62, 85, 75,
-				49, 52, 63, 71, 53, 59, 68, 47, 35, 63,
-			],
-			name: "Series 1",
-			lineWidth: 0.5,
-			color: '#dbdbdb',
-			id: 1,
-			enableMouseTracking: false,
+		type: 'areaspline',
+		data: [0.00014209999999999998, 0.00014365, 0.0001516, 0.00015874999999999998, 0.00015455, 0.00016525, 0.00016544999999999998, 0.00015945, 0.00016865, 0.0001624, 0.0001596, 0.00015735, 0.0001476, 0.0001602, 0.00015405, 0.00016525, 0.00015434999999999998, 0.00015895, 0.0001537, 0.00015005, 0.00014994999999999999, 0.0001496, 0.0001436, 0.00014104999999999999, 0.00014340000000000002, 0.00014380000000000003, 0.00014350000000000002, 0.00013745, 0.000138, 0.00013875, 0.00013769999999999999, 0.0001594, 0.00015095, 0.0001602, 0.00016635, 0.00016125, 0.0001587, 0.00016375, 0.00015925, 0.00014565, 0.00015465, 0.0001496, 0.0001544, 0.0001663, 0.000154, 0.00015690000000000002, 0.00015015, 0.00014365, 0.00015045, 0.00014780000000000001, 0.0001529],
+		name: 'Series 4',
+		lineWidth: 3,
+		color: lineColor,
+		fillColor: {
+			linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+			stops: gradientColor
 		},
-		{
-			type: 'areaspline',
-			data: [10, 12, 15, 25, 10, 20, 15, 37, 29, 34,
-				24, 36, 41, 52, 51, 58, 39, 17, 33, 24,
-				40, 25, 69, 47, 54, 73, 62, 43, 72, 64,
-				74, 62, 61, 78, 80, 101, 93, 91, 86, 78,
-				67, 61, 50, 42, 57, 65, 73, 82, 87, 81,
-			],
-			name: "Series 2",
-			lineWidth: 0.5,
-			color: '#dbdbdb',
-			id: 2,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [60, 55, 45, 38, 30, 40, 27, 31, 39, 45,
-				34, 20, 15, 11, 17, 22, 18, 7, 10, 17,
-				27, 35, 19, 17, 24, 33, 42, 33, 28, 22,
-				30, 36, 29, 38, 40, 52, 48, 27, 55, 68,
-				71, 52, 40, 42, 57, 26, 33, 37, 42, 38,
-			],
-			name: "Series 3",
-			lineWidth: 0.5,
-			color: '#dbdbdb',
-			id: 3,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [20, 24, 24, 26, 25, 27, 24, 28, 32, 34,
-				37, 39, 31, 36, 38, 82, 85, 79, 80, 70,
-				97, 94, 85, 56, 34, 66, 75, 77, 44, 36,
-				38, 40, 44, 46, 45, 47, 44, 48, 52, 54,
-				57, 59, 61, 66, 68, 70, 75, 79, 80, 80,
-			],
-			name: "Series 4",
-			lineWidth: 3,
-			color: lineColor,
-			fillColor: {
-				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-				stops: gradientColor
-			},
-			id: 4,
-			enableMouseTracking: true,
-			trackByArea: true,
-			zIndex: 10
-		},
-		{
-			type: 'areaspline',
-			data: [70, 75, 81, 85, 91, 90, 92, 87, 79, 82,
-				94, 90, 108, 105, 101, 107, 108, 97, 109, 94,
-				105, 115, 109, 107, 104, 113, 122, 113, 117, 102,
-				94, 106, 116, 118, 120, 132, 118, 107, 95, 98,
-				107, 109, 100, 97, 92, 95, 89, 87, 92, 94,
-			],
-			name: "Series 5",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 5,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [82, 80, 85, 85, 80, 79, 82, 87, 89, 91,
-				83, 80, 78, 105, 117, 122, 131, 127, 106, 123,
-				107, 115, 109, 127, 134, 123, 131, 140, 137, 122,
-				119, 126, 128, 124, 130, 121, 124, 137, 135, 129,
-				120, 129, 123, 122, 125, 125, 123, 132, 121, 128,
-			],
-			name: "Series 6",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 6,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [35, 42, 45, 65, 72, 75, 82, 87, 89, 92,
-				94, 90, 90, 95, 87, 92, 98, 97, 100, 104,
-				102, 105, 109, 107, 104, 113, 112, 113, 101, 112,
-				104, 106, 106, 108, 110, 110, 108, 107, 105, 112,
-				107, 109, 108, 102, 107, 115, 103, 107, 112, 108,
-			],
-			name: "Series 7",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 7,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [50, 60, 65, 71, 70, 73, 78, 87, 73, 72,
-				64, 60, 60, 61, 64, 62, 68, 57, 50, 54,
-				50, 52, 59, 57, 64, 63, 62, 58, 57, 53,
-				64, 56, 52, 58, 63, 72, 68, 57, 61, 62,
-				67, 62, 60, 72, 57, 56, 63, 67, 71, 73,
-			],
-			name: "Series 8",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 8,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [38, 40, 35, 45, 60, 70, 72, 77, 79, 62,
-				44, 50, 50, 55, 57, 52, 38, 27, 60, 64,
-				70, 75, 79, 87, 94, 103, 102, 53, 107, 62,
-				64, 66, 66, 68, 100, 112, 98, 97, 95, 68,
-				77, 79, 80, 82, 87, 85, 83, 87, 82, 88,
-			],
-			name: "Series 9",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 9,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [30, 37, 38, 32, 32, 37, 34, 38, 32, 34,
-				37, 19, 13, 22, 18, 27, 29, 32, 20, 12,
-				49, 58, 50, 58, 57, 58, 62, 42, 47, 44,
-				25, 27, 28, 22, 42, 87, 84, 98, 102, 104,
-				97, 99, 83, 42, 48, 47, 49, 62, 70, 72,
-			],
-			name: "Series 10",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 10,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [64, 66, 66, 68, 100, 112, 98, 97, 95, 68,
-				77, 79, 80, 82, 87, 85, 83, 87, 82, 88,
-				83, 80, 78, 105, 117, 122, 131, 127, 106, 123,
-				27, 24, 25, 26, 14, 55, 57, 52, 38, 27,
-				54, 59, 60, 75, 77, 82, 83, 87, 82, 95,
-			],
-			name: "Series 11",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 11,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [18, 20, 25, 29, 30, 20, 24, 25, 26, 14,
-				18, 27, 29, 32, 20, 42, 87, 84, 98, 22,
-				25, 27, 28, 22, 42, 87, 84, 98, 102, 104,
-				24, 36, 41, 52, 51, 58, 39, 17, 33, 24,
-				40, 25, 69, 47, 54, 73, 62, 43, 72, 64,
-			],
-			name: "Series 12",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 12,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [94, 106, 116, 118, 120, 132, 118, 107, 95, 98,
-				107, 109, 100, 97, 92, 95, 89, 87, 92, 94,
-				37, 49, 50, 52, 57, 65, 53, 67, 72, 58,
-				107, 109, 100, 97, 92, 95, 89, 87, 92, 94,
-				74, 62, 61, 78, 80, 101, 93, 91, 86, 78,
-			],
-			name: "Series 13",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 13,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [22, 27, 15, 5, 12, 23, 32, 17, 32, 22,
-				15, 21, 33, 15, 27, 42, 58, 37, 40, 44,
-				50, 45, 39, 27, 24, 23, 32, 43, 17, 22,
-				34, 46, 51, 48, 60, 72, 61, 57, 62, 48,
-				37, 49, 50, 52, 57, 65, 53, 67, 72, 58,
-			],
-			name: "Series 14",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 14,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [94, 90, 90, 95, 87, 92, 98, 97, 100, 104,
-				102, 105, 109, 107, 104, 113, 112, 113, 101, 112,
-				94, 90, 90, 95, 87, 92, 98, 97, 100, 104,
-				35, 42, 45, 65, 72, 75, 82, 87, 89, 92,
-				107, 109, 108, 102, 107, 115, 103, 107, 112, 108,
-			],
-			name: "Series 15",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 15,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [50, 60, 65, 71, 70, 73, 78, 87, 73, 72,
-				64, 60, 50, 52, 59, 57, 64, 63, 62, 54,
-				67, 58, 63, 72, 57, 60, 72, 57, 56, 73,
-				50, 60, 61, 64, 62, 68, 57, 50, 57, 53,
-				64, 56, 52, 58, 63, 72, 68, 57, 61, 62,
-			],
-			name: "Series 16",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 16,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [94, 103, 102, 45, 60, 70, 72, 77, 79, 62,
-				77, 79, 80, 82, 87, 85, 83, 87, 82, 88,
-				44, 50, 50, 55, 57, 52, 38, 27, 60, 64,
-				70, 75, 79, 87, 53, 107, 62, 38, 40, 35,
-				64, 66, 66, 68, 100, 112, 98, 97, 95, 68,
-			],
-			name: "Series 17",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 17,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'areaspline',
-			data: [
-				49, 58, 50, 58, 57, 58, 62, 42, 47, 44,
-				25, 27, 28, 22, 42, 87, 84, 98, 102, 104,
-				97, 99, 83, 42, 48, 47, 49, 62, 70, 72,
-				30, 37, 38, 32, 32, 37, 34, 38, 32, 34,
-				37, 19, 13, 22, 18, 27, 29, 32, 20, 12,
-			],
-			name: "Series 18",
-			lineWidth: 0.5,
-			color: 'rgba(0, 0, 0, 0)',
-			id: 18,
-			enableMouseTracking: false,
-		},
-		{
-			type: 'column',
-			color: blueColor,
-			data: [12, 11, 8, 12, 6, 7, 5, 7, 7, 2,
-				7, 9, 11, 6, 8, 2, 5, 9, 3, 2,
-				5, 5, 8, 9, 2, 7, 22, 8, 2, 4,
-				7, 4, 5, 6, 4, 6, 5, 7, 4, 3,
-				4, 9, 13, 5, 14, 8, 19, 8, 14, 9,
-			],
-			name: "Series 5",
-			id: 5,
-			enableMouseTracking: true,
-			zIndex: 11
-		},
-		{
-			type: 'column',
-			color: redColor,
-			data: [8, 7, 6, 11, 16, 17, 9, 8, 9, 12,
-				6, 12, 9, 7, 5, 8, 7, 5, 9, 6,
-				8, 9, 6, 8, 12, 5, 12, 12, 12, 14,
-				17, 14, 8, 20, 21, 19, 19, 17, 23, 18,
-				17, 21, 25, 22, 21, 19, 17, 14, 12, 16,
-			],
-			name: "Series 6",
-			id: 6,
-			enableMouseTracking: true,
-			zIndex: 11
-		}
-	]
+		id: 4,
+		enableMouseTracking: true,
+		trackByArea: true,
+	}]
 });
 
 $('#mainChart').mouseleave(function () {
