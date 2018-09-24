@@ -325,7 +325,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var year = date.getFullYear();
 			var TooltipValue = (this.y * 90).toFixed(2);
 			var arrowDirection = 'right';
-			TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
+			//TooltipValue = TooltipValue.slice(0, 1) + ',' + TooltipValue.slice(1);
 
 			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left + mainChartMarginLeft;
 			var lineForMainChartY = this.points[0].point.plotY + $('#mainChart').offset().top;
@@ -359,7 +359,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			}
 			
 			return '<div class="tooltip font10 arrow_box mainTooltip ' + arrowDirection + '">' +
-				"<div class='textCenter'><span class='currencies font12 bold'>" + currency_send + "/" + currency_get + "</span> : <span class='value font12 bold'>" + TooltipValue + '</span></div> <div class="gray">' +
+				"<div class='textCenter'><span class='currencies font12 bold'>" + currency_send + "/" + currency_get + "</span> : <span class='value font12 bold'>" + numberWithCommas(TooltipValue) + '</span></div> <div class="gray">' +
 				 dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + current_trader + '</div></div>';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
