@@ -301,7 +301,7 @@
 		}
 
 		&.active {
-			background: var(--clr-backA);
+			background: var(--clr-accentL);
 			color: var(--clr-accentD);
 		}
 
@@ -318,7 +318,7 @@
 			border: 0;
 			margin-top: 10px;
 			.ui-progressbar-value {
-				background: linear-gradient(to right, var(--clr-block), #218FE9, #009EE2);
+				background: linear-gradient(to right, var(--clr-block), var(--clr-accent), var(--clr-accentD));
 				border: 0;
 				margin: 0;
 			}

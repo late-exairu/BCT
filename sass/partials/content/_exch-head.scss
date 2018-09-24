@@ -130,6 +130,7 @@
 		background: transparent;
 		border-radius: var(--border-radius);
 		overflow: hidden;
+		background: url(../../img/exch-bg.svg) no-repeat;
 
 		&:hover{
 			// .exch-head__btn-bg{				
@@ -138,7 +139,7 @@
 		}
 	}
 
-	&__btn-bg{
+	/*&__btn-bg{
 		position: absolute;
 		left: 0;
 		top: 50%;
@@ -147,8 +148,7 @@
 		bottom: 0;
 		width: 100%;
 		z-index: -1;
-		fill: #009FE3;
-	}
+	}*/
 
 	&__btn-text{
 		position: relative;
