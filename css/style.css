@@ -7724,7 +7724,7 @@ h6 {
     background: transparent;
     border-radius: var(--border-radius);
     overflow: hidden;
-    background: url(../../img/exch-bg.svg) no-repeat; }
+    background: url(../img/exch-bg.svg) no-repeat; }
     .exch-head__btn:hover {
       opacity: .9; }
   .exch-head__btn-text {
