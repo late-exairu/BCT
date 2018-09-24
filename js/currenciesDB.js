@@ -1,3 +1,20 @@
+    
+    // get BTC/USD from 1 last year(every hour)
+/*     var finalArr = [];
+    $.ajax({
+        url: 'https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_BTC_USD/latest?period_id=1HRS&limit=1',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("X-CoinAPI-Key", "4AB6E6EF-39F2-4BE2-9D52-42F99A63D2A7")
+        },
+        success: function (data) {
+            data.map(item => {
+                finalArr.unshift(item.price_high);
+            });
+            console.log(finalArr);
+        }
+    })  */
+
+
 var read = new XMLHttpRequest();
 read.open('GET', 'coins_list.txt', false);
 read.send();
@@ -225,7 +242,9 @@ function updateWalletData() {
 
     $('.clearPricePerCoinBTC').html(numberWithCommas(currenciesPrice['BTC']));
 
-    /*     $('.pricePerCoinBTC').html('$' + numberWithCommas(currenciesPrice['BTC']));
+    /*  
+        
+        $('.pricePerCoinBTC').html('$' + numberWithCommas(currenciesPrice['BTC']));
         $('.pricePerCoinETH').html('$' + numberWithCommas(currenciesPrice['ETH']));
         $('.pricePerCoinBCH').html('$' + numberWithCommas(currenciesPrice['BCH']));
         $('.pricePerCoinLTC').html('$' + numberWithCommas(currenciesPrice['LTC']));

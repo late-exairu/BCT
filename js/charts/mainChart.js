@@ -10,15 +10,15 @@ function redrawMainChart() {
 }
 
 var mainChartMarginLeft = 0;
-var lineColor = '#00AAF8';
-var blueColor = '#1296E6';
-var redColor = '#EE363E';
+var lineColor = '#01B067';
+var blueColor = '#01B067';
+var redColor = '#CE2424';
 
 if ($('body').hasClass('advanced')) {
 	mainChartMarginLeft = 15;
-	lineColor = '#00AAF8';
-	blueColor = '#0082AF';
-	redColor = '#750000';
+	lineColor = '#01B067';
+	blueColor = '#01B067';
+	redColor = '#CE2424';
 }
 
 // color for highlight graphs on hover

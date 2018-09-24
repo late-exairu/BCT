@@ -150,7 +150,7 @@ $(function () {
 	$('input[placeholder], textarea[placeholder]').placeholder();
 
 	/*---------------------------------------------------*/
-	/* js-select currency*/
+	/* js-select currency */
 	/*---------------------------------------------------*/
 
 	$('.exch-dropdown__list .exch-dropdown__item').click(function () {
