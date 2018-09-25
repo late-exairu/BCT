@@ -45,6 +45,8 @@ $(function () {
 
 	setOwnName();
 
+	updateMainChartSplineNew(null,'USDT','BTC');
+
 	/* Cubic slider for Orders */
 	var $cubicSlider = $(".js-cubic-slider");
 
@@ -896,12 +898,12 @@ $(function () {
 
 	function updateMainChartSplineNew(exchange, sendCurrency, getCurrency) {
 		$.ajax({
-			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=50`,
+			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
 			success: function (data) {
-				console.log(data)
 				var grapArr = data.Data.map(s => (s.open + s.close) / 2);
+				console.log(grapArr);
 				if (!grapArr.length) {
-					for (let i = 0; i < 51; i++) {
+					for (let i = 0; i < 366; i++) {
 						grapArr.push(1);
 					};
 				};
