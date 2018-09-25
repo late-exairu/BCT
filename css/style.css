@@ -14096,7 +14096,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background: var(--clr-back);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
     .view-mode__link:hover .sprite-icon .st0 {
-      fill: var(--clr-accentD); }
+      fill: #286bb4; }
     .view-mode__link:hover .sprite-icon .st1 {
       fill: #3AB44A; }
     .view-mode__link:hover .sprite-icon .st2 {
