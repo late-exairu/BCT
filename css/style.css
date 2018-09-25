@@ -10476,7 +10476,8 @@ body.menubar-in #user-btn:before {
     top: 0;
     bottom: 0;
     width: 15px;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 2000; }
     .scrollbar-right .scroll-element.scroll-y .scroll-bar {
       left: 0px;
       width: 15px; }
@@ -13353,7 +13354,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   top: 50%; }
 
 /*style the items (options), including the selected item:*/
-.select-items div {
+.select-items.scroll-content div {
   color: var(--clr-textD);
   height: 26px;
   padding: 5px 10px;
@@ -13362,14 +13363,15 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden; }
-  .select-items div:hover {
-    background-color: var(--clr-back);
-    /*color: var(--clr-accent);*/ }
-  .select-items div:last-child {
+  .select-items.scroll-content div:last-child {
     border: none; }
-  .select-items div.same-as-selected {
+  .select-items.scroll-content div.same-as-selected {
     background-color: var(--clr-back);
     color: var(--clr-accent); }
+
+.select-items > div > div:hover {
+  background-color: var(--clr-back);
+  /*color: var(--clr-accent);*/ }
 
 /*style items (options):*/
 .select-items {
@@ -13444,15 +13446,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     display: block;
     max-height: 182px;
     overflow-y: scroll; }
-    .absoluteSelect .select-items::-webkit-scrollbar {
-      width: 4px;
-      background-color: transparent; }
-    .absoluteSelect .select-items::-webkit-scrollbar-thumb {
-      border-radius: 6px;
-      background: var(--clr-separator); }
-    .absoluteSelect .select-items::-webkit-scrollbar-track {
-      background-color: transparent;
-      border-radius: 6px; }
 
 .select-items.top {
   top: auto;

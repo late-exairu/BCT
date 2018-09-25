@@ -95,6 +95,8 @@ for (i = 0; i < x.length; i++) {
             select.classList.add("select-hide");       
         }
         this.classList.toggle("select-arrow-active");
+        $('.absoluteSelect .select-items').addClass("scroll-y scrollbar-right outer");
+        $('.absoluteSelect .select-items.scrollbar-right').scrollbar();
     });
 }
 
@@ -127,10 +129,12 @@ document.addEventListener("click", closeAllSelect);
 window.addEventListener("resize", closeAllSelect);
 $('.scroll-y').scroll(closeAllSelect);
 
-$('.absoluteSelect').on('click','div div',function () {
+$('.absoluteSelect').on('click','div div',function (e) {
+    e.stopPropagation();
     var selectedItem = $(this);
     var currentBlock = $('.select-selected.active');
     var currentSelect = $('.select-selected.active').parent().find('select');
     $(currentBlock).html($(selectedItem).html());
     $(currentSelect).val($(selectedItem).html());
+    closeAllSelect($(".select-selected .basic-select__select"));
 });
