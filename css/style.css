@@ -73,11 +73,7 @@
   --clr-time-bar:		#2E2E2E;
   /*time control bar background color*/
   --clr-time-slider:	#737373;
-  /*time control slider color*/
-  --clr-popup-close:	#00aaf8;
-  /*popup close background color*/
-  --clr-popup-title:	#00aaf8;
-  /* popup title text color*/ }
+  /*time control slider color*/ }
 
 .dark-theme {
   --clr-text:			#9ba6b2;
@@ -141,11 +137,7 @@
   --clr-time-bar:		#9BA6B2;
   /*time control bar background color*/
   --clr-time-slider:	#18202d;
-  /*time control slider color*/
-  --clr-popup-close:	#286bb4;
-  /*popup close background color*/
-  --clr-popup-title:	#9ba6b2;
-  /* popup title text color*/ }
+  /*time control slider color*/ }
 
 /**
  * The following variable and function originate from the sass-mq library.
@@ -1163,7 +1155,7 @@ h6 {
   .c-block-head__title {
     font-size: 14px;
     margin: 0;
-    color: var(--clr-popup-title);
+    color: var(--clr-accent);
     font-weight: 700; }
     .c-block-head__title span {
       font-size: 14px; }
@@ -14006,7 +13998,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   height: 20px;
   padding: 0;
   border-radius: 50%;
-  background: var(--clr-popup-close);
+  background: var(--clr-accent);
   color: #fff; }
   .fancybox-close-small svg {
     margin: -3px 0 0 -3px;
