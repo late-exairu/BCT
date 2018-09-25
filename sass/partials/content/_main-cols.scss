@@ -28,6 +28,16 @@
 			flex: 0 0 32%;
 			min-width: 250px;
 			max-width: 450px;
+
+			.c-block__col {
+				border: 1px solid transparent;
+				border-radius: var(--border-radius);
+
+				&:hover,
+				&:focus{
+					border: 1px solid var(--clr-accent);
+				}
+			}
 		}
 
 		&.col-tables{

@@ -8808,6 +8808,11 @@ Blocks from left bar
       flex: 0 0 32%;
       min-width: 250px;
       max-width: 450px; }
+      .main-cols__left.col-chats .c-block__col {
+        border: 1px solid transparent;
+        border-radius: var(--border-radius); }
+        .main-cols__left.col-chats .c-block__col:hover, .main-cols__left.col-chats .c-block__col:focus {
+          border: 1px solid var(--clr-accent); }
     .main-cols__left.col-tables {
       width: 394px;
       flex: 0 0 394px;
@@ -14186,8 +14191,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     width: 100% !important;
     padding-left: calc((100% - 223px)/2);
     background-color: #54a9eb;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px; }
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius); }
 
 .message-bar__login-demo {
   width: 100%;
