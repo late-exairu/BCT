@@ -901,7 +901,7 @@ $(function () {
 			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
 			success: function (data) {
 				var grapArr = data.Data.map(s => (s.open + s.close) / 2);
-				console.log(grapArr);
+				console.log("data", grapArr);
 				if (!grapArr.length) {
 					for (let i = 0; i < 366; i++) {
 						grapArr.push(1);

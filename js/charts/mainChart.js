@@ -1,4 +1,5 @@
-var date50 = new Date(Date.now() + -31 * 24 * 3600 * 1000);
+var date50 = new Date(Date.now() - 365 * 24 * 3600 * 1000);
+var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 
 function redrawMainChart() {
 	/* 	 	 var chartParent = $('.b-graph__controls');
@@ -140,7 +141,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		series: {
 			//pointWidth: $('#mainChart').width() / 110, // fixed A pixel value specifying
 			pointPadding: 0,
-			pointStart: Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDay()),
+			pointStart: start_point,
 			pointInterval: 24 * 3600 * 1000, // one day
 			borderWidth: 0,
 			groupPadding: 0,
@@ -300,7 +301,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 			var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-			var date = new Date(this.x);
+			var date = new Date(this.x + start_point);
 			var month = months[date.getMonth()];
 			var dayName = days[date.getDay()];
 			var year = date.getFullYear();
