@@ -914,7 +914,7 @@ $(function () {
 						stops: gradientColor
 					},
 					color: mainChartFirstColor,
-					lineWidth: 3,
+					lineWidth: 2,
 					enableMouseTracking: true,
 					trackByArea: true,
 					zIndex: 10
