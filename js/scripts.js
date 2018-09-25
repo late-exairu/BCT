@@ -1778,43 +1778,8 @@ $(function () {
 	/* Graph range select */
 	/*---------------------------------------------------*/
 	var allOptions = $("ul.graph-range__list").children('li.graph-range__item');
-	var minDate = Date.UTC(2018, 5, 17);
-	var maxDate = Date.UTC(2018, 7, 05);
-	$("ul.graph-range__list").on("click", "li.graph-range__item", function () {
-		allOptions.removeClass('active');
-		$(this).addClass('active');
-		$(".graph-range__current").html($(this).html());
-
-		switch ($(".graph-range__current").html()) {
-			case "1H":
-				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(0, {}, true);
-				var HOUR = 1000 * 3600 * 24 * 7; //1000 * 3600;
-				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate - (1000 * 3600 * 24));
-				break;
-			case "1D":
-				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(1, {}, true);
-				var DAY = 1000 * 3600 * 24 * 7; //1000 * 3600 * 24;
-				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate - (1000 * 3600 * 24));
-				break;
-			case "1W":
-				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(2, {}, true);
-				var WEEK = 1000 * 3600 * 24 * 7;
-				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - (1000 * 3600 * 24));
-				break;
-			case "1M":
-				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(3, {}, true);
-				var d = new Date(maxDate);
-				d.setMonth(d.getMonth() - 1);
-				mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
-				break;
-			case "ALL":
-				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(4, {}, true);
-				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
-				break;
-		}
-		redrawMainChart();
-	});
-
+	var minDate = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDay());
+	var maxDate = Date.now();
 
 	// var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
 	// $("div.portfolio-graph-range__current").on("click", function () {
@@ -1907,18 +1872,18 @@ $(function () {
 		switch (parseInt(this.value)) {
 			case 0:
 				$('.graph-range-slider__current').html("1h");
-				var HOUR = 1000 * 3600 * 24 * 7; //1000 * 3600;
-				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate - (1000 * 3600 * 24));
+				var HOUR = 1000 * 3600; //1000 * 3600;
+				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate);
 				break;
 			case 1:
 				$('.graph-range-slider__current').html("1d");
-				var DAY = 1000 * 3600 * 24 * 7; //1000 * 3600 * 24;
-				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate - (1000 * 3600 * 24));
+				var DAY = 1000 * 3600 * 24; //1000 * 3600 * 24;
+				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate);
 				break;
 			case 2:
 				$('.graph-range-slider__current').html("1w");
 				var WEEK = 1000 * 3600 * 24 * 7;
-				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - (1000 * 3600 * 24));
+				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate);
 				break;
 			case 3:
 				$('.graph-range-slider__current').html("1m");
