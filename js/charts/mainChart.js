@@ -289,11 +289,9 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		borderRadius: 0,
 		padding: 0,
 		shared: true,
-		split: true,
+		// split: true,
 		shadow: false,
 		useHTML: true,
-		//shape: "box",
-		//split: false,
 		style: {
 			color: '#ffffff',
 			fontSize: 8
@@ -327,8 +325,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				'height': lineForMainChartHeight,
 			});
 
-			// console.log('Point X: ', this.points[0].point.plotX)
-			if (this.points[0].point.plotX < 168) {
+			if (this.points[0].point.plotX < 205) {
 				arrowDirection = 'left';
 			}
 
