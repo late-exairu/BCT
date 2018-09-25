@@ -248,6 +248,16 @@
 		color: var(--clr-textL);
 	}
 
+	&__message{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		margin: auto;
+		color: var(--clr-important);
+		font-weight: 400;
+	}
+
 	&.bordered{
 		
 		.basic-table__body{

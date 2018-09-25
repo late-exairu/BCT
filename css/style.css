@@ -859,6 +859,14 @@ h6 {
     padding: 3px 0 0;
     line-height: 1;
     color: var(--clr-textL); }
+  .basic-table__message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    color: var(--clr-important);
+    font-weight: 400; }
   .basic-table.bordered .basic-table__body {
     border-top: 1px solid var(--clr-separator); }
   .basic-table.bordered .basic-table__row {
