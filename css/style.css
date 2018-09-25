@@ -7631,16 +7631,6 @@ h6 {
 		left: 7px;
 		top: -3px;
 		fill: var(--color-one);
-	}*/
-  /*&__btn-bg{
-		position: absolute;
-		left: 0;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 0;
-		bottom: 0;
-		width: 100%;
-		z-index: -1;
 	}*/ }
   .exch-head__body {
     position: relative;
@@ -7719,6 +7709,16 @@ h6 {
     background: url(../img/exch-bg.svg) no-repeat; }
     .exch-head__btn:hover {
       opacity: .9; }
+  .exch-head__btn-bg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    display: none; }
   .exch-head__btn-text {
     position: relative;
     top: -1px; }
