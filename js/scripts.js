@@ -1924,4 +1924,10 @@ $(function () {
 		// close dropdown
 		$(currDropdown).removeClass('open');
 	});
+
+	$('.message-bar__login').hover(function(){
+		$('.message-bar__login-demo').css('opacity', '0.9');
+	}, function() {
+		$('.message-bar__login-demo').css('opacity', '1');
+	});
 });
