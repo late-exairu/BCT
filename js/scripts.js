@@ -1365,6 +1365,7 @@ $(function () {
 					'<div class="basic-table__col w-10">FILLED</div>' +
 					'</div >';
 			}
+			$('.basic-table__message').addClass('hidden');
 			$('#panel-funds-history .basic-table__body .basic-table__body').prepend(newRow);
 			$('.graph-prices').addClass('open noClose');
 			$('.b-graph__controls').addClass('shifted');
