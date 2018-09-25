@@ -1926,8 +1926,9 @@ $(function () {
 	});
 
 	$('.message-bar__login').hover(function(){
-		$('.message-bar__login-demo').css('opacity', '0.9');
+		// background-image: linear-gradient(#009EE2, #218FE9);
+		$('.message-bar__login-demo').css('background-image', 'linear-gradient(#2c85c4, #2b7cb4)');
 	}, function() {
-		$('.message-bar__login-demo').css('opacity', '1');
+		$('.message-bar__login-demo').css('background-image', 'linear-gradient(#009EE2, #218FE9)');
 	});
 });
