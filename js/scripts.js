@@ -1780,7 +1780,7 @@ $(function () {
 	/* Graph range select */
 	/*---------------------------------------------------*/
 	var allOptions = $("ul.graph-range__list").children('li.graph-range__item');
-	var minDate = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDay());
+	var minDate = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 	var maxDate = Date.now();
 
 	// var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
