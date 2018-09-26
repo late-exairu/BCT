@@ -13,7 +13,7 @@ function redrawMainChart() {
 }
 
 var mainChartMarginLeft = 0;
-var mainChartSpacingTop = 30;
+var mainChartSpacingTop = 40;
 var lineColor = '#01B067';
 var blueColor = '#01B067';
 var redColor = '#CE2424';
