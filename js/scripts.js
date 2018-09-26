@@ -262,26 +262,6 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* js-scrollbar-outer */
 	/*---------------------------------------------------*/
-	var scrollbarLeft = $('.toolbar__scroll.scrollbar-left');
-
-	$('.scrollbar-right').scrollbar();
-	$('.left-bar__scroll.scrollbar-left').scrollbar();
-	scrollbarLeft.scrollbar({
-		"onScroll": function (y, x) {
-			if (y.scroll == y.maxScroll) {
-				$('.toolbar__scrollup__btn').show();
-				$('.toolbar__scrolldown__btn').hide();
-				if (y.maxScroll == 0) {
-					$('.toolbar__scrollup__btn').hide();
-				}
-			} else {
-				$('.toolbar__scrollup__btn').hide();
-				$('.toolbar__scrolldown__btn').show();
-			}
-		}
-
-	});
-
 	$('.scrollbar-arrows').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",
@@ -303,21 +283,7 @@ $(function () {
 	$('#user-btn').on('click', function () {
 		$('body').toggleClass('menubar-in');
 	});
-
-	/*---------------------------------------------------*/
-	/* Scroll up/down event for left toolbar */
-	/*---------------------------------------------------*/
-	$(".toolbar__scrollup__btn").on("click", function () {
-		scrollbarLeft.animate({
-			scrollTop: 0
-		}, "slow");
-	});
-
-	$(".toolbar__scrolldown__btn").on("click", function () {
-		scrollbarLeft.animate({
-			scrollTop: scrollbarLeft.prop("scrollHeight") - scrollbarLeft.outerHeight()
-		}, "slow");
-	});
+	
 
 	/*---------------------------------------------------*/
 	/* Scroll up/down event for graph prices */
@@ -896,7 +862,7 @@ $(function () {
 			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
 			success: function (data) {
 				var grapArr = data.Data.map(s => (s.open + s.close) / 2);
-				console.log("data", grapArr);
+				// console.log("data", grapArr);
 				if (!grapArr.length) {
 					for (let i = 0; i < 366; i++) {
 						grapArr.push(1);
