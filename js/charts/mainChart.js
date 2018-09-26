@@ -268,7 +268,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			}
 			return {
 				x: xPos,
-				y: point.plotY - 18
+				y: point.plotY - 18 + mainChartSpacingTop
 			};
 		}
 	},
