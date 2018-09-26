@@ -3605,8 +3605,8 @@
 <div class="basic-popup transaction-popup" id="transaction-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
 		<div class="popup-tabs">
-			<div class="popup-tabs__item active">Receive BTC</div>
-			<div class="popup-tabs__item">Send BTC</div>
+			<div class="popup-tabs__item active">Deposit</div>
+			<div class="popup-tabs__item">Withdraw</div>
 		</div>
 
 		<div class="d-flex-col flex-1-1 flex-h-fix">
@@ -3634,10 +3634,20 @@
 
 		<div class="d-flex-col flex-1-1 flex-h-fix">
 			<form class="transaction-form">
-				<div class="transaction-form__line convert">
-					<input class="transaction-form__input" type="text" name="" value="1000.000 BTC">
+				<div class="transaction-form__line inline">
+					<div class="transaction-form__input-group">
+						<input class="transaction-form__input" type="text" name="" value="1000.000">
+						<div class="input-group-append">
+							<span class="input-group-text">BTC</span>
+						</div>
+					</div>
 					<div class="transaction-form__sep">≈</div>
-					<input class="transaction-form__input" type="text" name="" value="8197500.000 USDT">
+					<div class="transaction-form__input-group">
+						<input class="transaction-form__input" type="text" name="" value="8197500.00">
+						<div class="input-group-append">
+							<span class="input-group-text">USDT</span>
+						</div>
+					</div>
 				</div>
 
 				<div class="transaction-form__line inner">

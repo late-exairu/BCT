@@ -13163,7 +13163,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     font-family: "open_sans", sans-serif;
     font-size: 12px;
     width: 100%;
-    height: 30px;
+    height: 32px;
     padding: 5px;
     border: 1px solid var(--clr-separatorD);
     border-radius: var(--border-radius);
