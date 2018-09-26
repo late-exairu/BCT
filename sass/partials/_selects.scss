@@ -106,7 +106,7 @@
 .to-top{
 	.select-items{
     	top: auto;
-    	bottom: 4px;
+    	bottom: 0;
 		
 		&:after{
 			content: '';
@@ -139,7 +139,8 @@
 
 .absoluteSelect {
     position: absolute;
-    left: -9999px;
+	left: -9999px;
+	height: 182px;
     .select-items {
 		display: block;
 		max-height: 182px;

@@ -75,13 +75,13 @@ for (i = 0; i < x.length; i++) {
                 resultTopPosition = selectPosY + selectHeight;
                 positionClass = '';
             } else {
-                resultTopPosition = selectPosY - absoluteSelectHeight;
+                resultTopPosition = selectPosY - absoluteSelectHeight - 4;
             }
 
             $('.absoluteSelect').css({
                 'left':selectPosX,
                 'top': resultTopPosition,
-                'width': selectWidth,
+                'width': selectWidth
             });
             $('.absoluteSelect').removeClass('to-top').addClass(positionClass);
 

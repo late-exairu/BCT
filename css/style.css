@@ -13422,7 +13422,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 .to-top .select-items {
   top: auto;
-  bottom: 4px; }
+  bottom: 0; }
   .to-top .select-items:after {
     content: '';
     position: absolute;
@@ -13449,7 +13449,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 .absoluteSelect {
   position: absolute;
-  left: -9999px; }
+  left: -9999px;
+  height: 182px; }
   .absoluteSelect .select-items {
     display: block;
     max-height: 182px;
