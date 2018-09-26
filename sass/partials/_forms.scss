@@ -716,10 +716,6 @@
 		flex-wrap: wrap;
 		align-items: stretch;
 		width: calc(50% - 5px);
-
-		&:first-child{
-			margin-right: 10px;
-		}
 		
 		> .transaction-form__input {
 
@@ -747,7 +743,7 @@
 				font-weight: bold;
 				text-align: center;
 				white-space: nowrap;
-				background-color: #d9dadb;
+				background-color: var(--clr-backIA);
 				border: 1px solid var(--clr-separatorD);
 				border-radius: var(--border-radius);
 				border-top-left-radius: 0;

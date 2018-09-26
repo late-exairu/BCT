@@ -58,6 +58,8 @@
   /*basic block color basic*/
   --clr-back-arrow:	#e7e7e7;
   /*scroll arrow background color*/
+  --clr-backIA:		#d9dadb;
+  /*background input group append*/
   --clr-text-tooltip: #2E2E2E;
   /*basic tooltip text color*/
   --clr-back-tooltip: #F9F9F9;
@@ -122,6 +124,8 @@
   /*basic block color basic*/
   --clr-back-arrow:	#10151d;
   /*scroll arrow background color*/
+  --clr-backIA:		#24425b;
+  /*background input group append*/
   --clr-text-tooltip: #F9F9F9;
   /*tooltip text color dark*/
   --clr-back-tooltip: #2C3137;
@@ -9971,6 +9975,7 @@ body.menubar-in #user-btn:before {
   justify-content: space-between;
   width: 100%;
   cursor: pointer;
+  margin-left: 10px;
   /*border: 1px solid var(--clr-separatorD);*/
   /*border-radius: calc(var(--border-radius) - 1px);*/
   background: var(--clr-back);
@@ -13122,8 +13127,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     flex-wrap: wrap;
     align-items: stretch;
     width: calc(50% - 5px); }
-    .transaction-form__input-group:first-child {
-      margin-right: 10px; }
     .transaction-form__input-group > .transaction-form__input {
       position: relative;
       flex: 1 1 auto;
@@ -13144,7 +13147,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
         font-weight: bold;
         text-align: center;
         white-space: nowrap;
-        background-color: #d9dadb;
+        background-color: var(--clr-backIA);
         border: 1px solid var(--clr-separatorD);
         border-radius: var(--border-radius);
         border-top-left-radius: 0;
