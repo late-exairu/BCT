@@ -646,11 +646,6 @@ $(function () {
 						color: labelColor
 					}
 				}
-			},
-			plotOptions: {
-				/* 				areaspline: {
-									color: lineColor
-								} */
 			}
 		};
 

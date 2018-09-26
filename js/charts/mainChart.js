@@ -301,13 +301,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 			var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-			var date;
-			if (!$('body').hasClass('advanced')) {
-				date = new Date(this.x);
-			}
-			else {
-				date = new Date(this.x + start_point);
-			}
+			var date = new Date(this.x);
 			var month = months[date.getMonth()];
 			var dayName = days[date.getDay()];
 			var year = date.getFullYear();
