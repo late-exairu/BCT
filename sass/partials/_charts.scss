@@ -232,10 +232,11 @@
 		/*border: 1px solid var(--clr-separatorD);*/
 		display: flex;
 		line-height: 20px;
+		font-weight: 700;
 
 		.currency {
 			font-size: 13px;
-			border-right: 1px solid var(--clr-textD);
+			border-right: 2px solid var(--clr-textD);
 			padding-right: 5px;
 			padding-left: 5px;
 			margin: -1px 0 0;
@@ -246,7 +247,7 @@
 
 		.price {
 			padding-left: 5px;
-			font-size: 12px;
+			font-size: 13px;
 			line-height: 20px;
 			color: var(--clr-textD);
 
