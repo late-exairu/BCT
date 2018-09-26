@@ -8822,9 +8822,11 @@ Blocks from left bar
       max-width: 450px; }
       .main-cols__left.col-chats .c-block__col {
         border: 1px solid transparent;
-        border-radius: var(--border-radius); }
-        .main-cols__left.col-chats .c-block__col:hover, .main-cols__left.col-chats .c-block__col:focus {
-          border: 1px solid var(--clr-accent); }
+        border-radius: var(--border-radius);
+        /*&:hover,
+				&:focus{
+					border: 1px solid var(--clr-accent);
+				}*/ }
     .main-cols__left.col-tables {
       width: 394px;
       flex: 0 0 394px;
