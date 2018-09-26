@@ -872,14 +872,30 @@ $(function () {
 		$.ajax({
 			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
 			success: function (data) {
+				var columnArr = [];
+				console.log("data", data);
+
 				var grapArr = data.Data.map(s => (s.open + s.close) / 2);
-				// console.log("data", grapArr);
+				var columnArr = data.Data.map(s => {
+					var difference = s.close - s.open;
+					var columnColor = '#01B067';
+					if (difference < 0){
+						columnColor = '#CE2424';
+						difference = Math.abs(difference);
+					} 
+					return {
+						y: difference * 3,
+						color: columnColor
+					}
+				} );
+
 				if (!grapArr.length) {
 					for (let i = 0; i < 366; i++) {
 						grapArr.push(1);
 					};
 				};
 				mainChartObj.series[0].setData(grapArr);
+				mainChartObj.series[1].setData(columnArr);
 				mainChartObj.series[0].update({
 					fillColor: {
 						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
