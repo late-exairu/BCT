@@ -1,5 +1,7 @@
 $(function () {
 	var svgArrowTemplate = '<svg class="basic-table__arrow-conv" role="img" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right-2"></use> </svg>';
+	const minDate = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
+	const maxDate = Date.now();
 
 	function setOwnName() {
 		if (localStorage.getItem('telegramAuth') == 'true' && localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
@@ -272,7 +274,7 @@ $(function () {
 	/* js-scrollbar-outer */
 	/*---------------------------------------------------*/
 	$('.scrollbar-right').scrollbar();
-	
+
 	$('.scrollbar-arrows').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",
@@ -1751,10 +1753,7 @@ $(function () {
 
 	/*---------------------------------------------------*/
 	/* Graph range select */
-	/*---------------------------------------------------*/
-	var allOptions = $("ul.graph-range__list").children('li.graph-range__item');
-	var minDate = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
-	var maxDate = Date.now();
+	/*---------------------------------------------------*/	
 
 	// var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
 	// $("div.portfolio-graph-range__current").on("click", function () {
@@ -1858,7 +1857,7 @@ $(function () {
 			case 2:
 				$('.graph-range-slider__current').html("1w");
 				var WEEK = 1000 * 3600 * 24 * 7;
-				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - 1000 * 3600 * 24);
+				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate);
 				break;
 			case 3:
 				$('.graph-range-slider__current').html("1m");

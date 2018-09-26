@@ -42,16 +42,9 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	chart: {
 		marginLeft: mainChartMarginLeft,
 		marginBottom: 0,
-		marginRight: -45,
-		spacingTop: mainChartSpacingTop,
-		spacingLeft: -22,
-		spacingRight: -22,
-		spacingBottom: 0,
-		events: {
-			/* 			click: function (event) {
-							mainGraphHighlighted = mainGraphHover;
-						} */
-		}
+		marginRight: 0,
+		marginLeft: 0,
+		spacingTop: mainChartSpacingTop
 	},
 	title: null,
 	plotOptions: {
@@ -192,7 +185,9 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			x: 50
 		},
 		tickLength: 0,
-		gridLineWidth: 0
+		gridLineWidth: 0,
+		minPadding: 0,
+    	maxPadding: 0
 	},
 	yAxis: {
 		min: 0,

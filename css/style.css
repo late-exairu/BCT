@@ -13249,8 +13249,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   padding-top: 0;
   padding-left: 0;
   height: 100%;
-  width: 102.04%;
-  margin-left: -2.041%; }
+  width: 100%; }
 
 .label {
   z-index: 1 !important; }
@@ -13259,8 +13258,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   position: inherit !important; }
 
 .highcharts-tooltip {
-  z-index: 9998 !important;
-  margin-left: -2.041%; }
+  z-index: 9998 !important; }
   .highcharts-tooltip div.tooltip,
   .highcharts-tooltip div.tooltipCircle {
     font-family: "open_sans", sans-serif;
@@ -13550,10 +13548,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     display: none; }
     #orders .forms-wrap.current {
       display: flex; }
-
-#portfolioChartGeneral .highcharts-tooltip,
-#liquidityChart .highcharts-tooltip {
-  margin-left: auto; }
 
 /* =================================================================== */
 /* basic-btn

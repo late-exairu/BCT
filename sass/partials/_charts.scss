@@ -155,8 +155,7 @@
 	padding-top: 0;
 	padding-left: 0;
 	height: 100%;
-	width: 102.04%;
-	margin-left: -2.041%;
+	width: 100%;
 }
 
 .label {
@@ -169,7 +168,7 @@
 
 .highcharts-tooltip {
 	z-index: 9998 !important;
-	margin-left: -2.041%;
+	// margin-left: -2.041%;
 
 	div.tooltip,
 	div.tooltipCircle {
@@ -572,12 +571,5 @@
 		&.current {
 			display: flex;
 		}
-	}
-}
-
-#portfolioChartGeneral, 
-#liquidityChart {
-	.highcharts-tooltip {
-		margin-left: auto;
 	}
 }
