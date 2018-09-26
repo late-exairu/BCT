@@ -271,6 +271,8 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* js-scrollbar-outer */
 	/*---------------------------------------------------*/
+	$('.scrollbar-right').scrollbar();
+	
 	$('.scrollbar-arrows').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",

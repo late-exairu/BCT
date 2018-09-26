@@ -4,7 +4,6 @@ const toolbarTopSpacing = 10;
 var scrollbarLeft = $('.toolbar__scroll.scrollbar-left');
 var toolbarDropdowns = document.getElementsByClassName('toolbar-drop');
 
-$('.scrollbar-right').scrollbar();
 $('.left-bar__scroll.scrollbar-left').scrollbar();
 scrollbarLeft.scrollbar({
     "onScroll": function (y, x) {
