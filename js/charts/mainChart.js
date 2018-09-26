@@ -196,7 +196,9 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	},
 	yAxis: {
 		min: 0,
-		endOnTick: false
+		endOnTick: false,
+		tickLength: 0,
+		gridLineWidth: 0
 	},
 
 	tooltip: {
