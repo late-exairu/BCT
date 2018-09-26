@@ -7,7 +7,7 @@ var centerX = null;
 var centerY = null;
 
 // add hover effects for circleChart only when cursor inside the circle
-$('.accounts-diagram-wrap').mousemove(function (e) {
+$('.advanced .accounts-diagram-wrap').mousemove(function (e) {
     var parentOffset = $('.accounts-diagram').offset();
     var relX = e.pageX - parentOffset.left - 20;
     var relY = e.pageY - parentOffset.top - 20;
