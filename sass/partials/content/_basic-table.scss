@@ -185,6 +185,10 @@
 				fill: var(--clr-accent);
 			}
 		}
+
+		&.fix-width{
+			width: 80px;
+		}
 	}
 
 	&__col{
