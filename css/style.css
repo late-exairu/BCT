@@ -824,6 +824,8 @@ h6 {
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
       .basic-table__btn:active .sprite-icon, .basic-table__btn.active .sprite-icon {
         fill: var(--clr-accent); }
+    .basic-table__btn.fix-width {
+      width: 80px; }
   .basic-table__col {
     display: flex;
     height: var(--cell-height);

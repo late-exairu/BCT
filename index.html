@@ -1989,119 +1989,107 @@
 
 								<div class="basic-table bordered bigger-font h-100 d-flex-col">
 									<div class="basic-table__row head">
-										<div class="basic-table__col w-35">Balance</div>
-										<div class="basic-table__col w-32">Price USDT</div>
-										<div class="basic-table__col w-32">Assets</div>
+										<div class="basic-table__col w-25">Balance</div>
+										<div class="basic-table__col w-20">Price USDT</div>
+										<div class="basic-table__col w-32">Today</div>
+										<div class="basic-table__col w-22">Deposit</div>
 									</div>
 									<!-- basic-table__row END -->
 									
 									<div class="basic-table__body h-100 scroll-y scrollbar-right outer">
 
 										<div class="basic-table__row" data-currency="USDT">
-											<div class="basic-table__col w-35">
+											<div class="basic-table__col w-25">
 												<svg class="basic-table__curr icon-curr clr-coin-usdt" role="img" aria-hidden="true">
 													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
 												</svg>
-												<span class="walletUSDT"></span> USDT <span class="smaller">(Tether)</span>
+												<div class="d-flex-col">
+													<span><span class="walletUSDT"></span> USDT</span>
+													<span class="smaller">Tether</span>
+												</div>
 											</div>
-											<div class="basic-table__col w-32">$1</div>
+											<div class="basic-table__col w-20">$1</div>
 											<div class="basic-table__col w-32">$1 <span class="smaller clr-blue">+0%</span></div>
+											<div class="basic-table__col w-22">
+												<button class="basic-table__btn fix-width" data-fancybox="" data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													USDT
+												</button>
+											</div>
 										</div>
 										<!-- basic-table__row END -->
 										
 										<div class="basic-table__row disabled" data-currency="BTC">
-											<div class="basic-table__col w-35">
+											<div class="basic-table__col w-25">
 												<svg class="basic-table__curr icon-curr clr-coin-btc" role="img" aria-hidden="true">
 													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
 												</svg>
-												<span class="walletBTC"></span> BTC <span class="smaller">(Bitcoin)</span>
+												<div class="d-flex-col">
+													<span><span class="walletBTC"></span> BTC</span>
+													<span class="smaller">Bitcoin</span>
+												</div>
 											</div>
-											<div class="basic-table__col w-32 pricePerCoinBTC"></div>
+											<div class="basic-table__col w-20 pricePerCoinBTC"></div>
 											<div class="basic-table__col w-32">$6,387.95 <span class="smaller clr-blue">+3.18%</span></div>
+											<div class="basic-table__col w-22">
+												<button class="basic-table__btn fix-width"  data-fancybox="" data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													BTC
+												</button>
+											</div>
 										</div>
 										<!-- basic-table__row END -->
 
 										<div class="basic-table__row disabled" data-currency="ETH">
-											<div class="basic-table__col w-35">
+											<div class="basic-table__col w-25">
 												<svg class="basic-table__curr icon-curr clr-coin-eth" role="img" aria-hidden="true">
 													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-eth"></use>
 												</svg>
-												<span class="walletETH"></span> ETH <span class="smaller">(Ethereum)</span>
+												<div class="d-flex-col">
+													<span><span class="walletETH"></span> ETH</span>
+													<span class="smaller">Ethereum</span>
+												</div>
 											</div>
-											<div class="basic-table__col w-32 pricePerCoinETH"></div>
+											<div class="basic-table__col w-20 pricePerCoinETH"></div>
 											<div class="basic-table__col w-32">$202.37 <span class="smaller clr-blue">+0.26%</span></div>
+											<div class="basic-table__col w-22">
+												<button class="basic-table__btn fix-width" data-fancybox="" data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													ETH
+												</button>
+											</div>
 										</div>
 										<!-- basic-table__row END -->
 
 										<div class="basic-table__row disabled" data-currency="LTC">
-											<div class="basic-table__col w-35">
+											<div class="basic-table__col w-25">
 												<svg class="basic-table__curr icon-curr clr-coin-ltc" role="img" aria-hidden="true">
 													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-ltc"></use>
 												</svg>
-												<span class="walletLTC"></span> LTC <span class="smaller">(Litecoin)</span>
+												<div class="d-flex-col">
+													<span><span class="walletLTC"></span> LTC</span>
+													<span class="smaller">Litecoin</span>
+												</div>
 											</div>
-											<div class="basic-table__col w-32 pricePerCoinLTC"></div>
+											<div class="basic-table__col w-20 pricePerCoinLTC"></div>
 											<div class="basic-table__col w-32">$54.73 <span class="smaller clr-blue">+1.25%</span></div>
+											<div class="basic-table__col w-22">
+												<button class="basic-table__btn fix-width" data-fancybox="" data-src="#send-popup">
+													<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+													</svg>
+													LTC
+												</button>
+											</div>
 										</div>
 										<!-- basic-table__row END -->
-<!-- 
-										<div class="basic-table__row disabled" data-currency="BCH">
-											<div class="basic-table__col w-35">
-												<svg class="basic-table__curr icon-curr clr-coin-bch" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-bch"></use>
-												</svg>
-												<span class="walletBCH"></span> BCH <span class="smaller">(Bitcoin Cash)</span>
-											</div>
-											<div class="basic-table__col w-32 pricePerCoinBCH"></div>
-											<div class="basic-table__col w-32">$502.00 <span class="smaller clr-blue">+0.41%</span></div>
-										</div>
 
-
-										<div class="basic-table__row disabled" data-currency="XMR">
-											<div class="basic-table__col w-35">
-												<svg class="basic-table__curr icon-curr clr-coin-xmr" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-xmr"></use>
-												</svg>
-												<span class="walletXMR"></span> XMR <span class="smaller">(Monero)</span>
-											</div>
-											<div class="basic-table__col w-32 pricePerCoinXMR"></div>
-											<div class="basic-table__col w-32">$110.51 <span class="smaller clr-blue">+1.09%</span></div>
-										</div>
-
-										<div class="basic-table__row disabled" data-currency="MKR">
-											<div class="basic-table__col w-35">
-												<svg class="basic-table__curr icon-curr clr-coin-mkr" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-mkr"></use>
-												</svg>
-											<span class="walletMKR"></span> MKR <span class="smaller">(Maker)</span>
-											</div>
-											<div class="basic-table__col w-32 pricePerCoinMKR"></div>
-											<div class="basic-table__col w-32">$391.68 <span class="smaller clr-blue">+0.98%</span></div>
-										</div>
-
-										<div class="basic-table__row disabled" data-currency="DASH">
-											<div class="basic-table__col w-35">
-												<svg class="basic-table__curr icon-curr clr-coin-dash" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-dash"></use>
-												</svg>
-												<span class="walletDASH"></span> DASH <span class="smaller">(Dash)</span>
-											</div>
-											<div class="basic-table__col w-32 pricePerCoinDASH"></div>
-											<div class="basic-table__col w-32">$172.90 <span class="smaller clr-blue">+4.11%</span></div>
-										</div>
-
-										<div class="basic-table__row disabled" data-currency="XRP">
-											<div class="basic-table__col w-35">
-												<svg class="basic-table__curr icon-curr clr-xpr" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-xrp"></use>
-												</svg>
-												<span class="walletXRP"></span> XRP <span class="smaller">(XRP)</span>
-											</div>
-											<div class="basic-table__col w-32 pricePerCoinXRP"></div>
-											<div class="basic-table__col w-32">$0.29 <span class="smaller clr-blue">+2.26%</span></div>
-										</div>
-										<!-- basic-table__row END -->
-										
 									</div><!-- basic-table__doby END -->
 								</div><!-- basic-table END -->
 							</div>

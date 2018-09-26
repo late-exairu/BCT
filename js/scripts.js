@@ -157,7 +157,7 @@ $(function () {
 	/* js-select currency */
 	/*---------------------------------------------------*/
 
-	$('.exch-dropdown__list .exch-dropdown__item').click(function () {
+	$('.exch-dropdown__list .exch-dropdown__item').click(function (event,param1) {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
 		var currencyAbbr = $(this).attr('data-currency');
@@ -233,9 +233,10 @@ $(function () {
 		var getCurrency = $('.exch-form__get input').attr('data-currency');
 		var sendCurrency = $('.exch-form__send input').attr('data-currency');
 		var exchange = $('.graph-prices .graph-prices__list .graph-prices__item.active .graph-prices__trader').text().trim();
-		setTimeout(() => {
-			updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
-		}, 10);
+
+		if (param1 != 'noRedraw')
+		updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
+
 		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
 
 		var priceRateBackward = 1 / priceRate;
@@ -871,30 +872,68 @@ $(function () {
 	});
 
 	function updateMainChartSplineNew(exchange, sendCurrency, getCurrency) {
-		$.ajax({
-			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
-			success: function (data) {
-				var grapArr = data.Data.map(s => (s.open + s.close) / 2);
-				// console.log("data", grapArr);
-				if (!grapArr.length) {
-					for (let i = 0; i < 366; i++) {
-						grapArr.push(1);
+		if (sendCurrency != getCurrency) {
+			$.ajax({
+				url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
+				success: function (data) {
+					var columnArr = [];
+					//console.log("data", data);
+					var grapArr = data.Data.map(s => (s.open + s.close) / 2);
+					var columnArr = data.Data.map(s => {
+						var difference = s.close - s.open;
+						var columnColor = '#01B067';
+						if (difference < 0) {
+							columnColor = '#CE2424';
+							difference = Math.abs(difference);
+						}
+						return {
+							y: difference * 3,
+							color: columnColor
+						}
+					});
+
+					if (!grapArr.length) {
+						for (let i = 0; i < 366; i++) {
+							grapArr.push(1);
+						};
 					};
-				};
-				mainChartObj.series[0].setData(grapArr);
-				mainChartObj.series[0].update({
-					fillColor: {
-						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-						stops: gradientColor
-					},
-					color: mainChartFirstColor,
-					lineWidth: 2,
-					enableMouseTracking: true,
-					trackByArea: true,
-					zIndex: 10
-				});
-			},
-		});
+					mainChartObj.series[0].setData(grapArr);
+					mainChartObj.series[1].setData(columnArr);
+					mainChartObj.series[0].update({
+						fillColor: {
+							linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+							stops: gradientColor
+						},
+						color: mainChartFirstColor,
+						lineWidth: 2,
+						enableMouseTracking: true,
+						trackByArea: true,
+						zIndex: 10
+					});
+				},
+			});
+		}
+		else{
+			var grapArr = [];
+			var columnArr = [];
+			for (let i = 0; i < 366; i++) {
+				grapArr.push(1);
+			};
+			mainChartObj.series[0].setData(grapArr);
+			mainChartObj.series[1].setData(columnArr);
+			mainChartObj.series[0].update({
+				fillColor: {
+					linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+					stops: gradientColor
+				},
+				color: mainChartFirstColor,
+				lineWidth: 2,
+				enableMouseTracking: true,
+				trackByArea: true,
+				zIndex: 10
+			});
+		}
+
 	}
 
 
@@ -1088,8 +1127,8 @@ $(function () {
 		$(this).toggleClass('switched');
 		var firstCurr = $('.exch-form__send input').attr('data-currency');
 		var secondCurr = $('.exch-form__get input').attr('data-currency');
-		$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurr + '"]').trigger('click');
-		$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurr + '"]').trigger('click');
+		$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurr + '"]').eq(0).trigger('click','noRedraw');
+		$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurr + '"]').eq(0).trigger('click');
 		$('.exch-dropdown').removeClass('open');
 	});
 
