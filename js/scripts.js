@@ -1881,7 +1881,7 @@ $(function () {
 			case 2:
 				$('.graph-range-slider__current').html("1w");
 				var WEEK = 1000 * 3600 * 24 * 7;
-				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate);
+				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - 1000 * 3600 * 24);
 				break;
 			case 3:
 				$('.graph-range-slider__current').html("1m");
