@@ -940,11 +940,47 @@
 		}*/
 
 		&.submit{
-			background: var(--clr-accentD);			
+			position: relative;
+			font-family: $osans;
+			padding: 0 0 0 5px;
+			height: 32px;
+			display: flex;
+			flex: 0 0 105px;
+			align-items: center;
+			color: #fff;
+			cursor: pointer;
+			margin: 0 15px 0 0;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: 700;
+			white-space: nowrap;
+			transition: all 0.1s;
+			justify-content: center;
+			border: none;
+			line-height: 1;
+			background: transparent;
+			border-radius: var(--border-radius);
+			background: #f00;
+			background: linear-gradient(to bottom, #0fb798 0%,#01b067 100%);
 
-			/*&:hover{
-				background: var(--clr-accent);
-			}*/
+			&:after{
+				content: "";
+				position: absolute;
+				top: 49%;
+				right: -3px;
+				bottom: 0;
+				width: 10px;
+				background: #000;
+				width: 19px;
+				height: 19px;
+				border-radius: 5px 3px 5px;
+				transform: rotate(45deg) skew(20deg,20deg) translateY(-50%);
+				background: linear-gradient(135deg,#0fb798,#01b067);
+			}
+
+			&:hover{
+				opacity: .9;
+			}
 		}
 	}
 
@@ -959,6 +995,7 @@
 		width: 100%;
 		z-index: -1;
 		fill: #009fe3;
+		display: none;
 	}
 
 	.cubic-slider{
