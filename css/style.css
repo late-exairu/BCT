@@ -12406,7 +12406,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     justify-content: center;
     align-items: center;
     color: #fff;
-    background: #00AAF8;
+    background: var(--clr-accent);
     cursor: pointer; }
     .order-form__submit.btn-red {
       background: #FF0600; }
