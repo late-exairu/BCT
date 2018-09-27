@@ -12976,7 +12976,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     .transaction-form__btns > * {
       margin: 0 0 0 5px; }
       .transaction-form__btns > *:first-child {
-        margin: 0; }
+        margin: 0 10px 0 0; }
   .transaction-form__btn {
     font-family: "open_sans", sans-serif;
     height: 32px;
