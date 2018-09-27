@@ -45,7 +45,7 @@ $(function () {
 
 	setOwnName();
 
-	updateMainChartSplineNew(null,'USDT','BTC');
+	updateMainChartSplineNew(null, 'USDT', 'BTC');
 
 	/* Cubic slider for Orders */
 	var $cubicSlider = $(".js-cubic-slider");
@@ -155,7 +155,7 @@ $(function () {
 	/* js-select currency */
 	/*---------------------------------------------------*/
 
-	$('.exch-dropdown__list .exch-dropdown__item').click(function (event,param1) {
+	$('.exch-dropdown__list .exch-dropdown__item').click(function (event, param1) {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
 		var currencyAbbr = $(this).attr('data-currency');
@@ -233,16 +233,15 @@ $(function () {
 		var exchange = $('.graph-prices .graph-prices__list .graph-prices__item.active .graph-prices__trader').text().trim();
 
 		if (param1 != 'noRedraw')
-		updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
+			updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
 
 		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
 
 		var priceRateBackward = 1 / priceRate;
-		if(priceRateBackward > 1){
+		if (priceRateBackward > 1) {
 			priceRateBackward = priceRateBackward.toFixed(2);
 			priceRateBackward = numberWithCommas(priceRateBackward);
-		}
-		else{
+		} else {
 			priceRateBackward = priceRateBackward.toFixed(5);
 		}
 		$('.graph-info__title').first().html('1 ' + sendCurrency + ' = <b>' + priceRateBackward + '</b> ' + getCurrency);
@@ -295,7 +294,7 @@ $(function () {
 	$('#user-btn').on('click', function () {
 		$('body').toggleClass('menubar-in');
 	});
-	
+
 
 	/*---------------------------------------------------*/
 	/* Scroll up/down event for graph prices */
@@ -910,8 +909,7 @@ $(function () {
 					});
 				},
 			});
-		}
-		else{
+		} else {
 			var grapArr = [];
 			var columnArr = [];
 			for (let i = 0; i < 366; i++) {
@@ -1125,7 +1123,7 @@ $(function () {
 		$(this).toggleClass('switched');
 		var firstCurr = $('.exch-form__send input').attr('data-currency');
 		var secondCurr = $('.exch-form__get input').attr('data-currency');
-		$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurr + '"]').eq(0).trigger('click','noRedraw');
+		$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurr + '"]').eq(0).trigger('click', 'noRedraw');
 		$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurr + '"]').eq(0).trigger('click');
 		$('.exch-dropdown').removeClass('open');
 	});
@@ -1412,6 +1410,7 @@ $(function () {
 						} */
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
+			$('.exch-form__submit').prop('disabled', false);
 			var firstValue, secondValue;
 			// if selected previous conversion
 			if (isSelectedPrevConversion) {
@@ -1432,6 +1431,9 @@ $(function () {
 
 				secondValue = ((ownWallet[sendCurrency] * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
 			}
+			if (firstValue == 0) {
+				$('.exch-form__submit').prop('disabled', true);
+			}
 			$('.exch-form__send input').val(numberWithCommas(firstValue));
 			$('.exch-form__get input').val(numberWithCommas(secondValue));
 			isSelectedPrevConversion = false;
@@ -1442,7 +1444,6 @@ $(function () {
 				$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
 			}, 1000);
 
-			//setOwnName();
 			currentWallet = ownWallet;
 			updateWalletData();
 			drawCircleChart();
@@ -1499,6 +1500,12 @@ $(function () {
 
 		if ($(this).parent().hasClass('exch-form__send')) {
 			var firstValue = $(this).val();
+
+			if (firstValue > ownWallet[sendCurrency]) {
+				firstValue = ownWallet[sendCurrency];
+				$('.exch-form__send input').val(firstValue.toFixed(2));
+			}
+
 			var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
 			$('.exch-form__get input').val(numberWithCommas(secondValue));
 
@@ -1509,9 +1516,9 @@ $(function () {
 			}, 1000);
 
 		} else {
-			var secondValue = $(this).val();
-			var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
-			$('.exch-form__send input').val(numberWithCommas(firstValue));
+			//var secondValue = $(this).val();
+			//var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
+			//$('.exch-form__send input').val(numberWithCommas(firstValue));
 		}
 	});
 
@@ -1790,7 +1797,7 @@ $(function () {
 
 	/*---------------------------------------------------*/
 	/* Graph range select */
-	/*---------------------------------------------------*/	
+	/*---------------------------------------------------*/
 
 	// var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
 	// $("div.portfolio-graph-range__current").on("click", function () {
@@ -1920,10 +1927,10 @@ $(function () {
 		$(currDropdown).removeClass('open');
 	});
 
-	$('.message-bar__login').hover(function(){
+	$('.message-bar__login').hover(function () {
 		// background-image: linear-gradient(#009EE2, #218FE9);
 		$('.message-bar__login-demo').css('background-image', 'linear-gradient(#2c85c4, #2b7cb4)');
-	}, function() {
+	}, function () {
 		$('.message-bar__login-demo').css('background-image', 'linear-gradient(#009EE2, #218FE9)');
 	});
 });
