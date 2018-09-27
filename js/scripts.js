@@ -1442,7 +1442,7 @@ $(function () {
 				$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
 			}, 1000);
 
-			setOwnName();
+			//setOwnName();
 			currentWallet = ownWallet;
 			updateWalletData();
 			drawCircleChart();
