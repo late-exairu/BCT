@@ -12,14 +12,14 @@ function redrawMainChart() {
 	mainChartObj.reflow();
 }
 
-var mainChartMarginLeft = 0;
+// var mainChartMarginLeft = 0;
 var mainChartSpacingTop = 40;
 var lineColor = '#01B067';
 var blueColor = '#01B067';
 var redColor = '#CE2424';
 
 if ($('body').hasClass('advanced')) {
-	mainChartMarginLeft = 15;
+	// mainChartMarginLeft = 15;
 	lineColor = '#01B067';
 	blueColor = '#01B067';
 	redColor = '#CE2424';
@@ -40,7 +40,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		enabled: false
 	},
 	chart: {
-		marginLeft: mainChartMarginLeft,
+		marginLeft: 0,
 		marginBottom: 0,
 		marginRight: 0,
 		marginLeft: 0,
@@ -53,6 +53,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			pointPadding: 0,
 			pointStart: start_point,
 			pointInterval: 24 * 3600 * 1000, // one day
+			pointPlacement: 'on',
 			borderWidth: 0,
 			groupPadding: 0,
 			lineWidth: 0.6,
@@ -222,7 +223,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 			var TooltipValue = this.y.toFixed(5);
 			var arrowDirection = 'right';
 
-			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left + mainChartMarginLeft;
+			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left;
 			var lineForMainChartY = this.points[0].point.plotY + $('#mainChart').offset().top + mainChartSpacingTop;
 			var lineForMainChartHeight = $('#mainChart').height() - this.points[0].point.plotY - 6 - mainChartSpacingTop;
 
@@ -258,10 +259,10 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		positioner: function (labelWidth, labelHeight, point,) {
 			//var graphWidth = $(mainChartObj.container).width();
-			var xPos = point.plotX - labelWidth + mainChartMarginLeft - 15;
+			var xPos = point.plotX - labelWidth - 15;
 			// left side fix
 			if (point.plotX < labelWidth + 40) {
-				xPos = point.plotX + mainChartMarginLeft + 15;
+				xPos = point.plotX + 15;
 			}
 			return {
 				x: xPos,
