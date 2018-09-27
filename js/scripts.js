@@ -1861,22 +1861,6 @@ $(function () {
 		}
 		redrawMainChart();
 	});
-	// $portfolioGraphRange.ionRangeSlider({
-	// 	type: "single",
-	// 	hide_min_max: true,
-	// 	hide_from_to: true,
-	// 	grid: false,
-	// 	from: 4,
-	// 	values: ["1h", "1d", "1w", "1m", "All"],
-	// 	onChange: function (e) {
-	// 		// update current range text
-	// 		$('.portfolio-graph-range__current').html(e.from_value);
-	// 	},
-	// 	onFinish: function (e) {
-	// 		// update chart
-	// 		if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(e.from, {}, true);
-	// 	}
-	// });
 
 	/* main graph range slider for Orders */
 	var $mainGraphRange = $(".graph-range-slider__control");
@@ -1896,7 +1880,7 @@ $(function () {
 			case 2:
 				$('.graph-range-slider__current').html("1w");
 				var WEEK = 1000 * 3600 * 24 * 7;
-				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate);
+				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - 1000 * 3600 * 12);
 				break;
 			case 3:
 				$('.graph-range-slider__current').html("1m");

@@ -188,7 +188,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		tickLength: 0,
 		gridLineWidth: 0,
 		minPadding: 0,
-    	maxPadding: 0
+		maxPadding: 0
 	},
 	yAxis: {
 		min: 0,
