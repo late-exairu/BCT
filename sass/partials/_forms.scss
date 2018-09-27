@@ -407,14 +407,14 @@
 	&__submit{
 		position: relative;
 		font-family: $osans;
-		padding: 0 10px 0 5px;
-		height: calc(var(--exch-head-height) + 1px);
+		padding: 0 0 0 5px;
+		height: calc(var(--exch-head-height) + 2px);
 		display: flex;
-		flex: 1 0 114px;
+		flex: 0 0 114px;
 		align-items: center;
 		color: #fff;
 		cursor: pointer;
-		margin: 0 0 0 var(--gap-size);
+		margin: 0 10px 0 var(--gap-size);
 		text-decoration: none;
 		font-size: 16px;
 		font-weight: 700;
@@ -424,12 +424,33 @@
 		border: none;
 		line-height: 1;
 		background: transparent;
-		// background: linear-gradient(to bottom, #009ee2 0%,#218fe9 100%);
 		border-radius: var(--border-radius);
-		overflow: hidden;	
+		/*overflow: hidden;*/
+		/*background: url(../img/exch-bg.svg) no-repeat;*/
+		background: #f00;
+		background: linear-gradient(to bottom, #0fb798 0%,#01b067 100%);
+
+		&:after{
+			content: "";
+			position: absolute;
+			top: 49%;
+			right: -6px;
+			bottom: 0;
+			width: 10px;
+			background: #000;
+			width: 28px;
+			height: 28px;
+			border-radius: 5px 3px 5px;
+			transform: rotate(45deg) skew(20deg,20deg) translateY(-50%);
+			background: linear-gradient(135deg, #0fb798 0%,#01b067 100%);
+		}
+
+		&:hover{
+			opacity: .9;
+		}
 	}
 
-	&__submit-bg{
+	/*&__submit-bg{
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -444,7 +465,7 @@
 		> use {
 			display: none;
 		}
-	}
+	}*/
 
 	// &__submit-bg{
 	// 	position: absolute;
@@ -485,10 +506,11 @@
 		}
 		.exch-form__submit{
 			color: transparent;
-			// background: var(--clr-block);
+			background: var(--clr-block);
 			margin: 0;
+			flex: 0 0 162px;
 
-			&:after{
+			&:before{
 				content: '';
 				width: 40px;
 				height: 40px;
@@ -497,6 +519,10 @@
 				top: 50%;
 				transform: translate(-50%, -50%);
 				background: url(../img/spin.svg);
+			}
+
+			&:after{
+				background: var(--clr-block);
 			}
 		}
 
@@ -536,9 +562,13 @@
 	&.completed{
 		.exch-form__submit{
 			color: var(--clr-block);
-			// background: var(--clr-textLL);
+			background: var(--clr-textLL);
 
 			&:after{
+				background: var(--clr-textLL);
+			};
+
+			&:before{
 				content: '';
 				width: 0;
 				height: 0;
