@@ -10,13 +10,13 @@ $(function () {
 			if (document.querySelector('.message-bar__login-demo'))
 				document.querySelector('.message-bar__login-demo').classList.add('hidden');
 			if (localStorage.getItem('telegramPhoto')) {
-				if (document.querySelector('.user-portfolio .user-pic__avatar')) {
-					document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
+				if (document.querySelector('.message-bar__user-pic .user-pic__avatar')) {
+					//document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
 					document.querySelector('.message-bar__user-pic .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
 				}
 			} else {
-				if (document.querySelector('.user-portfolio .user-pic__avatar')) {
-					document.querySelector('.user-portfolio .user-pic__avatar').classList.add('hidden');
+				if (document.querySelector('.message-bar__user-pic')) {
+					//document.querySelector('.user-portfolio .user-pic__avatar').classList.add('hidden');
 					document.querySelector('.message-bar__user-pic .user-pic__avatar').classList.add('hidden');
 					var avatarAbbr = document.createElement('div');
 					avatarAbbr.classList.add('user-pic__avatar');
@@ -24,14 +24,12 @@ $(function () {
 					avatarAbbr.style.borderRadius = '50%';
 					avatarAbbr.style.background = '#0088cc';
 					avatarAbbr.style.fontSize = '19px';
-					if (!document.querySelector('.user-portfolio .user-pic div')) {
-						document.querySelector('.user-portfolio .user-pic').appendChild(avatarAbbr);
-						document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr.cloneNode(true));
-					}
+					document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
 				}
 			}
-			if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
-				document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
+
+			// if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
+			// 	document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
 
 			if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 				$('button[title="USERNAME"]').attr('title', localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName'));
