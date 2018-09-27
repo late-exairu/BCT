@@ -116,7 +116,7 @@
 		justify-content: center;
 		align-items: center;
 		color: #fff;
-		background: #00AAF8;
+		background: var(--clr-accent);
 		cursor: pointer;
 
 		&.btn-red{
