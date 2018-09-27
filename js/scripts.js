@@ -1182,6 +1182,39 @@ $(function () {
 		}
 	});
 
+
+	$('[send-fancybox]').click(function (e) {
+		e.preventDefault();
+		var fancies_length = $('.b-graph .c-block .fancybox-container').length;
+		if (fancies_length < 1) {
+			$.fancybox.open({
+				src: '#send-popup',
+				opts: {
+					afterShow: function (instance, current) {
+						var fancybox_body = $('.fancybox-container')[0];
+						$('.b-graph .c-block')[0].append(fancybox_body);
+						$('.b-graph .c-block .fancybox-container')
+							.css({
+								"width": "100%",
+								"height": "100%",
+								"display": "block",
+								"position": "absolute"
+							})
+							.css("display", "block");
+					},
+					beforeShow: function () {
+						$('.fancybox-container').css("display", "none");
+					},
+					beforeClose: function () {
+						//$('.exch-form').removeClass('progress');
+						// $('.exch-head').toggleClass('open');
+						$('button[transaction-fancybox]').removeClass('active');
+					}
+				}
+			});
+		}
+	});
+
 	/*---------------------------------------------------*/
 	/* Chat Search toggle */
 	/*---------------------------------------------------*/
