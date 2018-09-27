@@ -693,7 +693,7 @@ $(function () {
 				}
 			});
 			// select USD in GET dropdown
-			$('.exch-head__get .exch-dropdown__list .exch-dropdown__item').eq(2).trigger('click');
+			//$('.exch-head__get .exch-dropdown__list .exch-dropdown__item').eq(2).trigger('click');
 		}
 
 		if ($(this).parents('#panel-funds-history').length) {
