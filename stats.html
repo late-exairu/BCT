@@ -8,7 +8,7 @@
 	<meta name="description" content="" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="css/style.min.css" />
-	
+
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -18,26 +18,56 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-	
+
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/smoothness/jquery-ui.css">
-	
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		.hqxJGG {
+			height: 100%;
+			width: 100%;
+		}
+
+		.lm_header {
+			background: #212D40;
+		}
+
+		.lm_header .lm_tabs {
+			position: initial !important;
+		}
+
+		.lm_header .lm_tab.lm_active {
+			/*width: calc(100% - 100px);*/
+			background: #212D40;
+		}
+
+		.lm_header .lm_tabs .lm_close_tab {
+			display: none !important;
+		}
+
+		.lm_header .lm_controls>li.lm_popout {
+			display: none !important;
+		}
+
+		.lm_header .lm_controls>li {
+		}
+	</style>
 </head>
 
 <body class="dark-theme advanced">
 
 <div class="wrapper">
 	<div class="left-bar">
-		<div class="left-bar__scroll scrollbar-left">			
+		<div class="left-bar__scroll scrollbar-left">
 			<div class="nav-bar">
 				<a class="nav-bar__item" href="index_advanced.html" data="tippy" data-tippy-placement="right" data-tippy-size="large" title='Trading'>
 					<svg class="nav-bar__icon trading" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
 					</svg>
-			
+
 					<p class="nav-bar__title">Trading</p>
 				</a>
 
@@ -45,72 +75,72 @@
 					<svg class="nav-bar__icon ico" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
 					</svg>
-			
+
 					<p class="nav-bar__title">ICO</p>
 				</a>
-			
+
 				<a class="nav-bar__item" href="charts.html" data="tippy" data-tippy-placement="right" data-tippy-size="large" title='Charts Research Apps'>
 					<svg class="nav-bar__icon charts" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
 					</svg>
-			
+
 					<p class="nav-bar__title">Charts</p>
 				</a>
-			
+
 				<a class="nav-bar__item active" href="stats.html" data="tippy" data-tippy-placement="right" data-tippy-size="large" title='Statistics Research Apps'>
 					<svg class="nav-bar__icon stats" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
 					</svg>
-			
+
 					<p class="nav-bar__title">Stats</p>
 				</a>
-				
+
 				<a class="nav-bar__item" href="news.html" data="tippy" data-tippy-placement="right" data-tippy-size="large" title='News Research Apps'>
 					<svg class="nav-bar__icon news" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
 					</svg>
-			
+
 					<p class="nav-bar__title">News</p>
 				</a>
 			</div>
-			
+
 			<div class="user-bar">
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon two-windows" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#two-windows"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon add-screen" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#add-screen"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon bell" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#bell"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon sound" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#sound"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon ex" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#ex"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon user" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#user"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon gear" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#gear-filled"></use>
@@ -120,44 +150,7 @@
 		</div><!-- left-bar__scroll END -->
 	</div><!-- left-bar END -->
 
-	<div class="cols-ico">
-		<div class="cols-ico__col m-right m-bottom">
-			<div class="cols-ico__title">Coins Correlation Matrix</div>
-			<div class="cols-ico__content">
-				<iframe title="Coins Correlation Matrix" src="https://bct-apps-sandbox.app.cgblockchain.com/correlation/?instanceId=7fac0cce-f543-43c3-a6fd-8a757a9952e1"></iframe>
-			</div>
-		</div>
-		<div class="cols-ico__col m-right m-bottom">
-			<div class="cols-ico__title">Coins Price On Exchanges</div>
-			<div class="cols-ico__content">
-				<iframe title="Coins Price On Exchanges" src="https://bct-apps-sandbox.app.cgblockchain.com/cryptocompare-exchange/?instanceId=2f9e6502-d8c3-4c16-897a-35f6067708d4"></iframe>
-			</div>
-		</div>
-		<div class="cols-ico__col m-bottom">
-			<div class="cols-ico__title">Sunbase Stats</div>
-			<div class="cols-ico__content">
-				<iframe title="Sunbase Stats" src="https://bct-apps-sandbox.app.cgblockchain.com/cashflow/?instanceId=3b19fd4e-0270-43db-a7b6-213ace843941"></iframe>
-			</div>
-		</div>
-		<div class="cols-ico__col m-right">
-			<div class="cols-ico__title">Cryptomarketcap Info</div>
-			<div class="cols-ico__content">
-				<iframe title="Cryptomarketcap Info" src="https://bct-cryptomarketcap.app.cgblockchain.com/?instanceId=630d23a9-1c8e-4826-8951-e665be320c93"></iframe>
-			</div>
-		</div>
-		<div class="cols-ico__col m-right">
-			<div class="cols-ico__title">Exchanges Rating</div>
-			<div class="cols-ico__content">
-				<iframe title="Exchanges Rating" src="https://bct-exchanges.app.cgblockchain.com/coin?instanceId=b2867bfd-810a-4bf1-b38c-a9e5e918f676"></iframe>
-			</div>
-		</div>
-		<div class="cols-ico__col">
-			<div class="cols-ico__title">Spreadsheets</div>
-			<div class="cols-ico__content">
-				<iframe title="Spreadsheets" src="https://bct-sheet.app.cgblockchain.com/?instanceId=b6d31b0c-d513-4b4c-a03e-6ffdd0946dbf"></iframe>
-			</div>
-		</div>
-	</div>
+	<div class="cols-ico" id="layoutContainer"></div>
 
 </div><!-- wrapper END -->
 
@@ -190,6 +183,114 @@
 <script src="js/charts/portfolioChartETH.js"></script> -->
 <script src="js/charts/liquidityChart.js"></script>
 <script src="js/scripts.js"></script>
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="//golden-layout.com/assets/js/goldenlayout.min.js"></script>
+<link type="text/css" rel="stylesheet" href="//golden-layout.com/assets/css/goldenlayout-base.css" />
+<link type="text/css" rel="stylesheet" href="//golden-layout.com/assets/css/goldenlayout-dark-theme.css" />
+
+<script>
+
+
+    var config = {
+        settings: {
+            hasHeaders: true,
+            constrainDragToContainer: false,
+            reorderEnabled: true,
+            selectionEnabled: false,
+            popoutWholeStack: false,
+            blockedPopoutsThrowError: true,
+            closePopoutsOnUnload: true,
+            showPopoutIcon: false,
+            showMaximiseIcon: true,
+            showCloseIcon: true,
+            responsiveMode: onload,
+            tabOverlapAllowance: 0,
+            reorderOnTabMenuClick: true,
+            tabControlOffset: 10,
+        },
+        dimensions: {
+            borderWidth: 5,
+            borderGrabWidth: 15,
+            minItemHeight: 10,
+            minItemWidth: 10,
+            headerHeight: 20,
+            dragProxyWidth: 300,
+            dragProxyHeight: 200,
+        },
+        labels: {
+            close: "close",
+            maximise: "maximise",
+            minimise: "minimise",
+            popout: "open in new window",
+            popin: "pop in",
+            tabDropdown: "additional tabs",
+        },
+        content: [{
+            type: 'column',
+            content: [
+                {
+                    type: 'row',
+                    content: [
+                        {
+                            title: 'Coins Correlation Matrix',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://bct-apps-sandbox.app.cgblockchain.com/correlation/?instanceId=7fac0cce-f543-43c3-a6fd-8a757a9952e1' }
+                        },
+                        {
+                            title: 'Coins Price On Exchanges',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://bct-apps-sandbox.app.cgblockchain.com/cryptocompare-exchange/?instanceId=2f9e6502-d8c3-4c16-897a-35f6067708d4' }
+                        },
+                        {
+                            title: 'Sunbase Stats',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://bct-apps-sandbox.app.cgblockchain.com/cashflow/?instanceId=3b19fd4e-0270-43db-a7b6-213ace843941' }
+                        },
+                    ]
+
+                },
+                {
+                    type: 'row',
+                    content: [
+                        {
+                            title: 'Cryptomarketcap Info',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://bct-cryptomarketcap.app.cgblockchain.com/?instanceId=630d23a9-1c8e-4826-8951-e665be320c93' }
+                        },
+                        {
+                            title: 'Exchanges Rating',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://bct-exchanges.app.cgblockchain.com/coin?instanceId=b2867bfd-810a-4bf1-b38c-a9e5e918f676' }
+                        },
+                        {
+                            title: 'Spreadsheets',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://bct-sheet.app.cgblockchain.com/?instanceId=b6d31b0c-d513-4b4c-a03e-6ffdd0946dbf' }
+                        },
+                    ]
+                },
+
+            ]
+        }]
+    };
+
+
+    var myLayout = new window.GoldenLayout(config, $('#layoutContainer'));
+
+    myLayout.registerComponent('iframe', function (container, state) {
+        container.getElement().html(`<iframe src="${state.url}" class="hqxJGG"></iframe>`);
+    });
+
+    myLayout.init();
+</script>
 
 </body>
 </html>
