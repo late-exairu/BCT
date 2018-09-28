@@ -82,7 +82,7 @@
 	max-width: 255px;
 }
 
-#send-btc-popup{
+#send-popup{
 	.c-block-head {
 		background: var(--clr-back-new);
 	}	
@@ -92,14 +92,6 @@
 
 		.transaction-form__line{
 			margin-bottom: 13px;
-		}
-
-		&__btn{			
-			position: relative;
-			width: 105px;
-			height: 32px;
-			margin: 0 auto;
-			z-index: 99995;
 		}
 	}
 }
