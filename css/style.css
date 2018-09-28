@@ -1169,7 +1169,7 @@ h6 {
   .c-block-head__title {
     font-size: 14px;
     margin: 0;
-    color: var(--clr-accent);
+    color: var(--clr-text);
     font-weight: 700; }
     .c-block-head__title span {
       font-size: 14px; }
@@ -7820,14 +7820,14 @@ h6 {
       padding: 0; }
   .graph-info__title {
     font-size: 12px;
-    color: var(--clr-accent);
+    color: var(--clr-text);
     line-height: 1.2;
     padding: 0;
     margin: 0; }
   .graph-info__nums {
     font-size: 12px;
     line-height: 1;
-    color: var(--clr-accent);
+    color: var(--clr-text);
     padding: 0;
     margin: 0; }
 
