@@ -154,6 +154,7 @@
 		background: transparent;
 		transition: all 0.1s;
 		background: var(--clr-block);
+		color: var(--clr-accent);
 
 		&.accented{
 			color: var(--clr-accentD);
@@ -379,6 +380,7 @@
 		&.qr-code{
 			width: 11px;
 			height: 11px;
+			fill: var(--clr-accent);
 		}
 
 		&.paper-plane{

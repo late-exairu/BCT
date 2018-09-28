@@ -46,13 +46,13 @@
   /*important and borders color dark*/
   --clr-backL:		#e5e6e5;
   /*background color light*/
-  --clr-backLL:		#F3F3F3;
+  --clr-backLL:		#f9f9f9;
   /*background color lighter*/
   --clr-back:			#f9f9fa;
   /*background color basic*/
   --clr-back-new:		#E8E8E8;
   /*background color basic*/
-  --clr-backA:		#e6f1f8;
+  --clr-backA:		#f5fffa;
   /*background color accented*/
   --clr-block:		#ffffff;
   /*basic block color basic*/
@@ -112,13 +112,13 @@
   /*important and borders color dark*/
   --clr-backL:		#141925;
   /*background color light*/
-  --clr-backLL:		#1e2634;
+  --clr-backLL:		#1f2736;
   /*background color lighter*/
   --clr-back:			#1B293F;
   /*background color basic*/
   --clr-back-new:		#131A23;
   /*background color basic*/
-  --clr-backA:		#213040;
+  --clr-backA:		#1d2d33;
   /*background color accented*/
   --clr-block:		#18202d;
   /*basic block color basic*/
@@ -804,6 +804,7 @@ h6 {
     background: transparent;
     transition: all 0.1s;
     background: var(--clr-block);
+    color: var(--clr-accent);
     /*&:hover{
 			border-color: var(--clr-textL);
 			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
@@ -931,7 +932,8 @@ h6 {
     fill: var(--clr-textL); }
     .basic-table .sprite-icon.qr-code {
       width: 11px;
-      height: 11px; }
+      height: 11px;
+      fill: var(--clr-accent); }
     .basic-table .sprite-icon.paper-plane {
       width: 14px;
       height: 13px; }
