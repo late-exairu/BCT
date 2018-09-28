@@ -50,7 +50,7 @@ var mainChartObj = Highcharts.chart('mainChart', {
 	plotOptions: {
 		series: {
 			//pointWidth: $('#mainChart').width() / 110, // fixed A pixel value specifying
-			pointPadding: 0,
+			pointPadding: 0.05,
 			pointStart: start_point,
 			pointInterval: 24 * 3600 * 1000, // one day
 			pointPlacement: 'on',
@@ -163,7 +163,10 @@ var mainChartObj = Highcharts.chart('mainChart', {
 				mouseOut: function (event) {
 					//console.log('column out');
 				}
-			}
+			},
+			pointPadding: 0.05,
+			borderWidth: 0,
+			groupPadding: 0
 		}
 	},
 	xAxis: {
