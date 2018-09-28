@@ -218,7 +218,7 @@ $(function () {
 					if (telegramGroupName)
 						$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USDT');
 				}
-			})
+			});
 		}
 
 		var newCurr = $(this).children().clone();
@@ -274,6 +274,11 @@ $(function () {
 		var getCurrency = $('.exch-form__get input').attr('data-currency');
 		var sendCurrency = $('.exch-form__send input').attr('data-currency');
 		var exchange = $('.graph-prices .graph-prices__list .graph-prices__item.active .graph-prices__trader').text().trim();
+
+		if (sendCurrency == getCurrency) {
+			$('.exch-head__get .exch-dropdown__item:not([data-currency="' + sendCurrency + '"])').eq(0).trigger('click');
+			return false;
+		}
 
 		if (param1 != 'noRedraw')
 			updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
