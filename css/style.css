@@ -804,6 +804,7 @@ h6 {
     background: transparent;
     transition: all 0.1s;
     background: var(--clr-block);
+    color: var(--clr-accent);
     /*&:hover{
 			border-color: var(--clr-textL);
 			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
@@ -931,7 +932,8 @@ h6 {
     fill: var(--clr-textL); }
     .basic-table .sprite-icon.qr-code {
       width: 11px;
-      height: 11px; }
+      height: 11px;
+      fill: var(--clr-accent); }
     .basic-table .sprite-icon.paper-plane {
       width: 14px;
       height: 13px; }
