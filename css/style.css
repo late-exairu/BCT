@@ -7508,7 +7508,7 @@ h6 {
       width: 22px;
       height: 22px;
       flex: 0 0 22px; }
-    .exch-dropdown__item.selected, .exch-dropdown__item:hover {
+    .exch-dropdown__item:hover {
       background: var(--clr-backLL); }
     .exch-dropdown__item.current {
       color: var(--clr-accentD); }
@@ -13775,8 +13775,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .js-tabs-panel.active {
     display: flex; }
 
+body.advanced .fancybox-bg {
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s; }
+
 .fancybox-bg {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.75);
   transition: all 0.5s; }
 
 .fancybox-content {

@@ -19,8 +19,13 @@
 
 // Rearrange to custom files //
 
+body.advanced .fancybox-bg{
+	background: rgba(0, 0, 0, 0.5);
+	transition: all 0.5s;
+}
+
 .fancybox-bg{
-	background: rgba(0, 0, 0, 0.45);
+	background: rgba(255, 255, 255, 0.75);
 	transition: all 0.5s;
 }
 
