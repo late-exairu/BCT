@@ -8,7 +8,7 @@
 	<meta name="description" content="" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="css/style.min.css" />
-	
+
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -18,26 +18,56 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-	
+
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/smoothness/jquery-ui.css">
-	
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		.hqxJGG {
+			height: 100%;
+			width: 100%;
+		}
+
+		.lm_header {
+			background: #212D40;
+		}
+
+		.lm_header .lm_tabs {
+			position: initial !important;
+		}
+
+		.lm_header .lm_tab.lm_active {
+			/*width: calc(100% - 100px);*/
+			background: #212D40;
+		}
+
+		.lm_header .lm_tabs .lm_close_tab {
+			display: none !important;
+		}
+
+		.lm_header .lm_controls>li.lm_popout {
+			display: none !important;
+		}
+
+		.lm_header .lm_controls>li {
+		}
+	</style>
 </head>
 
 <body class="dark-theme advanced">
 
 <div class="wrapper">
 	<div class="left-bar">
-		<div class="left-bar__scroll scrollbar-left">			
+		<div class="left-bar__scroll scrollbar-left">
 			<div class="nav-bar">
 				<a class="nav-bar__item" href="index_advanced.html" data="tippy" data-tippy-placement="right" data-tippy-size="large" title='Trading'>
 					<svg class="nav-bar__icon trading" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
 					</svg>
-			
+
 					<p class="nav-bar__title">Trading</p>
 				</a>
 
@@ -45,72 +75,72 @@
 					<svg class="nav-bar__icon ico" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
 					</svg>
-			
+
 					<p class="nav-bar__title">ICO</p>
 				</a>
-			
+
 				<a class="nav-bar__item" href="charts.html" data="tippy" data-tippy-placement="right" data-tippy-size="large" title='Charts Research Apps'>
 					<svg class="nav-bar__icon charts" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
 					</svg>
-			
+
 					<p class="nav-bar__title">Charts</p>
 				</a>
-			
+
 				<a class="nav-bar__item" href="stats.html" data="tippy" data-tippy-placement="right" data-tippy-size="large" title='Statistics Research Apps'>
 					<svg class="nav-bar__icon stats" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
 					</svg>
-			
+
 					<p class="nav-bar__title">Stats</p>
 				</a>
-				
+
 				<a class="nav-bar__item active" href="news.html" data="tippy" data-tippy-placement="right" data-tippy-size="large" title='News Research Apps'>
 					<svg class="nav-bar__icon news" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#pages"></use>
 					</svg>
-			
+
 					<p class="nav-bar__title">News</p>
 				</a>
 			</div>
-			
+
 			<div class="user-bar">
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon two-windows" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#two-windows"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon add-screen" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#add-screen"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon bell" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#bell"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon sound" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#sound"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon ex" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#ex"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon user" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#user"></use>
 					</svg>
 				</button>
-			
+
 				<button class="user-bar__btn">
 					<svg class="user-bar__icon gear" role="img" aria-hidden="true">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#gear-filled"></use>
@@ -120,44 +150,7 @@
 		</div><!-- left-bar__scroll END -->
 	</div><!-- left-bar END -->
 
-	<div class="cols-ico">
-		<div class="cols-ico__col m-right m-bottom">
-			<div class="cols-ico__title">Calendar</div>
-			<div class="cols-ico__content">
-				<iframe title="Calendar" src="https://calendar.app.cgblockchain.com/app?instanceId=b2fb2957-20da-4ae9-9be0-7ea830d94182"></iframe>
-			</div>
-		</div>
-		<div class="cols-ico__col m-right m-bottom">
-			<div class="cols-ico__title">Coins Calendar</div>
-			<div class="cols-ico__content">
-				<iframe title="Coins Calendar" src="https://calendar.app.cgblockchain.com/agenda/?instanceId=bea2e757-9142-4122-8f32-10ca8a6918e0"></iframe>
-			</div>
-		</div>
-		<div class="cols-ico__col m-bottom">
-			<div class="cols-ico__title">SEC News</div>
-			<div class="cols-ico__content">
-				<iframe title="SEC News" src="https://bct-secgov.app.cgblockchain.com/?instanceId=7de95035-eda2-4660-a0b9-9994f3a662b1"></iframe>
-			</div>
-		</div>
-		<div class="cols-ico__col m-right">
-			<div class="cols-ico__title">Crypto News (Blockfolio)</div>
-			<div class="cols-ico__content">
-				<iframe title="Crypto News (Blockfolio)" src="https://bct-cryptonews.app.cgblockchain.com/?instanceId=eeb70048-c8bc-4fdb-ad30-91a4a1fb09b0"></iframe>
-			</div>
-		</div>
-		<div class="cols-ico__col m-right">
-			<div class="cols-ico__title">News</div>
-			<div class="cols-ico__content">
-				<iframe title="News" src="https://bctnews.app.cgblockchain.com/?instanceId=cf43a0d1-91c7-4cd5-aeb9-fea4423ca7ad"></iframe>
-			</div>
-		</div>
-		<div class="cols-ico__col">
-			<div class="cols-ico__title">Telegram Messages</div>
-			<div class="cols-ico__content">
-				<iframe title="Telegram Messages" src="https://bct-telegram.app.cgblockchain.com/?instanceId=fc65c6ca-fea2-4ff6-be74-bd1e27957690"></iframe>
-			</div>
-		</div>
-	</div>
+	<div class="cols-ico" id="layoutContainer"></div>
 
 </div><!-- wrapper END -->
 
@@ -190,6 +183,114 @@
 <script src="js/charts/portfolioChartETH.js"></script> -->
 <script src="js/charts/liquidityChart.js"></script>
 <script src="js/scripts.js"></script>
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="//golden-layout.com/assets/js/goldenlayout.min.js"></script>
+<link type="text/css" rel="stylesheet" href="//golden-layout.com/assets/css/goldenlayout-base.css" />
+<link type="text/css" rel="stylesheet" href="//golden-layout.com/assets/css/goldenlayout-dark-theme.css" />
+
+<script>
+
+
+    var config = {
+        settings: {
+            hasHeaders: true,
+            constrainDragToContainer: false,
+            reorderEnabled: true,
+            selectionEnabled: false,
+            popoutWholeStack: false,
+            blockedPopoutsThrowError: true,
+            closePopoutsOnUnload: true,
+            showPopoutIcon: !false,
+            showMaximiseIcon: true,
+            showCloseIcon: !false,
+            responsiveMode: onload,
+            tabOverlapAllowance: 0,
+            reorderOnTabMenuClick: true,
+            tabControlOffset: 10,
+        },
+        dimensions: {
+            borderWidth: 5,
+            borderGrabWidth: 15,
+            minItemHeight: 10,
+            minItemWidth: 10,
+            headerHeight: 20,
+            dragProxyWidth: 300,
+            dragProxyHeight: 200,
+        },
+        labels: {
+            close: "close",
+            maximise: "maximise",
+            minimise: "minimise",
+            popout: "open in new window",
+            popin: "pop in",
+            tabDropdown: "additional tabs",
+        },
+        content: [{
+            type: 'column',
+            content: [
+                {
+                    type: 'row',
+                    content: [
+                        {
+                            title: 'Calendar',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://calendar.app.cgblockchain.com/app?instanceId=b2fb2957-20da-4ae9-9be0-7ea830d94182' }
+                        },
+                        {
+                            title: 'Coins Calendar',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://calendar.app.cgblockchain.com/agenda/?instanceId=bea2e757-9142-4122-8f32-10ca8a6918e0' }
+                        },
+                        {
+                            title: 'SEC News',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://bct-secgov.app.cgblockchain.com/?instanceId=7de95035-eda2-4660-a0b9-9994f3a662b1' }
+                        },
+                    ]
+
+                },
+                {
+                    type: 'row',
+                    content: [
+                        {
+                            title: 'Crypto News (Blockfolio)',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://bct-cryptonews.app.cgblockchain.com/?instanceId=eeb70048-c8bc-4fdb-ad30-91a4a1fb09b0' }
+                        },
+                        {
+                            title: 'News',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://bctnews.app.cgblockchain.com/?instanceId=cf43a0d1-91c7-4cd5-aeb9-fea4423ca7ad' }
+                        },
+                        {
+                            title: 'Telegram Messages',
+                            type: 'component',
+                            componentName: 'iframe',
+                            componentState: { text: '', url: 'https://bct-telegram.app.cgblockchain.com/?instanceId=fc65c6ca-fea2-4ff6-be74-bd1e27957690' }
+                        },
+                    ]
+                },
+
+            ]
+        }]
+    };
+
+
+    var myLayout = new window.GoldenLayout(config, $('#layoutContainer'));
+
+    myLayout.registerComponent('iframe', function (container, state) {
+        container.getElement().html(`<iframe src="${state.url}" class="hqxJGG"></iframe>`);
+    });
+
+    myLayout.init();
+</script>
 
 </body>
 </html>
