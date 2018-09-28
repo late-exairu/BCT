@@ -151,7 +151,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.bitebtc:after, .icon-trader.bitfinex:after, .icon-trader.bitflyer:after, .icon-trader.bithumb:after, .icon-trader.bitstamp:after, .icon-trader.bittrex:after, .icon-trader.cexio:after, .icon-trader.coinbase:after, .icon-trader.coinone:after, .icon-trader.cryptopia:after, .icon-trader.exmo:after, .icon-trader.exx:after, .icon-trader.gateio:after, .icon-trader.gemini:after, .icon-trader.hitbtc:after, .icon-trader.houbi:after, .icon-trader.indodax:after, .icon-trader.itbit:after, .icon-trader.korbit:after, .icon-trader.kraken:after, .icon-trader.kucoin:after, .icon-trader.liqui:after, .icon-trader.livecoin:after, .icon-trader.localbitcoins:after, .icon-trader.poloniex:after, .icon-trader.quoine:after, .icon-trader.upbit:after, .icon-trader.vaultoro:after, .icon-trader.yobit:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 834.9375em 806.75em; }
+  background-size: 836.25em 808.0625em; }
 
 /* =================================================================== */
 /* Functions
@@ -7319,6 +7319,22 @@ h6 {
 		}*/ }
     .cubic-slider .single:hover {
       border-color: var(--clr-separatorD); }
+  .cubic-slider__wallet .irs-slider.single {
+    width: 21px;
+    height: 21px;
+    background: url(../img/svg/wallet-thumb.svg) no-repeat;
+    border-radius: 0;
+    border: 0 none;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer; }
+    .cubic-slider__wallet .irs-slider.single:hover {
+      border-color: none;
+      background-position: none; }
 
 /* =================================================================== */
 /* exch-dropdown */
@@ -7492,7 +7508,7 @@ h6 {
       width: 22px;
       height: 22px;
       flex: 0 0 22px; }
-    .exch-dropdown__item:hover {
+    .exch-dropdown__item.selected, .exch-dropdown__item:hover {
       background: var(--clr-backLL); }
     .exch-dropdown__item.current {
       color: var(--clr-accentD); }
@@ -13050,6 +13066,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     display: none; }
   .transaction-form .cubic-slider {
     margin: 10px 0; }
+    .transaction-form .cubic-slider__wallet {
+      margin: 15px 0; }
   .transaction-form .bold {
     font-weight: bold; }
   .transaction-form .coin-dropdown {

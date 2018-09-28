@@ -90,4 +90,27 @@
 			transform: translateY(-50%)
 		}*/
 	}
+
+	&__wallet{
+
+		.irs-slider.single{
+			width: 21px;
+			height: 21px;			
+			background: url(../img/svg/wallet-thumb.svg) no-repeat;		
+			border-radius: 0;	
+			border: 0 none;
+			padding: 0;
+			color: #fff;
+			text-align: center;			
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 1;
+			cursor: pointer;
+	
+			&:hover{
+				border-color: none;
+				background-position: none;
+			}
+		}
+	}
 }
