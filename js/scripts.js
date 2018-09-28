@@ -147,32 +147,44 @@ $(function () {
 
 	});
 
+	var currenciesDropDownScrollbar = $('.exch-dropdown__scroll.scrollbar-right');
+	var current_item_index = 0;
 	$('.exch-search__input').keydown(function(e) {
 		var li = $(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__item:not(.hidden)');
-		var liSelected = $(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__item.current:not(.hidden)');
+		li.each(function name(index, item) {
+			if ($(item).hasClass('current')) current_item_index = index;
+		});
 		if(e.which === 40) {
-			if(liSelected) {
-				liSelected.removeClass('current');
-				next = liSelected.next();
-				if(next.length > 0) {
-					liSelected = next.addClass('current');
-				} else {
-					liSelected = li.eq(0).addClass('current');
-				}
+			li.eq(current_item_index).removeClass('current');
+			current_item_index ++;
+			if(current_item_index >= li.length) {
+				current_item_index = 0;
+				liSelected = li.eq(current_item_index).addClass('current');
 			} else {
-				liSelected = li.eq(0).addClass('current');
+				liSelected = li.eq(current_item_index).addClass('current');
+				currenciesDropDownScrollbar.animate({
+					scrollTop: '+=45'
+				}, "fast");
 			}
 		} else if(e.which === 38) {
-			if(liSelected) {
-				liSelected.removeClass('current');
-				next = liSelected.prev();
-				if(next.length > 0) {
-					liSelected = next.addClass('current');
+			if(current_item_index > 0) {
+				li.eq(current_item_index).removeClass('current');
+				current_item_index --;
+				if(current_item_index < 0) {
+					$(this).closest('.exch-dropdown').find('.exch-dropdown__current').removeClass('hidden');
+					$(this).closest('.exch-dropdown').find('.exch-search').addClass('hidden');
+					$(this).closest('.exch-dropdown').removeClass('open');
 				} else {
-					liSelected = li.last().addClass('current');
+					liSelected = li.eq(current_item_index).addClass('current');
+					currenciesDropDownScrollbar.animate({
+						scrollTop: '-=45'
+					}, "fast");
 				}
 			} else {
-				liSelected = li.last().addClass('current');
+				li.eq(current_item_index).removeClass('current');
+				$(this).closest('.exch-dropdown').find('.exch-dropdown__current').removeClass('hidden');
+				$(this).closest('.exch-dropdown').find('.exch-search').addClass('hidden');
+				$(this).closest('.exch-dropdown').removeClass('open');
 			}
 		}
 	});
