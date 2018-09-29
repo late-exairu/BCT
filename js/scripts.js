@@ -1285,8 +1285,8 @@ $(function () {
 	$('.exch-head__btn').click(function () {
 		// basic
 		if (!$('body').hasClass('advanced')) {
-			$('.js-tabs-panel').removeClass('active');
-			$('#panel-funds-history').addClass('active');
+			//$('.js-tabs-panel').removeClass('active');
+			//$('#panel-funds-history').addClass('active');
 			//$('.user-portfolio .user-menu .user-menu__item').eq(2).trigger('click');
 		}
 		//advanced
@@ -1310,6 +1310,9 @@ $(function () {
 		var sendCurrency = $('.exch-form__send input').attr('data-currency');
 		var getCurrency = $('.exch-form__get input').attr('data-currency');
 		if ($(this).hasClass('exch-form__submit')) {
+			$('.exch-form__send .exch-form__label').text('You gave');
+			$('.exch-form__get .exch-form__label').text('You got');
+
 			$('.exch-form__close').addClass('hidden');
 			$('.icon-trader').addClass('hidden');
 			$('.graph-prices__item').removeClass('active');
@@ -1322,16 +1325,20 @@ $(function () {
 			var secondValue = $('.exch-form__get input').val().trim().replace(',', '')
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
+
+			$('.exch-form__send .exch-form__input').val('0.00');
+			$('.exch-form__get .exch-form__input').val('0.00');
+
 			var firstValueResult = 0;
 			var secondValueResult = 0;
-			var exchanges = 0;
+			//var exchanges = 0;
 
 			// update wallet and table
-			ownWallet[sendCurrency] -= firstValue;
-			if (!ownWallet[getCurrency]) ownWallet[getCurrency] = 0;
-			ownWallet[getCurrency] += (+secondValue);
-			updateWalletData();
-			drawCircleChart();
+			// ownWallet[sendCurrency] -= firstValue;
+			// if (!ownWallet[getCurrency]) ownWallet[getCurrency] = 0;
+			// ownWallet[getCurrency] += (+secondValue);
+			// updateWalletData();
+			// drawCircleChart();
 			// end update wallet and table
 
 			graphPricesScrollbar.animate({
@@ -1356,31 +1363,40 @@ $(function () {
 				if (rand == 0) rand = "0.00";
 				progressbar_labels[i].text(rand + ' ' + getCurrency);
 
-				if (!$('body').hasClass('advanced')) {
-					setTimeout(function () {
-						firstValueResult += firstValuePart;
-						secondValueResult += secondValuePart;
-						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + numberWithCommas(firstValueResult.toFixed(2)) + ' ' + sendCurrency + svgArrowTemplate + (getCurrency == 'USDT' ? '$' : '') + numberWithCommas(secondValueResult.toFixed(2)) + ' ' + getCurrency)
+				setTimeout(function () {
+					firstValueResult += firstValuePart;
+					secondValueResult += secondValuePart;
 
-						// change the average price too
-						var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
-						var differenceMax = (currenciesPrice[sendCurrency] / currenciesPrice[getCurrency]) / 1250;
-						var differenceMin = differenceMax / 500;
-						var difference = (Math.random() * (differenceMax - differenceMin) + differenceMin) * plusOrMinus;
-						var result = (currenciesPrice[sendCurrency] / currenciesPrice[getCurrency]) + difference;
-						if (result > 1) {
-							result = result.toFixed(2);
-						} else {
-							result = result.toFixed(5);
-						}
+					ownWallet[sendCurrency] -= (+firstValuePart);
+					if (!ownWallet[getCurrency]) ownWallet[getCurrency] = 0;
+					ownWallet[getCurrency] += (+secondValuePart);
 
-						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(2).html((getCurrency == 'USDT' ? '$' + numberWithCommas(result) : result) + ' ' + getCurrency);
+					$('.exch-form__send .exch-form__input').val(numberWithCommas((firstValueResult).toFixed(2)));
+					$('.exch-form__get .exch-form__input').val(numberWithCommas((secondValueResult).toFixed(2)));
 
-						// increase exchanges numbers
-						exchanges++;
-						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(3).html(exchanges + " Exchanges");
-					}, 4000 + 800 * i, i)
-				}
+					updateWalletData();
+					drawCircleChart(e,true);
+
+					//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + numberWithCommas(firstValueResult.toFixed(2)) + ' ' + sendCurrency + svgArrowTemplate + (getCurrency == 'USDT' ? '$' : '') + numberWithCommas(secondValueResult.toFixed(2)) + ' ' + getCurrency)
+
+					// change the average price too
+					// var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+					// var differenceMax = (currenciesPrice[sendCurrency] / currenciesPrice[getCurrency]) / 1250;
+					// var differenceMin = differenceMax / 500;
+					// var difference = (Math.random() * (differenceMax - differenceMin) + differenceMin) * plusOrMinus;
+					// var result = (currenciesPrice[sendCurrency] / currenciesPrice[getCurrency]) + difference;
+					// if (result > 1) {
+					// 	result = result.toFixed(2);
+					// } else {
+					// 	result = result.toFixed(5);
+					// }
+
+					//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(2).html((getCurrency == 'USDT' ? '$' + numberWithCommas(result) : result) + ' ' + getCurrency);
+
+					// increase exchanges numbers
+					//exchanges++;
+					//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(3).html(exchanges + " Exchanges");
+				}, 4000 + 800 * i, i)
 
 				if (i == progressbar_array.length - 1) {
 					setTimeout(function () {
@@ -1489,6 +1505,8 @@ $(function () {
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 			$('.exch-form__submit').prop('disabled', false);
+			$('.exch-form__send .exch-form__label').text('You have');
+			$('.exch-form__get .exch-form__label').text('You get');
 			var firstValue, secondValue;
 			// if selected previous conversion
 			if (isSelectedPrevConversion) {
@@ -1523,9 +1541,9 @@ $(function () {
 			}, 1000);
 
 			currentWallet = ownWallet;
-			updateWalletData();
-			drawCircleChart();
-			$('.user-portfolio-close').addClass('hidden');
+			//updateWalletData();
+			//drawCircleChart();
+			//$('.user-portfolio-close').addClass('hidden');
 		}
 	});
 

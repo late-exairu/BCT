@@ -26,7 +26,8 @@ var circleChartOptions = null;
 // change circle chart size on window resize
 $(window).resize(drawCircleChart);
 
-function drawCircleChart() {
+function drawCircleChart(e,noAnimation) {
+    var animation = noAnimation ? false : true;
     if ($('body').hasClass('advanced')) {
         pieChartSize = $('#circleChart').width() - 20 - 28;
     } else {
@@ -71,7 +72,8 @@ function drawCircleChart() {
                 startAngle: 0,
                 size: pieChartSize,
                 center: [centerX, centerY],
-                colors: circleChartColors
+                colors: circleChartColors,
+                animation:animation
             },
             series: {
                 dataLabels: {

@@ -214,13 +214,13 @@ function updateWalletData() {
             $('#panel-funds-wallet .basic-table__body .basic-table__body').append(newRow);
         }
 
-        if (currentWallet[key] != 0) {
+        if (currentWallet[key].toFixed(2) != 0) {
             if ($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').removeClass('disabled');
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
             }
         }
-        if (currentWallet[key] == 0) {
+        if (currentWallet[key].toFixed(2) == 0) {
             if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').addClass('disabled');
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
