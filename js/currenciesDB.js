@@ -224,7 +224,6 @@ function updateWalletData() {
             if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').addClass('disabled');
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__row.disabled:first');
-
             }
         }
 
@@ -239,6 +238,33 @@ function updateWalletData() {
         eachPercent[key] = eachPercent[key].toFixed(2) * 100; // percent view
     }
 
+    // sort eachPercent object
+    var sortable = [];
+    for (var currency in eachPercent) {
+        sortable.push([currency, eachPercent[currency]]);
+    }
+
+    sortable.sort(function (a, b) {
+        return b[1] - a[1];
+    });
+
+    eachPercent = {};
+    // fill object and sort table rows
+    sortable.map((item,index) => {
+        var key = item[0];
+        var value = item[1];
+        eachPercent[key] = value;
+        if($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').index() != index){
+            if (index == 0){
+                $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:first');
+            }
+            else{
+                $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertAfter('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:nth-child(' + index + ')');
+            }
+        }
+    });
+    // end of sort
+
     var totalBalanceTrunc = Math.trunc(totalBalance);
     var totalBalanceFraction = (totalBalance - Math.trunc(totalBalance)).toFixed(2).substr(1);
 
@@ -247,42 +273,4 @@ function updateWalletData() {
     $('.totalBalanceFraction').html(totalBalanceFraction);
 
     $('.clearPricePerCoinBTC').html(numberWithCommas(currenciesPrice['BTC']));
-
-    /*  
-        
-        $('.pricePerCoinBTC').html('$' + numberWithCommas(currenciesPrice['BTC']));
-        $('.pricePerCoinETH').html('$' + numberWithCommas(currenciesPrice['ETH']));
-        $('.pricePerCoinBCH').html('$' + numberWithCommas(currenciesPrice['BCH']));
-        $('.pricePerCoinLTC').html('$' + numberWithCommas(currenciesPrice['LTC']));
-        $('.pricePerCoinRPL').html('$' + numberWithCommas(currenciesPrice['RPL']));
-        $('.pricePerCoinXMR').html('$' + numberWithCommas(currenciesPrice['XMR']));
-        $('.pricePerCoinMKR').html('$' + numberWithCommas(currenciesPrice['MKR']));
-        $('.pricePerCoinDASH').html('$' + numberWithCommas(currenciesPrice['DASH']));
-        $('.pricePerCoinXRP').html('$' + numberWithCommas(currenciesPrice['XRP']));
-
-        $('.walletBTC').html(numberWithCommas(currentWallet['BTC'].toFixed(2)) + '&nbsp;');
-        $('.walletETH').html(numberWithCommas(currentWallet['ETH'].toFixed(2)) + '&nbsp;');
-        $('.walletUSDT').html(numberWithCommas(currentWallet['USDT'].toFixed(2)) + '&nbsp;');
-        $('.walletBCH').html(numberWithCommas(currentWallet['BCH'].toFixed(2)) + '&nbsp;');
-        $('.walletLTC').html(numberWithCommas(currentWallet['LTC'].toFixed(2)) + '&nbsp;');
-        $('.walletRPL').html(numberWithCommas(currentWallet['RPL'].toFixed(2)) + '&nbsp;');
-        $('.walletXMR').html(numberWithCommas(currentWallet['XMR'].toFixed(2)) + '&nbsp;');
-        $('.walletMKR').html(numberWithCommas(currentWallet['MKR'].toFixed(2)) + '&nbsp;');
-        $('.walletDASH').html(numberWithCommas(currentWallet['DASH'].toFixed(2)) + '&nbsp;');
-        $('.walletXRP').html(numberWithCommas(currentWallet['XRP'].toFixed(2)) + '&nbsp;'); */
-
-
-    /*     $('.walletBTCPercent').html(eachPercent['BTC'].toFixed(0) + '%');
-        $('.walletETHPercent').html(eachPercent['ETH'].toFixed(0) + '%');
-
-        $('.btc-width').css({
-            'width': eachPercent['BTC'].toFixed(0) + '%',
-            'min-width': eachPercent['BTC'].toFixed(0) + '%',
-            'max-width': eachPercent['BTC'].toFixed(0) + '%'
-        });
-        $('.eth-width').css({
-            'width': eachPercent['ETH'].toFixed(0) + '%',
-            'min-width': eachPercent['ETH'].toFixed(0) + '%',
-            'max-width': eachPercent['ETH'].toFixed(0) + '%'
-        }); */
 }
