@@ -1223,8 +1223,7 @@ $(function () {
 		$.fancybox.close();
 	});
 
-	$('[send-fancybox]').click(function (e) {
-		event.preventDefault();
+	$('[send-fancybox]').click(function (e) {		
 		e.stopPropagation();
 		var fancies_length = $('.b-graph .c-block .fancybox-container').length;
 		if (fancies_length < 1) {
