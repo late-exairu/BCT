@@ -207,22 +207,14 @@ $(function () {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
 		var currencyAbbr = $(this).attr('data-currency');
-		//var realCurrencyName = currencyName.slice(6).toLowerCase();
-		//var realCurrencyName = currencyName;
-		//if (realCurrencyName == 'us dollar') realCurrencyName = 'dollar';
 
-		// check currency Price
 		if (!currenciesPrice[currencyAbbr]) {
 			$.ajax({
-				url: 'https://rest.coinapi.io/v1/exchangerate/' + currencyAbbr + '/USD',
-				beforeSend: function (xhr) {
-					xhr.setRequestHeader("X-CoinAPI-Key", "2AF6DF26-A878-4D5A-8201-3E32197022DB")
-				},
+				url: 'https://min-api.cryptocompare.com/data/price?fsym=' + currencyAbbr + '&tsyms=USD',
+				async :false,
 				success: function (data) {
-					currenciesPrice[currencyAbbr] = +data.rate.toFixed(2);
-					if (telegramGroupName)
-						$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USDT');
-				}
+					currenciesPrice[currencyAbbr] = +data['USD'].toFixed(2);
+				},
 			});
 		}
 
@@ -763,7 +755,7 @@ $(function () {
 			isSelectedPrevConversion = true;
 
 			// show exchanges of previous conversion
-			var remain_total_value = convertedArr[1].trim().slice(0, -4).replace(',', '');
+			var remain_total_value = convertedArr[1].trim().slice(0, -4).replace(/,/g, '');
 			$('.icon-trader').addClass('hidden');
 			$('.graph-prices__item .progress-label').css({
 				'visibility': 'visible',
@@ -894,7 +886,7 @@ $(function () {
 				url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
 				success: function (data) {
 					var columnArr = [];
-					console.log("data", data);
+					//console.log("data", data);
 					var grapArr = data.Data.map(s => (s.open + s.close) / 2);
 					var columnArr = data.Data.map(s => {
 						var difference = s.close - s.open;
@@ -1324,8 +1316,8 @@ $(function () {
 
 			clearInterval(dynamicGetValue);
 
-			var firstValue = $('.exch-form__send input').val().trim().replace(',', '');
-			var secondValue = $('.exch-form__get input').val().trim().replace(',', '')
+			var firstValue = $('.exch-form__send input').val().trim().replace(/,/g, '');
+			var secondValue = $('.exch-form__get input').val().trim().replace(/,/g, '')
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
 
