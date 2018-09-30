@@ -294,6 +294,12 @@ $(function () {
 		}
 		$('.graph-info__title').first().html('1 ' + sendCurrency + ' = <b>' + priceRateBackward + '</b> ' + getCurrency);
 
+		updatePriceListItem(sendCurrency, getCurrency);
+	});
+
+	function updatePriceListItem(sendCurrency, getCurrency) {
+		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
+
 		if (sendCurrency == getCurrency) {
 			$('.graph-prices__price').each(function (index, priceItem) {
 				$(priceItem).html(priceRate + ' <span>' + sendCurrency + '</span>');
@@ -312,8 +318,7 @@ $(function () {
 				$(priceItem).html((sendCurrency == 'USDT' ? rateArray[index].toFixed(2) : rateArray[index].toFixed(5)) + ' <span>' + sendCurrency + '</span>');
 			});
 		}
-
-	});
+	}
 
 
 	/*---------------------------------------------------*/
@@ -1095,24 +1100,30 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* exchange progressbar */
 	/*---------------------------------------------------*/
-	var progressbar_list = $(".progressbar");
-	var progressbar_array = new Array();
-	var progressbar_labels = new Array();
-	for (var i = 0; i < progressbar_list.length; i++) {
-		var progressbar = $(".graph-prices__list .progressbar:eq(" + i + ")");
-		var progressbar_label = $(".graph-prices__list .progressbar .progress-label:eq(" + i + ")");
-		progressbar.progressbar({
-			value: false,
-			change: function () {
-				//progressLabel.text( progressbar.progressbar( "value" ) + "%" );
-			},
-			complete: function () {
-				//progressLabel.text( "Complete!" );
-			}
-		});
-		progressbar_array.push(progressbar);
-		progressbar_labels.push(progressbar_label);
+	var progressbar_list,
+		progressbar_array = new Array(),
+		progressbar_labels = new Array();
+	function updateProgressBar() {
+		progressbar_list = $(".progressbar");
+
+		for (var i = 0; i < progressbar_list.length; i++) {
+			var progressbar = $(".graph-prices__list .progressbar:eq(" + i + ")");
+			var progressbar_label = $(".graph-prices__list .progressbar .progress-label:eq(" + i + ")");
+			progressbar.progressbar({
+				value: false,
+				change: function () {
+					//progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+				},
+				complete: function () {
+					//progressLabel.text( "Complete!" );
+				}
+			});
+			progressbar_array.push(progressbar);
+			progressbar_labels.push(progressbar_label);
+		}
 	}
+
+	updateProgressBar();	
 
 	function progress(i) {
 		var val = progressbar_array[i].progressbar("value") || 0;
@@ -1998,4 +2009,35 @@ $(function () {
 	}, function () {
 		$('.message-bar__login-demo').css('background-image', 'linear-gradient(#009EE2, #218FE9)');
 	});
+
+	/** Graph exchanges sort */
+	$('.graph-prices__sort').click(function(e) {		
+		// chage class name by status
+		if ($(this).hasClass('desc')) {
+			$(this).removeClass('desc');
+			$(this).addClass('asc');
+		} else if ($(this).hasClass('asc')) {
+			$(this).removeClass('asc');
+			$(this).addClass('desc');
+		} else {
+			$(this).addClass('asc');
+		}
+
+		// sort items
+		var list = $('.graph-prices__list');
+		var items = list.children();
+
+		var order = $(this).hasClass('asc');
+		items.sort(function(a, b){
+			var priceA = $(a).find('.graph-prices__price').clone().children().remove().end().text().trim();			
+			var priceB = $(b).find('.graph-prices__price').clone().children().remove().end().text().trim();
+			return order ? (parseFloat(priceA) - parseFloat(priceB)) : (parseFloat(priceB) - parseFloat(priceA));
+		});
+		list.append(items);
+		
+		// update progressbar array
+		updateProgressBar();
+		
+		e.preventDefault();
+	})
 });
