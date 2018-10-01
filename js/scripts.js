@@ -45,6 +45,13 @@ $(function () {
 
 	setOwnName();
 
+	function getRandomNumber(low, high, isFloat = false) {
+		if (isFloat)
+			return Math.random() * (high - low) + low;
+		else
+			return Math.floor(Math.random() * (high - low + 1)) + low;
+	}
+
 	updateMainChartSplineNew(null, 'USDT', 'BTC');
 
 	/* Cubic slider for Orders */
@@ -1655,21 +1662,21 @@ $(function () {
 		function updateGlobalOrderHighestTable() {
 			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row').first().remove();
 			$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body').append(rowForMove);
-			var rand = Math.floor(Math.random() * (max - min + 1) + min);
+			var rand = getRandomNumber(500, 1000);
 			setTimeout(updateGlobalOrderHighestTable, rand);
 		}
 
 		function updateGlobalOrderLowerTable() {
 			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(1).find('.basic-table__row').last().remove();
 			$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(1).prepend(rowForMove);
-			var rand = Math.floor(Math.random() * (max - min + 1) + min);
+			var rand = getRandomNumber(500, 1000);
 			setTimeout(updateGlobalOrderLowerTable, rand);
 		}
 
 		function updateGlobalRecentTable() {
 			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(2).find('.basic-table__body .basic-table__body .basic-table__row').last().remove();
 			$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(2).find('.basic-table__body .basic-table__body').prepend(rowForMove);
-			var rand = Math.floor(Math.random() * (max - min + 1) + min);
+			var rand = getRandomNumber(500, 1000);
 			setTimeout(updateGlobalRecentTable, rand);
 		}
 
