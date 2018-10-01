@@ -262,6 +262,8 @@ $(function () {
 			$('.exch-form__get input').attr('data-currency', currencyAbbr);
 			$('.exch-form__get .exch-form__curr').html(currencyAbbr);
 			if ($('body').hasClass('advanced')) {
+				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(0).html('Price (' + currencyAbbr + ')');
+				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(4).html('Price (' + currencyAbbr + ')');
 				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(1).html('Amount (' + currencyAbbr + ')');
 				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(5).html('Amount (' + currencyAbbr + ')');
 			}
@@ -1622,30 +1624,30 @@ $(function () {
 		var min = 500,
 			max = 1000;
 
-		function updateTable1() {
+		function updateGlobalOrderHighestTable() {
 			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row').first().remove();
 			$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body').append(rowForMove);
 			var rand = Math.floor(Math.random() * (max - min + 1) + min);
-			setTimeout(updateTable1, rand);
+			setTimeout(updateGlobalOrderHighestTable, rand);
 		}
 
-		function updateTable2() {
+		function updateGlobalOrderLowerTable() {
 			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(1).find('.basic-table__row').last().remove();
 			$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(1).prepend(rowForMove);
 			var rand = Math.floor(Math.random() * (max - min + 1) + min);
-			setTimeout(updateTable2, rand);
+			setTimeout(updateGlobalOrderLowerTable, rand);
 		}
 
-		function updateTable3() {
+		function updateGlobalRecentTable() {
 			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(2).find('.basic-table__body .basic-table__body .basic-table__row').last().remove();
 			$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(2).find('.basic-table__body .basic-table__body').prepend(rowForMove);
 			var rand = Math.floor(Math.random() * (max - min + 1) + min);
-			setTimeout(updateTable3, rand);
+			setTimeout(updateGlobalRecentTable, rand);
 		}
 
-		updateTable1();
-		updateTable2();
-		updateTable3();
+		updateGlobalOrderHighestTable();
+		updateGlobalOrderLowerTable();
+		updateGlobalRecentTable();
 
 		$('.btn-table-toggle').click(function () {
 			$(this).toggleClass('open');
