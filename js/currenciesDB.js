@@ -169,15 +169,14 @@ function updateWalletData() {
                     '</div>';
             } else {
                 newRow = '<div class="basic-table__row disabled" data-currency="' + key + '">' +
-                    '<div class="basic-table__col w-25">' +
+                    '<div class="basic-table__col w-32">' +
                     '<svg class="basic-table__curr icon-curr clr-coin-ltc" role="img" aria-hidden="true">' +
                     '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + key.toLowerCase() + '"></use>' +
                     '</svg>' +
                     '<div class="d-flex-col">' +
                     '<span><span class="wallet' + key + '"></span> ' + key + ' </span><span class="smaller">' + currencyName + '</span>' +
                     '</div></div>' +
-                    '<div class="basic-table__col w-20 pricePerCoin' + key + '"></div>' +
-                    '<div class="basic-table__col w-32"><span class="pricePerCoin' + key + '"></span> <span class="smaller clr-blue">+1.25%</span></div>' +
+                    '<div class="basic-table__col w-45 pricePerCoin' + key + '"></div>' +
                     '<div class="basic-table__col w-22"><button class="basic-table__btn fix-width" send-fancybox><svg class="sprite-icon qr-code" role="img" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use></svg>' + key + '</button></div>' +
                     '</div>';
             }
