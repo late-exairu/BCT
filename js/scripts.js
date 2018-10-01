@@ -297,30 +297,6 @@ $(function () {
 		updatePriceListItem(sendCurrency, getCurrency);
 	});
 
-	function updatePriceListItem(sendCurrency, getCurrency) {
-		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
-
-		if (sendCurrency == getCurrency) {
-			$('.graph-prices__price').each(function (index, priceItem) {
-				$(priceItem).html(priceRate + ' <span>' + sendCurrency + '</span>');
-			});
-		} else {
-			var rateArray = [];
-			for (var i = 0; i < progressbar_array.length; i++) {
-				var randRate = priceRate * (Math.random() * (101 - 99) + 99) / 100;
-				rateArray.push(randRate);
-			}
-			rateArray.sort(function (a, b) {
-				return a - b
-			});
-
-			$('.graph-prices__price').each(function (index, priceItem) {
-				$(priceItem).html((sendCurrency == 'USDT' ? rateArray[index].toFixed(2) : rateArray[index].toFixed(5)) + ' <span>' + sendCurrency + '</span>');
-			});
-		}
-	}
-
-
 	/*---------------------------------------------------*/
 	/* js-scrollbar-outer */
 	/*---------------------------------------------------*/
@@ -2009,6 +1985,36 @@ $(function () {
 	}, function () {
 		$('.message-bar__login-demo').css('background-image', 'linear-gradient(#009EE2, #218FE9)');
 	});
+
+	function updatePriceListItem(sendCurrency, getCurrency) {
+		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
+
+		if (sendCurrency == getCurrency) {
+			$('.graph-prices__price').each(function (index, priceItem) {
+				$(priceItem).html(priceRate + ' <span>' + sendCurrency + '</span>');
+			});
+		} else {
+			var rateArray = [];
+			for (var i = 0; i < progressbar_array.length; i++) {
+				var randRate = priceRate * (Math.random() * (101 - 99) + 99) / 100;
+				rateArray.push(randRate);
+			}
+			rateArray.sort(function (a, b) {
+				return b - a
+			});
+
+			$('.graph-prices__price').each(function (index, priceItem) {
+				$(priceItem).html((sendCurrency == 'USDT' ? rateArray[index].toFixed(2) : rateArray[index].toFixed(5)) + ' <span>' + sendCurrency + '</span>');
+			});
+		}
+
+		// init sort icon
+		$('.graph-prices__sort').removeClass('asc')
+		$('.graph-prices__sort').removeClass('desc')
+	}
+
+	/** Init price list */
+	updatePriceListItem('USDT', 'BTC');
 
 	/** Graph exchanges sort */
 	$('.graph-prices__sort').click(function(e) {		
