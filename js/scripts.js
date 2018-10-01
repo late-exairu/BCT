@@ -1079,8 +1079,10 @@ $(function () {
 	var progressbar_list,
 		progressbar_array = new Array(),
 		progressbar_labels = new Array();
-	function updateProgressBar() {
+	function updateProgressBar() {		
 		progressbar_list = $(".progressbar");
+		progressbar_array = [];
+		progressbar_labels = [];
 
 		for (var i = 0; i < progressbar_list.length; i++) {
 			var progressbar = $(".graph-prices__list .progressbar:eq(" + i + ")");
