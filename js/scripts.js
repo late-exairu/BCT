@@ -331,26 +331,24 @@ $(function () {
 		priceRateBackward = priceRateBackward.replace(/\,/g,"");
 		// update global tables
 		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row').each(function(i, row) {
-			var rand = (priceRateBackward == 0) ? 0 : getRandomNumber(parseFloat(priceRateBackward), parseFloat(priceRateBackward) + 2, true);
+			var rand = (priceRateBackward == 0) ? 0 : getRandomNumber(parseFloat(priceRateBackward), parseFloat(priceRateBackward) * 1.2, true);
 			$(row).children().first().html(priceRateBackward > 1 ? numberWithCommas(rand.toFixed(2)) : rand.toFixed(5));
 		});
 
 		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(1).find('.basic-table__row').each(function(i, row) {
-			var rand = getRandomNumber(parseFloat(priceRateBackward) / 20, parseFloat(priceRateBackward), true);
+			var rand = getRandomNumber(parseFloat(priceRateBackward) / 2, parseFloat(priceRateBackward), true);
 			$(row).children().first().html(priceRateBackward > 1 ? numberWithCommas(rand.toFixed(2)) : rand.toFixed(5));
 		});
 
 		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(2).find('.basic-table__body .basic-table__body .basic-table__row').each(function(i, row) {
 			var rand;
 			if ($(row).children().first().hasClass('clr-red')) {
-				rand = (priceRateBackward == 0) ? 0 : getRandomNumber(parseFloat(priceRateBackward), parseFloat(priceRateBackward) + 2, true);
+				rand = (priceRateBackward == 0) ? 0 : getRandomNumber(parseFloat(priceRateBackward), parseFloat(priceRateBackward) * 1.2, true);
 			} else {
-				rand = getRandomNumber(parseFloat(priceRateBackward) / 20, parseFloat(priceRateBackward), true);				
+				rand = getRandomNumber(parseFloat(priceRateBackward) / 2, parseFloat(priceRateBackward), true);				
 			}
 			$(row).children().first().html(priceRateBackward > 1 ? numberWithCommas(rand.toFixed(2)) : rand.toFixed(5));
 		});
-
-		// $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row .basic-table__col').eq(0).html()
 
 		updatePriceListItem(sendCurrency, getCurrency);
 	});
