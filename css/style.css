@@ -7514,6 +7514,8 @@ h6 {
       background: var(--clr-backLL); }
     .exch-dropdown__item.current {
       color: var(--clr-accentD); }
+    .exch-dropdown__item.select {
+      background: var(--clr-backL); }
   .exch-dropdown__icon {
     width: 30px;
     height: 30px;

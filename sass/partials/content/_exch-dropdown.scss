@@ -249,6 +249,9 @@
 		&.current{
 			color: var(--clr-accentD);
 		}
+		&.select{
+			background: var(--clr-backL);
+		}
 	}
 
 	&__icon{
