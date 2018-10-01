@@ -122,9 +122,14 @@ $(function () {
 		$(this).parent().find('.exch-search').removeClass('hidden').find('input').focus();
 	});
 
-	$('.exch-search__input').keyup(function name() {
+	$('.exch-search__input').keyup(function () {
 		var searchString = $(this).val().toUpperCase();
-		$(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__item').each(function name(index, item) {
+		if (searchString.trim() != '') {
+			$(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__list-title').addClass('hidden');
+		} else {
+			$(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__list-title').removeClass('hidden');
+		}
+		$(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__item').each(function (index, item) {
 			// show all
 			$(item).removeClass('hidden');
 			// remove old span tags
@@ -149,15 +154,15 @@ $(function () {
 
 	var currenciesDropDownScrollbar = $('.exch-dropdown__scroll.scrollbar-right');
 	var current_item_index = 0;
-	$('.exch-search__input').keydown(function(e) {
+	$('.exch-search__input').keydown(function (e) {
 		var li = $(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__item:not(.hidden)');
 		li.each(function name(index, item) {
 			if ($(item).hasClass('current')) current_item_index = index;
 		});
-		if(e.which === 40) {
+		if (e.which === 40) {
 			li.eq(current_item_index).removeClass('current');
-			current_item_index ++;
-			if(current_item_index >= li.length) {
+			current_item_index++;
+			if (current_item_index >= li.length) {
 				current_item_index = 0;
 				liSelected = li.eq(current_item_index).addClass('current');
 			} else {
@@ -166,11 +171,11 @@ $(function () {
 					scrollTop: '+=45'
 				}, "fast");
 			}
-		} else if(e.which === 38) {
-			if(current_item_index > 0) {
+		} else if (e.which === 38) {
+			if (current_item_index > 0) {
 				li.eq(current_item_index).removeClass('current');
-				current_item_index --;
-				if(current_item_index < 0) {
+				current_item_index--;
+				if (current_item_index < 0) {
 					$(this).closest('.exch-dropdown').find('.exch-dropdown__current').removeClass('hidden');
 					$(this).closest('.exch-dropdown').find('.exch-search').addClass('hidden');
 					$(this).closest('.exch-dropdown').removeClass('open');
@@ -202,22 +207,14 @@ $(function () {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
 		var currencyAbbr = $(this).attr('data-currency');
-		//var realCurrencyName = currencyName.slice(6).toLowerCase();
-		//var realCurrencyName = currencyName;
-		//if (realCurrencyName == 'us dollar') realCurrencyName = 'dollar';
 
-		// check currency Price
 		if (!currenciesPrice[currencyAbbr]) {
 			$.ajax({
-				url: 'https://rest.coinapi.io/v1/exchangerate/' + currencyAbbr + '/USD',
-				beforeSend: function (xhr) {
-					xhr.setRequestHeader("X-CoinAPI-Key", "2AF6DF26-A878-4D5A-8201-3E32197022DB")
-				},
+				url: 'https://min-api.cryptocompare.com/data/price?fsym=' + currencyAbbr + '&tsyms=USD',
+				async :false,
 				success: function (data) {
-					currenciesPrice[currencyAbbr] = +data.rate.toFixed(2);
-					if (telegramGroupName)
-						$('.graph-info__title').first().text('1 ' + currencyAbbr + ' = ' + numberWithCommas(currenciesPrice[currencyAbbr]) + ' USDT');
-				}
+					currenciesPrice[currencyAbbr] = +data['USD'].toFixed(2);
+				},
 			});
 		}
 
@@ -739,7 +736,7 @@ $(function () {
 			isSelectedPrevConversion = true;
 
 			// show exchanges of previous conversion
-			var remain_total_value = convertedArr[1].trim().slice(0, -4).replace(',', '');
+			var remain_total_value = convertedArr[1].trim().slice(0, -4).replace(/,/g, '');
 			$('.icon-trader').addClass('hidden');
 			$('.graph-prices__item .progress-label').css({
 				'visibility': 'visible',
@@ -870,7 +867,7 @@ $(function () {
 				url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
 				success: function (data) {
 					var columnArr = [];
-					console.log("data", data);
+					//console.log("data", data);
 					var grapArr = data.Data.map(s => (s.open + s.close) / 2);
 					var columnArr = data.Data.map(s => {
 						var difference = s.close - s.open;
@@ -1198,8 +1195,7 @@ $(function () {
 	});
 
 
-	$('button[transaction-fancybox]').click(function () {
-	});
+	$('button[transaction-fancybox]').click(function () {});
 
 	$('#transaction-popup .popup-tabs__item').click(function () {
 		$('#transaction-popup .popup-tabs__item').removeClass('active');
@@ -1212,7 +1208,7 @@ $(function () {
 		$.fancybox.close();
 	});
 
-	$('[send-fancybox]').click(function (e) {		
+	$('[send-fancybox]').click(function (e) {
 		e.stopPropagation();
 		var fancies_length = $('.b-graph .c-block .fancybox-container').length;
 		if (fancies_length < 1) {
@@ -1309,8 +1305,8 @@ $(function () {
 
 			clearInterval(dynamicGetValue);
 
-			var firstValue = $('.exch-form__send input').val().trim().replace(',', '');
-			var secondValue = $('.exch-form__get input').val().trim().replace(',', '')
+			var firstValue = $('.exch-form__send input').val().trim().replace(/,/g, '');
+			var secondValue = $('.exch-form__get input').val().trim().replace(/,/g, '')
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
 
@@ -1363,7 +1359,7 @@ $(function () {
 					$('.exch-form__get .exch-form__input').val(numberWithCommas((secondValueResult).toFixed(2)));
 
 					updateWalletData();
-					drawCircleChart(e,true);
+					drawCircleChart(e, true);
 
 					//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + numberWithCommas(firstValueResult.toFixed(2)) + ' ' + sendCurrency + svgArrowTemplate + (getCurrency == 'USDT' ? '$' : '') + numberWithCommas(secondValueResult.toFixed(2)) + ' ' + getCurrency)
 
@@ -1923,7 +1919,7 @@ $(function () {
 	var $mainGraphRange = $(".graph-range-slider__control");
 	$mainGraphRange.on('input', function () {
 		// $( this ).css( 'background', 'linear-gradient(to right, var(--clr-time-bar) 0%, var(--clr-time-bar) '+this.value*25 +'%, var(--clr-time-line) ' + this.value*25 + '%, var(--clr-time-line) 100%)' );
-		
+
 		console.log("mainChartObj", mainChartObj);
 		switch (parseInt(this.value)) {
 			case 0:
