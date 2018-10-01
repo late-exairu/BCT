@@ -155,42 +155,53 @@ $(function () {
 	var currenciesDropDownScrollbar = $('.exch-dropdown__scroll.scrollbar-right');
 	var current_item_index = 0;
 	$('.exch-search__input').keydown(function (e) {
-		var li = $(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__item:not(.hidden)');
-		li.each(function name(index, item) {
+		var dropdown_list = $(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__item:not(.hidden)');
+		dropdown_list.each(function name(index, item) {
 			if ($(item).hasClass('current')) current_item_index = index;
 		});
 		if (e.which === 40) {
-			li.eq(current_item_index).removeClass('current');
-			current_item_index++;
-			if (current_item_index >= li.length) {
-				current_item_index = 0;
-				liSelected = li.eq(current_item_index).addClass('current');
-			} else {
-				liSelected = li.eq(current_item_index).addClass('current');
+			var next = dropdown_list.eq(current_item_index).next();
+			if (next[0].innerHTML == "All") {
 				currenciesDropDownScrollbar.animate({
 					scrollTop: '+=45'
-				}, "fast");
+				}, 0);
+			}
+			if (current_item_index < dropdown_list.length - 1) {
+				dropdown_list.eq(current_item_index).removeClass('current');
+				current_item_index++;
+				liSelected = dropdown_list.eq(current_item_index).addClass('current');
+				currenciesDropDownScrollbar.animate({
+					scrollTop: '+=45'
+				}, 0);
 			}
 		} else if (e.which === 38) {
+			var prev = dropdown_list.eq(current_item_index).prev();
+			if (prev[0].innerHTML == "All") {
+				currenciesDropDownScrollbar.animate({
+					scrollTop: '-=45'
+				}, 0);
+			}
 			if (current_item_index > 0) {
-				li.eq(current_item_index).removeClass('current');
+				dropdown_list.eq(current_item_index).removeClass('current');
 				current_item_index--;
 				if (current_item_index < 0) {
 					$(this).closest('.exch-dropdown').find('.exch-dropdown__current').removeClass('hidden');
 					$(this).closest('.exch-dropdown').find('.exch-search').addClass('hidden');
 					$(this).closest('.exch-dropdown').removeClass('open');
 				} else {
-					liSelected = li.eq(current_item_index).addClass('current');
+					liSelected = dropdown_list.eq(current_item_index).addClass('current');
 					currenciesDropDownScrollbar.animate({
 						scrollTop: '-=45'
-					}, "fast");
+					}, 0);
 				}
 			} else {
-				li.eq(current_item_index).removeClass('current');
+				dropdown_list.eq(current_item_index).removeClass('current');
 				$(this).closest('.exch-dropdown').find('.exch-dropdown__current').removeClass('hidden');
 				$(this).closest('.exch-dropdown').find('.exch-search').addClass('hidden');
 				$(this).closest('.exch-dropdown').removeClass('open');
 			}
+		} else if (e.which === 13) {
+			dropdown_list.eq(current_item_index).trigger("click");
 		}
 	});
 
