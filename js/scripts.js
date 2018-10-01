@@ -286,6 +286,7 @@ $(function () {
 			$('.exch-form__get input').attr('data-currency', currencyAbbr);
 			$('.exch-form__get .exch-form__curr').html(currencyAbbr);
 			if ($('body').hasClass('advanced')) {
+				// change the global table header
 				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(0).html('Price (' + currencyAbbr + ')');
 				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(4).html('Price (' + currencyAbbr + ')');
 				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(1).html('Amount (' + currencyAbbr + ')');
@@ -316,6 +317,9 @@ $(function () {
 			priceRateBackward = priceRateBackward.toFixed(5);
 		}
 		$('.graph-info__title').first().html('1 ' + sendCurrency + ' = <b>' + priceRateBackward + '</b> ' + getCurrency);
+
+		// change the median price
+		$('.median-price').html(priceRateBackward + ' <span>' + getCurrency + '</span>');
 
 		updatePriceListItem(sendCurrency, getCurrency);
 	});
