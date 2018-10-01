@@ -13278,6 +13278,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 .highcharts-credits {
   display: none; }
 
+.smallCurrencyChart {
+  width: 90px;
+  height: 30px;
+  margin-right: 5px; }
+
 .accounts-diagram-wrap {
   position: relative;
   flex: 0 0 180px;
