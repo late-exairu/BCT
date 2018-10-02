@@ -1196,7 +1196,7 @@ $(function () {
 		progressbar_current.progressbar("value", val + 0.2);
 		progressbar_current_label.css("width", (val + 0.2) + '%');
 		if (val < 99.8) {
-			setTimeout(currentProgress, 50);
+			setTimeout(currentProgress, 48);
 		} 
 	}
 
