@@ -145,19 +145,19 @@ function updateWalletData() {
                     '</div>' +
                     '<div class="basic-table__col w-20 pricePerCoin' + key + '"></div>' +
 
-                    '<div class = "basic-table__col w-30">'+
-                        '<div class = "basic-select custom-select">'+
-                        '<select class = "basic-select__select">'+
-                        '<option> Choose your custodian </option>'+
-                        '<option> HashiCorp Vault </option>'+
-                        '<option> IRA Financial Trust </option>'+
-                        '<option> Kingdom Trust </option>'+
-                        '<option> Trustology </option>'+
-                        '<option> Vo1t </option>'+
-                        '<option> Xapo Vault </option>'+
-                        '</select>'+
-                            '<div class = "select-selected basic-select__select" > Choose your custodian </div><div class="select-items select-hide"><div>Choose your custodian</div > <div> HashiCorp Vault </div><div>IRA Financial Trust</div> <div> Kingdom Trust </div><div>Trustology</div> <div> Vo1t </div><div>Xapo Vault</div> </div></div>'+
-                        '</div>'+
+                    '<div class = "basic-table__col w-30">' +
+                    '<div class = "basic-select custom-select">' +
+                    '<select class = "basic-select__select">' +
+                    '<option> Choose your custodian </option>' +
+                    '<option> HashiCorp Vault </option>' +
+                    '<option> IRA Financial Trust </option>' +
+                    '<option> Kingdom Trust </option>' +
+                    '<option> Trustology </option>' +
+                    '<option> Vo1t </option>' +
+                    '<option> Xapo Vault </option>' +
+                    '</select>' +
+                    '<div class = "select-selected basic-select__select" > Choose your custodian </div><div class="select-items select-hide"><div>Choose your custodian</div > <div> HashiCorp Vault </div><div>IRA Financial Trust</div> <div> Kingdom Trust </div><div>Trustology</div> <div> Vo1t </div><div>Xapo Vault</div> </div></div>' +
+                    '</div>' +
 
 
                     '<div class="basic-table__col w-20">' +
@@ -169,15 +169,16 @@ function updateWalletData() {
                     '</div>';
             } else {
                 newRow = '<div class="basic-table__row disabled" data-currency="' + key + '">' +
-                    '<div class="basic-table__col w-25">' +
+                    '<div class="basic-table__col w-32">' +
                     '<svg class="basic-table__curr icon-curr clr-coin-ltc" role="img" aria-hidden="true">' +
                     '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + key.toLowerCase() + '"></use>' +
                     '</svg>' +
                     '<div class="d-flex-col">' +
                     '<span><span class="wallet' + key + '"></span> ' + key + ' </span><span class="smaller">' + currencyName + '</span>' +
                     '</div></div>' +
-                    '<div class="basic-table__col w-20 pricePerCoin' + key + '"></div>' +
-                    '<div class="basic-table__col w-32"><span class="pricePerCoin' + key + '"></span> <span class="smaller clr-blue">+1.25%</span></div>' +
+                    '<div class="basic-table__col w-45">'+
+                        '<div id="smallChart'+key+'" class="smallCurrencyChart"></div>'+
+                        '<div class = "smallChartInfo"></div></div>' +
                     '<div class="basic-table__col w-22"><button class="basic-table__btn fix-width" send-fancybox><svg class="sprite-icon qr-code" role="img" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use></svg>' + key + '</button></div>' +
                     '</div>';
             }
@@ -200,6 +201,70 @@ function updateWalletData() {
         $('.pricePerCoin' + key).html('$' + numberWithCommas(currenciesPrice[key]));
         $('.wallet' + key).html(numberWithCommas(currentWallet[key].toFixed(2)) + '&nbsp;');
 
+        // draw small Chart 
+        $.ajax({
+            url: 'https://min-api.cryptocompare.com/data/histohour?fsym=' + key + '&tsym=USD&limit=24',
+            success: function (data) {
+                var graphArr = data.Data.map(s => (s.open + s.close) / 2);
+                if (!graphArr.length) {
+                    for (let i = 0; i < 25; i++) {
+                        graphArr.push(1);
+                    };
+                };
+                var min = Math.min(...graphArr);
+                var max = Math.max(...graphArr);
+                var changeInPercent = (-1 + (graphArr[graphArr.length - 1] / graphArr[0])) * 100;
+                var smallChartInfoString;
+                var lineColor;
+                var gradientColor;
+
+                // green color
+                if (changeInPercent > 0) {
+                    smallChartInfoString = '$' + currenciesPrice[key].toFixed(2) + ' <span class="smaller clr-green">+' + Math.abs(changeInPercent.toFixed(2)) + '%</span>';
+                    lineColor = '#00ff00';
+                    gradientColor = {
+                        linearGradient: [0, 0, 0, 30],
+                        stops: [
+                            [0, Highcharts.Color('#00ff00').setOpacity(0.2).get('rgba')],
+                            [1, Highcharts.Color('#00ff00').setOpacity(0).get('rgba')]
+                        ]
+                    };
+                }
+                // red color
+                else {
+                    smallChartInfoString = '$' + currenciesPrice[key].toFixed(2) + ' <span class="smaller clr-red">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span>';
+                    lineColor = '#ff0600';
+                    gradientColor = {
+                        linearGradient: [0, 0, 0, 30],
+                        stops: [
+                            [0, Highcharts.Color('#ff0600').setOpacity(0.2).get('rgba')],
+                            [1, Highcharts.Color('#ff0600').setOpacity(0).get('rgba')]
+                        ]
+                    };
+                }
+
+                if (currentWallet[key].toFixed(2) == 0) {
+                    lineColor = '#C5C5C5';
+                    gradientColor = {
+                        linearGradient: [0, 0, 0, 30],
+                        stops: [
+                            [0, Highcharts.Color('#C5C5C5').setOpacity(0.2).get('rgba')],
+                            [1, Highcharts.Color('#C5C5C5').setOpacity(0).get('rgba')]
+                        ]
+                    };
+                }
+
+                var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
+                cloneOptions.series[0].data = graphArr;
+                cloneOptions.series[0].color = lineColor;
+                cloneOptions.series[0].fillColor = gradientColor;
+                cloneOptions.yAxis.min = min;
+                cloneOptions.yAxis.max = max;
+                Highcharts.chart('smallChart' + key, cloneOptions);
+                $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
+            },
+        });
+
     }
     totalBalance = totalBalance.toFixed(2);
 
@@ -220,15 +285,14 @@ function updateWalletData() {
 
     eachPercent = {};
     // fill object and sort table rows
-    sortable.map((item,index) => {
+    sortable.map((item, index) => {
         var key = item[0];
         var value = item[1];
         eachPercent[key] = value;
-        if($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').index() != index){
-            if (index == 0){
+        if ($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').index() != index) {
+            if (index == 0) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:first');
-            }
-            else{
+            } else {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertAfter('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:nth-child(' + index + ')');
             }
         }
