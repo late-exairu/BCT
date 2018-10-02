@@ -7,15 +7,15 @@ var toolbarDropdowns = document.getElementsByClassName('toolbar-drop');
 $('.left-bar__scroll.scrollbar-left').scrollbar();
 scrollbarLeft.scrollbar({
     "onScroll": function (y, x) {
-        if (y.scroll == y.maxScroll) {
-            $('.toolbar__scrollup__btn').show();
-            $('.toolbar__scrolldown__btn').hide();
-            if (y.maxScroll == 0) {
-                $('.toolbar__scrollup__btn').hide();
-            }
+        if (y.scroll >= y.maxScroll - 10) {
+        	$('.toolbar__scrollup__btn').show();
+        	$('.toolbar__scrolldown__btn').hide();
+        } else if (y.scroll > 0 && y.scroll < y.maxScroll) {
+        	$('.toolbar__scrollup__btn').show();
+        	$('.toolbar__scrolldown__btn').show();
         } else {
-            $('.toolbar__scrollup__btn').hide();
-            $('.toolbar__scrolldown__btn').show();
+        	$('.toolbar__scrollup__btn').hide();
+        	$('.toolbar__scrolldown__btn').show();
         }
         
         for (var i = 0; i < toolbarDropdowns.length; i++) {
