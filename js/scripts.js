@@ -1393,8 +1393,6 @@ $(function () {
 		var sendCurrency = $('.exch-form__send input').attr('data-currency');
 		var getCurrency = $('.exch-form__get input').attr('data-currency');
 		if ($(this).hasClass('exch-form__submit')) {
-			$('.exch-form__send .exch-form__label').text('You gave');
-			$('.exch-form__get .exch-form__label').text('You got');
 
 			$('.exch-form__close').addClass('hidden');
 			$('.graph-prices__item').removeClass('active');
@@ -1413,8 +1411,8 @@ $(function () {
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
 
-			$('.exch-form__send .exch-form__input').val('0.00');
-			$('.exch-form__get .exch-form__input').val('0.00');
+			// $('.exch-form__send .exch-form__input').val('0.00');
+			// $('.exch-form__get .exch-form__input').val('0.00');
 
 			var firstValueResult = 0;
 			var secondValueResult = 0;
@@ -1463,8 +1461,8 @@ $(function () {
 					if (!ownWallet[getCurrency]) ownWallet[getCurrency] = 0;
 					ownWallet[getCurrency] += (+secondValuePart);
 
-					$('.exch-form__send .exch-form__input').val(numberWithCommas((firstValueResult).toFixed(2)));
-					$('.exch-form__get .exch-form__input').val(numberWithCommas((secondValueResult).toFixed(2)));
+					//$('.exch-form__send .exch-form__input').val(numberWithCommas((firstValueResult).toFixed(2)));
+					//$('.exch-form__get .exch-form__input').val(numberWithCommas((secondValueResult).toFixed(2)));
 
 					updateWalletData();
 					drawCircleChart(e, true);
@@ -1497,6 +1495,9 @@ $(function () {
 						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
 						$('.exch-form__submit').attr("disabled", true);
 						firstClickAfterExchangeDone = true;
+
+						$('.exch-form__send .exch-form__label').text('You gave');
+						$('.exch-form__get .exch-form__label').text('You got');
 
 						$(window).click(function (e) {
 							if (firstClickAfterExchangeDone) {
