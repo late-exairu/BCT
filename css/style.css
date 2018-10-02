@@ -151,7 +151,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.bitebtc:after, .icon-trader.bitfinex:after, .icon-trader.bitflyer:after, .icon-trader.bithumb:after, .icon-trader.bitstamp:after, .icon-trader.bittrex:after, .icon-trader.cexio:after, .icon-trader.coinbase:after, .icon-trader.coinone:after, .icon-trader.cryptopia:after, .icon-trader.exmo:after, .icon-trader.exx:after, .icon-trader.gateio:after, .icon-trader.gemini:after, .icon-trader.hitbtc:after, .icon-trader.houbi:after, .icon-trader.indodax:after, .icon-trader.itbit:after, .icon-trader.korbit:after, .icon-trader.kraken:after, .icon-trader.kucoin:after, .icon-trader.liqui:after, .icon-trader.livecoin:after, .icon-trader.localbitcoins:after, .icon-trader.poloniex:after, .icon-trader.quoine:after, .icon-trader.upbit:after, .icon-trader.vaultoro:after, .icon-trader.yobit:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 839.4375em 811.0625em; }
+  background-size: 840.9375em 812.375em; }
 
 /* =================================================================== */
 /* Functions
@@ -1423,7 +1423,7 @@ h6 {
     width: 13px;
     height: 9px;
     margin: 1px 0 0;
-    fill: var(--clr-accentD); }
+    fill: var(--clr-accent); }
   .chat-talk__time {
     font-family: "open_sans", sans-serif;
     margin: 0 0 0 3px;
@@ -8456,131 +8456,131 @@ h6 {
   .icon-trader.binance:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -738.5em -719.125em; }
+    background-position: -740em -720.4375em; }
   .icon-trader.bitebtc:after {
     width: 1.25em;
     height: 0.5875em;
-    background-position: -742.9375em -724.0625em; }
+    background-position: -744.4375em -725.375em; }
   .icon-trader.bitfinex:after {
     width: 1.25em;
     height: 1.2125em;
-    background-position: -745.4375em -725.9375em; }
+    background-position: -746.9375em -727.25em; }
   .icon-trader.bitflyer:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -746.6875em -727.1875em; }
+    background-position: -748.1875em -728.5em; }
   .icon-trader.bitflyer:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -746.6875em -727.1875em; }
+    background-position: -748.1875em -728.5em; }
   .icon-trader.bithumb:after {
     width: 0.95em;
     height: 1.25em;
-    background-position: -747.9375em -728.4375em; }
+    background-position: -749.4375em -729.75em; }
   .icon-trader.bitstamp:after {
     width: 0.81875em;
     height: 1.25em;
-    background-position: -752.5em -733.3125em; }
+    background-position: -754em -734.625em; }
   .icon-trader.bittrex:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -753.375em -734.5625em; }
+    background-position: -754.875em -735.875em; }
   .icon-trader.cexio:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -766.5em -744.0625em; }
+    background-position: -768em -745.375em; }
   .icon-trader.coinbase:after {
     width: 0.56875em;
     height: 1.1875em;
-    background-position: -767.75em -745.3125em; }
+    background-position: -769.25em -746.625em; }
   .icon-trader.coinone:after {
     width: 1.1625em;
     height: 1.1875em;
-    background-position: -773.8125em -751.9375em; }
+    background-position: -775.3125em -753.25em; }
   .icon-trader.coinone:after {
     width: 1.1625em;
     height: 1.1875em;
-    background-position: -773.8125em -751.9375em; }
+    background-position: -775.3125em -753.25em; }
   .icon-trader.cryptopia:after {
     width: 1.25em;
     height: 1.2375em;
-    background-position: -779.875em -758.125em; }
+    background-position: -781.375em -759.4375em; }
   .icon-trader.exmo:after {
     width: 1.25em;
     height: 0.525em;
-    background-position: -783.375em -761em; }
+    background-position: -784.875em -762.3125em; }
   .icon-trader.exx:after {
     width: 1.25em;
     height: 0.56875em;
-    background-position: -784.625em -761.5625em; }
+    background-position: -786.125em -762.875em; }
   .icon-trader.gateio:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -788.375em -764.6875em; }
+    background-position: -789.875em -766em; }
   .icon-trader.gemini:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -789.625em -765.9375em; }
+    background-position: -791.125em -767.25em; }
   .icon-trader.hitbtc:after {
     width: 1.25em;
     height: 1.16875em;
-    background-position: -792.125em -768.4375em; }
+    background-position: -793.625em -769.75em; }
   .icon-trader.houbi:after {
     width: 0.8125em;
     height: 1.25em;
-    background-position: -793.375em -769.625em; }
+    background-position: -794.875em -770.9375em; }
   .icon-trader.indodax:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -796.6875em -772.75em; }
+    background-position: -798.1875em -774.0625em; }
   .icon-trader.itbit:after {
     width: 0.875em;
     height: 1.25em;
-    background-position: -797.9375em -774em; }
+    background-position: -799.4375em -775.3125em; }
   .icon-trader.korbit:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -798.8125em -775.25em; }
+    background-position: -800.3125em -776.5625em; }
   .icon-trader.kraken:after {
     width: 1.25em;
     height: 0.98125em;
-    background-position: -800.0625em -776.5em; }
+    background-position: -801.5625em -777.8125em; }
   .icon-trader.kucoin:after {
     width: 1.15em;
     height: 1.25em;
-    background-position: -801.3125em -777.5em; }
+    background-position: -802.8125em -778.8125em; }
   .icon-trader.liqui:after {
     width: 1.25em;
     height: 1.16875em;
-    background-position: -803.75em -780em; }
+    background-position: -805.25em -781.3125em; }
   .icon-trader.livecoin:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -805em -781.1875em; }
+    background-position: -806.5em -782.5em; }
   .icon-trader.localbitcoins:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -806.25em -782.4375em; }
+    background-position: -807.75em -783.75em; }
   .icon-trader.poloniex:after {
     width: 1.25em;
     height: 0.875em;
-    background-position: -812.375em -788.125em; }
+    background-position: -813.875em -789.4375em; }
   .icon-trader.quoine:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -814.875em -790.25em; }
+    background-position: -816.375em -791.5625em; }
   .icon-trader.upbit:after {
     width: 1.25em;
     height: 0.55625em;
-    background-position: -822.375em -796.9375em; }
+    background-position: -823.875em -798.25em; }
   .icon-trader.vaultoro:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -823.625em -797.5em; }
+    background-position: -825.125em -798.8125em; }
   .icon-trader.yobit:after {
     width: 1.25em;
     height: 0.8125em;
-    background-position: -827.375em -800.4375em; }
+    background-position: -828.875em -801.75em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -8939,7 +8939,7 @@ Blocks from left bar
       min-width: 250px;
       max-width: 450px; }
       .main-cols__left.col-chats .c-block__col {
-        border: 1px solid transparent;
+        /*border: 1px solid transparent;*/
         border-radius: var(--border-radius);
         /*&:hover,
 				&:focus{
@@ -9309,6 +9309,47 @@ body.menubar-in #user-btn:before {
       background: var(--clr-block);
       z-index: -1;
       border-radius: 0 0 var(--border-radius) var(--border-radius); }
+  .message-bar__login {
+    align-items: flex-end;
+    cursor: pointer; }
+    .message-bar__login iframe {
+      border: none;
+      overflow: hidden;
+      height: 56px !important;
+      padding-top: 8px;
+      width: 100% !important;
+      padding-left: calc((100% - 223px)/2);
+      background-color: #54a9eb;
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius); }
+  .message-bar__login-demo {
+    font-family: "open_sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    width: 100%;
+    height: 56px;
+    background: linear-gradient(45deg, #06af67 0%, #17b597 100%);
+    pointer-events: none;
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    line-height: 56px; }
+    .message-bar__login-demo .sprite-icon {
+      position: relative;
+      top: -2px;
+      width: 21px;
+      height: 25px;
+      margin: 0px 10px -2px -8px;
+      display: inline-block;
+      fill: #fff; }
 
 /* =================================================================== */
 /* portfolio-menu */
@@ -14037,46 +14078,6 @@ body.advanced .fancybox-bg {
     width: 100%;
     height: 100%;
     border: 1px solid var(--clr-back); }
-
-.message-bar__login {
-  align-items: flex-end;
-  cursor: pointer; }
-  .message-bar__login iframe {
-    border: none;
-    overflow: hidden;
-    height: 56px !important;
-    padding-top: 8px;
-    width: 100% !important;
-    padding-left: calc((100% - 223px)/2);
-    background-color: #54a9eb;
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius); }
-
-.message-bar__login-demo {
-  width: 100%;
-  height: 56px;
-  background-image: linear-gradient(#009EE2, #218FE9);
-  pointer-events: none;
-  position: absolute;
-  z-index: 20;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 56px; }
-  .message-bar__login-demo .tgme_widget_login_button_icon {
-    width: 24px;
-    height: 24px;
-    background: url(../img/tg_button_large.png) no-repeat;
-    margin: 0px 15px -2px -8px;
-    display: inline-block; }
 
 /* =================================================================== */
 /* Globals
