@@ -279,9 +279,6 @@ $(function () {
 			$('.exch-form__send .exch-form__curr').html(currencyAbbr);
 			$('.chat-head__name').css('color', firstColor);
 
-			// change price currency from prices__list of exchanges
-			$('.graph-prices__price > span').html(currencyAbbr);
-
 			// change currency in Orders Form
 			$('.order-form__submit.btn-green').html('BUY ' + currencyAbbr);
 			$('.order-form__submit.btn-red').html('SELL ' + currencyAbbr);
@@ -2048,7 +2045,7 @@ $(function () {
 		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
 
 		if (sendCurrency == getCurrency) {
-			$('.graph-prices__price').each(function (index, priceItem) {
+			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
 				$(priceItem).html(priceRate + ' <span>' + sendCurrency + '</span>');
 			});
 		} else {
@@ -2061,10 +2058,22 @@ $(function () {
 				return b - a
 			});
 
-			$('.graph-prices__price').each(function (index, priceItem) {
+			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
 				$(priceItem).html((sendCurrency == 'USDT' ? rateArray[index].toFixed(2) : rateArray[index].toFixed(5)) + ' <span>' + sendCurrency + '</span>');
 			});
 		}
+
+		var priceRateBackward = 1 / priceRate;
+		if (priceRateBackward > 1) {
+			priceRateBackward = priceRateBackward.toFixed(2);
+			priceRateBackward = numberWithCommas(priceRateBackward);
+		} else {
+			priceRateBackward = priceRateBackward.toFixed(5);
+		}
+
+		$('.graph-prices__price.get-prices__rate').each(function (index, priceItem) {
+			$(priceItem).html(priceRateBackward + ' <span>' + getCurrency + '</span>');
+		});
 
 		// init sort icon
 		$('.graph-prices__sort').removeClass('asc')
@@ -2075,32 +2084,35 @@ $(function () {
 	updatePriceListItem('USDT', 'BTC');
 
 	/** Graph exchanges sort */
-	$('.graph-prices__sort').click(function(e) {		
+	$('.graph-prices__sort').click(function(e) {				
 		// chage class name by status
-		if ($(this).hasClass('desc')) {
+		if ($(this).hasClass('desc')) { // state 1
 			$(this).removeClass('desc');
-			$(this).addClass('asc');
-		} else if ($(this).hasClass('asc')) {
+			$(this).addClass('asc');						
+		} else if ($(this).hasClass('asc')) { // state 2
 			$(this).removeClass('asc');
 			$(this).addClass('desc');
-		} else {
-			$(this).addClass('asc');
+		} else { // default state
+			$(this).addClass('asc');			
 		}
+		
+		$('.graph-prices__price.send-prices__rate').toggleClass('hidden')
+		$('.graph-prices__price.get-prices__rate').toggleClass('hidden')
 
 		// sort items
-		var list = $('.graph-prices__list');
-		var items = list.children();
+		// var list = $('.graph-prices__list');
+		// var items = list.children();
 
-		var order = $(this).hasClass('asc');
-		items.sort(function(a, b){
-			var priceA = $(a).find('.graph-prices__price').clone().children().remove().end().text().trim();			
-			var priceB = $(b).find('.graph-prices__price').clone().children().remove().end().text().trim();
-			return order ? (parseFloat(priceA) - parseFloat(priceB)) : (parseFloat(priceB) - parseFloat(priceA));
-		});
-		list.append(items);
+		// var order = $(this).hasClass('asc');
+		// items.sort(function(a, b){
+		// 	var priceA = $(a).find('.graph-prices__price').clone().children().remove().end().text().trim();			
+		// 	var priceB = $(b).find('.graph-prices__price').clone().children().remove().end().text().trim();
+		// 	return order ? (parseFloat(priceA) - parseFloat(priceB)) : (parseFloat(priceB) - parseFloat(priceA));
+		// });
+		// list.append(items);
 		
-		// update progressbar array
-		updateProgressBar();
+		// // update progressbar array
+		// updateProgressBar();
 		
 		e.preventDefault();
 	})
