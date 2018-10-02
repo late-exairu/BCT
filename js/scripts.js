@@ -1148,8 +1148,8 @@ $(function () {
 		progressbar_array = new Array(),
 		progressbar_labels = new Array();
 
-	var progressbar_current = $(".graph-prices__list .graph-prices__current .progressbar:eq(0)"),
-		progressbar_current_label = $(".graph-prices__list .graph-prices__current .progressbar .progress-label:eq(0)");
+	var progressbar_current = $(".graph-prices__list .graph-prices__item:first-child .progressbar:eq(0)"),
+		progressbar_current_label = $(".graph-prices__list .graph-prices__item:first-child .progressbar .progress-label:eq(0)");
 
 	progressbar_current.progressbar({
 		value: false,
@@ -1166,7 +1166,7 @@ $(function () {
 		progressbar_array = [];
 		progressbar_labels = [];
 
-		for (var i = 0; i < progressbar_list.length; i++) {
+		for (var i = 1; i < progressbar_list.length; i++) {
 			var progressbar = $(".graph-prices__list .graph-prices__item .progressbar:eq(" + i + ")");
 			var progressbar_label = $(".graph-prices__list .graph-prices__item .progressbar .progress-label:eq(" + i + ")");
 			progressbar.progressbar({
@@ -1402,9 +1402,9 @@ $(function () {
 			// $('.graph-prices__item .progress-label').css('visibility', 'hidden');
 			// $('.progressbar').removeClass('hidden');
 
-			$('.graph-prices__current .icon-trader').addClass('hidden');
-			$('.graph-prices__current .progress-label').css('visibility', 'hidden');
-			$('.graph-prices__current .progressbar').removeClass('hidden');
+			$('.graph-prices__item:first-child .icon-trader').addClass('hidden');
+			$('.graph-prices__item:first-child .progress-label').css('visibility', 'hidden');
+			$('.graph-prices__item:first-child .progressbar').removeClass('hidden');
 
 			clearInterval(dynamicGetValue);
 
@@ -2102,12 +2102,12 @@ $(function () {
 			});
 		} else {
 			var rateArray = [];
-			for (var i = 0; i < progressbar_array.length; i++) {
+			for (var i = 0; i < progressbar_array.length + 1; i++) {
 				var randRate = priceRate * (Math.random() * (101 - 99) + 99) / 100;
 				rateArray.push(randRate);
 			}
 			rateArray.sort(function (a, b) {
-				return b - a
+				return a - b
 			});
 
 			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
@@ -2151,7 +2151,7 @@ $(function () {
 		$('.graph-prices__price.send-prices__rate').toggleClass('hidden')
 		$('.graph-prices__price.get-prices__rate').toggleClass('hidden')
 
-		// sort items
+		// // sort items
 		// var list = $('.graph-prices__list');
 		// var items = list.children();
 
