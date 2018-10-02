@@ -918,7 +918,6 @@ $(function () {
 	});
 
 	function updateMainChartSplineNew(exchange, sendCurrency, getCurrency) {
-		//if (sendCurrency != getCurrency) {
 		$.ajax({
 			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
 			success: function (data) {
@@ -960,27 +959,6 @@ $(function () {
 				updateMainChartPercentChange();
 			},
 		});
-		/* 		} else {
-					var grapArr = [];
-					var columnArr = [];
-					for (let i = 0; i < 366; i++) {
-						grapArr.push(1);
-					};
-					mainChartObj.series[0].setData(grapArr);
-					mainChartObj.series[1].setData(columnArr);
-					mainChartObj.series[0].update({
-						fillColor: {
-							linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-							stops: gradientColor
-						},
-						color: mainChartFirstColor,
-						lineWidth: 2,
-						enableMouseTracking: true,
-						trackByArea: true,
-						zIndex: 10
-					});
-				} */
-
 	}
 
 	function updateMainChartPercentChange() {
