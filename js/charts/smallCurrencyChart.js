@@ -67,7 +67,7 @@ var smallCurrencyChartOptions = {
         fillColor: {
             linearGradient: [0, 0, 0, 30],
             stops: [
-                [0, Highcharts.Color('#707cb9').setOpacity(0.2).get('rgba')],
+                [0, Highcharts.Color('#707cb9').setOpacity(0).get('rgba')],
                 [1, Highcharts.Color('#707cb9').setOpacity(0).get('rgba')]
             ]
         },
