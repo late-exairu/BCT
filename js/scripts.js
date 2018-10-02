@@ -2089,9 +2089,9 @@ $(function () {
 
 	$('.message-bar__login').hover(function () {
 		// background-image: linear-gradient(#009EE2, #218FE9);
-		$('.message-bar__login-demo').css('background-image', 'linear-gradient(45deg, #06af67 0%,#17b597 100%)');
-	}, function () {
 		$('.message-bar__login-demo').css('background-image', 'linear-gradient(45deg, #07BC68 0%,#18BF95 100%)');
+	}, function () {
+		$('.message-bar__login-demo').css('background-image', 'linear-gradient(45deg, #06af67 0%,#17b597 100%)');
 	});
 
 	function updatePriceListItem(sendCurrency, getCurrency) {

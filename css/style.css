@@ -10318,6 +10318,56 @@ body.menubar-in #user-btn:before {
   .coin-dropdown .coin-dropdown__border .xrp {
     fill: #23292F; }
 
+/* =================================================================== */
+/* view-mode */
+/* =================================================================== */
+.view-mode {
+  position: absolute;
+  left: 10px;
+  bottom: 10px; }
+  .view-mode__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    border-radius: 5px;
+    /*background: var(--clr-back);*/
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(45deg, #06af67 0%, #17b597 100%); }
+    .view-mode__link:hover {
+      background: linear-gradient(45deg, #07BC68 0%, #18BF95 100%); }
+      .view-mode__link:hover .sprite-icon .st0 {
+        fill: var(--clr-block); }
+      .view-mode__link:hover .sprite-icon .st1 {
+        fill: #3AB44A; }
+      .view-mode__link:hover .sprite-icon .st2 {
+        fill: #EB2429; }
+      .view-mode__link:hover .sprite-icon .st3 {
+        fill: #F4EB32; }
+      .view-mode__link:hover .sprite-icon .st4 {
+        fill: #26A8E0; }
+  .view-mode .sprite-icon {
+    width: 18px;
+    height: 20px; }
+    .view-mode .sprite-icon .st0 {
+      fill: var(--clr-block); }
+    .view-mode .sprite-icon .st1 {
+      fill: #3AB44A; }
+    .view-mode .sprite-icon .st2 {
+      fill: #EB2429; }
+    .view-mode .sprite-icon .st3 {
+      fill: #F4EB32; }
+    .view-mode .sprite-icon .st4 {
+      fill: #26A8E0; }
+  @media only screen and (min-width: 1920px) {
+    .view-mode__link {
+      height: 42px;
+      width: 42px; }
+    .view-mode .sprite-icon {
+      width: 26px;
+      height: 28px; } }
+
 /* Ion.RangeSlider
 // css version 2.0.3
 // © 2013-2014 Denis Ineshin | IonDen.com
@@ -13980,60 +14030,6 @@ body.advanced .fancybox-bg {
       background: var(--clr-back); }
     .popup-tabs__item:hover {
       color: var(--clr-accent); }
-
-.view-mode {
-  position: absolute;
-  left: 10px;
-  bottom: 10px; }
-  .view-mode__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 32px;
-    width: 32px;
-    border-radius: 5px;
-    background: var(--clr-back);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
-    .view-mode__link:hover .sprite-icon .st0 {
-      fill: #286bb4; }
-    .view-mode__link:hover .sprite-icon .st1 {
-      fill: #3AB44A; }
-    .view-mode__link:hover .sprite-icon .st2 {
-      fill: #EB2429; }
-    .view-mode__link:hover .sprite-icon .st3 {
-      fill: #F4EB32; }
-    .view-mode__link:hover .sprite-icon .st4 {
-      fill: #26A8E0; }
-  .view-mode .sprite-icon {
-    width: 18px;
-    height: 20px; }
-    .view-mode .sprite-icon .st0 {
-      fill: #FFFFFF; }
-    .view-mode .sprite-icon .st1 {
-      fill: #3AB44A; }
-    .view-mode .sprite-icon .st2 {
-      fill: #EB2429; }
-    .view-mode .sprite-icon .st3 {
-      fill: #F4EB32; }
-    .view-mode .sprite-icon .st4 {
-      fill: #26A8E0; }
-    .view-mode .sprite-icon .st0 {
-      fill: var(--clr-textL); }
-    .view-mode .sprite-icon .st1 {
-      fill: transparent; }
-    .view-mode .sprite-icon .st2 {
-      fill: transparent; }
-    .view-mode .sprite-icon .st3 {
-      fill: transparent; }
-    .view-mode .sprite-icon .st4 {
-      fill: transparent; }
-  @media only screen and (min-width: 1920px) {
-    .view-mode__link {
-      height: 42px;
-      width: 42px; }
-    .view-mode .sprite-icon {
-      width: 26px;
-      height: 28px; } }
 
 .proggress-bar {
   width: 100%;

@@ -150,64 +150,6 @@ body.advanced .fancybox-bg{
 	}
 }
 
-.view-mode {
-	position: absolute;
-    left: 10px;
-    bottom: 10px;
-
-	&__link{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 32px;
-		width: 32px;
-		border-radius: 5px;
-    	background: var(--clr-back);
-    	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
-
-    	&:hover{
-
-			.sprite-icon{
-				.st0{ fill: #286bb4; }
-				.st1{ fill: #3AB44A; }
-				.st2{ fill: #EB2429; }
-				.st3{ fill: #F4EB32; }
-				.st4{ fill: #26A8E0; }
-			}
-    	}
-	}
-
-	.sprite-icon{
-		width: 18px;
-		height: 20px;
-
-		.st0{ fill: #FFFFFF; }
-		.st1{ fill: #3AB44A; }
-		.st2{ fill: #EB2429; }
-		.st3{ fill: #F4EB32; }
-		.st4{ fill: #26A8E0; }
-
-		.st0{ fill: var(--clr-textL); }
-		.st1{ fill: transparent; }
-		.st2{ fill: transparent; }
-		.st3{ fill: transparent; }
-		.st4{ fill: transparent; }
-	}
-
-	@media only screen and (min-width : 1920px) {
-
-		&__link{
-			height: 42px;
-			width: 42px;
-		}
-
-		.sprite-icon{
-			width: 26px;
-			height: 28px;
-		}
-	}
-}
-
 .proggress-bar{
 	width: 100%;
 	max-width: 80%;
