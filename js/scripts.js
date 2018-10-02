@@ -1417,6 +1417,7 @@ $(function () {
 
 			progressbar_current_label.css('visibility', 'hidden');
 			progressbar_current_label.text(remain_total_value + ' ' + getCurrency);
+			progressbar_current.progressbar("value", 0);
 			setTimeout(currentProgress, 1000);
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
