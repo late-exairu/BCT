@@ -275,11 +275,69 @@
 		padding: 0;
 	}
 
-	&__item {
+	&__current {
 		position: relative;
 		text-align: center;
 		height: 78px;
 		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+		transition: all .1s;
+		cursor: pointer;
+		overflow: hidden;
+		border-top: 1px solid var(--clr-separatorP);
+		color: var(--clr-textD);
+		background: var(--clr-block);
+		padding-top: 7px;
+
+		&:first-child {
+			border: none;
+		}
+
+		&:hover {
+			background: var(--clr-backLL);
+		}
+
+		&.active {
+			background: var(--clr-accentL);
+			color: var(--clr-accentD);
+		}
+
+		.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+			border-radius: 0px;
+			height: 1;
+		}
+		.ui-progressbar {
+			width: 100%;
+
+			height: 22px;
+			text-align: center;
+			background: transparent;
+			border: 0;
+			margin-top: 10px;
+			.ui-progressbar-value {
+				background: linear-gradient(to right, var(--clr-block), var(--clr-accent), var(--clr-accentD));
+				border: 0;
+				margin: 0;
+			}
+		}
+		.progress-label {
+			color: #010101;//var(--clr-textD);
+			font-size: 11px;
+		   	line-height: 22px;
+			position: absolute;
+			text-align: center;
+			left: 0px;
+		}
+	}
+	&__item {
+		position: relative;
+		text-align: center;
+		height: 78px;
+		//display: flex;
+		display: none;
 		justify-content: center;
 		flex-direction: column;
 		align-items: center;

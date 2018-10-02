@@ -8052,11 +8052,55 @@ h6 {
       border-color: transparent transparent var(--clr-textD) transparent; }
   .graph-prices__list {
     padding: 0; }
-  .graph-prices__item {
+  .graph-prices__current {
     position: relative;
     text-align: center;
     height: 78px;
     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    transition: all .1s;
+    cursor: pointer;
+    overflow: hidden;
+    border-top: 1px solid var(--clr-separatorP);
+    color: var(--clr-textD);
+    background: var(--clr-block);
+    padding-top: 7px; }
+    .graph-prices__current:first-child {
+      border: none; }
+    .graph-prices__current:hover {
+      background: var(--clr-backLL); }
+    .graph-prices__current.active {
+      background: var(--clr-accentL);
+      color: var(--clr-accentD); }
+    .graph-prices__current .ui-corner-all, .graph-prices__current .ui-corner-bottom, .graph-prices__current .ui-corner-left, .graph-prices__current .ui-corner-bl {
+      border-radius: 0px;
+      height: 1; }
+    .graph-prices__current .ui-progressbar {
+      width: 100%;
+      height: 22px;
+      text-align: center;
+      background: transparent;
+      border: 0;
+      margin-top: 10px; }
+      .graph-prices__current .ui-progressbar .ui-progressbar-value {
+        background: linear-gradient(to right, var(--clr-block), var(--clr-accent), var(--clr-accentD));
+        border: 0;
+        margin: 0; }
+    .graph-prices__current .progress-label {
+      color: #010101;
+      font-size: 11px;
+      line-height: 22px;
+      position: absolute;
+      text-align: center;
+      left: 0px; }
+  .graph-prices__item {
+    position: relative;
+    text-align: center;
+    height: 78px;
+    display: none;
     justify-content: center;
     flex-direction: column;
     align-items: center;

@@ -1133,14 +1133,28 @@ $(function () {
 	var progressbar_list,
 		progressbar_array = new Array(),
 		progressbar_labels = new Array();
+
+	var progressbar_current = $(".graph-prices__list .graph-prices__current .progressbar:eq(0)"),
+		progressbar_current_label = $(".graph-prices__list .graph-prices__current .progressbar .progress-label:eq(0)");
+	
+	progressbar_current.progressbar({
+		value: false,
+		change: function () {
+			//progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+		},
+		complete: function () {
+			//progressLabel.text( "Complete!" );
+		}
+	});
+
 	function updateProgressBar() {		
-		progressbar_list = $(".progressbar");
+		progressbar_list = $(".graph-prices__item .progressbar");
 		progressbar_array = [];
 		progressbar_labels = [];
 
 		for (var i = 0; i < progressbar_list.length; i++) {
-			var progressbar = $(".graph-prices__list .progressbar:eq(" + i + ")");
-			var progressbar_label = $(".graph-prices__list .progressbar .progress-label:eq(" + i + ")");
+			var progressbar = $(".graph-prices__list .graph-prices__item .progressbar:eq(" + i + ")");
+			var progressbar_label = $(".graph-prices__list .graph-prices__item .progressbar .progress-label:eq(" + i + ")");
 			progressbar.progressbar({
 				value: false,
 				change: function () {
@@ -1171,6 +1185,19 @@ $(function () {
 				scrollTop: '+=230'
 			}, "slow");
 		}
+	}
+
+
+	function currentProgress() {
+		var val = progressbar_current.progressbar("value") || 0;
+		if (val >= 10) {
+			progressbar_current_label.css('visibility', 'visible');
+		}
+		progressbar_current.progressbar("value", val + 0.2);
+		progressbar_current_label.css("width", (val + 0.2) + '%');
+		if (val < 99.8) {
+			setTimeout(currentProgress, 50);
+		} 
 	}
 
 	/*---------------------------------------------------*/
@@ -1387,6 +1414,10 @@ $(function () {
 			}, "slow");
 
 			var remain_total_value = secondValue;
+
+			progressbar_current_label.css('visibility', 'hidden');
+			progressbar_current_label.text(remain_total_value + ' ' + getCurrency);
+			setTimeout(currentProgress, 1000);
 			for (var i = 0; i < progressbar_array.length; i++) {
 				var progressbar = progressbar_array[i];
 				progressbar.progressbar("value", 0);
