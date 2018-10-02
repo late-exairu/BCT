@@ -221,43 +221,43 @@ function updateWalletData() {
                 // green color
                 if (changeInPercent > 0) {
                     smallChartInfoString = '$' + currenciesPrice[key].toFixed(2) + ' <span class="smaller clr-green">+' + Math.abs(changeInPercent.toFixed(2)) + '%</span>';
-                    lineColor = '#00ff00';
+                    lineColor = '#10B89A';
                     gradientColor = {
                         linearGradient: [0, 0, 0, 30],
                         stops: [
-                            [0, Highcharts.Color('#00ff00').setOpacity(0.2).get('rgba')],
-                            [1, Highcharts.Color('#00ff00').setOpacity(0).get('rgba')]
+                            [0, Highcharts.Color('#10B89A').setOpacity(0.2).get('rgba')],
+                            [1, Highcharts.Color('#10B89A').setOpacity(0).get('rgba')]
                         ]
                     };
                 }
                 // red color
                 else {
                     smallChartInfoString = '$' + currenciesPrice[key].toFixed(2) + ' <span class="smaller clr-red">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span>';
-                    lineColor = '#ff0600';
-                    gradientColor = {
+                    lineColor = '#CE2424';
+/*                     gradientColor = {
                         linearGradient: [0, 0, 0, 30],
                         stops: [
-                            [0, Highcharts.Color('#ff0600').setOpacity(0.2).get('rgba')],
-                            [1, Highcharts.Color('#ff0600').setOpacity(0).get('rgba')]
+                            [0, Highcharts.Color('#CE2424').setOpacity(0.2).get('rgba')],
+                            [1, Highcharts.Color('#CE2424').setOpacity(0).get('rgba')]
                         ]
-                    };
+                    }; */
                 }
 
                 if (currentWallet[key].toFixed(2) == 0) {
                     lineColor = '#C5C5C5';
-                    gradientColor = {
+/*                     gradientColor = {
                         linearGradient: [0, 0, 0, 30],
                         stops: [
                             [0, Highcharts.Color('#C5C5C5').setOpacity(0.2).get('rgba')],
                             [1, Highcharts.Color('#C5C5C5').setOpacity(0).get('rgba')]
                         ]
-                    };
+                    }; */
                 }
 
                 var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
                 cloneOptions.series[0].data = graphArr;
                 cloneOptions.series[0].color = lineColor;
-                cloneOptions.series[0].fillColor = gradientColor;
+                //cloneOptions.series[0].fillColor = gradientColor;
                 cloneOptions.yAxis.min = min;
                 cloneOptions.yAxis.max = max;
                 Highcharts.chart('smallChart' + key, cloneOptions);
