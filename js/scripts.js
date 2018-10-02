@@ -1180,11 +1180,12 @@ $(function () {
 		progressbar_labels[i].css("width", (val + 1) + '%');
 		if (val < 99) {
 			setTimeout(progress, 28, i);
-		} else if (i > 1 && i % 3 == 0) {
-			graphPricesScrollbar.animate({
-				scrollTop: '+=230'
-			}, "slow");
-		}
+		} 
+		// else if (i > 1 && i % 3 == 0) {
+		// 	graphPricesScrollbar.animate({
+		// 		scrollTop: '+=230'
+		// 	}, "slow");
+		// }
 	}
 
 
@@ -1382,10 +1383,14 @@ $(function () {
 			$('.exch-form__get .exch-form__label').text('You got');
 
 			$('.exch-form__close').addClass('hidden');
-			$('.icon-trader').addClass('hidden');
 			$('.graph-prices__item').removeClass('active');
-			$('.graph-prices__item .progress-label').css('visibility', 'hidden');
-			$('.progressbar').removeClass('hidden');
+			// $('.icon-trader').addClass('hidden');
+			// $('.graph-prices__item .progress-label').css('visibility', 'hidden');
+			// $('.progressbar').removeClass('hidden');
+
+			$('.graph-prices__current .icon-trader').addClass('hidden');
+			$('.graph-prices__current .progress-label').css('visibility', 'hidden');
+			$('.graph-prices__current .progressbar').removeClass('hidden');
 
 			clearInterval(dynamicGetValue);
 
