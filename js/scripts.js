@@ -242,7 +242,7 @@ $(function () {
 		if (!currenciesPrice[currencyAbbr]) {
 			$.ajax({
 				url: 'https://min-api.cryptocompare.com/data/price?fsym=' + currencyAbbr + '&tsyms=USD',
-				async :false,
+				async: false,
 				success: function (data) {
 					currenciesPrice[currencyAbbr] = +data['USD'].toFixed(2);
 				},
@@ -325,24 +325,24 @@ $(function () {
 		// change the median price
 		$('.median-price').html(priceRateBackward + ' <span>' + getCurrency + '</span>');
 
-		priceRateBackward = priceRateBackward.replace(/\,/g,"");
+		priceRateBackward = priceRateBackward.replace(/\,/g, "");
 		// update global tables
-		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row').each(function(i, row) {
+		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row').each(function (i, row) {
 			var rand = (priceRateBackward == 0) ? 0 : getRandomNumber(parseFloat(priceRateBackward), parseFloat(priceRateBackward) * 1.2, true);
 			$(row).children().first().html(priceRateBackward > 1 ? numberWithCommas(rand.toFixed(2)) : rand.toFixed(5));
 		});
 
-		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(1).find('.basic-table__row').each(function(i, row) {
+		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(1).find('.basic-table__row').each(function (i, row) {
 			var rand = getRandomNumber(parseFloat(priceRateBackward) / 2, parseFloat(priceRateBackward), true);
 			$(row).children().first().html(priceRateBackward > 1 ? numberWithCommas(rand.toFixed(2)) : rand.toFixed(5));
 		});
 
-		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(2).find('.basic-table__body .basic-table__body .basic-table__row').each(function(i, row) {
+		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(2).find('.basic-table__body .basic-table__body .basic-table__row').each(function (i, row) {
 			var rand;
 			if ($(row).children().first().hasClass('clr-red')) {
 				rand = (priceRateBackward == 0) ? 0 : getRandomNumber(parseFloat(priceRateBackward), parseFloat(priceRateBackward) * 1.2, true);
 			} else {
-				rand = getRandomNumber(parseFloat(priceRateBackward) / 2, parseFloat(priceRateBackward), true);				
+				rand = getRandomNumber(parseFloat(priceRateBackward) / 2, parseFloat(priceRateBackward), true);
 			}
 			$(row).children().first().html(priceRateBackward > 1 ? numberWithCommas(rand.toFixed(2)) : rand.toFixed(5));
 		});
@@ -918,7 +918,6 @@ $(function () {
 	});
 
 	function updateMainChartSplineNew(exchange, sendCurrency, getCurrency) {
-		//if (sendCurrency != getCurrency) {
 		$.ajax({
 			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
 			success: function (data) {
@@ -944,8 +943,8 @@ $(function () {
 					};
 				};
 				mainChartObj.series[0].setData(grapArr);
-				if($('body').hasClass('advanced'))
-				mainChartObj.series[1].setData(columnArr);
+				if ($('body').hasClass('advanced'))
+					mainChartObj.series[1].setData(columnArr);
 				mainChartObj.series[0].update({
 					fillColor: {
 						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
@@ -957,29 +956,44 @@ $(function () {
 					trackByArea: true,
 					zIndex: 10
 				});
+				updateMainChartPercentChange();
 			},
 		});
-/* 		} else {
-			var grapArr = [];
-			var columnArr = [];
-			for (let i = 0; i < 366; i++) {
-				grapArr.push(1);
-			};
-			mainChartObj.series[0].setData(grapArr);
-			mainChartObj.series[1].setData(columnArr);
-			mainChartObj.series[0].update({
-				fillColor: {
-					linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-					stops: gradientColor
-				},
-				color: mainChartFirstColor,
-				lineWidth: 2,
-				enableMouseTracking: true,
-				trackByArea: true,
-				zIndex: 10
-			});
-		} */
+	}
 
+	function updateMainChartPercentChange() {
+		var range = $('.graph-range-slider__current').text().trim();
+		var start, end;
+		switch (range) {
+			case '1h':
+				start = mainChartObj.series[0].data[365];
+				break;
+			case '1d':
+				start = mainChartObj.series[0].data[364];
+				break;
+			case '1w':
+				start = mainChartObj.series[0].data[358];
+				break;
+			case '1m':
+				start = mainChartObj.series[0].data[334];
+				break;
+			case 'All':
+				start = mainChartObj.series[0].data[0];
+				break;
+			default:
+				break;
+		}
+		end = mainChartObj.series[0].data[365];
+		var changeInPercent = (-1 + (end.y / start.y)) * 100;
+		// green color
+		if (changeInPercent > 0) {
+			resultString = '<p class="graph-info__title clr-green"><b>+' + Math.abs(changeInPercent.toFixed(2)) + '%</b></p>';
+		}
+		// red color
+		else {
+			resultString = '<p class="graph-info__title clr-red"><b>-' + Math.abs(changeInPercent.toFixed(2)) + '%</b></p>';
+		}
+		$('.graph-info .graph-info__item').eq(1).html(resultString);
 	}
 
 
@@ -1136,7 +1150,7 @@ $(function () {
 
 	var progressbar_current = $(".graph-prices__list .graph-prices__current .progressbar:eq(0)"),
 		progressbar_current_label = $(".graph-prices__list .graph-prices__current .progressbar .progress-label:eq(0)");
-	
+
 	progressbar_current.progressbar({
 		value: false,
 		change: function () {
@@ -1147,7 +1161,7 @@ $(function () {
 		}
 	});
 
-	function updateProgressBar() {		
+	function updateProgressBar() {
 		progressbar_list = $(".graph-prices__item .progressbar");
 		progressbar_array = [];
 		progressbar_labels = [];
@@ -1169,7 +1183,7 @@ $(function () {
 		}
 	}
 
-	updateProgressBar();	
+	updateProgressBar();
 
 	function progress(i) {
 		var val = progressbar_array[i].progressbar("value") || 0;
@@ -1198,7 +1212,7 @@ $(function () {
 		progressbar_current_label.css("width", (val + 0.2) + '%');
 		if (val < 99.8) {
 			setTimeout(currentProgress, 48);
-		} 
+		}
 	}
 
 	/*---------------------------------------------------*/
@@ -2043,6 +2057,7 @@ $(function () {
 				break;
 		}
 		redrawMainChart();
+		updateMainChartPercentChange();
 	});
 
 	/* .coin-dropdown handler */
@@ -2121,18 +2136,18 @@ $(function () {
 	updatePriceListItem('USDT', 'BTC');
 
 	/** Graph exchanges sort */
-	$('.graph-prices__sort').click(function(e) {				
+	$('.graph-prices__sort').click(function (e) {
 		// chage class name by status
 		if ($(this).hasClass('desc')) { // state 1
 			$(this).removeClass('desc');
-			$(this).addClass('asc');						
+			$(this).addClass('asc');
 		} else if ($(this).hasClass('asc')) { // state 2
 			$(this).removeClass('asc');
 			$(this).addClass('desc');
 		} else { // default state
-			$(this).addClass('asc');			
+			$(this).addClass('asc');
 		}
-		
+
 		$('.graph-prices__price.send-prices__rate').toggleClass('hidden')
 		$('.graph-prices__price.get-prices__rate').toggleClass('hidden')
 
@@ -2147,10 +2162,10 @@ $(function () {
 		// 	return order ? (parseFloat(priceA) - parseFloat(priceB)) : (parseFloat(priceB) - parseFloat(priceA));
 		// });
 		// list.append(items);
-		
+
 		// // update progressbar array
 		// updateProgressBar();
-		
+
 		e.preventDefault();
 	})
 });
