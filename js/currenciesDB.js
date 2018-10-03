@@ -182,19 +182,19 @@ function updateWalletData() {
                     '<div class="basic-table__col w-22"><button class="basic-table__btn fix-width" send-fancybox><svg class="sprite-icon qr-code" role="img" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use></svg>' + key + '</button></div>' +
                     '</div>';
             }
-            $('#panel-funds-wallet .basic-table__body .basic-table__body').append(newRow);
+            $('#panel-funds-wallet .basic-table .basic-table').append(newRow);
         }
 
         if (currentWallet[key].toFixed(2) != 0) {
             if ($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').removeClass('disabled');
-                $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:first');
+                $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table .basic-table .basic-table__row:first');
             }
         }
         if (currentWallet[key].toFixed(2) == 0) {
             if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').addClass('disabled');
-                $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row.disabled:first');
+                $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table .basic-table .basic-table__row.disabled:first');
             }
         }
 
