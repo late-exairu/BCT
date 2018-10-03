@@ -10240,7 +10240,7 @@ body.menubar-in #user-btn:before {
     margin: 0 0 -1px; }
   .coin-dropdown__list {
     position: absolute;
-    height: 28px;
+    height: 56px;
     z-index: 5;
     left: 0;
     right: 0;
