@@ -8940,10 +8940,14 @@ Blocks from left bar
     flex-direction: column;
     min-height: 0; }
     .main-cols__left.col-chats {
-      width: 33%;
-      flex: 0 0 33%;
-      min-width: 250px;
-      max-width: 450px; }
+      /*width: 33%;
+			flex: 0 0 33%;
+			min-width: 250px;
+			max-width: 450px;*/
+      width: 449px;
+      flex: 0 0 449px;
+      min-width: 449px;
+      max-width: 449px; }
       .main-cols__left.col-chats .c-block__col {
         /*border: 1px solid transparent;*/
         border-radius: var(--border-radius);
