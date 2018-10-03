@@ -35,7 +35,8 @@ var gradientColor = [
 var mainGraphHighlighted = 4;
 var mainGraphHover = null;
 
-var mainChartObj = Highcharts.chart('mainChart', {
+var mainChartObj = Highcharts.stockChart('mainChart', {
+//	var mainChartObj = Highcharts.chart('mainChart', {
 	legend: {
 		enabled: false
 	},
@@ -47,12 +48,28 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		spacingTop: mainChartSpacingTop
 	},
 	title: null,
+	rangeSelector: {
+		enabled: false,
+		inputEnabled: false,
+		labelStyle: {
+			visibility: 'hidden'
+		},
+
+	},
+	navigator: {
+		enabled: false
+	},
+	scrollbar: {
+		enabled: false
+	},
 	plotOptions: {
 		series: {
+			turboThreshold : 10000,
 			//pointWidth: $('#mainChart').width() / 110, // fixed A pixel value specifying
 			pointPadding: 0.05,
 			pointStart: start_point,
-			pointInterval: 24 * 3600 * 1000, // one day
+			//pointInterval: 24 * 3600 * 1000, // one day
+			pointInterval: 3600 * 1000, // one hour
 			pointPlacement: 'on',
 			borderWidth: 0,
 			groupPadding: 0,
@@ -197,7 +214,10 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		min: 0,
 		endOnTick: false,
 		tickLength: 0,
-		gridLineWidth: 0
+		gridLineWidth: 0,
+		labels: {
+			enabled: false,
+		},
 	},
 
 	tooltip: {
@@ -258,11 +278,11 @@ var mainChartObj = Highcharts.chart('mainChart', {
 
 			return '<div class="tooltip font10 arrow_box mainTooltip ' + arrowDirection + '">' +
 				'<div class=\'textCenter\'><span class=\'currencies font12 bold\'>' + currency_send + '/' + currency_get + '</span> : <span class=\'value font12 bold\'>' + TooltipValue + '</span></div> <div class="gray">' +
-				 dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',04:02' + current_trader + '</div></div>';
+				dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',' + ("0" + date.getHours()).slice(-2) + ':00 ' + current_trader + ' </div></div > ';
 		},
-		positioner: function (labelWidth, labelHeight, point,) {
+		positioner: function (labelWidth, labelHeight, point, ) {
 			//var graphWidth = $(mainChartObj.container).width();
-			var xPos = point.plotX - labelWidth - 15;			
+			var xPos = point.plotX - labelWidth - 15;
 			// left side fix
 			if (point.plotX <= 205) {
 				xPos = point.plotX + 15;
@@ -275,27 +295,28 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		}
 	},
 	series: [{
-		type: 'areaspline',
-		//data: [0.00014209999999999998, 0.00014365, 0.0001516, 0.00015874999999999998, 0.00015455, 0.00016525, 0.00016544999999999998, 0.00015945, 0.00016865, 0.0001624, 0.0001596, 0.00015735, 0.0001476, 0.0001602, 0.00015405, 0.00016525, 0.00015434999999999998, 0.00015895, 0.0001537, 0.00015005, 0.00014994999999999999, 0.0001496, 0.0001436, 0.00014104999999999999, 0.00014340000000000002, 0.00014380000000000003, 0.00014350000000000002, 0.00013745, 0.000138, 0.00013875, 0.00013769999999999999, 0.0001594, 0.00015095, 0.0001602, 0.00016635, 0.00016125, 0.0001587, 0.00016375, 0.00015925, 0.00014565, 0.00015465, 0.0001496, 0.0001544, 0.0001663, 0.000154, 0.00015690000000000002, 0.00015015, 0.00014365, 0.00015045, 0.00014780000000000001, 0.0001529],
-		name: 'Series 4',
-		lineWidth: 2,
-		color: lineColor,
-		fillColor: {
-			linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-			stops: gradientColor
+			type: 'areaspline',
+			//data: [0.00014209999999999998, 0.00014365, 0.0001516, 0.00015874999999999998, 0.00015455, 0.00016525, 0.00016544999999999998, 0.00015945, 0.00016865, 0.0001624, 0.0001596, 0.00015735, 0.0001476, 0.0001602, 0.00015405, 0.00016525, 0.00015434999999999998, 0.00015895, 0.0001537, 0.00015005, 0.00014994999999999999, 0.0001496, 0.0001436, 0.00014104999999999999, 0.00014340000000000002, 0.00014380000000000003, 0.00014350000000000002, 0.00013745, 0.000138, 0.00013875, 0.00013769999999999999, 0.0001594, 0.00015095, 0.0001602, 0.00016635, 0.00016125, 0.0001587, 0.00016375, 0.00015925, 0.00014565, 0.00015465, 0.0001496, 0.0001544, 0.0001663, 0.000154, 0.00015690000000000002, 0.00015015, 0.00014365, 0.00015045, 0.00014780000000000001, 0.0001529],
+			name: 'Series Spline',
+			lineWidth: 2,
+			color: lineColor,
+			fillColor: {
+				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+				stops: gradientColor
+			},
+			id: 4,
+			enableMouseTracking: true,
+			trackByArea: true,
 		},
-		id: 4,
-		enableMouseTracking: true,
-		trackByArea: true,
-	},
-	{
-		type: 'column',
-		//data: [0.00014209999999999998, 0.00014365, 0.0001516, 0.00015874999999999998, 0.00015455, 0.00016525, 0.00016544999999999998, 0.00015945, 0.00016865, 0.0001624, 0.0001596, 0.00015735, 0.0001476, 0.0001602, 0.00015405, 0.00016525, 0.00015434999999999998, 0.00015895, 0.0001537, 0.00015005, 0.00014994999999999999, 0.0001496, 0.0001436, 0.00014104999999999999, 0.00014340000000000002, 0.00014380000000000003, 0.00014350000000000002, 0.00013745, 0.000138, 0.00013875, 0.00013769999999999999, 0.0001594, 0.00015095, 0.0001602, 0.00016635, 0.00016125, 0.0001587, 0.00016375, 0.00015925, 0.00014565, 0.00015465, 0.0001496, 0.0001544, 0.0001663, 0.000154, 0.00015690000000000002, 0.00015015, 0.00014365, 0.00015045, 0.00014780000000000001, 0.0001529],
-		name: 'Series 4',
-		id: 5,
-		enableMouseTracking: false,
-		trackByArea: false,
-	}]
+		{
+			type: 'column',
+			//data: [0.00014209999999999998, 0.00014365, 0.0001516, 0.00015874999999999998, 0.00015455, 0.00016525, 0.00016544999999999998, 0.00015945, 0.00016865, 0.0001624, 0.0001596, 0.00015735, 0.0001476, 0.0001602, 0.00015405, 0.00016525, 0.00015434999999999998, 0.00015895, 0.0001537, 0.00015005, 0.00014994999999999999, 0.0001496, 0.0001436, 0.00014104999999999999, 0.00014340000000000002, 0.00014380000000000003, 0.00014350000000000002, 0.00013745, 0.000138, 0.00013875, 0.00013769999999999999, 0.0001594, 0.00015095, 0.0001602, 0.00016635, 0.00016125, 0.0001587, 0.00016375, 0.00015925, 0.00014565, 0.00015465, 0.0001496, 0.0001544, 0.0001663, 0.000154, 0.00015690000000000002, 0.00015015, 0.00014365, 0.00015045, 0.00014780000000000001, 0.0001529],
+			name: 'Series Column',
+			id: 5,
+			enableMouseTracking: false,
+			trackByArea: false,
+		}
+	]
 });
 
 $('#mainChart').mouseleave(function () {

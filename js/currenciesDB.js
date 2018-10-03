@@ -271,6 +271,7 @@ function updateWalletData() {
                 //cloneOptions.series[0].fillColor = gradientColor;
                 cloneOptions.yAxis.min = min;
                 cloneOptions.yAxis.max = max;
+                if ($('#smallChart' + key).length)
                 Highcharts.chart('smallChart' + key, cloneOptions);
                 $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
             },
