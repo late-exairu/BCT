@@ -10,8 +10,8 @@
 
 .accounts-diagram-wrap {
 	position: relative;
-	flex: 0 0 180px;
-	width: 180px;
+	flex: 0 0 196px;
+	width: 196px;
 	max-height: 100%;
 	height: calc(100%);
 	margin: 0;
@@ -75,6 +75,7 @@
 }
 
 #circleChartText {
+	display: flex;
 	font-family: $osans;
 	position: absolute;
 	width: 140px;
@@ -86,11 +87,18 @@
 	color: var(--clr-textD);
 	transition: all 0.1s;
 
+	.sprite-icon{
+		width: 35px;
+		height: 32px;
+		fill: var(--clr-textD);
+		margin: auto 0;
+	}
+
 	.wrap {
 		text-align: center;
-		border-radius: 50%;
 		position: relative;
 		z-index: 1;
+		flex: 1;
 
 		.walletTitle {
 			padding: 0;
@@ -102,25 +110,26 @@
 			display: block;
 			line-height: 1.2;
 			font-weight: 300;
-			line-height: 1.18;
+			line-height: 1;
 			padding: 0;
 			margin: 0;
 
 			span {
-				top: 2px;
+				top: 1px;
 				position: relative;
-				font-size: 13px;
+				font-size: 14px;
 				vertical-align: top;
 			}
 
 			span.bigger {
-				font-size: 22px;
+				top: 0;
+				font-size: 20px;
 				margin: 0px -3px;
 			}
 		}
 
 		.title {
-			font-size: 10px;
+			font-size: 12px;
 			line-height: 1.26;
 			text-transform: uppercase;
 			vertical-align: top;

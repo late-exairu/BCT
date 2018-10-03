@@ -5,7 +5,7 @@
 
 
 .exch-head{
-	--exch-head-height: 48px;
+	--exch-head-height: 53px;
 	--color-one: var(--clr-separatorD);
 	--color-two: var(--clr-separatorD);
 	--color-one: #ee9100;
@@ -29,7 +29,7 @@
 		display: flex;
 		flex: 1 1;
 		padding: 0;
-		height: 50px;
+		height: 55px;
 		background: var(--color-one);
 		padding: 0;
 	}
@@ -44,7 +44,7 @@
 
 	&__switch{
 		width: 40px;
-		height: 50px;
+		height: 55px;
 		display: flex;
 		flex: 0 0 40px;
 		flex-direction: column;

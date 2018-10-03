@@ -151,7 +151,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.bitebtc:after, .icon-trader.bitfinex:after, .icon-trader.bitflyer:after, .icon-trader.bithumb:after, .icon-trader.bitstamp:after, .icon-trader.bittrex:after, .icon-trader.cexio:after, .icon-trader.coinbase:after, .icon-trader.coinone:after, .icon-trader.cryptopia:after, .icon-trader.exmo:after, .icon-trader.exx:after, .icon-trader.gateio:after, .icon-trader.gemini:after, .icon-trader.hitbtc:after, .icon-trader.houbi:after, .icon-trader.indodax:after, .icon-trader.itbit:after, .icon-trader.korbit:after, .icon-trader.kraken:after, .icon-trader.kucoin:after, .icon-trader.liqui:after, .icon-trader.livecoin:after, .icon-trader.localbitcoins:after, .icon-trader.poloniex:after, .icon-trader.quoine:after, .icon-trader.upbit:after, .icon-trader.vaultoro:after, .icon-trader.yobit:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 840.9375em 812.375em; }
+  background-size: 843em 814.1875em; }
 
 /* =================================================================== */
 /* Functions
@@ -1269,7 +1269,7 @@ h6 {
   position: relative;
   display: flex;
   padding: 4px 10px 4px 12px;
-  height: 60px;
+  height: 65px;
   align-items: center;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   background: var(--clr-block);
@@ -7645,7 +7645,7 @@ h6 {
 /* exch-head */
 /* =================================================================== */
 .exch-head {
-  --exch-head-height: 48px;
+  --exch-head-height: 53px;
   --color-one: var(--clr-separatorD);
   --color-two: var(--clr-separatorD);
   --color-one: #ee9100;
@@ -7694,7 +7694,7 @@ h6 {
     display: flex;
     flex: 1 1;
     padding: 0;
-    height: 50px;
+    height: 55px;
     background: var(--color-one);
     padding: 0; }
   .exch-head__get {
@@ -7703,7 +7703,7 @@ h6 {
     border-radius: 0 var(--border-radius) var(--border-radius) 0; }
   .exch-head__switch {
     width: 40px;
-    height: 50px;
+    height: 55px;
     display: flex;
     flex: 0 0 40px;
     flex-direction: column;
@@ -13427,8 +13427,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 .accounts-diagram-wrap {
   position: relative;
-  flex: 0 0 180px;
-  width: 180px;
+  flex: 0 0 196px;
+  width: 196px;
   max-height: 100%;
   height: calc(100%);
   margin: 0;
@@ -13475,6 +13475,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   z-index: 2; }
 
 #circleChartText {
+  display: flex;
   font-family: "open_sans", sans-serif;
   position: absolute;
   width: 140px;
@@ -13485,11 +13486,16 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   z-index: 1;
   color: var(--clr-textD);
   transition: all 0.1s; }
+  #circleChartText .sprite-icon {
+    width: 35px;
+    height: 32px;
+    fill: var(--clr-textD);
+    margin: auto 0; }
   #circleChartText .wrap {
     text-align: center;
-    border-radius: 50%;
     position: relative;
-    z-index: 1; }
+    z-index: 1;
+    flex: 1; }
     #circleChartText .wrap .walletTitle {
       padding: 0;
       margin: 0;
@@ -13498,19 +13504,20 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       display: block;
       line-height: 1.2;
       font-weight: 300;
-      line-height: 1.18;
+      line-height: 1;
       padding: 0;
       margin: 0; }
       #circleChartText .wrap .value span {
-        top: 2px;
+        top: 1px;
         position: relative;
-        font-size: 13px;
+        font-size: 14px;
         vertical-align: top; }
       #circleChartText .wrap .value span.bigger {
-        font-size: 22px;
+        top: 0;
+        font-size: 20px;
         margin: 0px -3px; }
     #circleChartText .wrap .title {
-      font-size: 10px;
+      font-size: 12px;
       line-height: 1.26;
       text-transform: uppercase;
       vertical-align: top;
