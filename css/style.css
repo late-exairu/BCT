@@ -741,7 +741,8 @@ h6 {
       .basic-table__row.disabled .basic-table__curr {
         fill: var(--clr-icon); }
       .basic-table__row.disabled .basic-table__btn {
-        color: var(--clr-icon); }
+        color: var(--clr-icon);
+        border-color: var(--clr-icon); }
         .basic-table__row.disabled .basic-table__btn .sprite-icon {
           fill: var(--clr-icon); }
       .basic-table__row.disabled .basic-select__select {
@@ -789,7 +790,7 @@ h6 {
       font-size: calc(var(--font-size) + 3px); }
   .basic-table__btn {
     height: 28px;
-    border: 1px solid var(--clr-separatorD);
+    border: 1px solid var(--clr-textL);
     font-size: 12px;
     border-radius: 3px;
     line-height: 1.2;
@@ -804,7 +805,7 @@ h6 {
     background: transparent;
     transition: all 0.1s;
     background: var(--clr-block);
-    color: var(--clr-accent);
+    color: var(--clr-textL);
     /*&:hover{
 			border-color: var(--clr-textL);
 			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
@@ -884,6 +885,10 @@ h6 {
       height: calc(var(--cell-height) - 2px); }
   .basic-table.bordered .basic-table__col {
     height: calc(var(--cell-height) - 1px); }
+  .basic-table.high-height .basic-table__row.head .basic-table__col {
+    height: 62px; }
+  .basic-table.high-height .basic-table__col {
+    height: 62px; }
   .basic-table.med-height .basic-table__row.head .basic-table__col {
     height: 27px; }
   .basic-table.med-height .basic-table__col {
@@ -933,7 +938,7 @@ h6 {
     .basic-table .sprite-icon.qr-code {
       width: 11px;
       height: 11px;
-      fill: var(--clr-accent); }
+      fill: var(--clr-textL); }
     .basic-table .sprite-icon.paper-plane {
       width: 14px;
       height: 13px; }
@@ -943,7 +948,8 @@ h6 {
       margin: 0 auto; }
   .basic-table .smaller {
     font-size: calc(var(--font-size) - 2px);
-    margin: 0 0 0 3px; }
+    margin: 3px 0 0 0;
+    opacity: 0.75; }
   .basic-table .bold {
     font-weight: 700; }
   .basic-table .clr-gray {
@@ -8934,8 +8940,8 @@ Blocks from left bar
     flex-direction: column;
     min-height: 0; }
     .main-cols__left.col-chats {
-      width: 32%;
-      flex: 0 0 32%;
+      width: 33%;
+      flex: 0 0 33%;
       min-width: 250px;
       max-width: 450px; }
       .main-cols__left.col-chats .c-block__col {
@@ -13415,9 +13421,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   display: none; }
 
 .smallCurrencyChart {
-  width: 90px;
-  height: 35px;
-  margin-right: 5px; }
+  width: 120px;
+  height: 40px;
+  margin-right: 10px; }
 
 .accounts-diagram-wrap {
   position: relative;
@@ -13556,14 +13562,17 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       color: var(--clr-textD); }
   .highcharts-tooltip div.tooltip {
     color: var(--clr-text-tooltip);
-    font-weight: 600; }
+    color: var(--clr-back);
+    font-weight: 600;
+    background: linear-gradient(to bottom, #10B89A 0%, #03B068 100%); }
     .highcharts-tooltip div.tooltip .textCenter {
       text-align: center; }
     .highcharts-tooltip div.tooltip.mainTooltip {
       font-family: "open_sans", sans-serif;
       font-size: 11px; }
       .highcharts-tooltip div.tooltip.mainTooltip span {
-        color: var(--clr-text-tooltip); }
+        color: var(--clr-text-tooltip);
+        color: var(--clr-back); }
       .highcharts-tooltip div.tooltip.mainTooltip .currencies {
         font-size: 12px; }
       .highcharts-tooltip div.tooltip.mainTooltip .value {
@@ -13581,23 +13590,28 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     /*border: 1px solid var(--clr-separatorD);*/
     display: flex;
     line-height: 20px;
-    font-weight: 700; }
+    font-weight: 700;
+    background: linear-gradient(to bottom, #10B89A 0%, #03B068 100%); }
     .highcharts-tooltip div.tooltipCircle .currency {
+      font-weight: 700;
       font-size: 13px;
-      border-right: 2px solid var(--clr-textD);
+      border-right: 2px solid var(--clr-block);
       padding-right: 5px;
       padding-left: 5px;
-      margin: -1px 0 0;
+      margin: 0;
       display: block;
-      color: var(--clr-textD);
+      color: var(--clr-block);
       line-height: 20px; }
     .highcharts-tooltip div.tooltipCircle .price {
+      font-weight: 700;
       padding-left: 5px;
       font-size: 13px;
       line-height: 20px;
-      color: var(--clr-textD); }
+      color: var(--clr-block); }
       .highcharts-tooltip div.tooltipCircle .price span {
+        font-size: 13px;
         line-height: 20px;
+        color: var(--clr-block);
         /*font-weight: 600;*/ }
   .highcharts-tooltip div.liquidityTooltip {
     font-family: "open_sans", sans-serif; }
@@ -13651,15 +13665,18 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
 
 .arrow_box.right:after {
   left: 100%;
-  border-left-color: var(--clr-back-tooltip); }
+  border-left-color: var(--clr-back-tooltip);
+  border-left-color: #10b381; }
 
 .arrow_box.left:after {
   right: 100%;
-  border-right-color: var(--clr-back-tooltip); }
+  border-right-color: var(--clr-back-tooltip);
+  border-right-color: #10b381; }
 
 .arrow_box.bottom:after {
   bottom: 100%;
   border-top-color: var(--clr-back-tooltip);
+  border-top-color: #10b381;
   top: calc(100% + 7px);
   left: calc(50% - 7px); }
 

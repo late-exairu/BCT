@@ -60,6 +60,7 @@
 
 			.basic-table__btn{
 				color: var(--clr-icon);
+				border-color: var(--clr-icon);
 
 				.sprite-icon{
 					fill: var(--clr-icon);
@@ -139,7 +140,7 @@
 
 	&__btn{
 		height: 28px;
-		border: 1px solid var(--clr-separatorD);
+		border: 1px solid var(--clr-textL);
 		font-size: 12px;
 		border-radius: 3px;
 		line-height: 1.2;
@@ -154,7 +155,7 @@
 		background: transparent;
 		transition: all 0.1s;
 		background: var(--clr-block);
-		color: var(--clr-accent);
+		color: var(--clr-textL);
 
 		&.accented{
 			color: var(--clr-accentD);
@@ -288,6 +289,23 @@
 		}
 	}
 
+	&.high-height{
+
+		.basic-table__row{
+
+			&.head{
+
+				.basic-table__col{
+					height: 62px;
+				}
+			}
+		}
+
+		.basic-table__col{
+			height: 62px;
+		}
+	}
+
 	&.med-height{
 
 		.basic-table__row{
@@ -380,7 +398,7 @@
 		&.qr-code{
 			width: 11px;
 			height: 11px;
-			fill: var(--clr-accent);
+			fill: var(--clr-textL);
 		}
 
 		&.paper-plane{
@@ -397,7 +415,8 @@
 
 	.smaller{
 		font-size: calc(var(--font-size) - 2px);
-		margin: 0 0 0 3px;
+		margin: 3px 0 0 0;
+		opacity: 0.75;
 	}
 
 	.bold{
