@@ -923,27 +923,59 @@ $(function () {
 		$.ajax({
 			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
 			success: function (data) {
+				var grapArr = [];
 				var columnArr = [];
-				//console.log("data", data);
-				var grapArr = data.Data.map(s => (s.open + s.close) / 2);
-				var columnArr = data.Data.map(s => {
+				
+				// // get data for every day
+				// data.Data.map(s => {
+				// 	var value = (s.open + s.close) / 2;
+				// 	grapArr.push(value);
+				// });
+
+ 				// create data for every hour
+				data.Data.map(s =>{
+					var value = (s.open + s.close) / 2;
 					var difference = s.close - s.open;
 					var columnColor = '#01B067';
+
 					if (difference < 0) {
 						columnColor = '#CE2424';
 						difference = Math.abs(difference);
 					}
-					return {
-						y: difference * 3,
-						color: columnColor
+
+					for(var i = 0; i < 24; i++){
+						var randomPercent = (Math.random() * (0.03));
+						var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+						if (plusOrMinus) randomPercent *= -1;
+						var valueForAdd = value + (value * randomPercent);
+						grapArr.push(valueForAdd);
+
+						columnArr.push({
+							y: difference,
+							color: columnColor,
+						});
 					}
-				});
+				}); 
+
+				// var columnArr = data.Data.map(s => {
+				// 	var difference = s.close - s.open;
+				// 	var columnColor = '#01B067';
+				// 	if (difference < 0) {
+				// 		columnColor = '#CE2424';
+				// 		difference = Math.abs(difference);
+				// 	}
+				// 	return {
+				// 		y: difference * 3,
+				// 		color: columnColor
+				// 	}
+				// });
 
 				if (!grapArr.length) {
 					for (let i = 0; i < 366; i++) {
 						grapArr.push(1);
 					};
 				};
+				//console.log(grapArr);
 				mainChartObj.series[0].setData(grapArr);
 				if ($('body').hasClass('advanced'))
 					mainChartObj.series[1].setData(columnArr);
@@ -964,29 +996,34 @@ $(function () {
 	}
 
 	function updateMainChartPercentChange() {
-		var range = $('.graph-range-slider__current').text().trim();
+		//var range = $('.graph-range-slider__current').text().trim();
 		var start, end;
-		switch (range) {
-			case '1h':
-				start = mainChartObj.series[0].data[365];
-				break;
-			case '1d':
-				start = mainChartObj.series[0].data[364];
-				break;
-			case '1w':
-				start = mainChartObj.series[0].data[358];
-				break;
-			case '1m':
-				start = mainChartObj.series[0].data[334];
-				break;
-			case 'All':
-				start = mainChartObj.series[0].data[0];
-				break;
-			default:
-				break;
-		}
-		end = mainChartObj.series[0].data[365];
-		var changeInPercent = (-1 + (end.y / start.y)) * 100;
+		// switch (range) {
+		// 	case '1h':
+		// 		start = mainChartObj.series[0].data[365];
+		// 		break;
+		// 	case '1d':
+		// 		start = mainChartObj.series[0].data[364];
+		// 		break;
+		// 	case '1w':
+		// 		start = mainChartObj.series[0].data[358];
+		// 		break;
+		// 	case '1m':
+		// 		start = mainChartObj.series[0].data[334];
+		// 		break;
+		// 	case 'All':
+		// 		start = mainChartObj.series[0].data[0];
+		// 		break;
+		// 	default:
+		// 		break;
+		// }
+		start = mainChartObj.series[0].processedYData[0];
+		end = mainChartObj.series[0].processedYData[mainChartObj.series[0].processedYData.length - 1];
+	
+	//	console.log(mainChartObj.series[0].processedYData);
+	//	console.log(start,end);
+	
+	var changeInPercent = (-1 + (end / start)) * 100;
 		// green color
 		if (changeInPercent > 0) {
 			resultString = '<p class="graph-info__title clr-green"><b>+' + Math.abs(changeInPercent.toFixed(2)) + '%</b></p>';
@@ -2040,7 +2077,7 @@ $(function () {
 	$mainGraphRange.on('input', function () {
 		// $( this ).css( 'background', 'linear-gradient(to right, var(--clr-time-bar) 0%, var(--clr-time-bar) '+this.value*25 +'%, var(--clr-time-line) ' + this.value*25 + '%, var(--clr-time-line) 100%)' );
 
-		console.log("mainChartObj", mainChartObj);
+		//console.log("mainChartObj", mainChartObj);
 		switch (parseInt(this.value)) {
 			case 0:
 				$('.graph-range-slider__current').html("1h");
