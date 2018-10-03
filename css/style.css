@@ -7704,10 +7704,10 @@ h6 {
   .exch-head__send {
     border-radius: 0 var(--border-radius) var(--border-radius) 0; }
   .exch-head__switch {
-    width: 40px;
+    width: 38px;
     height: 55px;
     display: flex;
-    flex: 0 0 40px;
+    flex: 0 0 38px;
     flex-direction: column;
     margin: 0 var(--gap-size);
     justify-content: center;
@@ -7732,8 +7732,8 @@ h6 {
       transition: all .1s; }
   .exch-head__switch-arrows {
     display: block;
-    width: 27px;
-    height: 22px;
+    width: 36px;
+    height: 28px;
     position: relative;
     fill: var(--clr-accentD);
     transition: all .1s; }
@@ -12773,10 +12773,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background: var(--clr-block);
     z-index: 1; }
   .exch-form__sep {
-    width: 40px;
-    height: 50px;
+    width: 38px;
+    height: 55px;
     display: flex;
-    flex: 0 0 40px;
+    flex: 0 0 38px;
     flex-direction: column;
     margin: 0 var(--gap-size);
     justify-content: center;
@@ -12792,8 +12792,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       transition: all .1s; }
   .exch-form__switch-arrows {
     display: block;
-    width: 27px;
-    height: 22px;
+    width: 36px;
+    height: 28px;
     position: relative;
     fill: var(--clr-textLL); }
   .exch-form__btns {

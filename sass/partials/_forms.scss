@@ -321,10 +321,10 @@
 	}
 
 	&__sep{
-		width: 40px;
-		height: 50px;
+		width: 38px;
+		height: 55px;
 		display: flex;
-		flex: 0 0 40px;
+		flex: 0 0 38px;
 		flex-direction: column;
 		margin: 0 var(--gap-size);
 		justify-content: center;
@@ -344,8 +344,8 @@
 
 	&__switch-arrows{
 		display: block;
-		width: 27px;
-		height: 22px;
+		width: 36px;
+		height: 28px;
 		position: relative;
 		fill: var(--clr-textLL);
 	}
