@@ -1317,6 +1317,11 @@ $(function () {
 				src: '#send-popup',
 				opts: {
 					afterShow: function (instance, current) {
+						if ($(instance.$lastFocus).hasClass('basic-table__btn')){
+							var pasteCurrency = $(instance.$lastFocus).text().trim();
+							$(current.$content).find('.c-block-head__title').html('Send ' + pasteCurrency);
+							$(current.$content).find('.transaction-form .input-group-text').html(pasteCurrency);
+						}
 						var fancybox_body = $('.fancybox-container')[0];
 						$('.b-graph .c-block')[0].append(fancybox_body);
 						$('.b-graph .c-block .fancybox-container')
