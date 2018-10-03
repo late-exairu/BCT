@@ -421,6 +421,8 @@ $(function () {
 					$('.b-graph__controls').removeClass('shifted');
 					redrawMainChart();
 					$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
+					// reset prices scroll
+					$('.scrollbar-arrows').scrollTop(0);
 				}
 			}
 		}
