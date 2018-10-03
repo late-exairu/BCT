@@ -262,10 +262,11 @@ var mainChartObj = Highcharts.chart('mainChart', {
 		},
 		positioner: function (labelWidth, labelHeight, point,) {
 			//var graphWidth = $(mainChartObj.container).width();
-			var xPos = point.plotX - labelWidth - 15;
+			var xPos = point.plotX - labelWidth - 15;			
 			// left side fix
-			if (point.plotX < labelWidth + 40) {
+			if (point.plotX <= 205) {
 				xPos = point.plotX + 15;
+				$('.mainTooltip').removeClass('right').addClass('left');
 			}
 			return {
 				x: xPos,
