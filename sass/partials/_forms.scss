@@ -1076,6 +1076,9 @@
 }
 
 /* remove focus outline on FF */
-button::-moz-focus-inner {
-	border: 0;
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
+	outline: 0;
 }

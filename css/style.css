@@ -13288,6 +13288,13 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .autentificator__num:first-child {
     margin: 0; }
 
+/* remove focus outline on FF */
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
+  outline: 0; }
+
 /* =================================================================== */
 /* selects
 /* =================================================================== */
