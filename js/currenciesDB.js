@@ -190,7 +190,7 @@ function updateWalletData() {
                     '<div class="basic-table__col w-40">'+
                         '<div id="smallChart'+key+'" class="smallCurrencyChart"></div>'+
                         '<div class = "smallChartInfo d-flex-col"></div></div>' +
-                    '<div class="basic-table__col w-22"><button class="basic-table__btn fix-width" send-fancybox><svg class="sprite-icon qr-code" role="img" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use></svg>' + key + '</button></div>' +
+                    '<div class="basic-table__col w-22"><button class="basic-table__btn fix-width" transaction-fancybox><svg class="sprite-icon qr-code" role="img" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use></svg>' + key + '</button></div>' +
                     '</div>';
             }
             $('#panel-funds-wallet .basic-table .basic-table').append(newRow);
