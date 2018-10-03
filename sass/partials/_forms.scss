@@ -1074,3 +1074,8 @@
 
 	}
 }
+
+/* remove focus outline on FF */
+button::-moz-focus-inner {
+	border: 0;
+}
