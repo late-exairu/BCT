@@ -1317,11 +1317,6 @@ $(function () {
 				src: '#send-popup',
 				opts: {
 					afterShow: function (instance, current) {
-						if ($(instance.$lastFocus).hasClass('basic-table__btn')){
-							var pasteCurrency = $(instance.$lastFocus).text().trim();
-							$(current.$content).find('.c-block-head__title').html('Send ' + pasteCurrency);
-							$(current.$content).find('.transaction-form .input-group-text').html(pasteCurrency);
-						}
 						var fancybox_body = $('.fancybox-container')[0];
 						$('.b-graph .c-block')[0].append(fancybox_body);
 						$('.b-graph .c-block .fancybox-container')
@@ -1332,6 +1327,14 @@ $(function () {
 								"position": "absolute"
 							})
 							.css("display", "block");
+						if ($(instance.$lastFocus).hasClass('basic-table__btn')){
+							var pasteCurrency = $(instance.$lastFocus).text().trim();
+							$(current.$content).find('.c-block-head__title').html('Send ' + pasteCurrency);
+							$(current.$content).find('.transaction-form .input-group-text').html(pasteCurrency);
+							setTimeout(function() {
+								$(current.$content).find('.coin-dropdown__list .coin-dropdown__item[data-currency=' + pasteCurrency + ']').triggerHandler('click');
+							}, 100);
+						}
 					},
 					beforeShow: function () {
 						$('.fancybox-container').css("display", "none");
@@ -1339,6 +1342,7 @@ $(function () {
 					beforeClose: function () {
 						//$('.exch-form').removeClass('progress');
 						// $('.exch-head').toggleClass('open');
+						$('.coin-dropdown').removeClass('open');
 						$('button[transaction-fancybox]').removeClass('active');
 					}
 				}
@@ -2087,11 +2091,11 @@ $(function () {
 		var currDropdown = $(this).closest('.coin-dropdown');
 		currDropdown.find('.coin-dropdown__item').removeClass('current');
 		$(this).addClass('current');
-		$(currDropdown).find('.coin-dropdown__current > svg, .coin-dropdown__current > p').remove();
-		$(newCurr).insertBefore($(currDropdown).find('.coin-dropdown__hangle').eq(0));
+		currDropdown.find('.coin-dropdown__current > svg, .coin-dropdown__current > p').remove();
+		newCurr.insertBefore($(currDropdown).find('.coin-dropdown__hangle'));
 
 		// close dropdown
-		$(currDropdown).removeClass('open');
+		if (currDropdown.hasClass('open')) currDropdown.removeClass('open');
 	});
 
 	$('.message-bar__login').hover(function () {
