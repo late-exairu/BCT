@@ -7880,7 +7880,6 @@ h6 {
   will-change: transform;
   transform: translateX(30px);
   border-radius: var(--border-radius);
-  overflow: hidden;
   /*&__left{
 		padding: 5px 0 0;
 		width: 138px;
@@ -7949,7 +7948,7 @@ h6 {
     border-bottom: 1px solid var(--clr-back-new); }
   .graph-prices__controls__btn {
     position: absolute;
-    left: 0px;
+    left: -12px;
     top: 0px;
     bottom: 0px;
     width: 12px;
@@ -7959,9 +7958,9 @@ h6 {
     align-items: center;
     z-index: 2;
     cursor: pointer;
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
-    border: solid 2px var(--clr-block); }
+    border: solid 2px var(--clr-block);
+    border-top-width: 0;
+    border-bottom-width: 0; }
     .graph-prices__controls__btn:after {
       content: "";
       width: 0;
@@ -8063,7 +8062,7 @@ h6 {
   .graph-prices__current {
     position: relative;
     text-align: center;
-    height: 78px;
+    height: 56px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -8099,27 +8098,22 @@ h6 {
         margin: 0; }
     .graph-prices__current .progress-label {
       color: #010101;
-      font-size: 11px;
-      line-height: 22px;
+      font-size: 10px;
+      line-height: 8px;
       position: absolute;
       text-align: center;
       left: 0px; }
   .graph-prices__item {
     position: relative;
     text-align: center;
-    height: 78px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    height: 56px;
     margin: 0;
     transition: all .1s;
     cursor: pointer;
     overflow: hidden;
     border-top: 1px solid var(--clr-separatorP);
     color: var(--clr-textD);
-    background: var(--clr-block);
-    padding-top: 7px; }
+    background: var(--clr-block); }
     .graph-prices__item:first-child {
       border: none; }
     .graph-prices__item:hover {
@@ -8132,11 +8126,10 @@ h6 {
       height: 1; }
     .graph-prices__item .ui-progressbar {
       width: 100%;
-      height: 22px;
+      height: 8px;
       text-align: center;
       background: transparent;
-      border: 0;
-      margin-top: 10px; }
+      border: 0; }
       .graph-prices__item .ui-progressbar .ui-progressbar-value {
         background: linear-gradient(to right, var(--clr-block), var(--clr-accent), var(--clr-accentD));
         border: 0;
@@ -8144,23 +8137,32 @@ h6 {
     .graph-prices__item .progress-label {
       color: #010101;
       font-size: 11px;
-      line-height: 22px;
+      line-height: 8px;
       position: absolute;
       text-align: center;
-      left: 0px; }
+      left: 0px;
+      display: none; }
+  .graph-prices__item-wrapper {
+    width: 100%;
+    height: calc(100% - 8px);
+    display: flex;
+    align-items: center; }
+  .graph-prices__item-inner {
+    flex: 1 0 0; }
   .graph-prices__trader {
     display: flex;
     font-size: 17px;
     font-weight: 650;
     line-height: 1.18;
+    margin: 5px 0 0;
     text-align: left;
     padding: 0 5px; }
   .graph-prices__price {
-    margin: 0;
     font-size: 12px;
     line-height: 1.2;
     font-weight: 700;
-    margin: 5px 0 0; }
+    text-align: left;
+    padding: 0 5px; }
     .graph-prices__price span {
       font-size: 10px;
       font-weight: 400; }
@@ -8171,7 +8173,10 @@ h6 {
     width: auto;
     margin: 0 0 0 0; }
   .graph-prices .icon-trader {
-    margin: 5px 0 2px; }
+    width: 50px;
+    position: relative;
+    margin: auto 0;
+    flex: 0 0 50px; }
   .graph-prices__sort__btn {
     position: absolute;
     right: 5px;
