@@ -13442,8 +13442,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       color: var(--clr-accentD); }
   @media only screen and (min-height: 900px) {
     .accounts-diagram-wrap {
-      flex: 0 0 250px;
-      width: 250px; } }
+      flex: 0 0 270px;
+      width: 270px; }
+      .accounts-diagram-wrap #circleChartText .sprite-icon {
+        width: 47px;
+        height: 42px; } }
 
 .advanced .accounts-diagram-wrap {
   height: calc(100% - 45px);
