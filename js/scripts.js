@@ -2168,5 +2168,29 @@ $(function () {
 		// updateProgressBar();
 
 		e.preventDefault();
-	})
+	});
+
+	/* Chat list filter */
+	$('.chats-search__input').keyup(function () {
+		var searchString = $(this).val().toUpperCase();
+		$(this).closest('.c-block__col').find('.chats-list .chats-list__item').each(function (index, item) {
+			// show all
+			$(item).removeClass('hidden');
+			// remove old span tags
+			$(item).find('.chats-list__name').text($(item).find('.chats-list__name').text().replace(/<[^>]+>/g, ''));
+			if (searchString.trim() != '') {
+				// if item not contain searchString
+				if ($(item).find('.chats-list__name').text().toUpperCase().indexOf(searchString) == -1) {
+					$(item).addClass('hidden');
+				}
+				// if contain
+				else {
+					var searchStringGlobal = new RegExp(searchString, "g");
+					// add span tags for highlight
+					var newTextValue = $(item).find('.chats-list__name').text().toUpperCase().replace(searchStringGlobal, '<span>' + searchString + '</span>')
+					$(item).find('.chats-list__name').html(newTextValue);
+				}
+			}
+		});
+	});
 });
