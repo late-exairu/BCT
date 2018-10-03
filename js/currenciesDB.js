@@ -7,9 +7,20 @@ var allCurrenciesArr = allCurrenciesRaw.split('\n');
 var allCurrenciesHtmlFirstColumn = '';
 var allCurrenciesHtmlSecondColumn = '';
 
-read.open('GET', 'coins_price.txt', false);
-read.send();
-var currenciesPrice = JSON.parse(read.responseText);
+// read.open('GET', 'coins_price.txt', false);
+// read.send();
+// var currenciesPrice = JSON.parse(read.responseText);
+
+var currenciesPrice = {};
+$.ajax({
+    url: 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC,USDT&tsyms=USD',
+    async: false,
+    success: function (data) {
+        for (const key in data) {
+            currenciesPrice[key] = data[key]['USD'];
+        }
+    },
+});
 
 allCurrenciesArr.map(item => {
     var coinTitle = item.split('-')[0].trim();

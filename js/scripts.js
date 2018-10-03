@@ -1507,8 +1507,8 @@ $(function () {
 						$('.exch-form__submit').attr("disabled", true);
 						firstClickAfterExchangeDone = true;
 
-						$('.exch-form__send .exch-form__label').text('You gave');
-						$('.exch-form__get .exch-form__label').text('You got');
+						$('.exch-form__send .exch-form__label').text('Exchanging');
+						//$('.exch-form__get .exch-form__label').text('You got');
 
 						$(window).click(function (e) {
 							if (firstClickAfterExchangeDone) {
