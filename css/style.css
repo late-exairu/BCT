@@ -1321,14 +1321,16 @@ h6 {
     flex: 1 1 auto; }
   .chat-head__name {
     margin: 1px 0 0;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
+    line-height: 1.1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #2a3e81; }
   .chat-head__info {
-    font-size: 11px;
+    font-size: 13px;
+    line-height: 1.1;
     margin: 0 0 0;
     color: var(--clr-textD);
     white-space: nowrap;
