@@ -925,28 +925,49 @@ $(function () {
 			success: function (data) {
 				var grapArr = [];
 				var columnArr = [];
-				
+				var fakeGraphs = [
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+				];
+
 				// // get data for every day
 				// data.Data.map(s => {
 				// 	var value = (s.open + s.close) / 2;
 				// 	grapArr.push(value);
 				// });
 
- 				// create data for every hour
-				data.Data.map(s =>{
+				// create data for every hour
+				data.Data.map(s => {
 					var value = (s.open + s.close) / 2;
-					for(var i = 0; i < 24; i++){
-						var randomPercent = (Math.random() * (0.03));
-						var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
-						if (plusOrMinus) randomPercent *= -1;
-						var valueForAdd = value + (value * randomPercent);
+
+					var tempVarForFakeArrays = [0,0,0,0,0,0];
+
+					for (var k = 0; k < 6; k++) {
+						var randomPercent8 = (Math.random() * (0.92 - 1.08) + 1.08);
+						var valueForFake = value * randomPercent8;
+						tempVarForFakeArrays[k] = valueForFake;
+					}
+
+					for (var i = 0; i < 24; i++) {
+						var randomPercent3 = (Math.random() * (0.97 - 1.03) + 1.03);
+						var valueForAdd = value * randomPercent3;
 						var previuosValue = grapArr[grapArr.length - 1];
-						if (!previuosValue){
-							previuosValue = valueForAdd + (valueForAdd * randomPercent);
-						} 
+						if (!previuosValue) {
+							previuosValue = valueForAdd + (valueForAdd * randomPercent3);
+						}
 						var difference = valueForAdd - previuosValue;
 						grapArr.push(valueForAdd);
 						columnArr.push(difference);
+
+						for (var l = 0; l < 6; l++) {
+							randomPercent3 = (Math.random() * (0.97 - 1.03) + 1.03);
+							var valueForAddFake = tempVarForFakeArrays[l] * randomPercent3;
+							fakeGraphs[l].push(valueForAddFake);
+						}
 					}
 				});
 
@@ -957,6 +978,11 @@ $(function () {
 				};
 				//console.log(grapArr);
 				mainChartObj.series[0].setData(grapArr);
+
+				for (var k = 0; k < 6; k++) {
+					mainChartObj.series[k+2].setData(fakeGraphs[k]);
+				}
+
 				if ($('body').hasClass('advanced'))
 					mainChartObj.series[1].setData(columnArr);
 				mainChartObj.series[0].update({
@@ -999,11 +1025,11 @@ $(function () {
 		// }
 		start = mainChartObj.series[0].processedYData[0];
 		end = mainChartObj.series[0].processedYData[mainChartObj.series[0].processedYData.length - 1];
-	
-	//	console.log(mainChartObj.series[0].processedYData);
-	//	console.log(start,end);
-	
-	var changeInPercent = (-1 + (end / start)) * 100;
+
+		//	console.log(mainChartObj.series[0].processedYData);
+		//	console.log(start,end);
+
+		var changeInPercent = (-1 + (end / start)) * 100;
 		// green color
 		if (changeInPercent > 0) {
 			resultString = '<p class="graph-info__title clr-green"><b>+' + Math.abs(changeInPercent.toFixed(2)) + '%</b></p>';
@@ -1214,7 +1240,7 @@ $(function () {
 		progressbar_labels[i].css("width", (val + 1) + '%');
 		if (val < 99) {
 			setTimeout(progress, 28, i);
-		} 
+		}
 		// else if (i > 1 && i % 3 == 0) {
 		// 	graphPricesScrollbar.animate({
 		// 		scrollTop: '+=230'
@@ -1345,11 +1371,11 @@ $(function () {
 								"position": "absolute"
 							})
 							.css("display", "block");
-						if ($(instance.$lastFocus).hasClass('basic-table__btn')){
+						if ($(instance.$lastFocus).hasClass('basic-table__btn')) {
 							var pasteCurrency = $(instance.$lastFocus).text().trim();
 							$(current.$content).find('.c-block-head__title').html('Send ' + pasteCurrency);
 							$(current.$content).find('.transaction-form .input-group-text').html(pasteCurrency);
-							setTimeout(function() {
+							setTimeout(function () {
 								$(current.$content).find('.coin-dropdown__list .coin-dropdown__item[data-currency=' + pasteCurrency + ']').triggerHandler('click');
 							}, 100);
 						}

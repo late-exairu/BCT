@@ -105,6 +105,7 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 		},
 		areaspline: {
 			color: '#BFC0C0',
+			lineWidth: 1,
 			fillColor: {
 				linearGradient: [0, 0, 0, 1],
 				stops: gradientColor
@@ -115,6 +116,8 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 					lineWidth: 3
 				}
 			},
+			enableMouseTracking: false,
+			trackByArea: false,
 			events: {
 				mouseOver: function (event) {
 					// if (this.type == 'areaspline') {
@@ -317,7 +320,7 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 				stops: gradientColor
 			},
-			id: 4,
+			id: 1,
 			enableMouseTracking: true,
 			trackByArea: true,
 		},
@@ -325,7 +328,7 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 			type: 'column',
 			//data: [0.00014209999999999998, 0.00014365, 0.0001516, 0.00015874999999999998, 0.00015455, 0.00016525, 0.00016544999999999998, 0.00015945, 0.00016865, 0.0001624, 0.0001596, 0.00015735, 0.0001476, 0.0001602, 0.00015405, 0.00016525, 0.00015434999999999998, 0.00015895, 0.0001537, 0.00015005, 0.00014994999999999999, 0.0001496, 0.0001436, 0.00014104999999999999, 0.00014340000000000002, 0.00014380000000000003, 0.00014350000000000002, 0.00013745, 0.000138, 0.00013875, 0.00013769999999999999, 0.0001594, 0.00015095, 0.0001602, 0.00016635, 0.00016125, 0.0001587, 0.00016375, 0.00015925, 0.00014565, 0.00015465, 0.0001496, 0.0001544, 0.0001663, 0.000154, 0.00015690000000000002, 0.00015015, 0.00014365, 0.00015045, 0.00014780000000000001, 0.0001529],
 			name: 'Series Column',
-			id: 5,
+			id: 2,
 			enableMouseTracking: false,
 			trackByArea: false,
 			dataGrouping: {
@@ -352,7 +355,37 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 				},
 				forced: true
 			},
-		}
+		},
+		{
+			type: 'areaspline',
+			name: 'Series Spline 2',
+			id: 3,
+		},
+		{
+			type: 'areaspline',
+			name: 'Series Spline 3',
+			id: 4,
+		},
+		{
+			type: 'areaspline',
+			name: 'Series Spline 4',
+			id: 5,
+		},
+		{
+			type: 'areaspline',
+			name: 'Series Spline 5',
+			id: 6,
+		},
+		{
+			type: 'areaspline',
+			name: 'Series Spline 6',
+			id: 7,
+		},
+		{
+			type: 'areaspline',
+			name: 'Series Spline 7',
+			id: 8,
+		},
 	]
 });
 
