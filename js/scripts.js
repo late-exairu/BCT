@@ -1296,17 +1296,68 @@ $(function () {
 				}
 			});
 		}
-
+		
 		$('#transaction-popup > .c-block > .d-flex-col ').css('display', 'none');
 		var currencyName = $(this).closest('.basic-table__row').attr('data-currency');
 		var currencyFullName = $('.exch-dropdown__list').eq(0).find('.exch-dropdown__item[data-currency="' + currencyName + '"]').attr('data-name');
+
 		$('#transaction-popup .popup-tabs__item').removeClass('active');
 		$('#transaction-popup .popup-tabs__item').eq(0).addClass('active'); //.text('Receive ' + currencyName);
+
+
+		if (!$('body').hasClass('advanced')) {
+			var transaction_popup_list = '';
+			$('#panel-funds-wallet .basic-table__row:not(.disabled)').each(function (index, item) {
+				var coin_currencyName = $(item).attr('data-currency');
+				var coin_currencyFullName = $('.exch-dropdown__list').eq(0).find('.exch-dropdown__item[data-currency="' + coin_currencyName + '"]').attr('data-name');
+				var current = coin_currencyName == currencyName ? 'current' : '';
+				var coin_svg_html = $(item).eq(0).find('svg.basic-table__curr')[0].outerHTML;
+				var coin_amount = $(item).eq(0).find('span.wallet' + coin_currencyName)[0].innerHTML;
+
+				transaction_popup_list += `
+					<div class="coin-dropdown__item ` + current + `" data-name="`+ coin_currencyFullName + `" data-currency="` + coin_currencyName + `">`
+						+ coin_svg_html + `
+						<p class="coin-dropdown__title">` 
+							+ coin_currencyName + ` Wallet
+							<span> (` + coin_amount + `)</span>
+						</p>
+					</div>`;
+				if (coin_currencyName == currencyName) {
+					var current_item = coin_svg_html + `
+						<p class="coin-dropdown__title">` 
+							+ coin_currencyName + ` Wallet
+						</p>`;
+					var currDropdown = $('#transaction-popup .coin-dropdown');
+					currDropdown.find('.coin-dropdown__current > svg, .coin-dropdown__current > p').remove();
+					$(current_item).insertBefore($(currDropdown).find('.coin-dropdown__hangle'));
+	
+				}
+			});
+
+			$('#transaction-popup .coin-dropdown__list').html(transaction_popup_list);
+
+
+			$('#transaction-popup .coin-dropdown__list .coin-dropdown__item').click(function () {
+				var currencyName = $(this).data('currency') + " Wallet";
+				var newCurr = $(this).children().clone();
+				$(newCurr).eq(1).html(currencyName);
+				var currDropdown = $(this).closest('.coin-dropdown');
+				currDropdown.find('.coin-dropdown__item').removeClass('current');
+				$(this).addClass('current');
+				currDropdown.find('.coin-dropdown__current > svg, .coin-dropdown__current > p').remove();
+				newCurr.insertBefore($(currDropdown).find('.coin-dropdown__hangle'));
+
+				// close dropdown
+				if (currDropdown.hasClass('open')) currDropdown.removeClass('open');
+			});
+		}
+		
 		// $('#transaction-popup .popup-tabs__item').eq(1).text('Send ' + currencyName);
 		$('#transaction-popup .transaction-form__input').eq(1).val('1000.000');
 		$('#transaction-popup .transaction-form__btn').text('Send ' + currencyName);
 		$('#transaction-popup .transaction-form__qr-code-title').text('Your ' + currencyName + ' Address');
 		//$('#transaction-popup .transaction-form__label').text('To ' + currencyFullName + ' Address:');
+
 		$('#transaction-popup > .c-block > .d-flex-col ').eq(0).css('display', 'flex');
 		$('button[transaction-fancybox]').removeClass('active');
 		$(this).addClass('active');
