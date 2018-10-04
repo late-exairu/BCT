@@ -2841,20 +2841,15 @@
 <div class="basic-popup transaction-popup" id="transaction-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
 		<div class="popup-tabs">
-			<div class="popup-tabs__item active">Deposit</div>
-			<div class="popup-tabs__item">Withdraw</div>
+			<div class="popup-tabs__item active">Withdraw</div>
+			<div class="popup-tabs__item">Deposit</div>
 		</div>
 
 		<div class="d-flex-col flex-1-1 flex-h-fix">
 			<form class="transaction-form">
-				<p class="transaction-form__qr-code-title">Your BTC Address</p>
-				<div class="transaction-form__qr-code-wrap">
-					<img src="pic/qr-code.svg" width="130" height="130" alt="qr-code">
-				</div>
-
-				<div class="transaction-form__line">
-					<input class="transaction-form__input with-copy" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
-
+				<span class="transaction-form__label">Recipient address</span>
+				<div class="transaction-form__line inner">
+					<input class="transaction-form__input address" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
 					<div class="transaction-form__to-clipdoard">
 						<svg class="sprite-icon copy" role="img" aria-hidden="true">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard"></use>
@@ -2865,11 +2860,46 @@
 						</svg>
 					</div>
 				</div>
-			</form>
-		</div>
 
-		<div class="d-flex-col flex-1-1 flex-h-fix">
-			<form class="transaction-form">
+				<span class="transaction-form__label">Withdraw from</span>
+				<div class="transaction-form__line inner">
+					<div class="coin-dropdown">
+						<div class="coin-dropdown__border">
+							<div class="coin-dropdown__current">
+								<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
+								</svg><p class="coin-dropdown__title">Bitcoin</p>
+
+								<div class="coin-dropdown__hangle">
+									<svg class="sprite-icon" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+									</svg>
+								</div>
+							</div>
+						</div>						
+
+						<div class="coin-dropdown__list">
+							<div class="coin-dropdown__item current" data-name="Bitcoin" data-currency="BTC">
+								<svg class="coin-dropdown__icon btc" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
+								</svg><p class="coin-dropdown__title">Bitcoin</p>
+							</div>
+
+							<div class="coin-dropdown__item" data-name="Ethereum" data-currency="ETH">
+								<svg class="coin-dropdown__icon eth" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-eth"></use>
+								</svg><p class="coin-dropdown__title">Ethereum</p>
+							</div>
+
+							<div class="coin-dropdown__item" data-name="Tether" data-currency="USDT">
+									<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
+									</svg><p class="coin-dropdown__title">Tether</p>
+								</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="transaction-form__line inline">
 					<div class="transaction-form__input-group">
 						<input class="transaction-form__input" type="text" name="" value="1000.000">
@@ -2886,16 +2916,33 @@
 					</div>
 				</div>
 
-				<div class="transaction-form__line inner">
-					<label class="transaction-form__label">To Bitcoin Address:</label>
-					<input class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
-				</div>
-
-				<div class="cubic-slider cubic-slider__wallet">
+				<!-- <div class="cubic-slider cubic-slider__wallet">
 					<input type="range" class="js-cubic-slider" name="example_name" value="" />
-				</div>
+				</div> -->
 
 				<button class="transaction-form__btn submit js-fancybox-close" autentificator-fancybox>SEND BTC</button>
+			</form>
+		</div>
+
+		<div class="d-flex-col flex-1-1 flex-h-fix">
+			<form class="transaction-form">
+				<div class="transaction-form__qr-code-wrap">
+					<img src="pic/qr-code.svg" width="130" height="130" alt="qr-code">
+				</div>
+
+				<span class="transaction-form__label">Address</span>
+				<div class="transaction-form__line inner">
+					<input class="transaction-form__input address" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
+					<div class="transaction-form__to-clipdoard">
+						<svg class="sprite-icon copy" role="img" aria-hidden="true">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard"></use>
+						</svg>
+
+						<svg class="sprite-icon copied" role="img" aria-hidden="true">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard-copied"></use>
+						</svg>
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>

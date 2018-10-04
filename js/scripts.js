@@ -1326,7 +1326,7 @@ $(function () {
 		$('#transaction-popup .transaction-form__input').eq(1).val('1000.000');
 		$('#transaction-popup .transaction-form__btn').text('Send ' + currencyName);
 		$('#transaction-popup .transaction-form__qr-code-title').text('Your ' + currencyName + ' Address');
-		$('#transaction-popup .transaction-form__label').text('To ' + currencyFullName + ' Address:');
+		//$('#transaction-popup .transaction-form__label').text('To ' + currencyFullName + ' Address:');
 		$('#transaction-popup > .c-block > .d-flex-col ').eq(0).css('display', 'flex');
 		$('button[transaction-fancybox]').removeClass('active');
 		$(this).addClass('active');
