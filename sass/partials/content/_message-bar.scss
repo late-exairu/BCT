@@ -163,7 +163,7 @@
 		font-weight: 700;
 		width: 100%;
 		height: 56px;
-		background: linear-gradient(45deg, #06af67 0%,#17b597 100%);
+		background: linear-gradient(to right, var(--clr-accentD) 0%, var(--clr-accent) 100%);
 		pointer-events: none;
 		position: absolute;
 		z-index: 20;
@@ -186,6 +186,10 @@
 			margin: 0px 10px -2px -8px;
 			display: inline-block;
 			fill: #fff;
+		}
+
+		&:hover{
+			opacity: 0.75;
 		}
 	}
 }

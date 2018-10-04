@@ -156,7 +156,7 @@
 		height: 12px;		
 		display: flex;
 		margin-right: 5px;
-		padding: 1px 3px;
+		padding: 1px 5px;
 		flex: 1 0 36px;
 		align-items: center;
 		color: #fff;
@@ -168,7 +168,7 @@
 		justify-content: center;
 		border: none;
 		line-height: 1;		
-		background: #f6921e;
+		background: var(--clr-accent);
 		border-radius: 6px;
 		z-index: 9;
 

@@ -18,10 +18,9 @@
 		border-radius: 5px;
 		/*background: var(--clr-back);*/
 		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
-		background: linear-gradient(45deg, #06af67 0%,#17b597 100%);
+		background: linear-gradient(to bottom, var(--clr-accent) 0%, var(--clr-accentD) 100%);
 
 		&:hover{
-			background: linear-gradient(45deg, #07BC68 0%,#18BF95 100%);
 
 			.sprite-icon{
 				.st0{ fill: var(--clr-block); }
