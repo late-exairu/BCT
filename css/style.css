@@ -13255,8 +13255,15 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       height: 32px; }
       .transaction-form .coin-dropdown__current:hover, .transaction-form .coin-dropdown__item:hover {
         background-color: var(--clr-backL); }
+    .transaction-form .coin-dropdown__item.current {
+      display: flex; }
     .transaction-form .coin-dropdown__list {
       height: inherit; }
+    .transaction-form .coin-dropdown__title {
+      font-size: 14px; }
+      .transaction-form .coin-dropdown__title span {
+        font-size: 14px;
+        font-weight: 200; }
 
 .advanced .transaction-form {
   font-family: "open_sans", sans-serif;

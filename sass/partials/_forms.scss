@@ -1032,9 +1032,20 @@
 			&:hover {
 				background-color: var(--clr-backL);
 			}
+
+		}
+		&__item.current {
+			display: flex;
 		}
 		&__list {
 			height: inherit;
+		}
+		&__title {
+			font-size: 14px;
+			span {
+				font-size: 14px;
+				font-weight: 200;
+			}
 		}
 	}
 }

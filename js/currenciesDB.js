@@ -210,7 +210,7 @@ function updateWalletData() {
         }
 
         $('.pricePerCoin' + key).html('$' + numberWithCommas(currenciesPrice[key]));
-        $('.wallet' + key).html(numberWithCommas(currentWallet[key].toFixed(2)) + '&nbsp;');
+        $('.wallet' + key).html(numberWithCommas(currentWallet[key].toFixed(2)));
 
         // draw small Chart 
         $.ajax({
