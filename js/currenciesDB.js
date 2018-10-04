@@ -243,7 +243,7 @@ function updateWalletData() {
                 }
                 // red color
                 else {
-                    smallChartInfoString = '<div class="clr-red">$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
+                    smallChartInfoString = '<div class="clr-darkRed">$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
                     lineColor = '#CE2424';
 /*                     gradientColor = {
                         linearGradient: [0, 0, 0, 30],
