@@ -405,7 +405,7 @@ $(function () {
 		redrawMainChart();
 	});
 
-	$('.b-graph').mousemove(function (e) {
+	$('.b-graph .c-block').mousemove(function (e) {
 		var x = e.pageX - $('.b-graph').offset().left;
 		if ($('.b-graph').width() - x < 10) {
 			if (!$('.graph-prices').hasClass('open')) {
@@ -428,22 +428,22 @@ $(function () {
 		}
 	});
 
-	$('.b-graph').mouseleave(function (e) {
-		var x = e.pageX - $('.b-graph').offset().left;
-		if (x < $('.b-graph').width() - 5) {
-			if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
-				$('.graph-prices').removeClass('open');
-				$('.b-graph__controls').removeClass('shifted');
-				redrawMainChart();
-				$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
-			}
-		} else {
-			$('.graph-prices').addClass('open');
-			$('.b-graph__controls').addClass('shifted');
-			redrawMainChart();
-			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
-		}
-	});
+	// $('.b-graph').mouseleave(function (e) {
+	// 	var x = e.pageX - $('.b-graph').offset().left;
+	// 	if (x < $('.b-graph').width() - 5) {
+	// 		if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
+	// 			$('.graph-prices').removeClass('open');
+	// 			$('.b-graph__controls').removeClass('shifted');
+	// 			redrawMainChart();
+	// 			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
+	// 		}
+	// 	} else {
+	// 		$('.graph-prices').addClass('open');
+	// 		$('.b-graph__controls').addClass('shifted');
+	// 		redrawMainChart();
+	// 		$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
+	// 	}
+	// });
 
 	$('body').mousemove(function (e) {
 		if ((e.pageY < $('.b-graph').offset().top || e.pageY > $('.b-graph').offset().top + $('.b-graph').height()) && !$('.graph-prices').hasClass('noClose')) {
