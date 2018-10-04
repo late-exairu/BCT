@@ -64,7 +64,7 @@
   /*basic tooltip text color*/
   --clr-back-tooltip: #F9F9F9;
   /*basic tooltip  background color*/
-  --clr-line:			#000000;
+  --clr-line:			#bfc0c0;
   /*basic tooltip  background color*/
   --clr-lineP:		#bbbbbb;
   /*portfolio tooltip line  background color*/
@@ -13706,14 +13706,16 @@ button:-moz-focusring {
   pointer-events: none;
   z-index: 101; }
   .lineForMainChart .circle {
-    width: 11px;
-    height: 11px;
-    background: white;
-    border: 1.2px solid var(--clr-line);
+    position: relative;
+    width: 14px;
+    height: 14px;
+    background: transparent;
+    border: 1.5px solid var(--clr-line);
     border-radius: 50%;
-    transform: translateX(-50%) translateY(-50%); }
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0px 4px 10px 0px #bfc0c0; }
   .lineForMainChart .line {
-    background: linear-gradient(to bottom, var(--clr-lineP) 0%, #ffffff 100%);
+    background: var(--clr-line);
     width: 1px;
     height: 1px;
     margin-top: -6px; }

@@ -228,9 +228,10 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 		borderRadius: 0,
 		padding: 0,
 		shared: true,
-		// split: true,
+		split: false,
 		shadow: false,
 		useHTML: true,
+		shape: "box",
 		style: {
 			color: '#ffffff',
 			fontSize: 8
@@ -244,11 +245,12 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 			var dayName = days[date.getDay()];
 			var year = date.getFullYear();
 			var TooltipValue = this.y.toFixed(5);
-			var arrowDirection = 'right';
+			var arrowDirection = 'bottom';
 
 			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left;
-			var lineForMainChartY = this.points[0].point.plotY + $('#mainChart').offset().top + mainChartSpacingTop;
-			var lineForMainChartHeight = $('#mainChart').height() - this.points[0].point.plotY - 6 - mainChartSpacingTop;
+			var lineForMainChartY = $('#mainChart').offset().top + mainChartSpacingTop + 10 + 35;
+			var lineForMainChartHeight = this.points[0].point.plotY - 24 - 35;
+			var lineForPortfolioChartY = this.points[0].point.plotY - 44;
 
 			// right side fix
 			if (lineForMainChartX > $('#mainChart').offset().left + $('#mainChart').width()) {
@@ -260,13 +262,21 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 				'top': lineForMainChartY,
 			});
 
+			$('.lineForMainChart .circle').css({                
+                'top': lineForPortfolioChartY,
+            });
+
 			$('.lineForMainChart .line').css({
 				'height': lineForMainChartHeight,
 			});
 
-			if (this.points[0].point.plotX < 205) {
-				arrowDirection = 'left';
-			}
+			// if (this.points[0].point.plotX < 205) {
+			// 	arrowDirection = 'left';
+			// }
+
+			if (this.points[0].point.plotX < 100 || this.points[0].point.plotX > $('#mainChart').width() - 110) {
+                arrowDirection = '';
+            }
 
 			var currency_send = $('.exch-dropdown__current > p > span')[0].innerText;
 			var currency_get = $('.exch-dropdown__current > p > span')[1].innerText;
@@ -281,16 +291,19 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 				dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',' + ("0" + date.getHours()).slice(-2) + ':00 ' + current_trader + ' </div></div > ';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
-			//var graphWidth = $(mainChartObj.container).width();
-			var xPos = point.plotX - labelWidth - 15;
+			var graphWidth = $(mainChartObj.container).width();
+			var xPos = point.plotX - (labelWidth / 2);
+			// right side fix
+			if ((point.plotX + labelWidth / 2 + 10) > graphWidth) {
+				xPos = graphWidth - labelWidth - 20;				
+			}
 			// left side fix
-			if (point.plotX <= 205) {
-				xPos = point.plotX + 15;
-				$('.mainTooltip').removeClass('right').addClass('left');
+			else if (point.plotX < 100) {
+				xPos = 12;
 			}
 			return {
 				x: xPos,
-				y: point.plotY - 18 + mainChartSpacingTop
+				y: 10 + mainChartSpacingTop
 			};
 		}
 	},
