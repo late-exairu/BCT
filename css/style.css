@@ -8157,13 +8157,13 @@ h6 {
     margin: 5px 0 0;
     text-align: left;
     padding: 0 5px; }
-  .graph-prices__price {
+  .graph-prices__price, .graph-prices__amount {
     font-size: 12px;
     line-height: 1.2;
     font-weight: 700;
     text-align: left;
     padding: 0 5px; }
-    .graph-prices__price span {
+    .graph-prices__price span, .graph-prices__amount span {
       font-size: 10px;
       font-weight: 400; }
   .graph-prices .graph-bar__item {

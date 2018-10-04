@@ -1188,7 +1188,8 @@ $(function () {
 		progressbar_labels = new Array();
 
 	var progressbar_current = $(".graph-prices__list .graph-prices__item:first-child .progressbar:eq(0)"),
-		progressbar_current_label = $(".graph-prices__list .graph-prices__item:first-child .progressbar .progress-label:eq(0)");
+		progressbar_current_label = $(".graph-prices__list .graph-prices__item:first-child .progressbar .progress-label:eq(0)"),
+		current_exchange_amount = $(".graph-prices__list .graph-prices__item:first-child .graph-prices__amount:eq(0)");
 
 	progressbar_current.progressbar({
 		value: false,
@@ -1480,6 +1481,9 @@ $(function () {
 
 			var remain_total_value = secondValue;
 
+			$(".graph-prices__list .graph-prices__item .graph-prices__amount").html('0.00 <span>' + getCurrency + '</span>').removeClass('hidden');
+			$(".graph-prices__list .graph-prices__item .graph-prices__price").addClass('hidden');
+			current_exchange_amount.html(remain_total_value + ' <span>' + getCurrency + '</span>');
 			progressbar_current_label.css('visibility', 'hidden');
 			progressbar_current_label.text(remain_total_value + ' ' + getCurrency);
 			progressbar_current.progressbar("value", 0);
@@ -1571,6 +1575,10 @@ $(function () {
 									$('.exch-form').removeClass('completed');
 									$('.exch-form__close').removeClass('hidden');
 									$('.exch-form__submit > span').html('CONFIRM');
+
+
+									$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
+									$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
 
 									if (!isSelectedPrevConversion) {
 										// $('.icon-trader').removeClass('hidden');
