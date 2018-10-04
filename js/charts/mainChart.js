@@ -14,8 +14,8 @@ function redrawMainChart() {
 
 // var mainChartMarginLeft = 0;
 var mainChartSpacingTop = 40;
-var lineColor = '#01B067';
-var blueColor = '#01B067';
+var lineColor = '#00A9F7';
+var blueColor = '#00A9F7';
 var redColor = '#CE2424';
 
 if ($('body').hasClass('advanced')) {
@@ -112,7 +112,7 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 			states: {
 				hover: {
 					enabled: true,
-					lineWidth: 2
+					lineWidth: 3
 				}
 			},
 			events: {
