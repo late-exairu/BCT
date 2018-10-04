@@ -1335,6 +1335,7 @@ $(function () {
 			});
 
 			$('#transaction-popup .coin-dropdown__list').html(transaction_popup_list);
+			$('#transaction-popup .input-group-append span.input-group-text').eq(0).html(currencyName);
 
 
 			$('#transaction-popup .coin-dropdown__list .coin-dropdown__item').click(function () {
@@ -1347,6 +1348,7 @@ $(function () {
 				currDropdown.find('.coin-dropdown__current > svg, .coin-dropdown__current > p').remove();
 				newCurr.insertBefore($(currDropdown).find('.coin-dropdown__hangle'));
 
+				$('#transaction-popup .input-group-append span.input-group-text').eq(0).html($(this).data('currency'));
 				// close dropdown
 				if (currDropdown.hasClass('open')) currDropdown.removeClass('open');
 			});
