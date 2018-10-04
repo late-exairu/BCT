@@ -30,14 +30,14 @@ allCurrenciesArr.map(item => {
     allCurrenciesHtmlFirstColumn +=
         '<div class="exch-dropdown__item" data-name="' + coinTitle + '" data-telegram="' + coinShort + ' ' + coinTitle + ' Room" data-currency="' + coinShort + '">' +
         '<svg class="exch-dropdown__icon clr-coin-' + coinLowerCaseShort + '" role="img" aria-hidden="true">' +
-        '<use xmlns: xlink="http://www.w3.org/1999/xlink" xlink: href="img/sprite-inline.svg#coin-' + coinLowerCaseShort + '"></use>' +
+        '<use xmlns: xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + coinLowerCaseShort + '"></use>' +
         '</svg> <p class="exch-dropdown__title"><b>' + coinShort + '</b> - ' + coinTitle + '</p>' +
         '</div >';
 
     allCurrenciesHtmlSecondColumn +=
         '<div class="exch-dropdown__item" data-name="' + coinTitle + '" data-currency="' + coinShort + '">' +
         '<svg class="exch-dropdown__icon clr-coin-' + coinLowerCaseShort + '" role="img" aria-hidden="true">' +
-        '<use xmlns: xlink="http://www.w3.org/1999/xlink" xlink: href="img/sprite-inline.svg#coin-' + coinLowerCaseShort + '"></use>' +
+        '<use xmlns: xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + coinLowerCaseShort + '"></use>' +
         '</svg> <p class="exch-dropdown__title"><b>' + coinShort + '</b> - ' + coinTitle + '</p>' +
         '</div >';
 
