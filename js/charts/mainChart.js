@@ -36,7 +36,7 @@ var mainGraphHighlighted = 4;
 var mainGraphHover = null;
 
 var mainChartObj = Highcharts.stockChart('mainChart', {
-//	var mainChartObj = Highcharts.chart('mainChart', {
+	//	var mainChartObj = Highcharts.chart('mainChart', {
 	legend: {
 		enabled: false
 	},
@@ -64,7 +64,7 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 	},
 	plotOptions: {
 		series: {
-			turboThreshold : 10000,
+			turboThreshold: 10000,
 			//pointWidth: $('#mainChart').width() / 110, // fixed A pixel value specifying
 			pointPadding: 0.05,
 			pointStart: start_point,
@@ -262,9 +262,9 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 				'top': lineForMainChartY,
 			});
 
-			$('.lineForMainChart .circle').css({                
-                'top': lineForPortfolioChartY,
-            });
+			$('.lineForMainChart .circle').css({
+				'top': lineForPortfolioChartY,
+			});
 
 			$('.lineForMainChart .line').css({
 				'height': lineForMainChartHeight,
@@ -275,8 +275,8 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 			// }
 
 			if (this.points[0].point.plotX < 100 || this.points[0].point.plotX > $('#mainChart').width() - 110) {
-                arrowDirection = '';
-            }
+				arrowDirection = '';
+			}
 
 			var currency_send = $('.exch-dropdown__current > p > span')[0].innerText;
 			var currency_get = $('.exch-dropdown__current > p > span')[1].innerText;
@@ -295,7 +295,7 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 			var xPos = point.plotX - (labelWidth / 2);
 			// right side fix
 			if ((point.plotX + labelWidth / 2 + 10) > graphWidth) {
-				xPos = graphWidth - labelWidth - 20;				
+				xPos = graphWidth - labelWidth - 20;
 			}
 			// left side fix
 			else if (point.plotX < 100) {
@@ -328,6 +328,30 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 			id: 5,
 			enableMouseTracking: false,
 			trackByArea: false,
+			dataGrouping: {
+				approximation: function (currentGroup) {
+					var sum = 0;
+					for (var i = 0; i < currentGroup.length; i++) {
+						sum += currentGroup[i]; //don't forget to add the base
+					}
+					var avg = (sum / currentGroup.length);
+
+					// set green color by default
+					this.dataGroupInfo.options = {
+						color: '#01b067'
+					};
+					// set red color
+					if (avg < 0) {
+						this.dataGroupInfo.options = {
+							color: redColor
+						};
+						avg *= -1;
+					}
+
+					return avg * 50;
+				},
+				forced: true
+			},
 		}
 	]
 });

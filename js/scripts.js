@@ -935,40 +935,20 @@ $(function () {
  				// create data for every hour
 				data.Data.map(s =>{
 					var value = (s.open + s.close) / 2;
-					var difference = s.close - s.open;
-					var columnColor = '#01B067';
-
-					if (difference < 0) {
-						columnColor = '#CE2424';
-						difference = Math.abs(difference);
-					}
-
 					for(var i = 0; i < 24; i++){
 						var randomPercent = (Math.random() * (0.03));
 						var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
 						if (plusOrMinus) randomPercent *= -1;
 						var valueForAdd = value + (value * randomPercent);
+						var previuosValue = grapArr[grapArr.length - 1];
+						if (!previuosValue){
+							previuosValue = valueForAdd + (valueForAdd * randomPercent);
+						} 
+						var difference = valueForAdd - previuosValue;
 						grapArr.push(valueForAdd);
-
-						columnArr.push({
-							y: difference,
-							color: columnColor,
-						});
+						columnArr.push(difference);
 					}
-				}); 
-
-				// var columnArr = data.Data.map(s => {
-				// 	var difference = s.close - s.open;
-				// 	var columnColor = '#01B067';
-				// 	if (difference < 0) {
-				// 		columnColor = '#CE2424';
-				// 		difference = Math.abs(difference);
-				// 	}
-				// 	return {
-				// 		y: difference * 3,
-				// 		color: columnColor
-				// 	}
-				// });
+				});
 
 				if (!grapArr.length) {
 					for (let i = 0; i < 366; i++) {
