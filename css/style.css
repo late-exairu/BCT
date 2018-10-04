@@ -938,8 +938,7 @@ h6 {
     fill: var(--clr-textL); }
     .basic-table .sprite-icon.qr-code {
       width: 11px;
-      height: 11px;
-      fill: var(--clr-textL); }
+      height: 11px; }
     .basic-table .sprite-icon.paper-plane {
       width: 14px;
       height: 13px; }
