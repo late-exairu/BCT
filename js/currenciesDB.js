@@ -231,7 +231,7 @@ function updateWalletData() {
 
                 // blue color
                 if (changeInPercent > 0) {
-                    smallChartInfoString = '$' + currenciesPrice[key].toFixed(2) + ' <span class="smaller clr-blue">+' + Math.abs(changeInPercent.toFixed(2)) + '%</span>';
+                    smallChartInfoString = '<div class="clr-blue">$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller">+' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
                     lineColor = '#00A9F7';
                     gradientColor = {
                         linearGradient: [0, 0, 0, 30],
@@ -243,7 +243,7 @@ function updateWalletData() {
                 }
                 // red color
                 else {
-                    smallChartInfoString = '$' + currenciesPrice[key].toFixed(2) + ' <span class="smaller clr-red">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span>';
+                    smallChartInfoString = '<div class="clr-red">$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
                     lineColor = '#CE2424';
 /*                     gradientColor = {
                         linearGradient: [0, 0, 0, 30],
