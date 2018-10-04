@@ -1157,7 +1157,7 @@ h6 {
 /* c-block-head */
 /* =================================================================== */
 .c-block-head {
-  min-height: 50px;
+  min-height: 55px;
   padding: 4px 10px 3px 12px;
   display: flex;
   justify-content: space-between;
