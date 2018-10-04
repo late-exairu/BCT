@@ -13,7 +13,7 @@ function redrawMainChart() {
 }
 
 // var mainChartMarginLeft = 0;
-var mainChartSpacingTop = 40;
+var mainChartSpacingTop = 90;
 var lineColor = '#00A9F7';
 var blueColor = '#00A9F7';
 var redColor = '#CE2424';
@@ -248,9 +248,9 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 			var arrowDirection = 'bottom';
 
 			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left;
-			var lineForMainChartY = $('#mainChart').offset().top + mainChartSpacingTop + 10 + 35;
-			var lineForMainChartHeight = this.points[0].point.plotY - 24 - 35;
-			var lineForPortfolioChartY = this.points[0].point.plotY - 44;
+			var lineForMainChartY = $('#mainChart').offset().top + mainChartSpacingTop + 10 + 35 - 50;
+			var lineForMainChartHeight = this.points[0].point.plotY - 24 - 35 + 50;
+			var lineForPortfolioChartY = this.points[0].point.plotY - 44 + 50;
 
 			// right side fix
 			if (lineForMainChartX > $('#mainChart').offset().left + $('#mainChart').width()) {
@@ -303,7 +303,7 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 			}
 			return {
 				x: xPos,
-				y: 10 + mainChartSpacingTop
+				y: 10 + mainChartSpacingTop - 50
 			};
 		}
 	},
