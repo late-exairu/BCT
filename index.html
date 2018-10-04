@@ -2829,9 +2829,9 @@
 					</ul>
 				</div>
 				
-				<div class="transaction-form__btns">
-					<button class="transaction-form__btn js-fancybox-close" type="reset">CANCEL</button>
-					<button class="transaction-form__btn submit">CONFIRM</button>
+				<div class="autentificator__btns">
+					<button class="autentificator__btn js-fancybox-close" type="reset">CANCEL</button>
+					<button class="autentificator__btn submit">CONFIRM</button>
 				</div>
 			</form>
 		</div>
@@ -2841,15 +2841,15 @@
 <div class="basic-popup transaction-popup" id="transaction-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
 		<div class="popup-tabs">
-			<div class="popup-tabs__item active">Withdraw</div>
-			<div class="popup-tabs__item">Deposit</div>
+			<div class="popup-tabs__item active">WITHDRAW</div>
+			<div class="popup-tabs__item">DEPOSIT</div>
 		</div>
 
 		<div class="d-flex-col flex-1-1 flex-h-fix">
 			<form class="transaction-form">
 				<span class="transaction-form__label">Recipient address</span>
 				<div class="transaction-form__line inner">
-					<input class="transaction-form__input address" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
+					<input class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
 					<div class="transaction-form__to-clipdoard">
 						<svg class="sprite-icon copy" role="img" aria-hidden="true">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard"></use>
@@ -2907,7 +2907,11 @@
 							<span class="input-group-text">BTC</span>
 						</div>
 					</div>
-					<div class="transaction-form__sep">≈</div>
+					<div class="transaction-form__sep">
+						<svg class="transaction-form__switch-arrows" role="img" aria-hidden="true">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrows-switch"></use>
+						</svg>
+					</div>
 					<div class="transaction-form__input-group">
 						<input class="transaction-form__input" type="text" name="" value="8197500.00">
 						<div class="input-group-append">
@@ -2932,7 +2936,7 @@
 
 				<span class="transaction-form__label">Address</span>
 				<div class="transaction-form__line inner">
-					<input class="transaction-form__input address" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
+					<input class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
 					<div class="transaction-form__to-clipdoard">
 						<svg class="sprite-icon copy" role="img" aria-hidden="true">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard"></use>

@@ -13080,7 +13080,14 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     width: 24px;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    padding: 0 2px; }
+  .transaction-form__switch-arrows {
+    display: block;
+    width: 36px;
+    height: 28px;
+    position: relative;
+    fill: var(--clr-textLL); }
   .transaction-form__input {
     font-family: "open_sans", sans-serif;
     font-size: 12px;
@@ -13099,8 +13106,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       color: var(--clr-textLL); }
     .transaction-form__input.with-copy {
       padding-right: 28px; }
-  .transaction-form__input.address {
-    font-size: 11px; }
   .transaction-form__qr-code-title {
     font-size: 16px;
     font-weight: 700;
@@ -13529,6 +13534,74 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     background: var(--clr-textL); }
   .autentificator__num:first-child {
     margin: 0; }
+
+.autentificator__btns {
+  margin: 5px 0 0;
+  display: flex; }
+  .autentificator__btns > * {
+    margin: 0 0 0 5px; }
+    .autentificator__btns > *:first-child {
+      margin: 0 10px 0 0; }
+
+.autentificator__btn {
+  font-family: "open_sans", sans-serif;
+  height: 32px;
+  display: flex;
+  flex: 1 1;
+  width: 100%;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--clr-icon);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: all .1s;
+  /*&:hover{
+			background: var(--clr-textL);
+		}*/ }
+  .autentificator__btn.submit {
+    position: relative;
+    font-family: "open_sans", sans-serif;
+    padding: 0 0 0 5px;
+    height: 32px;
+    display: flex;
+    width: calc(100% - 6px);
+    margin: 0 auto 0 0;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: all 0.1s;
+    justify-content: center;
+    border: none;
+    line-height: 1;
+    background: transparent;
+    border-radius: var(--border-radius);
+    background: #f00;
+    background: linear-gradient(to bottom, var(--clr-accent) 0%, var(--clr-accentD) 100%); }
+    .autentificator__btn.submit:after {
+      content: "";
+      position: absolute;
+      top: 49%;
+      right: -3px;
+      bottom: 0;
+      width: 10px;
+      background: #000;
+      width: 19px;
+      height: 19px;
+      border-radius: 5px 3px 5px;
+      transform: rotate(45deg) skew(20deg, 20deg) translateY(-50%);
+      background: linear-gradient(135deg, var(--clr-accent), var(--clr-accentD)); }
+    .autentificator__btn.submit:hover {
+      opacity: .9; }
 
 /* remove focus outline on FF */
 [type="button"]:-moz-focusring,
@@ -14176,7 +14249,7 @@ button:-moz-focusring {
 
 .transaction-popup {
   max-width: 260px;
-  min-width: 260px;
+  min-width: 280px;
   width: 100%; }
   .transaction-popup .basic-table {
     border-top: 1px solid var(--clr-separator);
