@@ -765,9 +765,9 @@ $(function () {
 
 		// select value in exch-dropdown
 		if ($(this).parents('#panel-funds-wallet').length) {
-			var icon = $(this).find('svg').eq(0)[0].childNodes[1].getAttribute('xlink:href');
+			var icon = $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href');
 			$('.exch-head__send .exch-dropdown__list .exch-dropdown__item').each(function () {
-				if (icon == $(this).find('svg').eq(0)[0].childNodes[1].getAttribute('xlink:href')) {
+				if (icon == $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href')) {
 					$(this).trigger('click');
 					$('.exch-dropdown').removeClass('open');
 					return false;
@@ -1252,21 +1252,21 @@ $(function () {
 	/* Table column sorted */
 	/*---------------------------------------------------*/
 
-	$('.basic-table__row.head > div').click(function () {
-		if ($(this).hasClass('sorted-down')) {
-			$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-down');
-			$(this).addClass('sorted-up');
-		} else {
-			$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-up sorted-down');
-			$(this).addClass('sorted-down');
-		}
-	});
+	// $('.basic-table__row.head > div').click(function () {
+	// 	if ($(this).hasClass('sorted-down')) {
+	// 		$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-down');
+	// 		$(this).addClass('sorted-up');
+	// 	} else {
+	// 		$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-up sorted-down');
+	// 		$(this).addClass('sorted-down');
+	// 	}
+	// });
 
 	/*---------------------------------------------------*/
 	/* transaction popup */
 	/*---------------------------------------------------*/
 
-	$('button[transaction-fancybox]').click(function (e) {
+	$('#panel-funds-wallet').on('click', 'button[transaction-fancybox]', function (e) {
 		e.preventDefault();
 		var fancies_length = $('.b-graph .c-block .fancybox-container').length;
 		if (fancies_length < 1) {
