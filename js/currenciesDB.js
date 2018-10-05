@@ -187,9 +187,9 @@ function updateWalletData() {
                     '<div class="d-flex-col">' +
                     '<span><span class="wallet' + key + '"></span> ' + key + ' </span><span class="smaller">' + currencyName + '</span>' +
                     '</div></div>' +
-                    '<div class="basic-table__col w-40">'+
-                        '<div id="smallChart'+key+'" class="smallCurrencyChart"></div>'+
-                        '<div class = "smallChartInfo d-flex-col"></div></div>' +
+                    '<div class="basic-table__col w-40">' +
+                    '<div id="smallChart' + key + '" class="smallCurrencyChart"></div>' +
+                    '<div class = "smallChartInfo d-flex-col"></div></div>' +
                     '<div class="basic-table__col w-22"><button class="basic-table__btn fix-width" transaction-fancybox><svg class="sprite-icon qr-code" role="img" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use></svg>' + key + '</button></div>' +
                     '</div>';
             }
@@ -212,9 +212,32 @@ function updateWalletData() {
         $('.pricePerCoin' + key).html('$' + numberWithCommas(currenciesPrice[key]));
         $('.wallet' + key).html(numberWithCommas(currentWallet[key].toFixed(2)));
 
+
+        var chartRange = $('.graph-range-slider__current').text();
+        var ajaxUrl = '';
+        switch (chartRange) {
+            case '1h':
+                ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=60';
+                break;
+            case '1d':
+                ajaxUrl = 'https://min-api.cryptocompare.com/data/histohour?fsym=' + key + '&tsym=USD&limit=24';
+                break;
+            case '1w':
+                ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&limit=7';
+                break;
+            case '1m':
+                ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&limit=31';
+                break;
+            case 'All':
+                ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&limit=365';
+                break;
+
+            default:
+                break;
+        }
         // draw small Chart 
         $.ajax({
-            url: 'https://min-api.cryptocompare.com/data/histohour?fsym=' + key + '&tsym=USD&limit=24',
+            url: ajaxUrl,
             success: function (data) {
                 var graphArr = data.Data.map(s => (s.open + s.close) / 2);
                 if (!graphArr.length) {
@@ -227,7 +250,7 @@ function updateWalletData() {
                 var changeInPercent = (-1 + (graphArr[graphArr.length - 1] / graphArr[0])) * 100;
                 var smallChartInfoString;
                 var lineColor;
-                var gradientColor;
+               // var gradientColor;
 
                 // blue color
                 if (changeInPercent > 0) {
@@ -245,24 +268,24 @@ function updateWalletData() {
                 else {
                     smallChartInfoString = '<div class="clr-darkRed">$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
                     lineColor = '#CE2424';
-/*                     gradientColor = {
-                        linearGradient: [0, 0, 0, 30],
-                        stops: [
-                            [0, Highcharts.Color('#CE2424').setOpacity(0.2).get('rgba')],
-                            [1, Highcharts.Color('#CE2424').setOpacity(0).get('rgba')]
-                        ]
-                    }; */
+                    /*                     gradientColor = {
+                                            linearGradient: [0, 0, 0, 30],
+                                            stops: [
+                                                [0, Highcharts.Color('#CE2424').setOpacity(0.2).get('rgba')],
+                                                [1, Highcharts.Color('#CE2424').setOpacity(0).get('rgba')]
+                                            ]
+                                        }; */
                 }
 
                 if (currentWallet[key].toFixed(2) == 0) {
                     lineColor = '#C5C5C5';
-/*                     gradientColor = {
-                        linearGradient: [0, 0, 0, 30],
-                        stops: [
-                            [0, Highcharts.Color('#C5C5C5').setOpacity(0.2).get('rgba')],
-                            [1, Highcharts.Color('#C5C5C5').setOpacity(0).get('rgba')]
-                        ]
-                    }; */
+                    /*                     gradientColor = {
+                                            linearGradient: [0, 0, 0, 30],
+                                            stops: [
+                                                [0, Highcharts.Color('#C5C5C5').setOpacity(0.2).get('rgba')],
+                                                [1, Highcharts.Color('#C5C5C5').setOpacity(0).get('rgba')]
+                                            ]
+                                        }; */
                 }
 
                 var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
@@ -272,7 +295,7 @@ function updateWalletData() {
                 cloneOptions.yAxis.min = min;
                 cloneOptions.yAxis.max = max;
                 if ($('#smallChart' + key).length)
-                Highcharts.chart('smallChart' + key, cloneOptions);
+                    Highcharts.chart('smallChart' + key, cloneOptions);
                 $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
             },
         });
@@ -286,29 +309,29 @@ function updateWalletData() {
     }
 
     // sort eachPercent object
-/*     var sortable = [];
-    for (var currency in eachPercent) {
-        sortable.push([currency, eachPercent[currency]]);
-    }
-
-    sortable.sort(function (a, b) {
-        return b[1] - a[1];
-    });
-
-    eachPercent = {};
-    // fill object and sort table rows
-    sortable.map((item, index) => {
-        var key = item[0];
-        var value = item[1];
-        eachPercent[key] = value;
-        if ($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').index() != index) {
-            if (index == 0) {
-                $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:first');
-            } else {
-                $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertAfter('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:nth-child(' + index + ')');
-            }
+    /*     var sortable = [];
+        for (var currency in eachPercent) {
+            sortable.push([currency, eachPercent[currency]]);
         }
-    }); */
+
+        sortable.sort(function (a, b) {
+            return b[1] - a[1];
+        });
+
+        eachPercent = {};
+        // fill object and sort table rows
+        sortable.map((item, index) => {
+            var key = item[0];
+            var value = item[1];
+            eachPercent[key] = value;
+            if ($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').index() != index) {
+                if (index == 0) {
+                    $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:first');
+                } else {
+                    $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertAfter('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:nth-child(' + index + ')');
+                }
+            }
+        }); */
     // end of sort
 
     var totalBalanceTrunc = Math.trunc(totalBalance);

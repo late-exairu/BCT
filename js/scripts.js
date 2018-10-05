@@ -2467,12 +2467,13 @@ $(function () {
 				mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
 				break;
 			case 4:
-				$('.graph-range-slider__current').html("1year");
+				$('.graph-range-slider__current').html("All");
 				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
 				break;
 		}
 		redrawMainChart();
 		updateMainChartPercentChange();
+		updateWalletData();
 	});
 
 	/* .coin-dropdown handler */
