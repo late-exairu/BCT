@@ -410,17 +410,19 @@ $(function () {
 		if ($('.b-graph').width() - x < 10) {
 			if (!$('.graph-prices').hasClass('open')) {
 				$('.graph-prices').addClass('open');
+				$('#mainChart').css('width', 'calc(100%)');
 				$('.b-graph__controls').addClass('shifted');
-				redrawMainChart();
 				$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
+				redrawMainChart();
 			}
 		} else {
 			if ($('.b-graph').width() - x > 300) {
 				if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
 					$('.graph-prices').removeClass('open');
+					$('#mainChart').css('width', 'calc(100% - 12px)');
 					$('.b-graph__controls').removeClass('shifted');
-					redrawMainChart();
 					$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
+					redrawMainChart();
 					// reset prices scroll
 					$('.scrollbar-arrows').scrollTop(0);
 				}
@@ -428,29 +430,14 @@ $(function () {
 		}
 	});
 
-	// $('.b-graph').mouseleave(function (e) {
-	// 	var x = e.pageX - $('.b-graph').offset().left;
-	// 	if (x < $('.b-graph').width() - 5) {
-	// 		if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
-	// 			$('.graph-prices').removeClass('open');
-	// 			$('.b-graph__controls').removeClass('shifted');
-	// 			redrawMainChart();
-	// 			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
-	// 		}
-	// 	} else {
-	// 		$('.graph-prices').addClass('open');
-	// 		$('.b-graph__controls').addClass('shifted');
-	// 		redrawMainChart();
-	// 		$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
-	// 	}
-	// });
 
 	$('body').mousemove(function (e) {
 		if ((e.pageY < $('.b-graph').offset().top || e.pageY > $('.b-graph').offset().top + $('.b-graph').height()) && !$('.graph-prices').hasClass('noClose')) {
 			$('.graph-prices').removeClass('open');
+			$('#mainChart').css('width', 'calc(100% - 12px)');
 			$('.b-graph__controls').removeClass('shifted');
-			redrawMainChart();
 			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
+			redrawMainChart();
 		}
 	});
 
@@ -779,9 +766,10 @@ $(function () {
 
 		if ($(this).parents('#panel-funds-history').length) {
 			$('.graph-prices').addClass('open');
+			$('#mainChart').css('width', 'calc(100%)');
 			$('.b-graph__controls').addClass('shifted');
-			redrawMainChart();
 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
+			redrawMainChart();
 			var convertedText = $(this).find('.basic-table__col').eq(1).html();
 			convertedText = convertedText.replace(/\s\s+/g, ' ');
 			var convertedArr = convertedText.split(svgArrowTemplate);
@@ -1153,9 +1141,10 @@ $(function () {
 	$('.graph-prices .graph-prices__controls__btn').click(function () {
 		if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
 			$('.graph-prices').removeClass('open');
+			$('#mainChart').css('width', 'calc(100% - 12px)');
 			$('.b-graph__controls').removeClass('shifted');
-			redrawMainChart();
 			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
+			redrawMainChart();
 		}
 	});
 
@@ -1166,6 +1155,7 @@ $(function () {
 		if (!$('.graph-prices').hasClass('open')) {
 			$(this).removeClass('open');
 			$('.graph-prices').addClass('open');
+			$('#mainChart').css('width', 'calc(100%)');
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
 		}
@@ -1679,9 +1669,10 @@ $(function () {
 			$('.basic-table__message').addClass('hidden');
 			$('#panel-funds-history .basic-table__body .basic-table__body').prepend(newRow);
 			$('.graph-prices').addClass('open noClose');
+			$('#mainChart').css('width', 'calc(100% - 12px)');
 			$('.b-graph__controls').addClass('shifted');
-			redrawMainChart();
 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
+			redrawMainChart();
 
 			/*			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
 			 			if (fancies_length < 1) {

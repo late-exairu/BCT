@@ -7947,7 +7947,6 @@ h6 {
     border-bottom: 1px solid var(--clr-back-new); }
   .graph-prices__controls__btn {
     position: absolute;
-    left: -12px;
     top: 0px;
     bottom: 0px;
     width: 12px;
@@ -7958,8 +7957,8 @@ h6 {
     z-index: 2;
     cursor: pointer;
     border: solid 2px var(--clr-block);
-    border-top-width: 0;
-    border-bottom-width: 0; }
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius); }
     .graph-prices__controls__btn:after {
       content: "";
       width: 0;
@@ -7972,7 +7971,7 @@ h6 {
     left: calc(100% - 12px);
     top: 0px;
     bottom: 0px;
-    width: 12px;
+    width: 10px;
     background: var(--clr-separator);
     display: flex;
     justify-content: center;
@@ -7982,7 +7981,8 @@ h6 {
     cursor: pointer;
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
-    border: solid 2px var(--clr-block); }
+    border: solid 2px var(--clr-block);
+    border-left: 0px; }
     .graph-prices__controls__btn__open:after {
       content: "";
       width: 0;
@@ -7999,7 +7999,8 @@ h6 {
     margin: 0 0 0 4px; }
   .graph-prices__scroll {
     width: 172px;
-    margin: 0; }
+    margin: 0;
+    padding-left: 6px; }
   .graph-prices__scrollup__btn, .graph-prices__scrolldown__btn {
     position: absolute;
     left: 0;
@@ -13884,7 +13885,7 @@ button:-moz-focusring {
   padding-top: 0;
   padding-left: 0;
   height: 100%;
-  width: 100%; }
+  width: calc(100% - 12px); }
 
 .label {
   z-index: 1 !important; }
