@@ -231,13 +231,13 @@ function updateWalletData() {
 
                 // blue color
                 if (changeInPercent > 0) {
-                    smallChartInfoString = '<div class="clr-blue">$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller">+' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
-                    lineColor = '#00A9F7';
+                    smallChartInfoString = '<div class="clr-green">$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller">+' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
+                    lineColor = '#01B067';
                     gradientColor = {
                         linearGradient: [0, 0, 0, 30],
                         stops: [
-                            [0, Highcharts.Color('#00A9F7').setOpacity(0.2).get('rgba')],
-                            [1, Highcharts.Color('#00A9F7').setOpacity(0).get('rgba')]
+                            [0, Highcharts.Color('#01B067').setOpacity(0.2).get('rgba')],
+                            [1, Highcharts.Color('#01B067').setOpacity(0).get('rgba')]
                         ]
                     };
                 }

@@ -948,8 +948,7 @@ h6 {
       margin: 0 auto; }
   .basic-table .smaller {
     font-size: calc(var(--font-size) - 2px);
-    margin: 3px 0 0 0;
-    opacity: 0.75; }
+    margin: 3px 0 0 0; }
   .basic-table .bold {
     font-weight: 700; }
   .basic-table .clr-gray {
