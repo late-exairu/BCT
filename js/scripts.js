@@ -469,27 +469,27 @@ $(function () {
 	/*---------------------------------------------------*/
 
 
-	$('.user-portfolio .user-menu .user-menu__item').on('click', function () {
-		// turn off last one
-		if ($(this).index() != 3) {
-			$('.user-portfolio .user-menu .user-menu__item').removeClass('current');
-			$(this).addClass('current');
-			$('.js-tabs-panel').removeClass('active');
-			$('.js-tabs-panel').eq($(this).index()).addClass('active');
-		}
+	// $('.user-portfolio .user-menu .user-menu__item').on('click', function () {
+	// 	// turn off last one
+	// 	if ($(this).index() != 3) {
+	// 		$('.user-portfolio .user-menu .user-menu__item').removeClass('current');
+	// 		$(this).addClass('current');
+	// 		$('.js-tabs-panel').removeClass('active');
+	// 		$('.js-tabs-panel').eq($(this).index()).addClass('active');
+	// 	}
 
-		// Wallet
-		if ($(this).index() == 0) {
-			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
-			drawCircleChart();
-		}
+	// 	// Wallet
+	// 	if ($(this).index() == 0) {
+	// 		liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
+	// 		drawCircleChart();
+	// 	}
 
-		// Portfolio tab
-		if ($(this).index() == 1) {
-			if (!portfolioChartObj)
-				portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
-		}
-	});
+	// 	// Portfolio tab
+	// 	if ($(this).index() == 1) {
+	// 		if (!portfolioChartObj)
+	// 			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
+	// 	}
+	// });
 
 	/*---------------------------------------------------*/
 	/* ADVANCED account-js-menu */
@@ -499,7 +499,7 @@ $(function () {
 		$('.js-tabs-panel').removeClass('active');
 		$('#panel-funds-portfolio').addClass('active');
 		$('.main-cols__right-bottom .portfolio-menu__item').eq(1).trigger('click');
-		$('.advanced .js-account-stats .portfolio-drop').addClass('hidden');
+		$('.advanced .js-account-stats .portfolio-nav').addClass('hidden');
 		if (!portfolioChartObj)
 			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 
@@ -511,15 +511,16 @@ $(function () {
 	$('.portfolio-back').click(function () {
 		$('.js-tabs-panel').removeClass('active');
 		$('#panel-funds-wallet').addClass('active');
-		$('.advanced .js-account-stats .portfolio-drop').removeClass('hidden');
+		$('.advanced .js-account-stats .portfolio-nav').removeClass('hidden');
 		drawCircleChart();
 	});
 
-	$('.advanced .js-account-stats .portfolio-drop .menu-dropdown__item').on('click', function () {
-		$('.js-account-stats .portfolio-drop .menu-dropdown__item').removeClass('active');
-		$(this).addClass('active');
+	$('.advanced .js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function () {
+		$('.js-account-stats .portfolio-menu .portfolio-menu__item').removeClass('current');
+		$(this).addClass('current');
 
-		$('.advanced .js-account-stats .portfolio-drop .c-block-head__title').text($(this).text());
+		$('.advanced .js-account-stats .portfolio-nav__title').text($(this).attr('data-name'));
+		
 		$('.js-tabs-panel').removeClass('active');
 		$('.js-tabs-panel').eq($(this).index()).addClass('active');
 
@@ -1290,12 +1291,12 @@ $(function () {
 				mainChartObj.series[0].setData(grapArr);
 
 				for (var k = 0; k < 6; k++) {
-					mainChartObj.series[k+2].setData(fakeGraphs[k]);
+					mainChartObj.series[k+1].setData(fakeGraphs[k]);
 				}
 
 				if ($('body').hasClass('advanced'))
-					mainChartObj.series[1].setData(columnArr);
-				mainChartObj.series[0].update({
+					mainChartObj.series[7].setData(columnArr);
+				mainChartObj.series[mainGraphHighlighted - 1].update({
 					fillColor: {
 						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 						stops: gradientColor
@@ -1385,7 +1386,7 @@ $(function () {
 					[1, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')]
 				]
 			},
-			lineWidth: 0.5,
+			lineWidth: 1,
 			enableMouseTracking: false,
 			zIndex: 1
 		});
