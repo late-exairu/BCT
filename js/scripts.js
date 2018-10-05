@@ -2244,19 +2244,22 @@ $(function () {
 
 	/** Graph exchanges sort */
 	$('.graph-prices__sort').click(function (e) {
-		// chage class name by status
-		if ($(this).hasClass('desc')) { // state 1
-			$(this).removeClass('desc');
-			$(this).addClass('asc');
-		} else if ($(this).hasClass('asc')) { // state 2
-			$(this).removeClass('asc');
-			$(this).addClass('desc');
-		} else { // default state
-			$(this).addClass('asc');
-		}
 
-		$('.graph-prices__price.send-prices__rate').toggleClass('hidden')
-		$('.graph-prices__price.get-prices__rate').toggleClass('hidden')
+		if (!$('.exch-form').hasClass('progress')) {
+			// chage class name by status
+			if ($(this).hasClass('desc')) { // state 1
+				$(this).removeClass('desc');
+				$(this).addClass('asc');
+			} else if ($(this).hasClass('asc')) { // state 2
+				$(this).removeClass('asc');
+				$(this).addClass('desc');
+			} else { // default state
+				$(this).addClass('asc');
+			}
+	
+			$('.graph-prices__price.send-prices__rate').toggleClass('hidden')
+			$('.graph-prices__price.get-prices__rate').toggleClass('hidden')
+		}
 
 		// // sort items
 		// var list = $('.graph-prices__list');
