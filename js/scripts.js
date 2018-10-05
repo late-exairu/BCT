@@ -11,6 +11,9 @@ $(function () {
 				document.querySelector('.message-bar__login').classList.add('hidden');
 			if (document.querySelector('.message-bar__login-demo'))
 				document.querySelector('.message-bar__login-demo').classList.add('hidden');
+			if (document.querySelector('.main-cols__left-top .c-block__col'))
+				document.querySelector('.main-cols__left-top .c-block__col').classList.remove('hidden');
+
 			if (localStorage.getItem('telegramPhoto')) {
 				if (document.querySelector('.message-bar__user-pic .user-pic__avatar')) {
 					//document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
@@ -824,7 +827,7 @@ $(function () {
 		//var chatName = $(this).find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
 		var chatName = $(this).find('.chats-list__name').text();
 		$('.chat-head__name').text(chatName);
-		$('.main-cols__left-top .d-flex .c-block__col, .chat-talk').toggleClass('hidden');
+		$('.chat-talk').toggleClass('hidden');
 	});
 
 	/*
