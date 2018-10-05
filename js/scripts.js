@@ -2133,7 +2133,7 @@ $(function () {
 				$('.portfolio-graph-range__current').html("1m");
 				break;
 			case 4:
-				$('.portfolio-graph-range__current').html("All");
+				$('.portfolio-graph-range__current').html("1year");
 				break;
 		}
 		redrawMainChart();
@@ -2168,7 +2168,7 @@ $(function () {
 				mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
 				break;
 			case 4:
-				$('.graph-range-slider__current').html("All");
+				$('.graph-range-slider__current').html("1year");
 				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
 				break;
 		}
