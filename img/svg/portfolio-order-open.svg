@@ -1,38 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="10.032" height="10.032" viewBox="0 0 10.032 10.032">
-  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
-<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
-   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-      <rdf:Description rdf:about=""/>
-   </rdf:RDF>
-</x:xmpmeta>
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                           
-<?xpacket end="w"?></metadata>
-<defs>
-    <style>
-      .cls-1 {
-        fill-rule: evenodd;
-      }
-    </style>
-  </defs>
-  <path id="portfolio-order-open" class="cls-1" d="M547.365,557.475a1.88,1.88,0,0,0-1.38-.57H539.86a1.946,1.946,0,0,0-1.95,1.949v6.126a1.955,1.955,0,0,0,1.95,1.949h6.126a1.955,1.955,0,0,0,1.949-1.949v-6.126A1.883,1.883,0,0,0,547.365,557.475Zm-0.544,7.5a0.831,0.831,0,0,1-.836.835H539.86a0.831,0.831,0,0,1-.836-0.835v-6.126a0.831,0.831,0,0,1,.836-0.835h6.126a0.831,0.831,0,0,1,.835.835v6.126Zm-1.392-3.62H543.48v-1.949a0.268,0.268,0,0,0-.079-0.2,0.271,0.271,0,0,0-.2-0.078h-0.557a0.267,0.267,0,0,0-.278.278v1.949h-1.949a0.267,0.267,0,0,0-.279.279V562.2a0.267,0.267,0,0,0,.279.278h1.949v1.949a0.269,0.269,0,0,0,.278.279H543.2a0.272,0.272,0,0,0,.2-0.079,0.268,0.268,0,0,0,.079-0.2v-1.949h1.949a0.267,0.267,0,0,0,.278-0.278v-0.557A0.267,0.267,0,0,0,545.429,561.36Z" transform="translate(-537.906 -556.906)"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="9.6px" height="7px" viewBox="0 0 9.6 7" style="enable-background:new 0 0 9.6 7;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#9BA6B2;}
+</style>
+<g>
+	<path class="st0" d="M0.7,2.8C0.5,2.8,0.4,2.8,0.2,3C0.1,3.1,0,3.3,0,3.5S0.1,3.9,0.2,4C0.5,4.3,1,4.3,1.3,4
+		c0.1-0.1,0.2-0.3,0.2-0.5S1.4,3.1,1.3,3C1.1,2.8,1,2.8,0.7,2.8z"/>
+	<path class="st0" d="M0.7,0C0.5,0,0.4,0.1,0.2,0.2C0.1,0.4,0,0.5,0,0.7s0.1,0.4,0.2,0.5c0.3,0.3,0.8,0.3,1.1,0
+		C1.4,1.1,1.5,1,1.5,0.7S1.4,0.4,1.3,0.2S1,0,0.7,0z"/>
+	<path class="st0" d="M0.7,5.5c-0.2,0-0.4,0.1-0.5,0.2C0.1,5.9,0,6.1,0,6.3s0.1,0.4,0.2,0.5c0.3,0.3,0.8,0.3,1.1,0
+		c0.1-0.1,0.2-0.3,0.2-0.5S1.4,5.9,1.3,5.8C1.1,5.6,1,5.5,0.7,5.5z"/>
+	<rect x="2.2" y="0.3" class="st0" width="7.4" height="0.8"/>
+	<rect x="2.2" y="3.1" class="st0" width="7.4" height="0.8"/>
+	<rect x="2.2" y="5.9" class="st0" width="7.4" height="0.8"/>
+</g>
 </svg>
