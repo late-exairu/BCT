@@ -8131,7 +8131,7 @@ h6 {
       background: transparent;
       border: 0; }
       .graph-prices__item .ui-progressbar .ui-progressbar-value {
-        background: linear-gradient(to right, var(--clr-block), var(--clr-accent), var(--clr-accentD));
+        background: linear-gradient(to right, var(--clr-block), var(--clr-accent));
         border: 0;
         margin: 0; }
     .graph-prices__item .progress-label {
