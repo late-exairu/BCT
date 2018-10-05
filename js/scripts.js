@@ -1269,11 +1269,11 @@ $(function () {
 				mainChartObj.series[0].setData(grapArr);
 
 				for (var k = 0; k < 6; k++) {
-					mainChartObj.series[k+2].setData(fakeGraphs[k]);
+					mainChartObj.series[k+1].setData(fakeGraphs[k]);
 				}
 
 				if ($('body').hasClass('advanced'))
-					mainChartObj.series[1].setData(columnArr);
+					mainChartObj.series[7].setData(columnArr);
 				mainChartObj.series[0].update({
 					fillColor: {
 						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
@@ -1364,7 +1364,7 @@ $(function () {
 					[1, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')]
 				]
 			},
-			lineWidth: 0.5,
+			lineWidth: 1,
 			enableMouseTracking: false,
 			zIndex: 1
 		});
