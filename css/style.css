@@ -8951,10 +8951,10 @@ Blocks from left bar
 			flex: 0 0 33%;
 			min-width: 250px;
 			max-width: 450px;*/
-      width: 449px;
-      flex: 0 0 449px;
-      min-width: 449px;
-      max-width: 449px; }
+      width: 485px;
+      flex: 0 0 485px;
+      min-width: 485px;
+      max-width: 485px; }
       .main-cols__left.col-chats .c-block__col {
         /*border: 1px solid transparent;*/
         border-radius: var(--border-radius);
