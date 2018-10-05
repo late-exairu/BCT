@@ -1,4 +1,16 @@
-var date50 = new Date(Date.now() - 365 * 24 * 3600 * 1000);
+// var date50 = new Date(Date.now() - 365 * 24 * 3600 * 1000);
+// var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
+var range_intervals = [
+	60 * 1000,
+	5 * 60 * 1000,
+	15 * 60 * 1000,
+	3600 * 1000,
+	6 * 3600 * 1000,
+	24 * 3600 * 1000
+]
+var limit = 200;
+
+var date50 = new Date(Date.now() - limit * range_intervals[3]);
 var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 
 function redrawMainChart() {
@@ -68,8 +80,7 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 			//pointWidth: $('#mainChart').width() / 110, // fixed A pixel value specifying
 			pointPadding: 0.05,
 			pointStart: start_point,
-			//pointInterval: 24 * 3600 * 1000, // one day
-			pointInterval: 3600 * 1000, // one hour
+			pointInterval: range_intervals[3], // one hour
 			pointPlacement: 'on',
 			borderWidth: 0,
 			groupPadding: 0,

@@ -909,7 +909,6 @@ $(function () {
 		updateMainChartSpline(currentDataId);
 	});
 
-	var limit = 200;
 	var gDataByMin = new Array(),
 		gDataByFiveMins = new Array(),
 		gDataByFifteenMins = new Array(),
@@ -2439,31 +2438,65 @@ $(function () {
 	$mainGraphRange.on('input', function () {
 		// $( this ).css( 'background', 'linear-gradient(to right, var(--clr-time-bar) 0%, var(--clr-time-bar) '+this.value*25 +'%, var(--clr-time-line) ' + this.value*25 + '%, var(--clr-time-line) 100%)' );
 
-		//console.log("mainChartObj", mainChartObj);
+		console.log("mainChartObj", mainChartObj);
+		// switch (parseInt(this.value)) {
+		// 	case 0:
+		// 		$('.graph-range-slider__current').html("1h");
+		// 		var HOUR = 1000 * 3600; //1000 * 3600;
+		// 		mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate);
+		// 		break;
+		// 	case 1:
+		// 		$('.graph-range-slider__current').html("1d");
+		// 		var DAY = 1000 * 3600 * 24; //1000 * 3600 * 24;
+		// 		mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate);
+		// 		break;
+		// 	case 2:
+		// 		$('.graph-range-slider__current').html("1w");
+		// 		var WEEK = 1000 * 3600 * 24 * 7;
+		// 		mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - 1000 * 3600 * 12);
+		// 		break;
+		// 	case 3:
+		// 		$('.graph-range-slider__current').html("1m");
+		// 		var d = new Date(maxDate);
+		// 		d.setMonth(d.getMonth() - 1);
+		// 		mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
+		// 		break;
+		// 	case 4:
+		// 		$('.graph-range-slider__current').html("1year");
+		// 		mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
+		// 		break;
+		// }
+		// redrawMainChart();
+		// updateMainChartPercentChange();
+
 		switch (parseInt(this.value)) {
 			case 0:
-				$('.graph-range-slider__current').html("1h");
+				$('.graph-range-slider__current').html("1m");
 				var HOUR = 1000 * 3600; //1000 * 3600;
 				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate);
 				break;
 			case 1:
-				$('.graph-range-slider__current').html("1d");
+				$('.graph-range-slider__current').html("5m");
 				var DAY = 1000 * 3600 * 24; //1000 * 3600 * 24;
 				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate);
 				break;
 			case 2:
-				$('.graph-range-slider__current').html("1w");
+				$('.graph-range-slider__current').html("15m");
 				var WEEK = 1000 * 3600 * 24 * 7;
 				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - 1000 * 3600 * 12);
 				break;
 			case 3:
-				$('.graph-range-slider__current').html("1m");
+				$('.graph-range-slider__current').html("1h");
 				var d = new Date(maxDate);
 				d.setMonth(d.getMonth() - 1);
 				mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
 				break;
 			case 4:
-				$('.graph-range-slider__current').html("1year");
+				$('.graph-range-slider__current').html("6h");
+				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
+				break;
+			case 5:
+				$('.graph-range-slider__current').html("1d");
 				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
 				break;
 		}
