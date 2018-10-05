@@ -3,6 +3,8 @@ $(function () {
 	const minDate = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 	const maxDate = Date.now();
 
+
+
 	function setOwnName() {
 		if (localStorage.getItem('telegramAuth') == 'true' && localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 			if (document.querySelector('.message-bar__login'))
@@ -907,20 +909,318 @@ $(function () {
 		updateMainChartSpline(currentDataId);
 	});
 
+	var limit = 200;
+	var gDataByMin = new Array(),
+		gDataByFiveMins = new Array(),
+		gDataByFifteenMins = new Array(),
+		gDataByHour = new Array(),
+		gDataBySixHours = new Array(),
+		gDataByDay = new Array();
+
+	function updateMainChart(exchange, sendCurrency, getCurrency) {
+		// Get Main Chart graph data with a minute interval
+		$.ajax({
+			url: `https://min-api.cryptocompare.com/data/histominute?fsym=${sendCurrency}&tsym=${getCurrency}&limit=` + limit,
+			success: function (data) {
+				var grapArr = [];
+				var columnArr = [];
+				var fakeGraphs = [[], [], [], [], [], []];
+				var fakeGraphdiffs = [[], [], [], [], [], []];
+
+				var prev_value = [null, null, null, null, null, null];
+				data.Data.map(s => {
+					var value = (s.open + s.close) / 2;
+					var difference = s.close - s.open;
+					grapArr.push(value);
+					columnArr.push(difference);
+
+					for (var k = 0; k < 6; k++) {
+						if (prev_value[k] == null) prev_value[k] = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						var valueForFake = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						fakeGraphs[k].push(valueForFake);
+						fakeGraphdiffs[k].push(valueForFake - prev_value[k]);
+						prev_value[k] = valueForFake;
+					}
+				});
+
+				if (!grapArr.length) {
+					for (let i = 0; i < 366; i++) {
+						grapArr.push(1);
+					};
+				};
+
+				var one_graph = {
+					prices: grapArr,
+					diffs: columnArr
+				}
+
+				gDataByMin.push(one_graph);
+				for (var k = 0; k < 6; k++) {
+					one_graph = {
+						prices: fakeGraphs[k],
+						diffs: fakeGraphdiffs[k]
+					}
+					gDataByMin.push(one_graph);
+				}
+				console.log("gDataByMin", gDataByMin);
+			}
+		});
+
+
+		// Get Main Chart graph data with 5 minutes interval
+		$.ajax({
+			url: `https://min-api.cryptocompare.com/data/histominute?fsym=${sendCurrency}&tsym=${getCurrency}&limit=${limit}&aggregate=5`,
+			success: function (data) {
+				var grapArr = [];
+				var columnArr = [];
+				var fakeGraphs = [[], [], [], [], [], []];
+				var fakeGraphdiffs = [[], [], [], [], [], []];
+
+				var prev_value = [null, null, null, null, null, null];
+				data.Data.map(s => {
+					var value = (s.open + s.close) / 2;
+					var difference = s.close - s.open;
+					grapArr.push(value);
+					columnArr.push(difference);
+
+					for (var k = 0; k < 6; k++) {
+						if (prev_value[k] == null) prev_value[k] = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						var valueForFake = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						fakeGraphs[k].push(valueForFake);
+						fakeGraphdiffs[k].push(valueForFake - prev_value[k]);
+						prev_value[k] = valueForFake;
+					}
+				});
+
+				if (!grapArr.length) {
+					for (let i = 0; i < 366; i++) {
+						grapArr.push(1);
+					};
+				};
+
+				var one_graph = {
+					prices: grapArr,
+					diffs: columnArr
+				}
+
+				gDataByFiveMins.push(one_graph);
+				for (var k = 0; k < 6; k++) {
+					one_graph = {
+						prices: fakeGraphs[k],
+						diffs: fakeGraphdiffs[k]
+					}
+					gDataByFiveMins.push(one_graph);
+				}
+				console.log("gDataByFiveMins", gDataByFiveMins);
+			}
+		});
+
+
+		// Get Main Chart graph data with 15 minutes interval
+		$.ajax({
+			url: `https://min-api.cryptocompare.com/data/histominute?fsym=${sendCurrency}&tsym=${getCurrency}&limit=${limit}&aggregate=15`,
+			success: function (data) {
+				var grapArr = [];
+				var columnArr = [];
+				var fakeGraphs = [[], [], [], [], [], []];
+				var fakeGraphdiffs = [[], [], [], [], [], []];
+
+				var prev_value = [null, null, null, null, null, null];
+				data.Data.map(s => {
+					var value = (s.open + s.close) / 2;
+					var difference = s.close - s.open;
+					grapArr.push(value);
+					columnArr.push(difference);
+
+					for (var k = 0; k < 6; k++) {
+						if (prev_value[k] == null) prev_value[k] = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						var valueForFake = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						fakeGraphs[k].push(valueForFake);
+						fakeGraphdiffs[k].push(valueForFake - prev_value[k]);
+						prev_value[k] = valueForFake;
+					}
+				});
+
+				if (!grapArr.length) {
+					for (let i = 0; i < 366; i++) {
+						grapArr.push(1);
+					};
+				};
+
+				var one_graph = {
+					prices: grapArr,
+					diffs: columnArr
+				}
+
+				gDataByFifteenMins.push(one_graph);
+				for (var k = 0; k < 6; k++) {
+					one_graph = {
+						prices: fakeGraphs[k],
+						diffs: fakeGraphdiffs[k]
+					}
+					gDataByFifteenMins.push(one_graph);
+				}
+				console.log("gDataByFifteenMins", gDataByFifteenMins);
+			}
+		});
+
+		// Get Main Chart graph data with a hour interval
+		$.ajax({
+			url: `https://min-api.cryptocompare.com/data/histohour?fsym=${sendCurrency}&tsym=${getCurrency}&limit=${limit}`,
+			success: function (data) {
+				var grapArr = [];
+				var columnArr = [];
+				var fakeGraphs = [[], [], [], [], [], []];
+				var fakeGraphdiffs = [[], [], [], [], [], []];
+
+				var prev_value = [null, null, null, null, null, null];
+				data.Data.map(s => {
+					var value = (s.open + s.close) / 2;
+					var difference = s.close - s.open;
+					grapArr.push(value);
+					columnArr.push(difference);
+
+					for (var k = 0; k < 6; k++) {
+						if (prev_value[k] == null) prev_value[k] = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						var valueForFake = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						fakeGraphs[k].push(valueForFake);
+						fakeGraphdiffs[k].push(valueForFake - prev_value[k]);
+						prev_value[k] = valueForFake;
+					}
+				});
+
+				if (!grapArr.length) {
+					for (let i = 0; i < 366; i++) {
+						grapArr.push(1);
+					};
+				};
+
+				var one_graph = {
+					prices: grapArr,
+					diffs: columnArr
+				}
+
+				gDataByHour.push(one_graph);
+				for (var k = 0; k < 6; k++) {
+					one_graph = {
+						prices: fakeGraphs[k],
+						diffs: fakeGraphdiffs[k]
+					}
+					gDataByHour.push(one_graph);
+				}
+				console.log("gDataByHour", gDataByHour);
+			}
+		});
+
+
+		// Get Main Chart graph data with 6 hours interval
+		$.ajax({
+			url: `https://min-api.cryptocompare.com/data/histohour?fsym=${sendCurrency}&tsym=${getCurrency}&limit=${limit}&aggregate=6`,
+			success: function (data) {
+				var grapArr = [];
+				var columnArr = [];
+				var fakeGraphs = [[], [], [], [], [], []];
+				var fakeGraphdiffs = [[], [], [], [], [], []];
+
+				var prev_value = [null, null, null, null, null, null];
+				data.Data.map(s => {
+					var value = (s.open + s.close) / 2;
+					var difference = s.close - s.open;
+					grapArr.push(value);
+					columnArr.push(difference);
+
+					for (var k = 0; k < 6; k++) {
+						if (prev_value[k] == null) prev_value[k] = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						var valueForFake = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						fakeGraphs[k].push(valueForFake);
+						fakeGraphdiffs[k].push(valueForFake - prev_value[k]);
+						prev_value[k] = valueForFake;
+					}
+				});
+
+				if (!grapArr.length) {
+					for (let i = 0; i < 366; i++) {
+						grapArr.push(1);
+					};
+				};
+
+				var one_graph = {
+					prices: grapArr,
+					diffs: columnArr
+				}
+
+				gDataBySixHours.push(one_graph);
+				for (var k = 0; k < 6; k++) {
+					one_graph = {
+						prices: fakeGraphs[k],
+						diffs: fakeGraphdiffs[k]
+					}
+					gDataBySixHours.push(one_graph);
+				}
+				console.log("gDataBySixHours", gDataBySixHours);
+			}
+		});
+
+
+		// Get Main Chart graph data with a minute interval
+		$.ajax({
+			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=${limit}`,
+			success: function (data) {
+				var grapArr = [];
+				var columnArr = [];
+				var fakeGraphs = [[], [], [], [], [], []];
+				var fakeGraphdiffs = [[], [], [], [], [], []];
+
+				var prev_value = [null, null, null, null, null, null];
+				data.Data.map(s => {
+					var value = (s.open + s.close) / 2;
+					var difference = s.close - s.open;
+					grapArr.push(value);
+					columnArr.push(difference);
+
+					for (var k = 0; k < 6; k++) {
+						if (prev_value[k] == null) prev_value[k] = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						var valueForFake = value * (Math.random() * (0.92 - 1.08) + 1.08);
+						fakeGraphs[k].push(valueForFake);
+						fakeGraphdiffs[k].push(valueForFake - prev_value[k]);
+						prev_value[k] = valueForFake;
+					}
+				});
+
+				if (!grapArr.length) {
+					for (let i = 0; i < 366; i++) {
+						grapArr.push(1);
+					};
+				};
+
+				var one_graph = {
+					prices: grapArr,
+					diffs: columnArr
+				}
+
+				gDataByDay.push(one_graph);
+				for (var k = 0; k < 6; k++) {
+					one_graph = {
+						prices: fakeGraphs[k],
+						diffs: fakeGraphdiffs[k]
+					}
+					gDataByDay.push(one_graph);
+				}
+				console.log("gDataByDay", gDataByDay);
+			}
+		});
+
+	}
+	updateMainChart("Huobi", "BTC", "USDT");
+
+
 	function updateMainChartSplineNew(exchange, sendCurrency, getCurrency) {
 		$.ajax({
 			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
 			success: function (data) {
 				var grapArr = [];
 				var columnArr = [];
-				var fakeGraphs = [
-					[],
-					[],
-					[],
-					[],
-					[],
-					[],
-				];
+				var fakeGraphs = [[], [], [], [], [], []];
 
 				// // get data for every day
 				// data.Data.map(s => {
@@ -987,6 +1287,8 @@ $(function () {
 				updateMainChartPercentChange();
 			},
 		});
+
+
 	}
 
 	function updateMainChartPercentChange() {
