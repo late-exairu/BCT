@@ -1274,7 +1274,7 @@ $(function () {
 
 				if ($('body').hasClass('advanced'))
 					mainChartObj.series[7].setData(columnArr);
-				mainChartObj.series[0].update({
+				mainChartObj.series[mainGraphHighlighted - 1].update({
 					fillColor: {
 						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
 						stops: gradientColor
