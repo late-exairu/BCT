@@ -8,7 +8,7 @@ var range_intervals = [
 	6 * 3600 * 1000,
 	24 * 3600 * 1000
 ]
-var limit = 160;
+var limit = 140;
 
 var date50 = new Date(Date.now() - limit * range_intervals[3]);
 var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
@@ -47,7 +47,7 @@ var gradientColor = [
 var mainGraphHighlighted = 1;
 var mainGraphHover = null;
 
-var mainChartObj = Highcharts.stockChart('mainChart', {
+var hightChartUpdateOptions = {
 	//	var mainChartObj = Highcharts.chart('mainChart', {
 	legend: {
 		enabled: false
@@ -78,7 +78,7 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 		series: {
 			turboThreshold: 10000,
 			//pointWidth: $('#mainChart').width() / 110, // fixed A pixel value specifying
-			pointPadding: 0.05,
+			pointPadding: 0.15,
 			pointStart: start_point,
 			pointInterval: range_intervals[3], // one hour
 			pointPlacement: 'on',
@@ -195,7 +195,7 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 					//console.log('column out');
 				}
 			},
-			pointPadding: 0.05,
+			pointPadding: 0,
 			borderWidth: 0,
 			groupPadding: 0
 		}
@@ -392,16 +392,11 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 						avg *= -1;
 					}
 
-					return avg * 16;
+					return avg * 20;
 				},
 				forced: true,
-				units: [[
-						'millisecond', // unit name
-						[1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples
-					], [
-						'second',
-						[1, 2, 5, 10, 15, 30]
-					], [
+				units: [
+					[
 						'minute',
 						[1, 5, 15]
 					], [
@@ -413,17 +408,14 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 					], [
 						'week',
 						[1]
-					], [
-						'month',
-						[1, 3, 6]
-					], [
-						'year',
-						null
-				]]
+					]
+				]
 			},
 		},
 	]
-});
+}
+
+var mainChartObj = Highcharts.stockChart('mainChart', hightChartUpdateOptions);
 
 $('#mainChart').mouseleave(function () {
 	$('.lineForMainChart').css(

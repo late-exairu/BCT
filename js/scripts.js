@@ -1115,11 +1115,11 @@ $(function () {
 				mainChartObj.series[0].setData(gDataByHour[0].prices);
 
 				for (var k = 1; k < 6; k++) {
-					mainChartObj.series[k + 1].setData(gDataByHour[k].prices);
+					mainChartObj.series[k].setData(gDataByHour[k].prices);
 				}
 
 				//if ($('body').hasClass('advanced'))
-					mainChartObj.series[1].setData(gDataByHour[0].diffs);
+					mainChartObj.series[7].setData(gDataByHour[0].diffs);
 				mainChartObj.series[0].update({
 					fillColor: {
 						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
@@ -2492,38 +2492,78 @@ $(function () {
 		// }
 		// redrawMainChart();
 		// updateMainChartPercentChange();
+		
+		var index = parseInt(this.value);
+		var interval = range_intervals[index];
 
-		switch (parseInt(this.value)) {
+		hightChartUpdateOptions.plotOptions.series.pointStart = maxDate - interval * limit;
+		hightChartUpdateOptions.plotOptions.series.pointInterval = interval;
+
+		mainChartObj.update(hightChartUpdateOptions);
+
+		switch (index) {
 			case 0:
 				$('.graph-range-slider__current').html("1m");
-				var HOUR = 1000 * 3600; //1000 * 3600;
-				mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate);
+				mainChartObj.series[0].setData(gDataByMin[0].prices);
+				mainChartObj.series[7].setData(gDataByMin[0].diffs);
+				for (var k = 1; k < 6; k++) {
+					mainChartObj.series[k].setData(gDataByMin[k].prices);
+				}
 				break;
 			case 1:
 				$('.graph-range-slider__current').html("5m");
-				var DAY = 1000 * 3600 * 24; //1000 * 3600 * 24;
-				mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate);
+				mainChartObj.series[0].setData(gDataByFiveMins[0].prices);
+				mainChartObj.series[7].setData(gDataByFiveMins[0].diffs);
+				for (var k = 1; k < 6; k++) {
+					mainChartObj.series[k].setData(gDataByFiveMins[k].prices);
+				}
 				break;
 			case 2:
 				$('.graph-range-slider__current').html("15m");
-				var WEEK = 1000 * 3600 * 24 * 7;
-				mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - 1000 * 3600 * 12);
+				mainChartObj.series[0].setData(gDataByFifteenMins[0].prices);
+				mainChartObj.series[7].setData(gDataByFifteenMins[0].diffs);
+				for (var k = 1; k < 6; k++) {
+					mainChartObj.series[k].setData(gDataByFifteenMins[k].prices);
+				} 
 				break;
 			case 3:
 				$('.graph-range-slider__current').html("1h");
-				var d = new Date(maxDate);
-				d.setMonth(d.getMonth() - 1);
-				mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
+				mainChartObj.series[0].setData(gDataByHour[0].prices);
+				mainChartObj.series[7].setData(gDataByHour[0].diffs);
+				for (var k = 1; k < 6; k++) {
+					mainChartObj.series[k].setData(gDataByHour[k].prices);
+				}
 				break;
 			case 4:
 				$('.graph-range-slider__current').html("6h");
-				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
+				mainChartObj.series[0].setData(gDataBySixHours[0].prices);
+				mainChartObj.series[7].setData(gDataBySixHours[0].diffs);
+				for (var k = 1; k < 6; k++) {
+					mainChartObj.series[k].setData(gDataBySixHours[k].prices);
+				}
 				break;
 			case 5:
 				$('.graph-range-slider__current').html("1d");
-				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
+				mainChartObj.series[0].setData(gDataByDay[0].prices);
+				mainChartObj.series[7].setData(gDataByDay[0].diffs);
+				for (var k = 1; k < 6; k++) {
+					mainChartObj.series[k].setData(gDataByDay[k].prices);
+				}
 				break;
 		}
+
+		mainChartObj.series[0].update({
+			fillColor: {
+				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+				stops: gradientColor
+			},
+			color: mainChartFirstColor,
+			lineWidth: 3,
+			enableMouseTracking: true,
+			trackByArea: true,
+			pointInterval: interval,
+			zIndex: 10
+		});
 		redrawMainChart();
 		updateMainChartPercentChange();
 	});
