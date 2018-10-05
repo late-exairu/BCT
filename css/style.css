@@ -7833,6 +7833,7 @@ h6 {
     font-size: 12px;
     color: var(--clr-text);
     line-height: 1.2;
+    min-width: 46px;
     padding: 0;
     margin: 0; }
   .graph-info__nums {
@@ -8282,14 +8283,14 @@ h6 {
   font-size: 11px;
   background: transparent;
   font-weight: 600;
-  width: 92px;
   display: flex;
   align-items: center;
   margin-right: 10px; }
   .graph-range-slider .range-slider {
     cursor: pointer;
     flex: 1;
-    margin: 0; }
+    margin: 0;
+    width: 73px; }
   .graph-range-slider__current {
     padding: 0 3px;
     color: var(--clr-time-bar); }

@@ -92,7 +92,6 @@
 	font-size: 11px;		
 	background: transparent;
 	font-weight: 600;
-	width: 92px;	
 	display: flex;
 	align-items: center;
 	margin-right: 10px;
@@ -102,6 +101,7 @@
 		cursor: pointer;			
 		flex: 1;
 		margin: 0;
+		width: 73px;	
 	}
 
 	&__current{			

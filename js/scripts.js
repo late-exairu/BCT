@@ -1049,6 +1049,8 @@ $(function () {
 		// 		});
 		// 	}
 		// });
+
+		
 		var inactiveLinecolor = mainGraphHighlighted <= 4 ? mainChartSecondColor : mainChartColorForHidden;
 		mainChartObj.series[mainGraphHighlighted - 1].update({
 			color: inactiveLinecolor,
