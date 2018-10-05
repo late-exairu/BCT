@@ -54,8 +54,8 @@ $(function () {
 			return Math.floor(Math.random() * (high - low + 1)) + low;
 	}
 
-	updateMainChartSplineNew(null, 'USDT', 'BTC');
-
+	// updateMainChartSplineNew(null, 'USDT', 'BTC');
+	updateMainChart(null, 'USDT', 'BTC');
 	/* Cubic slider for Orders */
 	var $cubicSlider = $(".js-cubic-slider");
 
@@ -311,7 +311,8 @@ $(function () {
 		}
 
 		if (param1 != 'noRedraw')
-			updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
+			updateMainChart(exchange, sendCurrency, getCurrency);
+			//updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
 
 		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
 
@@ -1108,6 +1109,28 @@ $(function () {
 					gDataByHour.push(one_graph);
 				}
 				console.log("gDataByHour", gDataByHour);
+
+
+				mainChartObj.series[0].setData(gDataByHour[0].prices);
+
+				for (var k = 1; k < 6; k++) {
+					mainChartObj.series[k + 1].setData(gDataByHour[k].prices);
+				}
+
+				//if ($('body').hasClass('advanced'))
+					mainChartObj.series[1].setData(gDataByHour[0].diffs);
+				mainChartObj.series[0].update({
+					fillColor: {
+						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+						stops: gradientColor
+					},
+					color: mainChartFirstColor,
+					lineWidth: 3,
+					enableMouseTracking: true,
+					trackByArea: true,
+					zIndex: 10
+				});
+				updateMainChartPercentChange();
 			}
 		});
 
@@ -1161,7 +1184,7 @@ $(function () {
 		});
 
 
-		// Get Main Chart graph data with a minute interval
+		// Get Main Chart graph data with a day interval
 		$.ajax({
 			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=${limit}`,
 			success: function (data) {
@@ -1210,7 +1233,7 @@ $(function () {
 		});
 
 	}
-	updateMainChart("Huobi", "BTC", "USDT");
+	//updateMainChart("Huobi", "BTC", "USDT");
 
 
 	function updateMainChartSplineNew(exchange, sendCurrency, getCurrency) {

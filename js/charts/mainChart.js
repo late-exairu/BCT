@@ -8,7 +8,7 @@ var range_intervals = [
 	6 * 3600 * 1000,
 	24 * 3600 * 1000
 ]
-var limit = 200;
+var limit = 160;
 
 var date50 = new Date(Date.now() - limit * range_intervals[3]);
 var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
@@ -340,8 +340,8 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 			//data: [0.00014209999999999998, 0.00014365, 0.0001516, 0.00015874999999999998, 0.00015455, 0.00016525, 0.00016544999999999998, 0.00015945, 0.00016865, 0.0001624, 0.0001596, 0.00015735, 0.0001476, 0.0001602, 0.00015405, 0.00016525, 0.00015434999999999998, 0.00015895, 0.0001537, 0.00015005, 0.00014994999999999999, 0.0001496, 0.0001436, 0.00014104999999999999, 0.00014340000000000002, 0.00014380000000000003, 0.00014350000000000002, 0.00013745, 0.000138, 0.00013875, 0.00013769999999999999, 0.0001594, 0.00015095, 0.0001602, 0.00016635, 0.00016125, 0.0001587, 0.00016375, 0.00015925, 0.00014565, 0.00015465, 0.0001496, 0.0001544, 0.0001663, 0.000154, 0.00015690000000000002, 0.00015015, 0.00014365, 0.00015045, 0.00014780000000000001, 0.0001529],
 			name: 'Series Column',
 			id: 2,
-			enableMouseTracking: false,
-			trackByArea: false,
+			enableMouseTracking: true,
+			trackByArea: true,
 			dataGrouping: {
 				approximation: function (currentGroup) {
 					var sum = 0;
@@ -362,9 +362,34 @@ var mainChartObj = Highcharts.stockChart('mainChart', {
 						avg *= -1;
 					}
 
-					return avg * 50;
+					return avg * 16;
 				},
-				forced: true
+				forced: true,
+				units: [[
+						'millisecond', // unit name
+						[1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples
+					], [
+						'second',
+						[1, 2, 5, 10, 15, 30]
+					], [
+						'minute',
+						[1, 5, 15]
+					], [
+						'hour',
+						[1, 6]
+					], [
+						'day',
+						[1]
+					], [
+						'week',
+						[1]
+					], [
+						'month',
+						[1, 3, 6]
+					], [
+						'year',
+						null
+				]]
 			},
 		},
 		{
