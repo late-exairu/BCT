@@ -9,24 +9,15 @@
 	position: relative;
 	font-size: 12px;
 	padding: 0;
-	margin: 14px -10px 0 0;
+	margin: -4px -10px 0 0;
 	height: 22px;
 	list-style: none;
 
-	&:after{
-		content: '';
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		height: 1px;
-		background: var(--clr-accentD);
-	}
-
 	&__item{
 		position: relative;
-		margin: 0 24px 0 0;
+		margin: 0 8px 0 0;
 		height: 22px;
+		width: 22px;
 		cursor: pointer;
 		line-height: 22px;
 
@@ -37,17 +28,49 @@
 			right: 0;
 			bottom: -1px;
 			height: 3px;
-			background: var(--clr-accentD);
+			background: var(--clr-accent);
 			opacity: 0;
 			transition: all .1s;
 		}
 
+		&:hover{
+			.sprite-icon{
+				fill: var(--clr-accent);
+			}
+		}
+
 		&.current{
 			font-weight: 700;
-			color: var(--clr-accentD);
+			color: var(--clr-accent);
 
 			&:after{
 				opacity: 1;
+			}
+		}
+
+		.sprite-icon{
+			fill: var(--clr-text);
+			width: 12px;
+			height: 10px;
+
+			&.liquidity{
+				width: 12px;
+				height: 8px;
+			}
+
+			&.wallet{
+				width: 12px;
+				height: 8px;
+			}
+
+			&.order-history{
+				width: 10px;
+				height: 10px;
+			}
+
+			&.order-open{
+				width: 11px;
+				height: 8px;
 			}
 		}
 	}
