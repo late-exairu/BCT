@@ -395,6 +395,9 @@ $('#mainChart').mouseleave(function () {
 	);
 	$(this).find('.mainTooltip').hide();
 });
+$('#mainChart .highcharts-series').mouseleave(function () {
+	$('#mainChart').find('.mainTooltip').css("visibility", "visible");
+});
 
 $(window).resize(function () {
 	$('.lineForMainChart').css(
