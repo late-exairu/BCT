@@ -9382,25 +9382,26 @@ body.menubar-in #user-btn:before {
   list-style: none; }
   .portfolio-menu__item {
     position: relative;
-    margin: 0 8px 0 0;
+    margin: 0 8px 0 -4px;
     height: 22px;
     width: 22px;
     cursor: pointer;
-    line-height: 22px; }
-    .portfolio-menu__item:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 3px;
-      background: var(--clr-accent);
-      opacity: 0;
-      transition: all .1s; }
+    line-height: 22px;
+    text-align: center;
+    /*&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -1px;
+			height: 3px;
+			background: var(--clr-accent);
+			opacity: 0;
+			transition: all .1s;
+		}*/ }
     .portfolio-menu__item:hover .sprite-icon {
       fill: var(--clr-accent); }
     .portfolio-menu__item.current {
-      font-weight: 700;
       color: var(--clr-accent); }
       .portfolio-menu__item.current:after {
         opacity: 1; }
@@ -14449,7 +14450,7 @@ body.advanced .fancybox-bg {
 .portfolio-nav {
   position: absolute;
   left: 12px;
-  top: 10px;
+  top: 5px;
   z-index: 1; }
   .portfolio-nav__title {
     color: var(--clr-text);
