@@ -29,10 +29,10 @@
 			min-width: 250px;
 			max-width: 450px;*/
 
-			width: 485px;
-			flex: 0 0 485px;
+			width: 38;
+			flex: 0 0 38%;
 			min-width: 485px;
-			max-width: 485px;
+			max-width: 600px;
 
 			.c-block__col {
 				/*border: 1px solid transparent;*/
@@ -46,10 +46,10 @@
 		}
 
 		&.col-tables{
-			width: 394px;
-			flex: 0 0 394px;
+			width: 32%;
+			flex: 0 0 32%;
 			min-width: 394px;
-			max-width: 394px;
+			max-width: 540px;
 		}
 	}
 
