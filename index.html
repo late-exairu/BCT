@@ -448,11 +448,11 @@
 
 						<div class="c-block__col">
 							<div class="c-block__section chat-head">
-								<button class="chat-head__back">
+								<!-- <button class="chat-head__back">
 									<svg class="sprite-icon" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-back-2"></use>
 									</svg>
-								</button>
+								</button> -->
 
 								<svg class="chat-head__curr clr-coin-btc" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
@@ -1186,6 +1186,8 @@
 												document.querySelector('.message-bar__login').classList.add('hidden');
 											if (document.querySelector('.message-bar__login-demo'))
 												document.querySelector('.message-bar__login-demo').classList.add('hidden');
+											if (document.querySelector('.main-cols__left-top .c-block__col'))
+												document.querySelector('.main-cols__left-top .c-block__col').classList.remove('hidden');
 										}
 									</script>									
 								</div><!-- message-bar__login END -->
