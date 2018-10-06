@@ -1493,7 +1493,7 @@ $(function () {
 
 	var progressbar_current = $(".graph-prices__list .graph-prices__item:first-child .progressbar:eq(0)"),
 		progressbar_current_label = $(".graph-prices__list .graph-prices__item:first-child .progressbar .progress-label:eq(0)"),
-		current_exchange_amount = $(".graph-prices__list .graph-prices__item:first-child .graph-prices__amount:eq(0)");
+		current_exchange_item = $(".graph-prices__list .graph-prices__item:first-child");
 
 	progressbar_current.progressbar({
 		value: false,
@@ -1838,10 +1838,22 @@ $(function () {
 			}, "slow");
 
 			var remain_total_value = secondValue;
-
-			$(".graph-prices__list .graph-prices__item .graph-prices__amount").html('0.00 <span>' + getCurrency + '</span>').removeClass('hidden');
+			
+			$(".graph-prices__list .graph-prices__item .graph-prices__amount").html(`
+				<span class="graph-prices__amount-label hidden">Amount: </span>
+				0.00 
+				<span>` + getCurrency + '</span>');//.removeClass('hidden');
 			$(".graph-prices__list .graph-prices__item .graph-prices__price").addClass('hidden');
-			current_exchange_amount.html(remain_total_value + ' <span>' + getCurrency + '</span>');
+			current_exchange_item.find(".graph-prices__amount").removeClass('hidden');
+			current_exchange_item.find(".graph-prices__price.send-prices__rate").removeClass('hidden');
+			current_exchange_item.find(".graph-prices__price-label").removeClass('hidden');
+			current_exchange_item.find(".graph-prices__amount").html(`
+				<span class="graph-prices__amount-label">
+					Amount: 
+				</span>` + remain_total_value + ' <span>' + getCurrency + '</span>');
+			current_exchange_item.css('height', '66px');
+
+
 			progressbar_current_label.css('visibility', 'hidden');
 			progressbar_current_label.text(remain_total_value + ' ' + getCurrency);
 			progressbar_current.progressbar("value", 0);
@@ -1937,6 +1949,9 @@ $(function () {
 
 									$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
 									$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
+
+									current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
+									current_exchange_item.css('height', '56px');
 
 									if (!isSelectedPrevConversion) {
 										// $('.icon-trader').removeClass('hidden');
@@ -2528,7 +2543,7 @@ $(function () {
 			});
 
 			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
-				$(priceItem).html((sendCurrency == 'USDT' ? rateArray[index].toFixed(2) : rateArray[index].toFixed(5)) + ' <span>' + sendCurrency + '</span>');
+				$(priceItem).html('<span class="graph-prices__price-label hidden">Price: </span>' + (sendCurrency == 'USDT' ? rateArray[index].toFixed(2) : rateArray[index].toFixed(5)) + ' <span>' + sendCurrency + '</span>');
 			});
 		}
 
@@ -2541,7 +2556,7 @@ $(function () {
 		}
 
 		$('.graph-prices__price.get-prices__rate').each(function (index, priceItem) {
-			$(priceItem).html(priceRateBackward + ' <span>' + getCurrency + '</span>');
+			$(priceItem).html('<span class="graph-prices__price-label hidden">Price: </span>' + priceRateBackward + ' <span>' + getCurrency + '</span>');
 		});
 
 		// init sort icon

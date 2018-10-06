@@ -7874,6 +7874,20 @@ h6 {
     .graph-prices-toggle:hover .graph-prices-toggle__icon {
       fill: var(--clr-text); }
 
+.graph-prices.noClose .graph-prices__price, .graph-prices.noClose .graph-prices__amount {
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: left;
+  padding: 0 5px; }
+  .graph-prices.noClose .graph-prices__price span, .graph-prices.noClose .graph-prices__amount span {
+    font-size: 8px;
+    font-weight: 600; }
+
+.graph-prices.noClose .graph-prices__price-label, .graph-prices.noClose .graph-prices__amount-label {
+  font-size: 11px !important;
+  font-weight: 500; }
+
 .graph-prices {
   font-family: "open_sans", sans-serif;
   position: absolute;
