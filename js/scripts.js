@@ -1706,43 +1706,44 @@ $(function () {
 
 	$('[send-fancybox]').click(function (e) {
 		e.stopPropagation();
-		var fancies_length = $('.b-graph .c-block .fancybox-container').length;
-		if (fancies_length < 1) {
-			$.fancybox.open({
-				src: '#send-popup',
-				opts: {
-					afterShow: function (instance, current) {
-						var fancybox_body = $('.fancybox-container')[0];
-						$('.b-graph .c-block')[0].append(fancybox_body);
-						$('.b-graph .c-block .fancybox-container')
-							.css({
-								"width": "100%",
-								"height": "100%",
-								"display": "block",
-								"position": "absolute"
-							})
-							.css("display", "block");
-						if ($(instance.$lastFocus).hasClass('basic-table__btn')) {
-							var pasteCurrency = $(instance.$lastFocus).text().trim();
-							$(current.$content).find('.c-block-head__title').html('Send ' + pasteCurrency);
-							$(current.$content).find('.transaction-form .input-group-text').html(pasteCurrency);
-							setTimeout(function () {
-								$(current.$content).find('.coin-dropdown__list .coin-dropdown__item[data-currency=' + pasteCurrency + ']').triggerHandler('click');
-							}, 100);
-						}
-					},
-					beforeShow: function () {
-						$('.fancybox-container').css("display", "none");
-					},
-					beforeClose: function () {
-						//$('.exch-form').removeClass('progress');
-						// $('.exch-head').toggleClass('open');
-						$('.coin-dropdown').removeClass('open');
-						$('button[transaction-fancybox]').removeClass('active');
-					}
-				}
-			});
-		}
+		$('#panel-funds-wallet button[transaction-fancybox]').eq(0).trigger("click");
+		// var fancies_length = $('.b-graph .c-block .fancybox-container').length;
+		// if (fancies_length < 1) {
+		// 	$.fancybox.open({
+		// 		src: '#transaction-popup',
+		// 		opts: {
+		// 			afterShow: function (instance, current) {
+		// 				var fancybox_body = $('.fancybox-container')[0];
+		// 				$('.b-graph .c-block')[0].append(fancybox_body);
+		// 				$('.b-graph .c-block .fancybox-container')
+		// 					.css({
+		// 						"width": "100%",
+		// 						"height": "100%",
+		// 						"display": "block",
+		// 						"position": "absolute"
+		// 					})
+		// 					.css("display", "block");
+		// 				if ($(instance.$lastFocus).hasClass('basic-table__btn')) {
+		// 					var pasteCurrency = $(instance.$lastFocus).text().trim();
+		// 					$(current.$content).find('.c-block-head__title').html('Send ' + pasteCurrency);
+		// 					$(current.$content).find('.transaction-form .input-group-text').html(pasteCurrency);
+		// 					setTimeout(function () {
+		// 						$(current.$content).find('.coin-dropdown__list .coin-dropdown__item[data-currency=' + pasteCurrency + ']').triggerHandler('click');
+		// 					}, 100);
+		// 				}
+		// 			},
+		// 			beforeShow: function () {
+		// 				$('.fancybox-container').css("display", "none");
+		// 			},
+		// 			beforeClose: function () {
+		// 				//$('.exch-form').removeClass('progress');
+		// 				// $('.exch-head').toggleClass('open');
+		// 				$('.coin-dropdown').removeClass('open');
+		// 				$('button[transaction-fancybox]').removeClass('active');
+		// 			}
+		// 		}
+		// 	});
+		// }
 	});
 
 	/*---------------------------------------------------*/
