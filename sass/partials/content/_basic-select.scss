@@ -23,7 +23,7 @@
 		display: flex;
 		padding: 4px 20px 4px 10px;
 		border-radius: 4px;
-		border: 1px solid var(--clr-separatorD);
+		border: 1px solid var(--clr-textL);
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
@@ -48,6 +48,7 @@
 		.basic-select__select{
 			/*border-color: var(--clr-textL);*/
 			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+			color: var(--clr-accent);
 		}
 	}
 

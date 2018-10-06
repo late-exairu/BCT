@@ -69,6 +69,7 @@
 
 			.basic-select__select{
 				color: var(--clr-icon);
+				border-color: var(--clr-icon);
 			}
 
 			.select-selected:after {
@@ -155,7 +156,7 @@
 		background: transparent;
 		transition: all 0.1s;
 		background: var(--clr-block);
-		background: transparent;
+		/*background: transparent;*/
 		color: var(--clr-textL);
 
 		&.accented{
@@ -175,14 +176,20 @@
 			}
 		}
 
-		/*&:hover{
-			border-color: var(--clr-textL);
+		&:hover{
+			color: var(--clr-accent);
 			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
-		}*/
+
+			.sprite-icon{
+				fill: var(--clr-accent);
+			}
+		}
+
 		&:active,
 		&.active {
 			color: var(--clr-accent);
 			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+			background: var(--clr-accentL);
 
 			.sprite-icon{
 				fill: var(--clr-accent);
