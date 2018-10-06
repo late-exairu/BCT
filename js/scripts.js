@@ -1115,6 +1115,7 @@ $(function () {
 				console.log("gDataByHour", gDataByHour);
 
 
+				console.log("mainChartObj", mainChartObj);
 				mainChartObj.series[0].setData(gDataByHour[0].prices);
 
 				for (var k = 1; k < 6; k++) {
@@ -2515,11 +2516,18 @@ $(function () {
 		var index = parseInt(this.value);
 		var interval = range_intervals[index];
 
-		hightChartUpdateOptions.plotOptions.series.pointStart = maxDate - interval * limit;
-		hightChartUpdateOptions.plotOptions.series.pointInterval = interval;
-
-		mainChartObj.update(hightChartUpdateOptions);
-
+		// mainChartObj.options.plotOptions.series.pointStart = maxDate - interval * limit;
+		// hightChartUpdateOptions.plotOptions.series.pointStart = maxDate - interval * limit;
+		// hightChartUpdateOptions.plotOptions.series.pointInterval = interval;
+		// console.log(new Date(maxDate - interval * limit).toDateString());
+		// console.log('hightChartUpdateOptions', hightChartUpdateOptions);
+		// mainChartObj.update(hightChartUpdateOptions);
+		mainChartObj.series.forEach(series => {
+			series.update({
+				pointStart: maxDate - interval * limit,
+				pointInterval: interval
+			})
+		})
 		switch (index) {
 			case 0:
 				$('.graph-range-slider__current').html("1m");
@@ -2585,7 +2593,7 @@ $(function () {
 		});
 		redrawMainChart();
 		updateMainChartPercentChange();
-		updateWalletData();
+		//updateWalletData();
 	});
 
 	/* .coin-dropdown handler */
