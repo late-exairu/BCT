@@ -2538,7 +2538,6 @@ $(function () {
 				}
 				break;
 			case 4:
-<<<<<<< HEAD
 				$('.graph-range-slider__current').html("6h");
 				mainChartObj.series[0].setData(gDataBySixHours[0].prices);
 				mainChartObj.series[7].setData(gDataBySixHours[0].diffs);
@@ -2553,10 +2552,6 @@ $(function () {
 				for (var k = 1; k < 6; k++) {
 					mainChartObj.series[k].setData(gDataByDay[k].prices);
 				}
-=======
-				$('.graph-range-slider__current').html("All");
-				mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
->>>>>>> 679562aae5d6f4a421277590e1b2fdd60001abe2
 				break;
 		}
 
