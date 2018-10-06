@@ -1905,7 +1905,7 @@ $(function () {
 						$('.exch-form__submit').attr("disabled", true);
 						firstClickAfterExchangeDone = true;
 
-						$('.exch-form__send .exch-form__label').text('Exchanging');
+						$('.exch-form__send .exch-form__label').text('Exchanged');
 						//$('.exch-form__get .exch-form__label').text('You got');
 
 						$(window).click(function (e) {
