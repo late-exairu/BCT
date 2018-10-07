@@ -930,6 +930,7 @@ $(function () {
 				var columnArr = [];
 				var fakeGraphs = [[], [], [], [], [], []];
 				var fakeGraphdiffs = [[], [], [], [], [], []];
+				gDataByMin = [];
 
 				var prev_value = [null, null, null, null, null, null];
 				data.Data.map(s => {
@@ -979,6 +980,7 @@ $(function () {
 				var columnArr = [];
 				var fakeGraphs = [[], [], [], [], [], []];
 				var fakeGraphdiffs = [[], [], [], [], [], []];
+				gDataByFiveMins = [];
 
 				var prev_value = [null, null, null, null, null, null];
 				data.Data.map(s => {
@@ -1028,6 +1030,7 @@ $(function () {
 				var columnArr = [];
 				var fakeGraphs = [[], [], [], [], [], []];
 				var fakeGraphdiffs = [[], [], [], [], [], []];
+				gDataByFifteenMins = [];
 
 				var prev_value = [null, null, null, null, null, null];
 				data.Data.map(s => {
@@ -1076,6 +1079,7 @@ $(function () {
 				var columnArr = [];
 				var fakeGraphs = [[], [], [], [], [], []];
 				var fakeGraphdiffs = [[], [], [], [], [], []];
+				gDataByHour = [];
 
 				var prev_value = [null, null, null, null, null, null];
 				data.Data.map(s => {
@@ -1148,6 +1152,7 @@ $(function () {
 				var columnArr = [];
 				var fakeGraphs = [[], [], [], [], [], []];
 				var fakeGraphdiffs = [[], [], [], [], [], []];
+				gDataBySixHours = []
 
 				var prev_value = [null, null, null, null, null, null];
 				data.Data.map(s => {
@@ -1197,6 +1202,7 @@ $(function () {
 				var columnArr = [];
 				var fakeGraphs = [[], [], [], [], [], []];
 				var fakeGraphdiffs = [[], [], [], [], [], []];
+				gDataByDay = [];
 
 				var prev_value = [null, null, null, null, null, null];
 				data.Data.map(s => {
