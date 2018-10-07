@@ -391,8 +391,8 @@ var hightChartUpdateOptions = {
 						};
 						avg *= -1;
 					}
-					var correctIndexes = [50,15,15,4,1,0.5];
-					return avg * 20 * correctIndexes[$('.graph-range-slider__control').val()]
+					var correctIndexes = [30,10,15,4,1,0.4];
+					return avg * 15 * correctIndexes[$('.graph-range-slider__control').val()];
 				},
 				forced: true,
 				units: [
