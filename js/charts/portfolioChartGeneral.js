@@ -211,12 +211,12 @@ var portfolioChartOptions = {
     plotOptions: {
         areaspline: {
             lineWidth: 3,
-            color: '#00AAF8',
+            color: '#01b067',
             fillColor: {
                 linearGradient: [0, 0, 0, $('#portfolioChartGeneral').height() + 50],
                 stops: [
-                    [0, Highcharts.Color('#00AAF8').setOpacity(0.2).get('rgba')],
-                    [1, Highcharts.Color('#00AAF8').setOpacity(0).get('rgba')]
+                    [0, Highcharts.Color('#01b067').setOpacity(0.2).get('rgba')],
+                    [1, Highcharts.Color('#01b067').setOpacity(0).get('rgba')]
                 ]
             },
             marker: {

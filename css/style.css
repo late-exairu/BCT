@@ -14109,7 +14109,7 @@ button:-moz-focusring {
       margin-top: 0px;
       margin-bottom: 0; }
     #portfolioChartText div.portfolio-graph-info:last-child {
-      color: #00AAF8;
+      color: var(--clr-accent);
       padding: 0;
       vertical-align: bottom; }
       #portfolioChartText div.portfolio-graph-info:last-child span {
