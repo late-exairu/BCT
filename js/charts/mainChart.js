@@ -8,7 +8,7 @@ var range_intervals = [
 	6 * 3600 * 1000,
 	24 * 3600 * 1000
 ]
-var limit = 115;
+var limit = 140;
 
 var date50 = new Date(Date.now() - limit * range_intervals[3]);
 var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());

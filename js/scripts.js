@@ -1119,14 +1119,13 @@ $(function () {
 				console.log("gDataByHour", gDataByHour);
 
 
-				console.log("mainChartObj", mainChartObj);
 				mainChartObj.series[0].setData(gDataByHour[0].prices);
 
 				for (var k = 1; k < 6; k++) {
 					mainChartObj.series[k].setData(gDataByHour[k].prices);
 				}
 
-				//if ($('body').hasClass('advanced'))
+				if ($('body').hasClass('advanced'))
 					mainChartObj.series[7].setData(gDataByHour[0].diffs);
 				mainChartObj.series[0].update({
 					fillColor: {
