@@ -439,7 +439,7 @@
 		}
 
 		&:last-child {
-			color: #00AAF8;
+			color: var(--clr-accent);
 			padding: 0;
 			vertical-align: bottom;
 
@@ -586,8 +586,8 @@
 				width: 60px;
 
 				svg {
-					width: 19px;
-					height: 17px;
+					width: 18px;
+					height: 18px;
 					top: -6px;
 				}
 	
