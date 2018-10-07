@@ -2537,7 +2537,8 @@ $(function () {
 			case 0:
 				$('.graph-range-slider__current').html("1m");
 				mainChartObj.series[0].setData(gDataByMin[0].prices);
-				mainChartObj.series[7].setData(gDataByMin[0].diffs);
+				if ($('body').hasClass('advanced'))
+					mainChartObj.series[7].setData(gDataByMin[0].diffs);
 				for (var k = 1; k < 6; k++) {
 					mainChartObj.series[k].setData(gDataByMin[k].prices);
 				}
@@ -2545,7 +2546,8 @@ $(function () {
 			case 1:
 				$('.graph-range-slider__current').html("5m");
 				mainChartObj.series[0].setData(gDataByFiveMins[0].prices);
-				mainChartObj.series[7].setData(gDataByFiveMins[0].diffs);
+				if ($('body').hasClass('advanced'))
+					mainChartObj.series[7].setData(gDataByFiveMins[0].diffs);
 				for (var k = 1; k < 6; k++) {
 					mainChartObj.series[k].setData(gDataByFiveMins[k].prices);
 				}
@@ -2553,7 +2555,8 @@ $(function () {
 			case 2:
 				$('.graph-range-slider__current').html("15m");
 				mainChartObj.series[0].setData(gDataByFifteenMins[0].prices);
-				mainChartObj.series[7].setData(gDataByFifteenMins[0].diffs);
+				if ($('body').hasClass('advanced'))
+					mainChartObj.series[7].setData(gDataByFifteenMins[0].diffs);
 				for (var k = 1; k < 6; k++) {
 					mainChartObj.series[k].setData(gDataByFifteenMins[k].prices);
 				} 
@@ -2561,7 +2564,8 @@ $(function () {
 			case 3:
 				$('.graph-range-slider__current').html("1h");
 				mainChartObj.series[0].setData(gDataByHour[0].prices);
-				mainChartObj.series[7].setData(gDataByHour[0].diffs);
+				if ($('body').hasClass('advanced'))
+					mainChartObj.series[7].setData(gDataByHour[0].diffs);
 				for (var k = 1; k < 6; k++) {
 					mainChartObj.series[k].setData(gDataByHour[k].prices);
 				}
@@ -2569,7 +2573,8 @@ $(function () {
 			case 4:
 				$('.graph-range-slider__current').html("6h");
 				mainChartObj.series[0].setData(gDataBySixHours[0].prices);
-				mainChartObj.series[7].setData(gDataBySixHours[0].diffs);
+				if ($('body').hasClass('advanced'))
+					mainChartObj.series[7].setData(gDataBySixHours[0].diffs);
 				for (var k = 1; k < 6; k++) {
 					mainChartObj.series[k].setData(gDataBySixHours[k].prices);
 				}
@@ -2577,7 +2582,8 @@ $(function () {
 			case 5:
 				$('.graph-range-slider__current').html("1d");
 				mainChartObj.series[0].setData(gDataByDay[0].prices);
-				mainChartObj.series[7].setData(gDataByDay[0].diffs);
+				if ($('body').hasClass('advanced'))
+					mainChartObj.series[7].setData(gDataByDay[0].diffs);
 				for (var k = 1; k < 6; k++) {
 					mainChartObj.series[k].setData(gDataByDay[k].prices);
 				}
