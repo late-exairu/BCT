@@ -10413,7 +10413,7 @@ body.menubar-in #user-btn:before {
     width: 18px;
     height: 20px; }
     .view-mode .sprite-icon .st0 {
-      fill: var(--clr-block); }
+      fill: white; }
     .view-mode .sprite-icon .st1 {
       fill: #3AB44A; }
     .view-mode .sprite-icon .st2 {
@@ -10429,6 +10429,21 @@ body.menubar-in #user-btn:before {
     .view-mode .sprite-icon {
       width: 26px;
       height: 28px; } }
+
+.advanced .view-mode__link {
+  background: var(--clr-backLL); }
+  .advanced .view-mode__link:hover {
+    background: var(--clr-block); }
+    .advanced .view-mode__link:hover .sprite-icon .st0 {
+      fill: var(--clr-important); }
+    .advanced .view-mode__link:hover .sprite-icon .st1 {
+      fill: #3AB44A; }
+    .advanced .view-mode__link:hover .sprite-icon .st2 {
+      fill: #EB2429; }
+    .advanced .view-mode__link:hover .sprite-icon .st3 {
+      fill: #F4EB32; }
+    .advanced .view-mode__link:hover .sprite-icon .st4 {
+      fill: #26A8E0; }
 
 /* Ion.RangeSlider
 // css version 2.0.3

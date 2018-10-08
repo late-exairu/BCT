@@ -36,7 +36,7 @@
 		width: 18px;
 		height: 20px;
 
-		.st0{ fill: var(--clr-block); }
+		.st0{ fill: white; }
 		.st1{ fill: #3AB44A; }
 		.st2{ fill: #EB2429; }
 		.st3{ fill: #F4EB32; }
@@ -53,6 +53,23 @@
 		.sprite-icon{
 			width: 26px;
 			height: 28px;
+		}
+	}
+}
+
+.advanced .view-mode {
+	&__link{
+		background: var(--clr-backLL);
+		&:hover {
+			background: var(--clr-block);
+
+			.sprite-icon{
+				.st0{ fill: var(--clr-important); }
+				.st1{ fill: #3AB44A; }
+				.st2{ fill: #EB2429; }
+				.st3{ fill: #F4EB32; }
+				.st4{ fill: #26A8E0; }
+			}
 		}
 	}
 }
