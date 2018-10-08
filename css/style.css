@@ -14228,11 +14228,16 @@ button:-moz-focusring {
     @media only screen and (min-width: 1920px) {
       #panel-dashboard-liquidity .liquidityText .centerPart {
         height: 30px;
-        width: 60px; }
-        #panel-dashboard-liquidity .liquidityText .centerPart svg {
-          width: 18px;
-          height: 18px;
-          top: -6px; }
+        width: 61px; }
+        #panel-dashboard-liquidity .liquidityText .centerPart .separator {
+          height: 29px; }
+        #panel-dashboard-liquidity .liquidityText .centerPart div.zoom-button {
+          width: 30px;
+          height: 30px; }
+          #panel-dashboard-liquidity .liquidityText .centerPart div.zoom-button svg {
+            width: 16px;
+            height: 16px;
+            top: 6px; }
         #panel-dashboard-liquidity .liquidityText .centerPart .separator {
           height: 29px; } }
 

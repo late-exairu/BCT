@@ -602,17 +602,26 @@
 			/* Large Devices, Wide Screens */
 			@media only screen and (min-width : 1920px) {
 				height: 30px;
-				width: 60px;
-
-				svg {
-					width: 18px;
-					height: 18px;
-					top: -6px;
-				}
+				width: 61px;
 	
 				.separator {
 					height: 29px;
 				}
+
+
+				div.zoom-button {
+					width: 30px;
+					height: 30px;
+					svg {
+						width: 16px;
+						height: 16px;
+						top: 6px;
+					}
+				}
+				.separator {
+					height: 29px;
+				}
+	
 			}
 		}
 	}
