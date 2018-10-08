@@ -13999,10 +13999,32 @@ button:-moz-focusring {
     transform: translate(-50%, -50%); }
   .advanced .accounts-diagram-wrap:active:after {
     background: var(--clr-accent); }
+  .advanced .accounts-diagram-wrap #circleChartText {
+    width: 118px; }
+    .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
+      width: 30px;
+      height: 25px; }
+    .advanced .accounts-diagram-wrap #circleChartText p.value {
+      font-size: 9px; }
+    .advanced .accounts-diagram-wrap #circleChartText p.title {
+      font-size: 10px; }
   @media only screen and (min-height: 900px) {
     .advanced .accounts-diagram-wrap:after {
       width: 190px;
-      height: 190px; } }
+      height: 190px; }
+    .advanced .accounts-diagram-wrap #circleChartText {
+      width: 170px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.value {
+        font-size: 17px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span {
+          font-size: 17px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
+          font-size: 28px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.title {
+        font-size: 14px; }
+      .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
+        width: 40px;
+        height: 35px; } }
 
 .accounts-diagram {
   position: relative;

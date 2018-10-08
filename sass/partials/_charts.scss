@@ -64,11 +64,49 @@
 		background: var(--clr-accent);
 	}
 
+	#circleChartText {
+		width: 118px;
+		.sprite-icon{
+			width: 30px;
+			height: 25px;
+		}
+		p.value{
+			font-size: 9px;
+		}
+		p.title{
+			font-size: 10px;
+		}
+	}
+
 	@media only screen and (min-height: 900px) {
 		&:after {
 			width: 190px;
 			height: 190px;
 		}
+
+		#circleChartText {
+			width: 170px;
+			p.value {
+				font-size: 17px;
+				span {
+					font-size: 17px;
+				}
+
+				span.bigger {
+					font-size: 28px;
+				}
+			}
+
+			p.title {
+				font-size: 14px;
+			}
+
+			.sprite-icon {
+				width: 40px;
+				height: 35px;
+			}
+		}
+
 	}
 }
 
