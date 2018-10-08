@@ -14188,29 +14188,43 @@ button:-moz-focusring {
     top: 35%;
     left: 50%;
     background: var(--clr-back-new);
-    border: 1px solid var(--clr-separator);
     transform: translateX(-50%);
     height: 23px;
     width: 47px;
     border-radius: 3px;
+    display: flex;
     /* Large Devices, Wide Screens */ }
     #panel-dashboard-liquidity .liquidityText .centerPart p {
       margin-bottom: 0px;
       font-size: 15px;
       font-weight: bold;
       height: auto; }
-    #panel-dashboard-liquidity .liquidityText .centerPart svg {
-      width: 14px;
-      height: 14px;
-      cursor: pointer;
-      fill: var(--clr-textD);
-      position: relative;
-      top: -4px; }
+    #panel-dashboard-liquidity .liquidityText .centerPart div.zoom-button {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      border: 1px solid var(--clr-separator); }
+      #panel-dashboard-liquidity .liquidityText .centerPart div.zoom-button svg {
+        width: 14px;
+        height: 14px;
+        cursor: pointer;
+        fill: var(--clr-textD);
+        position: relative;
+        top: 1px; }
+      #panel-dashboard-liquidity .liquidityText .centerPart div.zoom-button:hover {
+        border-color: var(--clr-icon);
+        background-color: var(--clr-backLL); }
+      #panel-dashboard-liquidity .liquidityText .centerPart div.zoom-button:first-child {
+        border-right-width: 0px; }
+      #panel-dashboard-liquidity .liquidityText .centerPart div.zoom-button:last-child {
+        border-left-width: 0px; }
     #panel-dashboard-liquidity .liquidityText .centerPart .separator {
       width: 1px;
       height: 22px;
       background: var(--clr-separator);
       display: inline-block; }
+    #panel-dashboard-liquidity .liquidityText .centerPart:hover .separator {
+      background: var(--clr-icon); }
     @media only screen and (min-width: 1920px) {
       #panel-dashboard-liquidity .liquidityText .centerPart {
         height: 30px;

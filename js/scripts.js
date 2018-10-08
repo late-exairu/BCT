@@ -542,7 +542,7 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* functions for zoomin, zoomout of liquid graph */
 	/*---------------------------------------------------*/
-	$('.js-tabs-panel .liquidityText .centerPart svg').click(function () {
+	$('.js-tabs-panel .liquidityText .centerPart div.zoom-button').click(function () {
 		var current_Xmin = liquidityChartObj.xAxis[0].min;
 		var current_Xmax = liquidityChartObj.xAxis[0].max;
 		var current_Xrange = current_Xmax - current_Xmin;
