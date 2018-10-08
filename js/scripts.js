@@ -2317,18 +2317,18 @@ $(function () {
 			mainChartObj.series[k].setData(gData[k].prices);
 		}
 
-		mainChartObj.series[0].update({
-			fillColor: {
-				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-				stops: gradientColor
-			},
-			color: mainChartFirstColor,
-			lineWidth: 3,
-			enableMouseTracking: true,
-			trackByArea: true,
-			pointInterval: interval,
-			zIndex: 10
-		});
+		// mainChartObj.series[0].update({
+		// 	fillColor: {
+		// 		linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+		// 		stops: gradientColor
+		// 	},
+		// 	color: mainChartFirstColor,
+		// 	lineWidth: 3,
+		// 	enableMouseTracking: true,
+		// 	trackByArea: true,
+		// 	pointInterval: interval,
+		// 	zIndex: 10
+		// });
 		updateMainChartPercentChange();
 		//updateWalletData();
 	});
