@@ -914,14 +914,113 @@ $(function () {
 		updateMainChartSpline(currentDataId);
 	});
 
-	var gDataByMin = new Array(),
-		gDataByFiveMins = new Array(),
-		gDataByFifteenMins = new Array(),
-		gDataByHour = new Array(),
-		gDataBySixHours = new Array(),
-		gDataByDay = new Array();
-
 	function updateMainChart(exchange, sendCurrency, getCurrency) {
+
+		for (var i = 0; i < range_interval_options.length; i++) {
+			var url = `https://min-api.cryptocompare.com/data/${range_interval_options[i].endpoint}?fsym=${sendCurrency}&tsym=${getCurrency}&aggregate=${range_interval_options[i].aggregate}&limit=${limit}`;
+
+			// Get Main Chart graph data with a hour interval
+			$.ajax({
+				url: url,
+				success: function (data) {
+					var grapArr = [];
+					var columnArr = [];
+					var fakeGraphs = [[], [], [], [], [], []];
+					var fakeGraphdiffs = [[], [], [], [], [], []];
+
+					var gData; 
+					var isDrawMainChart = false;
+					if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[0]) {
+						gDataByMin = [];
+						gData = gDataByMin;
+					}
+					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[1]) {
+						gDataByFiveMins = [];
+						gData = gDataByFiveMins;
+					}
+					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[2]) {
+						gDataByFifteenMins = [];
+						gData = gDataByFifteenMins;
+					}
+					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[3]) {
+						gDataByHour = [];
+						gData = gDataByHour;
+						isDrawMainChart = true; 
+					}
+					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[4]) {
+						gDataBySixHours = [];
+						gData = gDataBySixHours;
+					}
+					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[5]) {
+						gDataByDay = [];
+						gData = gDataByDay;
+					}
+
+					var prev_value = [null, null, null, null, null, null];
+					data.Data.map(s => {
+						var value = (s.open + s.close) / 2;
+						var difference = s.close - s.open;
+						grapArr.push(value);
+						columnArr.push(difference);
+
+						for (var k = 0; k < 6; k++) {
+							if (prev_value[k] == null) prev_value[k] = value * (Math.random() * (0.92 - 1.08) + 1.08);
+							var valueForFake = value * (Math.random() * (0.92 - 1.08) + 1.08);
+							fakeGraphs[k].push(valueForFake);
+							fakeGraphdiffs[k].push(valueForFake - prev_value[k]);
+							prev_value[k] = valueForFake;
+						}
+					});
+
+					if (!grapArr.length) {
+						for (let i = 0; i < 366; i++) {
+							grapArr.push(1);
+						};
+					};
+
+					var one_graph = {
+						prices: grapArr,
+						diffs: columnArr
+					}
+
+					gData.push(one_graph);
+					for (var k = 0; k < 6; k++) {
+						one_graph = {
+							prices: fakeGraphs[k],
+							diffs: fakeGraphdiffs[k]
+						}
+						gData.push(one_graph);
+					}
+					if (isDrawMainChart) { 
+						console.log("default data-to-graph", gData);
+						mainChartObj.series[0].setData(gData[0].prices);
+	
+						for (var k = 1; k < 6; k++) {
+							mainChartObj.series[k].setData(gData[k].prices);
+						}
+	
+						if ($('body').hasClass('advanced'))
+							mainChartObj.series[7].setData(gData[0].diffs);
+						mainChartObj.series[0].update({
+							fillColor: {
+								linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+								stops: gradientColor
+							},
+							color: mainChartFirstColor,
+							lineWidth: 3,
+							enableMouseTracking: true,
+							trackByArea: true,
+							zIndex: 10
+						});
+						updateMainChartPercentChange();
+					}
+				}
+			});
+		}
+
+
+
+		/*
 		// Get Main Chart graph data with a minute interval
 		$.ajax({
 			url: `https://min-api.cryptocompare.com/data/histominute?fsym=${sendCurrency}&tsym=${getCurrency}&limit=` + limit,
@@ -1241,6 +1340,7 @@ $(function () {
 				console.log("gDataByDay", gDataByDay);
 			}
 		});
+		*/
 
 	}
 	//updateMainChart("Huobi", "BTC", "USDT");
@@ -2535,6 +2635,7 @@ $(function () {
 		})
 		switch (index) {
 			case 0:
+				console.log('gDataByMin', gDataByMin);
 				$('.graph-range-slider__current').html("1m");
 				mainChartObj.series[0].setData(gDataByMin[0].prices);
 				if ($('body').hasClass('advanced'))
@@ -2544,6 +2645,7 @@ $(function () {
 				}
 				break;
 			case 1:
+				console.log('gDataByFiveMins', gDataByFiveMins);
 				$('.graph-range-slider__current').html("5m");
 				mainChartObj.series[0].setData(gDataByFiveMins[0].prices);
 				if ($('body').hasClass('advanced'))
@@ -2553,6 +2655,7 @@ $(function () {
 				}
 				break;
 			case 2:
+				console.log('gDataByFifteenMins', gDataByFifteenMins);
 				$('.graph-range-slider__current').html("15m");
 				mainChartObj.series[0].setData(gDataByFifteenMins[0].prices);
 				if ($('body').hasClass('advanced'))
@@ -2562,6 +2665,7 @@ $(function () {
 				} 
 				break;
 			case 3:
+				console.log('gDataByHour', gDataByHour);
 				$('.graph-range-slider__current').html("1h");
 				mainChartObj.series[0].setData(gDataByHour[0].prices);
 				if ($('body').hasClass('advanced'))
@@ -2571,6 +2675,7 @@ $(function () {
 				}
 				break;
 			case 4:
+				console.log('gDataBySixHours', gDataBySixHours);
 				$('.graph-range-slider__current').html("6h");
 				mainChartObj.series[0].setData(gDataBySixHours[0].prices);
 				if ($('body').hasClass('advanced'))
@@ -2580,6 +2685,7 @@ $(function () {
 				}
 				break;
 			case 5:
+				console.log('gDataByDay', gDataByDay);
 				$('.graph-range-slider__current').html("1d");
 				mainChartObj.series[0].setData(gDataByDay[0].prices);
 				if ($('body').hasClass('advanced'))

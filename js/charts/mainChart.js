@@ -13,6 +13,49 @@ var limit = 140;
 var date50 = new Date(Date.now() - limit * range_intervals[3]);
 var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 
+// variables for range slider
+var gDataByMin = new Array(),
+	gDataByFiveMins = new Array(),
+	gDataByFifteenMins = new Array(),
+	gDataByHour = new Array(),
+	gDataBySixHours = new Array(),
+	gDataByDay = new Array();
+
+var range_interval_options = [
+	{
+		label: '1m',
+		endpoint: 'histominute',
+		aggregate: 1
+	},
+	{
+		label: '5m',
+		endpoint: 'histominute',
+		aggregate: 5
+	},
+	{
+		label: '15m',
+		endpoint: 'histominute',
+		aggregate: 15
+	},
+	{
+		label: '1h',
+		endpoint: 'histohour',
+		aggregate: 1
+	},
+	{
+		label: '6h',
+		endpoint: 'histohour',
+		aggregate: 6
+	},
+	{
+		label: '1d',
+		endpoint: 'histoday',
+		aggregate: 1
+	}
+]
+// ======================
+
+
 function redrawMainChart() {
 	/* 	 	 var chartParent = $('.b-graph__controls');
 			 $(chartParent).css('width', '100%');
