@@ -616,6 +616,7 @@ a {
   padding: 0 0 0 var(--left-bar-width);
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   /*dev size*/
   /*max-width: 1280px;
 	max-height: 720px;*/ }
@@ -14490,7 +14491,7 @@ button:-moz-focusring {
   display: none;
   width: 100%;
   height: 100%;
-  overflow-y: hidden; }
+  overflow: hidden; }
   .js-tabs-panel.active {
     display: flex; }
 
