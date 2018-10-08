@@ -14270,8 +14270,9 @@ button:-moz-focusring {
   #portfolioChartText div.portfolio-graph-info {
     display: inline-block;
     color: var(--clr-textD);
-    padding: 0 10px 0 15px;
-    text-align: center; }
+    padding: 0 12px;
+    text-align: center;
+    border-right: 1px solid; }
     #portfolioChartText div.portfolio-graph-info span {
       font-size: 16px;
       vertical-align: top;
@@ -14285,12 +14286,7 @@ button:-moz-focusring {
       margin-top: 0px;
       margin-bottom: 0; }
     #portfolioChartText div.portfolio-graph-info:last-child {
-      color: var(--clr-accent);
-      padding: 0;
-      vertical-align: bottom; }
-      #portfolioChartText div.portfolio-graph-info:last-child span {
-        font-size: 13px;
-        line-height: inherit; }
+      border-right: 0; }
   #portfolioChartText .portfolio-graph-range {
     color: var(--clr-textD);
     font-size: 11px;

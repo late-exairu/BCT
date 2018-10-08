@@ -455,8 +455,9 @@
 		display: inline-block;
 		// color: #00AAF8; 
 		color: var(--clr-textD);
-		padding: 0 10px 0 15px;
+		padding: 0 12px;
 		text-align: center;
+		border-right: 1px solid;
 
 		span {
 			font-size: 16px;
@@ -476,17 +477,18 @@
 			margin-bottom: 0;
 		}
 
-		&:last-child {
-			color: var(--clr-accent);
-			padding: 0;
-			vertical-align: bottom;
+		 &:last-child {
+			 border-right: 0;
+		// 	color: var(--clr-accent);
+		// 	padding: 0;
+		// 	vertical-align: bottom;
 
-			span {
-				font-size: 13px;
-				line-height: inherit;
+		// 	span {
+		// 		font-size: 13px;
+		// 		line-height: inherit;
 
-			}
-		}
+		// 	}
+		 }
 	}
 
 	.portfolio-graph-range {
