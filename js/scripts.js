@@ -3,8 +3,6 @@ $(function () {
 	const minDate = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 	const maxDate = Date.now();
 
-
-
 	function setOwnName() {
 		if (localStorage.getItem('telegramAuth') == 'true' && localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 			if (document.querySelector('.message-bar__login'))
@@ -1379,15 +1377,15 @@ $(function () {
 
 	$('#panel-funds-wallet').on('click', 'button[transaction-fancybox]', function (e) {
 		e.preventDefault();
-		var fancies_length = $('.b-graph .c-block .fancybox-container').length;
+		var fancies_length = $('main-cols__right .fancybox-container').length;
 		if (fancies_length < 1) {
 			$.fancybox.open({
 				src: '#transaction-popup',
 				opts: {
 					afterShow: function (instance, current) {
 						var fancybox_body = $('.fancybox-container')[0];
-						$('.b-graph .c-block')[0].append(fancybox_body);
-						$('.b-graph .c-block .fancybox-container')
+						$('.main-cols__right')[0].append(fancybox_body);
+						$('.main-cols__right .fancybox-container')
 							.css({
 								"width": "100%",
 								"height": "100%",
@@ -1395,6 +1393,16 @@ $(function () {
 								"position": "absolute"
 							})
 							.css("display", "block");
+						
+						$('#transaction-popup .transaction-form__button').css('pointer-events', 'none');
+						$('#transaction-popup .transaction-form__input').keyup(function () {
+							if($(this).val() == '') {
+								$(this).closest('.transaction-form__line').find('.transaction-form__button') .css({'background-color': 'var(--clr-important)', 'pointer-events': 'none'});
+							}
+							else {
+								$(this).closest('.transaction-form__line').find('.transaction-form__button') .css({'background-color': 'var(--clr-accent)', 'pointer-events': 'all'});
+							}
+						});
 					},
 					beforeShow: function () {
 						$('.fancybox-container').css("display", "none");
@@ -1407,6 +1415,10 @@ $(function () {
 				}
 			});
 		}
+		
+
+
+		/***** Old transaction pop-up function:
 		
 		$('#transaction-popup > .c-block > .d-flex-col ').css('display', 'none');
 		var currencyName = $(this).closest('.basic-table__row').attr('data-currency');
@@ -1472,13 +1484,12 @@ $(function () {
 		//$('#transaction-popup .transaction-form__label').text('To ' + currencyFullName + ' Address:');
 
 		$('#transaction-popup > .c-block > .d-flex-col ').eq(0).css('display', 'flex');
+		*/
+
 		$('button[transaction-fancybox]').removeClass('active');
 		$(this).addClass('active');
 		$('.transaction-form__to-clipdoard').removeClass('copied');
 	});
-
-
-	$('button[transaction-fancybox]').click(function () {});
 
 	$('#transaction-popup .popup-tabs__item').click(function () {
 		$('#transaction-popup .popup-tabs__item').removeClass('active');
@@ -1998,9 +2009,44 @@ $(function () {
 	$(window).resize(calculateHeightOfFirstTable);
 
 	/*---------------------------------------------------*/
+	/* conform fancybox */
+	/*---------------------------------------------------*/
+	$('[conform-fancybox]').click(function (e) {
+		$.fancybox.close();
+		e.preventDefault();
+		// Open this fancybox force
+		$.fancybox.open({
+			src: '#conform-popup',
+			opts: {
+				afterShow: function (instance, current) {
+					var fancybox_body = $('.fancybox-container')[0];
+					$('.main-cols__right')[0].append(fancybox_body);
+					$('.main-cols__right .fancybox-container')
+						.css({
+							"width": "100%",
+							"height": "100%",
+							"display": "block",
+							"position": "absolute"
+						})
+						.css("display", "block");
+				},
+				beforeShow: function () {
+					$('.fancybox-container').css("display", "none");
+				},
+				beforeClose: function () {
+					//$('.exch-form').removeClass('progress');
+					//$('.exch-head').toggleClass('open');
+				}
+			}
+		});
+	});
+
+
+	/*---------------------------------------------------*/
 	/* autentificator fancybox */
 	/*---------------------------------------------------*/
 	$('[autentificator-fancybox]').click(function (e) {
+		$.fancybox.close();
 		e.preventDefault();
 		// Open this fancybox force
 		$.fancybox.open({
@@ -2008,8 +2054,8 @@ $(function () {
 			opts: {
 				afterShow: function (instance, current) {
 					var fancybox_body = $('.fancybox-container')[0];
-					$('.b-graph .c-block')[0].append(fancybox_body);
-					$('.b-graph .c-block .fancybox-container')
+					$('.main-cols__right')[0].append(fancybox_body);
+					$('.main-cols__right .fancybox-container')
 						.css({
 							"width": "100%",
 							"height": "100%",
