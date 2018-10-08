@@ -52,6 +52,8 @@
   /*background color basic*/
   --clr-back-new:		#E8E8E8;
   /*background color basic*/
+  --clr-backBT:		#bfc0c0;
+  /*background color basic*/
   --clr-backA:		#E6F1F8;
   /*background color accented*/
   --clr-block:		#ffffff;
@@ -117,6 +119,8 @@
   --clr-back:			#1B293F;
   /*background color basic*/
   --clr-back-new:		#131A23;
+  /*background color basic*/
+  --clr-backBT:		#24425b;
   /*background color basic*/
   --clr-backA:		#1d2d33;
   /*background color accented*/
@@ -13055,6 +13059,52 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   font-family: "open_sans", sans-serif;
   width: 100%;
   padding: 0px 10px 10px; }
+  .transaction-form .container {
+    margin-left: 12px;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 11px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .transaction-form .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0; }
+  .transaction-form .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border: var(--clr-text) 1px solid;
+    border-radius: 3px; }
+  .transaction-form .container:hover input ~ .checkmark {
+    background-color: transparent; }
+  .transaction-form .container input:checked ~ .checkmark {
+    background-color: transparent; }
+  .transaction-form .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; }
+  .transaction-form .container input:checked ~ .checkmark:after {
+    display: block; }
+  .transaction-form .container .checkmark:after {
+    left: 4px;
+    top: 2px;
+    width: 3px;
+    height: 6px;
+    border: solid var(--clr-text);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
   .transaction-form__line {
     position: relative;
     display: flex;
@@ -13115,7 +13165,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .transaction-form__label {
     color: var(--clr-text);
     font-size: 0.6em;
-    margin-top: 3px; }
+    margin-top: 3px;
+    margin-left: 3px; }
   .transaction-form__sep {
     width: 24px;
     display: flex;
@@ -13140,8 +13191,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     outline: none;
     background: var(--clr-back); }
     .transaction-form__input:focus {
-      background: var(--clr-back);
-      border-color: var(--clr-accent); }
+      background: var(--clr-back); }
     .transaction-form__input::placeholder {
       color: var(--clr-textLL); }
     .transaction-form__input.with-copy {
@@ -13156,7 +13206,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     padding: 5px;
     width: 240px;
     height: 240px;
-    margin: 10px auto;
+    margin: 6px auto;
     background: #fff;
     border-radius: var(--border-radius); }
     .transaction-form__qr-code-wrap > * {
@@ -13222,7 +13272,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     width: 100%;
     border: none;
     border-radius: var(--border-radius);
-    background: var(--clr-icon);
+    background: var(--clr-backBT);
     color: #fff;
     align-items: center;
     justify-content: center;
@@ -13232,7 +13282,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     border: none;
     cursor: pointer;
     transition: all .1s;
-    pointer-events: none;
     /*&:hover{
 			background: var(--clr-textL);
 		}*/ }
@@ -13294,16 +13343,23 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .transaction-form .coin-dropdown {
     width: 100%;
     margin-left: 0px; }
-    .transaction-form .coin-dropdown__current, .transaction-form .coin-dropdown__item {
+    .transaction-form .coin-dropdown__current {
+      background-color: var(--clr-backL);
       height: 32px; }
-      .transaction-form .coin-dropdown__current:hover, .transaction-form .coin-dropdown__item:hover {
-        background-color: var(--clr-backL); }
+      .transaction-form .coin-dropdown__current:hover {
+        background-color: var(--clr-block); }
     .transaction-form .coin-dropdown__item.current {
       display: flex; }
+    .transaction-form .coin-dropdown__item {
+      background-color: var(--clr-block);
+      height: 32px; }
+      .transaction-form .coin-dropdown__item:hover {
+        background-color: var(--clr-backL); }
     .transaction-form .coin-dropdown__list {
       height: inherit; }
     .transaction-form .coin-dropdown__title {
-      font-size: 14px; }
+      font-size: 14px;
+      font-weight: 400; }
       .transaction-form .coin-dropdown__title span {
         font-size: 14px;
         font-weight: 200; }
@@ -13324,8 +13380,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       left: 6px;
       top: 4px;
       font-size: 8px; }
-    .advanced .transaction-form__line.inner .transaction-form__input {
-      padding: 10px 5px 0; }
     .advanced .transaction-form__line.convert {
       border: 1px solid var(--clr-separatorD);
       border-radius: var(--border-radius);
@@ -13387,10 +13441,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     border-radius: var(--border-radius);
     color: var(--clr-textD);
     outline: none;
-    background: var(--clr-back); }
-    .advanced .transaction-form__input:focus {
-      background: var(--clr-back);
-      border-color: var(--clr-accent); }
+    background: var(--clr-back-new); }
     .advanced .transaction-form__input::placeholder {
       color: var(--clr-textLL); }
     .advanced .transaction-form__input.with-copy {
@@ -13403,9 +13454,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     padding: 0; }
   .advanced .transaction-form__qr-code-wrap {
     padding: 5px;
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 10px;
+    width: 240px;
+    height: 240px;
+    margin: 6px auto;
     background: #fff;
     border-radius: var(--border-radius); }
     .advanced .transaction-form__qr-code-wrap > * {
@@ -13468,7 +13519,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     width: 100%;
     border: none;
     border-radius: var(--border-radius);
-    background: var(--clr-icon);
+    background: var(--clr-backBT);
     color: #fff;
     align-items: center;
     justify-content: center;
@@ -13537,8 +13588,6 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       margin: 15px 0; }
   .advanced .transaction-form .bold {
     font-weight: bold; }
-  .advanced .transaction-form .coin-dropdown {
-    width: calc(50% - 5px); }
 
 .autentificator__title {
   position: relative;
@@ -13603,7 +13652,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   width: 100%;
   border: none;
   border-radius: var(--border-radius);
-  background: var(--clr-icon);
+  background: var(--clr-backBT);
   color: #fff;
   align-items: center;
   justify-content: center;
@@ -13683,7 +13732,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   width: 100%;
   border: none;
   border-radius: var(--border-radius);
-  background: var(--clr-icon);
+  background: var(--clr-backBT);
   color: #fff;
   align-items: center;
   justify-content: center;

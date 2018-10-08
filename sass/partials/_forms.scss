@@ -695,6 +695,65 @@
 	font-family: $osans;
 	width: 100%;
 	padding: 0px 10px 10px;
+
+	// css for custom check box
+	.container {
+		margin-left: 12px;
+		position: relative;
+		padding-left: 20px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 11px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}	
+	.container input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}	
+	.checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 15px;
+		width: 15px;
+		background-color: transparent;
+		border: var(--clr-text) 1px solid;
+		border-radius: 3px;
+	}	
+	.container:hover input ~ .checkmark {
+		background-color: transparent;
+	}	
+	.container input:checked ~ .checkmark {
+		background-color: transparent;
+	}	
+	.checkmark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	}	
+	.container input:checked ~ .checkmark:after {
+		display: block;
+	}	
+	.container .checkmark:after {
+		left: 4px;
+		top: 2px;
+		width: 3px;
+		height: 6px;
+		border: solid var(--clr-text);
+		border-width: 0 2px 2px 0;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+
+
 	&__line{
 		position: relative;
 		display: flex;
@@ -785,6 +844,7 @@
 		color: var(--clr-text);
 		font-size: 0.6em;
 		margin-top: 3px;
+		margin-left: 3px;
 	}
 
 	&__sep{
@@ -817,7 +877,7 @@
 
 		&:focus{
 			background: var(--clr-back);
-			border-color: var(--clr-accent);
+			//border-color: var(--clr-accent);
 		}
 
 		&::placeholder{
@@ -841,7 +901,7 @@
 		padding: 5px;
 		width: 240px;
 		height: 240px;
-		margin: 10px auto;
+		margin: 6px auto;
 		background: #fff;
 		border-radius: var(--border-radius);
 
@@ -941,7 +1001,7 @@
 		width: 100%;
 		border: none;
 		border-radius: var(--border-radius);
-		background: var(--clr-icon);
+		background: var(--clr-backBT);
 		color: #fff;
 		align-items: center;
 		justify-content: center;
@@ -951,7 +1011,6 @@
 		border: none;
 		cursor: pointer;
 		transition: all .1s;
-		pointer-events: none;
 
 		/*&:hover{
 			background: var(--clr-textL);
@@ -999,6 +1058,7 @@
 				opacity: .9;
 			}
 		}
+
 	}
 
 	&__btn-bg{
@@ -1030,27 +1090,36 @@
 	.coin-dropdown{
 		width: 100%;//calc(50% - 5px);
 		margin-left: 0px;
-		&__current, &__item {
+		&__current {
+			background-color: var(--clr-backL);
+			height: 32px;
+			&:hover {
+				background-color: var(--clr-block);
+			}
+		}
+		&__item.current {
+			display: flex;
+		}
+		&__item {
+			background-color: var(--clr-block);
 			height: 32px;
 			&:hover {
 				background-color: var(--clr-backL);
 			}
-
-		}
-		&__item.current {
-			display: flex;
 		}
 		&__list {
 			height: inherit;
 		}
 		&__title {
 			font-size: 14px;
+			font-weight: 400;
 			span {
 				font-size: 14px;
 				font-weight: 200;
 			}
 		}
 	}
+
 }
 
 
@@ -1075,10 +1144,6 @@
 				left: 6px;
 				top: 4px;
 				font-size: 8px;
-			}
-
-			.transaction-form__input{
-				padding: 10px 5px 0;
 			}
 		}
 
@@ -1165,11 +1230,11 @@
 		border-radius: var(--border-radius);
 		color: var(--clr-textD);
 		outline: none;
-		background: var(--clr-back);
+		background: var(--clr-back-new);
 
 		&:focus{
-			background: var(--clr-back);
-			border-color: var(--clr-accent);
+			//background: var(--clr-back);
+			//border-color: var(--clr-accent);
 		}
 
 		&::placeholder{
@@ -1191,9 +1256,9 @@
 
 	&__qr-code-wrap{
 		padding: 5px;
-		width: 140px;
-		height: 140px;
-		margin: 0 auto 10px;
+		width: 240px;
+		height: 240px;
+		margin: 6px auto;
 		background: #fff;
 		border-radius: var(--border-radius);
 
@@ -1288,7 +1353,7 @@
 		width: 100%;
 		border: none;
 		border-radius: var(--border-radius);
-		background: var(--clr-icon);
+		background: var(--clr-backBT);
 		color: #fff;
 		align-items: center;
 		justify-content: center;
@@ -1373,10 +1438,6 @@
 	.bold{
 		font-weight: bold;
 	}
-
-	.coin-dropdown{
-		width: calc(50% - 5px);
-	}
 }
 
 .autentificator{
@@ -1459,7 +1520,7 @@
 		width: 100%;
 		border: none;
 		border-radius: var(--border-radius);
-		background: var(--clr-icon);
+		background: var(--clr-backBT);
 		color: #fff;
 		align-items: center;
 		justify-content: center;
@@ -1558,7 +1619,7 @@
 		width: 100%;
 		border: none;
 		border-radius: var(--border-radius);
-		background: var(--clr-icon);
+		background: var(--clr-backBT);
 		color: #fff;
 		align-items: center;
 		justify-content: center;

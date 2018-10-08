@@ -4058,6 +4058,99 @@
 </div>
  -->
 
+
+<div class="basic-popup transaction-popup" id="transaction-popup" style="display: none;">
+	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
+		<div class="d-flex-col flex-1-1 flex-h-fix">
+			<form class="transaction-form">
+				<div style="text-align: center">
+					<span class="transaction-form__label">Minumun Deposit 0.08936524 BTC</span>
+				</div>
+				<div class="transaction-form__qr-code-wrap">
+					<img src="pic/qr-code.svg" width="130" height="130" alt="qr-code">
+				</div>
+				<div class="transaction-form__line inner">
+					<div class="coin-dropdown">
+						<div class="coin-dropdown__border">
+							<div class="coin-dropdown__current">
+								<p class="coin-dropdown__title">Choose your custodian</p>
+
+								<div class="coin-dropdown__hangle">
+									<svg class="sprite-icon" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+									</svg>
+								</div>
+							</div>
+						</div>						
+
+						<div class="coin-dropdown__list">
+							<div class="coin-dropdown__item current">
+								<p class="coin-dropdown__title">Altairian Prime</p>
+							</div>
+
+							<div class="coin-dropdown__item">
+								<p class="coin-dropdown__title">BitGo</p>
+							</div>
+
+							<div class="coin-dropdown__item">
+								<p class="coin-dropdown__title">Gemini</p>
+							</div>
+
+							<div class="coin-dropdown__item">
+								<p class="coin-dropdown__title">IRA Financial Trust</p>
+							</div>
+
+							<div class="coin-dropdown__item">
+								<p class="coin-dropdown__title">SILO</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<span class="transaction-form__label">Deposit Address</span>
+				<div class="transaction-form__line inner">
+					<input class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
+					<div class="transaction-form__button" style="background-color: var(--clr-accent);">
+						COPY
+					</div>
+				</div>
+				<span class="transaction-form__label">Return Address</span>			
+				<label class="container">
+					<input type="checkbox" checked="checked">
+					<span class="checkmark"></span>
+				</label>
+				<span class="transaction-form__label">I agree & accept Terms</span>
+				<div class="transaction-form__line inner">
+					<input class="transaction-form__input" type="text" name="" value="">
+					<div class="transaction-form__button" conform-fancybox>
+						SUBMIT
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+<div class="basic-popup conform-popup" id="conform-popup" style="display: none;">
+	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
+
+		<div class="d-flex-col flex-1-1 flex-h-fix">
+			<form class="transaction-form">
+		
+				<div class="conform-popup__text">
+					<p>AMOUNT of the CURRENCY will<br/>now be returned to RETURN ADDRSS</p>
+				</div>
+				
+				<div class="conform-popup__btns">
+					<button class="conform-popup__btn js-fancybox-close" type="reset">CANCEL</button>
+					<button class="conform-popup__btn submit" autentificator-fancybox>CONFIRM</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
 <div class="basic-popup autentificator-popup no-close-btn" id="autentificator-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
 
