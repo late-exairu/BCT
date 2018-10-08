@@ -1006,17 +1006,8 @@ $(function () {
 	
 						if ($('body').hasClass('advanced'))
 							mainChartObj.series[7].setData(gData[0].diffs);
-						mainChartObj.series[0].update({
-							fillColor: {
-								linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-								stops: gradientColor
-							},
-							color: mainChartFirstColor,
-							lineWidth: 3,
-							enableMouseTracking: true,
-							trackByArea: true,
-							zIndex: 10
-						});
+							
+						updateMainChartSpline(1);
 						updateMainChartPercentChange();
 					}
 				}
@@ -2338,7 +2329,6 @@ $(function () {
 			pointInterval: interval,
 			zIndex: 10
 		});
-		//redrawMainChart();
 		updateMainChartPercentChange();
 		//updateWalletData();
 	});
