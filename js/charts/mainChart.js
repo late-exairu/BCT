@@ -23,32 +23,32 @@ var gDataByMin = new Array(),
 
 var range_interval_options = [
 	{
-		label: '1m',
+		label: '1M',
 		endpoint: 'histominute',
 		aggregate: 1
 	},
 	{
-		label: '5m',
+		label: '5M',
 		endpoint: 'histominute',
 		aggregate: 5
 	},
 	{
-		label: '15m',
+		label: '15M',
 		endpoint: 'histominute',
 		aggregate: 15
 	},
 	{
-		label: '1h',
+		label: '1H',
 		endpoint: 'histohour',
 		aggregate: 1
 	},
 	{
-		label: '6h',
+		label: '6H',
 		endpoint: 'histohour',
 		aggregate: 6
 	},
 	{
-		label: '1d',
+		label: '1D',
 		endpoint: 'histoday',
 		aggregate: 1
 	}

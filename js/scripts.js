@@ -324,7 +324,7 @@ $(function () {
 		} else {
 			priceRateBackward = priceRateBackward.toFixed(5);
 		}
-		$('.graph-info__title').first().html('1 ' + sendCurrency + ' = <b>' + priceRateBackward + '</b> ' + getCurrency);
+		$('.graph-info__title').first().html('1 ' + sendCurrency + ' = ' + priceRateBackward + ' ' + getCurrency);
 
 		// change the median price
 		$('.median-price').html(priceRateBackward + ' <span>' + getCurrency + '</span>');
@@ -1122,11 +1122,11 @@ $(function () {
 		var changeInPercent = (-1 + (end / start)) * 100;
 		// green color
 		if (changeInPercent > 0) {
-			resultString = '<p class="graph-info__title clr-green"><b>+' + Math.abs(changeInPercent.toFixed(2)) + '%</b></p>';
+			resultString = '<p class="graph-info__title clr-green">+' + Math.abs(changeInPercent.toFixed(2)) + '%</p>';
 		}
 		// red color
 		else {
-			resultString = '<p class="graph-info__title clr-red"><b>-' + Math.abs(changeInPercent.toFixed(2)) + '%</b></p>';
+			resultString = '<p class="graph-info__title clr-red">-' + Math.abs(changeInPercent.toFixed(2)) + '%</p>';
 		}
 		$('.graph-info .graph-info__item').eq(1).html(resultString);
 	}

@@ -101,12 +101,16 @@
 		cursor: pointer;			
 		flex: 1;
 		margin: 0;
-		width: 73px;	
+		width: 128px;	
 	}
 
 	&__current{			
 		padding: 0 3px;
-		color: var(--clr-time-bar);
+		color: var(--clr-separator);
+		border: 1px solid;
+		border-radius: 3px;
+	    margin-left: 5px;
+
 	}
 
 	&__control{
