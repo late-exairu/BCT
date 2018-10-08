@@ -930,30 +930,36 @@ $(function () {
 
 					var gData; 
 					var isDrawMainChart = false;
+					var current_interval_index = $('.graph-range-slider__control').val();
 					if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[0]) {
 						gDataByMin = [];
 						gData = gDataByMin;
+						if (current_interval_index == 0) isDrawMainChart = true; 
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[1]) {
 						gDataByFiveMins = [];
 						gData = gDataByFiveMins;
+						if (current_interval_index == 1) isDrawMainChart = true; 
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[2]) {
 						gDataByFifteenMins = [];
 						gData = gDataByFifteenMins;
+						if (current_interval_index == 2) isDrawMainChart = true; 
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[3]) {
 						gDataByHour = [];
 						gData = gDataByHour;
-						isDrawMainChart = true; 
+						if (current_interval_index == 3) isDrawMainChart = true; 
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[4]) {
 						gDataBySixHours = [];
 						gData = gDataBySixHours;
+						if (current_interval_index == 4) isDrawMainChart = true; 
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[5]) {
 						gDataByDay = [];
 						gData = gDataByDay;
+						if (current_interval_index == 5) isDrawMainChart = true; 
 					}
 
 					var prev_value = [null, null, null, null, null, null];
@@ -2587,7 +2593,6 @@ $(function () {
 	$mainGraphRange.on('input', function () {
 		// $( this ).css( 'background', 'linear-gradient(to right, var(--clr-time-bar) 0%, var(--clr-time-bar) '+this.value*25 +'%, var(--clr-time-line) ' + this.value*25 + '%, var(--clr-time-line) 100%)' );
 
-		console.log("mainChartObj", mainChartObj);
 		// switch (parseInt(this.value)) {
 		// 	case 0:
 		// 		$('.graph-range-slider__current').html("1h");
@@ -2621,12 +2626,6 @@ $(function () {
 		var index = parseInt(this.value);
 		var interval = range_intervals[index];
 
-		// mainChartObj.options.plotOptions.series.pointStart = maxDate - interval * limit;
-		// hightChartUpdateOptions.plotOptions.series.pointStart = maxDate - interval * limit;
-		// hightChartUpdateOptions.plotOptions.series.pointInterval = interval;
-		// console.log(new Date(maxDate - interval * limit).toDateString());
-		// console.log('hightChartUpdateOptions', hightChartUpdateOptions);
-		// mainChartObj.update(hightChartUpdateOptions);
 		mainChartObj.series.forEach(series => {
 			series.update({
 				pointStart: maxDate - interval * limit,
@@ -2635,7 +2634,6 @@ $(function () {
 		})
 		switch (index) {
 			case 0:
-				console.log('gDataByMin', gDataByMin);
 				$('.graph-range-slider__current').html("1m");
 				mainChartObj.series[0].setData(gDataByMin[0].prices);
 				if ($('body').hasClass('advanced'))
@@ -2645,7 +2643,6 @@ $(function () {
 				}
 				break;
 			case 1:
-				console.log('gDataByFiveMins', gDataByFiveMins);
 				$('.graph-range-slider__current').html("5m");
 				mainChartObj.series[0].setData(gDataByFiveMins[0].prices);
 				if ($('body').hasClass('advanced'))
@@ -2655,7 +2652,6 @@ $(function () {
 				}
 				break;
 			case 2:
-				console.log('gDataByFifteenMins', gDataByFifteenMins);
 				$('.graph-range-slider__current').html("15m");
 				mainChartObj.series[0].setData(gDataByFifteenMins[0].prices);
 				if ($('body').hasClass('advanced'))
@@ -2665,7 +2661,6 @@ $(function () {
 				} 
 				break;
 			case 3:
-				console.log('gDataByHour', gDataByHour);
 				$('.graph-range-slider__current').html("1h");
 				mainChartObj.series[0].setData(gDataByHour[0].prices);
 				if ($('body').hasClass('advanced'))
@@ -2675,7 +2670,6 @@ $(function () {
 				}
 				break;
 			case 4:
-				console.log('gDataBySixHours', gDataBySixHours);
 				$('.graph-range-slider__current').html("6h");
 				mainChartObj.series[0].setData(gDataBySixHours[0].prices);
 				if ($('body').hasClass('advanced'))
@@ -2685,7 +2679,6 @@ $(function () {
 				}
 				break;
 			case 5:
-				console.log('gDataByDay', gDataByDay);
 				$('.graph-range-slider__current').html("1d");
 				mainChartObj.series[0].setData(gDataByDay[0].prices);
 				if ($('body').hasClass('advanced'))
