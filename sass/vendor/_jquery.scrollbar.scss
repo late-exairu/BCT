@@ -108,13 +108,13 @@
 			right: 0px;
 			top: 0;
 			bottom: 0;
-			width: 15px;
+			width: 5px;
 			cursor: pointer;
 			z-index: 2000;
 
 			.scroll-bar {
 				left: 0px;
-				width: 15px;
+				width: 5px;
 			}
 
 			&.scroll-scrollx_visible {
@@ -134,14 +134,14 @@
 			&:after{
 				content: '';
 				transition: background 0.1s;
-				background-color: var(--clr-separator);
+				background-color: var(--clr-separatorD);
 				border-radius: 4px;
 				position: absolute;
-				left: 4px;
-				top: 4px;
-				right: 4px;
-				bottom: 4px;
-				border: 1px solid var(--clr-block);
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				border: 0px solid var(--clr-block);
 				transition: all .1s;
 			}
 
