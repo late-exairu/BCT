@@ -146,40 +146,7 @@ function updateWalletData() {
 
         if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').length) {
             var currencyName = $('.exch-dropdown__item[data-currency="' + key + '"]').eq(0).attr('data-name');
-            var newRow = '';
-            if ($('body').hasClass('advanced')) {
-                newRow = '<div class="basic-table__row disabled" data-currency="' + key + '">' +
-                    '<div class="basic-table__col w-30">' +
-                    '<svg class="basic-table__curr icon-curr clr-' + currencyName.toLowerCase() + '" role="img" aria-hidden="true">' +
-                    '<use xmlns: xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + key.toLowerCase() + '"></use></svg>' +
-                    '<span class="wallet' + key + '"></span> ' + key + ' <span class="smaller" > (' + currencyName + ')</span>' +
-                    '</div>' +
-                    '<div class="basic-table__col w-20 pricePerCoin' + key + '"></div>' +
-
-                    '<div class = "basic-table__col w-30">' +
-                    '<div class = "basic-select custom-select">' +
-                    '<select class = "basic-select__select">' +
-                    '<option> Choose your custodian </option>' +
-                    '<option> HashiCorp Vault </option>' +
-                    '<option> IRA Financial Trust </option>' +
-                    '<option> Kingdom Trust </option>' +
-                    '<option> Trustology </option>' +
-                    '<option> Vo1t </option>' +
-                    '<option> Xapo Vault </option>' +
-                    '</select>' +
-                    '<div class = "select-selected basic-select__select" > Choose your custodian </div><div class="select-items select-hide"><div>Choose your custodian</div > <div> HashiCorp Vault </div><div>IRA Financial Trust</div> <div> Kingdom Trust </div><div>Trustology</div> <div> Vo1t </div><div>Xapo Vault</div> </div></div>' +
-                    '</div>' +
-
-
-                    '<div class="basic-table__col w-20">' +
-                    '<button class="basic-table__btn" transaction-fancybox>' +
-                    '<svg class="sprite-icon qr-code" role="img" aria-hidden="true">' +
-                    '<use xmlns: xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use></svg>' +
-                    'Receive </button>' +
-                    '</div>' +
-                    '</div>';
-            } else {
-                newRow = '<div class="basic-table__row disabled" data-currency="' + key + '">' +
+            var newRow = '<div class="basic-table__row disabled" data-currency="' + key + '">' +
                     '<div class="basic-table__col w-37">' +
                     '<svg class="basic-table__curr icon-curr clr-coin-ltc" role="img" aria-hidden="true">' +
                     '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + key.toLowerCase() + '"></use>' +
@@ -192,7 +159,6 @@ function updateWalletData() {
                     '<div class = "smallChartInfo d-flex-col"></div></div>' +
                     '<div class="basic-table__col w-22"><button class="basic-table__btn fix-width" transaction-fancybox><svg class="sprite-icon qr-code" role="img" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use></svg>' + key + '</button></div>' +
                     '</div>';
-            }
             $('#panel-funds-wallet .basic-table .basic-table').append(newRow);
         }
 
