@@ -1394,7 +1394,6 @@ $(function () {
 							})
 							.css("display", "block");
 						
-						$('#transaction-popup .transaction-form__button').css('pointer-events', 'none');
 						$('#transaction-popup .transaction-form__input').keyup(function () {
 							if($(this).val() == '') {
 								$(this).closest('.transaction-form__line').find('.transaction-form__button') .css({'background-color': 'var(--clr-important)', 'pointer-events': 'none'});
@@ -1403,6 +1402,7 @@ $(function () {
 								$(this).closest('.transaction-form__line').find('.transaction-form__button') .css({'background-color': 'var(--clr-accent)', 'pointer-events': 'all'});
 							}
 						});
+						$('#transaction-popup .transaction-form__input:last').keyup();
 					},
 					beforeShow: function () {
 						$('.fancybox-container').css("display", "none");
