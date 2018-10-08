@@ -41,7 +41,9 @@
 		}
 
 		&.current{
-			color: var(--clr-accent);
+			.sprite-icon{
+				fill: var(--clr-accent);
+			}
 
 			&:after{
 				opacity: 1;

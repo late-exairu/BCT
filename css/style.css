@@ -9430,10 +9430,10 @@ body.menubar-in #user-btn:before {
 		}*/ }
     .portfolio-menu__item:hover .sprite-icon {
       fill: var(--clr-accent); }
-    .portfolio-menu__item.current {
-      color: var(--clr-accent); }
-      .portfolio-menu__item.current:after {
-        opacity: 1; }
+    .portfolio-menu__item.current .sprite-icon {
+      fill: var(--clr-accent); }
+    .portfolio-menu__item.current:after {
+      opacity: 1; }
     .portfolio-menu__item .sprite-icon {
       fill: var(--clr-text);
       width: 12px;
