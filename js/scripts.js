@@ -278,10 +278,10 @@ $(function () {
 			//$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			//$('.exch-form__send .exch-form__coin').remove();
 			//$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
-			$('.exch-form__send input').attr('data-currency', currencyAbbr);
-			$('.exch-form__send .exch-form__curr').html(currencyAbbr);
+			$('.exch-form__send > input').attr('data-currency', currencyAbbr);
+			$('.exch-form__send .exch-form__curr').html(`<p>` + currencyAbbr + `<span><br>YOU HAVE</span></p>`);
 			$('.chat-head__name').css('color', firstColor);
-
+			
 			// change currency in Orders Form
 			$('.order-form__submit.btn-green').html('BUY ' + currencyAbbr);
 			$('.order-form__submit.btn-red').html('SELL ' + currencyAbbr);
@@ -291,13 +291,13 @@ $(function () {
 			//$('.exch-form__get .exch-form__coin').remove();
 			//$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.exch-form__get input').attr('data-currency', currencyAbbr);
-			$('.exch-form__get .exch-form__curr').html(currencyAbbr);
+			$('.exch-form__get .exch-form__curr').html(`<p>` + currencyAbbr + `<span><br>YOU GET</span></p>`);
 		}
 		
 		$(this).closest('.exch-dropdown').removeClass('open');
 
-		var getCurrency = $('.exch-form__get input').attr('data-currency');
-		var sendCurrency = $('.exch-form__send input').attr('data-currency');
+		var getCurrency = $('.exch-form__get > input').attr('data-currency');
+		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
 		var exchange = $('.graph-prices .graph-prices__list .graph-prices__item.active .graph-prices__trader').text().trim();
 
 		if ($('body').hasClass('advanced')) {
@@ -784,8 +784,8 @@ $(function () {
 			var secondCurrency = convertedArr[1].trim().slice(-3);
 			$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurrency + '"]').trigger('click');
 			$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurrency + '"]').trigger('click');
-			$('.exch-form__send input').val(numberWithCommas(convertedArr[0].trim().slice(0, -4)));
-			$('.exch-form__get input').val(numberWithCommas(convertedArr[1].trim().slice(0, -4)));
+			$('.exch-form__send > input').val(numberWithCommas(convertedArr[0].trim().slice(0, -4)));
+			$('.exch-form__get > input').val(numberWithCommas(convertedArr[1].trim().slice(0, -4)));
 			isSelectedPrevConversion = true;
 
 			// show exchanges of previous conversion
@@ -1352,8 +1352,8 @@ $(function () {
 
 	$('.exch-head__switch').click(function () {
 		$(this).toggleClass('switched');
-		var firstCurr = $('.exch-form__send input').attr('data-currency');
-		var secondCurr = $('.exch-form__get input').attr('data-currency');
+		var firstCurr = $('.exch-form__send > input').attr('data-currency');
+		var secondCurr = $('.exch-form__get > input').attr('data-currency');
 		$('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + secondCurr + '"]').eq(0).trigger('click', 'noRedraw');
 		$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurr + '"]').eq(0).trigger('click');
 		$('.exch-dropdown').removeClass('open');
@@ -1597,8 +1597,8 @@ $(function () {
 	// convert/go buttons
 	$('.exch-head__btn, .exch-form__submit').click(function (e) {
 		e.preventDefault();
-		var sendCurrency = $('.exch-form__send input').attr('data-currency');
-		var getCurrency = $('.exch-form__get input').attr('data-currency');
+		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
+		var getCurrency = $('.exch-form__get > input').attr('data-currency');
 		if ($(this).hasClass('exch-form__submit')) {
 
 			$('.exch-form__close').addClass('hidden');
@@ -1613,8 +1613,8 @@ $(function () {
 
 			clearInterval(dynamicGetValue);
 
-			var firstValue = $('.exch-form__send input').val().trim().replace(/,/g, '');
-			var secondValue = $('.exch-form__get input').val().trim().replace(/,/g, '')
+			var firstValue = $('.exch-form__send > input').val().trim().replace(/,/g, '');
+			var secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '')
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
 
@@ -1828,13 +1828,13 @@ $(function () {
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 			$('.exch-form__submit').prop('disabled', false);
-			$('.exch-form__send .exch-form__label').text('You have');
-			$('.exch-form__get .exch-form__label').text('You get');
+			// $('.exch-form__send .exch-form__label').text('You have');
+			// $('.exch-form__get .exch-form__label').text('You get');
 			var firstValue, secondValue;
 			// if selected previous conversion
 			if (isSelectedPrevConversion) {
-				firstValue = $('.exch-form__send input').val();
-				secondValue = $('.exch-form__get input').val();
+				firstValue = $('.exch-form__send > input').val();
+				secondValue = $('.exch-form__get > input').val();
 			} else {
 				if (!ownWallet[sendCurrency]) {
 					ownWallet[sendCurrency] = 0;
@@ -1853,17 +1853,30 @@ $(function () {
 			if (firstValue == 0) {
 				$('.exch-form__submit').prop('disabled', true);
 			}
-			$('.exch-form__send input').val(numberWithCommas(firstValue));
-			$('.exch-form__get input').val(numberWithCommas(secondValue));
+			console.log("firstValue", firstValue);
+			$('.range-slider .exch-form-slider__control').attr("max", firstValue);
+			$('.range-slider .exch-form-slider__control').attr("step", firstValue / 100000);
+			$('.range-slider .exch-form-slider__control').val(firstValue);
+			console.log("slider value", $('.range-slider .exch-form-slider__control').val());
+
+			$('.range-slider .exch-form-slider__control').on('input', function () {				
+				var value = parseInt(this.value);
+				$('.exch-form__send > input').val(value)
+			});
+
+			$('.exch-form__send > input').val(numberWithCommas(firstValue));
+			$('.exch-form__get > input').val(numberWithCommas(secondValue));
 			isSelectedPrevConversion = false;
 
 			clearInterval(dynamicGetValue);
 			dynamicGetValue = setInterval(function () {
 				secondValue *= (Math.random() * (101 - 99) + 99) / 100;
-				$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
+				$('.exch-form__get > input').val(numberWithCommas(secondValue.toFixed(2)));
 			}, 1000);
 
 			currentWallet = ownWallet;
+
+			
 			//updateWalletData();
 			//drawCircleChart();
 			//$('.user-portfolio-close').addClass('hidden');
@@ -1892,12 +1905,12 @@ $(function () {
 		$(this).val(newValue);
 	});
 
-	$('.exch-form input').blur(function () {
+	$('.exch-form input.exch-form__input').blur(function () {
 		var newValue = numberWithCommas($(this).val())
 		$(this).val(newValue);
 	});
 
-	$('.exch-form input').keydown(function (e) {
+	$('.exch-form input.exch-form__input').keydown(function (e) {
 		var key = e.charCode || e.keyCode || 0;
 		// allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
 		// home, end, period, and numpad decimal
@@ -1913,16 +1926,16 @@ $(function () {
 			(key >= 96 && key <= 105));
 	});
 
-	$('.exch-form input').keyup(function () {
-		var sendCurrency = $('.exch-form__send input').attr('data-currency');
-		var getCurrency = $('.exch-form__get input').attr('data-currency');
+	$('.exch-form input.exch-form__input').keyup(function () {
+		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
+		var getCurrency = $('.exch-form__get > input').attr('data-currency');
 
 		if ($(this).parent().hasClass('exch-form__send')) {
 			var firstValue = $(this).val();
 
 			if (firstValue > ownWallet[sendCurrency]) {
 				firstValue = ownWallet[sendCurrency];
-				$('.exch-form__send input').val(firstValue.toFixed(2));
+				$('.exch-form__send > input').val(firstValue.toFixed(2));
 			}
 
 			var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
@@ -1937,8 +1950,11 @@ $(function () {
 		} else {
 			//var secondValue = $(this).val();
 			//var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
-			//$('.exch-form__send input').val(numberWithCommas(firstValue));
+			//$('.exch-form__send > input').val(numberWithCommas(firstValue));
 		}
+		var send_amount = parseFloat($('.exch-form__send > input').val());
+		if (send_amount)
+			$('.range-slider .exch-form-slider__control').val(send_amount);
 	});
 
 	$('.transaction-form__to-clipdoard').click(function () {
