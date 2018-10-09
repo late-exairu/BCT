@@ -3110,7 +3110,8 @@
 						</ul>
 					</div>
 
-					<!-- <div class="portfolio-drop js-dropdown-toggle js-dropdown-wrap">
+					<!-- 
+						<div class="portfolio-drop js-dropdown-toggle js-dropdown-wrap">
 						<h2 class="c-block-head__title">
 							Global Liquidity
 						</h2>
@@ -3136,7 +3137,8 @@
 								<button class="menu-dropdown__btn">Open Orders</button>
 							</li>
 						</ul>
-					</div> -->
+					</div> 
+				-->
 
 <!-- 					<div class="c-block-head no-bg">
 						<div class="c-block-head__left">
@@ -3340,6 +3342,178 @@
 														<div id="portfolioChartETH" style="width: 100%;"></div> -->
 							</div>
 						</div>
+						<div class="js-tabs-panel" id="panel-funds-orders">
+							<div class="flex-1-1">
+								<div class="basic-table bordered d-flex-col h-100 flex-h-fix">
+									<div class="basic-table__row head">
+										<div class="basic-table__col w-20"></div>
+										<div class="basic-table__col w-10">Exchange</div>
+										<div class="basic-table__col w-7">Pair</div>
+										<div class="basic-table__col w-10">Type</div>
+										<div class="basic-table__col w-10">Side</div>
+										<div class="basic-table__col w-7">Price</div>
+										<div class="basic-table__col w-12">Amount</div>
+										<div class="basic-table__col w-12">Total</div>
+										<div class="basic-table__col w-10">
+											<div class="global-history-drop js-dropdown-wrap">
+												<span class="js-dropdown-toggle">Open</span>
+												<ul class="menu-dropdown js-dropdown">
+													<li class="menu-dropdown__item js-tabs-tab">
+														<button class="menu-dropdown__btn">All</button>
+													</li>
+													<li class="menu-dropdown__item js-tabs-tab active">
+														<button class="menu-dropdown__btn">Open</button>
+													</li>
+												</ul>
+											</div> 
+										</div>
+									</div><!-- basic-table__row END -->
+									
+									<div class="basic-table__body h-100 scroll-y scrollbar-right outer">
+										<!-- <div class="basic-table__row">
+											<div class="basic-table__col w-20">Just now</div>
+											<div class="basic-table__col w-10">fd23ks</div>
+											<div class="basic-table__col w-7">Buy</div>
+											<div class="basic-table__col w-10">BTC USDT</div>
+											<div class="basic-table__col w-10">2.00 BTC</div>
+											<div class="basic-table__col w-7">Mkt</div>
+											<div class="basic-table__col w-12">1.5000 BTC</div>
+											<div class="basic-table__col w-12">0.5000 BTC</div>
+											<div class="basic-table__col w-10">
+												<button class="basic-table__btn">Cancel</button>
+											</div>
+										</div> -->
+										<!-- basic-table__row END -->
+
+										<div class="basic-table__row">
+											<div class="basic-table__col w-20">Just now</div>
+											<div class="basic-table__col w-10">fd23ks</div>
+											<div class="basic-table__col w-7">Buy</div>
+											<div class="basic-table__col w-10">BTC USDT</div>
+											<div class="basic-table__col w-10">2.00 BTC</div>
+											<div class="basic-table__col w-7">Mkt</div>
+											<div class="basic-table__col w-12">1.5000 BTC</div>
+											<div class="basic-table__col w-12">0.5000 BTC</div>
+											<div class="basic-table__col w-10">
+												<button class="basic-table__btn">Cancel</button>
+											</div>
+										</div><!-- basic-table__row END -->
+
+										<div class="basic-table__row">
+											<div class="basic-table__col w-20">Aug 14</div>
+											<div class="basic-table__col w-10">fd23ks</div>
+											<div class="basic-table__col w-7">Buy</div>
+											<div class="basic-table__col w-10">BTC USDT</div>
+											<div class="basic-table__col w-10">2.00 BTC</div>
+											<div class="basic-table__col w-7">Mkt</div>
+											<div class="basic-table__col w-12">1.5000 BTC</div>
+											<div class="basic-table__col w-12">0.5000 BTC</div>
+											<div class="basic-table__col w-10">
+												<button class="basic-table__btn">Cancel</button>
+											</div>
+										</div><!-- basic-table__row END -->
+
+										<div class="basic-table__row all hidden">
+											<div class="basic-table__col w-20">Aug 11</div>
+											<div class="basic-table__col w-10">fd23ks</div>
+											<div class="basic-table__col w-7">Buy</div>
+											<div class="basic-table__col w-10">BTC USDT</div>
+											<div class="basic-table__col w-10">3.00 BTC</div>
+											<div class="basic-table__col w-7">Mkt</div>
+											<div class="basic-table__col w-12">1.5000 BTC</div>
+											<div class="basic-table__col w-12">0.5000 BTC</div>
+											<div class="basic-table__col w-10">
+												FILLED
+											</div>
+										</div><!-- basic-table__row END -->
+
+										<div class="basic-table__row">
+											<div class="basic-table__col w-20">Aug 3</div>
+											<div class="basic-table__col w-10">fd23ks</div>
+											<div class="basic-table__col w-7">Buy</div>
+											<div class="basic-table__col w-10">BTC USDT</div>
+											<div class="basic-table__col w-10">2.00 BTC</div>
+											<div class="basic-table__col w-7">Mkt</div>
+											<div class="basic-table__col w-12">1.5000 BTC</div>
+											<div class="basic-table__col w-12">0.5000 BTC</div>
+											<div class="basic-table__col w-10">
+												<button class="basic-table__btn">Cancel</button>
+											</div>
+										</div><!-- basic-table__row END -->
+
+										<div class="basic-table__row all hidden">
+											<div class="basic-table__col w-20">Aug 1</div>
+											<div class="basic-table__col w-10">fd23ks</div>
+											<div class="basic-table__col w-7">Buy</div>
+											<div class="basic-table__col w-10">BTC USDT</div>
+											<div class="basic-table__col w-10">1.00 BTC</div>
+											<div class="basic-table__col w-7">Mkt</div>
+											<div class="basic-table__col w-12">1.5000 BTC</div>
+											<div class="basic-table__col w-12">0.5000 BTC</div>
+											<div class="basic-table__col w-10">
+												FILLED
+											</div>
+										</div><!-- basic-table__row END -->
+
+										<div class="basic-table__row">
+											<div class="basic-table__col w-20">June 28</div>
+											<div class="basic-table__col w-10">fd23ks</div>
+											<div class="basic-table__col w-7">Buy</div>
+											<div class="basic-table__col w-10">BTC USDT</div>
+											<div class="basic-table__col w-10">2.00 BTC</div>
+											<div class="basic-table__col w-7">Mkt</div>
+											<div class="basic-table__col w-12">1.5000 BTC</div>
+											<div class="basic-table__col w-12">0.5000 BTC</div>
+											<div class="basic-table__col w-10">
+												<button class="basic-table__btn">Cancel</button>
+											</div>
+										</div><!-- basic-table__row END -->
+
+										<div class="basic-table__row">
+											<div class="basic-table__col w-20">June 22</div>
+											<div class="basic-table__col w-10">fd23ks</div>
+											<div class="basic-table__col w-7">Buy</div>
+											<div class="basic-table__col w-10">BTC USDT</div>
+											<div class="basic-table__col w-10">2.00 BTC</div>
+											<div class="basic-table__col w-7">Mkt</div>
+											<div class="basic-table__col w-12">1.5000 BTC</div>
+											<div class="basic-table__col w-12">0.5000 BTC</div>
+											<div class="basic-table__col w-10">
+												<button class="basic-table__btn">Cancel</button>
+											</div>
+										</div><!-- basic-table__row END -->
+
+										<div class="basic-table__row">
+											<div class="basic-table__col w-20">June 15</div>
+											<div class="basic-table__col w-10">fd23ks</div>
+											<div class="basic-table__col w-7">Buy</div>
+											<div class="basic-table__col w-10">BTC USDT</div>
+											<div class="basic-table__col w-10">2.00 BTC</div>
+											<div class="basic-table__col w-7">Mkt</div>
+											<div class="basic-table__col w-12">1.5000 BTC</div>
+											<div class="basic-table__col w-12">0.5000 BTC</div>
+											<div class="basic-table__col w-10">
+												<button class="basic-table__btn">Cancel</button>
+											</div>
+										</div><!-- basic-table__row END -->
+
+										<div class="basic-table__row">
+											<div class="basic-table__col w-20">June 12</div>
+											<div class="basic-table__col w-10">fd23ks</div>
+											<div class="basic-table__col w-7">Buy</div>
+											<div class="basic-table__col w-10">BTC USDT</div>
+											<div class="basic-table__col w-10">2.00 BTC</div>
+											<div class="basic-table__col w-7">Mkt</div>
+											<div class="basic-table__col w-12">1.5000 BTC</div>
+											<div class="basic-table__col w-12">0.5000 BTC</div>
+											<div class="basic-table__col w-10">
+												<button class="basic-table__btn">Cancel</button>
+											</div>
+										</div><!-- basic-table__row END -->
+									</div><!-- basic-table__body END -->
+								</div><!-- basic-table END -->
+							</div><!-- scroll-y END -->
+						</div>
 						<div class="js-tabs-panel" id="panel-funds-history">
 							<div class="flex-1-1 scroll-y scrollbar-right">
 								<div class="basic-table bordered d-flex-col h-100 flex-h-fix">
@@ -3431,137 +3605,7 @@
 							</div>
 							<!-- scroll-y END -->
 						</div>
-						<div class="js-tabs-panel" id="panel-funds-orders">
-							<div class="flex-1-1">
-								<div class="basic-table bordered d-flex-col h-100 flex-h-fix">
-									<div class="basic-table__row head">
-										<div class="basic-table__col w-20"></div>
-										<div class="basic-table__col w-10">Exchange</div>
-										<div class="basic-table__col w-7">Pair</div>
-										<div class="basic-table__col w-10">Type</div>
-										<div class="basic-table__col w-10">Side</div>
-										<div class="basic-table__col w-7">Price</div>
-										<div class="basic-table__col w-12">Amount</div>
-										<div class="basic-table__col w-12">Total</div>
-										<div class="basic-table__col w-10">Status</div>
-									</div><!-- basic-table__row END -->
-									
-									<div class="basic-table__body h-100 scroll-y scrollbar-right outer">
-										<div class="basic-table__row">
-											<div class="basic-table__col w-20">Just now</div>
-											<div class="basic-table__col w-10">fd23ks</div>
-											<div class="basic-table__col w-7">Buy</div>
-											<div class="basic-table__col w-10">BTC USDT</div>
-											<div class="basic-table__col w-10">2.00 BTC</div>
-											<div class="basic-table__col w-7">Mkt</div>
-											<div class="basic-table__col w-12">1.5000 BTC</div>
-											<div class="basic-table__col w-12">0.5000 BTC</div>
-											<div class="basic-table__col w-10">
-												<button class="basic-table__btn">Cancel</button>
-											</div>
-										</div><!-- basic-table__row END -->
-
-										<div class="basic-table__row">
-											<div class="basic-table__col w-20">Just now</div>
-											<div class="basic-table__col w-10">fd23ks</div>
-											<div class="basic-table__col w-7">Buy</div>
-											<div class="basic-table__col w-10">BTC USDT</div>
-											<div class="basic-table__col w-10">2.00 BTC</div>
-											<div class="basic-table__col w-7">Mkt</div>
-											<div class="basic-table__col w-12">1.5000 BTC</div>
-											<div class="basic-table__col w-12">0.5000 BTC</div>
-											<div class="basic-table__col w-10">
-												<button class="basic-table__btn">Cancel</button>
-											</div>
-										</div><!-- basic-table__row END -->
-
-										<div class="basic-table__row">
-											<div class="basic-table__col w-20">Aug 14</div>
-											<div class="basic-table__col w-10">fd23ks</div>
-											<div class="basic-table__col w-7">Buy</div>
-											<div class="basic-table__col w-10">BTC USDT</div>
-											<div class="basic-table__col w-10">2.00 BTC</div>
-											<div class="basic-table__col w-7">Mkt</div>
-											<div class="basic-table__col w-12">1.5000 BTC</div>
-											<div class="basic-table__col w-12">0.5000 BTC</div>
-											<div class="basic-table__col w-10">
-												<button class="basic-table__btn">Cancel</button>
-											</div>
-										</div><!-- basic-table__row END -->
-
-										<div class="basic-table__row">
-											<div class="basic-table__col w-20">Aug 3</div>
-											<div class="basic-table__col w-10">fd23ks</div>
-											<div class="basic-table__col w-7">Buy</div>
-											<div class="basic-table__col w-10">BTC USDT</div>
-											<div class="basic-table__col w-10">2.00 BTC</div>
-											<div class="basic-table__col w-7">Mkt</div>
-											<div class="basic-table__col w-12">1.5000 BTC</div>
-											<div class="basic-table__col w-12">0.5000 BTC</div>
-											<div class="basic-table__col w-10">
-												<button class="basic-table__btn">Cancel</button>
-											</div>
-										</div><!-- basic-table__row END -->
-
-										<div class="basic-table__row">
-											<div class="basic-table__col w-20">June 28</div>
-											<div class="basic-table__col w-10">fd23ks</div>
-											<div class="basic-table__col w-7">Buy</div>
-											<div class="basic-table__col w-10">BTC USDT</div>
-											<div class="basic-table__col w-10">2.00 BTC</div>
-											<div class="basic-table__col w-7">Mkt</div>
-											<div class="basic-table__col w-12">1.5000 BTC</div>
-											<div class="basic-table__col w-12">0.5000 BTC</div>
-											<div class="basic-table__col w-10">
-												<button class="basic-table__btn">Cancel</button>
-											</div>
-										</div><!-- basic-table__row END -->
-
-										<div class="basic-table__row">
-											<div class="basic-table__col w-20">June 22</div>
-											<div class="basic-table__col w-10">fd23ks</div>
-											<div class="basic-table__col w-7">Buy</div>
-											<div class="basic-table__col w-10">BTC USDT</div>
-											<div class="basic-table__col w-10">2.00 BTC</div>
-											<div class="basic-table__col w-7">Mkt</div>
-											<div class="basic-table__col w-12">1.5000 BTC</div>
-											<div class="basic-table__col w-12">0.5000 BTC</div>
-											<div class="basic-table__col w-10">
-												<button class="basic-table__btn">Cancel</button>
-											</div>
-										</div><!-- basic-table__row END -->
-
-										<div class="basic-table__row">
-											<div class="basic-table__col w-20">June 15</div>
-											<div class="basic-table__col w-10">fd23ks</div>
-											<div class="basic-table__col w-7">Buy</div>
-											<div class="basic-table__col w-10">BTC USDT</div>
-											<div class="basic-table__col w-10">2.00 BTC</div>
-											<div class="basic-table__col w-7">Mkt</div>
-											<div class="basic-table__col w-12">1.5000 BTC</div>
-											<div class="basic-table__col w-12">0.5000 BTC</div>
-											<div class="basic-table__col w-10">
-												<button class="basic-table__btn">Cancel</button>
-											</div>
-										</div><!-- basic-table__row END -->
-
-										<div class="basic-table__row">
-											<div class="basic-table__col w-20">June 12</div>
-											<div class="basic-table__col w-10">fd23ks</div>
-											<div class="basic-table__col w-7">Buy</div>
-											<div class="basic-table__col w-10">BTC USDT</div>
-											<div class="basic-table__col w-10">2.00 BTC</div>
-											<div class="basic-table__col w-7">Mkt</div>
-											<div class="basic-table__col w-12">1.5000 BTC</div>
-											<div class="basic-table__col w-12">0.5000 BTC</div>
-											<div class="basic-table__col w-10">
-												<button class="basic-table__btn">Cancel</button>
-											</div>
-										</div><!-- basic-table__row END -->
-									</div><!-- basic-table__body END -->
-								</div><!-- basic-table END -->
-							</div><!-- scroll-y END -->
-						</div><!-- js-tabs-panel END -->
+						<!-- js-tabs-panel END -->
 <!-- 						<div class="js-tabs-panel" id="panel-funds-tr-history">
 							<div class="flex-1-1 scroll-y scrollbar-right">
 								<div class="basic-table med-height">

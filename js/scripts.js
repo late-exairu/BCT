@@ -94,6 +94,18 @@ $(function () {
 		}
 	});
 
+	$('.global-history-drop .menu-dropdown__item').click(function () {
+		$('.global-history-drop span').html($(this).text());
+		$('.global-history-drop .menu-dropdown__item').removeClass('active');
+		$(this).addClass('active');
+		if ($(this).text().trim() == 'All'){
+			$('#panel-funds-orders .all').removeClass('hidden');
+		}else{
+			$('#panel-funds-orders .all').addClass('hidden');
+		}
+
+	});
+
 	$('.main-cols__right-top .exch-dropdown .exch-dropdown__border').click(function name() {
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 		$(this).parent().addClass('open');
