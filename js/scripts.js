@@ -237,7 +237,7 @@ $(function () {
 	/* js-select currency */
 	/*---------------------------------------------------*/
 
-	$('.exch-dropdown__list .exch-dropdown__item').click(function (event, param1) {
+	$('.exch-dropdown__list').on('click', '.exch-dropdown__item', function (event, param1) {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
 		var currencyAbbr = $(this).attr('data-currency');
@@ -1716,6 +1716,7 @@ $(function () {
 						$('.exch-form__submit > span').html('DONE');
 						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
 						$('.exch-form__submit').attr("disabled", true);
+						updateRecent();
 						firstClickAfterExchangeDone = true;
 
 						$('.exch-form__send .exch-form__label').text('Exchanged');

@@ -167,8 +167,18 @@ function updateWalletData() {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').removeClass('disabled');
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table .basic-table .basic-table__row:first');
             }
+
+            // if ($('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').length == 1) {
+            //     var newElem = $('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').eq(0).clone();
+            //     $(newElem).insertBefore('.exch-head__send .exch-dropdown__list .exch-dropdown__list-title:last');
+            // }
         }
         if (currentWallet[key].toFixed(2) == 0) {
+            //  remove from recent
+            // if ($('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').length == 2) {
+            //     $('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').eq(0).remove();
+            // }
+
             if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').addClass('disabled');
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table .basic-table .basic-table__row.disabled:first');
@@ -321,4 +331,22 @@ function updateWalletData() {
     $('.totalBalanceFraction').html(totalBalanceFraction);
 
     $('.clearPricePerCoinBTC').html(numberWithCommas(currenciesPrice['BTC']));
+}
+
+function updateRecent(params) {
+    for (const key in currentWallet) {
+        if (currentWallet[key].toFixed(2) != 0) {
+            // add to recent
+            if ($('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').length == 1) {
+                var newElem = $('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').eq(0).clone();
+                $(newElem).insertBefore('.exch-head__send .exch-dropdown__list .exch-dropdown__list-title:last');
+            }
+        }
+        if (currentWallet[key].toFixed(2) == 0) {
+            // remove from recent
+            if ($('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').length == 2) {
+                $('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').eq(0).remove();
+            }
+        }
+    }
 }
