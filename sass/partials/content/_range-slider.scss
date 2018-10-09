@@ -18,13 +18,13 @@
 
         &::-webkit-slider-thumb{
             -webkit-appearance: none;            
-            height: 8px;
-            width: 8px;
+            height: 13px;
+            width: 13px;
             border-radius: 50%;
-            border: 1px solid #fff;
+            border: 2px solid var(--clr-block);
             background: var(--clr-time-slider);
             cursor: pointer;
-            margin-top: -3px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */                        
+            margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */                        
         }
 
         &:focus {
