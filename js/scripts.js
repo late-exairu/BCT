@@ -1861,7 +1861,8 @@ $(function () {
 
 			$('.range-slider .exch-form-slider__control').on('input', function () {				
 				var value = parseInt(this.value);
-				$('.exch-form__send > input').val(value)
+				$('.exch-form__send > input').val(value);
+				$('.exch-form__send input.exch-form__input').keyup();
 			});
 
 			$('.exch-form__send > input').val(numberWithCommas(firstValue));
