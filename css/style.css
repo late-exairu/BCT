@@ -1665,7 +1665,7 @@ h6 {
   background: var(--clr-block);
   border-bottom: 1px solid var(--clr-separator);
   display: flex;
-  flex: 0 0;
+  flex: 0 0 auto;
   align-items: center; }
   .chats-search__menu {
     width: 27px;
