@@ -21,8 +21,7 @@ var gDataByMin = new Array(),
 	gDataBySixHours = new Array(),
 	gDataByDay = new Array();
 
-var range_interval_options = [
-	{
+var range_interval_options = [{
 		label: '1M',
 		endpoint: 'histominute',
 		aggregate: 1
@@ -57,13 +56,6 @@ var range_interval_options = [
 
 
 function redrawMainChart() {
-	/* 	 	 var chartParent = $('.b-graph__controls');
-			 $(chartParent).css('width', '100%');
-		 	 var chartParentWidth = parseInt($(chartParent).width());
-		 	 if ($('#js-graph-prices').hasClass('open')) {
-		 	 	chartParentWidth -= 160;
-		 	 }
-		 	$(chartParent).css('width', chartParentWidth);  */
 	mainChartObj.reflow();
 }
 
@@ -79,6 +71,10 @@ if ($('body').hasClass('advanced')) {
 	blueColor = '#01B067';
 	redColor = '#CE2424';
 	mainChartMarginLeft = 50;
+
+	if ($(window).height() > 900) {
+		mainChartMarginLeft += 10;
+	}
 }
 
 // color for highlight graphs on hover
@@ -355,7 +351,7 @@ var hightChartUpdateOptions = {
 				xPos = graphWidth - labelWidth - 10;
 			}
 			// left side fix
-			else if (point.plotX <  (100 - mainChartMarginLeft)) {
+			else if (point.plotX < (100 - mainChartMarginLeft)) {
 				xPos = 12;
 			}
 			return {
@@ -435,7 +431,7 @@ var hightChartUpdateOptions = {
 						};
 						avg *= -1;
 					}
-					var correctIndexes = [30,10,15,4,1,0.4];
+					var correctIndexes = [30, 10, 15, 4, 1, 0.4];
 					return avg * 15 * correctIndexes[$('.graph-range-slider__control').val()];
 				},
 				forced: true,
@@ -443,13 +439,16 @@ var hightChartUpdateOptions = {
 					[
 						'minute',
 						[1, 5, 15]
-					], [
+					],
+					[
 						'hour',
 						[1, 6]
-					], [
+					],
+					[
 						'day',
 						[1]
-					], [
+					],
+					[
 						'week',
 						[1]
 					]
@@ -471,8 +470,66 @@ $('#mainChart .highcharts-series').mouseleave(function () {
 	$('#mainChart').find('.mainTooltip').css("visibility", "visible");
 });
 
-$(window).resize(function () {
-	$('.lineForMainChart').css(
-		'left', '-9999px',
-	);
-});
+// $(window).resize(function () {
+// 	$('.lineForMainChart').css(
+// 		'left', '-9999px',
+// 	);
+// 	mainChartObj.update({
+// 		chart: {
+// 			marginLeft: 0,
+// 		}
+// 	});
+// });
+
+$(window).resize(
+	throttle(() => {
+		$('.lineForMainChart').css(
+			'left', '-9999px',
+		);
+		if ($('body').hasClass('advanced') && $(window).height() > 900) {
+			mainChartObj.update({
+				chart: {
+					marginLeft:  60,
+				}
+			});
+		} else if ($('body').hasClass('advanced')) {
+			mainChartObj.update({
+				chart: {
+					marginLeft: 50,
+				}
+			});
+		}
+	}, 100)
+);
+
+function throttle(func, wait, options) {
+	var context, args, result;
+	var timeout = null;
+	var previous = 0;
+	if (!options) options = {};
+	var later = function () {
+		previous = options.leading === false ? 0 : Date.now();
+		timeout = null;
+		result = func.apply(context, args);
+		if (!timeout) context = args = null;
+	};
+	return function () {
+		var now = Date.now();
+		if (!previous && options.leading === false) previous = now;
+		var remaining = wait - (now - previous);
+		context = this;
+		args = arguments;
+		if (remaining <= 0 || remaining > wait) {
+			if (timeout) {
+				clearTimeout(timeout);
+				timeout = null;
+			}
+			previous = now;
+			result = func.apply(context, args);
+			if (!timeout) context = args = null;
+		} else if (!timeout && options.trailing !== false) {
+			timeout = setTimeout(later, remaining);
+		}
+		return result;
+	};
+};
