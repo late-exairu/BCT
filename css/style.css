@@ -104,7 +104,7 @@
   /*icon color dark*/
   --clr-accent:		#01b067;
   /*icon color accented*/
-  --clr-accentL:		#0c1017;
+  --clr-accentL:		#1c3135;
   /*icon color accented light*/
   --clr-accentD:		#007b47;
   /*icon color accented dark*/
@@ -14039,9 +14039,16 @@ button:-moz-focusring {
     z-index: 0;
     opacity: 0.1;
     transition: all 0.2s;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    background: var(--clr-accentL); }
   .advanced .accounts-diagram-wrap:active:after {
     background: var(--clr-accent); }
+  .advanced .accounts-diagram-wrap.hover #circleChartText {
+    color: var(--clr-accent); }
+    .advanced .accounts-diagram-wrap.hover #circleChartText .sprite-icon {
+      fill: var(--clr-accent); }
+  .advanced .accounts-diagram-wrap.hover:after {
+    opacity: 0.5; }
   .advanced .accounts-diagram-wrap #circleChartText {
     width: 118px; }
     .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
