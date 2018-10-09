@@ -237,7 +237,7 @@ $(function () {
 	/* js-select currency */
 	/*---------------------------------------------------*/
 
-	$('.exch-dropdown__list .exch-dropdown__item').click(function (event, param1) {
+	$('.exch-dropdown__list .exch-dropdown__item').click(function (event, param) {
 		var currencyName = $(this).attr('data-name');
 		var telegramGroupName = $(this).attr('data-telegram');
 		var currencyAbbr = $(this).attr('data-currency');
@@ -309,11 +309,10 @@ $(function () {
 		}
 
 		if (sendCurrency == getCurrency) {
-			$('.exch-head__get .exch-dropdown__item:not([data-currency="' + sendCurrency + '"])').eq(0).trigger('click');
+			$('.exch-head__get .exch-dropdown__item:not([data-currency="' + sendCurrency + '"])').eq(0).trigger('click', param);
 			return false;
 		}
-
-		if (param1 != 'noRedraw')
+		if (param != 'noRedraw')
 			updateMainChart(exchange, sendCurrency, getCurrency);
 			//updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
 
@@ -984,31 +983,32 @@ $(function () {
 						};
 					};
 
-					var one_graph = {
-						prices: grapArr,
-						diffs: columnArr
-					}
-
-					gData.push(one_graph);
-					for (var k = 0; k < 6; k++) {
-						one_graph = {
-							prices: fakeGraphs[k],
-							diffs: fakeGraphdiffs[k]
+					if (gData != undefined) {
+						var one_graph = {
+							prices: grapArr,
+							diffs: columnArr
 						}
 						gData.push(one_graph);
-					}
-					if (isDrawMainChart) { 
-						mainChartObj.series[0].setData(gData[0].prices);
-	
-						for (var k = 1; k < 6; k++) {
-							mainChartObj.series[k].setData(gData[k].prices);
+						for (var k = 0; k < 6; k++) {
+							one_graph = {
+								prices: fakeGraphs[k],
+								diffs: fakeGraphdiffs[k]
+							}
+							gData.push(one_graph);
 						}
-	
-						if ($('body').hasClass('advanced'))
-							mainChartObj.series[7].setData(gData[0].diffs);
-							
-						updateMainChartSpline(1);
-						updateMainChartPercentChange();
+						if (isDrawMainChart) { 
+							mainChartObj.series[0].setData(gData[0].prices);
+		
+							for (var k = 1; k < 6; k++) {
+								mainChartObj.series[k].setData(gData[k].prices);
+							}
+		
+							if ($('body').hasClass('advanced'))
+								mainChartObj.series[7].setData(gData[0].diffs);
+								
+							updateMainChartSpline(1);
+							updateMainChartPercentChange();
+						}
 					}
 				}
 			});
