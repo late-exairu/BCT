@@ -1745,6 +1745,7 @@ $(function () {
 									$('.exch-form').removeClass('completed');
 									$('.exch-form__close').removeClass('hidden');
 									$('.exch-form__submit > span').html('CONFIRM');
+									$('.exch-form .range-slider input[type=range]').css('pointer-events', 'all');
 
 
 									$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
@@ -1771,6 +1772,7 @@ $(function () {
 
 			$('.exch-form').addClass('progress');
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active recent');
+			$('.exch-form .range-slider input[type=range]').css('pointer-events', 'none');
 			if (!$('body').hasClass('advanced')) {
 				var newRow = '<div class="basic-table__row recent active">' +
 					'<div class="basic-table__col w-17" ><img src="img/spin-blue.svg"></div>' +
