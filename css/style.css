@@ -19,6 +19,8 @@
   /*text color dark*/
   --clr-textA:		#286bb4;
   /*text color accented*/
+  --clr-textCT:		#585b5c;
+  /*text color */
   --clr-textAA:		#e15c79;
   /*text color accented alternative*/
   --clr-icon:			#c6c8c8;
@@ -92,6 +94,8 @@
   /*text color dark*/
   --clr-textA:		#286bb4;
   /*text color accented*/
+  --clr-textCT:		#18202d;
+  /*text color */
   --clr-textAA:		#e15c79;
   /*text color accented alternative*/
   --clr-icon:			#4f6c82;
@@ -10073,6 +10077,27 @@ body.menubar-in #user-btn:before {
 /* =================================================================== */
 /* range-slider */
 /* =================================================================== */
+.exch-form .range-slider {
+  font-size: 10px; }
+  .exch-form .range-slider input[type=range] {
+    /* All the same stuff for Firefox */ }
+    .exch-form .range-slider input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--clr-block);
+      background: var(--clr-time-slider);
+      cursor: pointer;
+      margin-top: -4px;
+      /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */ }
+    .exch-form .range-slider input[type=range]::-moz-range-thumb {
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      border: 2px solid var(--clr-block);
+      background: var(--clr-time-slider); }
+
 .range-slider {
   position: relative;
   height: 16px;
@@ -10103,17 +10128,17 @@ body.menubar-in #user-btn:before {
       outline: none;
       /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }
     .range-slider input[type=range]::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
       width: 100%;
       height: 2px;
       cursor: pointer;
       background: var(--clr-time-line); }
     .range-slider input[type=range]::-moz-range-thumb {
-      height: 6px;
-      width: 6px;
+      height: 10px;
+      width: 10px;
       border-radius: 50%;
-      background: var(--clr-time-slider);
-      border: 1px solid #fff;
-      cursor: pointer; }
+      border: 2px solid var(--clr-block);
+      background: var(--clr-time-slider); }
     .range-slider input[type=range]::-moz-range-track {
       width: 100%;
       height: 2px;
@@ -12813,6 +12838,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     color: var(--clr-textD);
     background: var(--clr-textLL);
     z-index: 1; }
+    .exch-form__curr span {
+      font-size: 10px;
+      color: var(--clr-textCT); }
+    .exch-form__curr p {
+      line-height: 10px;
+      text-align: center; }
   .exch-form__coin {
     position: absolute;
     right: 10px;
@@ -13001,6 +13032,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       display: block; }
   .exch-form.completed .exch-form__btn-bg {
     fill: var(--clr-textLL); }
+  .exch-form .range-slider {
+    margin-top: -15px;
+    z-index: 1;
+    width: calc(100% - 70px);
+    padding: 0 8px; }
 
 .chat-search {
   padding: 8px 10px 8px 12px;

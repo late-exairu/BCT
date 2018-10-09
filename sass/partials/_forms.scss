@@ -288,6 +288,14 @@
 		color: var(--clr-textD);
 		background: var(--clr-textLL);
 		z-index: 1;
+		span {
+			font-size: 10px;
+			color: var(--clr-textCT);
+		}
+		p {
+			line-height: 10px;
+			text-align: center;
+		}
 	}
 
 	&__coin{
@@ -589,6 +597,12 @@
 		.exch-form__btn-bg{
 			fill: var(--clr-textLL);
 		}
+	}
+	.range-slider {
+		margin-top: -15px;
+		z-index: 1;
+		width: calc(100% - 70px);
+		padding: 0 8px;
 	}
 }
 
