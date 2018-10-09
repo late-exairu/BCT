@@ -29,7 +29,7 @@ $(window).resize(drawCircleChart);
 function drawCircleChart(e,noAnimation) {
     var animation = noAnimation ? false : true;
     if ($('body').hasClass('advanced')) {
-        pieChartSize = $('#circleChart').width() - 20 - 28;
+        pieChartSize = $('#circleChart').width() - 20 - 38;
     } else {
         pieChartSize = $('#circleChart').width() - 28;
     }

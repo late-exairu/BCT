@@ -13999,10 +13999,32 @@ button:-moz-focusring {
     transform: translate(-50%, -50%); }
   .advanced .accounts-diagram-wrap:active:after {
     background: var(--clr-accent); }
+  .advanced .accounts-diagram-wrap #circleChartText {
+    width: 118px; }
+    .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
+      width: 30px;
+      height: 25px; }
+    .advanced .accounts-diagram-wrap #circleChartText p.value {
+      font-size: 9px; }
+    .advanced .accounts-diagram-wrap #circleChartText p.title {
+      font-size: 10px; }
   @media only screen and (min-height: 900px) {
     .advanced .accounts-diagram-wrap:after {
       width: 190px;
-      height: 190px; } }
+      height: 190px; }
+    .advanced .accounts-diagram-wrap #circleChartText {
+      width: 170px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.value {
+        font-size: 17px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span {
+          font-size: 17px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
+          font-size: 28px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.title {
+        font-size: 14px; }
+      .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
+        width: 40px;
+        height: 35px; } }
 
 .accounts-diagram {
   position: relative;
@@ -14248,8 +14270,9 @@ button:-moz-focusring {
   #portfolioChartText div.portfolio-graph-info {
     display: inline-block;
     color: var(--clr-textD);
-    padding: 0 10px 0 15px;
-    text-align: center; }
+    padding: 0 12px;
+    text-align: center;
+    border-right: 1px solid; }
     #portfolioChartText div.portfolio-graph-info span {
       font-size: 16px;
       vertical-align: top;
@@ -14263,12 +14286,7 @@ button:-moz-focusring {
       margin-top: 0px;
       margin-bottom: 0; }
     #portfolioChartText div.portfolio-graph-info:last-child {
-      color: var(--clr-accent);
-      padding: 0;
-      vertical-align: bottom; }
-      #portfolioChartText div.portfolio-graph-info:last-child span {
-        font-size: 13px;
-        line-height: inherit; }
+      border-right: 0; }
   #portfolioChartText .portfolio-graph-range {
     color: var(--clr-textD);
     font-size: 11px;

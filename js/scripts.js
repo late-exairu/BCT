@@ -2376,7 +2376,7 @@ $(function () {
 		// 	zIndex: 10
 		// });
 		updateMainChartPercentChange();
-		//updateWalletData();
+		updateWalletData();
 	});
 
 	/* .coin-dropdown handler */

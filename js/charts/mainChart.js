@@ -72,12 +72,13 @@ var mainChartSpacingTop = 90;
 var lineColor = '#00A9F7';
 var blueColor = '#00A9F7';
 var redColor = '#CE2424';
+var mainChartMarginLeft = 0;
 
 if ($('body').hasClass('advanced')) {
-	// mainChartMarginLeft = 15;
 	lineColor = '#01B067';
 	blueColor = '#01B067';
 	redColor = '#CE2424';
+	mainChartMarginLeft = 50;
 }
 
 // color for highlight graphs on hover
@@ -96,10 +97,9 @@ var hightChartUpdateOptions = {
 		enabled: false
 	},
 	chart: {
-		marginLeft: 0,
+		marginLeft: mainChartMarginLeft,
 		marginBottom: 0,
 		marginRight: 0,
-		marginLeft: 0,
 		spacingTop: mainChartSpacingTop
 	},
 	title: null,
@@ -304,7 +304,7 @@ var hightChartUpdateOptions = {
 			var TooltipValue = this.y.toFixed(5);
 			var arrowDirection = 'bottom';
 
-			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left;
+			var lineForMainChartX = this.points[0].point.plotX + $('#mainChart').offset().left + mainChartMarginLeft;
 			var lineForMainChartY = $('#mainChart').offset().top + mainChartSpacingTop + 10 + 35 - 50;
 			var lineForMainChartHeight = this.points[0].point.plotY - 24 - 35 + 50;
 			var lineForPortfolioChartY = this.points[0].point.plotY - 44 + 50;
@@ -349,13 +349,13 @@ var hightChartUpdateOptions = {
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
 			var graphWidth = $(mainChartObj.container).width();
-			var xPos = point.plotX - (labelWidth / 2);
+			var xPos = point.plotX - (labelWidth / 2) + mainChartMarginLeft;
 			// right side fix
-			if ((point.plotX + labelWidth / 2 + 10) > graphWidth) {
-				xPos = graphWidth - labelWidth - 20;
+			if ((point.plotX + (labelWidth / 2) + mainChartMarginLeft + 10) > graphWidth) {
+				xPos = graphWidth - labelWidth - 10;
 			}
 			// left side fix
-			else if (point.plotX < 100) {
+			else if (point.plotX <  (100 - mainChartMarginLeft)) {
 				xPos = 12;
 			}
 			return {
@@ -415,6 +415,7 @@ var hightChartUpdateOptions = {
 			id: 8,
 			enableMouseTracking: false,
 			trackByArea: false,
+			zIndex: 11,
 			dataGrouping: {
 				approximation: function (currentGroup) {
 					var sum = 0;
