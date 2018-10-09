@@ -1856,14 +1856,12 @@ $(function () {
 			if (firstValue == 0) {
 				$('.exch-form__submit').prop('disabled', true);
 			}
-			console.log("firstValue", firstValue);
-			$('.range-slider .exch-form-slider__control').attr("max", firstValue);
-			$('.range-slider .exch-form-slider__control').attr("step", firstValue / 100000);
-			$('.range-slider .exch-form-slider__control').val(firstValue);
-			console.log("slider value", $('.range-slider .exch-form-slider__control').val());
+			$('.range-slider .exch-form-slider__control').attr("max", firstValue * 100000);
+			$('.range-slider .exch-form-slider__control').attr("step", parseInt(firstValue));
+			$('.range-slider .exch-form-slider__control').val(firstValue * 100000);
 
 			$('.range-slider .exch-form-slider__control').on('input', function () {				
-				var value = parseInt(this.value);
+				var value = this.value / 100000;
 				$('.exch-form__send > input').val(value);
 				$('.exch-form__send input.exch-form__input').keyup();
 			});
@@ -1958,7 +1956,7 @@ $(function () {
 		}
 		var send_amount = parseFloat($('.exch-form__send > input').val());
 		if (send_amount)
-			$('.range-slider .exch-form-slider__control').val(send_amount);
+			$('.range-slider .exch-form-slider__control').val(parseFloat(send_amount * 100000));
 	});
 
 	$('.transaction-form__to-clipdoard').click(function () {
