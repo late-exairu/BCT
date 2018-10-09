@@ -6,11 +6,12 @@
 
 .chats-search{
 	padding: 10px 20px 10px 20px;
-	height: 70px;
+	height: 65px;
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
 	background: var(--clr-block);
 	border-bottom: 1px solid var(--clr-separator);
 	display: flex;
+	flex: 0 0 auto;
 	align-items: center;
 
 	&__menu{
