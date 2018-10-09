@@ -62,6 +62,8 @@
   /*scroll arrow background color*/
   --clr-backIA:		#d9dadb;
   /*background input group append*/
+  --clr-backCI:	#BFBFBF;
+  /*separators and borders color basic*/
   --clr-text-tooltip: #2E2E2E;
   /*basic tooltip text color*/
   --clr-back-tooltip: #F9F9F9;
@@ -130,6 +132,8 @@
   /*scroll arrow background color*/
   --clr-backIA:		#24425b;
   /*background input group append*/
+  --clr-backCI:		#24425b;
+  /*separators and borders color basic*/
   --clr-text-tooltip: #F9F9F9;
   /*tooltip text color dark*/
   --clr-back-tooltip: #2C3137;
@@ -7848,7 +7852,7 @@ h6 {
       padding: 0; }
   .graph-info__title {
     font-size: 12px;
-    color: var(--clr-separator);
+    color: var(--clr-backCI);
     line-height: 1.2;
     min-width: 46px;
     padding: 0;
@@ -8324,7 +8328,7 @@ h6 {
     width: 128px; }
   .graph-range-slider__current {
     padding: 0 3px;
-    color: var(--clr-separator);
+    color: var(--clr-backCI);
     border: 1px solid;
     border-radius: 3px;
     margin-left: 5px; }
