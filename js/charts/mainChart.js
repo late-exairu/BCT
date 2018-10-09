@@ -415,6 +415,7 @@ var hightChartUpdateOptions = {
 			id: 8,
 			enableMouseTracking: false,
 			trackByArea: false,
+			zIndex: 11,
 			dataGrouping: {
 				approximation: function (currentGroup) {
 					var sum = 0;
