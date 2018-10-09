@@ -62,10 +62,25 @@
 		opacity: 0.1;
 		transition: all 0.2s;
 		transform: translate(-50%, -50%);
+		background: var(--clr-accentL);
 	}
 
 	&:active:after {
 		background: var(--clr-accent);
+	}
+
+	&.hover{
+		#circleChartText{
+			color: var(--clr-accent);
+			
+			.sprite-icon{
+				fill: var(--clr-accent);
+			}
+		}
+
+		&:after {
+			opacity: 0.5;
+		}
 	}
 
 	#circleChartText {
