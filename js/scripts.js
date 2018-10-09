@@ -292,19 +292,21 @@ $(function () {
 			//$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.exch-form__get input').attr('data-currency', currencyAbbr);
 			$('.exch-form__get .exch-form__curr').html(currencyAbbr);
-			if ($('body').hasClass('advanced')) {
-				// change the global table header
-				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(0).html('Price (' + currencyAbbr + ')');
-				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(4).html('Price (' + currencyAbbr + ')');
-				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(1).html('Amount (' + currencyAbbr + ')');
-				$('.global-order').find('.basic-table__row.head .basic-table__col').eq(5).html('Amount (' + currencyAbbr + ')');
-			}
 		}
+		
 		$(this).closest('.exch-dropdown').removeClass('open');
 
 		var getCurrency = $('.exch-form__get input').attr('data-currency');
 		var sendCurrency = $('.exch-form__send input').attr('data-currency');
 		var exchange = $('.graph-prices .graph-prices__list .graph-prices__item.active .graph-prices__trader').text().trim();
+
+		if ($('body').hasClass('advanced')) {
+			// change the global table header
+			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(0).html('Price (' + getCurrency + ')');
+			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(4).html('Price (' + getCurrency + ')');
+			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(1).html('Amount (' + sendCurrency + ')');
+			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(5).html('Amount (' + sendCurrency + ')');
+		}
 
 		if (sendCurrency == getCurrency) {
 			$('.exch-head__get .exch-dropdown__item:not([data-currency="' + sendCurrency + '"])').eq(0).trigger('click');
