@@ -520,7 +520,8 @@ $(function () {
 	// 	drawCircleChart();
 	// });
 
-	$('.advanced .js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function () {
+	$('.advanced .js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function (event) {
+		event.stopPropagation();
 		$('.js-account-stats .portfolio-menu .portfolio-menu__item').removeClass('current');
 		$(this).addClass('current');
 
