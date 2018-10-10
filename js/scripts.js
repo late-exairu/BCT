@@ -1541,6 +1541,12 @@ $(function () {
 		e.stopPropagation();
 		var fancies_length = $('.main-cols__right .fancybox-container').length;
 		if (fancies_length < 1) {
+
+		var userName = $(this).parents('.chats-list__item').find('.chats-list__name').text();
+		var imgAttr = $(this).parents('.chats-list__item').find('.chats-list__avatar-wrap img').attr('src');
+		$('#send-popup .c-block-head__title').text('Send USDT to ' + userName);
+		$('#send-popup .avatar').attr('src',imgAttr);
+
 			$.fancybox.open({
 				src: '#send-popup',
 				opts: {
