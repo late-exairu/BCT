@@ -1,25 +1,5 @@
 // var date50 = new Date(Date.now() - 365 * 24 * 3600 * 1000);
 // var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
-var range_intervals = [
-	60 * 1000,
-	5 * 60 * 1000,
-	15 * 60 * 1000,
-	3600 * 1000,
-	6 * 3600 * 1000,
-	24 * 3600 * 1000
-]
-var limit = 140;
-
-var date50 = new Date(Date.now() - limit * range_intervals[3]);
-var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
-
-// variables for range slider
-var gDataByMin = new Array(),
-	gDataByFiveMins = new Array(),
-	gDataByFifteenMins = new Array(),
-	gDataByHour = new Array(),
-	gDataBySixHours = new Array(),
-	gDataByDay = new Array();
 
 var range_options = [
 	// {
@@ -36,27 +16,43 @@ var range_options = [
 		label: '1D',
 		endpoint: 'histominute',
 		aggregate: 10,
-		limit: 144
+		limit: 144,
+		interval: 600000
 	},
 	{
 		label: '1W',
 		endpoint: 'histohour',
 		aggregate: 1,
-		limit: 168
+		limit: 168,
+		interval: 3600000
 	},
 	{
 		label: '1M',
 		endpoint: 'histohour',
 		aggregate: 5,
-		limit: 149
+		limit: 149,
+		interval: 18000000
 	},
 	{
 		label: '1Y',
 		endpoint: 'histoday',
 		aggregate: 3,
-		limit: 122
+		limit: 122,
+		interval: 259200000
 	},
 ]
+
+var range_index = 3; // default graph - 1 Year.
+
+var date50 = new Date(Date.now() - range_options[range_index].interval * range_options[range_index].limit);
+var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
+
+// variables for range slider
+var gDataDay = new Array(),
+	gDataWeek = new Array(),
+	gDataMonth = new Array(),
+	gDataYear = new Array()
+
 // ======================
 
 
@@ -124,7 +120,7 @@ var hightChartUpdateOptions = {
 			//pointWidth: $('#mainChart').width() / 110, // fixed A pixel value specifying
 			pointPadding: 0.15,
 			pointStart: start_point,
-			pointInterval: range_intervals[3], // one hour
+			pointInterval: range_options[range_index].interval,
 			pointPlacement: 'on',
 			borderWidth: 0,
 			groupPadding: 0,
@@ -443,15 +439,15 @@ var hightChartUpdateOptions = {
 				units: [
 					[
 						'minute',
-						[1, 5, 15]
+						[1, 10]
 					],
 					[
 						'hour',
-						[1, 6]
+						[1, 5]
 					],
 					[
 						'day',
-						[1]
+						[3]
 					],
 					[
 						'week',
