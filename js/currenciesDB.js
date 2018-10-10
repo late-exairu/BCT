@@ -7,10 +7,6 @@ var allCurrenciesArr = allCurrenciesRaw.split('\n');
 var allCurrenciesHtmlFirstColumn = '';
 var allCurrenciesHtmlSecondColumn = '';
 
-// read.open('GET', 'coins_price.txt', false);
-// read.send();
-// var currenciesPrice = JSON.parse(read.responseText);
-
 var currenciesPrice = {};
 $.ajax({
     url: 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC,USDT&tsyms=USD',
@@ -167,18 +163,8 @@ function updateWalletData() {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').removeClass('disabled');
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table .basic-table .basic-table__row:first');
             }
-
-            // if ($('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').length == 1) {
-            //     var newElem = $('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').eq(0).clone();
-            //     $(newElem).insertBefore('.exch-head__send .exch-dropdown__list .exch-dropdown__list-title:last');
-            // }
         }
         if (currentWallet[key].toFixed(2) == 0) {
-            //  remove from recent
-            // if ($('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').length == 2) {
-            //     $('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').eq(0).remove();
-            // }
-
             if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').addClass('disabled');
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table .basic-table .basic-table__row.disabled:first');
@@ -239,7 +225,6 @@ function updateWalletData() {
                 var changeInPercent = (-1 + (graphArr[graphArr.length - 1] / graphArr[0])) * 100;
                 var smallChartInfoString;
                 var lineColor;
-               // var gradientColor;
 
                 // blue color
                 if (changeInPercent > 0) {
@@ -257,30 +242,15 @@ function updateWalletData() {
                 else {
                     smallChartInfoString = '<div class="clr-darkRed">$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
                     lineColor = '#CE2424';
-                    /*                     gradientColor = {
-                                            linearGradient: [0, 0, 0, 30],
-                                            stops: [
-                                                [0, Highcharts.Color('#CE2424').setOpacity(0.2).get('rgba')],
-                                                [1, Highcharts.Color('#CE2424').setOpacity(0).get('rgba')]
-                                            ]
-                                        }; */
                 }
 
                 if (currentWallet[key].toFixed(2) == 0) {
                     lineColor = '#C5C5C5';
-                    /*                     gradientColor = {
-                                            linearGradient: [0, 0, 0, 30],
-                                            stops: [
-                                                [0, Highcharts.Color('#C5C5C5').setOpacity(0.2).get('rgba')],
-                                                [1, Highcharts.Color('#C5C5C5').setOpacity(0).get('rgba')]
-                                            ]
-                                        }; */
                 }
 
                 var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
                 cloneOptions.series[0].data = graphArr;
                 cloneOptions.series[0].color = lineColor;
-                //cloneOptions.series[0].fillColor = gradientColor;
                 cloneOptions.yAxis.min = min;
                 cloneOptions.yAxis.max = max;
                 if ($('#smallChart' + key).length)
@@ -333,7 +303,7 @@ function updateWalletData() {
     $('.clearPricePerCoinBTC').html(numberWithCommas(currenciesPrice['BTC']));
 }
 
-function updateRecent(params) {
+function updateRecent() {
     for (const key in currentWallet) {
         if (currentWallet[key].toFixed(2) != 0) {
             // add to recent

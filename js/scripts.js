@@ -94,6 +94,18 @@ $(function () {
 		}
 	});
 
+	$('.global-history-drop .menu-dropdown__item').click(function () {
+		$('.global-history-drop span').html($(this).text());
+		$('.global-history-drop .menu-dropdown__item').removeClass('active');
+		$(this).addClass('active');
+		if ($(this).text().trim() == 'All'){
+			$('#panel-funds-orders .all').removeClass('hidden');
+		}else{
+			$('#panel-funds-orders .all').addClass('hidden');
+		}
+
+	});
+
 	$('.main-cols__right-top .exch-dropdown .exch-dropdown__border').click(function name() {
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 		$(this).parent().addClass('open');
@@ -498,24 +510,15 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.advanced .accounts-diagram-wrap').click(function () {
-		$('.js-tabs-panel').removeClass('active');
-		$('#panel-funds-portfolio').addClass('active');
-		$('.main-cols__right-bottom .portfolio-menu__item').eq(1).trigger('click');
-		$('.advanced .js-account-stats .portfolio-nav').addClass('hidden');
-		if (!portfolioChartObj)
-			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
-
-		// basic page menu
-		/* 		$('.user-portfolio .user-menu .user-menu__item').removeClass('current');
-				$('.user-portfolio .user-menu .user-menu__item').eq(1).addClass('current'); */
+		$('.main-cols__right-bottom .portfolio-menu__item').eq(2).trigger('click');
 	});
 
-	$('.portfolio-back').click(function () {
-		$('.js-tabs-panel').removeClass('active');
-		$('#panel-funds-wallet').addClass('active');
-		$('.advanced .js-account-stats .portfolio-nav').removeClass('hidden');
-		drawCircleChart();
-	});
+	// $('.portfolio-back').click(function () {
+	// 	$('.js-tabs-panel').removeClass('active');
+	// 	$('#panel-funds-wallet').addClass('active');
+	// 	$('.advanced .js-account-stats .portfolio-nav').removeClass('hidden');
+	// 	drawCircleChart();
+	// });
 
 	$('.advanced .js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function () {
 		$('.js-account-stats .portfolio-menu .portfolio-menu__item').removeClass('current');
@@ -532,9 +535,16 @@ $(function () {
 		}
 
 		// Wallet tab
-		if ($(this).index() == 2) {
+		if ($(this).index() == 1) {
 			drawCircleChart();
 		}
+
+		// Portfolio tab
+		if ($(this).index() == 2) {
+			if (!portfolioChartObj)
+			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
+		}
+
 	});
 
 
