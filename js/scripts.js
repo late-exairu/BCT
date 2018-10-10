@@ -933,8 +933,8 @@ $(function () {
 
 	function updateMainChart(exchange, sendCurrency, getCurrency) {
 
-		for (var i = 0; i < range_interval_options.length; i++) {
-			var url = `https://min-api.cryptocompare.com/data/${range_interval_options[i].endpoint}?fsym=${sendCurrency}&tsym=${getCurrency}&aggregate=${range_interval_options[i].aggregate}&limit=${limit}`;
+		for (var i = 0; i < range_options.length; i++) {
+			var url = `https://min-api.cryptocompare.com/data/${range_options[i].endpoint}?fsym=${sendCurrency}&tsym=${getCurrency}&aggregate=${range_options[i].aggregate}&limit=${range_options[i].limit}`;
 
 			// Get Main Chart graph data with a hour interval
 			$.ajax({
@@ -947,36 +947,26 @@ $(function () {
 
 					var gData; 
 					var isDrawMainChart = false;
-					var current_interval_index = $('.graph-range-slider__control').val();
-					if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[0]) {
-						gDataByMin = [];
-						gData = gDataByMin;
-						if (current_interval_index == 0) isDrawMainChart = true; 
+					var current_index = $('.graph-range-slider__control').val();
+					if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[0].interval) {
+						gDataDay = [];
+						gData = gDataDay;
+						if (current_index == 0) isDrawMainChart = true; 
 					}
-					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[1]) {
-						gDataByFiveMins = [];
-						gData = gDataByFiveMins;
-						if (current_interval_index == 1) isDrawMainChart = true; 
+					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
+						gDataWeek = [];
+						gData = gDataWeek;
+						if (current_index == 1) isDrawMainChart = true; 
 					}
-					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[2]) {
-						gDataByFifteenMins = [];
-						gData = gDataByFifteenMins;
-						if (current_interval_index == 2) isDrawMainChart = true; 
+					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[2].interval) {
+						gDataMonth = [];
+						gData = gDataMonth;
+						if (current_index == 2) isDrawMainChart = true; 
 					}
-					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[3]) {
-						gDataByHour = [];
-						gData = gDataByHour;
-						if (current_interval_index == 3) isDrawMainChart = true; 
-					}
-					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[4]) {
-						gDataBySixHours = [];
-						gData = gDataBySixHours;
-						if (current_interval_index == 4) isDrawMainChart = true; 
-					}
-					else if ((data.TimeTo - data.TimeFrom) * 1000 / limit <= 1.2 * range_intervals[5]) {
-						gDataByDay = [];
-						gData = gDataByDay;
-						if (current_interval_index == 5) isDrawMainChart = true; 
+					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[3].interval) {
+						gDataYear = [];
+						gData = gDataYear;
+						if (current_index == 3) isDrawMainChart = true; 
 					}
 
 					var prev_value = [null, null, null, null, null, null];
