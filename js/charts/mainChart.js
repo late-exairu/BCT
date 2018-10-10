@@ -21,36 +21,41 @@ var gDataByMin = new Array(),
 	gDataBySixHours = new Array(),
 	gDataByDay = new Array();
 
-var range_interval_options = [{
-		label: '1M',
-		endpoint: 'histominute',
-		aggregate: 1
-	},
-	{
-		label: '5M',
-		endpoint: 'histominute',
-		aggregate: 5
-	},
-	{
-		label: '15M',
-		endpoint: 'histominute',
-		aggregate: 15
-	},
-	{
-		label: '1H',
-		endpoint: 'histohour',
-		aggregate: 1
-	},
-	{
-		label: '6H',
-		endpoint: 'histohour',
-		aggregate: 6
-	},
+var range_options = [
+	// {
+	// 	label: '1M',
+	// 	endpoint: 'histominute',
+	// 	aggregate: 1
+	// },
+	// {
+	// 	label: '5M',
+	// 	endpoint: 'histominute',
+	// 	aggregate: 5
+	// },
 	{
 		label: '1D',
+		endpoint: 'histominute',
+		aggregate: 10,
+		limit: 144
+	},
+	{
+		label: '1W',
+		endpoint: 'histohour',
+		aggregate: 1,
+		limit: 168
+	},
+	{
+		label: '1M',
+		endpoint: 'histohour',
+		aggregate: 5,
+		limit: 149
+	},
+	{
+		label: '1Y',
 		endpoint: 'histoday',
-		aggregate: 1
-	}
+		aggregate: 3,
+		limit: 122
+	},
 ]
 // ======================
 
