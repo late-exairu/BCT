@@ -3035,32 +3035,33 @@
 </div>
 
 
-<div class="basic-popup transaction-popup" id="send-popup" style="display: none;">
+<div class="basic-popup send-popup" id="send-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
 		<div class="c-block-head">
 			<div class="c-block-head__left js-dropdown-wrap">
 				<h2 class="c-block-head__title">
-					Send BTC
+					Send USDT to Joe Johnson
 				</h2>
+			</div>
+			<div class="avatar-wrap">
+				<img class="avatar" src="pic/avatar_6.jpg" height="44" width="44" alt="">
 			</div>
 		</div>
 
 		<div class="d-flex-col flex-1-1 flex-h-fix">
-			<form class="transaction-form">
-				<div class="transaction-form__line inline">
-					<div class="transaction-form__input-group">
-						<input class="transaction-form__input" type="text" name="" value="1.00">
-						<div class="input-group-append">
-							<span class="input-group-text">BTC</span>
-						</div>
+			<form class="send-form">
+				<div class="send-form__line inline">
+					<div class="send-form__input-group">
+						<input class="send-form__input" type="text" name="" value="100.00">
+						<label class="send-form__label">You are sending</label>
 					</div>
 					<div class="coin-dropdown">
 						<div class="coin-dropdown__border">
 							<div class="coin-dropdown__current">
+								<p class="coin-dropdown__title">USDT</p>
 								<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
-								</svg><p class="coin-dropdown__title">Bitcoin</p>
-
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
+								</svg>
 								<div class="coin-dropdown__hangle">
 									<svg class="sprite-icon" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
@@ -3071,36 +3072,37 @@
 
 						<div class="coin-dropdown__list">
 							<div class="coin-dropdown__item current" data-name="Bitcoin" data-currency="BTC">
-								<svg class="coin-dropdown__icon btc" role="img" aria-hidden="true">
+								<p class="coin-dropdown__title">USDT</p>
+								<svg class="coin-dropdown__icon icon-curr clr-coin-usdt" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
+								</svg>
+								<!-- <svg class="coin-dropdown__icon btc" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
-								</svg><p class="coin-dropdown__title">Bitcoin</p>
+								</svg> -->
 							</div>
 
 							<div class="coin-dropdown__item" data-name="Ethereum" data-currency="ETH">
+								<p class="coin-dropdown__title">Ethereum</p>
 								<svg class="coin-dropdown__icon eth" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-eth"></use>
-								</svg><p class="coin-dropdown__title">Ethereum</p>
+								</svg>
 							</div>
 
 							<div class="coin-dropdown__item" data-name="Tether" data-currency="USDT">
+									<p class="coin-dropdown__title">Tether</p>
 									<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-									</svg><p class="coin-dropdown__title">Tether</p>
+									</svg>
 								</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="transaction-form__line inner">
-					<label class="transaction-form__label">To <span class="bold">Bitcoin</span> Address:</label>
-					<input class="transaction-form__input bold" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
-				</div>
-
-				<button class="transaction-form__btn submit js-fancybox-close" autentificator-fancybox>					
-					<svg class="transaction-form__btn-bg" role="img" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 240 71">
+				<button class="send-form__btn submit js-fancybox-close" autentificator-fancybox>					
+					<svg class="send-form__btn-bg" role="img" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 240 71">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#exch-bg"></use>
 					</svg>					
-					SEND
+					SEND US DOLLAR TETHER
 				</button>
 			</form>
 		</div>
