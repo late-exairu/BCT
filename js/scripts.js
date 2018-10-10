@@ -1394,6 +1394,17 @@ $(function () {
 
 	$('#panel-funds-wallet').on('click', 'button[transaction-fancybox]', function (e) {
 		e.preventDefault();
+
+		var currencyName = $(this).closest('.basic-table__row').attr('data-currency');
+		var coin_amount_str = $(this).closest('.basic-table__row').find('span.wallet' + currencyName)[0].innerHTML;
+		var coin_amount = parseFloat(coin_amount_str.replace(",", ""));
+		if (coin_amount > 0) {
+			$('#transaction-popup .transaction-form__input').removeClass('inactive')
+		}
+		else {
+			$('#transaction-popup .transaction-form__input').addClass('inactive')
+		}
+		
 		var fancies_length = $('main-cols__right .fancybox-container').length;
 		if (fancies_length < 1) {
 			$.fancybox.open({
@@ -1412,7 +1423,7 @@ $(function () {
 							.css("display", "block");
 						
 						$('#transaction-popup .transaction-form__input').keyup(function () {
-							if($(this).val() == '') {
+							if($(this).val() == '' || $(this).hasClass('inactive')) {
 								$(this).closest('.transaction-form__line').find('.transaction-form__button') .css({'background-color': 'var(--clr-backBT)', 'pointer-events': 'none'});
 							}
 							else {

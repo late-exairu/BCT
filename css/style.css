@@ -13480,7 +13480,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 8px 0 0; }
+    margin: 4px 0; }
     .advanced .transaction-form__line:first-child {
       margin: 0; }
     .advanced .transaction-form__line.inner .transaction-form__label {
