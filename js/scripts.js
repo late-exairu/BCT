@@ -1339,10 +1339,14 @@ $(function () {
 		if (val >= 10) {
 			progressbar_current_label.css('visibility', 'visible');
 		}
+		$('.exch-form__progress__value').html(parseInt(val) + '%');
 		progressbar_current.progressbar("value", val + 0.2);
 		progressbar_current_label.css("width", (val + 0.2) + '%');
 		if (val < 99.8) {
 			setTimeout(currentProgress, 48);
+		}
+		else {
+			progressbar_current.trigger('completed')
 		}
 	}
 
@@ -1709,66 +1713,6 @@ $(function () {
 					//exchanges++;
 					//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(3).html(exchanges + " Exchanges");
 				}, 4000 + 800 * i, i)
-
-				if (i == progressbar_array.length - 1) {
-					setTimeout(function () {
-						$('.exch-form').addClass('completed');
-						$('.exch-form__submit > span').html('DONE');
-						$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
-						$('.exch-form__submit').attr("disabled", true);
-						updateRecent();
-						firstClickAfterExchangeDone = true;
-
-						$('.exch-form__send .exch-form__label').text('Exchanged');
-						//$('.exch-form__get .exch-form__label').text('You got');
-
-						$(window).click(function (e) {
-							if (firstClickAfterExchangeDone) {
-								var eTarget = e.target;
-								if (!$(eTarget).parents('#panel-funds-history').length) {
-									// basic
-									if (!$('body').hasClass('advanced')) {
-										$('.js-tabs-panel').removeClass('active');
-										$('#panel-funds-wallet').addClass('active');
-										drawCircleChart();
-									}
-									//advanced
-									else {
-										$('#tab-funds-wallet').trigger('click');
-										$('.menu-dropdown').removeClass('open');
-									}
-								}
-								if ($('.exch-form').hasClass('completed')) {
-									$('.exch-form').removeClass('progress');
-									$('.exch-head').removeClass('open');
-									$('.graph-prices').removeClass('noClose');
-									$('.exch-form__submit').attr("disabled", false);
-									$('.exch-form').removeClass('completed');
-									$('.exch-form__close').removeClass('hidden');
-									$('.exch-form__submit > span').html('CONFIRM');
-									$('.exch-form .range-slider input[type=range]').css('pointer-events', 'all');
-
-
-									$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
-									$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
-
-									current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
-									current_exchange_item.css('height', '56px');
-
-									if (!isSelectedPrevConversion) {
-										// $('.icon-trader').removeClass('hidden');
-										$('.graph-prices__item .progress-label').css('visibility', 'visible');
-										$('.progressbar').addClass('hidden');
-										for (var j = 0; j < progressbar_array.length; j++) {
-											progressbar_array[j].progressbar("value", 0);
-										}
-									}
-								}
-								firstClickAfterExchangeDone = false;
-							}
-						});
-					}, 4000 + 800 * i, i);
-				}
 			}
 
 			$('.exch-form').addClass('progress');
@@ -1884,6 +1828,66 @@ $(function () {
 			//$('.user-portfolio-close').addClass('hidden');
 		}
 	});
+
+	progressbar_current.on('completed', function () {
+		$('.exch-form').addClass('completed');
+		$('.exch-form__submit > span').html('DONE');
+		$('exch-form__progress__value').html('0%');
+		$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
+		$('.exch-form__submit').attr("disabled", true);
+		updateRecent();
+		firstClickAfterExchangeDone = true;
+
+		$('.exch-form__send .exch-form__label').text('Exchanged');
+		//$('.exch-form__get .exch-form__label').text('You got');
+
+		$(window).click(function (e) {
+			if (firstClickAfterExchangeDone) {
+				var eTarget = e.target;
+				if (!$(eTarget).parents('#panel-funds-history').length) {
+					// basic
+					if (!$('body').hasClass('advanced')) {
+						$('.js-tabs-panel').removeClass('active');
+						$('#panel-funds-wallet').addClass('active');
+						drawCircleChart();
+					}
+					//advanced
+					else {
+						$('#tab-funds-wallet').trigger('click');
+						$('.menu-dropdown').removeClass('open');
+					}
+				}
+				if ($('.exch-form').hasClass('completed')) {
+					$('.exch-form').removeClass('progress');
+					$('.exch-head').removeClass('open');
+					$('.graph-prices').removeClass('noClose');
+					$('.exch-form__submit').attr("disabled", false);
+					$('.exch-form').removeClass('completed');
+					$('.exch-form__close').removeClass('hidden');
+					$('.exch-form__submit > span').html('CONFIRM');
+					$('.exch-form .range-slider input[type=range]').css('pointer-events', 'all');
+
+
+					$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
+					$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
+
+					current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
+					current_exchange_item.css('height', '56px');
+
+					if (!isSelectedPrevConversion) {
+						// $('.icon-trader').removeClass('hidden');
+						$('.graph-prices__item .progress-label').css('visibility', 'visible');
+						$('.progressbar').addClass('hidden');
+						for (var j = 0; j < progressbar_array.length; j++) {
+							progressbar_array[j].progressbar("value", 0);
+						}
+					}
+				}
+				firstClickAfterExchangeDone = false;
+			}
+		});
+	});
+	
 
 	$('.exch-form__close').click(function (e) {
 		e.preventDefault();

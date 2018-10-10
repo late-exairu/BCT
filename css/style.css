@@ -12838,7 +12838,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     justify-content: center;
     color: var(--clr-textD);
     background: var(--clr-textLL);
-    z-index: 1; }
+    z-index: 1;
+    padding-top: 3px; }
     .exch-form__curr span {
       font-size: 10px;
       color: var(--clr-textCT); }
@@ -12963,6 +12964,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-accentD) 100%); }
     .exch-form__submit:hover {
       opacity: .9; }
+    .exch-form__submit .exch-form__progress {
+      display: none;
+      color: var(--clr-block);
+      z-index: 1;
+      margin-top: 2px; }
   .exch-form__btn-triangle {
     position: absolute;
     left: auto;
@@ -12975,6 +12981,17 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     --color-stop-1: #a770ef;
     --color-stop-2: #cf8bf3;
     fill: url(#SVGID_1_) #f00; }
+  .exch-form.progress:not(.completed) .exch-form__submit .exch-form__progress {
+    display: block; }
+    .exch-form.progress:not(.completed) .exch-form__submit .exch-form__progress span {
+      display: inline-block; }
+    .exch-form.progress:not(.completed) .exch-form__submit .exch-form__progress__label {
+      font-size: 10px; }
+    .exch-form.progress:not(.completed) .exch-form__submit .exch-form__progress__value {
+      font-size: 22px;
+      font-weight: 500; }
+  .exch-form.progress:not(.completed) .exch-form__submit > span {
+    display: none; }
   .exch-form.progress .exch-form__label,
   .exch-form.progress .exch-form__input,
   .exch-form.progress .exch-form__switch-left,
@@ -12984,20 +13001,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     pointer-events: none; }
   .exch-form.progress .exch-form__submit {
     color: transparent;
-    background: var(--clr-block);
+    background: var(--clr-textLL);
     margin: 0;
     flex: 0 0 162px; }
-    .exch-form.progress .exch-form__submit:before {
-      content: '';
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background: url(../img/spin.svg); }
     .exch-form.progress .exch-form__submit:after {
-      background: var(--clr-block); }
+      background: var(--clr-textLL); }
   .exch-form.progress .exch-form__submit-bg {
     top: 50%;
     transform: translateY(-50%);
@@ -13024,6 +13032,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       content: '';
       width: 0;
       height: 0; }
+    .exch-form.completed .exch-form__submit .exch-form__progress {
+      display: none; }
   .exch-form.completed .exch-form__submit-bg {
     top: 50%;
     transform: translateY(-50%);

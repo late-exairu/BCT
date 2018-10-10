@@ -288,6 +288,7 @@
 		color: var(--clr-textD);
 		background: var(--clr-textLL);
 		z-index: 1;
+		padding-top: 3px;
 		span {
 			font-size: 10px;
 			color: var(--clr-textCT);
@@ -456,6 +457,13 @@
 		&:hover{
 			opacity: .9;
 		}
+
+		.exch-form__progress {
+			display: none;
+			color: var(--clr-block);
+			z-index: 1;
+			margin-top: 2px;
+		}
 	}
 
 	/*&__submit-bg{
@@ -502,6 +510,26 @@
 		fill: url(#SVGID_1_) #f00;
 	}
 
+	&.progress:not(.completed){
+		.exch-form__submit{
+			.exch-form__progress {
+				display: block;
+				span {
+					display: inline-block;
+				}
+				&__label {
+					font-size: 10px;
+				}
+				&__value {
+					font-size: 22px;
+					font-weight: 500;
+				}
+			}
+			& > span {
+				display: none;
+			}
+		}
+	}
 	&.progress{
 		
 		.exch-form__label,
@@ -514,23 +542,23 @@
 		}
 		.exch-form__submit{
 			color: transparent;
-			background: var(--clr-block);
+			background: var(--clr-textLL);
 			margin: 0;
 			flex: 0 0 162px;
 
-			&:before{
-				content: '';
-				width: 40px;
-				height: 40px;
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-				background: url(../img/spin.svg);
-			}
+			// &:before{
+			// 	content: '';
+			// 	width: 40px;
+			// 	height: 40px;
+			// 	position: absolute;
+			// 	left: 50%;
+			// 	top: 50%;
+			// 	transform: translate(-50%, -50%);
+			// 	background: url(../img/spin.svg);
+			// }
 
 			&:after{
-				background: var(--clr-block);
+				background: var(--clr-textLL);
 			}
 		}
 
@@ -580,6 +608,10 @@
 				content: '';
 				width: 0;
 				height: 0;
+			}
+
+			.exch-form__progress {
+				display: none;
 			}
 		}
 
