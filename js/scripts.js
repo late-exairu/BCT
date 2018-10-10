@@ -456,6 +456,13 @@ $(function () {
 			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
 			redrawMainChart();
 		}
+		else if (e.pageX > $('.b-graph').offset().left + $('.b-graph').width() && !$('.graph-prices').hasClass('noClose') && !$('.graph-prices').hasClass('open')) {
+			$('.graph-prices').addClass('open');
+			$('#mainChart').css('width', 'calc(100%)');
+			$('.b-graph__controls').addClass('shifted');
+			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
+			redrawMainChart();
+		}
 	});
 
 	/*---------------------------------------------------*/
