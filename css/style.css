@@ -963,6 +963,10 @@ h6 {
       width: 9px;
       height: 9px;
       margin: 0 auto; }
+    .basic-table .sprite-icon.arrow-drop-2 {
+      width: 14px;
+      height: 9px;
+      margin: 0 0 0 3px; }
   .basic-table .smaller {
     font-size: calc(var(--font-size) - 2px);
     margin: 3px 0 0 0; }
