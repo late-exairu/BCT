@@ -893,6 +893,17 @@ h6 {
     margin: auto;
     color: var(--clr-important);
     font-weight: 400; }
+  .basic-table__drop {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: all .1s; }
+    .basic-table__drop:hover {
+      color: var(--clr-accent);
+      cursor: pointer; }
+      .basic-table__drop:hover .sprite-icon {
+        fill: var(--clr-accent); }
   .basic-table.bordered .basic-table__body {
     border-top: 1px solid var(--clr-separator); }
   .basic-table.bordered .basic-table__row {
@@ -966,7 +977,7 @@ h6 {
     .basic-table .sprite-icon.arrow-drop-2 {
       width: 14px;
       height: 9px;
-      margin: 0 0 0 3px; }
+      margin: 0 0 0 6px; }
   .basic-table .smaller {
     font-size: calc(var(--font-size) - 2px);
     margin: 3px 0 0 0; }

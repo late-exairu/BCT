@@ -272,6 +272,23 @@
 		font-weight: 400;
 	}
 
+	&__drop{
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		transition: all .1s;
+
+		&:hover{
+			color: var(--clr-accent);
+			cursor: pointer;
+
+			.sprite-icon{
+				fill: var(--clr-accent);
+			}
+		}
+	}
+
 	&.bordered{
 		
 		.basic-table__body{
@@ -422,7 +439,7 @@
 		&.arrow-drop-2{
 			width: 14px;
 			height: 9px;
-			margin: 0 0 0 3px;
+			margin: 0 0 0 6px;
 		}
 	}
 
