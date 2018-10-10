@@ -1700,7 +1700,7 @@ $(function () {
 					//$('.exch-form__send .exch-form__input').val(numberWithCommas((firstValueResult).toFixed(2)));
 					//$('.exch-form__get .exch-form__input').val(numberWithCommas((secondValueResult).toFixed(2)));
 
-					updateWalletData();
+					updateWalletData('noRedraw-smallchart');
 					drawCircleChart(e, true);
 
 					//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(1).html((sendCurrency == 'USDT' ? '$' : '') + numberWithCommas(firstValueResult.toFixed(2)) + ' ' + sendCurrency + svgArrowTemplate + (getCurrency == 'USDT' ? '$' : '') + numberWithCommas(secondValueResult.toFixed(2)) + ' ' + getCurrency)

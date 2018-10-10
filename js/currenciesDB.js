@@ -133,7 +133,7 @@ ownWallet = wallets['ownWallet'];
 currentWallet = wallets['ownWallet'];
 updateWalletData();
 
-function updateWalletData() {
+function updateWalletData(param) {
     totalBalance = 0;
     for (const key in currentWallet) {
         eachBalance[key] = currentWallet[key] * currenciesPrice[key];
@@ -175,6 +175,8 @@ function updateWalletData() {
         $('.wallet' + key).html(numberWithCommas(currentWallet[key].toFixed(2)));
 
 
+        if (param == 'noRedraw-smallchart') return false;
+        
         var chartRange = $('.graph-range-slider__current').text();
         var ajaxUrl = '';
         switch (chartRange) {
