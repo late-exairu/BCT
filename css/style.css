@@ -662,6 +662,7 @@ h6 {
     overflow: hidden;
     border-radius: var(--border-radius); }
     .b-graph__controls.shifted {
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
       width: calc(100% - 182px); }
   .b-graph.fullScreen {
     position: fixed;
@@ -7950,7 +7951,7 @@ h6 {
   right: 0px;
   bottom: 0px;
   padding: 0;
-  width: 172px;
+  width: 182px;
   background: var(--clr-block);
   transition: all .2s;
   /*border: 1px solid var(--clr-separator);*/
@@ -8028,16 +8029,16 @@ h6 {
     position: absolute;
     top: 0px;
     bottom: 0px;
-    width: 12px;
+    width: 10px;
     background: var(--clr-separator);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
     cursor: pointer;
-    border: solid 2px var(--clr-block);
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius); }
+    /*border: solid 2px var(--clr-block);
+		border-top-left-radius: var(--border-radius);
+		border-bottom-left-radius: var(--border-radius);*/ }
     .graph-prices__controls__btn:after {
       content: "";
       width: 0;
@@ -8077,7 +8078,7 @@ h6 {
     height: 11px;
     margin: 0 0 0 4px; }
   .graph-prices__scroll {
-    width: 172px;
+    width: 182px;
     margin: 0;
     padding-left: 6px; }
   .graph-prices__scrollup__btn, .graph-prices__scrolldown__btn {

@@ -25,6 +25,7 @@
 		//transition: all 0.2s;
 
 		&.shifted {
+			border-radius: var(--border-radius) 0 0 var(--border-radius);
 			width: calc(100% - 182px);
 		}
 	}
