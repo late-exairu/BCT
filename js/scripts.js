@@ -949,12 +949,12 @@ $(function () {
 					var isDrawMainChart = false;
 					var current_index = $('.graph-range-slider__control').val();
 					if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[0].interval) {
-						gDataDay = [];
+						gDataTwoHour = [];
 						gData = gDataTwoHour;
 						if (current_index == 0) isDrawMainChart = true; 
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
-						gDataYear = [];
+						gDataDay = [];
 						gData = gDataDay;
 						if (current_index == 1) isDrawMainChart = true; 
 					}
@@ -2356,23 +2356,8 @@ $(function () {
 	var $portfolioGraphRange = $(".portfolio-graph-range__control");
 	$portfolioGraphRange.on('input', function () {
 		if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(this.value, {}, true);
-		switch (parseInt(this.value)) {
-			case 0:
-				$('.portfolio-graph-range__current').html("1h");
-				break;
-			case 1:
-				$('.portfolio-graph-range__current').html("1d");
-				break;
-			case 2:
-				$('.portfolio-graph-range__current').html("1w");
-				break;
-			case 3:
-				$('.portfolio-graph-range__current').html("1m");
-				break;
-			case 4:
-				$('.portfolio-graph-range__current').html("1year");
-				break;
-		}
+		var range_index = parseInt(this.value);
+		$('.portfolio-graph-range__current').html(range_options[range_index].label);
 		redrawMainChart();
 	});
 
@@ -2414,7 +2399,6 @@ $(function () {
 		var index = parseInt(this.value);
 		var interval = range_options[index].interval;
 		var gData;
-
 		switch (index) {
 			case 0:
 				gData = gDataTwoHour;
