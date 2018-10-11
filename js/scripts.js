@@ -999,7 +999,8 @@ $(function () {
 
 						for (var k = 0; k < 6; k++) {
 							if (prev_value[k] == null) prev_value[k] = value * (Math.random() * (0.92 - 1.08) + 1.08);
-							var valueForFake = value * (Math.random() * (0.92 - 1.08) + 1.08);
+							var random = Math.pow(Math.random(), 15) * Math.pow(-1, Math.floor(Math.random() * 10))
+							var valueForFake = value * (1 + 0.08 * random);
 							var diff = valueForFake - prev_value[k];
 
 							fakeGraphs[k].push(valueForFake);
