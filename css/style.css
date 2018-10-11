@@ -14756,16 +14756,7 @@ button:-moz-focusring {
       height: 40px;
       padding: 0 8px; }
       #send-popup .send-form .coin-dropdown__current:hover {
-        background-color: var(--clr-backL); }
-    #send-popup .send-form .coin-dropdown__item.current {
-      display: flex; }
-    #send-popup .send-form .coin-dropdown__item {
-      background-color: var(--clr-block);
-      height: 32px; }
-      #send-popup .send-form .coin-dropdown__item:hover {
-        background-color: var(--clr-backBT); }
-    #send-popup .send-form .coin-dropdown__list {
-      height: inherit; }
+        cursor: default; }
     #send-popup .send-form .coin-dropdown__title {
       font-size: 16px;
       font-weight: 600;
@@ -14777,7 +14768,9 @@ button:-moz-focusring {
         font-size: 14px;
         font-weight: 200; }
     #send-popup .send-form .coin-dropdown__border {
-      border: 0; }
+      border: 0;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0; }
     #send-popup .send-form .coin-dropdown__icon {
       width: 40px;
       height: 40px;
