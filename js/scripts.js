@@ -1955,6 +1955,9 @@ $(function () {
 
 	$('.exch-form__close').click(function (e) {
 		e.preventDefault();
+		$('#js-graph-prices').removeClass('open noClose');
+		$('.c-block.b-graph__controls').removeClass('shifted');
+		redrawMainChart();
 		$(this).closest('.exch-head').toggleClass('open');
 		// basic
 		if (!$('body').hasClass('advanced')) {
