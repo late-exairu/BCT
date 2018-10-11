@@ -180,20 +180,23 @@ function updateWalletData() {
             case '1H':
                 ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=60';
                 break;
+            case '2H':
+                ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=120';
+                break;
             case '6H':
                 ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=360';
                 break;
             case '1D':
-                ajaxUrl = 'https://min-api.cryptocompare.com/data/histohour?fsym=' + key + '&tsym=USD&limit=24';
+                ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&aggregate=10&limit=144';
                 break;
             case '1W':
                 ajaxUrl = 'https://min-api.cryptocompare.com/data/histohour?fsym=' + key + '&tsym=USD&limit=168';
                 break;
             case '1M':
-                ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&limit=31';
+                ajaxUrl = 'https://min-api.cryptocompare.com/data/histohour?fsym=' + key + '&tsym=USD&aggregate=5&limit=149';
                 break;
             case '1Y':
-                ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&limit=365';
+                ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&aggregate=3&limit=122';
                 break;
 
 /*          case '15M':
