@@ -1047,6 +1047,10 @@ $(function () {
 		
 							if ($('body').hasClass('advanced'))
 								mainChartObj.series[7].setData(gData[0].diffs);
+							
+							var y_min = gData[0].min - (gData[0].max - gData[0].min) * 0.2;
+							var y_max = gData[0].max + (gData[0].max - gData[0].min) * 0.2;
+							mainChartObj.yAxis[0].setExtremes(y_min,y_max);
 								
 							updateMainChartSpline(1);
 							updateMainChartPercentChange();
@@ -2461,6 +2465,9 @@ $(function () {
 		for (var k = 1; k < 6; k++) {
 			mainChartObj.series[k].setData(gData[k].prices);
 		}
+		var y_min = gData[0].min - (gData[0].max - gData[0].min) * 0.2;
+		var y_max = gData[0].max + (gData[0].max - gData[0].min) * 0.2;
+		mainChartObj.yAxis[0].setExtremes(y_min, y_max);
 
 		// mainChartObj.series[0].update({
 		// 	fillColor: {
