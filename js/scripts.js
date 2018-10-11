@@ -1409,7 +1409,11 @@ $(function () {
 
 		var currencyName = $(this).closest('.basic-table__row').attr('data-currency');
 		var coin_amount_str = $(this).closest('.basic-table__row').find('span.wallet' + currencyName)[0].innerHTML;
+		var USDT550Equal = 550 / currenciesPrice[currencyName];
 		var coin_amount = parseFloat(coin_amount_str.replace(",", ""));
+
+		$('#transaction-popup .transaction-form__label').text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
+
 		if (coin_amount > 0) {
 			$('#transaction-popup .transaction-form__input').removeClass('inactive')
 		}
