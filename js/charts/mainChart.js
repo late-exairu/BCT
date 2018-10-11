@@ -350,7 +350,7 @@ var hightChartUpdateOptions = {
 
 			return '<div class="tooltip font10 arrow_box mainTooltip ' + arrowDirection + '">' +
 				'<div class=\'textCenter\'><span class=\'currencies font12 bold\'>' + currency_send + '/' + currency_get + '</span> : <span class=\'value font12 bold\'>' + TooltipValue + '</span></div> <div class="gray">' +
-				dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',' + ("0" + date.getHours()).slice(-2) + ':00 ' + current_trader + ' </div></div > ';
+				dayName + ', ' + month + ' ' + date.getDate() + ',' + year + ',' + ("0" + date.getHours()).slice(-2) + ':' + ("0" + date.getMinutes()).slice(-2) + current_trader + ' </div></div > ';
 		},
 		positioner: function (labelWidth, labelHeight, point, ) {
 			var graphWidth = $(mainChartObj.container).width();
