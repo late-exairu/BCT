@@ -950,23 +950,28 @@ $(function () {
 					var current_index = $('.graph-range-slider__control').val();
 					if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[0].interval) {
 						gDataDay = [];
-						gData = gDataDay;
+						gData = gDataTwoHour;
 						if (current_index == 0) isDrawMainChart = true; 
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
-						gDataWeek = [];
-						gData = gDataWeek;
+						gDataYear = [];
+						gData = gDataDay;
 						if (current_index == 1) isDrawMainChart = true; 
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[2].interval) {
-						gDataMonth = [];
-						gData = gDataMonth;
+						gDataWeek = [];
+						gData = gDataWeek;
 						if (current_index == 2) isDrawMainChart = true; 
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[3].interval) {
+						gDataMonth = [];
+						gData = gDataMonth;
+						if (current_index == 3) isDrawMainChart = true; 
+					}
+					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[4].interval) {
 						gDataYear = [];
 						gData = gDataYear;
-						if (current_index == 3) isDrawMainChart = true; 
+						if (current_index == 4) isDrawMainChart = true; 
 					}
 
 					var prev_value = [null, null, null, null, null, null];
@@ -2412,15 +2417,18 @@ $(function () {
 
 		switch (index) {
 			case 0:
-				gData = gDataDay;
+				gData = gDataTwoHour;
 				break;
 			case 1:
-				gData = gDataWeek;
+				gData = gDataDay;
 				break;
 			case 2:
-				gData = gDataMonth;
+				gData = gDataWeek;
 				break;
 			case 3:
+				gData = gDataMonth;
+				break;
+			case 4:
 				gData = gDataYear;
 				break;
 		}

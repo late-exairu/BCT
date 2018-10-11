@@ -13,6 +13,13 @@ var range_options = [
 	// 	aggregate: 5
 	// },
 	{
+		label: '2H',
+		endpoint: 'histominute',
+		aggregate: 1,
+		limit: 140,
+		interval: 60000
+	},
+	{
 		label: '1D',
 		endpoint: 'histominute',
 		aggregate: 10,
@@ -23,7 +30,7 @@ var range_options = [
 		label: '1W',
 		endpoint: 'histohour',
 		aggregate: 1,
-		limit: 168,
+		limit: 160,
 		interval: 3600000
 	},
 	{
@@ -42,13 +49,14 @@ var range_options = [
 	},
 ]
 
-var range_index = 3; // default graph - 1 Year.
+var range_index = 4; // default graph - 1 Year.
 
 var date50 = new Date(Date.now() - range_options[range_index].interval * range_options[range_index].limit);
 var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 
 // variables for range slider
-var gDataDay = new Array(),
+var gDataTwoHour = new Array(),
+	gDataDay = new Array(),
 	gDataWeek = new Array(),
 	gDataMonth = new Array(),
 	gDataYear = new Array()
@@ -433,7 +441,7 @@ var hightChartUpdateOptions = {
 						avg *= -1;
 					}
 					// var correctIndexes = [30, 10, 15, 4, 1, 0.4];
-					var correctIndexes = [45, 30, 8, 2];
+					var correctIndexes = [90, 45, 30, 8, 2];
 					return avg * correctIndexes[$('.graph-range-slider__control').val()];
 				},
 				forced: true,
