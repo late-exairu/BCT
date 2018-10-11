@@ -952,41 +952,63 @@ $(function () {
 						gDataTwoHour = [];
 						gData = gDataTwoHour;
 						if (current_index == 0) isDrawMainChart = true; 
+						console.log('gDataTwoHour');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
 						gDataDay = [];
 						gData = gDataDay;
 						if (current_index == 1) isDrawMainChart = true; 
+						console.log('gDataDay');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[2].interval) {
 						gDataWeek = [];
 						gData = gDataWeek;
 						if (current_index == 2) isDrawMainChart = true; 
+						console.log('gDataWeek');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[3].interval) {
 						gDataMonth = [];
 						gData = gDataMonth;
 						if (current_index == 3) isDrawMainChart = true; 
+						console.log('gDataMonth');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[4].interval) {
 						gDataYear = [];
 						gData = gDataYear;
 						if (current_index == 4) isDrawMainChart = true; 
+						console.log('gDataYear');
 					}
 
 					var prev_value = [null, null, null, null, null, null];
+
+					var initial = (data.Data[0].open + data.Data[0].close) / 2;
+					var max = initial, min =  initial, diff_max = 0;
+					var random_maxes = [initial, initial, initial, initial, initial, initial];
+					var random_mins = [initial, initial, initial, initial, initial, initial];
+					var random_diff_maxes = [0, 0, 0, 0, 0, 0];
+
 					data.Data.map(s => {
 						var value = (s.open + s.close) / 2;
 						var difference = s.close - s.open;
 						grapArr.push(value);
 						columnArr.push(difference);
 
+						if (max < value) max = value;
+						if (min > value) min = value;
+						if (diff_max < Math.abs(difference)) diff_max = Math.abs(difference);
+
 						for (var k = 0; k < 6; k++) {
 							if (prev_value[k] == null) prev_value[k] = value * (Math.random() * (0.92 - 1.08) + 1.08);
 							var valueForFake = value * (Math.random() * (0.92 - 1.08) + 1.08);
+							var diff = valueForFake - prev_value[k];
+
 							fakeGraphs[k].push(valueForFake);
-							fakeGraphdiffs[k].push(valueForFake - prev_value[k]);
+							fakeGraphdiffs[k].push(diff);
 							prev_value[k] = valueForFake;
+
+							if (random_maxes[k] < valueForFake) random_maxes[k] = valueForFake;
+							if (random_mins[k] > valueForFake) random_mins[k] = valueForFake;
+							if (random_diff_maxes[k] < Math.abs(diff)) random_diff_maxes[k] = Math.abs(diff);
 						}
 					});
 
@@ -999,16 +1021,23 @@ $(function () {
 					if (gData != undefined) {
 						var one_graph = {
 							prices: grapArr,
-							diffs: columnArr
+							diffs: columnArr,
+							max: max,
+							min: min,
+							diffs_max: diff_max
 						}
 						gData.push(one_graph);
 						for (var k = 0; k < 6; k++) {
 							one_graph = {
 								prices: fakeGraphs[k],
-								diffs: fakeGraphdiffs[k]
+								diffs: fakeGraphdiffs[k],
+								max: random_maxes[k],
+								min: random_mins[k],
+								diffs_max: random_diff_maxes[k]
 							}
 							gData.push(one_graph);
 						}
+						console.log(gData);
 						if (isDrawMainChart) { 
 							mainChartObj.series[0].setData(gData[0].prices);
 		
