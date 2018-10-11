@@ -1872,8 +1872,8 @@ $(function () {
 			break;
 		}
 
-		$(".graph-prices__list .graph-prices__item .graph-prices__amount").html(`
-				<span class="graph-prices__amount-label hidden">Amount: </span>
+		$(".graph-prices__list .graph-prices__item .graph-prices__amount").removeClass('hidden').html(`
+				<span class="graph-prices__amount-label">Amount: </span>
 				0.00 
 				<span>` + getCurrency + '</span>');
 		$(".graph-prices__list .graph-prices__item .graph-prices__price").addClass('hidden');
