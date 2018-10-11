@@ -117,7 +117,7 @@ var hightChartUpdateOptions = {
 	plotOptions: {
 		series: {
 			turboThreshold: 10000,
-			pointWidth: 6,//$('#mainChart').width() / 140, // fixed A pixel value specifying
+			pointWidth: 5,//$('#mainChart').width() / 140, // fixed A pixel value specifying
 			pointPadding: 0.15,
 			pointStart: start_point,
 			pointInterval: range_options[range_index].interval,
@@ -433,8 +433,8 @@ var hightChartUpdateOptions = {
 						avg *= -1;
 					}
 					// var correctIndexes = [30, 10, 15, 4, 1, 0.4];
-					// return avg * 15 * correctIndexes[$('.graph-range-slider__control').val()];
-					return avg * 2;
+					var correctIndexes = [45, 30, 8, 2];
+					return avg * correctIndexes[$('.graph-range-slider__control').val()];
 				},
 				forced: true,
 				units: [

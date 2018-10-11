@@ -2407,35 +2407,29 @@ $(function () {
 		// updateMainChartPercentChange();
 		
 		var index = parseInt(this.value);
-		var interval = range_intervals[index];
+		var interval = range_options[index].interval;
 		var gData;
 
 		switch (index) {
 			case 0:
-				gData = gDataByMin;
+				gData = gDataDay;
 				break;
 			case 1:
-				gData = gDataByFiveMins;
+				gData = gDataWeek;
 				break;
 			case 2:
-				gData = gDataByFifteenMins;
+				gData = gDataMonth;
 				break;
 			case 3:
-				gData = gDataByHour;
-				break;
-			case 4:
-				gData = gDataBySixHours;
-				break;
-			case 5:
-				gData = gDataByDay;
+				gData = gDataYear;
 				break;
 		}
 
-		$('.graph-range-slider__current').html(range_interval_options[index].label);
+		$('.graph-range-slider__current').html(range_options[index].label);
 		
 		mainChartObj.series.forEach(series => {
 			series.update({
-				pointStart: maxDate - interval * limit,
+				pointStart: maxDate - interval * range_options[index].limit,
 				pointInterval: interval
 			})
 		})
