@@ -1412,7 +1412,7 @@ $(function () {
 		var USDT550Equal = 550 / currenciesPrice[currencyName];
 		var coin_amount = parseFloat(coin_amount_str.replace(",", ""));
 
-		$('#transaction-popup .transaction-form__label').text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
+		$('#transaction-popup .transaction-form__label').eq(0).text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
 
 		if (coin_amount > 0) {
 			$('#transaction-popup .transaction-form__input').removeClass('inactive')
