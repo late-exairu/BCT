@@ -441,8 +441,40 @@ var hightChartUpdateOptions = {
 						avg *= -1;
 					}
 					// var correctIndexes = [30, 10, 15, 4, 1, 0.4];
-					var correctIndexes = [90, 45, 30, 8, 2];
-					return avg * correctIndexes[$('.graph-range-slider__control').val()];
+					// var correctIndexes = [90, 45, 30, 8, 2];
+					// return avg * correctIndexes[$('.graph-range-slider__control').val()];
+
+					var current_range_index = $('.graph-range-slider__control').val();
+
+					var gData;
+					switch (parseInt(current_range_index)) {
+						case 0:
+							gData = gDataTwoHour;
+							break;
+						case 1:
+							gData = gDataDay;
+							break;
+						case 2:
+							gData = gDataWeek;
+							break;
+						case 3:
+							gData = gDataMonth;
+							break;
+						case 4:
+							gData = gDataYear;
+							break;
+					}
+
+					// console.log("current_range_index", current_range_index);
+					// console.log("gData", gData);
+					// console.log("gDataDay", gDataDay);
+					// console.log("gDataYear", gDataYear);
+
+					var y_min = gData[0].min - (gData[0].max - gData[0].min) * 0.3;
+					var y_max = gData[0].max + (gData[0].max - gData[0].min) * 0.15;
+					var diff = y_min + (y_max - y_min) * 0.4 * avg / gData[0].diffs_max;
+
+					return diff;
 				},
 				forced: true,
 				units: [
