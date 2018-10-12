@@ -48,6 +48,15 @@
 			padding: 0;
 		}
 	}
+
+	&__switch-arrows{
+		width: 9px;
+		height: 7px;
+		position: relative;
+		fill: var(--clr-backCI);
+		transition: all .1s;
+		margin: 1px 2px;
+	}
 	
 	&__title {
 		font-size: 12px;
@@ -58,12 +67,6 @@
 		margin: 0;
 		span.vol {
 			color: var(--clr-backCI);
-		}
-		svg {
-			display: inline-block;
-			width: 12px;
-			height: 9px;
-			margin: 0 2px;
 		}
 	}
 	
