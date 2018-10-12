@@ -39,7 +39,7 @@
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="c-block__col">
 							<div class="c-block__section chat-head">
-								<button class="chat-head__back">
+								<button class="chat-head__back hidden">
 									<svg class="sprite-icon" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-back-3"></use>
 									</svg>
@@ -751,8 +751,8 @@
 												document.querySelector('.message-bar__login').classList.add('hidden');
 											if (document.querySelector('.message-bar__login-demo'))
 												document.querySelector('.message-bar__login-demo').classList.add('hidden');
-											if (document.querySelector('.chats-search__menu'))
-												document.querySelector('.chats-search__menu').classList.remove('hidden');
+											if (document.querySelector('.chat-head__back'))
+												document.querySelector('.chat-head__back').classList.remove('hidden');
 										}
 									</script>									
 								</div><!-- message-bar__login END -->
@@ -771,7 +771,7 @@
 
 		<div class="main-cols__right">
 			<div class="main-cols__right-top">
-				<div class="exch-head m-bottom">
+				<div class="exch-head">
 					<div class="exch-head__body">
 						<div class="exch-head__send">
 							<div class="exch-dropdown">
@@ -809,7 +809,7 @@
 								<div class="exch-dropdown__list">
 									<div class="exch-dropdown__scroll scroll-y scrollbar-right outer">
 
-										<div class="exch-dropdown__list-title">Recent</div>
+										<div class="exch-dropdown__list-title">Coins in your wallet</div>
 
 										<!-- <div class="exch-dropdown__item" data-name="Bitcoin" data-telegram="BTC Bitcoin Room" data-currency="BTC">
 											<svg class="exch-dropdown__icon clr-coin-btc" role="img" aria-hidden="true">
@@ -1003,8 +1003,8 @@
 									<div class="graph-info__item">
 										<p class="graph-info__title">
 											<span>1 USDT </span>
-											<svg class="transaction-form__switch-arrows" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrows-switch"></use>
+											<svg class="graph-info__switch-arrows" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrows-switch-small"></use>
 											</svg>
 											<span> 0.00016 BTC</span>
 										</p>
@@ -1898,22 +1898,19 @@
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
 											</svg>
 											<div class="d-flex-col">
-												<span><span class="walletUSDT"></span> USDT</span>
+												<span class="bigger"><span class="bold walletUSDT"></span> USDT</span>
 												<span class="smaller">Tether</span>
 											</div>
 										</div>
 										<div class="basic-table__col w-40">
-											<div id="smallChartUSDT" class="smallCurrencyChart"></div>
-											<div class="smallChartInfo d-flex-col"></div>
+											<div class="bigger smallCurrencyChart" id="smallChartUSDT"></div>
+											<div class="bigger smallChartInfo d-flex-col"></div>
 											<!-- $1 
 											<span class="smaller clr-blue">+0%</span> -->
 										</div>
 										<div class="basic-table__col w-22">
-											<button class="basic-table__btn fix-width clickable" transaction-fancybox>
-												<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-												</svg>
-												USDT
+											<button class="basic-table__btn d-flex-col fix-width clickable" transaction-fancybox>
+												<span class="bigger">DEPOSIT</span> USDT
 											</button>
 										</div>
 									</div>
@@ -1925,21 +1922,18 @@
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
 											</svg>
 											<div class="d-flex-col">
-												<span><span class="walletBTC"></span> BTC</span>
+												<span class="bigger"><span class="bold walletBTC"></span> BTC</span>
 												<span class="smaller">Bitcoin</span>
 											</div>
 										</div>
 										<div class="basic-table__col w-40">
-											<div id="smallChartBTC" class="smallCurrencyChart"></div>
+											<div class="bigger smallCurrencyChart" id="smallChartBTC"></div>
 											<div class="smallChartInfo d-flex-col"></div>
 											<!-- $6,387.95 <span class="smaller clr-blue">+3.18%</span> -->
 										</div>
 										<div class="basic-table__col w-22">
-											<button class="basic-table__btn fix-width clickable" transaction-fancybox>
-												<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-												</svg>
-												BTC
+											<button class="basic-table__btn d-flex-col fix-width clickable" transaction-fancybox>
+												<span class="bigger">DEPOSIT</span> BTC
 											</button>
 										</div>
 									</div>
@@ -1951,21 +1945,18 @@
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-eth"></use>
 											</svg>
 											<div class="d-flex-col">
-												<span><span class="walletETH"></span> ETH</span>
+												<span class="bigger"><span class="bold walletETH"></span> ETH</span>
 												<span class="smaller">Ethereum</span>
 											</div>
 										</div>
 										<div class="basic-table__col w-40">
-											<div id="smallChartETH" class="smallCurrencyChart"></div>
+											<div class="bigger smallCurrencyChart" id="smallChartETH"></div>
 											<div class="smallChartInfo d-flex-col"></div>
 											<!-- $202.37 <span class="smaller clr-blue">+0.26%</span> -->
 										</div>
 										<div class="basic-table__col w-22">
-											<button class="basic-table__btn fix-width clickable" transaction-fancybox>
-												<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-												</svg>
-												ETH
+											<button class="basic-table__btn d-flex-col fix-width clickable" transaction-fancybox>
+												<span class="bigger">DEPOSIT</span> ETH
 											</button>
 										</div>
 									</div>
@@ -1977,21 +1968,18 @@
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-ltc"></use>
 											</svg>
 											<div class="d-flex-col">
-												<span><span class="walletLTC"></span> LTC</span>
+												<span class="bigger"><span class="bold walletLTC"></span> LTC</span>
 												<span class="smaller">Litecoin</span>
 											</div>
 										</div>
 										<div class="basic-table__col w-40">
-											<div id="smallChartLTC" class="smallCurrencyChart"></div>
+											<div class="bigger smallCurrencyChart" id="smallChartLTC"></div>
 											<div class="smallChartInfo d-flex-col"></div>
 											<!-- $54.73 <span class="smaller clr-blue">+1.25%</span> -->
 										</div>
 										<div class="basic-table__col w-22">
-											<button class="basic-table__btn fix-width clickable" transaction-fancybox>
-												<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-												</svg>
-												LTC
+											<button class="basic-table__btn d-flex-col fix-width clickable" transaction-fancybox>
+												<span class="bigger">DEPOSIT</span> LTC
 											</button>
 										</div>
 									</div>

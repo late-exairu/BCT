@@ -9,8 +9,8 @@ $(function () {
 				document.querySelector('.message-bar__login').classList.add('hidden');
 			if (document.querySelector('.message-bar__login-demo'))
 				document.querySelector('.message-bar__login-demo').classList.add('hidden');
-			if (document.querySelector('.chats-search__menu'))
-				document.querySelector('.chats-search__menu').classList.remove('hidden');
+			if (document.querySelector('.chat-head__back'))
+				document.querySelector('.chat-head__back').classList.remove('hidden');
 
 			if (localStorage.getItem('telegramPhoto')) {
 				if (document.querySelector('.message-bar__user-pic .user-pic__avatar')) {
@@ -1968,7 +1968,6 @@ $(function () {
 				<span class="graph-prices__amount-label">
 					Amount: 
 				</span>` + (secondValue / progressBarsCounter).toFixed(2) + ' <span>' + getCurrency + '</span>');
-				$(item).css('height', '66px');
 			}
 		});
 	}

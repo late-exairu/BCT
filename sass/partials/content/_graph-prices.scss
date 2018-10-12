@@ -37,7 +37,7 @@
 		line-height: 1.2;
 		font-weight: 700;
 		text-align: left;
-		padding: 0 5px;
+		padding: 0 5px 0 0;
 
 		span {
 			font-size: 8px;
@@ -210,8 +210,9 @@
 	&__scroll {
 		width: 182px;
 		margin: 0;
-		padding-left: 6px;
+		padding-left: 10px;
 	}
+
 	&__scrollup {
 		font-size: 9px;
 		color: var(--clr-backCI);
@@ -395,8 +396,6 @@
 	&__item {
 		position: relative;
 		text-align: center;
-		height: 56px;
-		//display: none;
 		margin: 0;
 		transition: all .1s;
 		cursor: pointer;
@@ -448,7 +447,7 @@
 
 	&__item-wrapper{
 		width: 100%;
-		height: calc(100% - 8px);		
+		height: 72px;		
 		display: flex;
 		align-items: center;
 	}
@@ -462,9 +461,9 @@
 		font-size: 17px;
 	   	font-weight: 650;
 		line-height: 1.18;
-		margin: 5px 0 0;
+		margin: 0;
 		text-align: left;
-		padding: 0 5px;
+		padding: 0 5px 0 0;
 	}
 
 	&__price, &__amount {
@@ -472,7 +471,7 @@
 	   	line-height: 1.2;
 		/*font-weight: 700;		*/
 		text-align: left;
-		padding: 0 5px;
+		padding: 0 5px 0 0;
 
 		span {
 			font-size: 10px;
@@ -491,10 +490,10 @@
 	}
 
 	.icon-trader {
-		width: 50px;
+		width: 40px;
 		position: relative;
 		margin: auto 0;
-		flex: 0 0 50px;
+		flex: 0 0 40px;
 	}
 
 	&__sort__btn{

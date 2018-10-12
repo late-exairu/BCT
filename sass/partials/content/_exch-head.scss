@@ -13,7 +13,8 @@
 
 	position: relative;
 	z-index: 100000;
-	height: calc(var(--exch-head-height) + 2px);
+	height: calc(var(--exch-head-height) + var(--gap-size) + 2px);
+	background-color: var(--clr-back-new);
 
 	&__body{
 		position: relative;
@@ -81,7 +82,7 @@
 
 	&__switch-arrows{
 		display: block;
-		width: 36px;
+		width: 38px;
 		height: 28px;
 		position: relative;
 		fill: var(--clr-accentD);

@@ -148,12 +148,12 @@ function updateWalletData() {
                     '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + key.toLowerCase() + '"></use>' +
                     '</svg>' +
                     '<div class="d-flex-col">' +
-                    '<span><span class="wallet' + key + '"></span> ' + key + ' </span><span class="smaller">' + currencyName + '</span>' +
+                    '<span class="bigger"><span class="bold wallet' + key + '"></span> ' + key + ' </span><span class="smaller">' + currencyName + '</span>' +
                     '</div></div>' +
                     '<div class="basic-table__col w-40">' +
-                    '<div id="smallChart' + key + '" class="smallCurrencyChart"></div>' +
-                    '<div class = "smallChartInfo d-flex-col"></div></div>' +
-                    '<div class="basic-table__col w-22"><button class="basic-table__btn fix-width" transaction-fancybox><svg class="sprite-icon qr-code" role="img" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use></svg>' + key + '</button></div>' +
+                    '<div class="smallCurrencyChart" id="smallChart' + key + '"></div>' +
+                    '<div class="bigger smallChartInfo d-flex-col"></div></div>' +
+                    '<div class="basic-table__col w-22"><button class="basic-table__btn d-flex-col fix-width" transaction-fancybox><span class="bigger">DEPOSIT</span>' + key + '</button></div>' +
                     '</div>';
             $('#panel-funds-wallet .basic-table .basic-table').append(newRow);
         }
