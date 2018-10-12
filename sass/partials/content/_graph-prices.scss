@@ -170,7 +170,7 @@
 
 	&__controls__btn__open {
 		position: absolute;
-		left: calc(100% - 12px);
+		left: calc(100% - 10px);
 		top: 0px;
 		bottom: 0px;
 		width: 10px;
@@ -525,7 +525,8 @@
 		border: none;
 		justify-content: center;
 		cursor: pointer;
-		background: transparent;
+		background: var(--clr-block);
+		border-radius: 3px;
 
 
 		&.asc{
