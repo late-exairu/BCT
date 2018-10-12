@@ -1353,11 +1353,11 @@ h6 {
   .chat-head__back {
     position: relative;
     display: flex;
-    width: 34px;
+    width: 40px;
     align-content: center;
     justify-content: center;
-    height: 34px;
-    margin: auto 10px auto 0;
+    height: 40px;
+    margin: auto 5px auto 0;
     padding: 0;
     border-radius: 50%;
     cursor: pointer;
@@ -1366,8 +1366,8 @@ h6 {
     background: var(--clr-separator); }
     .chat-head__back .sprite-icon {
       position: relative;
-      width: 13px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       margin: 0 0 0 -4px;
       fill: var(--clr-accentD); }
     .chat-head__back:hover .sprite-icon {
@@ -1399,7 +1399,7 @@ h6 {
     flex: 1 1 auto; }
   .chat-head__name {
     margin: 0 0 1px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     line-height: 1.1;
     white-space: nowrap;
@@ -1407,10 +1407,10 @@ h6 {
     text-overflow: ellipsis;
     color: #2a3e81; }
   .chat-head__info {
-    font-size: 11px;
+    font-size: 13px;
     line-height: 1.1;
     margin: 0 0 0;
-    color: var(--clr-textL);
+    color: var(--clr-textLL);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -1489,42 +1489,48 @@ h6 {
     .chat-talk__item.-clr-green {
       --inner-accent: #72c16e; }
   .chat-talk__user-pic {
-    margin: 2px 14px 2px 0; }
+    margin: 2px 20px 2px 0; }
   .chat-talk__content {
-    padding: 0 2px 0 2px;
+    padding: 10px 10px 0 10px;
     overflow: hidden;
-    flex: 1 1 auto; }
+    /*flex: 1 1 auto;*/
+    background-color: #e8e8e8;
+    border-radius: 5px 5px 5px 5px; }
   .chat-talk__head {
     display: flex; }
   .chat-talk__name {
     margin: 0;
     font-size: 12px;
+    font-weight: bold;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--clr-text);
     color: var(--inner-accent);
     display: flex;
-    margin: 0 auto 0 0; }
+    margin: 0 auto 0 0;
+    line-height: 1.15; }
   .chat-talk__info {
     display: flex;
-    padding: 2px 0 0; }
+    flex-direction: column;
+    justify-content: flex-end; }
   .chat-talk__readed {
+    display: none;
     width: 13px;
     height: 9px;
     margin: 1px 0 0;
     fill: var(--clr-accent); }
   .chat-talk__time {
     font-family: "open_sans", sans-serif;
-    margin: 0 0 0 3px;
-    font-size: 10px;
+    margin: 0 0 12px 6px;
+    font-size: 12px;
     white-space: nowrap;
     min-height: 12px;
-    color: var(--clr-textL); }
+    color: var(--clr-textLL); }
   .chat-talk__quote {
     position: relative;
     color: var(--clr-text);
-    margin: 5px 0 5px;
+    margin: 10px 0 8px;
     padding: 2px 0 0 7px; }
     .chat-talk__quote p {
       margin: 0 0 12px;
@@ -1534,12 +1540,13 @@ h6 {
       overflow: hidden;
       text-overflow: ellipsis;
       margin: 0;
-      color: var(--clr-textD);
+      color: var(--clr-text);
       opacity: 0.70; }
     .chat-talk__quote .chat-talk__name {
       font-size: 12px;
-      color: #1cbaac;
-      margin: 0 0 2px; }
+      color: var(--clr-text);
+      margin: 0 0 0px;
+      opacity: 0.70; }
     .chat-talk__quote:after {
       content: '';
       position: absolute;
@@ -1547,14 +1554,15 @@ h6 {
       top: 4px;
       bottom: 2px;
       width: 2px;
-      background: #1cbaac; }
+      background: var(--clr-text);
+      opacity: 0.70; }
   .chat-talk__message {
     font-family: "open_sans", sans-serif;
     position: relative;
     color: var(--clr-textD);
     margin: 10px 0; }
     .chat-talk__message p {
-      margin: 0 0 12px;
+      margin: 0 0 6px;
       font-size: 12px;
       line-height: 1.62; }
       .chat-talk__message p:last-child {
@@ -1568,7 +1576,8 @@ h6 {
     text-align: center;
     padding: 12px;
     margin: 6px 0;
-    color: var(--clr-textL); }
+    color: var(--clr-textL);
+    font-weight: bold; }
   .chat-talk .user-pic {
     margin: 2px 14px 2px 0; }
 
@@ -14900,8 +14909,8 @@ body.advanced .fancybox-bg {
   flex: 0 0 auto; }
   .user-pic__avatar {
     font-size: 12px;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: flex;
     border-radius: 50%;
     align-items: center;

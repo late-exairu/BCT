@@ -17,11 +17,11 @@
 	&__back{
 		position: relative;
 		display: flex;
-		width: 34px;
+		width: 40px;
 		align-content: center;
 		justify-content: center;
-		height: 34px;
-		margin: auto 10px auto 0;
+		height: 40px;
+		margin: auto 5px auto 0;
 		padding: 0;
 		border-radius: 50%;
 		cursor: pointer;
@@ -31,8 +31,8 @@
 
 		.sprite-icon{
 			position: relative;
-			width: 13px;
-			height: 20px;
+			width: 24px;
+			height: 24px;
 			margin: 0 0 0 -4px;
 			fill: var(--clr-accentD);
 		}
@@ -93,7 +93,7 @@
 
 	&__name{
 		margin: 0 0 1px;
-		font-size: 15px;
+		font-size: 17px;
 		font-weight: 700;
 		line-height: 1.1;
 		white-space: nowrap;
@@ -104,10 +104,10 @@
 	}
 
 	&__info{
-		font-size: 11px;
+		font-size: 13px;
 		line-height: 1.1;
 		margin: 0 0 0;
-		color: var(--clr-textL);
+		color: var(--clr-textLL);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
