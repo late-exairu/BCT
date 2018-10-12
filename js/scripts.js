@@ -1229,22 +1229,19 @@ $(function () {
 		var current_interval_index = parseInt($('.graph-range-slider__control').val());
 		switch (current_interval_index) {
 			case 0:
-				gData = gDataByMin;
+				gData = gDataTwoHour;
 				break;
 			case 1:
-				gData = gDataByFiveMins;
+				gData = gDataDay;
 				break;
 			case 2:
-				gData = gDataByFifteenMins;
+				gData = gDataWeek;
 				break;
 			case 3:
-				gData = gDataByHour;
+				gData = gDataMonth;
 				break;
 			case 4:
-				gData = gDataBySixHours;
-				break;
-			case 5:
-				gData = gDataByDay;
+				gData = gDataYear;
 				break;
 		}
 
@@ -2491,13 +2488,15 @@ $(function () {
 			})
 		})
 
-		var y_min = gData[0].min - (gData[0].max - gData[0].min) * 0.3;
-		var y_max = gData[0].max + (gData[0].max - gData[0].min) * 0.15;
+		var exchanger = mainGraphHighlighted - 1;
+
+		var y_min = gData[exchanger].min - (gData[exchanger].max - gData[exchanger].min) * 0.3;
+		var y_max = gData[exchanger].max + (gData[exchanger].max - gData[exchanger].min) * 0.15;
 		mainChartObj.yAxis[0].setExtremes(y_min, y_max);
 
 		mainChartObj.series[0].setData(gData[0].prices);
 		if ($('body').hasClass('advanced'))
-			mainChartObj.series[7].setData(gData[mainGraphHighlighted - 1].diffs);
+			mainChartObj.series[7].setData(gData[exchanger].diffs);
 		for (var k = 1; k < 6; k++) {
 			mainChartObj.series[k].setData(gData[k].prices);
 		}

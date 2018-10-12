@@ -462,9 +462,11 @@ var hightChartUpdateOptions = {
 							break;
 					}
 
-					var y_min = gData[0].min - (gData[0].max - gData[0].min) * 0.3;
-					var y_max = gData[0].max + (gData[0].max - gData[0].min) * 0.15;
-					var diff = y_min + (y_max - y_min) * 0.4 * avg / gData[0].diffs_max;
+					var exchanger = mainGraphHighlighted - 1
+
+					var y_min = gData[exchanger].min - (gData[exchanger].max - gData[exchanger].min) * 0.3;
+					var y_max = gData[exchanger].max + (gData[exchanger].max - gData[exchanger].min) * 0.15;
+					var diff = y_min + (y_max - y_min) * 0.4 * avg / gData[exchanger].diffs_max;
 
 					return diff;
 				},
