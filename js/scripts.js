@@ -1802,6 +1802,7 @@ $(function () {
 			}
 
 			$('.exch-form').addClass('progress');
+			$('.graph-prices__sort__btn').addClass('hidden');
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active recent');
 			$('.exch-form .range-slider input[type=range]').css('pointer-events', 'none');
 			if (!$('body').hasClass('advanced')) {
@@ -1989,6 +1990,7 @@ $(function () {
 				}
 				if ($('.exch-form').hasClass('completed')) {
 					$('.exch-form').removeClass('progress');
+					$('.graph-prices__sort__btn').removeClass('hidden');
 					$('.exch-head').removeClass('open');
 					$('.graph-prices').removeClass('noClose');
 					$('.exch-form__submit').attr("disabled", false);
@@ -2593,8 +2595,10 @@ $(function () {
 		});
 
 		// init sort icon
-		$('.graph-prices__sort').removeClass('asc')
-		$('.graph-prices__sort').removeClass('desc')
+		$('.graph-prices__sort').removeClass('asc');
+		$('.graph-prices__sort').removeClass('desc');
+
+		$('.graph-prices__sort').html('1' + getCurrency + ' = ');
 	}
 
 	/** Init price list */
@@ -2615,6 +2619,14 @@ $(function () {
 				$(this).addClass('asc');
 			}
 	
+			var getCurrency = $('.exch-form__get > input').attr('data-currency');
+			var sendCurrency = $('.exch-form__send > input').attr('data-currency');
+			if ($('.graph-prices__price.send-prices__rate').hasClass('hidden')) {
+				$(this).html('1' + getCurrency + ' = ');
+			}
+			else {
+				$(this).html('1' + sendCurrency + ' = ');
+			}
 			$('.graph-prices__price.send-prices__rate').toggleClass('hidden')
 			$('.graph-prices__price.get-prices__rate').toggleClass('hidden')
 		}

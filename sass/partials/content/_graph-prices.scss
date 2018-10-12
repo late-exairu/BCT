@@ -460,26 +460,31 @@
 	}
 
 	&__sort__btn{
+		font-size: 9px;
+		height: 14px;
+		color: var(--clr-backCI);
+		border-radius: 3px;
+		border: 1px solid;
+
 		position: absolute;
 		right: 5px;
 		top: 5px;
-		width: 20px;
-		height: 20px;
-		// width: 12px;
-		// background: var(--clr-separator);
+		//width: 45px;
+    	height: 14px;
 		background: transparent;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		z-index: 2;
-		background: transparent;		
 	}
 
 	&__sort{
-		width: 20px;
+		padding: 0 2px;
+		text-align: center;
+		line-height: 9px;
+		color: var(--clr-backCI);
 		height: 100%;
 		border: none;
-		padding: 2px 0;
 		justify-content: center;
 		cursor: pointer;
 		background: transparent;
