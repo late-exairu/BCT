@@ -7716,7 +7716,8 @@ h6 {
   --color-two: #c81820;
   position: relative;
   z-index: 100000;
-  height: calc(var(--exch-head-height) + 2px);
+  height: calc(var(--exch-head-height) + var(--gap-size) + 2px);
+  background-color: var(--clr-back-new);
   /*&__switch-left{
 		display: block;
 		width: 19px;
