@@ -1042,30 +1042,10 @@ $(function () {
 						console.log(gData);
 						if (isDrawMainChart) { 
 
-
-							// var exchanger = mainGraphHighlighted - 1;
-
-							// var y_min = gData[exchanger].min - (gData[exchanger].max - gData[exchanger].min) * 0.3;
-							// var y_max = gData[exchanger].max + (gData[exchanger].max - gData[exchanger].min) * 0.15;
-							// mainChartObj.yAxis[0].setExtremes(y_min, y_max);
-
-							// if ($('body').hasClass('advanced')) {
-							// 	mainChartObj.series[7].setData(gData[currentDataId - 1].diffs);
-							// }
-
-
-							// var y_min = gData[0].min - (gData[0].max - gData[0].min) * 0.3;
-							// var y_max = gData[0].max + (gData[0].max - gData[0].min) * 0.15;
-							// mainChartObj.yAxis[0].setExtremes(y_min, y_max);
-
 							mainChartObj.series[0].setData(gData[0].prices);
 							for (var k = 1; k < 6; k++) {
 								mainChartObj.series[k].setData(gData[k].prices);
-							}
-		
-							// if ($('body').hasClass('advanced'))
-							// 	mainChartObj.series[7].setData(gData[0].diffs);
-							
+							}							
 								
 							updateMainChartSpline(mainGraphHighlighted);
 							updateMainChartPercentChange();
@@ -1221,20 +1201,6 @@ $(function () {
 			return false;
 		}
 
-		mainChartObj.series[currentDataId - 1].update({
-			color: mainChartFirstColor,
-			fillColor: {
-				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-				stops: [
-					[0, Highcharts.Color(mainChartFirstColor).setOpacity(0.4).get('rgba')],
-					[1, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')]
-				]
-			},
-			lineWidth: 3,
-			enableMouseTracking: true,
-			trackByArea: true,
-			zIndex: 10
-		});
 
 		mainGraphHighlighted = currentDataId;
 
@@ -1264,6 +1230,21 @@ $(function () {
 		if (y_min < 0) y_min = 0;
 		var y_max = gData[exchanger].max + (gData[exchanger].max - gData[exchanger].min) * 0.15;
 		mainChartObj.yAxis[0].setExtremes(y_min, y_max);
+
+		mainChartObj.series[currentDataId - 1].update({
+			color: mainChartFirstColor,
+			fillColor: {
+				linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+				stops: [
+					[0, Highcharts.Color(mainChartFirstColor).setOpacity(0.4).get('rgba')],
+					[1, Highcharts.Color(mainChartFirstColor).setOpacity(0).get('rgba')]
+				]
+			},
+			lineWidth: 3,
+			enableMouseTracking: true,
+			trackByArea: true,
+			zIndex: 10
+		});
 
 		if ($('body').hasClass('advanced')) {
 			mainChartObj.series[7].setData(gData[currentDataId - 1].diffs);
