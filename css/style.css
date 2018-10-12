@@ -14523,6 +14523,39 @@ button:-moz-focusring {
     #orders .forms-wrap.current {
       display: flex; }
 
+#telegramMenu {
+  top: 0;
+  width: 30%;
+  flex: 1 0 auto;
+  height: 100vh;
+  display: flex;
+  z-index: 100002;
+  outline: none;
+  position: fixed;
+  overflow-y: auto;
+  background-color: var(--clr-block);
+  transform: translate(-100%, 0px);
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms; }
+  #telegramMenu.open {
+    transform: translate(0px, 0px); }
+
+#telegramOverlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100001;
+  position: fixed;
+  touch-action: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
+  transition: 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  opacity: 0;
+  visibility: hidden; }
+  #telegramOverlay.open {
+    opacity: 1;
+    visibility: visible; }
+
 /* =================================================================== */
 /* basic-btn
 /* =================================================================== */
@@ -14756,16 +14789,7 @@ button:-moz-focusring {
       height: 40px;
       padding: 0 8px; }
       #send-popup .send-form .coin-dropdown__current:hover {
-        background-color: var(--clr-backL); }
-    #send-popup .send-form .coin-dropdown__item.current {
-      display: flex; }
-    #send-popup .send-form .coin-dropdown__item {
-      background-color: var(--clr-block);
-      height: 32px; }
-      #send-popup .send-form .coin-dropdown__item:hover {
-        background-color: var(--clr-backBT); }
-    #send-popup .send-form .coin-dropdown__list {
-      height: inherit; }
+        cursor: default; }
     #send-popup .send-form .coin-dropdown__title {
       font-size: 16px;
       font-weight: 600;
@@ -14777,7 +14801,9 @@ button:-moz-focusring {
         font-size: 14px;
         font-weight: 200; }
     #send-popup .send-form .coin-dropdown__border {
-      border: 0; }
+      border: 0;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0; }
     #send-popup .send-form .coin-dropdown__icon {
       width: 40px;
       height: 40px;

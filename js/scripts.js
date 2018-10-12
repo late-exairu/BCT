@@ -9,8 +9,8 @@ $(function () {
 				document.querySelector('.message-bar__login').classList.add('hidden');
 			if (document.querySelector('.message-bar__login-demo'))
 				document.querySelector('.message-bar__login-demo').classList.add('hidden');
-			if (document.querySelector('.main-cols__left-top .c-block__col'))
-				document.querySelector('.main-cols__left-top .c-block__col').classList.remove('hidden');
+			if (document.querySelector('.chats-search__menu'))
+				document.querySelector('.chats-search__menu').classList.remove('hidden');
 
 			if (localStorage.getItem('telegramPhoto')) {
 				if (document.querySelector('.message-bar__user-pic .user-pic__avatar')) {
@@ -846,6 +846,7 @@ $(function () {
 		var chatName = $(this).find('.chats-list__name').text();
 		$('.chat-head__name').text(chatName);
 		$('.chat-talk').toggleClass('hidden');
+		closeTelegramMenu();
 	});
 
 	/*
@@ -1487,7 +1488,11 @@ $(function () {
 
 		var currencyName = $(this).closest('.basic-table__row').attr('data-currency');
 		var coin_amount_str = $(this).closest('.basic-table__row').find('span.wallet' + currencyName)[0].innerHTML;
+		var USDT550Equal = 550 / currenciesPrice[currencyName];
 		var coin_amount = parseFloat(coin_amount_str.replace(",", ""));
+
+		$('#transaction-popup .transaction-form__label').eq(0).text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
+
 		if (coin_amount > 0) {
 			$('#transaction-popup .transaction-form__input').removeClass('inactive')
 		}
@@ -1622,6 +1627,7 @@ $(function () {
 
 	$('[send-fancybox]').click(function (e) {
 		e.stopPropagation();
+		closeTelegramMenu();
 		var fancies_length = $('.main-cols__right .fancybox-container').length;
 		if (fancies_length < 1) {
 
@@ -1950,8 +1956,8 @@ $(function () {
 			break;
 		}
 
-		$(".graph-prices__list .graph-prices__item .graph-prices__amount").html(`
-				<span class="graph-prices__amount-label hidden">Amount: </span>
+		$(".graph-prices__list .graph-prices__item .graph-prices__amount").removeClass('hidden').html(`
+				<span class="graph-prices__amount-label">Amount: </span>
 				0.00 
 				<span>` + getCurrency + '</span>');
 		$(".graph-prices__list .graph-prices__item .graph-prices__price").addClass('hidden');
@@ -2672,4 +2678,16 @@ $(function () {
 			}
 		});
 	});
+
+	/* teleram menu */
+	$('#telegramOverlay').click(closeTelegramMenu);
+
+	function closeTelegramMenu() {
+		$('#telegramOverlay, #telegramMenu').removeClass('open');		
+	}
+
+	$('.chats-search__menu').click(function () {
+		$('#telegramOverlay, #telegramMenu').addClass('open');		
+	});
+
 });

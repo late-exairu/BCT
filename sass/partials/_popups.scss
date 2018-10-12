@@ -278,21 +278,8 @@
 				height: 40px;
 				padding: 0 8px;
 				&:hover {
-					background-color: var(--clr-backL);
+					cursor: default;
 				}
-			}
-			&__item.current {
-				display: flex;
-			}
-			&__item {
-				background-color: var(--clr-block);
-				height: 32px;
-				&:hover {
-					background-color: var(--clr-backBT);
-				}
-			}
-			&__list {
-				height: inherit;
 			}
 			&__title {
 				font-size: 16px;
@@ -308,6 +295,8 @@
 			}
 			&__border {
 				border: 0;
+				border-bottom-left-radius: 0;
+				border-top-left-radius: 0;
 			}
 			&__icon {
 				width: 40px;
