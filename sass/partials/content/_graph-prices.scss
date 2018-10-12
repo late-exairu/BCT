@@ -395,8 +395,6 @@
 	&__item {
 		position: relative;
 		text-align: center;
-		height: 56px;
-		//display: none;
 		margin: 0;
 		transition: all .1s;
 		cursor: pointer;
@@ -448,7 +446,7 @@
 
 	&__item-wrapper{
 		width: 100%;
-		height: calc(100% - 8px);		
+		height: 58px;		
 		display: flex;
 		align-items: center;
 	}

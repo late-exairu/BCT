@@ -1968,7 +1968,6 @@ $(function () {
 				<span class="graph-prices__amount-label">
 					Amount: 
 				</span>` + (secondValue / progressBarsCounter).toFixed(2) + ' <span>' + getCurrency + '</span>');
-				$(item).css('height', '66px');
 			}
 		});
 	}
