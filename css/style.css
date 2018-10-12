@@ -8286,7 +8286,8 @@ h6 {
     border: none;
     justify-content: center;
     cursor: pointer;
-    background: transparent; }
+    background: var(--clr-block);
+    border-radius: 3px; }
     .graph-prices__sort.asc .sprite-icon.sort-none {
       display: none; }
     .graph-prices__sort.asc .sprite-icon.sort-asc {

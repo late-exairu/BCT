@@ -487,7 +487,8 @@
 		border: none;
 		justify-content: center;
 		cursor: pointer;
-		background: transparent;
+		background: var(--clr-block);
+		border-radius: 3px;
 
 
 		&.asc{
