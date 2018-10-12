@@ -237,9 +237,9 @@
 		}
 
 		.exch-dropdown__icon{
-			width: 22px;
-			height: 22px;
-			flex: 0 0 22px;
+			width: 28px;
+			height: 28px;
+			flex: 0 0 28px;
 		}
 
 		&:hover{
@@ -255,22 +255,11 @@
 	}
 
 	&__icon{
-		width: 30px;
-		height: 30px;
+		width: 38px;
+		height: 38px;
 		margin: 0 10px 0 0;
-		flex: 0 0 30px;
-		/*fill: var(--clr-textL);*/
+		flex: 0 0 38px;
 
-		&.btc { fill: #f79330; }
-		&.eth { fill: #707cb9; }
-		&.bcc { fill: #83c55f; }
-		&.ltc { fill: #b1b0b0; }
-		&.rpl { fill: #438bca; }
-		&.usdt { fill: #2a3e81; }
-		&.mkr { fill: #1abc9c; }
-		&.xmr { fill: #ff6600; }
-		&.dash { fill: #008CE7; }
-		&.xrp { fill: #23292F; }
 	}
 
 	&__title{
