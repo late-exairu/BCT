@@ -39,7 +39,7 @@
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="c-block__col">
 							<div class="c-block__section chat-head">
-								<button class="chat-head__back">
+								<button class="chat-head__back hidden">
 									<svg class="sprite-icon" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-back-3"></use>
 									</svg>
@@ -783,8 +783,8 @@
 												document.querySelector('.message-bar__login').classList.add('hidden');
 											if (document.querySelector('.message-bar__login-demo'))
 												document.querySelector('.message-bar__login-demo').classList.add('hidden');
-											if (document.querySelector('.chats-search__menu'))
-												document.querySelector('.chats-search__menu').classList.remove('hidden');
+											if (document.querySelector('.chat-head__back'))
+												document.querySelector('.chat-head__back').classList.remove('hidden');
 										}
 									</script>									
 								</div><!-- message-bar__login END -->
