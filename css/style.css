@@ -64,7 +64,7 @@
   /*scroll arrow background color*/
   --clr-backIA:		#d9dadb;
   /*background input group append*/
-  --clr-backCI:	#BFBFBF;
+  --clr-backCI:		#BFBFBF;
   /*separators and borders color basic*/
   --clr-text-tooltip: #2E2E2E;
   /*basic tooltip text color*/
@@ -74,7 +74,7 @@
   /*basic tooltip  background color*/
   --clr-lineP:		#bbbbbb;
   /*portfolio tooltip line  background color*/
-  --clr-icon-arrow:	#f9f9f9;
+  --clr-icon-arrow:	#BFBFBF;
   /*basic arrow down fill color*/
   --clr-time-line:	#E8E8E8;
   /*time control background color*/
