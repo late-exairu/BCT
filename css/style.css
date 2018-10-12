@@ -14061,7 +14061,8 @@ button:-moz-focusring {
   height: calc(100%);
   margin: 0;
   margin-top: 0px;
-  z-index: 101; }
+  z-index: 101;
+  border-right: 1px solid var(--clr-separator); }
   .accounts-diagram-wrap.marged {
     margin: 0 70px 0 0; }
   .accounts-diagram-wrap.hover {
