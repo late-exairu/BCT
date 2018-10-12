@@ -7896,11 +7896,18 @@ h6 {
       padding: 0; }
   .graph-info__title {
     font-size: 12px;
-    color: var(--clr-backCI);
+    font-weight: 600;
     line-height: 1.2;
     min-width: 46px;
     padding: 0;
     margin: 0; }
+    .graph-info__title span.vol {
+      color: var(--clr-backCI); }
+    .graph-info__title svg {
+      display: inline-block;
+      width: 12px;
+      height: 9px;
+      margin: 0 2px; }
   .graph-info__nums {
     font-size: 12px;
     line-height: 1;
@@ -8369,13 +8376,13 @@ h6 {
     cursor: pointer;
     flex: 1;
     margin: 0;
-    width: 128px; }
+    width: 106px; }
   .graph-range-slider__current {
     padding: 0 3px;
     color: var(--clr-backCI);
     border: 1px solid;
     border-radius: 3px;
-    margin-left: 5px; }
+    margin-left: 8px; }
 
 /* =================================================================== */
 /* graph-top */
@@ -10162,7 +10169,7 @@ body.menubar-in #user-btn:before {
       border: 2px solid var(--clr-block);
       background: var(--clr-time-slider);
       cursor: pointer;
-      margin-top: -5px;
+      margin-top: -6px;
       /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */ }
     .range-slider input[type=range]:focus {
       outline: none;

@@ -48,7 +48,7 @@
             border: 2px solid var(--clr-block);
             background: var(--clr-time-slider);
             cursor: pointer;
-            margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */                        
+            margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */                        
         }
 
         &:focus {

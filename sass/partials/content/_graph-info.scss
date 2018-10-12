@@ -49,13 +49,22 @@
 		}
 	}
 	
-	&__title{
+	&__title {
 		font-size: 12px;
-		color: var(--clr-backCI);
+		font-weight: 600;
 		line-height: 1.2;
 		min-width: 46px;
 		padding: 0;
 		margin: 0;
+		span.vol {
+			color: var(--clr-backCI);
+		}
+		svg {
+			display: inline-block;
+			width: 12px;
+			height: 9px;
+			margin: 0 2px;
+		}
 	}
 	
 	&__nums{
