@@ -838,9 +838,9 @@ $(function () {
 	/* chat events */
 	/*---------------------------------------------------*/
 
-	$('.chat-head__back').click(function () {
-		$('.main-cols__left-top .d-flex .c-block__col').toggleClass('hidden');
-	});
+	// $('.chat-head__back').click(function () {
+	// 	$('.main-cols__left-top .d-flex .c-block__col').toggleClass('hidden');
+	// });
 
 	$('.chats-list__item').click(function () {
 		//var chatName = $(this).find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
@@ -2668,7 +2668,7 @@ $(function () {
 		$('#telegramOverlay, #telegramMenu').removeClass('open');		
 	}
 
-	$('.chats-search__menu').click(function () {
+	$('.chat-head__back').click(function () {
 		$('#telegramOverlay, #telegramMenu').addClass('open');		
 	});
 
