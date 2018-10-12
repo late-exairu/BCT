@@ -1224,7 +1224,6 @@ $(function () {
 
 		mainGraphHighlighted = currentDataId;
 
-
 		var gData;
 		var current_interval_index = parseInt($('.graph-range-slider__control').val());
 		switch (current_interval_index) {
@@ -1244,6 +1243,12 @@ $(function () {
 				gData = gDataYear;
 				break;
 		}
+		
+		var exchanger = mainGraphHighlighted - 1;
+
+		var y_min = gData[exchanger].min - (gData[exchanger].max - gData[exchanger].min) * 0.3;
+		var y_max = gData[exchanger].max + (gData[exchanger].max - gData[exchanger].min) * 0.15;
+		mainChartObj.yAxis[0].setExtremes(y_min, y_max);
 
 		if ($('body').hasClass('advanced')) {
 			mainChartObj.series[7].setData(gData[currentDataId - 1].diffs);
