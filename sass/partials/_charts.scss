@@ -701,3 +701,40 @@
 		}
 	}
 }
+
+#telegramMenu{
+	top: 0;
+	width: 30%;
+	flex: 1 0 auto;
+	height: 100vh;
+	display: flex;
+	z-index: 100002;
+	outline: none;
+	position: fixed;
+	overflow-y: auto;
+	background-color: var(--clr-block);
+	transform: translate(-100%, 0px);
+	transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+	&.open{
+		transform: translate(0px, 0px);
+	}
+}
+
+#telegramOverlay{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100001; // very good practise 
+	position: fixed;
+	touch-action: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	-webkit-tap-highlight-color: transparent;
+	transition: 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	opacity: 0;
+	visibility: hidden;
+	&.open{
+		opacity: 1;
+		visibility: visible;
+	}
+}
