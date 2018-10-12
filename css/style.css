@@ -8053,7 +8053,7 @@ h6 {
       border-color: transparent transparent transparent var(--clr-icon-arrow); }
   .graph-prices__controls__btn__open {
     position: absolute;
-    left: calc(100% - 12px);
+    left: calc(100% - 10px);
     top: 0px;
     bottom: 0px;
     width: 10px;
