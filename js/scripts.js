@@ -1223,6 +1223,34 @@ $(function () {
 		});
 
 		mainGraphHighlighted = currentDataId;
+
+
+		var gData;
+		var current_interval_index = parseInt($('.graph-range-slider__control').val());
+		switch (current_interval_index) {
+			case 0:
+				gData = gDataByMin;
+				break;
+			case 1:
+				gData = gDataByFiveMins;
+				break;
+			case 2:
+				gData = gDataByFifteenMins;
+				break;
+			case 3:
+				gData = gDataByHour;
+				break;
+			case 4:
+				gData = gDataBySixHours;
+				break;
+			case 5:
+				gData = gDataByDay;
+				break;
+		}
+
+		if ($('body').hasClass('advanced')) {
+			mainChartObj.series[7].setData(gData[currentDataId - 1].diffs);
+		}
 	}
 
 	/* 	$('.graph-prices .graph-prices__list .graph-prices__item').hover(function () {
@@ -2469,7 +2497,7 @@ $(function () {
 
 		mainChartObj.series[0].setData(gData[0].prices);
 		if ($('body').hasClass('advanced'))
-			mainChartObj.series[7].setData(gData[0].diffs);
+			mainChartObj.series[7].setData(gData[mainGraphHighlighted - 1].diffs);
 		for (var k = 1; k < 6; k++) {
 			mainChartObj.series[k].setData(gData[k].prices);
 		}
