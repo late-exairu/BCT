@@ -736,19 +736,26 @@ h6 {
     max-width: 100%;
     display: flex;
     padding: 0;
-    flex: 0 0 auto; }
-    .basic-table__row:hover {
-      background: var(--clr-backLL);
-      cursor: pointer; }
+    flex: 0 0 auto;
+    /*&:hover{
+			background: var(--clr-backLL);
+			cursor: pointer;
+		}
+*/
+    /*&.active{
+			background: var(--clr-backA);
+			color: var(--clr-accent);
+
+			&:hover{
+				background: var(--clr-backLL);
+			}
+
+			.basic-table__arrow-conv{
+				fill: var(--clr-accent);
+			}
+		}*/ }
     .basic-table__row:first-child {
       border: none; }
-    .basic-table__row.active {
-      background: var(--clr-backA);
-      color: var(--clr-accent); }
-      .basic-table__row.active:hover {
-        background: var(--clr-backLL); }
-      .basic-table__row.active .basic-table__arrow-conv {
-        fill: var(--clr-accent); }
     .basic-table__row.disabled {
       opacity: 1;
       pointer-events: none;
@@ -766,7 +773,7 @@ h6 {
           opacity: 1 !important;
           border-color: var(--clr-textL);
           background: var(--clr-block);
-          color: var(--clr-textL);
+          color: var(--clr-text);
           pointer-events: all; }
           .basic-table__row.disabled .basic-table__btn.clickable .sprite-icon {
             fill: var(--clr-textL); }
@@ -828,7 +835,7 @@ h6 {
     .basic-table__row.recent {
       font-size: calc(var(--font-size) + 3px); }
   .basic-table__btn {
-    height: 28px;
+    min-height: 28px;
     border: 1px solid var(--clr-textL);
     font-size: 12px;
     border-radius: 3px;
@@ -845,7 +852,7 @@ h6 {
     transition: all 0.1s;
     background: var(--clr-block);
     /*background: transparent;*/
-    color: var(--clr-textL); }
+    color: var(--clr-text); }
     .basic-table__btn.accented {
       color: var(--clr-accentD); }
     .basic-table__btn.simple {
@@ -869,7 +876,10 @@ h6 {
       .basic-table__btn:active .sprite-icon, .basic-table__btn.active .sprite-icon {
         fill: var(--clr-accent); }
     .basic-table__btn.fix-width {
-      width: 80px; }
+      width: 90px; }
+    .basic-table__btn .bigger {
+      font-weight: 700;
+      font-size: 14px; }
   .basic-table__col {
     display: flex;
     height: var(--cell-height);
@@ -1002,6 +1012,8 @@ h6 {
       width: 14px;
       height: 9px;
       margin: 0 0 0 6px; }
+  .basic-table .bigger {
+    font-size: calc(var(--font-size) + 2px); }
   .basic-table .smaller {
     font-size: calc(var(--font-size) - 2px);
     margin: 3px 0 0 0; }

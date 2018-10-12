@@ -27,16 +27,16 @@
 		padding: 0;
 		flex: 0 0 auto;
 
-		&:hover{
+		/*&:hover{
 			background: var(--clr-backLL);
 			cursor: pointer;
 		}
-
+*/
 		&:first-child{
 			border: none;
 		}
 
-		&.active{
+		/*&.active{
 			background: var(--clr-backA);
 			color: var(--clr-accent);
 
@@ -47,7 +47,7 @@
 			.basic-table__arrow-conv{
 				fill: var(--clr-accent);
 			}
-		}
+		}*/
 
 		&.disabled{
 			opacity: 1;
@@ -75,7 +75,7 @@
 					opacity: 1 !important;
 					border-color: var(--clr-textL);
 				    background: var(--clr-block);
-				    color: var(--clr-textL);
+				    color: var(--clr-text);
 					pointer-events: all;
 
 					.sprite-icon{
@@ -181,7 +181,7 @@
 	}
 
 	&__btn{
-		height: 28px;
+		min-height: 28px;
 		border: 1px solid var(--clr-textL);
 		font-size: 12px;
 		border-radius: 3px;
@@ -198,7 +198,7 @@
 		transition: all 0.1s;
 		background: var(--clr-block);
 		/*background: transparent;*/
-		color: var(--clr-textL);
+		color: var(--clr-text);
 
 		&.accented{
 			color: var(--clr-accentD);
@@ -238,7 +238,12 @@
 		}
 
 		&.fix-width{
-			width: 80px;
+			width: 90px;
+		}
+
+		.bigger{
+			font-weight: 700;
+			font-size: 14px;
 		}
 	}
 
@@ -482,6 +487,10 @@
 			height: 9px;
 			margin: 0 0 0 6px;
 		}
+	}
+
+	.bigger{
+		font-size: calc(var(--font-size) + 2px);
 	}
 
 	.smaller{
