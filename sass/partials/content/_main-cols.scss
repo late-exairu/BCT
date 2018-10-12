@@ -8,7 +8,7 @@
 	position: relative;
 	display: flex;
     flex: 1 0 auto;
-    padding: var(--gap-size);
+    padding: calc(var(--gap-size) * 2);
     height: 100%;
     width: 100%;
     /*border: 1px solid var(--clr-separator);*/

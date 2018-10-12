@@ -8,7 +8,7 @@
 	position: relative;
 	display: flex;
 	padding: 4px 10px 4px 12px;
-	height: 65px;
+	height: 56px;
 	align-items: center;
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
 	background: var(--clr-block);
@@ -17,28 +17,47 @@
 	&__back{
 		position: relative;
 		display: flex;
-		width: 32px;
-		height: 100%;
-		margin: 0 14px 0 0;
-		border: none;
-		border-radius: 3px;
-		transition: all 0.1s;
-		align-items: center;
+		width: 34px;
+		align-content: center;
 		justify-content: center;
+		height: 34px;
+		margin: auto 10px auto 0;
+		padding: 0;
+		border-radius: 50%;
 		cursor: pointer;
+		border: none;
 		background: transparent;
+		background: var(--clr-separator);
 
 		.sprite-icon{
-			display: block;
-			width: 10px;
-			height: 14px;
-			fill: var(--clr-textL);
+			position: relative;
+			width: 13px;
+			height: 20px;
+			margin: 0 0 0 -4px;
+			fill: var(--clr-accentD);
 		}
 
 		&:hover{
 			.sprite-icon{
-				fill: var(--clr-textLL);
+				fill: var(--clr-accent);
 			}
+		}
+	}
+
+	&__menu{
+		width: 27px;
+		height: 20px;
+		margin: auto 20px auto 0;
+		padding: 0;
+		cursor: pointer;
+		border: none;
+		background: transparent;
+
+		.sprite-icon{
+			width: 21px;
+			height: 14px;
+			margin: 0;
+			fill: var(--clr-icon);
 		}
 	}
 
@@ -73,8 +92,8 @@
 	}
 
 	&__name{
-		margin: 1px 0 0;
-		font-size: 16px;
+		margin: 0 0 1px;
+		font-size: 15px;
 		font-weight: 700;
 		line-height: 1.1;
 		white-space: nowrap;
@@ -85,10 +104,10 @@
 	}
 
 	&__info{
-		font-size: 13px;
+		font-size: 11px;
 		line-height: 1.1;
 		margin: 0 0 0;
-		color: var(--clr-textD);
+		color: var(--clr-textL);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -105,8 +124,8 @@
 
 	&__btn{
 		display: block;
-		width: 32px;
-		height: 32px;
+		width: 34px;
+		height: 34px;
 		margin: 0 0 0 2px;
 		cursor: pointer;
 		align-items: center;
@@ -120,12 +139,12 @@
 		transition: all .1s;
 
 		&:hover{
-			border-color: var(--clr-accentD);
-			background: var(--clr-accentD);
+			border-color: var(--clr-separator);
+			background: var(--clr-separator);
 			color: #fff;
 
 			.sprite-icon{
-				fill: #fff;
+				fill: var(--clr-accent);
 			}
 		}
 
@@ -134,8 +153,14 @@
 			width: 18px;
 			height: 18px;
 			flex: 0 0 18px;
-			fill: var(--clr-accentD);
 			transition: all 0.1s;
+			fill: var(--clr-separatorD);
+
+			&.menu-burger{
+				flex: 0 0 21px;
+				width: 21px;
+				height: 14px;
+			}
 		}
 	}
 
