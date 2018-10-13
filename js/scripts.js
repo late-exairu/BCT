@@ -798,18 +798,16 @@ $(function () {
 		}
 
 		// select value in exch-dropdown
-		if ($(this).parents('#panel-funds-wallet').length) {
-			var icon = $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href');
-			$('.exch-head__send .exch-dropdown__list .exch-dropdown__item').each(function () {
-				if (icon == $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href')) {
-					$(this).trigger('click');
-					$('.exch-dropdown').removeClass('open');
-					return false;
-				}
-			});
-			// select USD in GET dropdown
-			//$('.exch-head__get .exch-dropdown__list .exch-dropdown__item').eq(2).trigger('click');
-		}
+		// if ($(this).parents('#panel-funds-wallet').length) {
+		// 	var icon = $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href');
+		// 	$('.exch-head__send .exch-dropdown__list .exch-dropdown__item').each(function () {
+		// 		if (icon == $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href')) {
+		// 			$(this).trigger('click');
+		// 			$('.exch-dropdown').removeClass('open');
+		// 			return false;
+		// 		}
+		// 	});
+		// }
 
 		if ($(this).parents('#panel-funds-history').length) {
 			$('.graph-prices').addClass('open');
@@ -1770,22 +1768,24 @@ $(function () {
 			progressbar_current_label.text(remain_total_value + ' ' + getCurrency);
 			progressbar_current.progressbar("value", 0);
 			setTimeout(currentProgress, 1000);
-			for (var i = 0; i < progressbar_array.length; i++) {
-				var progressbar = progressbar_array[i];
-				progressbar.progressbar("value", 0);
-				setTimeout(progress, 1000 + 800 * i, i);
 
-				var rand = 0;
-				if (i == progressbar_array.length - 1) {
-					rand = Math.floor(remain_total_value * 100) / 100;
-				} else {
-					var conversion_part = remain_total_value / (progressbar_array.length - i);
-					rand = Math.floor(Math.random() * 2 * conversion_part * 100) / 100;
-					if (remain_total_value > 0.01 && rand == 0) rand = 0.01;
-					remain_total_value -= rand;
-				}
-				if (rand == 0) rand = "0.00";
-				progressbar_labels[i].text(rand + ' ' + getCurrency);
+
+			for (var i = 0; i < progressbar_array.length; i++) {
+				// var progressbar = progressbar_array[i];
+				// progressbar.progressbar("value", 0);
+				// setTimeout(progress, 1000 + 800 * i, i);
+
+				// var rand = 0;
+				// if (i == progressbar_array.length - 1) {
+				// 	rand = Math.floor(remain_total_value * 100) / 100;
+				// } else {
+				// 	var conversion_part = remain_total_value / (progressbar_array.length - i);
+				// 	rand = Math.floor(Math.random() * 2 * conversion_part * 100) / 100;
+				// 	if (remain_total_value > 0.01 && rand == 0) rand = 0.01;
+				// 	remain_total_value -= rand;
+				// }
+				// if (rand == 0) rand = "0.00";
+				// progressbar_labels[i].text(rand + ' ' + getCurrency);
 
 				setTimeout(function () {
 					firstValueResult += firstValuePart;
@@ -1820,7 +1820,7 @@ $(function () {
 					// increase exchanges numbers
 					//exchanges++;
 					//$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(3).html(exchanges + " Exchanges");
-				}, 4000 + 800 * i, i)
+				}, 4000 + 800 * i);
 			}
 
 			$('.exch-form').addClass('progress');
