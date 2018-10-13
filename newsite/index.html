@@ -21,7 +21,9 @@
 	<meta name="theme-color" content="#ffffff">
 	
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/smoothness/jquery-ui.css">
- 	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -3039,39 +3041,39 @@
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
 		<div class="d-flex-col flex-1-1 flex-h-fix">
 			<form class="transaction-form">
-				<div style="text-align: center">
-					<span class="transaction-form__label">Minumun Deposit 0.08936524 BTC</span>
-				</div>
 				<div class="transaction-form__qr-code-wrap">
 					<img src="pic/qr-code.svg" width="130" height="130" alt="qr-code">
+					<span style="margin-left:-15px; margin-right:-15px;text-align:center" class="transaction-form__label" id="transactionFormMinDepositAmount"></span>
+
 				</div>
 
-				<span class="transaction-form__label">Deposit Address</span>
-				<div class="transaction-form__line inner">
-					<input disabled="disabled" class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
-					<div class="transaction-form__to-clipdoard">
-							<svg class="sprite-icon" role="img" aria-hidden="true">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard"></use>
-							</svg>
+				<span class="transaction-form__label-large">Deposit Address</span>
+					<div class="transaction-form__line inner" style="margin-bottom:10px">
+						<input disabled="disabled" class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
+
+						<div class="transaction-form__button" style="width:40px;height:40px;color:white; background-color: var(--clr-icon);">
+								<i class="far fa-copy"></i>
+						</div>
 					</div>
-					<!--
-					<div class="transaction-form__button" style="background-color: var(--clr-accent);">
-						COPY
-					</div>
-				-->
-				</div>
-				<span class="transaction-form__label">Return Address</span>				
-				<label class="container">
-					<input type="checkbox" checked="checked">
-					<span class="checkmark"></span>
-				</label>
-				<span class="transaction-form__label">I agree & accept Terms</span>
+
+					<span class="transaction-form__label-large">Return Address</span>				
 				<div class="transaction-form__line inner">
-					<input class="transaction-form__input" type="text" name="" value="">
-					<div class="transaction-form__button" conform-fancybox>
-						SUBMIT
+					<input class="transaction-form__input" type="text" name="" value="" placeholder="Submit once multi-leg trade is complete">
+					<div class="transaction-form__button" style="width:40px;height:40px;color:white; background-color: var(--clr-icon);">
+							<i class="fas fa-arrow-right"></i>					
 					</div>
 				</div>
+
+
+				<span class="transaction-form__label" style="color: var(--clr-textLL)" onclick="$('#accept-terms').click()">I agree & accept 
+					<a href="#">terms and conditions</a>
+				</span>
+
+					<label class="container">
+						<input id="accept-terms" type="checkbox" checked="checked">
+						<span class="checkmark"></span>
+					</label>
+	
 			</form>
 		</div>
 	</div>

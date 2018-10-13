@@ -13293,8 +13293,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     .transaction-form__line.inner .transaction-form__label {
       position: absolute;
       left: 6px;
-      top: 4px;
-      font-size: 8px; }
+      top: 4px; }
+    .transaction-form__line.inner .transaction-form__input {
+      width: calc(100% - 38px);
+      padding: 19px 5px 19px 5px;
+      margin-top: 1px; }
     .transaction-form__line.convert {
       border: 1px solid var(--clr-separatorD);
       border-radius: var(--border-radius);
@@ -13345,6 +13348,19 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     font-size: 0.6em;
     margin-top: 3px;
     margin-left: 3px; }
+    .transaction-form__label a {
+      color: var(--clr-textLL);
+      text-decoration: underline; }
+    .transaction-form__label a:hover {
+      color: #0680ba;
+      text-decoration: underline;
+      cursor: pointer; }
+  .transaction-form__label-large {
+    font-size: 12px;
+    font-family: open_sans;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-left: 3px; }
   .transaction-form__sep {
     width: 24px;
     display: flex;
@@ -13381,12 +13397,13 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     margin: 0 0 10px;
     padding: 0; }
   .transaction-form__qr-code-wrap {
-    padding: 5px;
-    width: 240px;
-    height: 240px;
-    margin: 6px auto;
+    padding: 15px 25px 25px 25px;
+    width: 250px;
+    height: 230px;
+    margin: 10px auto;
     background: #fff;
-    border-radius: var(--border-radius); }
+    border-radius: var(--border-radius);
+    border: solid 1px var(--clr-separator); }
     .transaction-form__qr-code-wrap > * {
       display: block; }
     .transaction-form__qr-code-wrap img {
