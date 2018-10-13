@@ -1,51 +1,80 @@
 // var date50 = new Date(Date.now() - 365 * 24 * 3600 * 1000);
 // var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 
+// var range_options = [
+// 	{
+// 		label: '2H',
+// 		endpoint: 'histominute',
+// 		aggregate: 1,
+// 		limit: 140,
+// 		interval: 60000
+// 	},
+// 	{
+// 		label: '1D',
+// 		endpoint: 'histominute',
+// 		aggregate: 10,
+// 		limit: 144,
+// 		interval: 600000
+// 	},
+// 	{
+// 		label: '1W',
+// 		endpoint: 'histohour',
+// 		aggregate: 1,
+// 		limit: 160,
+// 		interval: 3600000
+// 	},
+// 	{
+// 		label: '1M',
+// 		endpoint: 'histohour',
+// 		aggregate: 5,
+// 		limit: 149,
+// 		interval: 18000000
+// 	},
+// 	{
+// 		label: '1Y',
+// 		endpoint: 'histoday',
+// 		aggregate: 3,
+// 		limit: 122,
+// 		interval: 259200000
+// 	},
+// ]
+
+
 var range_options = [
-	// {
-	// 	label: '1M',
-	// 	endpoint: 'histominute',
-	// 	aggregate: 1
-	// },
-	// {
-	// 	label: '5M',
-	// 	endpoint: 'histominute',
-	// 	aggregate: 5
-	// },
 	{
-		label: '2H',
-		endpoint: 'histominute',
-		aggregate: 1,
-		limit: 140,
-		interval: 60000
+	 label: '2H',
+	 endpoint: 'histominute',
+	 aggregate: 1,
+	 limit: 120,
+	 interval: 60000
 	},
 	{
-		label: '1D',
-		endpoint: 'histominute',
-		aggregate: 10,
-		limit: 144,
-		interval: 600000
+	 label: '1D',
+	 endpoint: 'histominute',
+	 aggregate: 12,
+	 limit: 120,
+	 interval: 720000
 	},
 	{
-		label: '1W',
-		endpoint: 'histohour',
-		aggregate: 1,
-		limit: 160,
-		interval: 3600000
+	 label: '1W',
+	 endpoint: 'histohour',
+	 aggregate: 2,
+	 limit: 110,
+	 interval: 7200000
 	},
 	{
-		label: '1M',
-		endpoint: 'histohour',
-		aggregate: 5,
-		limit: 149,
-		interval: 18000000
+	 label: '1M',
+	 endpoint: 'histohour',
+	 aggregate: 6,
+	 limit: 124,
+	 interval: 21600000
 	},
 	{
-		label: '1Y',
-		endpoint: 'histoday',
-		aggregate: 3,
-		limit: 122,
-		interval: 259200000
+	 label: '1Y',
+	 endpoint: 'histoday',
+	 aggregate: 3,
+	 limit: 122,
+	 interval: 259200000
 	},
 ]
 
@@ -125,13 +154,13 @@ var hightChartUpdateOptions = {
 	plotOptions: {
 		series: {
 			turboThreshold: 10000,
-			pointWidth: 5,//$('#mainChart').width() / 140, // fixed A pixel value specifying
-			pointPadding: 0.15,
+			pointWidth: 5,//0.5 * $('#mainChart').width() / range_options[parseInt($('.graph-range-slider__control').val())].limit, // fixed A pixel value specifying
+			pointPadding: 0,
 			pointStart: start_point,
 			pointInterval: range_options[range_index].interval,
 			pointPlacement: 'on',
 			borderWidth: 0,
-			groupPadding: 0,
+			groupPadding: 0,// * 160 / $('#mainChart').width() / range_options[parseInt($('.graph-range-slider__control').val())].limit,
 			lineWidth: 0.6,
 			stickyTracking: false,
 			trackByArea: true,
@@ -473,17 +502,33 @@ var hightChartUpdateOptions = {
 				},
 				forced: true,
 				units: [
+					// [
+					// 	'minute',
+					// 	[1, 10]
+					// ],
+					// [
+					// 	'hour',
+					// 	[1, 5]
+					// ],
+					// [
+					// 	'day',
+					// 	[3]
+					// ],
+					// [
+					// 	'week',
+					// 	[1]
+					// ]
 					[
 						'minute',
-						[1, 10]
+						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 					],
 					[
 						'hour',
-						[1, 5]
+						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 					],
 					[
 						'day',
-						[3]
+						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 					],
 					[
 						'week',

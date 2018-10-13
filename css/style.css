@@ -801,6 +801,8 @@ h6 {
         color: var(--clr-icon); }
       .basic-table__row.disabled .icon-curr {
         opacity: 0.25; }
+      .basic-table__row.disabled .smallCurrencyChart {
+        filter: grayscale(100%); }
     .basic-table__row.head {
       font-size: var(--font-size);
       font-weight: 700;
@@ -1763,12 +1765,13 @@ h6 {
     width: 100%;
     background: var(--clr-back-new);
     border: none;
-    height: 22px;
+    height: 32px;
     border-radius: var(--border-radius);
     padding: 0 15px;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 22px;
-    color: var(--clr-text); }
+    color: var(--clr-text);
+    margin-right: 5px; }
 
 /* =================================================================== */
 /* .clr-coin
@@ -7963,12 +7966,14 @@ h6 {
   text-align: left;
   padding: 0 5px 0 0; }
   .graph-prices.noClose .graph-prices__price span, .graph-prices.noClose .graph-prices__amount span {
-    font-size: 8px;
-    font-weight: 600; }
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: -1px; }
 
 .graph-prices.noClose .graph-prices__price-label, .graph-prices.noClose .graph-prices__amount-label {
   font-size: 11px !important;
-  font-weight: 500; }
+  font-weight: 500;
+  letter-spacing: -1px; }
 
 .graph-prices {
   font-family: "open_sans", sans-serif;
@@ -8280,7 +8285,7 @@ h6 {
       display: none; }
   .graph-prices__item-wrapper {
     width: 100%;
-    height: 72px;
+    height: 68px;
     display: flex;
     align-items: center; }
   .graph-prices__item-inner {
@@ -8289,19 +8294,21 @@ h6 {
     display: flex;
     font-size: 17px;
     font-weight: 650;
-    line-height: 1.18;
+    line-height: 1.6;
     margin: 0;
     text-align: left;
     padding: 0 5px 0 0; }
   .graph-prices__price, .graph-prices__amount {
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.4;
     /*font-weight: 700;		*/
     text-align: left;
     padding: 0 5px 0 0; }
     .graph-prices__price span, .graph-prices__amount span {
       font-size: 10px;
       font-weight: 400; }
+  .graph-prices__amount {
+    color: var(--clr-backCI); }
   .graph-prices .graph-bar__item {
     width: 250px;
     margin: 0 0 20px 0; }
@@ -14588,9 +14595,9 @@ button:-moz-focusring {
 
 #telegramMenu {
   top: 0;
-  width: 30%;
+  width: 28%;
   flex: 1 0 auto;
-  height: 100vh;
+  height: calc(100% - var(--gap-size) * 4);
   display: flex;
   z-index: 100002;
   outline: none;
@@ -14600,7 +14607,11 @@ button:-moz-focusring {
   transform: translate(-100%, 0px);
   transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms; }
   #telegramMenu.open {
-    transform: translate(0px, 0px); }
+    transform: translate(0px, 0px);
+    margin: calc(var(--gap-size) * 2);
+    box-shadow: 7px 6px 11px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius); }
 
 #telegramOverlay {
   top: 0;
@@ -14610,7 +14621,7 @@ button:-moz-focusring {
   z-index: 100001;
   position: fixed;
   touch-action: none;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.35);
   -webkit-tap-highlight-color: transparent;
   transition: 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   opacity: 0;
@@ -14618,6 +14629,15 @@ button:-moz-focusring {
   #telegramOverlay.open {
     opacity: 1;
     visibility: visible; }
+
+#telegramText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 100; }
 
 /* =================================================================== */
 /* basic-btn
@@ -14917,8 +14937,8 @@ body.advanced .fancybox-bg {
 .user-pic {
   font-size: 12px;
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin: 2px 2px 2px 2px;
   flex: 0 0 auto; }
   .user-pic__avatar {

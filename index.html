@@ -45,11 +45,11 @@
 									</svg>
 								</button>
 
-								<svg class="chat-head__curr clr-coin-btc" role="img" aria-hidden="true">
+								<!-- <svg class="chat-head__curr clr-coin-btc" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
-								</svg>
+								</svg> -->
 
-								<div class="chat-head__desc">
+								<div class="chat-head__desc hidden">
 									<p class="chat-head__name">Tether Room</p>
 									<p class="chat-head__info">67 members, 2 online</p>
 								</div>
@@ -60,7 +60,7 @@
 									</svg>
 								</button> -->
 
-								<div class="chat-head__btns">
+								<div class="chat-head__btns hidden">
 									<!-- <button class="chat-head__btn js-chat-search-toggle">
 										<svg class="sprite-icon" role="img" aria-hidden="true">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#magnifier"></use>
@@ -92,7 +92,12 @@
 							</div><!-- chat-head END -->
 
 							<div class="c-block__section flex-1-1 scroll-y scrollbar-right">
-								<div class="chat-talk">
+								<div id="telegramText">
+									In order to be able to save <br>
+									your progress pls log in to <br>
+									Telegram
+								</div>
+								<div class="chat-talk hidden">
 									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar01.png"/>
@@ -751,8 +756,17 @@
 												document.querySelector('.message-bar__login').classList.add('hidden');
 											if (document.querySelector('.message-bar__login-demo'))
 												document.querySelector('.message-bar__login-demo').classList.add('hidden');
-											if (document.querySelector('.chat-head__back'))
+											if (document.querySelector('#telegramText'))
+												document.querySelector('#telegramText').classList.add('hidden');
+
+											if (document.querySelector('.chat-head__back')) {
 												document.querySelector('.chat-head__back').classList.remove('hidden');
+												document.querySelector('.chat-head__desc').classList.remove('hidden');
+												document.querySelector('.chat-head__btns').classList.remove('hidden');
+											}
+											if (document.querySelector('.chat-talk')) {
+												document.querySelector('.chat-talk').classList.remove('hidden');
+											}
 										}
 									</script>									
 								</div><!-- message-bar__login END -->
@@ -1120,12 +1134,12 @@
 												Huobi
 											</div>
 											<div class="graph-prices__price send-prices__rate">
-												<span class="graph-prices__price-label hidden">Price: </span>
+												<span class="graph-prices__price-label hidden">1 BTC = </span>
 													8188.45
 												<span>USDT</span>
 											</div>
 											<div class="graph-prices__price get-prices__rate hidden">
-												<span class="graph-prices__price-label hidden">Price: </span>
+												<span class="graph-prices__price-label hidden">1 USDT = </span>
 													0.00016
 												<span>BTC</span>
 											</div>
@@ -2572,6 +2586,11 @@
 		<!-- chats list -->
 		<div class="c-block__section chats-search">
 			<input class="chats-search__input" type="" name="" placeholder="Search">
+			<button class="chat-head__btn">
+				<svg class="sprite-icon menu-burger" role="img" aria-hidden="true">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#menu-burger"></use>
+				</svg>
+			</button>
 		</div><!-- chats-search END -->
 
 		<div class="chats-list c-block__section scroll-y scrollbar-right outer">
