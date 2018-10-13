@@ -56,73 +56,7 @@ var wallets = {
         'BTC': 0.00,
         'ETH': 0.00,
         'LTC': 0.00,
-        /*         'BCH': 0.00,
-                'RPL': 0.00,
-                'XMR': 0.00,
-                'MKR': 0.00,
-                'DASH': 0.00,
-                'XRP': 0.00, */
-    },
-    /*     joeJonsonWallet: {
-            'BTC': 1.50,
-            'ETH': 15.50,
-            'USD': 30000.00,
-            'BCH': 10.00,
-            'LTC': 0.00,
-            'RPL': 0.00,
-            'XMR': 0.00,
-            'MKR': 0.00,
-            'DASH': 0.00,
-            'XRP': 0.00,
-        },
-        haykMinasaynWallet: {
-            'BTC': 0.00,
-            'ETH': 260.50,
-            'USD': 12000.00,
-            'BCH': 0.00,
-            'LTC': 0.00,
-            'RPL': 0.00,
-            'XMR': 0.00,
-            'MKR': 0.00,
-            'DASH': 0.00,
-            'XRP': 0.00,
-        },
-        ranNerWallet: {
-            'BTC': 3.00,
-            'ETH': 5.50,
-            'USD': 3000.00,
-            'BCH': 0.00,
-            'LTC': 400.00,
-            'RPL': 0.00,
-            'XMR': 0.00,
-            'MKR': 0.00,
-            'DASH': 0.00,
-            'XRP': 0.00,
-        },
-        annaPetersonWallet: {
-            'BTC': 0.50,
-            'ETH': 5.00,
-            'USD': 91000.00,
-            'BCH': 0.00,
-            'LTC': 0.00,
-            'RPL': 0.00,
-            'XMR': 300.00,
-            'MKR': 0.00,
-            'DASH': 0.00,
-            'XRP': 0.00,
-        },
-        sofiaPetrosianWallet: {
-            'BTC': 10.00,
-            'ETH': 12.00,
-            'USD': 0.00,
-            'BCH': 0.00,
-            'LTC': 0.00,
-            'RPL': 0.00,
-            'XMR': 0.00,
-            'MKR': 0.00,
-            'DASH': 0.00,
-            'XRP': 0.00,
-        } */
+    }
 }
 
 var eachBalance = {};
@@ -198,26 +132,6 @@ function updateWalletData() {
             case '1Y':
                 ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&aggregate=3&limit=122';
                 break;
-
-/*          case '15M':
-                ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=15';
-                break;
-            case '5M':
-                ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=5';
-                break;
-            case '1M':
-                ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=2';
-                break;
-            case '1w':
-                ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&limit=7';
-                break;
-            case '1m':
-                ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&limit=31';
-                break;
-            case 'All':
-                ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&limit=365';
-                break; */
-
             default:
                 break;
         }
@@ -277,32 +191,6 @@ function updateWalletData() {
         eachPercent[key] = eachBalance[key] / totalBalance;
         eachPercent[key] = eachPercent[key].toFixed(2) * 100; // percent view
     }
-
-    // sort eachPercent object
-    /*     var sortable = [];
-        for (var currency in eachPercent) {
-            sortable.push([currency, eachPercent[currency]]);
-        }
-
-        sortable.sort(function (a, b) {
-            return b[1] - a[1];
-        });
-
-        eachPercent = {};
-        // fill object and sort table rows
-        sortable.map((item, index) => {
-            var key = item[0];
-            var value = item[1];
-            eachPercent[key] = value;
-            if ($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').index() != index) {
-                if (index == 0) {
-                    $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertBefore('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:first');
-                } else {
-                    $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').detach().insertAfter('#panel-funds-wallet .basic-table__body .basic-table__body .basic-table__row:nth-child(' + index + ')');
-                }
-            }
-        }); */
-    // end of sort
 
     var totalBalanceTrunc = Math.trunc(totalBalance);
     var totalBalanceFraction = (totalBalance - Math.trunc(totalBalance)).toFixed(2).substr(1);
