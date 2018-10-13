@@ -707,7 +707,7 @@
 	top: 0;
 	width: 28%;
 	flex: 1 0 auto;
-	height: 100vh;
+	height: calc(100% - var(--gap-size) * 4);
 	display: flex;
 	z-index: 100002;
 	outline: none;
