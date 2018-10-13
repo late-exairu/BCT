@@ -2545,7 +2545,7 @@ $(function () {
 		// 	zIndex: 10
 		// });
 		updateMainChartPercentChange();
-		updateWalletData();
+		updateWalletData(true);
 	});
 
 	/* .coin-dropdown handler */

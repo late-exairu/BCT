@@ -65,9 +65,9 @@ var totalBalance;
 
 ownWallet = wallets['ownWallet'];
 currentWallet = wallets['ownWallet'];
-updateWalletData();
+updateWalletData(true);
 
-function updateWalletData() {
+function updateWalletData(redrawSmallCharts) {
     totalBalance = 0;
     for (const key in currentWallet) {
         eachBalance[key] = currentWallet[key] * currenciesPrice[key];
@@ -77,18 +77,18 @@ function updateWalletData() {
         if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').length) {
             var currencyName = $('.exch-dropdown__item[data-currency="' + key + '"]').eq(0).attr('data-name');
             var newRow = '<div class="basic-table__row disabled" data-currency="' + key + '">' +
-                    '<div class="basic-table__col w-37">' +
-                    '<svg class="basic-table__curr icon-curr clr-coin-ltc" role="img" aria-hidden="true">' +
-                    '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + key.toLowerCase() + '"></use>' +
-                    '</svg>' +
-                    '<div class="d-flex-col">' +
-                    '<span class="bigger"><span class="bold wallet' + key + '"></span> ' + key + ' </span><span class="smaller">' + currencyName + '</span>' +
-                    '</div></div>' +
-                    '<div class="basic-table__col w-40">' +
-                    '<div class="smallCurrencyChart" id="smallChart' + key + '"></div>' +
-                    '<div class="bigger smallChartInfo d-flex-col"></div></div>' +
-                    '<div class="basic-table__col w-22"><button class="basic-table__btn d-flex-col fix-width" transaction-fancybox><span class="bigger">DEPOSIT</span>' + key + '</button></div>' +
-                    '</div>';
+                '<div class="basic-table__col w-37">' +
+                '<svg class="basic-table__curr icon-curr clr-coin-ltc" role="img" aria-hidden="true">' +
+                '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + key.toLowerCase() + '"></use>' +
+                '</svg>' +
+                '<div class="d-flex-col">' +
+                '<span class="bigger"><span class="bold wallet' + key + '"></span> ' + key + ' </span><span class="smaller">' + currencyName + '</span>' +
+                '</div></div>' +
+                '<div class="basic-table__col w-40">' +
+                '<div class="smallCurrencyChart" id="smallChart' + key + '"></div>' +
+                '<div class="bigger smallChartInfo d-flex-col"></div></div>' +
+                '<div class="basic-table__col w-22"><button class="basic-table__btn d-flex-col fix-width" transaction-fancybox><span class="bigger">DEPOSIT</span>' + key + '</button></div>' +
+                '</div>';
             $('#panel-funds-wallet .basic-table .basic-table').append(newRow);
         }
 
@@ -107,9 +107,32 @@ function updateWalletData() {
 
         $('.pricePerCoin' + key).html('$' + numberWithCommas(currenciesPrice[key]));
         $('.wallet' + key).html(numberWithCommas(currentWallet[key].toFixed(2)));
-      
-        var chartRange = $('.graph-range-slider__current').text();
-        var ajaxUrl = '';
+    }
+    totalBalance = totalBalance.toFixed(2);
+
+    for (const key in eachBalance) {
+        eachPercent[key] = eachBalance[key] / totalBalance;
+        eachPercent[key] = eachPercent[key].toFixed(2) * 100; // percent view
+    }
+
+    var totalBalanceTrunc = Math.trunc(totalBalance);
+    var totalBalanceFraction = (totalBalance - Math.trunc(totalBalance)).toFixed(2).substr(1);
+
+
+    $('.totalBalanceTrunc').html(numberWithCommas(totalBalanceTrunc));
+    $('.totalBalanceFraction').html(totalBalanceFraction);
+
+    $('.clearPricePerCoinBTC').html(numberWithCommas(currenciesPrice['BTC']));
+
+    if (redrawSmallCharts) updateSmallCharts();
+
+}
+
+function updateSmallCharts() {
+    var chartRange = $('.graph-range-slider__current').text();
+    var ajaxUrl = '';
+
+    for (const key in currentWallet) {
         switch (chartRange) {
             case '1H':
                 ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=60';
@@ -183,39 +206,23 @@ function updateWalletData() {
                 $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
             },
         });
-
     }
-    totalBalance = totalBalance.toFixed(2);
-
-    for (const key in eachBalance) {
-        eachPercent[key] = eachBalance[key] / totalBalance;
-        eachPercent[key] = eachPercent[key].toFixed(2) * 100; // percent view
-    }
-
-    var totalBalanceTrunc = Math.trunc(totalBalance);
-    var totalBalanceFraction = (totalBalance - Math.trunc(totalBalance)).toFixed(2).substr(1);
-
-
-    $('.totalBalanceTrunc').html(numberWithCommas(totalBalanceTrunc));
-    $('.totalBalanceFraction').html(totalBalanceFraction);
-
-    $('.clearPricePerCoinBTC').html(numberWithCommas(currenciesPrice['BTC']));
 }
 
-function updateRecent() {
-    for (const key in currentWallet) {
-        if (currentWallet[key].toFixed(2) != 0) {
-            // add to recent
-            if ($('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').length == 1) {
-                var newElem = $('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').eq(0).clone();
-                $(newElem).insertBefore('.exch-head__send .exch-dropdown__list .exch-dropdown__list-title:last');
+    function updateRecent() {
+        for (const key in currentWallet) {
+            if (currentWallet[key].toFixed(2) != 0) {
+                // add to recent
+                if ($('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').length == 1) {
+                    var newElem = $('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').eq(0).clone();
+                    $(newElem).insertBefore('.exch-head__send .exch-dropdown__list .exch-dropdown__list-title:last');
+                }
             }
-        }
-        if (currentWallet[key].toFixed(2) == 0) {
-            // remove from recent
-            if ($('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').length == 2) {
-                $('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').eq(0).remove();
+            if (currentWallet[key].toFixed(2) == 0) {
+                // remove from recent
+                if ($('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').length == 2) {
+                    $('.exch-head__send .exch-dropdown__list .exch-dropdown__item[data-currency="' + key + '"]').eq(0).remove();
+                }
             }
         }
     }
-}
