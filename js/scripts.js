@@ -968,36 +968,36 @@ $(function () {
 					var fakeGraphdiffs = [[], [], [], [], [], []];
 
 					var gData; 
-					var isDrawMainChart = false;
+					var range_index = 4;
 					var current_index = $('.graph-range-slider__control').val();
 					if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[0].interval) {
 						gDataTwoHour = [];
 						gData = gDataTwoHour;
-						if (current_index == 0) isDrawMainChart = true; 
+						range_index = 0;
 						console.log('gDataTwoHour');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
 						gDataDay = [];
 						gData = gDataDay;
-						if (current_index == 1) isDrawMainChart = true; 
+						range_index = 1;
 						console.log('gDataDay');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[2].interval) {
 						gDataWeek = [];
 						gData = gDataWeek;
-						if (current_index == 2) isDrawMainChart = true; 
+						range_index = 2;
 						console.log('gDataWeek');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[3].interval) {
 						gDataMonth = [];
 						gData = gDataMonth;
-						if (current_index == 3) isDrawMainChart = true; 
+						range_index = 3;
 						console.log('gDataMonth');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[4].interval) {
 						gDataYear = [];
 						gData = gDataYear;
-						if (current_index == 4) isDrawMainChart = true; 
+						range_index = 4;
 						console.log('gDataYear');
 					}
 
@@ -1022,7 +1022,7 @@ $(function () {
 						for (var k = 0; k < 6; k++) {
 							if (prev_value[k] == null) prev_value[k] = value * (Math.random() * (0.92 - 1.08) + 1.08);
 							var random = Math.pow(Math.random(), 15) * Math.pow(-1, Math.floor(Math.random() * 10))
-							var valueForFake = value * (1 + 0.08 * random);
+							var valueForFake = value * (1 + (0.001 + 0.002 * Math.pow(range_index, 3)) * random);
 							var diff = valueForFake - prev_value[k];
 
 							fakeGraphs[k].push(valueForFake);
@@ -1061,7 +1061,7 @@ $(function () {
 							gData.push(one_graph);
 						}
 						console.log(gData);
-						if (isDrawMainChart) { 
+						if (range_index == current_index) { 
 
 							mainChartObj.series[0].setData(gData[0].prices);
 							for (var k = 1; k < 6; k++) {
