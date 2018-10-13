@@ -798,18 +798,16 @@ $(function () {
 		}
 
 		// select value in exch-dropdown
-		if ($(this).parents('#panel-funds-wallet').length) {
-			var icon = $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href');
-			$('.exch-head__send .exch-dropdown__list .exch-dropdown__item').each(function () {
-				if (icon == $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href')) {
-					$(this).trigger('click');
-					$('.exch-dropdown').removeClass('open');
-					return false;
-				}
-			});
-			// select USD in GET dropdown
-			//$('.exch-head__get .exch-dropdown__list .exch-dropdown__item').eq(2).trigger('click');
-		}
+		// if ($(this).parents('#panel-funds-wallet').length) {
+		// 	var icon = $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href');
+		// 	$('.exch-head__send .exch-dropdown__list .exch-dropdown__item').each(function () {
+		// 		if (icon == $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href')) {
+		// 			$(this).trigger('click');
+		// 			$('.exch-dropdown').removeClass('open');
+		// 			return false;
+		// 		}
+		// 	});
+		// }
 
 		if ($(this).parents('#panel-funds-history').length) {
 			$('.graph-prices').addClass('open');
