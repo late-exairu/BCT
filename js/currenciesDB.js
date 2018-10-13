@@ -37,6 +37,24 @@ allCurrenciesArr.map(item => {
         '</svg> <p class="exch-dropdown__title"><b>' + coinShort + '</b> - ' + coinTitle + '</p>' +
         '</div >';
 
+    // add row to wallet
+    if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + coinShort + '"]').length) {
+        var newRow = '<div class="basic-table__row disabled" data-currency="' + coinShort + '">' +
+            '<div class="basic-table__col w-37">' +
+            '<svg class="basic-table__curr icon-curr clr-coin-ltc" role="img" aria-hidden="true">' +
+            '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + coinLowerCaseShort + '"></use>' +
+            '</svg>' +
+            '<div class="d-flex-col">' +
+            '<span class="bigger"><span class="bold wallet' + coinShort + '"></span> ' + coinShort + ' </span><span class="smaller">' + coinTitle + '</span>' +
+            '</div></div>' +
+            '<div class="basic-table__col w-40">' +
+            '<div class="smallCurrencyChart" id="smallChart' + coinShort + '"></div>' +
+            '<div class="bigger smallChartInfo d-flex-col"></div></div>' +
+            '<div class="basic-table__col w-22"><button class="basic-table__btn d-flex-col fix-width clickable" transaction-fancybox><span class="bigger">DEPOSIT</span>' + coinShort + '</button></div>' +
+            '</div>';
+        $('#panel-funds-wallet .basic-table').append(newRow);
+    }
+
 });
 
 $('.exch-dropdown__scroll').eq(0).append(allCurrenciesHtmlFirstColumn);
@@ -74,24 +92,6 @@ function updateWalletData(redrawSmallCharts) {
         eachBalance[key] = +eachBalance[key].toFixed(2);
         totalBalance += eachBalance[key];
 
-        if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').length) {
-            var currencyName = $('.exch-dropdown__item[data-currency="' + key + '"]').eq(0).attr('data-name');
-            var newRow = '<div class="basic-table__row disabled" data-currency="' + key + '">' +
-                '<div class="basic-table__col w-37">' +
-                '<svg class="basic-table__curr icon-curr clr-coin-ltc" role="img" aria-hidden="true">' +
-                '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + key.toLowerCase() + '"></use>' +
-                '</svg>' +
-                '<div class="d-flex-col">' +
-                '<span class="bigger"><span class="bold wallet' + key + '"></span> ' + key + ' </span><span class="smaller">' + currencyName + '</span>' +
-                '</div></div>' +
-                '<div class="basic-table__col w-40">' +
-                '<div class="smallCurrencyChart" id="smallChart' + key + '"></div>' +
-                '<div class="bigger smallChartInfo d-flex-col"></div></div>' +
-                '<div class="basic-table__col w-22"><button class="basic-table__btn d-flex-col fix-width" transaction-fancybox><span class="bigger">DEPOSIT</span>' + key + '</button></div>' +
-                '</div>';
-            $('#panel-funds-wallet .basic-table .basic-table').append(newRow);
-        }
-
         if (currentWallet[key].toFixed(2) != 0) {
             if ($('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').hasClass('disabled')) {
                 $('#panel-funds-wallet .basic-table__row[data-currency="' + key + '"]').removeClass('disabled');
@@ -117,7 +117,6 @@ function updateWalletData(redrawSmallCharts) {
 
     var totalBalanceTrunc = Math.trunc(totalBalance);
     var totalBalanceFraction = (totalBalance - Math.trunc(totalBalance)).toFixed(2).substr(1);
-
 
     $('.totalBalanceTrunc').html(numberWithCommas(totalBalanceTrunc));
     $('.totalBalanceFraction').html(totalBalanceFraction);
