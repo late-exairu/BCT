@@ -9,8 +9,17 @@ $(function () {
 				document.querySelector('.message-bar__login').classList.add('hidden');
 			if (document.querySelector('.message-bar__login-demo'))
 				document.querySelector('.message-bar__login-demo').classList.add('hidden');
-			if (document.querySelector('.chat-head__back'))
+			if (document.querySelector('#telegramText'))
+				document.querySelector('#telegramText').classList.add('hidden');
+
+			if (document.querySelector('.chat-head__back')){
 				document.querySelector('.chat-head__back').classList.remove('hidden');
+				document.querySelector('.chat-head__desc').classList.remove('hidden');
+				document.querySelector('.chat-head__btns').classList.remove('hidden');
+			}
+			if (document.querySelector('.chat-talk')) {
+				document.querySelector('.chat-talk').classList.remove('hidden');
+			}
 
 			if (localStorage.getItem('telegramPhoto')) {
 				if (document.querySelector('.message-bar__user-pic .user-pic__avatar')) {
