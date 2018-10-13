@@ -131,6 +131,9 @@
 			.icon-curr{
 				opacity: 0.25;
 			}
+			.smallCurrencyChart{
+				filter: grayscale(100%);
+			}
 		}
 
 		&.head{

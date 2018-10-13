@@ -188,7 +188,6 @@ OneRoot Network - RNT
 onG.social - ONG
 Ontology - ONT
 OriginTrail - TRAC
-PacCoin - $PAC
 Particl - PART
 Paypex - PAYX
 PChain - PAI
