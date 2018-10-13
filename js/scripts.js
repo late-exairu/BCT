@@ -1970,13 +1970,13 @@ $(function () {
 		$(".graph-prices__list .graph-prices__item").each(function (index,item) {
 			if (index < progressBarsCounter) {
 				current_exchange_item = $(item);
-				$(item).find(".graph-prices__amount").removeClass('hidden');
+				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-textD)');
 				$(item).find(".graph-prices__price.send-prices__rate").removeClass('hidden');
 				$(item).find(".graph-prices__price-label").removeClass('hidden');
 				$(item).find(".graph-prices__amount").html(`
 				<span class="graph-prices__amount-label">
 					Amount: 
-				</span>` + (secondValue / progressBarsCounter).toFixed(2) + ' <span>' + getCurrency + '</span>');
+				</span>` + numberWithCommas((secondValue / progressBarsCounter).toFixed(2)) + ' <span>' + getCurrency + '</span>');
 			}
 		});
 	}
@@ -2025,7 +2025,7 @@ $(function () {
 					$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
 
 					current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
-					current_exchange_item.css('height', '56px');
+					//current_exchange_item.css('height', '56px');
 
 					if (!isSelectedPrevConversion) {
 						// $('.icon-trader').removeClass('hidden');
@@ -2043,6 +2043,11 @@ $(function () {
 	
 
 	$('.exch-form__close').click(function (e) {
+		$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
+		$(".graph-prices__list .graph-prices__item .graph-prices__price.get-prices__rate").removeClass('hidden');
+		$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").addClass('hidden');
+		$(".graph-prices__list .graph-prices__item .graph-prices__price-label").addClass('hidden');
+
 		e.preventDefault();
 		$('#js-graph-prices').removeClass('open noClose');
 		$('.c-block.b-graph__controls').removeClass('shifted');
@@ -2599,7 +2604,7 @@ $(function () {
 			});
 
 			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
-				$(priceItem).html('<span class="graph-prices__price-label hidden">Price: </span>' + (sendCurrency == 'USDT' ? rateArray[index].toFixed(2) : rateArray[index].toFixed(5)) + ' <span>' + sendCurrency + '</span>');
+				$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + getCurrency + ' = </span>' + (sendCurrency == 'USDT' ? numberWithCommas(rateArray[index].toFixed(2)) : numberWithCommas(rateArray[index].toFixed(5))) + ' <span>' + sendCurrency + '</span>');
 			});
 		}
 
@@ -2612,7 +2617,7 @@ $(function () {
 		}
 
 		$('.graph-prices__price.get-prices__rate').each(function (index, priceItem) {
-			$(priceItem).html('<span class="graph-prices__price-label hidden">Price: </span>' + priceRateBackward + ' <span>' + getCurrency + '</span>');
+			$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + sendCurrency + ' = </span>' + numberWithCommas(priceRateBackward) + ' <span>' + getCurrency + '</span>');
 		});
 
 		// init sort icon
