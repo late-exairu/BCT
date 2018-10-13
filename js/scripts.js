@@ -1900,9 +1900,9 @@ $(function () {
 			$('.range-slider .exch-form-slider__control').attr("step", parseInt(firstValue));
 			$('.range-slider .exch-form-slider__control').val(firstValue * 100000);
 
-			$('.range-slider .exch-form-slider__control').on('input', function () {		
+			$('.range-slider .exch-form-slider__control').on('input', function () {	
 				var value = this.value / 100000;
-				$('.exch-form__send > input').val(value);
+				$('.exch-form__send > input').val(numberWithCommas(value.toFixed(2)));
 				$('.exch-form__send input.exch-form__input').keyup();
 				updateExchangeValues();
 			});
@@ -2084,7 +2084,7 @@ $(function () {
 		var getCurrency = $('.exch-form__get > input').attr('data-currency');
 
 		if ($(this).parent().hasClass('exch-form__send')) {
-			var firstValue = $(this).val();
+			var firstValue = $(this).val().trim().replace(/,/g, '');
 
 			if (firstValue > ownWallet[sendCurrency]) {
 				firstValue = ownWallet[sendCurrency];
@@ -2106,7 +2106,7 @@ $(function () {
 			//var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
 			//$('.exch-form__send > input').val(numberWithCommas(firstValue));
 		}
-		var send_amount = parseFloat($('.exch-form__send > input').val());
+		var send_amount = parseFloat($('.exch-form__send > input').val().trim().replace(/,/g, ''));
 		if (send_amount)
 			$('.range-slider .exch-form-slider__control').val(parseFloat(send_amount * 100000));
 	});
