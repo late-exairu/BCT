@@ -2043,6 +2043,7 @@ $(function () {
 	
 
 	$('.exch-form__close').click(function (e) {
+		clearInterval(dynamicGetValue);
 		$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
 		$(".graph-prices__list .graph-prices__item .graph-prices__price.get-prices__rate").removeClass('hidden');
 		$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").addClass('hidden');
@@ -2462,36 +2463,6 @@ $(function () {
 	var $mainGraphRange = $(".graph-range-slider__control");
 	$mainGraphRange.on('input', function () {
 		// $( this ).css( 'background', 'linear-gradient(to right, var(--clr-time-bar) 0%, var(--clr-time-bar) '+this.value*25 +'%, var(--clr-time-line) ' + this.value*25 + '%, var(--clr-time-line) 100%)' );
-
-		// switch (parseInt(this.value)) {
-		// 	case 0:
-		// 		$('.graph-range-slider__current').html("1h");
-		// 		var HOUR = 1000 * 3600; //1000 * 3600;
-		// 		mainChartObj.xAxis[0].setExtremes(maxDate - HOUR, maxDate);
-		// 		break;
-		// 	case 1:
-		// 		$('.graph-range-slider__current').html("1d");
-		// 		var DAY = 1000 * 3600 * 24; //1000 * 3600 * 24;
-		// 		mainChartObj.xAxis[0].setExtremes(maxDate - DAY, maxDate);
-		// 		break;
-		// 	case 2:
-		// 		$('.graph-range-slider__current').html("1w");
-		// 		var WEEK = 1000 * 3600 * 24 * 7;
-		// 		mainChartObj.xAxis[0].setExtremes(maxDate - WEEK, maxDate - 1000 * 3600 * 12);
-		// 		break;
-		// 	case 3:
-		// 		$('.graph-range-slider__current').html("1m");
-		// 		var d = new Date(maxDate);
-		// 		d.setMonth(d.getMonth() - 1);
-		// 		mainChartObj.xAxis[0].setExtremes(d.getTime(), maxDate);
-		// 		break;
-		// 	case 4:
-		// 		$('.graph-range-slider__current').html("1year");
-		// 		mainChartObj.xAxis[0].setExtremes(minDate, maxDate);
-		// 		break;
-		// }
-		// redrawMainChart();
-		// updateMainChartPercentChange();
 		
 		var index = parseInt(this.value);
 		var interval = range_options[index].interval;
@@ -2537,18 +2508,6 @@ $(function () {
 			mainChartObj.series[k].setData(gData[k].prices);
 		}
 
-		// mainChartObj.series[0].update({
-		// 	fillColor: {
-		// 		linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-		// 		stops: gradientColor
-		// 	},
-		// 	color: mainChartFirstColor,
-		// 	lineWidth: 3,
-		// 	enableMouseTracking: true,
-		// 	trackByArea: true,
-		// 	pointInterval: interval,
-		// 	zIndex: 10
-		// });
 		updateMainChartPercentChange();
 		updateWalletData(true);
 	});
