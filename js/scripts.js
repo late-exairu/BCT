@@ -1510,6 +1510,14 @@ $(function () {
 		var USDT550Equal = 550 / currenciesPrice[currencyName];
 		var coin_amount = parseFloat(coin_amount_str.replace(",", ""));
 
+		//for later, confirmation
+		window.current_wallet_session =  {
+			currency: currencyName,
+			amount: coin_amount_str,
+			deposit_address: '3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu',
+			withdraw_address: ''
+		}
+
 		 $('#transaction-popup #transactionFormMinDepositAmount').eq(0).text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
 
 		if (coin_amount > 0) {
@@ -2309,6 +2317,7 @@ $(function () {
 
 	$('.popup-nav-button').click(function (e) {
 		let popupSrcDiv=$(this).attr("data-next-screen");
+		
 		$.fancybox.close();
 		e.preventDefault();
 		// Open this fancybox force
@@ -2326,6 +2335,22 @@ $(function () {
 							"position": "absolute"
 						})
 						.css("display", "block");
+					if (popupSrcDiv == "confirm-withdrawal-request") {
+						console.log("populating next screen for demo!")
+						try {
+							window.current_wallet_session.withdraw_address = $("#withdrawal-address").val()
+
+							$("#confirm-return-amount").html(window.current_wallet_session.amount)
+							$("#confirm-return-address").html(window.current_wallet_session.withdraw_address)
+							$("#confirm-return-currency").html(window.current_wallet_session.currency)
+
+							console.log("done, data was "+JSON.stringify(window.current_wallet_session))
+						}
+						catch(x) {
+							console.log("ERROR populating next screen")
+						}
+				
+					}
 				},
 				beforeShow: function () {
 					$('.fancybox-container').css("display", "none");
