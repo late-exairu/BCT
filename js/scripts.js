@@ -2,7 +2,15 @@ $(function () {
 	var svgArrowTemplate = '<svg class="basic-table__arrow-conv" role="img" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right-2"></use> </svg>';
 	const minDate = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 	const maxDate = Date.now();
-
+	$("#try_password_challenge").click((e) => {
+		e.preventDefault()
+		if ($("#bctpassword").val() == "skf-619") {
+			$("#login_overlay").hide()
+			setCookie("logged_in", "true", "30"); //stay logged in for a month
+		} else {
+			alert("Wrong password. Please ask your manager for a new one")
+		}
+	})
 	function setOwnName() {
 		if (localStorage.getItem('telegramAuth') == 'true' && localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 			if (document.querySelector('.message-bar__login'))
@@ -1521,10 +1529,10 @@ $(function () {
 		 $('#transaction-popup #transactionFormMinDepositAmount').eq(0).text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
 
 		if (coin_amount > 0) {
-			$('#transaction-popup .transaction-form__input').removeClass('inactive')
+			$('#transaction-popup .transaction-form__input').removeAttr('disabled')
 		}
 		else {
-			$('#transaction-popup .transaction-form__input').addClass('inactive')
+			$('#transaction-popup .transaction-form__input').attr('disabled', 'disabled')
 		}
 		
 		var fancies_length = $('main-cols__right .fancybox-container').length;
@@ -1561,6 +1569,8 @@ $(function () {
 						//$('.exch-form').removeClass('progress');
 						// $('.exch-head').toggleClass('open');
 						$('button[transaction-fancybox]').removeClass('active');
+						$('.copy-deposit-address').removeClass('clicked');
+
 					}
 				}
 			});
@@ -2362,6 +2372,11 @@ $(function () {
 			}
 		});
 	});
+
+	$(".copy-deposit-address").click(function(e){
+		$(this).addClass("clicked")
+		e.preventDefault();
+	})
 
 
 	/*---------------------------------------------------*/

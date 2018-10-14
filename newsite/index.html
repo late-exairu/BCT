@@ -42,6 +42,24 @@
 </head>
 
 <body>
+<div id="login_overlay">
+	<div class="outer">
+		<div class="inner">
+			<br />
+			<h2>BCT Restricted Area</h2>
+			<form>
+				<input type="password" id="bctpassword" placeholder="Enter your password" style="width:65%" />
+				<input type="submit" id="try_password_challenge" value="Log In" />
+			</form>
+
+			<p style="font-size:12px; font-style:italic">If you forget your password, please ask your BCT manager</p>
+		</div>
+	</div>
+</div>
+
+<script>
+	function setCookie(e,o,t){if(t){var i=new Date;i.setTime(i.getTime()+24*t*60*60*1e3);var n="; expires="+i.toGMTString()}else n="";document.cookie=e+"="+o+n+"; path=/"}function getCookie(e){for(var o=e+"=",t=document.cookie.split(";"),i=0;i<t.length;i++){for(var n=t[i];" "==n.charAt(0);)n=n.substring(1,n.length);if(0==n.indexOf(o))return n.substring(o.length,n.length)}return null}function deleteCookie(e){setCookie(e,"",-1)}var isLoggedIn=getCookie("logged_in")&&"true"==getCookie("logged_in");isLoggedIn||(document.querySelector("#login_overlay").style.display="block");
+</script>
 
 <div class="wrapper no-bar">
 
@@ -2474,9 +2492,9 @@
 						<div class="transaction-form__line inner" style="margin-bottom:10px">
 							<input id="deposit-address" disabled="disabled" class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
 	
-							<div class="transaction-form__button square-icon-button">
+							<button class="transaction-form__button square-icon-button copy-deposit-address">
 									<i class="far fa-copy"></i>
-							</div>
+							</button>
 						</div>
 	
 						<span class="transaction-form__label-large">Return Address</span>				
