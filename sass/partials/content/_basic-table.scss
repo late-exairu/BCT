@@ -134,6 +134,11 @@
 			.smallCurrencyChart{
 				filter: grayscale(100%);
 			}
+			.smallChartInfo{
+				.smaller{
+					color: var(--clr-icon);
+				}
+			}
 		}
 
 		&.head{
