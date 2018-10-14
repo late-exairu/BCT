@@ -4,7 +4,7 @@ $(function () {
 	const maxDate = Date.now();
 	$("#try_password_challenge").click((e) => {
 		e.preventDefault()
-		if ($("#bctpassword").val() == "skf-619") {
+		if ($("#bctpassword").val() == "octoberlive!") {
 			$("#login_overlay").hide()
 			setCookie("logged_in", "true", "30"); //stay logged in for a month
 		} else {
