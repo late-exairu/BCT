@@ -158,7 +158,7 @@ function updateWalletData(redrawSmallCharts) {
 }
 
 function updateSmallCharts() {
-    var chartRange = $('.graph-range-slider__current').text();
+    var chartRange = $('.graph-info__range__current').text();
     var ajaxUrl = '';
     var counter = 0;
     for (const key in allCurrenciesWallet) {

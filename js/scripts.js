@@ -77,6 +77,17 @@ $(function () {
 		grid_snap: false
 	});
 
+
+	$(window).click(function () {
+		if ($('ul.graph-info__range__list').hasClass('open')) {
+			$('ul.graph-info__range__list').css('border-bottom', '0px');
+			$('div.graph-info__range').css('border', '0px');
+			$('ul.graph-info__range__list').removeClass('open');
+			$('div.graph-info__range__current').removeClass('open');
+			$('div.graph-info__range__current').css('border', 'solid 1px');
+		}
+	});
+
 	/*---------------------------------------------------*/
 	/* redraw Charts after resize */
 	/*---------------------------------------------------*/
@@ -895,12 +906,6 @@ $(function () {
 		drawCircleChart();
 	});
 
-	$('.graph-info__range__select .graph-info__range__item').click(function () {
-		$('.graph-info__range__select .graph-info__range__item').removeClass('current');
-		$(this).addClass('current');
-		portfolioChartCurrentRange = $(this).index();
-	});
-
 	/*---------------------------------------------------*/
 	/* change range on Portfolio Chart */
 	/*---------------------------------------------------*/
@@ -975,35 +980,41 @@ $(function () {
 
 					var gData; 
 					var range_index = 4;
-					var current_index = $('.graph-range-slider__control').val();
+					var isRedraw = false;
+					var current_range = $('.graph-info__range__current').html();
 					if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[0].interval) {
 						gDataTwoHour = [];
 						gData = gDataTwoHour;
 						range_index = 0;
+						if (current_range == '2H') isRedraw = true;
 						console.log('gDataTwoHour');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
 						gDataDay = [];
 						gData = gDataDay;
 						range_index = 1;
+						if (current_range == '1D') isRedraw = true;
 						console.log('gDataDay');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[2].interval) {
 						gDataWeek = [];
 						gData = gDataWeek;
 						range_index = 2;
+						if (current_range == '1W') isRedraw = true;
 						console.log('gDataWeek');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[3].interval) {
 						gDataMonth = [];
 						gData = gDataMonth;
 						range_index = 3;
+						if (current_range == '1M') isRedraw = true;
 						console.log('gDataMonth');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[4].interval) {
 						gDataYear = [];
 						gData = gDataYear;
 						range_index = 4;
+						if (current_range == '1Y') isRedraw = true;
 						console.log('gDataYear');
 					}
 
@@ -1067,7 +1078,7 @@ $(function () {
 							gData.push(one_graph);
 						}
 						console.log(gData);
-						if (range_index == current_index) { 
+						if (isRedraw) { 
 
 							mainChartObj.series[0].setData(gData[0].prices);
 							for (var k = 1; k < 6; k++) {
@@ -1232,21 +1243,21 @@ $(function () {
 		mainGraphHighlighted = currentDataId;
 
 		var gData;
-		var current_interval_index = parseInt($('.graph-range-slider__control').val());
-		switch (current_interval_index) {
-			case 0:
+		var current_range = $('.graph-info__range__current').html();
+		switch (current_range) {
+			case '2H':
 				gData = gDataTwoHour;
 				break;
-			case 1:
+			case '1D':
 				gData = gDataDay;
 				break;
-			case 2:
+			case '1W':
 				gData = gDataWeek;
 				break;
-			case 3:
+			case '1M':
 				gData = gDataMonth;
 				break;
-			case 4:
+			case '1Y':
 				gData = gDataYear;
 				break;
 		}
@@ -2411,6 +2422,94 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* Graph range select */
 	/*---------------------------------------------------*/
+
+	var allRangeOptions = $("ul.graph-info__range__list").children('li.graph-info__range__item');
+	$("div.graph-info__range__current").on("click", function () {
+		event.stopPropagation();
+		if ($('ul.graph-info__range__list').hasClass('open')) {
+			$('ul.graph-info__range__list').css('border-bottom', '0px');
+			$('div.graph-info__range').css('border', '0px');
+			$('ul.graph-info__range__list').removeClass('open');
+			$('div.graph-info__range__current').removeClass('open');
+			$('div.graph-info__range__current').css('border', 'solid 1px');
+		} else {
+			$('ul.graph-info__range__list').addClass('open');
+			$('div.graph-info__range__current').addClass('open');
+			$('div.graph-info__range__current').css('border', '0px');
+			$('ul.graph-info__range__list').css('border-top', 'solid 1px');
+			$('div.graph-info__range').css('border', 'solid 1px');
+		}
+	});
+	$("ul.graph-info__range__list").on("click", "li.graph-info__range__item", function () {
+		allRangeOptions.removeClass('active');
+		$(this).addClass('active');
+		$(".graph-info__range__current").html($(this).html());
+
+		$('ul.graph-info__range__list').css('border-bottom', '0px');
+		$('div.graph-info__range').css('border', '0px');
+		$('ul.graph-info__range__list').removeClass('open');
+		$('div.graph-info__range__current').removeClass('open');
+		$('div.graph-info__range__current').css('border', 'solid 1px');
+
+
+		var current_range = $('.graph-info__range__current').html();
+		var interval = range_options[4].interval;
+		var limit = range_options[4].limit;
+		var gData;
+		switch (current_range) {
+			case '2H':
+				gData = gDataTwoHour;
+				interval = range_options[0].interval;
+				limit = range_options[0].limit;
+				break;
+			case '1D':
+				gData = gDataDay;
+				interval = range_options[1].interval;
+				limit = range_options[1].limit;
+				break;
+			case '1W':
+				gData = gDataWeek;
+				interval = range_options[2].interval;
+				limit = range_options[2].limit;
+				break;
+			case '1M':
+				gData = gDataMonth;
+				interval = range_options[3].interval;
+				limit = range_options[3].limit;
+				break;
+			case '1Y':
+				gData = gDataYear;
+				interval = range_options[4].interval;
+				limit = range_options[4].limit;
+				break;
+		}
+
+		// $('.graph-range-slider__current').html(range_options[index].label);
+		
+		mainChartObj.series.forEach(series => {
+			series.update({
+				pointStart: maxDate - interval * limit,
+				pointInterval: interval
+			})
+		})
+
+		var exchanger = mainGraphHighlighted - 1;
+
+		var y_min = gData[exchanger].min - (gData[exchanger].max - gData[exchanger].min) * 0.3;
+		if (y_min < 0) y_min = 0;
+		var y_max = gData[exchanger].max + (gData[exchanger].max - gData[exchanger].min) * 0.15;
+		mainChartObj.yAxis[0].setExtremes(y_min, y_max);
+
+		mainChartObj.series[0].setData(gData[0].prices);
+		if ($('body').hasClass('advanced'))
+			mainChartObj.series[7].setData(gData[exchanger].diffs);
+		for (var k = 1; k < 6; k++) {
+			mainChartObj.series[k].setData(gData[k].prices);
+		}
+
+		updateMainChartPercentChange();
+		updateWalletData(true);
+	});
 
 	// var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
 	// $("div.portfolio-graph-range__current").on("click", function () {

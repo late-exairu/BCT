@@ -470,23 +470,23 @@ var hightChartUpdateOptions = {
 						avg *= -1;
 					}
 
-					var current_range_index = $('.graph-range-slider__control').val();
+					var current_range = $('.graph-info__range__current').html();
 
 					var gData;
-					switch (parseInt(current_range_index)) {
-						case 0:
+					switch (current_range) {
+						case '2H':
 							gData = gDataTwoHour;
 							break;
-						case 1:
+						case '1D':
 							gData = gDataDay;
 							break;
-						case 2:
+						case '1W':
 							gData = gDataWeek;
 							break;
-						case 3:
+						case '1M':
 							gData = gDataMonth;
 							break;
-						case 4:
+						case '1Y':
 							gData = gDataYear;
 							break;
 					}
