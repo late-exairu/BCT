@@ -856,6 +856,10 @@ h6 {
     background: var(--clr-block);
     /*background: transparent;*/
     color: var(--clr-text); }
+    .basic-table__btn.left-align {
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left; }
     .basic-table__btn.accented {
       color: var(--clr-accentD); }
     .basic-table__btn.simple {
