@@ -2455,7 +2455,7 @@
 	
 					<span class="transaction-form__label-large">Deposit Address</span>
 						<div class="transaction-form__line inner" style="margin-bottom:10px">
-							<input disabled="disabled" class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
+							<input id="deposit-address" disabled="disabled" class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
 	
 							<div class="transaction-form__button square-icon-button">
 									<i class="far fa-copy"></i>
@@ -2464,8 +2464,8 @@
 	
 						<span class="transaction-form__label-large">Return Address</span>				
 						<div class="transaction-form__line inner">
-							<input class="transaction-form__input" type="text" name="" value="" placeholder="Submit once multi-leg trade is complete">
-							<button class="transaction-form__button square-icon-button js-fancybox-close popup-nav-button"
+							<input id="withdrawal-address" class="transaction-form__input" type="text" name="" value="" placeholder="Submit once multi-leg trade is complete">
+							<button id="submit-withdrawal-request" class="transaction-form__button square-icon-button js-fancybox-close popup-nav-button"
 								data-next-screen="confirm-withdrawal-request">
 									<i class="fas fa-arrow-right"></i>					
 							</button>
