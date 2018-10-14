@@ -81,7 +81,8 @@
   --clr-time-bar:		#737373;
   /*time control bar background color*/
   --clr-time-slider:	#bfc0c0;
-  /*time control slider color*/ }
+  /*time control slider color*/
+  --not-bold: 300; }
 
 .dark-theme {
   --clr-text:			#9ba6b2;
@@ -13919,7 +13920,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-weight: 700;
+  font-weight: 300;
   font-size: 18px;
   border: none;
   cursor: pointer;
@@ -13940,7 +13941,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     cursor: pointer;
     text-decoration: none;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 300;
     white-space: nowrap;
     transition: all 0.1s;
     justify-content: center;
@@ -14743,6 +14744,14 @@ button:-moz-focusring {
   .basic-btn.btn-red {
     background: #e05475; }
 
+/* Square icon button, 40px x 40px default size
+   Usage: <button class="square-icon-button"><i class='[fontawesome class names]'></i><button>  */
+.square-icon-button {
+  width: 40px;
+  height: 40px;
+  color: white;
+  background-color: var(--clr-icon); }
+
 /* =================================================================== */
 /* popups */
 /* =================================================================== */
@@ -14888,7 +14897,7 @@ button:-moz-focusring {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-weight: 700;
+    font-weight: 300;
     font-size: 18px;
     border: none;
     cursor: pointer;

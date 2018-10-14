@@ -2442,6 +2442,148 @@
 	</div>
 </div>
 
+<!-- Deposit and withdraw popup, STEP 1 -->
+<div class="basic-popup transaction-popup" id="transaction-popup" style="display: none;">
+		<div class="c-block d-flex-col flex-1-1 flex-h-fix">
+			<div class="d-flex-col flex-1-1 flex-h-fix">
+				<form class="transaction-form">
+					<div class="transaction-form__qr-code-wrap">
+						<img src="pic/qr-code.svg" width="130" height="130" alt="qr-code">
+						<span style="margin-left:-15px; margin-right:-15px;text-align:center" class="transaction-form__label" id="transactionFormMinDepositAmount"></span>
+	
+					</div>
+	
+					<span class="transaction-form__label-large">Deposit Address</span>
+						<div class="transaction-form__line inner" style="margin-bottom:10px">
+							<input disabled="disabled" class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
+	
+							<div class="transaction-form__button square-icon-button">
+									<i class="far fa-copy"></i>
+							</div>
+						</div>
+	
+						<span class="transaction-form__label-large">Return Address</span>				
+						<div class="transaction-form__line inner">
+							<input class="transaction-form__input" type="text" name="" value="" placeholder="Submit once multi-leg trade is complete">
+							<button class="transaction-form__button square-icon-button js-fancybox-close popup-nav-button"
+								data-next-screen="confirm-withdrawal-request">
+									<i class="fas fa-arrow-right"></i>					
+							</button>
+						</div>
+	
+	
+						<span class="transaction-form__label" style="color: var(--clr-textLL)" onclick="$('#accept-terms').click()">I agree & accept 
+							<a href="#">terms and conditions</a>
+						</span>
+	
+						<label class="container">
+							<input id="accept-terms" type="checkbox" checked="checked">
+							<span class="checkmark"></span>
+						</label>
+		
+				</form>
+			</div>
+		</div>
+	</div>
+	
+<!-- Deposit and withdraw popup, STEP 2 (confirmation) -->
+<div class="basic-popup confirm-withdrawal-request autentificator-popup" id="confirm-withdrawal-request" style="display: none;">
+	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
+
+			<div class="d-flex-col flex-1-1 flex-h-fix">
+				<form class="transaction-form">
+		
+					<p style="text-align:center; font-size:12px; font-weight:bold; padding:10px">						
+											<span id="confirm-return-amount">AMOUNT</span> of <span id="confirm-return-currency">CURRENCY</span> will 
+											now be returned to <span id="confirm-return-address">YOUR ADDRESS</span>
+					</p>
+
+					<div class="autentificator__btns">
+							<button class="autentificator__btn js-fancybox-close"  type="reset">CANCEL</button>
+							<button class="autentificator__btn js-fancybox-close popup-nav-button submit" data-next-screen="autentificator-popup">CONFIRM</button>
+					</div>
+				</form>
+			</div>
+	</div>
+</div>
+
+<!-- Send currency to contact popup-->
+<div class="basic-popup send-popup" id="send-popup" style="display: none;">
+		<div class="c-block d-flex-col flex-1-1 flex-h-fix">
+			<div class="c-block-head">
+				<div class="c-block-head__left js-dropdown-wrap">
+					<h2 class="c-block-head__title">
+						Send USDT to Joe Johnson
+					</h2>
+				</div>
+				<div class="avatar-wrap">
+					<img class="avatar" src="pic/avatar_6.jpg" height="44" width="44" alt="">
+				</div>
+			</div>
+	
+			<div class="d-flex-col flex-1-1 flex-h-fix">
+				<form class="send-form">
+					<div class="send-form__line inline">
+						<div class="send-form__input-group">
+							<input class="send-form__input" type="text" name="" value="100.00">
+							<label class="send-form__label">You are sending</label>
+						</div>
+						<div class="coin-dropdown">
+							<div class="coin-dropdown__border">
+								<div class="coin-dropdown__current">
+									<p class="coin-dropdown__title">USDT</p>
+									<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
+									</svg>
+									<!-- <div class="coin-dropdown__hangle">
+										<svg class="sprite-icon" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+										</svg>
+									</div> -->
+								</div>
+							</div>						
+	
+							<div class="coin-dropdown__list">
+								<div class="coin-dropdown__item current" data-name="Bitcoin" data-currency="BTC">
+									<p class="coin-dropdown__title">USDT</p>
+									<svg class="coin-dropdown__icon icon-curr clr-coin-usdt" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
+									</svg>
+									<!-- <svg class="coin-dropdown__icon btc" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
+									</svg> -->
+								</div>
+	
+								<div class="coin-dropdown__item" data-name="Ethereum" data-currency="ETH">
+									<p class="coin-dropdown__title">Ethereum</p>
+									<svg class="coin-dropdown__icon eth" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-eth"></use>
+									</svg>
+								</div>
+	
+								<div class="coin-dropdown__item" data-name="Tether" data-currency="USDT">
+										<p class="coin-dropdown__title">Tether</p>
+										<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
+										</svg>
+									</div>
+							</div>
+						</div>
+					</div>
+	
+					<button class="send-form__btn submit js-fancybox-close" autentificator-fancybox>					
+						<svg class="send-form__btn-bg" role="img" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 240 71">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#exch-bg"></use>
+						</svg>					
+						SEND US DOLLAR TETHER
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+<!-- Google authenticator popup to verify transactions (deposit/withdrawal, send to contact) -->
 <div class="basic-popup autentificator-popup" id="autentificator-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
 
@@ -2449,7 +2591,7 @@
 			<form class="transaction-form">
 		
 				<div class="autentificator">
-					<p class="autentificator__title">Input Code from<br/>Google Authentificator</p>
+					<p class="autentificator__title">Input Code from<br/>Google Authenticator</p>
 
 					<ul class="autentificator__nums">
 						<li class="autentificator__num">1</li>
@@ -2470,140 +2612,6 @@
 	</div>
 </div>
 
-
-<div class="basic-popup conform-popup" id="conform-popup" style="display: none;">
-	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
-
-		<div class="d-flex-col flex-1-1 flex-h-fix">
-			<form class="transaction-form">
-		
-				<div class="conform-popup__text">
-					<p>AMOUNT of the CURRENCY will<br/>now be returned to RETURN ADDRSS</p>
-				</div>
-				
-				<div class="conform-popup__btns">
-					<button class="conform-popup__btn js-fancybox-close" type="reset">CANCEL</button>
-					<button class="conform-popup__btn submit" autentificator-fancybox>CONFIRM</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-
-<!-- old transaction popup
-<div class="basic-popup transaction-popup" id="transaction-popup" style="display: none;">
-	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
-		<div class="popup-tabs">
-			<div class="popup-tabs__item active">WITHDRAW</div>
-			<div class="popup-tabs__item">DEPOSIT</div>
-		</div>
-
-		<div class="d-flex-col flex-1-1 flex-h-fix">
-			<form class="transaction-form">
-				<span class="transaction-form__label">Recipient address</span>
-				<div class="transaction-form__line inner">
-					<input class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
-					<div class="transaction-form__to-clipdoard">
-						<svg class="sprite-icon copy" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard"></use>
-						</svg>
-
-						<svg class="sprite-icon copied" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard-copied"></use>
-						</svg>
-					</div>
-				</div>
-
-				<span class="transaction-form__label">Withdraw from</span>
-				<div class="transaction-form__line inner">
-					<div class="coin-dropdown">
-						<div class="coin-dropdown__border">
-							<div class="coin-dropdown__current">
-								<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
-								</svg><p class="coin-dropdown__title">Bitcoin</p>
-
-								<div class="coin-dropdown__hangle">
-									<svg class="sprite-icon" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
-									</svg>
-								</div>
-							</div>
-						</div>						
-
-						<div class="coin-dropdown__list">
-							<div class="coin-dropdown__item current" data-name="Bitcoin" data-currency="BTC">
-								<svg class="coin-dropdown__icon btc" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
-								</svg><p class="coin-dropdown__title">Bitcoin</p>
-							</div>
-
-							<div class="coin-dropdown__item" data-name="Ethereum" data-currency="ETH">
-								<svg class="coin-dropdown__icon eth" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-eth"></use>
-								</svg><p class="coin-dropdown__title">Ethereum</p>
-							</div>
-
-							<div class="coin-dropdown__item" data-name="Tether" data-currency="USDT">
-									<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-									</svg><p class="coin-dropdown__title">Tether</p>
-								</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="transaction-form__line inline">
-					<div class="transaction-form__input-group">
-						<input class="transaction-form__input" type="text" name="" value="1000.000">
-						<div class="input-group-append">
-							<span class="input-group-text">BTC</span>
-						</div>
-					</div>
-					<div class="transaction-form__sep">
-						<svg class="transaction-form__switch-arrows" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrows-switch"></use>
-						</svg>
-					</div>
-					<div class="transaction-form__input-group">
-						<input class="transaction-form__input" type="text" name="" value="8197500.00">
-						<div class="input-group-append">
-							<span class="input-group-text">USDT</span>
-						</div>
-					</div>
-				</div>
-
-				<!-- <div class="cubic-slider cubic-slider__wallet">
-					<input type="range" class="js-cubic-slider" name="example_name" value="" />
-				</div> --
-
-				<button class="transaction-form__btn submit js-fancybox-close" autentificator-fancybox>SEND BTC</button>
-			</form>
-		</div>
-
-		<div class="d-flex-col flex-1-1 flex-h-fix">
-			<form class="transaction-form">
-				<div class="transaction-form__qr-code-wrap">
-					<img src="pic/qr-code.svg" width="130" height="130" alt="qr-code">
-				</div>
-
-				<span class="transaction-form__label">Address</span>
-				<div class="transaction-form__line inner">
-					<input class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
-					<div class="transaction-form__to-clipdoard">
-						<svg class="sprite-icon copy" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard"></use>
-						</svg>
-
-						<svg class="sprite-icon copied" role="img" aria-hidden="true">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#to-clipboard-copied"></use>
-						</svg>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-</div> -->
 
 <div id="telegramOverlay"></div>
 <div id="telegramMenu">
@@ -3048,122 +3056,7 @@
 	</div><!-- c-block__col END -->
 </div>
 
-<div class="basic-popup transaction-popup" id="transaction-popup" style="display: none;">
-	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
-		<div class="d-flex-col flex-1-1 flex-h-fix">
-			<form class="transaction-form">
-				<div class="transaction-form__qr-code-wrap">
-					<img src="pic/qr-code.svg" width="130" height="130" alt="qr-code">
-					<span style="margin-left:-15px; margin-right:-15px;text-align:center" class="transaction-form__label" id="transactionFormMinDepositAmount"></span>
 
-				</div>
-
-				<span class="transaction-form__label-large">Deposit Address</span>
-					<div class="transaction-form__line inner" style="margin-bottom:10px">
-						<input disabled="disabled" class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
-
-						<div class="transaction-form__button" style="width:40px;height:40px;color:white; background-color: var(--clr-icon);">
-								<i class="far fa-copy"></i>
-						</div>
-					</div>
-
-					<span class="transaction-form__label-large">Return Address</span>				
-				<div class="transaction-form__line inner">
-					<input class="transaction-form__input" type="text" name="" value="" placeholder="Submit once multi-leg trade is complete">
-					<div class="transaction-form__button" style="width:40px;height:40px;color:white; background-color: var(--clr-icon);">
-							<i class="fas fa-arrow-right"></i>					
-					</div>
-				</div>
-
-
-				<span class="transaction-form__label" style="color: var(--clr-textLL)" onclick="$('#accept-terms').click()">I agree & accept 
-					<a href="#">terms and conditions</a>
-				</span>
-
-					<label class="container">
-						<input id="accept-terms" type="checkbox" checked="checked">
-						<span class="checkmark"></span>
-					</label>
-	
-			</form>
-		</div>
-	</div>
-</div>
-
-
-<div class="basic-popup send-popup" id="send-popup" style="display: none;">
-	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
-		<div class="c-block-head">
-			<div class="c-block-head__left js-dropdown-wrap">
-				<h2 class="c-block-head__title">
-					Send USDT to Joe Johnson
-				</h2>
-			</div>
-			<div class="avatar-wrap">
-				<img class="avatar" src="pic/avatar_6.jpg" height="44" width="44" alt="">
-			</div>
-		</div>
-
-		<div class="d-flex-col flex-1-1 flex-h-fix">
-			<form class="send-form">
-				<div class="send-form__line inline">
-					<div class="send-form__input-group">
-						<input class="send-form__input" type="text" name="" value="100.00">
-						<label class="send-form__label">You are sending</label>
-					</div>
-					<div class="coin-dropdown">
-						<div class="coin-dropdown__border">
-							<div class="coin-dropdown__current">
-								<p class="coin-dropdown__title">USDT</p>
-								<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-								</svg>
-								<!-- <div class="coin-dropdown__hangle">
-									<svg class="sprite-icon" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
-									</svg>
-								</div> -->
-							</div>
-						</div>						
-
-						<div class="coin-dropdown__list">
-							<div class="coin-dropdown__item current" data-name="Bitcoin" data-currency="BTC">
-								<p class="coin-dropdown__title">USDT</p>
-								<svg class="coin-dropdown__icon icon-curr clr-coin-usdt" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-								</svg>
-								<!-- <svg class="coin-dropdown__icon btc" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
-								</svg> -->
-							</div>
-
-							<div class="coin-dropdown__item" data-name="Ethereum" data-currency="ETH">
-								<p class="coin-dropdown__title">Ethereum</p>
-								<svg class="coin-dropdown__icon eth" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-eth"></use>
-								</svg>
-							</div>
-
-							<div class="coin-dropdown__item" data-name="Tether" data-currency="USDT">
-									<p class="coin-dropdown__title">Tether</p>
-									<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-									</svg>
-								</div>
-						</div>
-					</div>
-				</div>
-
-				<button class="send-form__btn submit js-fancybox-close" autentificator-fancybox>					
-					<svg class="send-form__btn-bg" role="img" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 240 71">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#exch-bg"></use>
-					</svg>					
-					SEND US DOLLAR TETHER
-				</button>
-			</form>
-		</div>
-	</div>
-</div>
 
 <!------------------------------>
 <!---------- Tooltips ---------->

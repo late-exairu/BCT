@@ -2279,6 +2279,52 @@ $(function () {
 		});
 	});
 
+	/* Generic Fancybox Navigation Flow
+	   Allows fully declarative "wizard" style submission flows within a popup.
+
+	   For a button that loads new content into the current popup, give it css class "js-fancybox-close popup-nav-button" 
+	   and set the data-next-screen attribute to the ID of the element that contains the new content
+	   
+	   This script will listen for clicks on the button and handle it, you do not need to write any JS
+	   yourself for basic use cases
+
+	   Sample button:
+
+		<button class="js-fancybox-close popup-nav-button" data-next-screen="autentificator-popup">					
+			Submit And Verify
+		</button> */
+
+	$('.popup-nav-button').click(function (e) {
+		let popupSrcDiv=$(this).attr("data-next-screen");
+		$.fancybox.close();
+		e.preventDefault();
+		// Open this fancybox force
+		$.fancybox.open({
+			src: '#'+popupSrcDiv,
+			opts: {
+				afterShow: function (instance, current) {
+					var fancybox_body = $('.fancybox-container')[0];
+					$('.main-cols__right')[0].append(fancybox_body);
+					$('.main-cols__right .fancybox-container')
+						.css({
+							"width": "100%",
+							"height": "100%",
+							"display": "block",
+							"position": "absolute"
+						})
+						.css("display", "block");
+				},
+				beforeShow: function () {
+					$('.fancybox-container').css("display", "none");
+				},
+				beforeClose: function () {
+					//$('.exch-form').removeClass('progress');
+					//$('.exch-head').toggleClass('open');
+				}
+			}
+		});
+	});
+
 
 	/*---------------------------------------------------*/
 	/* Tippy Tooltip */
