@@ -804,6 +804,8 @@ h6 {
         opacity: 0.25; }
       .basic-table__row.disabled .smallCurrencyChart {
         filter: grayscale(100%); }
+      .basic-table__row.disabled .smallChartInfo .smaller {
+        color: var(--clr-icon); }
     .basic-table__row.head {
       font-size: var(--font-size);
       font-weight: 700;
