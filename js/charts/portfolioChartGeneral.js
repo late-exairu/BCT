@@ -259,7 +259,8 @@ var portfolioChartOptions = {
     }]
 };
 
-$.getJSON(location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'data/exampleData.json', function (data) {
+//$.getJSON(location.href.substring(0, location.href.lastIndexOf("/") + 1) + 'data/exampleData.json', function (data) {
+$.getJSON("../data/exampleData.json", function (data) {
     portfolioChartData = data;
     portfolioChartOptions.series[0].data = portfolioChartData;
 });

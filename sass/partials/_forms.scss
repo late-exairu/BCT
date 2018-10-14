@@ -815,11 +815,12 @@
 				position: absolute;
 				left: 6px;
 				top: 4px;
-				font-size: 8px;
 			}
 
 			.transaction-form__input{
-				//padding: 10px 5px 0;
+				width: calc(100% - 38px);
+				padding: 19px 5px 19px 5px;
+				margin-top:1px
 			}
 		}
 
@@ -891,7 +892,30 @@
 		font-size: 0.6em;
 		margin-top: 3px;
 		margin-left: 3px;
+
+		a {
+			color: var(--clr-textLL);;
+			text-decoration: underline;
+		}
+		
+		a:hover 
+		{
+			 color:#0680ba; 
+			 text-decoration:underline; 
+			 cursor:pointer;  
+		}
+
 	}
+
+	&__label-large {
+		font-size: 12px;
+		font-family: open_sans;
+		font-weight:700;
+		color: var(--clr-text);
+		margin-left: 3px;
+	}
+
+
 
 	&__sep{
 		width: 24px;
@@ -944,12 +968,13 @@
 	}
 
 	&__qr-code-wrap{
-		padding: 5px;
-		width: 240px;
-		height: 240px;
-		margin: 6px auto;
+		padding: 15px 25px 25px 25px;
+		width: 250px;
+		height: 230px;
+		margin: 10px auto;
 		background: #fff;
 		border-radius: var(--border-radius);
+		border: solid 1px var(--clr-separator);
 
 		& > * {
 			display: block;
