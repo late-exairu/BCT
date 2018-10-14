@@ -325,6 +325,11 @@ $(function () {
 			// change currency in Orders Form
 			$('.order-form__submit.btn-green').html('BUY ' + currencyAbbr);
 			$('.order-form__submit.btn-red').html('SELL ' + currencyAbbr);
+
+			// scroll to current currency in wallet
+			var positionTop = $('#panel-funds-wallet .basic-table__row[data-currency="' + currencyAbbr + '"]').position().top;
+			var scrolledPosition = $('#panel-funds-wallet .basic-table .basic-table').scrollTop();
+			$('#panel-funds-wallet .basic-table .basic-table').scrollTop(scrolledPosition + positionTop);
 		}
 		// second currency
 		else {
