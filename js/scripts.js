@@ -1897,6 +1897,19 @@ $(function () {
 			$(this).closest('.exch-head').toggleClass('open');
 			$('.exch-form__submit').prop('disabled', false);
 
+			var send_svg = $('.exch-head__send .exch-dropdown__current > svg').clone();
+			var send_curr = $('.exch-head__send .exch-dropdown__current > p.exch-dropdown__title > span').text();
+			$('.exch-form').find('.exch-form__send > svg').remove();
+			$(send_svg).insertBefore($('.exch-form__send > p.exch-dropdown__title').eq(0));
+			$('.exch-form__send > p.exch-dropdown__title span').html(send_curr);
+
+
+			var get_svg = $('.exch-head__get .exch-dropdown__current > svg').clone();
+			var get_curr = $('.exch-head__get .exch-dropdown__current > p.exch-dropdown__title > span').text();
+			$('.exch-form').find('.exch-form__get > svg').remove();
+			$(get_svg).insertBefore($('.exch-form__get > p.exch-dropdown__title').eq(0));
+			$('.exch-form__get > p.exch-dropdown__title span').html(get_curr);
+
 			// $('.exch-form__send .exch-form__label').text('You have');
 			// $('.exch-form__get .exch-form__label').text('You get');
 			var firstValue, secondValue;
