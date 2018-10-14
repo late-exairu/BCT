@@ -7939,6 +7939,36 @@ h6 {
     color: var(--clr-text);
     padding: 0;
     margin: 0; }
+  .graph-info__range {
+    margin: 0; }
+    .graph-info__range__select {
+      display: flex;
+      flex-direction: column;
+      right: 16px;
+      bottom: 12px;
+      font-size: 7px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      z-index: 1; }
+    .graph-info__range__item {
+      display: flex;
+      width: 36px;
+      height: 16px;
+      flex: 0 0 16px;
+      margin: 0 0 0 8px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      text-align: center;
+      cursor: pointer;
+      background: var(--clr-back); }
+      .graph-info__range__item:hover {
+        background: var(--clr-backL); }
+      .graph-info__range__item.current {
+        font-weight: 700;
+        color: #fff;
+        background: var(--clr-accentD); }
 
 /* =================================================================== */
 /* graph-prices */

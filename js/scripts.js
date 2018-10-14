@@ -895,6 +895,12 @@ $(function () {
 		drawCircleChart();
 	});
 
+	$('.graph-info__range__select .graph-info__range__item').click(function () {
+		$('.graph-info__range__select .graph-info__range__item').removeClass('current');
+		$(this).addClass('current');
+		portfolioChartCurrentRange = $(this).index();
+	});
+
 	/*---------------------------------------------------*/
 	/* change range on Portfolio Chart */
 	/*---------------------------------------------------*/
