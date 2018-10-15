@@ -71,7 +71,7 @@
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="c-block__col">
 							<div class="c-block__section chat-head">
-								<button class="chat-head__back hidden">
+								<button class="chat-head__back">
 									<svg class="sprite-icon" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-back-3"></use>
 									</svg>
@@ -2563,59 +2563,60 @@
 	
 			<div class="d-flex-col flex-1-1 flex-h-fix">
 				<form class="send-form">
-					<div class="send-form__line inline">
-						<div class="send-form__input-group">
-							<input class="send-form__input" type="text" name="" value="100.00">
-							<label class="send-form__label">You are sending</label>
-						</div>
-						<div class="coin-dropdown">
-							<div class="coin-dropdown__border">
-								<div class="coin-dropdown__current">
-									<p class="coin-dropdown__title">USDT</p>
-									<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-									</svg>
-									<!-- <div class="coin-dropdown__hangle">
-										<svg class="sprite-icon" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
-										</svg>
-									</div> -->
-								</div>
-							</div>						
-	
-							<div class="coin-dropdown__list">
-								<div class="coin-dropdown__item current" data-name="Bitcoin" data-currency="BTC">
-									<p class="coin-dropdown__title">USDT</p>
-									<svg class="coin-dropdown__icon icon-curr clr-coin-usdt" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-									</svg>
-									<!-- <svg class="coin-dropdown__icon btc" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
-									</svg> -->
-								</div>
-	
-								<div class="coin-dropdown__item" data-name="Ethereum" data-currency="ETH">
-									<p class="coin-dropdown__title">Ethereum</p>
-									<svg class="coin-dropdown__icon eth" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-eth"></use>
-									</svg>
-								</div>
-	
-								<div class="coin-dropdown__item" data-name="Tether" data-currency="USDT">
-										<p class="coin-dropdown__title">Tether</p>
-										<svg class="coin-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-										</svg>
-									</div>
-							</div>
+					<div class="send-form__line inline hidden">
+						<svg class="send-form__dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
+						</svg><p class="exch-dropdown__title"><span>USDT</span> - USD Tether</p>
+						<div class="send-dropdown__hangle">
+							<svg class="sprite-icon" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+							</svg>
 						</div>
 					</div>
+					<div class="send-form__line inline">
+						<svg class="send-form__dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
+						</svg><p class="exch-dropdown__title"><span>USDT</span><br/> USD Tether</p>
+
+						<input class="send-form__input" type="text" placeholder="0.00" name="" value="1.00" data-currency="USDT">
+						<label class="send-form__percent">13%</label>
+						<div class="send-dropdown__hangle">
+							<svg class="sprite-icon" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
+							</svg>
+						</div>
+					</div>
+
+					<div class="send-form__dropdown__list hidden">
+						<div class="send-form__dropdown__scroll scroll-y scrollbar-right outer">
+
+							<div class="send-form__dropdown__list-title">COINS IN YOUR YALLET</div>
+
+							<div class="send-form__dropdown__item" data-name="Bitcoin" data-telegram="BTC Bitcoin Room" data-currency="BTC">
+								<svg class="send-form__dropdown__icon clr-coin-btc" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
+								</svg><p class="send-form__dropdown__title"><b>BTC</b> - Bitcoin</p>
+							</div>
+
+							<div class="send-form__dropdown__item" data-name="Ethereum" data-telegram="ETH Ethereum Room" data-currency="ETH">
+								<svg class="send-form__dropdown__icon clr-coin-eth" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-eth"></use>
+								</svg><p class="send-form__dropdown__title"><b>ETH</b> - Ethereum</p>
+							</div>
+
+							<div class="send-form__dropdown__item current" data-name="Tether" data-telegram="Tether Room" data-currency="USDT">
+								<svg class="send-form__dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
+								</svg><p class="send-form__dropdown__title"><b>USDT</b> - USD Tether</p>
+							</div>
+						</div>
+					</div><!-- send-form__dropdown__list END -->
 	
 					<button class="send-form__btn submit js-fancybox-close" autentificator-fancybox>					
 						<svg class="send-form__btn-bg" role="img" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 240 71">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#exch-bg"></use>
 						</svg>					
-						SEND US DOLLAR TETHER
+						SEND USD TETHER
 					</button>
 				</form>
 			</div>
