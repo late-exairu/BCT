@@ -2742,7 +2742,9 @@ $(function () {
 		}
 
 		updateMainChartPercentChange();
-		updateWalletData(true);
+		setTimeout(() => {
+			updateWalletData(true);
+		}, 200);
 	});
 
 	// var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
