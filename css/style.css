@@ -15002,6 +15002,8 @@ button:-moz-focusring {
     #send-popup .send-form__line:first-child .send-dropdown__hangle svg.sprite-icon {
       width: 16px;
       fill: var(--clr-textLL); }
+  #send-popup .send-form__line:nth-child(2) .send-form__dropdown__title {
+    font-size: 12px; }
   #send-popup .send-form__line {
     margin-bottom: 10px;
     display: flex;
@@ -15056,6 +15058,11 @@ button:-moz-focusring {
     margin: 0 0 -1px;
     border-radius: var(--border-radius);
     font-weight: 600; }
+  #send-popup .send-form__dropdown__title {
+    white-space: nowrap; }
+    #send-popup .send-form__dropdown__title span {
+      font-weight: 700;
+      font-size: 16px; }
   #send-popup .send-form__dropdown__list {
     position: absolute;
     z-index: 5;
@@ -15104,7 +15111,7 @@ button:-moz-focusring {
       color: var(--clr-accentD); }
     #send-popup .send-form__dropdown__item.select {
       background: var(--clr-backL); }
-  #send-popup .send-form__dropdown__icon {
+  #send-popup .send-form svg.basic-table__curr {
     width: 34px;
     height: 34px;
     min-width: 34px;
