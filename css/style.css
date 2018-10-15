@@ -13584,8 +13584,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     padding: 0; }
   .transaction-form__qr-code-wrap {
     padding: 15px 25px 25px 25px;
-    width: 250px;
-    height: 230px;
+    width: 280px;
+    height: 260px;
     margin: 10px auto;
     background: #fff;
     border-radius: var(--border-radius);
@@ -14877,7 +14877,7 @@ button:-moz-focusring {
 /* =================================================================== */
 .basic-popup {
   font-family: "open_sans", sans-serif;
-  min-width: 320px;
+  min-width: 300px;
   width: auto;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
   background: transparent; }
@@ -14901,7 +14901,7 @@ button:-moz-focusring {
     width: 100%;
     padding: 10px;
     border: solid 1px var(--clr-separatorD);
-    overflow: auto;
+    overflow: hidden;
     background-color: white;
     color: black;
     z-index: 1;
@@ -14920,6 +14920,12 @@ button:-moz-focusring {
         width: 17px;
         height: 17px;
         margin-right: 10px; }
+    .basic-popup__overlay .align-center {
+      text-align: center;
+      align-items: center; }
+    .basic-popup__overlay i {
+      font-size: 14px;
+      color: var(--clr-accent); }
   .basic-popup.tables {
     width: 520px; }
     .basic-popup.tables .c-block {
@@ -14943,9 +14949,40 @@ button:-moz-focusring {
   padding: 19px 20px 11px; }
 
 .transaction-popup {
-  max-width: 280px;
-  min-width: 300px;
+  max-width: 310px;
+  min-width: 310px;
   width: 100%; }
+  .transaction-popup .floating-btn_container {
+    position: absolute;
+    bottom: 6px;
+    left: 10px; }
+    .transaction-popup .floating-btn_container.active {
+      position: absolute;
+      top: 6px;
+      left: 10px; }
+  .transaction-popup__floating-btn {
+    font-family: "open_sans", sans-serif;
+    height: 28px;
+    display: flex;
+    flex: 1 1;
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+    background: linear-gradient(180deg, var(--clr-accent) 0, var(--clr-accentD));
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all .1s; }
+  .transaction-popup #close-tx-history {
+    width: 70px;
+    margin-bottom: 5px;
+    text-align: left;
+    align-items: left; }
   .transaction-popup .basic-table {
     border-top: 1px solid var(--clr-separator);
     font-size: 10px; }

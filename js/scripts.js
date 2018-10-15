@@ -2445,6 +2445,15 @@ $(function () {
 		});
 	});
 
+	$("#open-tx-history").click((e)=> {
+		$(".basic-popup__overlay").addClass("open");
+	})
+
+	$("#close-tx-history").click((e)=> {
+		$(".basic-popup__overlay").removeClass("open");
+	})
+
+
 	/* Generic Fancybox Navigation Flow
 	   Allows fully declarative "wizard" style submission flows within a popup.
 
