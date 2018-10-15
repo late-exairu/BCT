@@ -348,6 +348,18 @@ var hightChartUpdateOptions = {
 				lineForMainChartX = -9999;
 			}
 
+			if (this.points[0].point.plotX < 100) {
+				arrowDirection = 'left';
+				lineForMainChartY -= 24;
+				lineForMainChartHeight += 24;
+				lineForPortfolioChartY += 24;
+			} else if (this.points[0].point.plotX + mainChartMarginLeft + 82 + 10 > $('#mainChart').width()) {
+				arrowDirection = 'right';
+				lineForMainChartY -= 24;
+				lineForMainChartHeight += 24;
+				lineForPortfolioChartY += 24;
+			}
+
 			$('.lineForMainChart').css({
 				'left': lineForMainChartX,
 				'top': lineForMainChartY,
@@ -364,10 +376,6 @@ var hightChartUpdateOptions = {
 			// if (this.points[0].point.plotX < 205) {
 			// 	arrowDirection = 'left';
 			// }
-
-			if (this.points[0].point.plotX < 100 || this.points[0].point.plotX > $('#mainChart').width() - 110) {
-				arrowDirection = '';
-			}
 
 			var currency_send = $('.exch-dropdown__current > p > span')[0].innerText;
 			var currency_get = $('.exch-dropdown__current > p > span')[1].innerText;
@@ -386,11 +394,12 @@ var hightChartUpdateOptions = {
 			var xPos = point.plotX - (labelWidth / 2) + mainChartMarginLeft;
 			// right side fix
 			if ((point.plotX + (labelWidth / 2) + mainChartMarginLeft + 10) > graphWidth) {
-				xPos = graphWidth - labelWidth - 10;
+				// xPos = graphWidth - labelWidth - 10;
+				xPos -= labelWidth / 2 + 10;
 			}
 			// left side fix
-			else if (point.plotX < (100 - mainChartMarginLeft)) {
-				xPos = 12;
+			else if (point.plotX < 100) {
+				xPos += labelWidth / 2 + 10;
 			}
 			return {
 				x: xPos,
