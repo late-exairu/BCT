@@ -2489,48 +2489,52 @@
 
 <!-- Deposit and withdraw popup, STEP 1 -->
 <div class="basic-popup transaction-popup" id="transaction-popup" style="display: none;">
-		<div class="c-block d-flex-col flex-1-1 flex-h-fix">
-			<div class="d-flex-col flex-1-1 flex-h-fix">
-				<form class="transaction-form">
-					<div class="transaction-form__qr-code-wrap">
-						<img src="pic/qr-code.svg" width="130" height="130" alt="qr-code">
-						<span style="margin-left:-15px; margin-right:-15px;text-align:center" class="transaction-form__label" id="transactionFormMinDepositAmount"></span>
-	
+	<div style="position:absolute;bottom:0px;left:0px;width:50px;height:15px;background-color:black;color:white" class="tx-history-tab">
+		Hello
+	</div>
+	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
+		<div class="d-flex-col flex-1-1 flex-h-fix">
+			<form class="transaction-form">
+				<div class="transaction-form__qr-code-wrap">
+					<img src="pic/qr-code.svg" width="130" height="130" alt="qr-code">
+					<span style="margin-left:-15px; margin-right:-15px;text-align:center" class="transaction-form__label" id="transactionFormMinDepositAmount"></span>
+
+				</div>
+
+				<span class="transaction-form__label-large"><span class="tx-currency"></span> Deposit Address</span>
+					<div class="transaction-form__line inner" style="margin-bottom:10px">
+						<input id="deposit-address" disabled="disabled" class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
+
+						<button class="transaction-form__button square-icon-button copy-deposit-address">
+								<i class="far fa-copy"></i>
+						</button>
 					</div>
-	
-					<span class="transaction-form__label-large">Deposit Address</span>
-						<div class="transaction-form__line inner" style="margin-bottom:10px">
-							<input id="deposit-address" disabled="disabled" class="transaction-form__input" type="text" name="" value="3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu">
-	
-							<button class="transaction-form__button square-icon-button copy-deposit-address">
-									<i class="far fa-copy"></i>
-							</button>
-						</div>
-	
-						<span class="transaction-form__label-large">Return Address</span>				
-						<div class="transaction-form__line inner">
-							<input id="withdrawal-address" class="transaction-form__input" type="text" name="" value="" placeholder="Submit once multi-leg trade is complete">
-							<button id="submit-withdrawal-request" class="transaction-form__button square-icon-button js-fancybox-close popup-nav-button"
-								data-next-screen="confirm-withdrawal-request">
-									<i class="fas fa-arrow-right"></i>					
-							</button>
-						</div>
-	
-	
-						<span class="transaction-form__label" style="color: var(--clr-textLL)" onclick="$('#accept-terms').click()">I agree & accept 
-							<a href="#">terms and conditions</a>
+
+					<span class="transaction-form__label-large"><span class="tx-currency"></span> Return Address</span>				
+					<div class="transaction-form__line inner">
+						<input id="withdrawal-address" class="transaction-form__input" type="text" name="" value="" placeholder="Submit once multi-leg trade is complete">
+						<button id="submit-withdrawal-request" class="transaction-form__button square-icon-button js-fancybox-close popup-nav-button"
+							data-next-screen="confirm-withdrawal-request">
+								<i class="fas fa-arrow-right"></i>					
+						</button>
+					</div>
+
+					<div style="width:100%; text-align:right;margin-top:10px">
+						<span class="transaction-form__label" style="color: var(--clr-textLL)" onclick="$('#accept-terms').click()">I accept the  
+							<a href="#">Terms</a>
 						</span>
 	
 						<label class="container">
 							<input id="accept-terms" type="checkbox" checked="checked">
 							<span class="checkmark"></span>
 						</label>
-		
-				</form>
-			</div>
+					</div>
+	
+			</form>
 		</div>
 	</div>
-	
+</div>
+
 <!-- Deposit and withdraw popup, STEP 2 (confirmation) -->
 <div class="basic-popup confirm-withdrawal-request autentificator-popup" id="confirm-withdrawal-request" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
