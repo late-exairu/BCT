@@ -1451,7 +1451,7 @@ $(function () {
 		if (val >= 10) {
 			progressbar_current_label.css('visibility', 'visible');
 		}
-		$('.exch-form__progress__value').html(parseInt(val) + '%');
+		$('.exch-form__progress__value').html(parseInt(val));
 		progressbar_current.progressbar("value", val + 0.2);
 		progressbar_current_label.css("width", (val + 0.2) + '%');
 		if (val < 99.8) {
