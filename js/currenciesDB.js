@@ -93,7 +93,7 @@ allCurrenciesArr.map(item => {
             '<div class="basic-table__col w-40">' +
             '<div class="smallCurrencyChart" id="smallChart' + coinShort + '"></div>' +
             '<div class="bigger smallChartInfo d-flex-col"></div></div>' +
-            '<div class="basic-table__col w-22"><button class="basic-table__btn left-align d-flex-col fix-width clickable" transaction-fancybox><span class="bigger"><i class="fas fa-qrcode"></i>&nbsp;&nbsp;'+coinShort+'</span></button></div>' +
+            '<div class="basic-table__col w-22"><button class="basic-table__btn fix-width clickable" transaction-fancybox><svg class="sprite-icon qr-code" role="img" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use></svg><span class="bigger">' + coinShort + '</span></button></div>' +
             '</div>';
         $('#panel-funds-wallet .basic-table').append(newRow);
         // add value to all currencies
