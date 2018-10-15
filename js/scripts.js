@@ -1519,7 +1519,6 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* transaction popup */
 	/*---------------------------------------------------*/
-
 	$('#panel-funds-wallet').on('click', 'button[transaction-fancybox]', function (e) {
 		e.preventDefault();
 
@@ -1550,6 +1549,7 @@ $(function () {
 			$.fancybox.open({
 				src: '#transaction-popup',
 				opts: {
+					touch: false,
 					afterShow: function (instance, current) {
 						var fancybox_body = $('.fancybox-container')[0];
 						$('.main-cols__right')[0].append(fancybox_body);
@@ -1761,6 +1761,7 @@ $(function () {
 		$.fancybox.open({
 			src: '#send-popup',
 			opts: {
+				touch: false,
 				afterShow: function (instance, current) {
 					var fancybox_body = $('.fancybox-container')[0];
 					$('.main-cols__right')[0].append(fancybox_body);
@@ -2385,6 +2386,7 @@ $(function () {
 		$.fancybox.open({
 			src: '#conform-popup',
 			opts: {
+				touch: false,
 				afterShow: function (instance, current) {
 					var fancybox_body = $('.fancybox-container')[0];
 					$('.main-cols__right')[0].append(fancybox_body);
