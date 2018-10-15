@@ -2576,8 +2576,7 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	var allRangeOptions = $("ul.graph-info__range__list").children('li.graph-info__range__item');
-	$("div.graph-info__range__current").on("click", function () {
-		event.stopPropagation();
+	$("div.graph-info__range__current").on("click", function (event) {
 		if ($('ul.graph-info__range__list').hasClass('open')) {
 			$('ul.graph-info__range__list').css('border-bottom', '0px');
 			$('div.graph-info__range').css('border', '0px');
@@ -2591,6 +2590,7 @@ $(function () {
 			$('ul.graph-info__range__list').css('border-top', 'solid 1px var(--clr-separatorD)');
 			$('div.graph-info__range').css('border', 'solid 1px var(--clr-separatorD)');
 		}
+		event.stopPropagation();
 	});
 	$("ul.graph-info__range__list").on("click", "li.graph-info__range__item", function () {
 		allRangeOptions.removeClass('active');
