@@ -14894,6 +14894,32 @@ button:-moz-focusring {
     align-items: center;
     background: var(--clr-back);
     border-radius: 0 0 var(--border-radius) var(--border-radius); }
+  .basic-popup__overlay {
+    position: absolute;
+    top: 1000px;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    border: solid 1px var(--clr-separatorD);
+    overflow: auto;
+    background-color: white;
+    color: black;
+    z-index: 1;
+    transition: top 500ms;
+    transition-timing-function: ease; }
+    .basic-popup__overlay.open {
+      top: 0; }
+    .basic-popup__overlay .overlay-header {
+      font-size: 17px;
+      font-weight: 700;
+      color: #2a3e81;
+      display: block;
+      line-height: 1.1;
+      margin-bottom: 15px; }
+      .basic-popup__overlay .overlay-header img {
+        width: 17px;
+        height: 17px;
+        margin-right: 10px; }
   .basic-popup.tables {
     width: 520px; }
     .basic-popup.tables .c-block {
@@ -14917,12 +14943,21 @@ button:-moz-focusring {
   padding: 19px 20px 11px; }
 
 .transaction-popup {
-  max-width: 260px;
-  min-width: 280px;
+  max-width: 280px;
+  min-width: 300px;
   width: 100%; }
   .transaction-popup .basic-table {
     border-top: 1px solid var(--clr-separator);
     font-size: 10px; }
+  .transaction-popup .tx-list-basic {
+    font-size: 12px; }
+    .transaction-popup .tx-list-basic a {
+      color: var(--clr-textLL);
+      text-decoration: underline; }
+    .transaction-popup .tx-list-basic a:hover {
+      color: #0680ba;
+      text-decoration: underline;
+      cursor: pointer; }
   .transaction-popup .icon-curr {
     width: 14px;
     height: 14px;
