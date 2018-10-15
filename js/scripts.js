@@ -198,6 +198,10 @@ $(function () {
 
 	});
 
+	$('.send-form .send-dropdown__hangle').click(function () {
+		$('.send-form__line.inline, .send-form__dropdown__list').toggleClass('hidden');
+	});
+
 	var currenciesDropDownScrollbar = $('.exch-dropdown__scroll.scrollbar-right');
 	var select_item_index = 0;
 	var dropdown_list;

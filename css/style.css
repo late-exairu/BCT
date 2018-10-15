@@ -14956,19 +14956,121 @@ button:-moz-focusring {
 
 #send-popup .send-form {
   font-family: "open_sans", sans-serif;
-  width: 100%;
+  width: 350px;
   padding: 13px 10px; }
-  #send-popup .send-form .send-form__line {
-    margin-bottom: 13px; }
+  #send-popup .send-form__line:first-child .send-dropdown__hangle {
+    position: absolute;
+    right: 0; }
+    #send-popup .send-form__line:first-child .send-dropdown__hangle svg.sprite-icon {
+      width: 16px;
+      fill: var(--clr-textLL); }
   #send-popup .send-form__line {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: var(--clr-textD);
+    position: relative;
+    border: 1px solid var(--clr-back-new);
+    height: 46px;
+    border-radius: 4px; }
+  #send-popup .send-form__percent {
+    position: absolute;
+    right: 52px;
+    z-index: 1;
+    top: 27px;
+    font-size: 10px;
+    border: 1px solid;
+    border-radius: 3px;
+    width: 40px;
+    text-align: center;
+    line-height: 11px;
+    color: var(--clr-backCI);
+    padding-right: 13px; }
+    #send-popup .send-form__percent:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 5px 0;
+      border-color: var(--clr-backCI) transparent transparent;
+      display: block;
+      position: absolute;
+      margin-top: -8px;
+      margin-left: 26px; }
+  #send-popup .send-form .send-dropdown__hangle {
+    height: 100%;
+    padding: 10px 14px;
+    background: var(--clr-back-new);
+    cursor: pointer; }
+    #send-popup .send-form .send-dropdown__hangle svg.sprite-icon {
+      width: 16px;
+      fill: var(--clr-accentD); }
+  #send-popup .send-form__dropdown__list-title {
     position: relative;
     display: flex;
-    flex-direction: column;
-    margin: 4px 0 0;
-    border: 1px solid var(--clr-separatorD);
+    padding: 0 15px;
+    align-items: center;
+    height: 25px;
+    font-size: 14px;
+    background: var(--clr-back-new);
+    color: var(--clr-textD);
+    margin: 0 0 -1px;
     border-radius: var(--border-radius);
-    border-right: 0px;
-    flex-direction: row; }
+    font-weight: 600; }
+  #send-popup .send-form__dropdown__list {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: all 0.2s;
+    background: var(--clr-block);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+    border-radius: var(--border-radius);
+    width: 94%;
+    margin-left: 3%; }
+    #send-popup .send-form__dropdown__list:before {
+      content: '';
+      position: absolute;
+      right: 14px;
+      height: -8px;
+      top: -7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 7px 8px 7px;
+      border-color: transparent transparent var(--clr-back-new) transparent;
+      z-index: 1; }
+    #send-popup .send-form__dropdown__list:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -12px;
+      right: 0;
+      height: 12px; }
+  #send-popup .send-form__dropdown__item {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: var(--clr-textD);
+    position: relative;
+    border-bottom: 1px solid var(--clr-back-new);
+    height: 46px;
+    border-radius: 4px; }
+    #send-popup .send-form__dropdown__item:hover {
+      background: var(--clr-backLL); }
+    #send-popup .send-form__dropdown__item.current {
+      color: var(--clr-accentD); }
+    #send-popup .send-form__dropdown__item.select {
+      background: var(--clr-backL); }
+  #send-popup .send-form__dropdown__icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    margin-right: 10px; }
   #send-popup .send-form__label {
     color: var(--clr-textLL);
     font-size: 12px;
@@ -14979,29 +15081,20 @@ button:-moz-focusring {
     border: 0;
     text-align: right;
     font-family: "open_sans", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     width: 100%;
     height: 40px;
-    padding: 5px;
+    padding: 6px 8px 16px;
     color: var(--clr-textD);
     outline: none;
-    background: var(--clr-back); }
+    background: var(--clr-back);
+    font-weight: 700; }
     #send-popup .send-form__input:focus {
       background: var(--clr-back); }
     #send-popup .send-form__input::placeholder {
       color: var(--clr-textLL); }
     #send-popup .send-form__input.with-copy {
       padding-right: 28px; }
-  #send-popup .send-form__input-group {
-    width: 65%;
-    border: 0; }
-  #send-popup .send-form__btns {
-    margin: 5px 0 0;
-    display: flex; }
-    #send-popup .send-form__btns > * {
-      margin: 0 0 0 5px; }
-      #send-popup .send-form__btns > *:first-child {
-        margin: 0 10px 0 0; }
   #send-popup .send-form__btn {
     font-family: "open_sans", sans-serif;
     height: 32px;
@@ -15019,10 +15112,7 @@ button:-moz-focusring {
     font-size: 18px;
     border: none;
     cursor: pointer;
-    transition: all .1s;
-    /*&:hover{
-				background: var(--clr-textL);
-			}*/ }
+    transition: all .1s; }
     #send-popup .send-form__btn.submit {
       position: relative;
       font-family: "open_sans", sans-serif;
@@ -15072,37 +15162,6 @@ button:-moz-focusring {
     z-index: -1;
     fill: #009fe3;
     display: none; }
-  #send-popup .send-form .bold {
-    font-weight: bold; }
-  #send-popup .send-form .coin-dropdown {
-    border: 0;
-    width: 35%;
-    margin-left: 0px; }
-    #send-popup .send-form .coin-dropdown__current {
-      background-color: var(--clr-backBT);
-      height: 40px;
-      padding: 0 8px; }
-      #send-popup .send-form .coin-dropdown__current:hover {
-        cursor: default; }
-    #send-popup .send-form .coin-dropdown__title {
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0;
-      margin-right: 10px;
-      color: white;
-      width: 80px; }
-      #send-popup .send-form .coin-dropdown__title span {
-        font-size: 14px;
-        font-weight: 200; }
-    #send-popup .send-form .coin-dropdown__border {
-      border: 0;
-      border-bottom-left-radius: 0;
-      border-top-left-radius: 0; }
-    #send-popup .send-form .coin-dropdown__icon {
-      width: 40px;
-      height: 40px;
-      margin: 0 6px 0 0;
-      flex-basis: 25px; }
 
 /* =================================================================== */
 /* Content */
@@ -15427,7 +15486,7 @@ body.advanced .fancybox-bg {
   height: 100%; }
 
 .hidden {
-  display: none; }
+  display: none !important; }
 
 .w-2 {
   width: 2.5%;
