@@ -1753,6 +1753,7 @@ $(function () {
 	});
 
 	var dynamicGetValue;
+	var dynamicSendValue;
 	var firstClickAfterExchangeDone;
 
 	// convert/go buttons
@@ -1776,6 +1777,7 @@ $(function () {
 			$('.graph-prices__item:first-child .progressbar').removeClass('hidden');
 
 			clearInterval(dynamicGetValue);
+			clearInterval(dynamicSendValue);
 
 			firstValue = $('.exch-form__send > input').val().trim().replace(/,/g, '');
 			secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '')
@@ -1973,12 +1975,17 @@ $(function () {
 			$('.exch-form__get > input').val(numberWithCommas(secondValue));
 			isSelectedPrevConversion = false;
 
-			clearInterval(dynamicGetValue);
-			dynamicGetValue = setInterval(function () {
-				secondValue *= (Math.random() * (101 - 99) + 99) / 100;
-				$('.exch-form__get > input').val(numberWithCommas(secondValue.toFixed(2)));
-				updateExchangeValues();
-			}, 1000);
+			//clearInterval(dynamicGetValue);
+			//clearInterval(dynamicSendValue);
+			
+			// run dynamic value change
+			startDynamicGetValue();
+
+			// dynamicGetValue = setInterval(function () {
+			// 	secondValue *= (Math.random() * (101 - 99) + 99) / 100;
+			// 	$('.exch-form__get > input').val(numberWithCommas(secondValue.toFixed(2)));
+			// 	updateExchangeValues();
+			// }, 1000);
 
 			currentWallet = ownWallet;
 			
@@ -2152,32 +2159,73 @@ $(function () {
 		var getCurrency = $('.exch-form__get > input').attr('data-currency');
 
 		if ($(this).parent().hasClass('exch-form__send')) {
+			startDynamicGetValue();
 			var firstValue = $(this).val().trim().replace(/,/g, '');
-
 			if (firstValue > ownWallet[sendCurrency]) {
 				firstValue = ownWallet[sendCurrency];
 				$('.exch-form__send > input').val(firstValue.toFixed(2));
+				startDynamicGetValue();
 			}
 
-			var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
-			$('.exch-form__get input').val(numberWithCommas(secondValue));
-
-			clearInterval(dynamicGetValue);
-			dynamicGetValue = setInterval(function () {
-				secondValue *= (Math.random() * (101 - 99) + 99) / 100;
-				$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
-				updateExchangeValues();
-			}, 1000);
-
 		} else {
-			//var secondValue = $(this).val();
-			//var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
-			//$('.exch-form__send > input').val(numberWithCommas(firstValue));
+			startDynamicSendValue();
+			var firstValue = $('.exch-form__send input').val().trim().replace(/,/g, '');
+			if (firstValue > ownWallet[sendCurrency]) {
+				firstValue = ownWallet[sendCurrency];
+				var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
+				$('.exch-form__send > input').val(firstValue.toFixed(2));
+				$('.exch-form__get > input').val(secondValue);
+				startDynamicSendValue();
+			}
 		}
 		var send_amount = parseFloat($('.exch-form__send > input').val().trim().replace(/,/g, ''));
 		if (send_amount)
 			$('.range-slider .exch-form-slider__control').val(parseFloat(send_amount * 100000));
 	});
+
+	function startDynamicSendValue() {
+		clearInterval(dynamicGetValue);
+		clearInterval(dynamicSendValue);
+
+		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
+		var getCurrency = $('.exch-form__get > input').attr('data-currency');
+
+		var secondValue = $('.exch-form__get input').val().trim().replace(/,/g, '');
+		var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
+
+		$('.exch-form__send input').val(numberWithCommas(firstValue));
+
+		dynamicSendValue = setInterval(function () {
+			firstValue *= (Math.random() * (101 - 99) + 99) / 100;
+			if (firstValue > ownWallet[sendCurrency]) {
+				firstValue = ownWallet[sendCurrency];
+			}
+			$('.exch-form__send input').val(numberWithCommas(firstValue.toFixed(2)));
+			updateExchangeValues();
+		}, 1000);
+	}
+
+	$('.exch-form__get > input').focus(startDynamicSendValue);
+
+	function startDynamicGetValue() {
+		clearInterval(dynamicSendValue);
+		clearInterval(dynamicGetValue);
+
+		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
+		var getCurrency = $('.exch-form__get > input').attr('data-currency');
+
+		var firstValue = $('.exch-form__send input').val().trim().replace(/,/g, '');
+		var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
+		$('.exch-form__get input').val(numberWithCommas(secondValue));
+
+		dynamicGetValue = setInterval(function () {
+			secondValue *= (Math.random() * (101 - 99) + 99) / 100;
+			$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
+			updateExchangeValues();
+		}, 1000);
+	}
+
+	$('.exch-form__send > input').focus(startDynamicGetValue);
 
 	$('.transaction-form__to-clipdoard').click(function () {
 		var copyText = document.querySelector(".transaction-form__input.with-copy");
