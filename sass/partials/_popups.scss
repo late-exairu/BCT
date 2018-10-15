@@ -126,6 +126,13 @@
 				}
 			}
 		}
+
+
+		&__line:nth-child(2) {
+			.send-form__dropdown__title {
+				font-size: 12px;
+			}
+		}
 	
 	
 		&__line{
@@ -194,6 +201,14 @@
 				font-weight: 600;
 			}
 
+			&__title {
+				white-space: nowrap;
+				span {
+					font-weight: 700;
+					font-size: 16px;
+				}
+			}
+
 			&__list{
 				position: absolute;
 				z-index: 5;
@@ -254,12 +269,13 @@
 					background: var(--clr-backL);
 				}
 			}
-			&__icon {
-				width: 34px;
-				height: 34px;
-				min-width: 34px;
-				margin-right: 10px;
-			}
+		}
+
+		svg.basic-table__curr {
+			width: 34px;
+			height: 34px;
+			min-width: 34px;
+			margin-right: 10px;
 		}
 	
 		&__label{

@@ -1676,40 +1676,114 @@ $(function () {
 		e.stopPropagation();
 		closeTelegramMenu();
 		var fancies_length = $('.main-cols__right .fancybox-container').length;
-		if (fancies_length < 1) {
-
+		if (fancies_length > 0) return false;
+		
 		var userName = $(this).parents('.chats-list__item').find('.chats-list__name').text();
 		var imgAttr = $(this).parents('.chats-list__item').find('.chats-list__avatar-wrap img').attr('src');
 		$('#send-popup .c-block-head__title').text('Send USDT to ' + userName);
 		$('#send-popup .avatar').attr('src',imgAttr);
 
-			$.fancybox.open({
-				src: '#send-popup',
-				opts: {
-					afterShow: function (instance, current) {
-						var fancybox_body = $('.fancybox-container')[0];
-						$('.main-cols__right')[0].append(fancybox_body);
-						$('.main-cols__right .fancybox-container')
-							.css({
-								"width": "100%",
-								"height": "100%",
-								"display": "block",
-								"position": "absolute"
-							})
-							.css("display", "block");
-					},
-					beforeShow: function () {
-						$('.fancybox-container').css("display", "none");
-					},
-					beforeClose: function () {
-						//$('.exch-form').removeClass('progress');
-						// $('.exch-head').toggleClass('open');
-						$('.coin-dropdown').removeClass('open');
-						$('button[transaction-fancybox]').removeClass('active');
-					}
+		var send_popup_list = '';
+		$('#panel-funds-wallet .basic-table__row:not(.disabled)').each(function (index, item) {
+			var coin_currencyName = $(item).attr('data-currency');
+			var coin_currencyFullName = $('.exch-dropdown__list').eq(0).find('.exch-dropdown__item[data-currency="' + coin_currencyName + '"]').attr('data-name');
+			if (coin_currencyName == 'USDT') coin_currencyFullName = 'USD Tether';
+			var current = index == 0 ? 'current' : '';
+			var coin_svg_html = $(item).eq(0).find('svg.basic-table__curr')[0].outerHTML;
+			var coin_amount = $(item).eq(0).find('span.wallet' + coin_currencyName)[0].innerHTML;
+
+			send_popup_list += `
+				<div class="send-form__dropdown__item ` + current + `" data-name="`+ coin_currencyFullName + `" data-currency="` + coin_currencyName + `" coin-amount="`+ coin_amount + `">`
+					+ coin_svg_html + `
+					<p class="send-form__dropdown__title">
+						<span>` 
+						+ coin_currencyName + ` 
+						</span> - ` + coin_currencyFullName + `
+					</p>
+				</div>`;
+			if (index == 0) {
+				var current_item = coin_svg_html + `
+					<p class="send-form__dropdown__title">
+						<span>` 
+							+ coin_currencyName + ` 
+						</span> - ` 
+						+ coin_currencyFullName + ` 
+					</p>`;
+				var current_item_input = coin_svg_html + `
+					<p class="send-form__dropdown__title">
+						<span>` 
+							+ coin_currencyName + ` 
+						</span> <br> ` 
+						+ coin_currencyFullName + ` 
+					</p>`;
+				var currSendForm = $('#send-popup .send-form__line');
+				currSendForm.find('svg.basic-table__curr, p.send-form__dropdown__title').remove();
+				$(current_item).insertBefore(currSendForm.eq(0).find('div.send-dropdown__hangle'));
+
+				$(current_item_input).insertBefore(currSendForm.eq(1).find('input.send-form__input'));
+				currSendForm.eq(1).find('input.send-form__input').val(coin_amount);
+			}
+		});
+
+		send_popup_list = `<div class="send-form__dropdown__list-title">COINS IN YOUR WALLET</div>` + send_popup_list;
+
+		$('#send-popup .send-form__dropdown__list .send-form__dropdown__scroll').html(send_popup_list);
+
+		$('#send-popup .send-form__dropdown__list .send-form__dropdown__item').click(function () {
+			var currencyName = $(this).data('currency');
+			var currencyFullName = $(this).data('name');
+			var coin_amount = $(this).attr('coin-amount');
+			var newCurr = $(this).children().clone();
+			var coin_svg_html = $(this).find('svg.basic-table__curr')[0].outerHTML;
+
+
+			var current_item_input = coin_svg_html + `
+			<p class="send-form__dropdown__title">
+				<span>` 
+					+ currencyName + ` 
+				</span> <br> ` 
+				+ currencyFullName + ` 
+			</p>`;
+
+			$('#send-popup .send-form__dropdown__list .send-form__dropdown__item').removeClass('current');
+			$(this).addClass('current');
+
+
+			var currSendForm = $('#send-popup .send-form__line');
+			currSendForm.find('svg.basic-table__curr, p.send-form__dropdown__title').remove();
+			newCurr.insertBefore($(currSendForm).eq(0).find('div.send-dropdown__hangle'));
+			$(current_item_input).insertBefore($(currSendForm).eq(1).find('input.send-form__input'));
+			currSendForm.eq(1).find('input.send-form__input').val(coin_amount);
+
+			$('.send-form__line.inline, .send-form__dropdown__list').toggleClass('hidden');
+		});
+	
+		$.fancybox.open({
+			src: '#send-popup',
+			opts: {
+				afterShow: function (instance, current) {
+					var fancybox_body = $('.fancybox-container')[0];
+					$('.main-cols__right')[0].append(fancybox_body);
+					$('.main-cols__right .fancybox-container')
+						.css({
+							"width": "100%",
+							"height": "100%",
+							"display": "block",
+							"position": "absolute"
+						})
+						.css("display", "block");
+				},
+				beforeShow: function () {
+					$('.fancybox-container').css("display", "none");
+				},
+				beforeClose: function () {
+					//$('.exch-form').removeClass('progress');
+					// $('.exch-head').toggleClass('open');
+					$('.coin-dropdown').removeClass('open');
+					$('button[transaction-fancybox]').removeClass('active');
 				}
-			});
-		}
+			}
+		});
 	});
 
 	/*---------------------------------------------------*/
