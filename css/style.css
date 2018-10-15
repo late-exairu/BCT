@@ -804,6 +804,8 @@ h6 {
         opacity: 0.25; }
       .basic-table__row.disabled .smallCurrencyChart {
         filter: grayscale(100%); }
+      .basic-table__row.disabled .smallChartInfo .smaller {
+        color: var(--clr-icon); }
     .basic-table__row.head {
       font-size: var(--font-size);
       font-weight: 700;
@@ -14803,6 +14805,8 @@ button:-moz-focusring {
   height: 40px;
   color: white;
   background-color: var(--clr-icon); }
+  .square-icon-button.clicked {
+    background: linear-gradient(180deg, var(--clr-accent) 0, var(--clr-accentD)); }
 
 /* =================================================================== */
 /* popups */
@@ -15208,6 +15212,45 @@ body.advanced .fancybox-bg {
 /* =================================================================== */
 /* Globals
 /* =================================================================== */
+#login_overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 500000;
+  background-color: white; }
+  #login_overlay div.outer {
+    width: 100%;
+    text-align: center; }
+  #login_overlay div.inner {
+    width: 40%;
+    padding: 10px;
+    margin: 100px auto;
+    border-radius: 5px;
+    border: solid 1px #cccccc; }
+    #login_overlay div.inner input {
+      font-family: "open_sans", sans-serif;
+      font-size: 12px;
+      height: 32px;
+      padding: 5px;
+      margin-right: 10px;
+      border: 1px solid var(--clr-separatorD);
+      border-radius: var(--border-radius);
+      color: var(--clr-textD);
+      outline: none;
+      background: var(--clr-back-new); }
+      #login_overlay div.inner input::placeholder {
+        color: var(--clr-textLL); }
+    #login_overlay div.inner button {
+      width: 80px;
+      height: 32px;
+      padding: 5px;
+      border: 1px solid var(--clr-separatorD);
+      border-radius: var(--border-radius);
+      color: var(--clr-textD);
+      outline: none;
+      background: var(--clr-back-new); }
+
 .icon-curr {
   width: 38px;
   height: 38px;

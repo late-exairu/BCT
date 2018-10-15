@@ -2,7 +2,15 @@ $(function () {
 	var svgArrowTemplate = '<svg class="basic-table__arrow-conv" role="img" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right-2"></use> </svg>';
 	const minDate = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 	const maxDate = Date.now();
-
+	$("#try_password_challenge").click((e) => {
+		e.preventDefault()
+		if ($("#bctpassword").val() == "octoberlive!") {
+			$("#login_overlay").hide()
+			setCookie("logged_in", "true", "30"); //stay logged in for a month
+		} else {
+			alert("Wrong password. Please ask your manager for a new one")
+		}
+	})
 	function setOwnName() {
 		if (localStorage.getItem('telegramAuth') == 'true' && localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 			if (document.querySelector('.message-bar__login'))
@@ -317,6 +325,11 @@ $(function () {
 			// change currency in Orders Form
 			$('.order-form__submit.btn-green').html('BUY ' + currencyAbbr);
 			$('.order-form__submit.btn-red').html('SELL ' + currencyAbbr);
+
+			// scroll to current currency in wallet
+			var positionTop = $('#panel-funds-wallet .basic-table__row[data-currency="' + currencyAbbr + '"]').position().top;
+			var scrolledPosition = $('#panel-funds-wallet .basic-table .basic-table').scrollTop();
+			$('#panel-funds-wallet .basic-table .basic-table').scrollTop(scrolledPosition + positionTop);
 		}
 		// second currency
 		else {
@@ -1521,10 +1534,10 @@ $(function () {
 		 $('#transaction-popup #transactionFormMinDepositAmount').eq(0).text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
 
 		if (coin_amount > 0) {
-			$('#transaction-popup .transaction-form__input').removeClass('inactive')
+			$('#transaction-popup .transaction-form__input').removeAttr('disabled')
 		}
 		else {
-			$('#transaction-popup .transaction-form__input').addClass('inactive')
+			$('#transaction-popup .transaction-form__input').attr('disabled', 'disabled')
 		}
 		
 		var fancies_length = $('main-cols__right .fancybox-container').length;
@@ -1561,6 +1574,8 @@ $(function () {
 						//$('.exch-form').removeClass('progress');
 						// $('.exch-head').toggleClass('open');
 						$('button[transaction-fancybox]').removeClass('active');
+						$('.copy-deposit-address').removeClass('clicked');
+
 					}
 				}
 			});
@@ -1738,6 +1753,7 @@ $(function () {
 	});
 
 	var dynamicGetValue;
+	var dynamicSendValue;
 	var firstClickAfterExchangeDone;
 
 	// convert/go buttons
@@ -1761,6 +1777,7 @@ $(function () {
 			$('.graph-prices__item:first-child .progressbar').removeClass('hidden');
 
 			clearInterval(dynamicGetValue);
+			clearInterval(dynamicSendValue);
 
 			firstValue = $('.exch-form__send > input').val().trim().replace(/,/g, '');
 			secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '')
@@ -1958,12 +1975,17 @@ $(function () {
 			$('.exch-form__get > input').val(numberWithCommas(secondValue));
 			isSelectedPrevConversion = false;
 
-			clearInterval(dynamicGetValue);
-			dynamicGetValue = setInterval(function () {
-				secondValue *= (Math.random() * (101 - 99) + 99) / 100;
-				$('.exch-form__get > input').val(numberWithCommas(secondValue.toFixed(2)));
-				updateExchangeValues();
-			}, 1000);
+			//clearInterval(dynamicGetValue);
+			//clearInterval(dynamicSendValue);
+			
+			// run dynamic value change
+			startDynamicGetValue();
+
+			// dynamicGetValue = setInterval(function () {
+			// 	secondValue *= (Math.random() * (101 - 99) + 99) / 100;
+			// 	$('.exch-form__get > input').val(numberWithCommas(secondValue.toFixed(2)));
+			// 	updateExchangeValues();
+			// }, 1000);
 
 			currentWallet = ownWallet;
 			
@@ -2137,32 +2159,73 @@ $(function () {
 		var getCurrency = $('.exch-form__get > input').attr('data-currency');
 
 		if ($(this).parent().hasClass('exch-form__send')) {
+			startDynamicGetValue();
 			var firstValue = $(this).val().trim().replace(/,/g, '');
-
 			if (firstValue > ownWallet[sendCurrency]) {
 				firstValue = ownWallet[sendCurrency];
 				$('.exch-form__send > input').val(firstValue.toFixed(2));
+				startDynamicGetValue();
 			}
 
-			var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
-			$('.exch-form__get input').val(numberWithCommas(secondValue));
-
-			clearInterval(dynamicGetValue);
-			dynamicGetValue = setInterval(function () {
-				secondValue *= (Math.random() * (101 - 99) + 99) / 100;
-				$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
-				updateExchangeValues();
-			}, 1000);
-
 		} else {
-			//var secondValue = $(this).val();
-			//var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
-			//$('.exch-form__send > input').val(numberWithCommas(firstValue));
+			startDynamicSendValue();
+			var firstValue = $('.exch-form__send input').val().trim().replace(/,/g, '');
+			if (firstValue > ownWallet[sendCurrency]) {
+				firstValue = ownWallet[sendCurrency];
+				var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
+				$('.exch-form__send > input').val(firstValue.toFixed(2));
+				$('.exch-form__get > input').val(secondValue);
+				startDynamicSendValue();
+			}
 		}
 		var send_amount = parseFloat($('.exch-form__send > input').val().trim().replace(/,/g, ''));
 		if (send_amount)
 			$('.range-slider .exch-form-slider__control').val(parseFloat(send_amount * 100000));
 	});
+
+	function startDynamicSendValue() {
+		clearInterval(dynamicGetValue);
+		clearInterval(dynamicSendValue);
+
+		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
+		var getCurrency = $('.exch-form__get > input').attr('data-currency');
+
+		var secondValue = $('.exch-form__get input').val().trim().replace(/,/g, '');
+		var firstValue = ((secondValue * currenciesPrice[getCurrency]) / currenciesPrice[sendCurrency]).toFixed(2);
+
+		$('.exch-form__send input').val(numberWithCommas(firstValue));
+
+		dynamicSendValue = setInterval(function () {
+			firstValue *= (Math.random() * (101 - 99) + 99) / 100;
+			if (firstValue > ownWallet[sendCurrency]) {
+				firstValue = ownWallet[sendCurrency];
+			}
+			$('.exch-form__send input').val(numberWithCommas(firstValue.toFixed(2)));
+			updateExchangeValues();
+		}, 1000);
+	}
+
+	$('.exch-form__get > input').focus(startDynamicSendValue);
+
+	function startDynamicGetValue() {
+		clearInterval(dynamicSendValue);
+		clearInterval(dynamicGetValue);
+
+		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
+		var getCurrency = $('.exch-form__get > input').attr('data-currency');
+
+		var firstValue = $('.exch-form__send input').val().trim().replace(/,/g, '');
+		var secondValue = ((firstValue * currenciesPrice[sendCurrency]) / currenciesPrice[getCurrency]).toFixed(2);
+		$('.exch-form__get input').val(numberWithCommas(secondValue));
+
+		dynamicGetValue = setInterval(function () {
+			secondValue *= (Math.random() * (101 - 99) + 99) / 100;
+			$('.exch-form__get input').val(numberWithCommas(secondValue.toFixed(2)));
+			updateExchangeValues();
+		}, 1000);
+	}
+
+	$('.exch-form__send > input').focus(startDynamicGetValue);
 
 	$('.transaction-form__to-clipdoard').click(function () {
 		var copyText = document.querySelector(".transaction-form__input.with-copy");
@@ -2362,6 +2425,11 @@ $(function () {
 			}
 		});
 	});
+
+	$(".copy-deposit-address").click(function(e){
+		$(this).addClass("clicked")
+		e.preventDefault();
+	})
 
 
 	/*---------------------------------------------------*/

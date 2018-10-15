@@ -29,4 +29,7 @@
 
 .square-icon-button {
 	width:40px;height:40px;color:white; background-color: var(--clr-icon);
+	&.clicked {
+		background:linear-gradient(180deg,var(--clr-accent) 0,var(--clr-accentD));
+	}
 }

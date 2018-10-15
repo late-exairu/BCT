@@ -207,7 +207,7 @@ function updateSmallCharts() {
 
                     // blue color
                     if (changeInPercent > 0) {
-                        smallChartInfoString = '<div class="clr-green">$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller">+' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
+                        smallChartInfoString = '<div>$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller clr-green">+' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
                         lineColor = '#01B067';
                         gradientColor = {
                             linearGradient: [0, 0, 0, 30],
@@ -219,7 +219,7 @@ function updateSmallCharts() {
                     }
                     // red color
                     else {
-                        smallChartInfoString = '<div class="clr-darkRed">$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
+                        smallChartInfoString = '<div>$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller clr-darkRed">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
                         lineColor = '#CE2424';
                     }
 
