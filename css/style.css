@@ -7914,12 +7914,12 @@ h6 {
     position: relative;
     padding: 0 8px;
     margin: 0 0 0 1px;
-    border-left: 1px solid var(--clr-separator); }
+    border-left: 1px solid var(--clr-lineP); }
     .graph-info__item:first-child {
       padding-left: 0;
       border: none; }
     .graph-info__item:nth-child(3) {
-      border-right: 1px solid var(--clr-separator); }
+      border-right: 1px solid var(--clr-lineP); }
     .graph-info__item.inline {
       display: flex; }
       .graph-info__item.inline .gbar-info__nums {
@@ -7955,7 +7955,6 @@ h6 {
     height: fit-content;
     font-size: 11px;
     border-radius: 3px;
-    background: transparent;
     font-weight: 600;
     margin-left: -14px;
     color: var(--clr-backCI);
@@ -7965,13 +7964,12 @@ h6 {
       pointer-events: all;
       width: 100%;
       padding: 1px 0 1px 5px;
-      border: 1px solid;
+      border: 1px solid var(--clr-lineP);
       border-radius: 3px;
       cursor: pointer;
       background: var(--clr-back); }
       .graph-info__range__current:hover {
-        background: rgba(0, 0, 0, 0.05);
-        background: var(--clr-back); }
+        background: var(--clr-back-new); }
     .graph-info__range__current.open:after {
       content: "";
       width: 0;
@@ -8011,7 +8009,7 @@ h6 {
       padding: 1px 0 1px 5px;
       cursor: pointer; }
       .graph-info__range__item:hover {
-        background: rgba(0, 0, 0, 0.05); }
+        background: var(--clr-back-new); }
     .graph-info__range__item.active {
       background: rgba(0, 0, 0, 0.1); }
 
@@ -13206,8 +13204,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     .exch-form.progress:not(.completed) .exch-form__submit .exch-form__progress__label {
       font-size: 10px; }
     .exch-form.progress:not(.completed) .exch-form__submit .exch-form__progress__value {
-      font-size: 36px;
-      font-weight: 500; }
+      font-size: 37px;
+      font-weight: 600; }
     .exch-form.progress:not(.completed) .exch-form__submit .exch-form__progress__percent {
       font-weight: 400;
       font-size: 22px;

@@ -92,7 +92,7 @@ $(function () {
 			$('div.graph-info__range').css('border', '0px');
 			$('ul.graph-info__range__list').removeClass('open');
 			$('div.graph-info__range__current').removeClass('open');
-			$('div.graph-info__range__current').css('border', 'solid 1px');
+			$('div.graph-info__range__current').css('border', 'solid 1px var(--clr-lineP)');
 		}
 	});
 
@@ -2583,13 +2583,13 @@ $(function () {
 			$('div.graph-info__range').css('border', '0px');
 			$('ul.graph-info__range__list').removeClass('open');
 			$('div.graph-info__range__current').removeClass('open');
-			$('div.graph-info__range__current').css('border', 'solid 1px');
+			$('div.graph-info__range__current').css('border', 'solid 1px var(--clr-lineP)');
 		} else {
 			$('ul.graph-info__range__list').addClass('open');
 			$('div.graph-info__range__current').addClass('open');
 			$('div.graph-info__range__current').css('border', '0px');
-			$('ul.graph-info__range__list').css('border-top', 'solid 1px');
-			$('div.graph-info__range').css('border', 'solid 1px');
+			$('ul.graph-info__range__list').css('border-top', 'solid 1px var(--clr-lineP)');
+			$('div.graph-info__range').css('border', 'solid 1px var(--clr-lineP)');
 		}
 	});
 	$("ul.graph-info__range__list").on("click", "li.graph-info__range__item", function () {
@@ -2601,7 +2601,7 @@ $(function () {
 		$('div.graph-info__range').css('border', '0px');
 		$('ul.graph-info__range__list').removeClass('open');
 		$('div.graph-info__range__current').removeClass('open');
-		$('div.graph-info__range__current').css('border', 'solid 1px');
+		$('div.graph-info__range__current').css('border', 'solid 1px var(--clr-lineP)');
 
 
 		var current_range = $('.graph-info__range__current').html();
