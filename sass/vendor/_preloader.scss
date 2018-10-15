@@ -55,9 +55,10 @@
 }
 
 .loaded #loader-wrapper {
+    opacity: 0;
     visibility: hidden;
     //transform: translateY(-100%);
-    transition: all 0.3s 1s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 @-webkit-keyframes spin {
