@@ -2446,11 +2446,11 @@ $(function () {
 	});
 
 	$("#open-tx-history").click((e)=> {
-		$(".basic-popup__overlay").addClass("open");
+		$(".basic-popup__overlay").show();
 	})
 
 	$("#close-tx-history").click((e)=> {
-		$(".basic-popup__overlay").removeClass("open");
+		$(".basic-popup__overlay").hide();
 	})
 
 
