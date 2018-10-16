@@ -111,26 +111,23 @@
 	}
 	&__floating-btn {
 		font-family: $osans;
-		height: 28px;
-		display: flex;
-		flex: 1 1;
-		width: 100%;
+		height: 22px;
+		display: block;
+		width: 120px;
 		border: none;
-		border-radius: var(--border-radius);
-		background:linear-gradient(180deg,var(--clr-accent) 0,var(--clr-accentD));
-		color: #fff;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
+		background:white;
+		color: var(--clr-accent);
+		text-decoration:none;
 		font-weight: 700;
-		font-size: 14px;
+		font-size: 13px;
 
 		border: none;
 		cursor: pointer;
 		transition: all .1s;
 	}
-	#close-tx-history {
-	width:70px;margin-bottom:5px;text-align:left;align-items:left;
+	
+	.down {
+		margin-bottom:5px;
 	}
 	.basic-table{
 		border-top: 1px solid var(--clr-separator);

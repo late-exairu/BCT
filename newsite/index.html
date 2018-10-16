@@ -130,7 +130,7 @@
 							</div><!-- chat-head END -->
 
 							<div class="c-block__section flex-1-1 scroll-y scrollbar-right">
-								<div id="telegramText">
+								<div id="telegramText" style="min-width:max-content">
 									In order to be able to save <br>
 									your progress pls log in to <br>
 									Telegram
@@ -2491,15 +2491,15 @@
 <!-- Deposit and withdraw popup, STEP 1 -->
 <div class="basic-popup transaction-popup" id="transaction-popup" style="display: none;">
 	<div class="floating-btn_container">
-			<button id="open-tx-history" class="transaction-popup__floating-btn">
-				<i class="fas fa-angle-double-up"></i>&nbsp;History	
-		    </button>
+			<a id="open-tx-history" class="transaction-popup__floating-btn up">
+				<i class="fas fa-angle-double-up"></i>&nbsp;View History	
+		    </a>
 	</div>
 	<div class="tx-history-basic basic-popup__overlay">
 		<div class="overlay-header">
-				<button id="close-tx-history" class="transaction-popup__floating-btn" style="">
-						<i style="color:white" class="fas fa-angle-double-down"></i>&nbsp;Close
-				</button>
+				<a id="close-tx-history" class="transaction-popup__floating-btn down">
+						<i class="fas fa-angle-double-down"></i>&nbsp;Close	History
+				</a>
 		
 			<img class="tx-currency-icon" src="img/svg/coin-usdt.svg" />
 			<span class="tx-currency"> USDT</span> 
