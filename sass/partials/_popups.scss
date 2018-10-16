@@ -267,6 +267,22 @@
 			}
 		}
 
+		&__check {
+			width: 44px;
+			height: 100%;
+			padding: 8px 8px;
+			svg.sprite-icon {
+				width: 16px;
+				fill: var(--clr-accentD);
+				border: 1px solid var(--clr-backBT);
+				border-radius: 50%;
+				width: 28px;
+				height: 28px;
+				padding: 3px;
+				padding-top: 5px;
+			}
+		}
+
 
 		&__dropdown {
 			&__list-title{

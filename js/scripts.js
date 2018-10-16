@@ -234,7 +234,8 @@ $(function () {
 		$(".send-popup .send-popup__progressbar").progressbar("value", 0);
 		$(".send-popup .send-popup__progressbar").addClass('hidden');
 		$(".send-form__btn span.in-progres, .send-form__btn span.done").toggleClass('hidden');
-		$('.send-form__btn')
+		$(".send-form .send-dropdown__hangle, .send-form .send-form__check").toggleClass('hidden');
+		console.log("fdfdf");
 	});
 
 	var currenciesDropDownScrollbar = $('.exch-dropdown__scroll.scrollbar-right');
@@ -1798,6 +1799,8 @@ $(function () {
 		$('.send-form__btn').removeClass('inactive');
 		$(".send-form__btn span.in-progres").removeClass('hidden');
 		$(".send-form__btn span.done").addClass('hidden');
+		$(".send-form__btn .send-dropdown__hangle").removeClass('hidden');
+		$(".send-form__btn .send-form__check").addClass('hidden');
 	
 		$.fancybox.open({
 			src: '#send-popup',
