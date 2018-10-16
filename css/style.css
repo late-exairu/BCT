@@ -13325,8 +13325,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     margin-top: 16px;
     z-index: 1;
     right: 3px;
-    width: calc(100% - 250px);
-    min-width: 150px;
+    width: calc(100% - 120px);
+    max-width: 230px;
     padding: 0 8px;
     position: absolute; }
 
