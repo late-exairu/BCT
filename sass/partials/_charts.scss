@@ -92,6 +92,9 @@
 		}
 		p.value{
 			font-size: 9px;
+			span.bigger {
+				font-size: 13px;
+			}
 		}
 		p.title{
 			font-size: 10px;
@@ -107,13 +110,13 @@
 		#circleChartText {
 			width: 170px;
 			p.value {
-				font-size: 17px;
+				font-size: 16px;
 				span {
-					font-size: 17px;
+					font-size: 16px;
 				}
 
 				span.bigger {
-					font-size: 28px;
+					font-size: 19px;
 				}
 			}
 
@@ -180,13 +183,13 @@
 			span {
 				top: 1px;
 				position: relative;
-				font-size: 14px;
+				font-size: 12px;
 				vertical-align: top;
 			}
 
 			span.bigger {
 				top: 0;
-				font-size: 20px;
+				font-size: 15px;
 				margin: 0px -3px;
 			}
 		}
@@ -213,12 +216,12 @@
 			.value {
 				span {
 					top: 4px;
-					font-size: 22px;
+					font-size: 18px;
 				}
 
 				span.bigger {
 					top: 0;
-					font-size: 34px;
+					font-size: 23px;
 				}
 			}
 

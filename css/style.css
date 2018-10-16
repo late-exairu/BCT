@@ -14365,6 +14365,8 @@ button:-moz-focusring {
       height: 25px; }
     .advanced .accounts-diagram-wrap #circleChartText p.value {
       font-size: 9px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
+        font-size: 13px; }
     .advanced .accounts-diagram-wrap #circleChartText p.title {
       font-size: 10px; }
   @media only screen and (min-height: 900px) {
@@ -14374,11 +14376,11 @@ button:-moz-focusring {
     .advanced .accounts-diagram-wrap #circleChartText {
       width: 170px; }
       .advanced .accounts-diagram-wrap #circleChartText p.value {
-        font-size: 17px; }
+        font-size: 16px; }
         .advanced .accounts-diagram-wrap #circleChartText p.value span {
-          font-size: 17px; }
+          font-size: 16px; }
         .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
-          font-size: 28px; }
+          font-size: 19px; }
       .advanced .accounts-diagram-wrap #circleChartText p.title {
         font-size: 14px; }
       .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
@@ -14427,11 +14429,11 @@ button:-moz-focusring {
       #circleChartText .wrap .value span {
         top: 1px;
         position: relative;
-        font-size: 14px;
+        font-size: 12px;
         vertical-align: top; }
       #circleChartText .wrap .value span.bigger {
         top: 0;
-        font-size: 20px;
+        font-size: 15px;
         margin: 0px -3px; }
     #circleChartText .wrap .title {
       font-size: 12px;
@@ -14448,10 +14450,10 @@ button:-moz-focusring {
         font-size: 27px; }
       #circleChartText .wrap .value span {
         top: 4px;
-        font-size: 22px; }
+        font-size: 18px; }
       #circleChartText .wrap .value span.bigger {
         top: 0;
-        font-size: 34px; }
+        font-size: 23px; }
       #circleChartText .wrap .title {
         font-size: 16px; } }
 
