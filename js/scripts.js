@@ -850,45 +850,6 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
-	/* change range on Portfolio Chart */
-	/*---------------------------------------------------*/
-
-	/* 	$('.portfolio-period .portfolio-period__item').click(function () {
-			$('.portfolio-period .portfolio-period__item').removeClass('current');
-			$(this).addClass('current');
-			portfolioChartCurrentRange = $(this).index();
-			portfolioChartObj.rangeSelector.clickButton(portfolioChartCurrentRange, {}, true);
-
-			portfolioChartBTCCurrentRange = $(this).index();
-			portfolioChartBTCObj.rangeSelector.clickButton(portfolioChartBTCCurrentRange, {}, true);
-
-			portfolioChartETHCurrentRange = $(this).index();
-			portfolioChartETHObj.rangeSelector.clickButton(portfolioChartETHCurrentRange, {}, true);
-
-			updatePortfolioStats();
-		});
-
-		function updatePortfolioStats(currencyChange) {
-			var currentSlide = $('.portfolioChartParent').slick('slickCurrentSlide');
-			var currentPeriod = $('.portfolio-period .portfolio-period__item.current').index();
-			if (currencyChange) {
-				if (currentSlide == 0) {
-					$('.portfolio-stats__amount-tip').text('Portfolio value');
-					circleChartSmallObj = Highcharts.chart('circleChartSmall', circleChartSmallOptions);
-				} else if (currentSlide == 1) {
-					$('.portfolio-stats__amount-tip').text('Bitcoin');
-					$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-coin-btc" style="display: block;" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#coin-btc" > < /use> </svg>');
-				} else if (currentSlide == 2) {
-					$('.portfolio-stats__amount-tip').text('Ethereum');
-					$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-coin-eth" style="display: block;" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#coin-eth" > < /use> </svg>');
-				}
-			}
-			$('.portfolio-stats__dinamic').text(portfolioChartArrChanges[currentSlide][currentPeriod][0]);
-			$('.portfolio-stats__amount-value').text(portfolioChartArrChanges[currentSlide][currentPeriod][1]);
-			$('.portfolio-stats__amount-cent').text(portfolioChartArrChanges[currentSlide][currentPeriod][2]);
-		} */
-
-	/*---------------------------------------------------*/
 	/* Graph prices list */
 	/*---------------------------------------------------*/
 
@@ -1107,32 +1068,8 @@ $(function () {
 	// }
 
 	function updateMainChartPercentChange() {
-		//var range = $('.graph-range-slider__current').text().trim();
-		var start, end;
-		// switch (range) {
-		// 	case '1h':
-		// 		start = mainChartObj.series[0].data[365];
-		// 		break;
-		// 	case '1d':
-		// 		start = mainChartObj.series[0].data[364];
-		// 		break;
-		// 	case '1w':
-		// 		start = mainChartObj.series[0].data[358];
-		// 		break;
-		// 	case '1m':
-		// 		start = mainChartObj.series[0].data[334];
-		// 		break;
-		// 	case 'All':
-		// 		start = mainChartObj.series[0].data[0];
-		// 		break;
-		// 	default:
-		// 		break;
-		// }
-		start = mainChartObj.series[0].processedYData[0];
-		end = mainChartObj.series[0].processedYData[mainChartObj.series[0].processedYData.length - 1];
-
-		//	console.log(mainChartObj.series[0].processedYData);
-		//	console.log(start,end);
+		var start = mainChartObj.series[0].processedYData[0];
+		var end = mainChartObj.series[0].processedYData[mainChartObj.series[0].processedYData.length - 1];
 
 		var changeInPercent = (-1 + (end / start)) * 100;
 		// green color
@@ -1172,7 +1109,6 @@ $(function () {
 			mainGraphHighlighted = currentDataId;
 			return false;
 		}
-
 
 		mainGraphHighlighted = currentDataId;
 
@@ -1222,49 +1158,6 @@ $(function () {
 			mainChartObj.series[7].setData(gData[currentDataId - 1].diffs);
 		}
 	}
-
-	/* 	$('.graph-prices .graph-prices__list .graph-prices__item').hover(function () {
-			var currentDataId = $(this).attr('data-id');
-			mainChartObj.series.map(function (item, index) {
-				if (item.type == 'areaspline') {
-					if (item.options.lineWidth > 1) {
-						item.update({
-							lineWidth: 1,
-							color: mainChartSecondColor
-						});
-					}
-					if (item.options.id == currentDataId) {
-						item.update({
-							lineWidth: 3,
-							color: mainChartFirstColor
-						});
-					}
-				}
-			});
-		}); */
-
-	/* 	$('.graph-prices__list').mouseleave(function () {
-			mainChartObj.series.map(function (item, index) {
-				if (item.type == 'areaspline') {
-					item.update({
-						lineWidth: 1,
-						color: mainChartSecondColor,
-						enableMouseTracking: false,
-						zIndex: 1
-					});
-					if (item.options.id == mainGraphHighlighted) {
-						item.update({
-							lineWidth: 3,
-							color: mainChartFirstColor,
-							enableMouseTracking: true,
-							trackByArea: true,
-							zIndex: 10
-						});
-					}
-				}
-			});
-		}); */
-
 
 	/*---------------------------------------------------*/
 	/* Graph prices select */
@@ -1419,20 +1312,6 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
-	/* Table column sorted */
-	/*---------------------------------------------------*/
-
-	// $('.basic-table__row.head > div').click(function () {
-	// 	if ($(this).hasClass('sorted-down')) {
-	// 		$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-down');
-	// 		$(this).addClass('sorted-up');
-	// 	} else {
-	// 		$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-up sorted-down');
-	// 		$(this).addClass('sorted-down');
-	// 	}
-	// });
-
-	/*---------------------------------------------------*/
 	/* transaction popup */
 	/*---------------------------------------------------*/
 	$('#panel-funds-wallet').on('click', 'button[transaction-fancybox]', function (e) {
@@ -1503,7 +1382,6 @@ $(function () {
 			});
 		}
 		
-
 
 		/***** Old transaction pop-up function:
 		
@@ -1742,22 +1620,11 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.exch-head__btn').click(function () {
-		// basic
-		if (!$('body').hasClass('advanced')) {
-			//$('.js-tabs-panel').removeClass('active');
-			//$('#panel-funds-history').addClass('active');
-			//$('.user-portfolio .user-menu .user-menu__item').eq(2).trigger('click');
-		}
-		//advanced
-		else {
+		// advanced
+		if ($('body').hasClass('advanced')) {
 			$('#tab-funds-history').trigger('click');
 			$('.menu-dropdown').removeClass('open');
 		}
-	});
-
-	// On before slide change
-	$('.portfolioChartParent').on('afterChange', function (event, slick, currentSlide, nextSlide) {
-		updatePortfolioStats(true);
 	});
 
 	var dynamicGetValue;
@@ -1792,33 +1659,18 @@ $(function () {
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
 
-			// $('.exch-form__send .exch-form__input').val('0.00');
-			// $('.exch-form__get .exch-form__input').val('0.00');
-
-			var firstValueResult = 0;
-			var secondValueResult = 0;
-			//var exchanges = 0;
-
-			// update wallet and table
-			// ownWallet[sendCurrency] -= firstValue;
-			// if (!ownWallet[getCurrency]) ownWallet[getCurrency] = 0;
-			// ownWallet[getCurrency] += (+secondValue);
-			// updateWalletData();
-			// drawCircleChart();
-			// end update wallet and table
-
 			graphPricesScrollbar.animate({
 				scrollTop: 0
 			}, "slow");
 
 			var remain_total_value = secondValue;
-		
 
 			progressbar_current_label.css('visibility', 'hidden');
 			progressbar_current_label.text(remain_total_value + ' ' + getCurrency);
 			progressbar_current.progressbar("value", 0);
 			setTimeout(currentProgress, 1000);
 
+			if (!ownWallet[getCurrency]) ownWallet[getCurrency] = 0;
 
 			for (var i = 0; i < progressbar_array.length; i++) {
 				// var progressbar = progressbar_array[i];
@@ -1842,11 +1694,7 @@ $(function () {
 					secondValueResult += secondValuePart;
 
 					ownWallet[sendCurrency] -= (+firstValuePart);
-					if (!ownWallet[getCurrency]) ownWallet[getCurrency] = 0;
 					ownWallet[getCurrency] += (+secondValuePart);
-
-					//$('.exch-form__send .exch-form__input').val(numberWithCommas((firstValueResult).toFixed(2)));
-					//$('.exch-form__get .exch-form__input').val(numberWithCommas((secondValueResult).toFixed(2)));
 
 					updateWalletData();
 					drawCircleChart(e, true);
@@ -1877,16 +1725,8 @@ $(function () {
 			$('.graph-prices__sort__btn').addClass('hidden');
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active recent');
 			$('.exch-form .range-slider input[type=range]').css('pointer-events', 'none');
-			if (!$('body').hasClass('advanced')) {
-				var newRow = '<div class="basic-table__row recent active">' +
-					'<div class="basic-table__col w-17" ><img src="img/spin-blue.svg"></div>' +
-					'<div class="basic-table__col w-27">' +
-					(sendCurrency == 'USDT' ? '$' : '') + '0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency +
-					'</div>' +
-					'<div class="basic-table__col w-27">' + (getCurrency == 'USDT' ? '$' : '') + '0.00 ' + getCurrency + '</div>' +
-					'<div class="basic-table__col w-27">0 Exchanges</div>' +
-					'</div>';
-			} else {
+
+			if ($('body').hasClass('advanced')) {
 				var newRow = '<div class="basic-table__row active recent">' +
 					'<div class="basic-table__col w-20"> Just now</div>' +
 					'<div class="basic-table__col w-17">' + sendCurrency + '/' + getCurrency + '</div>' +
@@ -1896,6 +1736,7 @@ $(function () {
 					'<div class="basic-table__col w-10">FILLED</div>' +
 					'</div >';
 			}
+
 			$('.basic-table__message').addClass('hidden');
 			$('#panel-funds-history .basic-table__body .basic-table__body').prepend(newRow);
 			
@@ -1982,18 +1823,9 @@ $(function () {
 			$('.exch-form__send > input').val(numberWithCommas(firstValue));
 			$('.exch-form__get > input').val(numberWithCommas(secondValue));
 			isSelectedPrevConversion = false;
-
-			//clearInterval(dynamicGetValue);
-			//clearInterval(dynamicSendValue);
 			
 			// run dynamic value change
 			startDynamicGetValue();
-
-			// dynamicGetValue = setInterval(function () {
-			// 	secondValue *= (Math.random() * (101 - 99) + 99) / 100;
-			// 	$('.exch-form__get > input').val(numberWithCommas(secondValue.toFixed(2)));
-			// 	updateExchangeValues();
-			// }, 1000);
 
 			currentWallet = ownWallet;
 			
@@ -2059,7 +1891,6 @@ $(function () {
 		firstClickAfterExchangeDone = true;
 
 		$('.exch-form__send .exch-form__label').text('Exchanged');
-		//$('.exch-form__get .exch-form__label').text('You got');
 
 		$(window).click(function (e) {
 			if (firstClickAfterExchangeDone) {
@@ -2377,22 +2208,6 @@ $(function () {
 	$("#close-tx-history").click((e)=> {
 		$(".basic-popup__overlay").hide();
 	})
-
-
-	/* Generic Fancybox Navigation Flow
-	   Allows fully declarative "wizard" style submission flows within a popup.
-
-	   For a button that loads new content into the current popup, give it css class "js-fancybox-close popup-nav-button" 
-	   and set the data-next-screen attribute to the ID of the element that contains the new content
-	   
-	   This script will listen for clicks on the button and handle it, you do not need to write any JS
-	   yourself for basic use cases
-
-	   Sample button:
-
-		<button class="js-fancybox-close popup-nav-button" data-next-screen="autentificator-popup">					
-			Submit And Verify
-		</button> */
 
 	$('.popup-nav-button').click(function (e) {
 		let popupSrcDiv=$(this).attr("data-next-screen");
