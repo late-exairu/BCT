@@ -1316,10 +1316,10 @@ h6 {
       right: 0;
       bottom: -1px;
       height: 3px;
-      background: var(--clr-accentD);
+      background: var(--clr-accent);
       display: none; }
     .c-head-menu__item.current .c-head-menu__link {
-      color: var(--clr-textD); }
+      color: var(--clr-accent); }
     .c-head-menu__item.current:after {
       display: block; }
     .c-head-menu__item:hover .c-head-menu__arrow {
