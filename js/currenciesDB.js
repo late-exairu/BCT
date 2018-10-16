@@ -48,14 +48,14 @@ var ownWallet;
 
 var wallets = {
     ownWallet: {
-        'USDT': 100000.00,
-        'BTC': 0.00,
+        'BTC': 10.00,
+        'USDT': 0.00,
         'ETH': 0.00,
         'LTC': 0.00,
     },
     allCurrencies:{
-        'USDT': 0,
         'BTC': 0,
+        'USDT': 0,
         'ETH': 0,
         'LTC': 0,
     }

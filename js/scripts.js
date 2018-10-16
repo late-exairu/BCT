@@ -1659,6 +1659,9 @@ $(function () {
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
 
+			var firstValueResult = 0;
+			var secondValueResult = 0;
+
 			graphPricesScrollbar.animate({
 				scrollTop: 0
 			}, "slow");
