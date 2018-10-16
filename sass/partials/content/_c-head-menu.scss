@@ -23,13 +23,13 @@
 			right: 0;
 			bottom: -1px;
 			height: 3px;
-			background: var(--clr-accentD);
+			background: var(--clr-accent);
 			display: none;
 		}
 		
 		&.current{
 			.c-head-menu__link{
-				color: var(--clr-textD);
+				color: var(--clr-accent);
 			}
 
 			&:after{

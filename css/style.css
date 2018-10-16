@@ -1316,10 +1316,10 @@ h6 {
       right: 0;
       bottom: -1px;
       height: 3px;
-      background: var(--clr-accentD);
+      background: var(--clr-accent);
       display: none; }
     .c-head-menu__item.current .c-head-menu__link {
-      color: var(--clr-textD); }
+      color: var(--clr-accent); }
     .c-head-menu__item.current:after {
       display: block; }
     .c-head-menu__item:hover .c-head-menu__arrow {
@@ -8361,7 +8361,7 @@ h6 {
       display: none; }
   .graph-prices__item-wrapper {
     width: 100%;
-    height: 68px;
+    height: 60px;
     display: flex;
     align-items: center; }
   .graph-prices__item-inner {
@@ -10613,55 +10613,29 @@ body.menubar-in #user-btn:before {
     justify-content: center;
     height: 32px;
     width: 32px;
-    border-radius: 5px;
+    border-radius: 3px;
     /*background: var(--clr-back);*/
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
-    background: #BFC0C0; }
-    .view-mode__link:hover .sprite-icon .st0 {
-      fill: var(--clr-block); }
-    .view-mode__link:hover .sprite-icon .st1 {
-      fill: #3AB44A; }
-    .view-mode__link:hover .sprite-icon .st2 {
-      fill: #EB2429; }
-    .view-mode__link:hover .sprite-icon .st3 {
-      fill: #F4EB32; }
-    .view-mode__link:hover .sprite-icon .st4 {
-      fill: #26A8E0; }
+    background: var(--clr-block); }
   .view-mode .sprite-icon {
-    width: 18px;
-    height: 20px; }
-    .view-mode .sprite-icon .st0 {
-      fill: white; }
-    .view-mode .sprite-icon .st1 {
-      fill: #3AB44A; }
-    .view-mode .sprite-icon .st2 {
-      fill: #EB2429; }
-    .view-mode .sprite-icon .st3 {
-      fill: #F4EB32; }
-    .view-mode .sprite-icon .st4 {
-      fill: #26A8E0; }
+    width: 27px;
+    height: 25px; }
   @media only screen and (min-width: 1920px) {
     .view-mode__link {
       height: 42px;
       width: 42px; }
     .view-mode .sprite-icon {
-      width: 26px;
-      height: 28px; } }
+      width: 34px;
+      height: 32px; } }
 
 .advanced .view-mode__link {
-  background: var(--clr-backLL); }
-  .advanced .view-mode__link:hover {
-    background: var(--clr-block); }
-    .advanced .view-mode__link:hover .sprite-icon .st0 {
-      fill: var(--clr-important); }
-    .advanced .view-mode__link:hover .sprite-icon .st1 {
-      fill: #3AB44A; }
-    .advanced .view-mode__link:hover .sprite-icon .st2 {
-      fill: #EB2429; }
-    .advanced .view-mode__link:hover .sprite-icon .st3 {
-      fill: #F4EB32; }
-    .advanced .view-mode__link:hover .sprite-icon .st4 {
-      fill: #26A8E0; }
+  background: var(--clr-separator); }
+  .advanced .view-mode__link:hover .sprite-icon {
+    /*.st0{ fill: var(--clr-important); }
+				.st1{ fill: #3AB44A; }
+				.st2{ fill: #EB2429; }
+				.st3{ fill: #F4EB32; }
+				.st4{ fill: #26A8E0; }*/ }
 
 /* Ion.RangeSlider
 // css version 2.0.3
