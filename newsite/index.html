@@ -77,7 +77,7 @@
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="c-block__col">
 							<div class="c-block__section chat-head">
-								<button class="chat-head__back hidden">
+								<button class="chat-head__back">
 									<svg class="sprite-icon" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-back-3"></use>
 									</svg>
@@ -1028,29 +1028,19 @@
 
 						<div class="view-mode">
 							<a class="view-mode__link basic-tippy" href="./newsite/index_advanced.html" data="tippy" title="Advanced Mode">
-
-								<svg class="sprite-icon mode" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.8 23.7" style="enable-background:new 0 0 21.8 23.7;" xml:space="preserve">
-									<style type="text/css">
-										.st0{fill:#FFFFFF;}
-										.st1{fill:#3AB44A;}
-										.st2{fill:#EB2429;}
-										.st3{fill:#F4EB32;}
-										.st4{fill:#26A8E0;}
-									</style>
-									<g>
-										<g>
-											<rect id="XMLID_9_" x="2.6" y="22.3" class="st0" width="16.7" height="1.4"/>
-										</g>
-										<g>
-											<rect x="1.7" y="16.1" class="st1" width="18.2" height="2.9"/>
-											<rect x="1.7" y="11.3" class="st2" width="15" height="2.9"/>
-											<rect x="1.7" y="6.6" class="st3" width="17" height="2.9"/>
-											<polygon class="st4" points="1.7,1.8 1.7,4.7 20.1,4.7 20.1,1.7 		"/>
-											<path class="st0" d="M21,0H8.8h-8C0.4,0,0,0.4,0,0.9v5.2v13.8c0,0.5,0.4,0.9,0.9,0.9H21c0.5,0,0.9-0.4,0.9-0.9V0.9
-												C21.8,0.4,21.4,0,21,0z M1.7,6.5h17v2.9h-17V6.5z M1.7,11.3h15v2.9H1.7L1.7,11.3 M1.7,16.1h18.2V19H1.7L1.7,16.1 M20.1,4.7
-												L20.1,4.7H8.8H1.7V1.8h7.1l11.3,0"/>
-										</g>
-									</g>
+								<svg class="sprite-icon mode" xmlns="http://www.w3.org/2000/svg" width="27" height="25" viewBox="0 0 27 25">
+									<defs>
+										<style>
+											.cls-1 { fill: #28a9e1; }
+											.cls-2 { fill: #f3e73b; }
+											.cls-3 { fill: #e5272a; }
+											.cls-4 { fill: #46ae4c; }
+										</style>
+									</defs>
+									<rect class="cls-1" width="27" height="4"/>
+									<rect class="cls-2" y="7" width="25" height="4"/>
+									<rect class="cls-3" y="14" width="22" height="4"/>
+									<rect class="cls-4" y="21" width="26" height="4"/>
 								</svg>
 							</a>
 						</div>
@@ -2785,6 +2775,11 @@
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
 							</svg>
 						</div>
+						<div class="send-form__check hidden">
+							<svg class="sprite-icon" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#check"></use>
+							</svg>
+						</div>
 					</div>
 
 					<div class="send-form__dropdown__list hidden">
@@ -2812,18 +2807,20 @@
 						</div>
 					</div><!-- send-form__dropdown__list END -->
 	
-					<button class="send-form__btn submit js-fancybox-close" autentificator-fancybox>					
+					<button type="button" class="send-form__btn submit">					
 						<svg class="send-form__btn-bg" role="img" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 240 71">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#exch-bg"></use>
-						</svg>					
-						SEND USD TETHER
+						</svg>
+						<span class="in-progress">SEND USD TETHER</span>
+						<span class="done hidden">Your USDT was sent</span>
 					</button>
 				</form>
+				<div class="send-popup__progressbar hidden">
+				</div>
 			</div>
 		</div>
 	</div>
 	
-
 <!-- Google authenticator popup to verify transactions (deposit/withdrawal, send to contact) -->
 <div class="basic-popup autentificator-popup" id="autentificator-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
@@ -2874,7 +2871,9 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Blockchain Terminal</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Blockchain Terminal</p>
+					</div>
 					<p class="chats-list__last">CM | Jayvian: Photo</p>
 				</div>
 
@@ -2890,7 +2889,9 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Pac Man Coin</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Pac Man Coin</p>
+					</div>
 					<p class="chats-list__last">Zain: /start</p>
 				</div>
 
@@ -2906,7 +2907,9 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">VIP CHT ROOM ETH</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">VIP CHT ROOM ETH</p>
+					</div>
 					<p class="chats-list__last">Paul M.: Ok Tnx buddy, i’ll be watch thiss out</p>
 				</div>
 
@@ -2922,18 +2925,19 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Joe Johnson
-						<!--  <a href="joeJonsonWallet">www.btc.io/joejohnson</a> -->
-					</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Joe Johnson</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
 					<p class="chats-list__last">TCHMDMADMT just joined Telegram</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">Sat</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">1</span>
 					</p>
 				</div>
@@ -2945,6 +2949,9 @@
 				</div>
 
 				<div class="chats-list__desc">
+					<div class="chats-list__top">
+						<p class="chats-list__name">----------</p>
+					</div>
 					<p class="chats-list__name">The Whale Pool!</p>
 					<p class="chats-list__last">Jc: Well said!</p>
 				</div>
@@ -2960,18 +2967,19 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Hayk Minasayn
-						<!-- <a href="haykMinasaynWallet">www.btc.io/haykminasayn</a> -->
-					</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Hayk Minasayn</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
 					<p class="chats-list__last">Hayk Minasayn just joined Telegram</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time"></p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">157</span>
 					</p>
 				</div>
@@ -2983,18 +2991,20 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Ran Ner
-						<!-- <a href="ranNerWallet">www.btc.io/ranner</a> -->
-					</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Ran Ner</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">Hey man. Hope you are well. Just...</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">12:48 AM</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">448</span>
 					</p>
 				</div>
@@ -3006,16 +3016,19 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Sylvia Plath</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Sylvia Plath</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
 					<p class="chats-list__last">Mass media about cryto-currencies mining, ICO</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">12:49 AM</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">122</span>
 					</p>
 				</div>
@@ -3027,7 +3040,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">SENSE</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">SENSE</p>
+					</div>
+
 					<p class="chats-list__last">TCHMDMADMT just joined Telegram</p>
 				</div>
 
@@ -3043,16 +3059,19 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Anne Rice</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Anne Rice</p>
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">The best cryto miner now available on Telegram.</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">Fri</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">44</span>
 					</p>
 				</div>
@@ -3064,16 +3083,20 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Jack Kerouac</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Jack Kerouac</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">BLOCKCHAIN STARTUP REVIEWS & REPORTS.</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time"></p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">157</span>
 					</p>
 				</div>
@@ -3085,18 +3108,19 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Anna Peterson
-						<!-- <a href="annaPetersonWallet">www.btc.io/annapeterson</a> -->
-					</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Anna Peterson</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
 					<p class="chats-list__last">Jc: Well said!</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">12:48 AM</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">448</span>
 					</p>
 				</div>
@@ -3108,18 +3132,20 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Sofia Petrosian
-						<!-- <a href="sofiaPetrosianWallet">www.btc.io/sophiapetrosian</a> -->
-					</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Sofia Petrosian</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">Hayk Minasayn just joined Telegram</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">12:49 AM</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">20</span>
 					</p>
 				</div>
@@ -3131,7 +3157,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">DAPs Coin Official</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">DAPs Coin Official</p>
+					</div>
+
 					<p class="chats-list__last">Building the world's first fully-private, all-</p>
 				</div>
 
@@ -3147,7 +3176,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Crypto Airdrops</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Crypto Airdrops</p>
+					</div>
+
 					<p class="chats-list__last">Get access to multiple vetted top crypto & ICO</p>
 				</div>
 
@@ -3162,7 +3194,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Crypto Comes</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Crypto Comes</p>
+					</div>
+
 					<p class="chats-list__last">CroytoComes covers the crypto industry and community.</p>
 				</div>
 
@@ -3178,7 +3213,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Crypto Signals</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Crypto Signals</p>
+					</div>
+
 					<p class="chats-list__last">Crypto signals</p>
 				</div>
 
@@ -3194,7 +3232,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Crypto Dreams</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Crypto Dreams</p>
+					</div>
+
 					<p class="chats-list__last">The official telegram community of Crypto Dreams.</p>
 				</div>
 
@@ -3210,7 +3251,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Cryptocurrency</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Cryptocurrency</p>
+					</div>
+
 					<p class="chats-list__last">New about cryptocurrencies.</p>
 				</div>
 
@@ -3226,16 +3270,20 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Charles Dickens</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Charles Dickens</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">Review ICO projects</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">Fri</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">8</span>
 					</p>
 				</div>
@@ -3247,7 +3295,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">CryptoGameblerBot</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">CryptoGameblerBot</p>
+					</div>
+
 					<p class="chats-list__last">CM | Jayvian: Photo</p>
 				</div>
 
@@ -3263,16 +3314,20 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Stephen King</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Stephen King</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">Zain: /start</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">12:48 AM</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">448</span>
 					</p>
 				</div>
@@ -3284,7 +3339,9 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">SSC Adda</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">SSC Adda</p>
+					</div>
 					<p class="chats-list__last">Paul M.: Ok Tnx buddy, i’ll be watch thiss out</p>
 				</div>
 

@@ -164,7 +164,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.bitebtc:after, .icon-trader.bitfinex:after, .icon-trader.bitflyer:after, .icon-trader.bithumb:after, .icon-trader.bitstamp:after, .icon-trader.bittrex:after, .icon-trader.cexio:after, .icon-trader.coinbase:after, .icon-trader.coinone:after, .icon-trader.cryptopia:after, .icon-trader.exmo:after, .icon-trader.exx:after, .icon-trader.gateio:after, .icon-trader.gemini:after, .icon-trader.hitbtc:after, .icon-trader.houbi:after, .icon-trader.indodax:after, .icon-trader.itbit:after, .icon-trader.korbit:after, .icon-trader.kraken:after, .icon-trader.kucoin:after, .icon-trader.liqui:after, .icon-trader.livecoin:after, .icon-trader.localbitcoins:after, .icon-trader.poloniex:after, .icon-trader.quoine:after, .icon-trader.upbit:after, .icon-trader.vaultoro:after, .icon-trader.yobit:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 863.375em 835.0625em; }
+  background-size: 871.375em 845.0625em; }
 
 /* =================================================================== */
 /* Functions
@@ -671,7 +671,7 @@ h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 99;
+    z-index: 3000;
     border-radius: 0; }
 
 /* =================================================================== */
@@ -805,8 +805,6 @@ h6 {
         color: var(--clr-icon); }
       .basic-table__row.disabled .icon-curr {
         opacity: 0.25; }
-      .basic-table__row.disabled .smallCurrencyChart {
-        filter: grayscale(100%); }
       .basic-table__row.disabled .smallChartInfo .smaller {
         color: var(--clr-icon); }
     .basic-table__row.head {
@@ -1316,10 +1314,10 @@ h6 {
       right: 0;
       bottom: -1px;
       height: 3px;
-      background: var(--clr-accentD);
+      background: var(--clr-accent);
       display: none; }
     .c-head-menu__item.current .c-head-menu__link {
-      color: var(--clr-textD); }
+      color: var(--clr-accent); }
     .c-head-menu__item.current:after {
       display: block; }
     .c-head-menu__item:hover .c-head-menu__arrow {
@@ -1613,7 +1611,7 @@ h6 {
     position: relative;
     display: flex;
     padding: 6px 15px 6px 15px;
-    height: 52px; }
+    height: 70px; }
     .chats-list__item:hover {
       cursor: pointer; }
       .chats-list__item:hover:before {
@@ -1642,17 +1640,21 @@ h6 {
       display: none; }
   .chats-list__avatar-wrap {
     position: relative;
-    width: 32px;
-    height: 32px;
+    width: 54px;
+    height: 54px;
     margin: auto 4px auto 0;
     flex: 0 0 auto; }
   .chats-list__avatar {
     position: relative;
-    width: 32px;
-    height: 32px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     z-index: 2; }
   .chats-list__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
     position: relative;
     padding: 3px 10px;
     overflow: hidden;
@@ -1661,35 +1663,42 @@ h6 {
     z-index: 2; }
   .chats-list__name {
     font-family: "open_sans", sans-serif;
-    margin: 1px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 16px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--clr-textD); }
   .chats-list__last {
     font-family: "open_sans", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     margin: 2px 0 0;
     color: var(--clr-textL);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
+  .chats-list__top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
   .chats-list__info {
-    position: relative;
     display: flex;
     flex-direction: column;
-    text-align: right;
+    align-items: left;
+    justify-content: center;
     margin: 0 0 0 auto;
-    padding: 7px 0 5px;
+    padding: 3px 0;
     flex: 0 0 auto;
     align-items: flex-end;
     z-index: 2; }
   .chats-list__time {
     font-family: "open_sans", sans-serif;
-    margin: 0 0 2px;
-    font-size: 10px;
+    margin: 0 0 7px;
+    font-size: 12px;
     white-space: nowrap;
     min-height: 12px;
     color: var(--clr-textL); }
@@ -1701,43 +1710,44 @@ h6 {
     background: var(--clr-textL);
     color: #fff;
     display: flex;
-    height: 12px;
+    height: 14px;
     line-height: 1;
-    padding: 1px 5px;
-    border-radius: 6px;
-    margin: auto 0 0 auto;
+    padding: 0 5px;
+    border-radius: 7px;
+    margin: 0 0 0 auto;
     justify-content: center;
-    flex: 0 0 auto; }
+    flex: 0 0 auto;
+    font-size: 14px; }
     .chats-list__comms.accented {
       background: var(--clr-accent); }
   .chats-list__action {
     display: flex;
-    height: 12px;
-    line-height: 12px;
-    border-radius: 6px;
-    margin: auto 0 0 auto;
+    height: 14px;
+    line-height: 14px;
+    border-radius: 7px;
+    margin: 0 0 0 auto;
     justify-content: center;
     flex: 0 0 auto; }
   .chats-list__send {
     position: relative;
     font-family: "open_sans", sans-serif;
-    height: 12px;
+    height: 14px;
     display: flex;
-    margin-right: 5px;
+    margin-left: 5px;
     padding: 1px 5px;
-    flex: 1 0 36px;
+    flex: 0 0 36px;
     align-items: center;
     color: #fff;
     cursor: pointer;
     text-decoration: none;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 700;
     white-space: nowrap;
     justify-content: center;
     border: none;
     line-height: 1;
     background: var(--clr-accent);
-    border-radius: 6px;
+    border-radius: 7px;
     z-index: 9; }
     .chats-list__send .sprite-icon {
       margin-right: 3px;
@@ -8361,7 +8371,7 @@ h6 {
       display: none; }
   .graph-prices__item-wrapper {
     width: 100%;
-    height: 68px;
+    height: 60px;
     display: flex;
     align-items: center; }
   .graph-prices__item-inner {
@@ -8697,131 +8707,131 @@ h6 {
   .icon-trader.binance:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -760.375em -741.3125em; }
+    background-position: -768.375em -751.3125em; }
   .icon-trader.bitebtc:after {
     width: 1.25em;
     height: 0.5875em;
-    background-position: -764.8125em -746.25em; }
+    background-position: -772.8125em -756.25em; }
   .icon-trader.bitfinex:after {
     width: 1.25em;
     height: 1.2125em;
-    background-position: -767.3125em -748.125em; }
+    background-position: -775.3125em -758.125em; }
   .icon-trader.bitflyer:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -768.5625em -749.375em; }
+    background-position: -776.5625em -759.375em; }
   .icon-trader.bitflyer:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -768.5625em -749.375em; }
+    background-position: -776.5625em -759.375em; }
   .icon-trader.bithumb:after {
     width: 0.95em;
     height: 1.25em;
-    background-position: -769.8125em -750.625em; }
+    background-position: -777.8125em -760.625em; }
   .icon-trader.bitstamp:after {
     width: 0.81875em;
     height: 1.25em;
-    background-position: -774.375em -755.5em; }
+    background-position: -782.375em -765.5em; }
   .icon-trader.bittrex:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -775.25em -756.75em; }
+    background-position: -783.25em -766.75em; }
   .icon-trader.cexio:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -788.375em -766.25em; }
+    background-position: -796.375em -776.25em; }
   .icon-trader.coinbase:after {
     width: 0.56875em;
     height: 1.1875em;
-    background-position: -789.625em -767.5em; }
+    background-position: -797.625em -777.5em; }
   .icon-trader.coinone:after {
     width: 1.1625em;
     height: 1.1875em;
-    background-position: -795.6875em -774.125em; }
+    background-position: -803.6875em -784.125em; }
   .icon-trader.coinone:after {
     width: 1.1625em;
     height: 1.1875em;
-    background-position: -795.6875em -774.125em; }
+    background-position: -803.6875em -784.125em; }
   .icon-trader.cryptopia:after {
     width: 1.25em;
     height: 1.2375em;
-    background-position: -801.75em -780.3125em; }
+    background-position: -809.75em -790.3125em; }
   .icon-trader.exmo:after {
     width: 1.25em;
     height: 0.525em;
-    background-position: -805.25em -783.1875em; }
+    background-position: -813.25em -793.1875em; }
   .icon-trader.exx:after {
     width: 1.25em;
     height: 0.56875em;
-    background-position: -806.5em -783.75em; }
+    background-position: -814.5em -793.75em; }
   .icon-trader.gateio:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -810.25em -786.875em; }
+    background-position: -818.25em -796.875em; }
   .icon-trader.gemini:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -811.5em -788.125em; }
+    background-position: -819.5em -798.125em; }
   .icon-trader.hitbtc:after {
     width: 1.25em;
     height: 1.16875em;
-    background-position: -814em -790.625em; }
+    background-position: -822em -800.625em; }
   .icon-trader.houbi:after {
     width: 0.8125em;
     height: 1.25em;
-    background-position: -815.25em -791.8125em; }
+    background-position: -823.25em -801.8125em; }
   .icon-trader.indodax:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -818.5625em -794.9375em; }
+    background-position: -826.5625em -804.9375em; }
   .icon-trader.itbit:after {
     width: 0.875em;
     height: 1.25em;
-    background-position: -819.8125em -796.1875em; }
+    background-position: -827.8125em -806.1875em; }
   .icon-trader.korbit:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -820.6875em -797.4375em; }
+    background-position: -828.6875em -807.4375em; }
   .icon-trader.kraken:after {
     width: 1.25em;
     height: 0.98125em;
-    background-position: -821.9375em -798.6875em; }
+    background-position: -829.9375em -808.6875em; }
   .icon-trader.kucoin:after {
     width: 1.15em;
     height: 1.25em;
-    background-position: -823.1875em -799.6875em; }
+    background-position: -831.1875em -809.6875em; }
   .icon-trader.liqui:after {
     width: 1.25em;
     height: 1.16875em;
-    background-position: -825.625em -802.1875em; }
+    background-position: -833.625em -812.1875em; }
   .icon-trader.livecoin:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -826.875em -803.375em; }
+    background-position: -834.875em -813.375em; }
   .icon-trader.localbitcoins:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -828.125em -804.625em; }
+    background-position: -836.125em -814.625em; }
   .icon-trader.poloniex:after {
     width: 1.25em;
     height: 0.875em;
-    background-position: -834.25em -810.3125em; }
+    background-position: -842.25em -820.3125em; }
   .icon-trader.quoine:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -836.75em -812.4375em; }
+    background-position: -844.75em -822.4375em; }
   .icon-trader.upbit:after {
     width: 1.25em;
     height: 0.55625em;
-    background-position: -844.25em -819.125em; }
+    background-position: -852.25em -829.125em; }
   .icon-trader.vaultoro:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -845.5em -819.6875em; }
+    background-position: -853.5em -829.6875em; }
   .icon-trader.yobit:after {
     width: 1.25em;
     height: 0.8125em;
-    background-position: -849.25em -822.625em; }
+    background-position: -857.25em -832.625em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -10613,55 +10623,29 @@ body.menubar-in #user-btn:before {
     justify-content: center;
     height: 32px;
     width: 32px;
-    border-radius: 5px;
+    border-radius: 3px;
     /*background: var(--clr-back);*/
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
-    background: #BFC0C0; }
-    .view-mode__link:hover .sprite-icon .st0 {
-      fill: var(--clr-block); }
-    .view-mode__link:hover .sprite-icon .st1 {
-      fill: #3AB44A; }
-    .view-mode__link:hover .sprite-icon .st2 {
-      fill: #EB2429; }
-    .view-mode__link:hover .sprite-icon .st3 {
-      fill: #F4EB32; }
-    .view-mode__link:hover .sprite-icon .st4 {
-      fill: #26A8E0; }
+    background: var(--clr-block); }
   .view-mode .sprite-icon {
-    width: 18px;
-    height: 20px; }
-    .view-mode .sprite-icon .st0 {
-      fill: white; }
-    .view-mode .sprite-icon .st1 {
-      fill: #3AB44A; }
-    .view-mode .sprite-icon .st2 {
-      fill: #EB2429; }
-    .view-mode .sprite-icon .st3 {
-      fill: #F4EB32; }
-    .view-mode .sprite-icon .st4 {
-      fill: #26A8E0; }
+    width: 27px;
+    height: 25px; }
   @media only screen and (min-width: 1920px) {
     .view-mode__link {
       height: 42px;
       width: 42px; }
     .view-mode .sprite-icon {
-      width: 26px;
-      height: 28px; } }
+      width: 34px;
+      height: 32px; } }
 
 .advanced .view-mode__link {
-  background: var(--clr-backLL); }
-  .advanced .view-mode__link:hover {
-    background: var(--clr-block); }
-    .advanced .view-mode__link:hover .sprite-icon .st0 {
-      fill: var(--clr-important); }
-    .advanced .view-mode__link:hover .sprite-icon .st1 {
-      fill: #3AB44A; }
-    .advanced .view-mode__link:hover .sprite-icon .st2 {
-      fill: #EB2429; }
-    .advanced .view-mode__link:hover .sprite-icon .st3 {
-      fill: #F4EB32; }
-    .advanced .view-mode__link:hover .sprite-icon .st4 {
-      fill: #26A8E0; }
+  background: var(--clr-separator); }
+  .advanced .view-mode__link:hover .sprite-icon {
+    /*.st0{ fill: var(--clr-important); }
+				.st1{ fill: #3AB44A; }
+				.st2{ fill: #EB2429; }
+				.st3{ fill: #F4EB32; }
+				.st4{ fill: #26A8E0; }*/ }
 
 /* Ion.RangeSlider
 // css version 2.0.3
@@ -14613,7 +14597,7 @@ button:-moz-focusring {
   position: absolute;
   left: -9999px;
   pointer-events: none;
-  z-index: 101; }
+  z-index: 3001; }
   .lineForMainChart .circle {
     position: relative;
     width: 14px;
@@ -14684,7 +14668,7 @@ button:-moz-focusring {
   position: absolute;
   left: -9999px;
   pointer-events: none;
-  z-index: 101; }
+  z-index: 3001; }
   .lineForPortfolioChart .circle {
     position: relative;
     width: 11px;
@@ -15072,6 +15056,19 @@ button:-moz-focusring {
     #send-popup .send-form .send-dropdown__hangle svg.sprite-icon {
       width: 16px;
       fill: var(--clr-accentD); }
+  #send-popup .send-form__check {
+    width: 44px;
+    height: 100%;
+    padding: 8px 8px; }
+    #send-popup .send-form__check svg.sprite-icon {
+      width: 16px;
+      fill: var(--clr-accentD);
+      border: 1px solid var(--clr-backBT);
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      padding: 3px;
+      padding-top: 5px; }
   #send-popup .send-form__dropdown__list-title {
     position: relative;
     display: flex;
@@ -15197,23 +15194,24 @@ button:-moz-focusring {
       cursor: pointer;
       text-decoration: none;
       font-size: 16px;
-      font-weight: 300;
       white-space: nowrap;
       transition: all 0.1s;
       justify-content: center;
       border: none;
       line-height: 1;
-      background: transparent;
       border-radius: var(--border-radius);
-      background: #f00;
       background: linear-gradient(to bottom, var(--clr-accent) 0%, var(--clr-accentD) 100%); }
+      #send-popup .send-form__btn.submit.inactive {
+        background: var(--clr-backBT);
+        pointer-events: none; }
+        #send-popup .send-form__btn.submit.inactive:after {
+          background: var(--clr-backBT); }
       #send-popup .send-form__btn.submit:after {
         content: "";
         position: absolute;
         top: 49%;
         right: -6px;
         bottom: 0;
-        background: #000;
         width: 24px;
         height: 24px;
         border-radius: 5px 3px 5px;
@@ -15221,6 +15219,10 @@ button:-moz-focusring {
         background: linear-gradient(135deg, var(--clr-accent), var(--clr-accentD)); }
       #send-popup .send-form__btn.submit:hover {
         opacity: .9; }
+      #send-popup .send-form__btn.submit span {
+        font-weight: 600; }
+      #send-popup .send-form__btn.submit span.in-progress {
+        text-transform: uppercase; }
   #send-popup .send-form__btn-bg {
     position: absolute;
     left: 0;
@@ -15233,6 +15235,22 @@ button:-moz-focusring {
     z-index: -1;
     fill: #009fe3;
     display: none; }
+
+#send-popup .ui-corner-all, #send-popup .ui-corner-bottom, #send-popup .ui-corner-left, #send-popup .ui-corner-bl {
+  border-radius: 0px;
+  height: 1; }
+
+#send-popup .ui-progressbar {
+  width: 100%;
+  height: 8px;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  margin-top: -8px; }
+  #send-popup .ui-progressbar .ui-progressbar-value {
+    background: linear-gradient(to right, var(--clr-block), var(--clr-accent), var(--clr-accentD));
+    border: 0;
+    margin: 0; }
 
 /* =================================================================== */
 /* Content */

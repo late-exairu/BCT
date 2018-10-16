@@ -15,32 +15,16 @@
 		justify-content: center;
 		height: 32px;
 		width: 32px;
-		border-radius: 5px;
+		border-radius: 3px;
 		/*background: var(--clr-back);*/
 		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
-		background: #BFC0C0;
+		background: var(--clr-block);
 
-		&:hover{
-
-			.sprite-icon{
-				.st0{ fill: var(--clr-block); }
-				.st1{ fill: #3AB44A; }
-				.st2{ fill: #EB2429; }
-				.st3{ fill: #F4EB32; }
-				.st4{ fill: #26A8E0; }
-			}
-    	}
 	}
 
 	.sprite-icon{
-		width: 18px;
-		height: 20px;
-
-		.st0{ fill: white; }
-		.st1{ fill: #3AB44A; }
-		.st2{ fill: #EB2429; }
-		.st3{ fill: #F4EB32; }
-		.st4{ fill: #26A8E0; }
+		width: 27px;
+		height: 25px;
 	}
 
 	@media only screen and (min-width : 1920px) {
@@ -51,24 +35,23 @@
 		}
 
 		.sprite-icon{
-			width: 26px;
-			height: 28px;
+			width: 34px;
+			height: 32px;
 		}
 	}
 }
 
 .advanced .view-mode {
 	&__link{
-		background: var(--clr-backLL);
+		background: var(--clr-separator);
 		&:hover {
-			background: var(--clr-block);
 
 			.sprite-icon{
-				.st0{ fill: var(--clr-important); }
+				/*.st0{ fill: var(--clr-important); }
 				.st1{ fill: #3AB44A; }
 				.st2{ fill: #EB2429; }
 				.st3{ fill: #F4EB32; }
-				.st4{ fill: #26A8E0; }
+				.st4{ fill: #26A8E0; }*/
 			}
 		}
 	}
