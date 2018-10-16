@@ -805,8 +805,6 @@ h6 {
         color: var(--clr-icon); }
       .basic-table__row.disabled .icon-curr {
         opacity: 0.25; }
-      .basic-table__row.disabled .smallCurrencyChart {
-        filter: grayscale(100%); }
       .basic-table__row.disabled .smallChartInfo .smaller {
         color: var(--clr-icon); }
     .basic-table__row.head {
