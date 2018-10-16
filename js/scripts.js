@@ -338,7 +338,7 @@ $(function () {
 
 		// first currency
 		if (telegramGroupName) {
-			if ($(this).index() == 1 || $(this).index() == 2) {
+			if ($('#telegramText').hasClass('hidden') && ($(this).index() == 1 || $(this).index() == 2)) {
 				$('.chat-talk').addClass('hidden');
 				$('.chat-talk').eq($(this).index() - 1).removeClass('hidden');
 			}
