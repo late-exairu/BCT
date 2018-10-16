@@ -561,17 +561,6 @@ $('#mainChart .highcharts-series').mouseleave(function () {
 	$('#mainChart').find('.mainTooltip').css("visibility", "visible");
 });
 
-// $(window).resize(function () {
-// 	$('.lineForMainChart').css(
-// 		'left', '-9999px',
-// 	);
-// 	mainChartObj.update({
-// 		chart: {
-// 			marginLeft: 0,
-// 		}
-// 	});
-// });
-
 $(window).resize(
 	throttle(() => {
 		$('.lineForMainChart').css(

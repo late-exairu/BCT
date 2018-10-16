@@ -12,7 +12,7 @@ $(function () {
 			alert("Wrong password. Please ask your manager for a new one")
 		}
 	})
-	function setOwnName() {
+	function setTelegramData() {
 		if (localStorage.getItem('telegramAuth') == 'true' && localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 			if (document.querySelector('.message-bar__login'))
 				document.querySelector('.message-bar__login').classList.add('hidden');
@@ -64,7 +64,7 @@ $(function () {
 		}
 	}
 
-	setOwnName();
+	setTelegramData();
 
 	function getRandomNumber(low, high, isFloat = false) {
 		if (isFloat)
@@ -86,7 +86,6 @@ $(function () {
 		grid_snap: false
 	});
 
-
 	$(window).click(function () {
 		if ($('ul.graph-info__range__list').hasClass('open')) {
 			$('ul.graph-info__range__list').css('border-bottom', '0px');
@@ -96,15 +95,6 @@ $(function () {
 			$('div.graph-info__range__current').css('border', 'solid 1px var(--clr-separatorD)');
 		}
 	});
-
-	/*---------------------------------------------------*/
-	/* redraw Charts after resize */
-	/*---------------------------------------------------*/
-	/* 	function redrawOtherCharts() {
-			if (circleChartObj) circleChartObj.reflow();
-			if (portfolioChartObj) portfolioChartObj.reflow();
-			if (liquidityChartObj) liquidityChartObj.reflow();
-		} */
 
 	/*---------------------------------------------------*/
 	/* js-dropdown */
@@ -132,7 +122,6 @@ $(function () {
 		}else{
 			$('#panel-funds-orders .all').addClass('hidden');
 		}
-
 	});
 
 	$('.main-cols__right-top .exch-dropdown .exch-dropdown__border').click(function name() {
@@ -235,7 +224,6 @@ $(function () {
 		$(".send-popup .send-popup__progressbar").addClass('hidden');
 		$(".send-form__btn span.in-progress, .send-form__btn span.done").toggleClass('hidden');
 		$(".send-form .send-dropdown__hangle, .send-form .send-form__check").toggleClass('hidden');
-		console.log("fdfdf");
 	});
 
 	var currenciesDropDownScrollbar = $('.exch-dropdown__scroll.scrollbar-right');
@@ -355,10 +343,6 @@ $(function () {
 				$('.chat-talk').eq($(this).index() - 1).removeClass('hidden');
 			}
 			$('.chat-head__name').text(telegramGroupName);
-			//$('.chat-head__curr').remove();
-			//$('.chat-head').prepend('<svg class="chat-head__curr clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
-			//$('.exch-form__send .exch-form__coin').remove();
-			//$('.exch-form__send').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.exch-form__send > input').attr('data-currency', currencyAbbr);
 			$('.exch-form__send .exch-form__curr').html(`<p>` + currencyAbbr + `<span><br>YOU HAVE</span></p>`);
 			$('.chat-head__name').css('color', firstColor);
@@ -374,8 +358,6 @@ $(function () {
 		}
 		// second currency
 		else {
-			//$('.exch-form__get .exch-form__coin').remove();
-			//$('.exch-form__get').append('<svg class="exch-form__coin clr-' + realCurrencyName + '" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#curr-' + realCurrencyName + '" > < /use> </svg>');
 			$('.exch-form__get input').attr('data-currency', currencyAbbr);
 			$('.exch-form__get .exch-form__curr').html(`<p>` + currencyAbbr + `<span><br>YOU GET</span></p>`);
 		}
@@ -574,46 +556,12 @@ $(function () {
 	});
 
 	/*---------------------------------------------------*/
-	/* BASIC account-js-menu */
-	/*---------------------------------------------------*/
-
-
-	// $('.user-portfolio .user-menu .user-menu__item').on('click', function () {
-	// 	// turn off last one
-	// 	if ($(this).index() != 3) {
-	// 		$('.user-portfolio .user-menu .user-menu__item').removeClass('current');
-	// 		$(this).addClass('current');
-	// 		$('.js-tabs-panel').removeClass('active');
-	// 		$('.js-tabs-panel').eq($(this).index()).addClass('active');
-	// 	}
-
-	// 	// Wallet
-	// 	if ($(this).index() == 0) {
-	// 		liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
-	// 		drawCircleChart();
-	// 	}
-
-	// 	// Portfolio tab
-	// 	if ($(this).index() == 1) {
-	// 		if (!portfolioChartObj)
-	// 			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
-	// 	}
-	// });
-
-	/*---------------------------------------------------*/
 	/* ADVANCED account-js-menu */
 	/*---------------------------------------------------*/
 
 	$('.advanced .accounts-diagram-wrap').click(function () {
 		$('.main-cols__right-bottom .portfolio-menu__item').eq(2).trigger('click');
 	});
-
-	// $('.portfolio-back').click(function () {
-	// 	$('.js-tabs-panel').removeClass('active');
-	// 	$('#panel-funds-wallet').addClass('active');
-	// 	$('.advanced .js-account-stats .portfolio-nav').removeClass('hidden');
-	// 	drawCircleChart();
-	// });
 
 	$('.advanced .js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function (event) {
 		event.stopPropagation();
@@ -640,7 +588,6 @@ $(function () {
 			if (!portfolioChartObj)
 			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 		}
-
 	});
 
 
@@ -674,22 +621,21 @@ $(function () {
 	/* functions for change theme */
 	/*---------------------------------------------------*/
 
-	$('#switch-theme').change(function () {
-		var darkTheme = $('#switch-theme:checked').length;
-		if (darkTheme) {
-			$('body').addClass('dark-theme');
-		} else {
-			$('body').removeClass('dark-theme');
-		}
-		changeTheme();
-	});
+	// $('#switch-theme').change(function () {
+	// 	var darkTheme = $('#switch-theme:checked').length;
+	// 	if (darkTheme) {
+	// 		$('body').addClass('dark-theme');
+	// 	} else {
+	// 		$('body').removeClass('dark-theme');
+	// 	}
+	// 	changeTheme();
+	// });
 
 	function changeTheme() {
 		if ($('body').hasClass('dark-theme')) {
 			var backColor = '#18202d';
 			var gridColor = '#24425b';
 			var labelColor = '#9BA6B2';
-			//var lineColor = '#4F6C82';
 			var lineColor = '#344756';
 		} else {
 			var backColor = '#ffffff';
@@ -713,14 +659,6 @@ $(function () {
 			xAxis: [{
 				gridLineColor: gridColor,
 				lineColor: gridColor,
-				/* 				crosshair: {
-				 					label: {
-										backgroundColor: backColor,
-										style: {
-											color: fontColor
-										}
-									}
-								}, */
 				labels: {
 					style: {
 						color: labelColor
@@ -732,12 +670,8 @@ $(function () {
 			}
 		};
 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartOptions);
-		/* 		changeChartStylesOptions(stylesForPortfolioChart, portfolioChartBTCOptions);
-				changeChartStylesOptions(stylesForPortfolioChart, portfolioChartETHOptions); */
 
 		if (portfolioChartObj) portfolioChartObj.update(stylesForPortfolioChart);
-		/* 		if (portfolioChartBTCObj) portfolioChartBTCObj.update(stylesForPortfolioChart);
-				if (portfolioChartETHObj) portfolioChartETHObj.update(stylesForPortfolioChart); */
 
 		// liquidityChart
 		var stylesForLiquidityChart = {
@@ -747,14 +681,6 @@ $(function () {
 			xAxis: {
 				gridLineColor: gridColor,
 				lineColor: gridColor,
-				/* 				crosshair: {
-									label: {
-										backgroundColor: backColor,
-										style: {
-											color: fontColor
-										}
-									}
-								}, */
 				labels: {
 					style: {
 						color: labelColor
@@ -862,18 +788,6 @@ $(function () {
 			$('#orders .forms-wrap .order-form__input.price').val(price);
 		}
 
-		// select value in exch-dropdown
-		// if ($(this).parents('#panel-funds-wallet').length) {
-		// 	var icon = $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href');
-		// 	$('.exch-head__send .exch-dropdown__list .exch-dropdown__item').each(function () {
-		// 		if (icon == $(this).find('svg').eq(0)[0].children[0].getAttribute('xlink:href')) {
-		// 			$(this).trigger('click');
-		// 			$('.exch-dropdown').removeClass('open');
-		// 			return false;
-		// 		}
-		// 	});
-		// }
-
 		if ($(this).parents('#panel-funds-history').length) {
 			$('.graph-prices').addClass('open');
 			$('#mainChart').css('width', 'calc(100%)');
@@ -914,7 +828,7 @@ $(function () {
 				if (rand == 0) rand = "0.00";
 				progressbar_labels[i].text(rand + ' ' + secondCurrency);
 			}
-			// end show exnchanges
+			// end show exchanges
 		}
 
 	});
@@ -933,31 +847,6 @@ $(function () {
 		$('.chat-head__name').text(chatName);
 		$('.chat-talk').toggleClass('hidden');
 		closeTelegramMenu();
-	});
-
-	/*
-	// show wallet of another user
-	$('.chats-list__item .chats-list__name a').click(function (event) {
-		event.preventDefault();
-		event.stopPropagation();
-		$('.user-portfolio-close').removeClass('hidden');
-		var newWallet = $(this).attr('href');
-		currentWallet = wallets[newWallet];
-		updateWalletData();
-		drawCircleChart();
-		var userPortfolioName = $(this).closest('.chats-list__item').find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
-		var userPortfolioImage = $(this).closest('.chats-list__item').find('.chats-list__avatar-wrap img').attr('src');
-		$('.user-portfolio__name').text(userPortfolioName);
-		$('.user-portfolio .user-pic__avatar').attr('src', userPortfolioImage).removeClass('hidden');
-		$('div.user-pic__avatar').remove();
-	}); */
-
-	$('.user-portfolio-close').click(function () {
-		$(this).addClass('hidden');
-		setOwnName();
-		currentWallet = ownWallet;
-		updateWalletData();
-		drawCircleChart();
 	});
 
 	/*---------------------------------------------------*/
@@ -1149,82 +1038,73 @@ $(function () {
 	}
 
 
-	function updateMainChartSplineNew(exchange, sendCurrency, getCurrency) {
-		$.ajax({
-			url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
-			success: function (data) {
-				var grapArr = [];
-				var columnArr = [];
-				var fakeGraphs = [[], [], [], [], [], []];
+	// function updateMainChartSplineNew(exchange, sendCurrency, getCurrency) {
+	// 	$.ajax({
+	// 		url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
+	// 		success: function (data) {
+	// 			var grapArr = [];
+	// 			var columnArr = [];
+	// 			var fakeGraphs = [[], [], [], [], [], []];
 
-				// // get data for every day
-				// data.Data.map(s => {
-				// 	var value = (s.open + s.close) / 2;
-				// 	grapArr.push(value);
-				// });
+	// 			// create data for every hour
+	// 			data.Data.map(s => {
+	// 				var value = (s.open + s.close) / 2;
 
-				// create data for every hour
-				data.Data.map(s => {
-					var value = (s.open + s.close) / 2;
+	// 				var tempVarForFakeArrays = [0,0,0,0,0,0];
 
-					var tempVarForFakeArrays = [0,0,0,0,0,0];
+	// 				for (var k = 0; k < 6; k++) {
+	// 					var randomPercent8 = (Math.random() * (0.92 - 1.08) + 1.08);
+	// 					var valueForFake = value * randomPercent8;
+	// 					tempVarForFakeArrays[k] = valueForFake;
+	// 				}
 
-					for (var k = 0; k < 6; k++) {
-						var randomPercent8 = (Math.random() * (0.92 - 1.08) + 1.08);
-						var valueForFake = value * randomPercent8;
-						tempVarForFakeArrays[k] = valueForFake;
-					}
+	// 				for (var i = 0; i < 24; i++) {
+	// 					var randomPercent3 = (Math.random() * (0.97 - 1.03) + 1.03);
+	// 					var valueForAdd = value * randomPercent3;
+	// 					var previuosValue = grapArr[grapArr.length - 1];
+	// 					if (!previuosValue) {
+	// 						previuosValue = valueForAdd + (valueForAdd * randomPercent3);
+	// 					}
+	// 					var difference = valueForAdd - previuosValue;
+	// 					grapArr.push(valueForAdd);
+	// 					columnArr.push(difference);
 
-					for (var i = 0; i < 24; i++) {
-						var randomPercent3 = (Math.random() * (0.97 - 1.03) + 1.03);
-						var valueForAdd = value * randomPercent3;
-						var previuosValue = grapArr[grapArr.length - 1];
-						if (!previuosValue) {
-							previuosValue = valueForAdd + (valueForAdd * randomPercent3);
-						}
-						var difference = valueForAdd - previuosValue;
-						grapArr.push(valueForAdd);
-						columnArr.push(difference);
+	// 					for (var l = 0; l < 6; l++) {
+	// 						randomPercent3 = (Math.random() * (0.97 - 1.03) + 1.03);
+	// 						var valueForAddFake = tempVarForFakeArrays[l] * randomPercent3;
+	// 						fakeGraphs[l].push(valueForAddFake);
+	// 					}
+	// 				}
+	// 			});
 
-						for (var l = 0; l < 6; l++) {
-							randomPercent3 = (Math.random() * (0.97 - 1.03) + 1.03);
-							var valueForAddFake = tempVarForFakeArrays[l] * randomPercent3;
-							fakeGraphs[l].push(valueForAddFake);
-						}
-					}
-				});
+	// 			if (!grapArr.length) {
+	// 				for (let i = 0; i < 366; i++) {
+	// 					grapArr.push(1);
+	// 				};
+	// 			};
+	// 			mainChartObj.series[0].setData(grapArr);
 
-				if (!grapArr.length) {
-					for (let i = 0; i < 366; i++) {
-						grapArr.push(1);
-					};
-				};
-				//console.log(grapArr);
-				mainChartObj.series[0].setData(grapArr);
+	// 			for (var k = 0; k < 6; k++) {
+	// 				mainChartObj.series[k+1].setData(fakeGraphs[k]);
+	// 			}
 
-				for (var k = 0; k < 6; k++) {
-					mainChartObj.series[k+1].setData(fakeGraphs[k]);
-				}
-
-				if ($('body').hasClass('advanced'))
-					mainChartObj.series[7].setData(columnArr);
-				mainChartObj.series[mainGraphHighlighted - 1].update({
-					fillColor: {
-						linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-						stops: gradientColor
-					},
-					color: mainChartFirstColor,
-					lineWidth: 3,
-					enableMouseTracking: true,
-					trackByArea: true,
-					zIndex: 10
-				});
-				updateMainChartPercentChange();
-			},
-		});
-
-
-	}
+	// 			if ($('body').hasClass('advanced'))
+	// 				mainChartObj.series[7].setData(columnArr);
+	// 			mainChartObj.series[mainGraphHighlighted - 1].update({
+	// 				fillColor: {
+	// 					linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
+	// 					stops: gradientColor
+	// 				},
+	// 				color: mainChartFirstColor,
+	// 				lineWidth: 3,
+	// 				enableMouseTracking: true,
+	// 				trackByArea: true,
+	// 				zIndex: 10
+	// 			});
+	// 			updateMainChartPercentChange();
+	// 		},
+	// 	});
+	// }
 
 	function updateMainChartPercentChange() {
 		//var range = $('.graph-range-slider__current').text().trim();
@@ -2372,8 +2252,6 @@ $(function () {
 		liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
 
 		var rowForMove = null;
-		var min = 500,
-			max = 1000;
 
 		function updateGlobalOrderHighestTable() {
 			rowForMove = $('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row').first().remove();
