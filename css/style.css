@@ -13322,10 +13322,13 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .exch-form.completed .exch-form__btn-bg {
     fill: var(--clr-textLL); }
   .exch-form .range-slider {
-    margin-top: -15px;
+    margin-top: 16px;
     z-index: 1;
-    width: calc(100% - 70px);
-    padding: 0 8px; }
+    right: 3px;
+    width: calc(100% - 250px);
+    min-width: 150px;
+    padding: 0 8px;
+    position: absolute; }
 
 .chat-search {
   padding: 8px 10px 8px 12px;
