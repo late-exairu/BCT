@@ -177,6 +177,7 @@ function initSmallCharts() {
 function updateSmallCharts() {
     var chartRange = $('.graph-info__range__current').text();
     var ajaxUrl = '';
+    var api_calls = 0
     var counter = 0;
     for (const key in allCurrenciesWallet) {
         if (counter < 4) {
@@ -251,11 +252,25 @@ function updateSmallCharts() {
                     });
 
                     $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
+                    api_calls ++;
+                    if (api_calls == 4) $('.graph-info__range__current').trigger('responsed');
                 },
             });
         }
         // create copy of existing small charts
-        else {
+        // else {
+        //     var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
+        //     var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo > div').clone();
+        //     $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallCurrencyChart').html(copyOfChart);
+        //     $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').html(copyOfInfo);
+        // }
+        counter++;
+    }
+}
+$('.graph-info__range__current').on('responsed', () => {
+    var counter = 0;
+    for (const key in allCurrenciesWallet) {
+        if (counter >= 4) {
             var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
             var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo > div').clone();
             $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallCurrencyChart').html(copyOfChart);
@@ -263,7 +278,7 @@ function updateSmallCharts() {
         }
         counter++;
     }
-}
+});
 
 function updateRecent() {
     for (const key in currentWallet) {
