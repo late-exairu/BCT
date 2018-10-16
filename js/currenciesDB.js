@@ -112,6 +112,10 @@ var totalBalance;
 ownWallet = wallets['ownWallet'];
 currentWallet = wallets['ownWallet'];
 allCurrenciesWallet = wallets['allCurrencies'];
+
+var smallChartObjs = new Object();
+
+initSmallCharts();
 updateWalletData(true);
 
 function updateWalletData(redrawSmallCharts) {
@@ -157,6 +161,19 @@ function updateWalletData(redrawSmallCharts) {
 
 }
 
+function initSmallCharts() {
+    var counter = 0;
+    for (const key in allCurrenciesWallet) {
+        if (counter < 4) {
+            if ($('#smallChart' + key).length) {
+                var smallChartObj = Highcharts.chart('smallChart' + key, smallCurrencyChartOptions);
+                smallChartObjs[key] = smallChartObj;
+            }
+        }
+        counter++;
+    }
+}
+
 function updateSmallCharts() {
     var chartRange = $('.graph-info__range__current').text();
     var ajaxUrl = '';
@@ -164,30 +181,26 @@ function updateSmallCharts() {
     for (const key in allCurrenciesWallet) {
         if (counter < 4) {
             switch (chartRange) {
-                case '1H':
-                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=60';
-                    break;
                 case '2H':
-                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=120';
-                    break;
-                case '6H':
-                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=360';
+                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&aggregate=3&limit=40';
                     break;
                 case '1D':
-                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&aggregate=10&limit=144';
+                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&aggregate=36&limit=40';
                     break;
                 case '1W':
-                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histohour?fsym=' + key + '&tsym=USD&limit=168';
+                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histohour?fsym=' + key + '&tsym=USD&aggregate=4&limit=42';
                     break;
                 case '1M':
-                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histohour?fsym=' + key + '&tsym=USD&aggregate=5&limit=149';
+                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histohour?fsym=' + key + '&tsym=USD&aggregate=19&limit=39';
                     break;
                 case '1Y':
-                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&aggregate=3&limit=122';
+                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histoday?fsym=' + key + '&tsym=USD&aggregate=9&limit=41';
                     break;
                 default:
                     break;
             }
+            if (!smallChartObjs[key]) return false;
+
             // draw small Chart 
             $.ajax({
                 url: ajaxUrl,
@@ -223,13 +236,20 @@ function updateSmallCharts() {
                         lineColor = '#CE2424';
                     }
 
-                    var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
-                    cloneOptions.series[0].data = graphArr;
-                    cloneOptions.series[0].color = lineColor;
-                    cloneOptions.yAxis.min = min;
-                    cloneOptions.yAxis.max = max;
-                    if ($('#smallChart' + key).length)
-                        Highcharts.chart('smallChart' + key, cloneOptions);
+                    // var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
+                    // cloneOptions.series[0].data = graphArr;
+                    // cloneOptions.series[0].color = lineColor;
+                    // cloneOptions.yAxis.min = min;
+                    // cloneOptions.yAxis.max = max;
+                    // if ($('#smallChart' + key).length)
+                    //     Highcharts.chart('smallChart' + key, cloneOptions);
+
+                    smallChartObjs[key].yAxis[0].setExtremes(min, max);
+                    smallChartObjs[key].series[0].setData(graphArr);
+                    smallChartObjs[key].series[0].update({
+                        color: lineColor
+                    });
+
                     $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
                 },
             });

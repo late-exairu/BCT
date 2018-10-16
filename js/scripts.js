@@ -2798,9 +2798,7 @@ $(function () {
 		}
 
 		updateMainChartPercentChange();
-		setTimeout(() => {
-			updateWalletData(true);
-		}, 200);
+		updateWalletData(true);
 	});
 
 	// var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
