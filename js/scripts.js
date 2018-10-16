@@ -233,7 +233,7 @@ $(function () {
 	$(".send-popup .send-popup__progressbar").on('completed', () => {
 		$(".send-popup .send-popup__progressbar").progressbar("value", 0);
 		$(".send-popup .send-popup__progressbar").addClass('hidden');
-		$(".send-form__btn span.in-progres, .send-form__btn span.done").toggleClass('hidden');
+		$(".send-form__btn span.in-progress, .send-form__btn span.done").toggleClass('hidden');
 		$(".send-form .send-dropdown__hangle, .send-form .send-form__check").toggleClass('hidden');
 		console.log("fdfdf");
 	});
@@ -1759,6 +1759,8 @@ $(function () {
 
 				$(current_item_input).insertBefore(currSendForm.eq(1).find('input.send-form__input'));
 				currSendForm.eq(1).find('input.send-form__input').val(coin_amount);
+				$('#send-popup .send-form__btn span.in-progress').html('SEND ' + coin_currencyFullName);
+				$('#send-popup .send-form__btn span.done').html('Your ' + coin_currencyName + ' was sent');
 			}
 		});
 
@@ -1791,13 +1793,15 @@ $(function () {
 			newCurr.insertBefore($(currSendForm).eq(0).find('div.send-dropdown__hangle'));
 			$(current_item_input).insertBefore($(currSendForm).eq(1).find('input.send-form__input'));
 			currSendForm.eq(1).find('input.send-form__input').val(coin_amount);
+			$('#send-popup .send-form__btn span.in-progress').html('SEND ' + currencyFullName);
+			$('#send-popup .send-form__btn span.done').html('Your ' + currencyName + ' was sent');
 
 			$('.send-form__line.inline, .send-form__dropdown__list').toggleClass('hidden');
 		});
 
 		$(".send-popup .send-popup__progressbar").progressbar("value", 0);
 		$('.send-form__btn').removeClass('inactive');
-		$(".send-form__btn span.in-progres").removeClass('hidden');
+		$(".send-form__btn span.in-progress").removeClass('hidden');
 		$(".send-form__btn span.done").addClass('hidden');
 		$(".send-form__btn .send-dropdown__hangle").removeClass('hidden');
 		$(".send-form__btn .send-form__check").addClass('hidden');

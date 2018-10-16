@@ -15241,6 +15241,8 @@ button:-moz-focusring {
         opacity: .9; }
       #send-popup .send-form__btn.submit span {
         font-weight: 600; }
+      #send-popup .send-form__btn.submit span.in-progress {
+        text-transform: uppercase; }
   #send-popup .send-form__btn-bg {
     position: absolute;
     left: 0;
