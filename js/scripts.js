@@ -1658,6 +1658,8 @@ $(function () {
 			secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '')
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
+			var firstValueResult = 0;
+			var secondValueResult = 0;
 
 			graphPricesScrollbar.animate({
 				scrollTop: 0
