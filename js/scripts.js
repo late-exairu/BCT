@@ -1658,6 +1658,8 @@ $(function () {
 			secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '')
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
+			var firstValueResult = 0;
+			var secondValueResult = 0;
 
 			var firstValueResult = 0;
 			var secondValueResult = 0;
@@ -2676,7 +2678,7 @@ $(function () {
 		$('.graph-prices__sort').removeClass('asc');
 		$('.graph-prices__sort').removeClass('desc');
 
-		$('.graph-prices__sort').html('1' + getCurrency + ' = ');
+		$('.graph-prices__sort').html('1' + getCurrency + ' ≈ ');
 	}
 
 	/** Init price list */
@@ -2755,11 +2757,17 @@ $(function () {
 	$('#telegramOverlay').click(closeTelegramMenu);
 
 	function closeTelegramMenu() {
-		$('#telegramOverlay, #telegramMenu').removeClass('open');		
+		$('#telegramOverlay, #telegramMenu, #telegramSetting').removeClass('open');		
 	}
 
 	$('.chat-head__back').click(function () {
 		$('#telegramOverlay, #telegramMenu').addClass('open');		
 	});
+
+	$('.chat-head__btn').click(function () {
+		$('#telegramOverlay, #telegramSetting').addClass('open');
+	});
+	$('.toggle').minitoggle();
+
 
 });

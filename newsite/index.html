@@ -23,7 +23,6 @@
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -817,6 +816,46 @@
 					</div><!-- d-flex END -->
 				</div>
 			</div><!-- main-cols__left-top END -->
+
+			<div id="telegramSetting">
+				<div class="c-block__col">
+					<div class="settings-head c-block__section">
+						<button class="chat-head__btn">
+							<svg class="sprite-icon menu-burger" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#menu-burger"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="settings-list c-block__section scroll-y scrollbar-right outer">
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div><!-- main-cols__left END -->
 
 		<div class="main-cols__right">
@@ -971,11 +1010,11 @@
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
 								</svg><p class="exch-dropdown__title"><span>BTC</span><br/> You have</p>
 
-								<input class="exch-form__input" type="text" placeholder="0.00" name="" value="1.00" data-currency="BTC">
-								<label class="exch-form__percent">13%</label>
-								<!-- <div class="range-slider">
+								<input class="exch-form__input" type="text" placeholder="0.00" name="" value="1.00" data-currency="USDT">
+								<!-- <label class="exch-form__percent">13%</label> -->
+								<div class="range-slider">
 									<input type="range" class="exch-form-slider__control" value="5" min="0" max="5" step="1" name="example_name"/>
-								</div> -->
+								</div>
 								<!-- <div class="exch-form__curr"><p>USDT<span><br>YOU HAVE</span></p></div> -->
 								
 								<!-- <svg class="exch-form__coin clr-coin-btc" role="img" aria-hidden="true">
@@ -1126,7 +1165,7 @@
 
 						<div class="graph-prices__sort__btn">
 							<button class="graph-prices__sort">
-								1BTC = 
+								1BTC ≈ 
 								<!-- <svg class="sprite-icon sort-none" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#sort-none"></use>
 								</svg>
@@ -3380,6 +3419,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <script src="js/libs/jquery.mousewheel.min.js"></script>
+<script src="js/libs/minitoggle.js"></script>
 <script src="js/libs/rangeSlider.js"></script>
 <script src="js/libs/placeholderPlugin.js"></script>
 <script src="js/libs/highstock.js"></script>
