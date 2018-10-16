@@ -2673,7 +2673,7 @@ $(function () {
 		$('.graph-prices__sort').removeClass('asc');
 		$('.graph-prices__sort').removeClass('desc');
 
-		$('.graph-prices__sort').html('1' + getCurrency + ' = ');
+		$('.graph-prices__sort').html('1' + getCurrency + ' ≈ ');
 	}
 
 	/** Init price list */
