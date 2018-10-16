@@ -3059,11 +3059,17 @@ $(function () {
 	$('#telegramOverlay').click(closeTelegramMenu);
 
 	function closeTelegramMenu() {
-		$('#telegramOverlay, #telegramMenu').removeClass('open');		
+		$('#telegramOverlay, #telegramMenu, #telegramSetting').removeClass('open');		
 	}
 
 	$('.chat-head__back').click(function () {
 		$('#telegramOverlay, #telegramMenu').addClass('open');		
 	});
+
+	$('.chat-head__btn').click(function () {
+		$('#telegramOverlay, #telegramSetting').addClass('open');
+	});
+	$('.toggle').minitoggle();
+
 
 });

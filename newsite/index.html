@@ -23,7 +23,6 @@
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -77,7 +76,7 @@
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="c-block__col">
 							<div class="c-block__section chat-head">
-								<button class="chat-head__back">
+								<button class="chat-head__back hidden">
 									<svg class="sprite-icon" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-back-3"></use>
 									</svg>
@@ -135,7 +134,7 @@
 									your progress pls log in to <br>
 									Telegram
 								</div>
-								<div class="chat-talk hidden">
+								<div class="chat-talk">
 									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar01.png"/>
@@ -819,6 +818,46 @@
 					</div><!-- d-flex END -->
 				</div>
 			</div><!-- main-cols__left-top END -->
+
+			<div id="telegramSetting">
+				<div class="c-block__col">
+					<div class="settings-head c-block__section">
+						<button class="chat-head__btn">
+							<svg class="sprite-icon menu-burger" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#menu-burger"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="settings-list c-block__section scroll-y scrollbar-right outer">
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div><!-- main-cols__left END -->
 
 		<div class="main-cols__right">
@@ -3326,6 +3365,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <script src="js/libs/jquery.mousewheel.min.js"></script>
+<script src="js/libs/minitoggle.js"></script>
 <script src="js/libs/rangeSlider.js"></script>
 <script src="js/libs/placeholderPlugin.js"></script>
 <script src="js/libs/highstock.js"></script>
