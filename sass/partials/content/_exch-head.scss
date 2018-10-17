@@ -31,7 +31,7 @@
 		flex: 1 1;
 		padding: 0;
 		height: 55px;
-		background: var(--color-one);
+		/*background: var(--color-one);*/
 		padding: 0;
 	}
 
@@ -132,7 +132,7 @@
 		border-radius: var(--border-radius);
 		/*overflow: hidden;*/
 		/*background: url(../img/exch-bg.svg) no-repeat;*/
-		background: #f00;
+		/*background: #f00;*/
 		background: linear-gradient(to bottom, var(--clr-accent) 0%, var(--clr-accentD) 100%);
 
 		&:after{

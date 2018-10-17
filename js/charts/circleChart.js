@@ -81,7 +81,13 @@ function drawCircleChart(e,noAnimation) {
                 },
                 states: {
                     hover: {
-                        enabled: false
+                       // enabled: false
+                    }
+                },
+                events: {
+                    click: function (event) {
+                        var currencyName  = event.point.name;
+                        $('.exch-head__send .exch-dropdown__item[data-name="'+currencyName+'"]').eq(0).trigger('click');
                     }
                 }
             }

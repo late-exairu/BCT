@@ -48,6 +48,10 @@ $(function () {
 					document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
 				}
 			}
+			if (document.querySelector('.message-bar')) {
+				document.querySelector('.message-bar').classList.add('hidden');				
+			}
+
 
 			// if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
 			// 	document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
@@ -57,6 +61,7 @@ $(function () {
 			} else {
 				$('button[title="USERNAME"]').attr('title', '');
 			}
+
 		} else {
 			localStorage.removeItem('telegramAuth');
 			localStorage.removeItem('telegramFirstName');
@@ -86,7 +91,22 @@ $(function () {
 		grid_snap: false
 	});
 
-	$(window).click(function () {
+	$(window).click(function (e) {
+		var eTarget = e.target;
+		if (!$(eTarget).parents('#panel-funds-history').length) {
+			// basic
+			if (!$('body').hasClass('advanced')) {
+				$('.js-tabs-panel').removeClass('active');
+				$('#panel-funds-wallet').addClass('active');
+				drawCircleChart();
+			}
+			//advanced
+			else {
+				$('#tab-funds-wallet').trigger('click');
+				$('.menu-dropdown').removeClass('open');
+			}
+		}
+
 		if ($('ul.graph-info__range__list').hasClass('open')) {
 			$('ul.graph-info__range__list').css('border-bottom', '0px');
 			$('div.graph-info__range').css('border', '0px');
@@ -158,6 +178,7 @@ $(function () {
 	});
 
 	$('.exch-search__input').keyup(function () {
+		var counter = 0;
 		var searchString = $(this).val().toUpperCase();
 		if (searchString.trim() != '') {
 			$(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__list-title').addClass('hidden');
@@ -176,14 +197,20 @@ $(function () {
 				}
 				// if contain
 				else {
+					counter++;
 					var searchStringGlobal = new RegExp(searchString, "g");
 					// add span tags for highlight
 					var newTextValue = $(item).find('.exch-dropdown__title').text().toUpperCase().replace(searchStringGlobal, '<span>' + searchString + '</span>')
 					$(item).find('.exch-dropdown__title').html(newTextValue);
 				}
 			}
-
 		});
+		if (counter < 9 && searchString.trim() != '') {
+			$(this).closest('.exch-dropdown').find('.exch-dropdown__list').css('height','auto');
+		}
+		else{
+			$(this).closest('.exch-dropdown').find('.exch-dropdown__list').css('height', '400px');
+		}
 
 	});
 
@@ -338,7 +365,7 @@ $(function () {
 
 		// first currency
 		if (telegramGroupName) {
-			if ($(this).index() == 1 || $(this).index() == 2) {
+			if ($('#telegramText').hasClass('hidden') && ($(this).index() == 1 || $(this).index() == 2)) {
 				$('.chat-talk').addClass('hidden');
 				$('.chat-talk').eq($(this).index() - 1).removeClass('hidden');
 			}
@@ -429,7 +456,7 @@ $(function () {
 	/*---------------------------------------------------*/
 	$('.scrollbar-right').scrollbar();
 
-	$('.scrollbar-arrows').scrollbar({
+	$('.graph-prices  .scrollbar-right').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",
 		"showArrows": true,
@@ -461,7 +488,7 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* Scroll up/down event for graph prices */
 	/*---------------------------------------------------*/
-	var graphPricesScrollbar = $('.graph-prices__scroll.scrollbar-arrows');
+	var graphPricesScrollbar = $('.graph-prices .scroll-wrapper > .scroll-content');
 	$(".graph-prices__scrollup__btn").on("click", function () {
 		graphPricesScrollbar.animate({
 			scrollTop: '-=200'
@@ -842,51 +869,19 @@ $(function () {
 	// });
 
 	$('.chats-list__item').click(function () {
-		//var chatName = $(this).find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
 		var chatName = $(this).find('.chats-list__name').text();
 		$('.chat-head__name').text(chatName);
 		$('.chat-talk').toggleClass('hidden');
 		closeTelegramMenu();
+
+		// check show or hide input
+		if ($(this).find('.chats-list__send').length){
+			$('.message-bar').removeClass('hidden');
+		}
+		else{
+			$('.message-bar').addClass('hidden');
+		}
 	});
-
-	/*---------------------------------------------------*/
-	/* change range on Portfolio Chart */
-	/*---------------------------------------------------*/
-
-	/* 	$('.portfolio-period .portfolio-period__item').click(function () {
-			$('.portfolio-period .portfolio-period__item').removeClass('current');
-			$(this).addClass('current');
-			portfolioChartCurrentRange = $(this).index();
-			portfolioChartObj.rangeSelector.clickButton(portfolioChartCurrentRange, {}, true);
-
-			portfolioChartBTCCurrentRange = $(this).index();
-			portfolioChartBTCObj.rangeSelector.clickButton(portfolioChartBTCCurrentRange, {}, true);
-
-			portfolioChartETHCurrentRange = $(this).index();
-			portfolioChartETHObj.rangeSelector.clickButton(portfolioChartETHCurrentRange, {}, true);
-
-			updatePortfolioStats();
-		});
-
-		function updatePortfolioStats(currencyChange) {
-			var currentSlide = $('.portfolioChartParent').slick('slickCurrentSlide');
-			var currentPeriod = $('.portfolio-period .portfolio-period__item.current').index();
-			if (currencyChange) {
-				if (currentSlide == 0) {
-					$('.portfolio-stats__amount-tip').text('Portfolio value');
-					circleChartSmallObj = Highcharts.chart('circleChartSmall', circleChartSmallOptions);
-				} else if (currentSlide == 1) {
-					$('.portfolio-stats__amount-tip').text('Bitcoin');
-					$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-coin-btc" style="display: block;" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#coin-btc" > < /use> </svg>');
-				} else if (currentSlide == 2) {
-					$('.portfolio-stats__amount-tip').text('Ethereum');
-					$('.portfolio-stats__currency').html('').append('<svg class="chat-head__curr clr-coin-eth" style="display: block;" role="img" aria-hidden="true"> <use xmlns: xlink = "http://www.w3.org/1999/xlink"xlink: href = "img/sprite-inline.svg#coin-eth" > < /use> </svg>');
-				}
-			}
-			$('.portfolio-stats__dinamic').text(portfolioChartArrChanges[currentSlide][currentPeriod][0]);
-			$('.portfolio-stats__amount-value').text(portfolioChartArrChanges[currentSlide][currentPeriod][1]);
-			$('.portfolio-stats__amount-cent').text(portfolioChartArrChanges[currentSlide][currentPeriod][2]);
-		} */
 
 	/*---------------------------------------------------*/
 	/* Graph prices list */
@@ -929,7 +924,7 @@ $(function () {
 						gDataTwoHour = [];
 						gData = gDataTwoHour;
 						range_index = 0;
-						if (current_range == '2H') isRedraw = true;
+						if (current_range == '1H') isRedraw = true;
 						console.log('gDataTwoHour');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
@@ -1107,32 +1102,8 @@ $(function () {
 	// }
 
 	function updateMainChartPercentChange() {
-		//var range = $('.graph-range-slider__current').text().trim();
-		var start, end;
-		// switch (range) {
-		// 	case '1h':
-		// 		start = mainChartObj.series[0].data[365];
-		// 		break;
-		// 	case '1d':
-		// 		start = mainChartObj.series[0].data[364];
-		// 		break;
-		// 	case '1w':
-		// 		start = mainChartObj.series[0].data[358];
-		// 		break;
-		// 	case '1m':
-		// 		start = mainChartObj.series[0].data[334];
-		// 		break;
-		// 	case 'All':
-		// 		start = mainChartObj.series[0].data[0];
-		// 		break;
-		// 	default:
-		// 		break;
-		// }
-		start = mainChartObj.series[0].processedYData[0];
-		end = mainChartObj.series[0].processedYData[mainChartObj.series[0].processedYData.length - 1];
-
-		//	console.log(mainChartObj.series[0].processedYData);
-		//	console.log(start,end);
+		var start = mainChartObj.series[0].processedYData[0];
+		var end = mainChartObj.series[0].processedYData[mainChartObj.series[0].processedYData.length - 1];
 
 		var changeInPercent = (-1 + (end / start)) * 100;
 		// green color
@@ -1173,13 +1144,12 @@ $(function () {
 			return false;
 		}
 
-
 		mainGraphHighlighted = currentDataId;
 
 		var gData;
 		var current_range = $('.graph-info__range__current').html();
 		switch (current_range) {
-			case '2H':
+			case '1H':
 				gData = gDataTwoHour;
 				break;
 			case '1D':
@@ -1222,49 +1192,6 @@ $(function () {
 			mainChartObj.series[7].setData(gData[currentDataId - 1].diffs);
 		}
 	}
-
-	/* 	$('.graph-prices .graph-prices__list .graph-prices__item').hover(function () {
-			var currentDataId = $(this).attr('data-id');
-			mainChartObj.series.map(function (item, index) {
-				if (item.type == 'areaspline') {
-					if (item.options.lineWidth > 1) {
-						item.update({
-							lineWidth: 1,
-							color: mainChartSecondColor
-						});
-					}
-					if (item.options.id == currentDataId) {
-						item.update({
-							lineWidth: 3,
-							color: mainChartFirstColor
-						});
-					}
-				}
-			});
-		}); */
-
-	/* 	$('.graph-prices__list').mouseleave(function () {
-			mainChartObj.series.map(function (item, index) {
-				if (item.type == 'areaspline') {
-					item.update({
-						lineWidth: 1,
-						color: mainChartSecondColor,
-						enableMouseTracking: false,
-						zIndex: 1
-					});
-					if (item.options.id == mainGraphHighlighted) {
-						item.update({
-							lineWidth: 3,
-							color: mainChartFirstColor,
-							enableMouseTracking: true,
-							trackByArea: true,
-							zIndex: 10
-						});
-					}
-				}
-			});
-		}); */
-
 
 	/*---------------------------------------------------*/
 	/* Graph prices select */
@@ -1385,7 +1312,7 @@ $(function () {
 		if (val >= 10) {
 			progressbar_current_label.css('visibility', 'visible');
 		}
-		$('.exch-form__progress__value').html(parseInt(val));
+		// $('.exch-form__progress__value').html(parseInt(val));
 		progressbar_current.progressbar("value", val + 0.2);
 		progressbar_current_label.css("width", (val + 0.2) + '%');
 		if (val < 99.8) {
@@ -1417,20 +1344,6 @@ $(function () {
 		$('.exch-head__get .exch-dropdown__list .exch-dropdown__item[data-currency="' + firstCurr + '"]').eq(0).trigger('click');
 		$('.exch-dropdown').removeClass('open');
 	});
-
-	/*---------------------------------------------------*/
-	/* Table column sorted */
-	/*---------------------------------------------------*/
-
-	// $('.basic-table__row.head > div').click(function () {
-	// 	if ($(this).hasClass('sorted-down')) {
-	// 		$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-down');
-	// 		$(this).addClass('sorted-up');
-	// 	} else {
-	// 		$(this).closest('.basic-table__row.head').find(' > div').removeClass('sorted-up sorted-down');
-	// 		$(this).addClass('sorted-down');
-	// 	}
-	// });
 
 	/*---------------------------------------------------*/
 	/* transaction popup */
@@ -1503,7 +1416,6 @@ $(function () {
 			});
 		}
 		
-
 
 		/***** Old transaction pop-up function:
 		
@@ -1590,14 +1502,13 @@ $(function () {
 	});
 
 	$('[send-fancybox]').click(function (e) {
-		e.stopPropagation();
+		//e.stopPropagation();
 		closeTelegramMenu();
 		var fancies_length = $('.main-cols__right .fancybox-container').length;
 		if (fancies_length > 0) return false;
 		
 		var userName = $(this).parents('.chats-list__item').find('.chats-list__name').text();
 		var imgAttr = $(this).parents('.chats-list__item').find('.chats-list__avatar-wrap img').attr('src');
-		$('#send-popup .c-block-head__title').text('Send USDT to ' + userName);
 		$('#send-popup .avatar').attr('src',imgAttr);
 
 		var send_popup_list = '';
@@ -1633,6 +1544,9 @@ $(function () {
 						</span> <br> ` 
 						+ coin_currencyFullName + ` 
 					</p>`;
+				
+				$('#send-popup .c-block-head__title').text('Send ' + coin_currencyName + ' to ' + userName);
+
 				var currSendForm = $('#send-popup .send-form__line');
 				currSendForm.find('svg.basic-table__curr, p.send-form__dropdown__title').remove();
 				$(current_item).insertBefore(currSendForm.eq(0).find('div.send-dropdown__hangle'));
@@ -1641,6 +1555,17 @@ $(function () {
 				currSendForm.eq(1).find('input.send-form__input').val(coin_amount);
 				$('#send-popup .send-form__btn span.in-progress').html('SEND ' + coin_currencyFullName);
 				$('#send-popup .send-form__btn span.done').html('Your ' + coin_currencyName + ' was sent');
+
+				
+				coin_amount = coin_amount.trim().replace(/,/g, '');
+				$('.range-slider .send-form-slider__control').attr("max", parseFloat(coin_amount) * 100000);
+				$('.range-slider .send-form-slider__control').attr("step", parseInt(coin_amount));
+				$('.range-slider .send-form-slider__control').val(parseFloat(coin_amount) * 100000);
+
+				$('.range-slider .send-form-slider__control').on('input', function () {	
+					var value = this.value / 100000;
+					$('.send-form input.send-form__input').val(numberWithCommas(value.toFixed(2)));
+				});
 			}
 		});
 
@@ -1667,6 +1592,7 @@ $(function () {
 			$('#send-popup .send-form__dropdown__list .send-form__dropdown__item').removeClass('current');
 			$(this).addClass('current');
 
+			$('#send-popup .c-block-head__title').text('Send ' + currencyName + ' to ' + userName);
 
 			var currSendForm = $('#send-popup .send-form__line');
 			currSendForm.find('svg.basic-table__curr, p.send-form__dropdown__title').remove();
@@ -1677,6 +1603,11 @@ $(function () {
 			$('#send-popup .send-form__btn span.done').html('Your ' + currencyName + ' was sent');
 
 			$('.send-form__line.inline, .send-form__dropdown__list').toggleClass('hidden');
+
+			coin_amount = coin_amount.trim().replace(/,/g, '');
+			$('.range-slider .send-form-slider__control').attr("max", parseFloat(coin_amount) * 100000);
+			$('.range-slider .send-form-slider__control').attr("step", parseInt(coin_amount));
+			$('.range-slider .send-form-slider__control').val(parseFloat(coin_amount) * 100000);
 		});
 
 		$(".send-popup .send-popup__progressbar").progressbar("value", 0);
@@ -1715,6 +1646,12 @@ $(function () {
 		});
 	});
 
+	$('.send-form input.send-form__input').keyup(function () {
+		var send_amount = parseFloat($(this).val().trim().replace(/,/g, ''));
+		if (send_amount)
+			$('.range-slider .send-form-slider__control').val(send_amount * 100000);
+	});
+
 	/*---------------------------------------------------*/
 	/* Chat Search toggle */
 	/*---------------------------------------------------*/
@@ -1742,27 +1679,15 @@ $(function () {
 	/*---------------------------------------------------*/
 
 	$('.exch-head__btn').click(function () {
-		// basic
-		if (!$('body').hasClass('advanced')) {
-			//$('.js-tabs-panel').removeClass('active');
-			//$('#panel-funds-history').addClass('active');
-			//$('.user-portfolio .user-menu .user-menu__item').eq(2).trigger('click');
-		}
-		//advanced
-		else {
+		// advanced
+		if ($('body').hasClass('advanced')) {
 			$('#tab-funds-history').trigger('click');
 			$('.menu-dropdown').removeClass('open');
 		}
 	});
 
-	// On before slide change
-	$('.portfolioChartParent').on('afterChange', function (event, slick, currentSlide, nextSlide) {
-		updatePortfolioStats(true);
-	});
-
 	var dynamicGetValue;
 	var dynamicSendValue;
-	var firstClickAfterExchangeDone;
 
 	// convert/go buttons
 	$('.exch-head__btn, .exch-form__submit').click(function (e) {
@@ -1791,34 +1716,25 @@ $(function () {
 			secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '')
 			var firstValuePart = firstValue / progressbar_array.length;
 			var secondValuePart = secondValue / progressbar_array.length;
-
-			// $('.exch-form__send .exch-form__input').val('0.00');
-			// $('.exch-form__get .exch-form__input').val('0.00');
-
 			var firstValueResult = 0;
 			var secondValueResult = 0;
-			//var exchanges = 0;
-
-			// update wallet and table
-			// ownWallet[sendCurrency] -= firstValue;
-			// if (!ownWallet[getCurrency]) ownWallet[getCurrency] = 0;
-			// ownWallet[getCurrency] += (+secondValue);
-			// updateWalletData();
-			// drawCircleChart();
-			// end update wallet and table
 
 			graphPricesScrollbar.animate({
 				scrollTop: 0
 			}, "slow");
 
+
+			var rand_fee = 40 + Math.floor(Math.random() * 41);
+			$('.exch-form__progress__value').html(rand_fee);
+
 			var remain_total_value = secondValue;
-		
 
 			progressbar_current_label.css('visibility', 'hidden');
 			progressbar_current_label.text(remain_total_value + ' ' + getCurrency);
 			progressbar_current.progressbar("value", 0);
 			setTimeout(currentProgress, 1000);
 
+			if (!ownWallet[getCurrency]) ownWallet[getCurrency] = 0;
 
 			for (var i = 0; i < progressbar_array.length; i++) {
 				// var progressbar = progressbar_array[i];
@@ -1842,11 +1758,7 @@ $(function () {
 					secondValueResult += secondValuePart;
 
 					ownWallet[sendCurrency] -= (+firstValuePart);
-					if (!ownWallet[getCurrency]) ownWallet[getCurrency] = 0;
 					ownWallet[getCurrency] += (+secondValuePart);
-
-					//$('.exch-form__send .exch-form__input').val(numberWithCommas((firstValueResult).toFixed(2)));
-					//$('.exch-form__get .exch-form__input').val(numberWithCommas((secondValueResult).toFixed(2)));
 
 					updateWalletData();
 					drawCircleChart(e, true);
@@ -1877,16 +1789,8 @@ $(function () {
 			$('.graph-prices__sort__btn').addClass('hidden');
 			$('#panel-funds-history .basic-table__body .basic-table__row').removeClass('active recent');
 			$('.exch-form .range-slider input[type=range]').css('pointer-events', 'none');
-			if (!$('body').hasClass('advanced')) {
-				var newRow = '<div class="basic-table__row recent active">' +
-					'<div class="basic-table__col w-17" ><img src="img/spin-blue.svg"></div>' +
-					'<div class="basic-table__col w-27">' +
-					(sendCurrency == 'USDT' ? '$' : '') + '0.00 ' + sendCurrency + svgArrowTemplate + ' 0.00 ' + getCurrency +
-					'</div>' +
-					'<div class="basic-table__col w-27">' + (getCurrency == 'USDT' ? '$' : '') + '0.00 ' + getCurrency + '</div>' +
-					'<div class="basic-table__col w-27">0 Exchanges</div>' +
-					'</div>';
-			} else {
+
+			if ($('body').hasClass('advanced')) {
 				var newRow = '<div class="basic-table__row active recent">' +
 					'<div class="basic-table__col w-20"> Just now</div>' +
 					'<div class="basic-table__col w-17">' + sendCurrency + '/' + getCurrency + '</div>' +
@@ -1896,6 +1800,7 @@ $(function () {
 					'<div class="basic-table__col w-10">FILLED</div>' +
 					'</div >';
 			}
+
 			$('.basic-table__message').addClass('hidden');
 			$('#panel-funds-history .basic-table__body .basic-table__body').prepend(newRow);
 			
@@ -1982,18 +1887,9 @@ $(function () {
 			$('.exch-form__send > input').val(numberWithCommas(firstValue));
 			$('.exch-form__get > input').val(numberWithCommas(secondValue));
 			isSelectedPrevConversion = false;
-
-			//clearInterval(dynamicGetValue);
-			//clearInterval(dynamicSendValue);
 			
 			// run dynamic value change
 			startDynamicGetValue();
-
-			// dynamicGetValue = setInterval(function () {
-			// 	secondValue *= (Math.random() * (101 - 99) + 99) / 100;
-			// 	$('.exch-form__get > input').val(numberWithCommas(secondValue.toFixed(2)));
-			// 	updateExchangeValues();
-			// }, 1000);
 
 			currentWallet = ownWallet;
 			
@@ -2056,57 +1952,38 @@ $(function () {
 		$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
 		$('.exch-form__submit').attr("disabled", true);
 		updateRecent();
-		firstClickAfterExchangeDone = true;
 
 		$('.exch-form__send .exch-form__label').text('Exchanged');
-		//$('.exch-form__get .exch-form__label').text('You got');
 
-		$(window).click(function (e) {
-			if (firstClickAfterExchangeDone) {
-				var eTarget = e.target;
-				if (!$(eTarget).parents('#panel-funds-history').length) {
-					// basic
-					if (!$('body').hasClass('advanced')) {
-						$('.js-tabs-panel').removeClass('active');
-						$('#panel-funds-wallet').addClass('active');
-						drawCircleChart();
-					}
-					//advanced
-					else {
-						$('#tab-funds-wallet').trigger('click');
-						$('.menu-dropdown').removeClass('open');
-					}
-				}
-				if ($('.exch-form').hasClass('completed')) {
-					$('.exch-form').removeClass('progress');
-					$('.graph-prices__sort__btn').removeClass('hidden');
-					$('.exch-head').removeClass('open');
-					$('.graph-prices').removeClass('noClose');
-					$('.exch-form__submit').attr("disabled", false);
-					$('.exch-form').removeClass('completed');
-					$('.exch-form__close').removeClass('hidden');
-					$('.exch-form__submit > span').html('CONFIRM');
-					$('.exch-form .range-slider input[type=range]').css('pointer-events', 'all');
+		setTimeout(() => {
+			if ($('.exch-form').hasClass('completed')) {
+				$('.exch-form').removeClass('progress');
+				$('.graph-prices__sort__btn').removeClass('hidden');
+				$('.exch-head').removeClass('open');
+				$('.graph-prices').removeClass('noClose');
+				$('.exch-form__submit').attr("disabled", false);
+				$('.exch-form').removeClass('completed');
+				$('.exch-form__close').removeClass('hidden');
+				$('.exch-form__submit > span').html('CONFIRM');
+				$('.exch-form .range-slider input[type=range]').css('pointer-events', 'all');
 
 
-					$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
-					$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
+				$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
+				$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
 
-					current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
-					//current_exchange_item.css('height', '56px');
+				current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
+				//current_exchange_item.css('height', '56px');
 
-					if (!isSelectedPrevConversion) {
-						// $('.icon-trader').removeClass('hidden');
-						$('.graph-prices__item .progress-label').css('visibility', 'visible');
-						$('.progressbar').addClass('hidden');
-						for (var j = 0; j < progressbar_array.length; j++) {
-							progressbar_array[j].progressbar("value", 0);
-						}
+				if (!isSelectedPrevConversion) {
+					// $('.icon-trader').removeClass('hidden');
+					$('.graph-prices__item .progress-label').css('visibility', 'visible');
+					$('.progressbar').addClass('hidden');
+					for (var j = 0; j < progressbar_array.length; j++) {
+						progressbar_array[j].progressbar("value", 0);
 					}
 				}
-				firstClickAfterExchangeDone = false;
 			}
-		});
+		}, 500);
 	});
 	
 
@@ -2392,22 +2269,6 @@ $(function () {
 		$(".basic-popup__overlay").hide();
 	})
 
-
-	/* Generic Fancybox Navigation Flow
-	   Allows fully declarative "wizard" style submission flows within a popup.
-
-	   For a button that loads new content into the current popup, give it css class "js-fancybox-close popup-nav-button" 
-	   and set the data-next-screen attribute to the ID of the element that contains the new content
-	   
-	   This script will listen for clicks on the button and handle it, you do not need to write any JS
-	   yourself for basic use cases
-
-	   Sample button:
-
-		<button class="js-fancybox-close popup-nav-button" data-next-screen="autentificator-popup">					
-			Submit And Verify
-		</button> */
-
 	$('.popup-nav-button').click(function (e) {
 		let popupSrcDiv=$(this).attr("data-next-screen");
 		
@@ -2639,7 +2500,7 @@ $(function () {
 		var limit = range_options[4].limit;
 		var gData;
 		switch (current_range) {
-			case '2H':
+			case '1H':
 				gData = gDataTwoHour;
 				interval = range_options[0].interval;
 				limit = range_options[0].limit;
@@ -2839,6 +2700,7 @@ $(function () {
 
 		if (sendCurrency == getCurrency) {
 			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
+				$(this).addClass('hidden');
 				$(priceItem).html(priceRate + ' <span>' + sendCurrency + '</span>');
 			});
 		} else {
@@ -2852,6 +2714,7 @@ $(function () {
 			});
 
 			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
+				$(this).addClass('hidden');
 				$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + getCurrency + ' = </span>' + (sendCurrency == 'USDT' ? numberWithCommas(rateArray[index].toFixed(2)) : numberWithCommas(rateArray[index].toFixed(5))) + ' <span>' + sendCurrency + '</span>');
 			});
 		}
@@ -2865,6 +2728,7 @@ $(function () {
 		}
 
 		$('.graph-prices__price.get-prices__rate').each(function (index, priceItem) {
+			$(this).removeClass('hidden');
 			$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + sendCurrency + ' = </span>' + numberWithCommas(priceRateBackward) + ' <span>' + getCurrency + '</span>');
 		});
 
@@ -2872,11 +2736,11 @@ $(function () {
 		$('.graph-prices__sort').removeClass('asc');
 		$('.graph-prices__sort').removeClass('desc');
 
-		$('.graph-prices__sort').html('1' + getCurrency + ' = ');
+		$('.graph-prices__sort').html('1' + sendCurrency + ' ≈ ');
 	}
 
 	/** Init price list */
-	updatePriceListItem('USDT', 'BTC');
+	updatePriceListItem('BTC', 'USDT');
 
 	/** Graph exchanges sort */
 	$('.graph-prices__sort').click(function (e) {
@@ -2896,10 +2760,10 @@ $(function () {
 			var getCurrency = $('.exch-form__get > input').attr('data-currency');
 			var sendCurrency = $('.exch-form__send > input').attr('data-currency');
 			if ($('.graph-prices__price.send-prices__rate').hasClass('hidden')) {
-				$(this).html('1' + getCurrency + ' = ');
+				$(this).html('1' + getCurrency + ' ≈ ');
 			}
 			else {
-				$(this).html('1' + sendCurrency + ' = ');
+				$(this).html('1' + sendCurrency + ' ≈ ');
 			}
 			$('.graph-prices__price.send-prices__rate').toggleClass('hidden')
 			$('.graph-prices__price.get-prices__rate').toggleClass('hidden')
@@ -2951,11 +2815,17 @@ $(function () {
 	$('#telegramOverlay').click(closeTelegramMenu);
 
 	function closeTelegramMenu() {
-		$('#telegramOverlay, #telegramMenu').removeClass('open');		
+		$('#telegramOverlay, #telegramMenu, #telegramSetting').removeClass('open');		
 	}
 
 	$('.chat-head__back').click(function () {
 		$('#telegramOverlay, #telegramMenu').addClass('open');		
 	});
+
+	$('.chat-head__btn').click(function () {
+		$('#telegramOverlay, #telegramSetting').addClass('open');
+	});
+	$('.toggle').minitoggle();
+
 
 });

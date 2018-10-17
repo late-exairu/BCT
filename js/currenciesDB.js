@@ -48,14 +48,14 @@ var ownWallet;
 
 var wallets = {
     ownWallet: {
-        'USDT': 100000.00,
-        'BTC': 0.00,
+        'BTC': 1000.00,
+        'USDT': 0.00,
         'ETH': 0.00,
         'LTC': 0.00,
     },
     allCurrencies:{
-        'USDT': 0,
         'BTC': 0,
+        'USDT': 0,
         'ETH': 0,
         'LTC': 0,
     }
@@ -165,9 +165,6 @@ function updateSmallCharts() {
         if (counter < 4) {
             switch (chartRange) {
                 case '1H':
-                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=60';
-                    break;
-                case '2H':
                     ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=120';
                     break;
                 case '6H':
