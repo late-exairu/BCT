@@ -3,7 +3,7 @@
 /* range-slider */
 /* =================================================================== */
 
-.exch-form .range-slider{
+.exch-form .range-slider, .send-form .range-slider{
     font-size: 10px;
     input[type=range] {
         &::-webkit-slider-thumb{

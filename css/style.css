@@ -10273,11 +10273,11 @@ body.menubar-in #user-btn:before {
 /* =================================================================== */
 /* range-slider */
 /* =================================================================== */
-.exch-form .range-slider {
+.exch-form .range-slider, .send-form .range-slider {
   font-size: 10px; }
-  .exch-form .range-slider input[type=range] {
+  .exch-form .range-slider input[type=range], .send-form .range-slider input[type=range] {
     /* All the same stuff for Firefox */ }
-    .exch-form .range-slider input[type=range]::-webkit-slider-thumb {
+    .exch-form .range-slider input[type=range]::-webkit-slider-thumb, .send-form .range-slider input[type=range]::-webkit-slider-thumb {
       -webkit-appearance: none;
       height: 10px;
       width: 10px;
@@ -10287,7 +10287,7 @@ body.menubar-in #user-btn:before {
       cursor: pointer;
       margin-top: -4px;
       /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */ }
-    .exch-form .range-slider input[type=range]::-moz-range-thumb {
+    .exch-form .range-slider input[type=range]::-moz-range-thumb, .send-form .range-slider input[type=range]::-moz-range-thumb {
       height: 6px;
       width: 6px;
       border-radius: 50%;
@@ -15153,7 +15153,7 @@ button:-moz-focusring {
       margin-top: 13px;
       z-index: 1;
       right: 40px;
-      width: calc(100% - 140px);
+      width: calc(100% - 154px);
       max-width: 230px;
       padding: 0 8px;
       position: absolute; }

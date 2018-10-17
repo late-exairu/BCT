@@ -1519,6 +1519,17 @@ $(function () {
 				currSendForm.eq(1).find('input.send-form__input').val(coin_amount);
 				$('#send-popup .send-form__btn span.in-progress').html('SEND ' + coin_currencyFullName);
 				$('#send-popup .send-form__btn span.done').html('Your ' + coin_currencyName + ' was sent');
+
+				
+				coin_amount = coin_amount.trim().replace(/,/g, '');
+				$('.range-slider .send-form-slider__control').attr("max", parseFloat(coin_amount) * 100000);
+				$('.range-slider .send-form-slider__control').attr("step", parseInt(coin_amount));
+				$('.range-slider .send-form-slider__control').val(parseFloat(coin_amount) * 100000);
+
+				$('.range-slider .send-form-slider__control').on('input', function () {	
+					var value = this.value / 100000;
+					$('.send-form input.send-form__input').val(numberWithCommas(value.toFixed(2)));
+				});
 			}
 		});
 
@@ -1555,6 +1566,11 @@ $(function () {
 			$('#send-popup .send-form__btn span.done').html('Your ' + currencyName + ' was sent');
 
 			$('.send-form__line.inline, .send-form__dropdown__list').toggleClass('hidden');
+
+			coin_amount = coin_amount.trim().replace(/,/g, '');
+			$('.range-slider .send-form-slider__control').attr("max", parseFloat(coin_amount) * 100000);
+			$('.range-slider .send-form-slider__control').attr("step", parseInt(coin_amount));
+			$('.range-slider .send-form-slider__control').val(parseFloat(coin_amount) * 100000);
 		});
 
 		$(".send-popup .send-popup__progressbar").progressbar("value", 0);
@@ -1591,6 +1607,12 @@ $(function () {
 				}
 			}
 		});
+	});
+
+	$('.send-form input.send-form__input').keyup(function () {
+		var send_amount = parseFloat($(this).val().trim().replace(/,/g, ''));
+		if (send_amount)
+			$('.range-slider .send-form-slider__control').val(send_amount * 100000);
 	});
 
 	/*---------------------------------------------------*/
