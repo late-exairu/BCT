@@ -48,6 +48,10 @@ $(function () {
 					document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
 				}
 			}
+			if (document.querySelector('.message-bar')) {
+				document.querySelector('.message-bar').classList.add('hidden');				
+			}
+
 
 			// if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
 			// 	document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
@@ -57,6 +61,7 @@ $(function () {
 			} else {
 				$('button[title="USERNAME"]').attr('title', '');
 			}
+
 		} else {
 			localStorage.removeItem('telegramAuth');
 			localStorage.removeItem('telegramFirstName');
@@ -158,6 +163,7 @@ $(function () {
 	});
 
 	$('.exch-search__input').keyup(function () {
+		var counter = 0;
 		var searchString = $(this).val().toUpperCase();
 		if (searchString.trim() != '') {
 			$(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__list-title').addClass('hidden');
@@ -176,14 +182,20 @@ $(function () {
 				}
 				// if contain
 				else {
+					counter++;
 					var searchStringGlobal = new RegExp(searchString, "g");
 					// add span tags for highlight
 					var newTextValue = $(item).find('.exch-dropdown__title').text().toUpperCase().replace(searchStringGlobal, '<span>' + searchString + '</span>')
 					$(item).find('.exch-dropdown__title').html(newTextValue);
 				}
 			}
-
 		});
+		if (counter < 9 && searchString.trim() != '') {
+			$(this).closest('.exch-dropdown').find('.exch-dropdown__list').css('height','auto');
+		}
+		else{
+			$(this).closest('.exch-dropdown').find('.exch-dropdown__list').css('height', '400px');
+		}
 
 	});
 
@@ -842,11 +854,18 @@ $(function () {
 	// });
 
 	$('.chats-list__item').click(function () {
-		//var chatName = $(this).find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
 		var chatName = $(this).find('.chats-list__name').text();
 		$('.chat-head__name').text(chatName);
 		$('.chat-talk').toggleClass('hidden');
 		closeTelegramMenu();
+
+		// check show or hide input
+		if ($(this).find('.chats-list__send').length){
+			$('.message-bar').removeClass('hidden');
+		}
+		else{
+			$('.message-bar').addClass('hidden');
+		}
 	});
 
 	/*---------------------------------------------------*/
@@ -1468,7 +1487,7 @@ $(function () {
 	});
 
 	$('[send-fancybox]').click(function (e) {
-		e.stopPropagation();
+		//e.stopPropagation();
 		closeTelegramMenu();
 		var fancies_length = $('.main-cols__right .fancybox-container').length;
 		if (fancies_length > 0) return false;

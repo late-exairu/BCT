@@ -786,7 +786,9 @@
 												avatarAbbr.style.fontSize = '19px';
 												document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
 											}
-
+											if (document.querySelector('.message-bar')) {
+											document.querySelector('.message-bar').classList.add('hidden');
+											}
 											if (document.querySelector('.message-bar__login'))
 												document.querySelector('.message-bar__login').classList.add('hidden');
 											if (document.querySelector('.message-bar__login-demo'))
