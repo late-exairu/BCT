@@ -849,11 +849,18 @@ $(function () {
 	// });
 
 	$('.chats-list__item').click(function () {
-		//var chatName = $(this).find('.chats-list__name').html().replace(/<a\b[^>]*>(.*?)<\/a>/i, '')
 		var chatName = $(this).find('.chats-list__name').text();
 		$('.chat-head__name').text(chatName);
 		$('.chat-talk').toggleClass('hidden');
 		closeTelegramMenu();
+
+		// check show or hide input
+		if ($(this).find('.chats-list__send').length){
+			$('.message-bar').removeClass('hidden');
+		}
+		else{
+			$('.message-bar').addClass('hidden');			
+		}
 	});
 
 	/*---------------------------------------------------*/
