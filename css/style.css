@@ -15131,6 +15131,10 @@ button:-moz-focusring {
     height: 14px;
     flex: 0 0 14px;
     margin: 0 5px 0 0; }
+  .transaction-popup .terms-link-container {
+    width: 100%;
+    text-align: right;
+    margin-top: 10px; }
 
 .autentificator-popup {
   width: 100%;
@@ -15141,6 +15145,14 @@ button:-moz-focusring {
   width: 100%;
   min-width: 255px;
   max-width: 255px; }
+
+#terms-popup .terms-content {
+  padding: 10px;
+  font-family: open_sans;
+  font-size: 10px;
+  max-width: 870px;
+  max-height: 530px;
+  overflow: auto; }
 
 #send-popup .c-block-head {
   background: var(--clr-back-new); }
