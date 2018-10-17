@@ -890,7 +890,7 @@ $(function () {
 						gDataTwoHour = [];
 						gData = gDataTwoHour;
 						range_index = 0;
-						if (current_range == '2H') isRedraw = true;
+						if (current_range == '1H') isRedraw = true;
 						console.log('gDataTwoHour');
 					}
 					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
@@ -1115,7 +1115,7 @@ $(function () {
 		var gData;
 		var current_range = $('.graph-info__range__current').html();
 		switch (current_range) {
-			case '2H':
+			case '1H':
 				gData = gDataTwoHour;
 				break;
 			case '1D':
@@ -2467,7 +2467,7 @@ $(function () {
 		var limit = range_options[4].limit;
 		var gData;
 		switch (current_range) {
-			case '2H':
+			case '1H':
 				gData = gDataTwoHour;
 				interval = range_options[0].interval;
 				limit = range_options[0].limit;

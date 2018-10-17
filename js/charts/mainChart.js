@@ -3,7 +3,7 @@
 
 // var range_options = [
 // 	{
-// 		label: '2H',
+// 		label: '1H',
 // 		endpoint: 'histominute',
 // 		aggregate: 1,
 // 		limit: 140,
@@ -42,7 +42,7 @@
 
 var range_options = [
 	{
-	 label: '2H',
+	 label: '1H',
 	 endpoint: 'histominute',
 	 aggregate: 1,
 	 limit: 120,
@@ -483,7 +483,7 @@ var hightChartUpdateOptions = {
 
 					var gData;
 					switch (current_range) {
-						case '2H':
+						case '1H':
 							gData = gDataTwoHour;
 							break;
 						case '1D':
