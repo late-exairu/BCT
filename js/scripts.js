@@ -1475,7 +1475,6 @@ $(function () {
 		
 		var userName = $(this).parents('.chats-list__item').find('.chats-list__name').text();
 		var imgAttr = $(this).parents('.chats-list__item').find('.chats-list__avatar-wrap img').attr('src');
-		$('#send-popup .c-block-head__title').text('Send USDT to ' + userName);
 		$('#send-popup .avatar').attr('src',imgAttr);
 
 		var send_popup_list = '';
@@ -1511,6 +1510,9 @@ $(function () {
 						</span> <br> ` 
 						+ coin_currencyFullName + ` 
 					</p>`;
+				
+				$('#send-popup .c-block-head__title').text('Send ' + coin_currencyName + ' to ' + userName);
+
 				var currSendForm = $('#send-popup .send-form__line');
 				currSendForm.find('svg.basic-table__curr, p.send-form__dropdown__title').remove();
 				$(current_item).insertBefore(currSendForm.eq(0).find('div.send-dropdown__hangle'));
@@ -1556,6 +1558,7 @@ $(function () {
 			$('#send-popup .send-form__dropdown__list .send-form__dropdown__item').removeClass('current');
 			$(this).addClass('current');
 
+			$('#send-popup .c-block-head__title').text('Send ' + currencyName + ' to ' + userName);
 
 			var currSendForm = $('#send-popup .send-form__line');
 			currSendForm.find('svg.basic-table__curr, p.send-form__dropdown__title').remove();
