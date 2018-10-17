@@ -2702,10 +2702,10 @@ $(function () {
 			var getCurrency = $('.exch-form__get > input').attr('data-currency');
 			var sendCurrency = $('.exch-form__send > input').attr('data-currency');
 			if ($('.graph-prices__price.send-prices__rate').hasClass('hidden')) {
-				$(this).html('1' + getCurrency + ' = ');
+				$(this).html('1' + getCurrency + ' ≈ ');
 			}
 			else {
-				$(this).html('1' + sendCurrency + ' = ');
+				$(this).html('1' + sendCurrency + ' ≈ ');
 			}
 			$('.graph-prices__price.send-prices__rate').toggleClass('hidden')
 			$('.graph-prices__price.get-prices__rate').toggleClass('hidden')
