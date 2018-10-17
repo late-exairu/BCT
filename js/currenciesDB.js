@@ -165,9 +165,6 @@ function updateSmallCharts() {
         if (counter < 4) {
             switch (chartRange) {
                 case '1H':
-                    ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=60';
-                    break;
-                case '2H':
                     ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&limit=120';
                     break;
                 case '6H':
