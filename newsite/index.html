@@ -737,7 +737,7 @@
 								</div>
 							</div><!-- scroll-y END -->
 
-							<div class="message-bar -clr-blue hidden">
+							<div class="message-bar -clr-blue">
 								<!-- <button class="message-bar__btn">
 									<svg class="sprite-icon chats-clip" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chats-clip"></use>
@@ -786,6 +786,7 @@
 												avatarAbbr.style.fontSize = '19px';
 												document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
 											}
+											document.querySelector('.message-bar').classList.add('hidden');
 
 											if (document.querySelector('.message-bar__login'))
 												document.querySelector('.message-bar__login').classList.add('hidden');

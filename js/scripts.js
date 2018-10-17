@@ -48,6 +48,8 @@ $(function () {
 					document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
 				}
 			}
+			document.querySelector('.message-bar').classList.add('hidden');
+
 
 			// if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
 			// 	document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
@@ -57,6 +59,7 @@ $(function () {
 			} else {
 				$('button[title="USERNAME"]').attr('title', '');
 			}
+
 		} else {
 			localStorage.removeItem('telegramAuth');
 			localStorage.removeItem('telegramFirstName');
@@ -859,7 +862,7 @@ $(function () {
 			$('.message-bar').removeClass('hidden');
 		}
 		else{
-			$('.message-bar').addClass('hidden');			
+			$('.message-bar').addClass('hidden');
 		}
 	});
 
