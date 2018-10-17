@@ -15128,6 +15128,14 @@ button:-moz-focusring {
   min-width: 255px;
   max-width: 255px; }
 
+#terms-popup .terms-content {
+  padding: 10px;
+  font-family: open_sans;
+  font-size: 10px;
+  max-width: 870px;
+  max-height: 530px;
+  overflow: auto; }
+
 #send-popup .c-block-head {
   background: var(--clr-back-new); }
   #send-popup .c-block-head__title {
