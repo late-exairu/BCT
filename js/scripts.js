@@ -91,7 +91,22 @@ $(function () {
 		grid_snap: false
 	});
 
-	$(window).click(function () {
+	$(window).click(function (e) {
+		var eTarget = e.target;
+		if (!$(eTarget).parents('#panel-funds-history').length) {
+			// basic
+			if (!$('body').hasClass('advanced')) {
+				$('.js-tabs-panel').removeClass('active');
+				$('#panel-funds-wallet').addClass('active');
+				drawCircleChart();
+			}
+			//advanced
+			else {
+				$('#tab-funds-wallet').trigger('click');
+				$('.menu-dropdown').removeClass('open');
+			}
+		}
+
 		if ($('ul.graph-info__range__list').hasClass('open')) {
 			$('ul.graph-info__range__list').css('border-bottom', '0px');
 			$('div.graph-info__range').css('border', '0px');
@@ -1673,7 +1688,6 @@ $(function () {
 
 	var dynamicGetValue;
 	var dynamicSendValue;
-	var firstClickAfterExchangeDone;
 
 	// convert/go buttons
 	$('.exch-head__btn, .exch-form__submit').click(function (e) {
@@ -1938,56 +1952,38 @@ $(function () {
 		$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
 		$('.exch-form__submit').attr("disabled", true);
 		updateRecent();
-		firstClickAfterExchangeDone = true;
 
 		$('.exch-form__send .exch-form__label').text('Exchanged');
 
-		$(window).click(function (e) {
-			if (firstClickAfterExchangeDone) {
-				var eTarget = e.target;
-				if (!$(eTarget).parents('#panel-funds-history').length) {
-					// basic
-					if (!$('body').hasClass('advanced')) {
-						$('.js-tabs-panel').removeClass('active');
-						$('#panel-funds-wallet').addClass('active');
-						drawCircleChart();
-					}
-					//advanced
-					else {
-						$('#tab-funds-wallet').trigger('click');
-						$('.menu-dropdown').removeClass('open');
-					}
-				}
-				if ($('.exch-form').hasClass('completed')) {
-					$('.exch-form').removeClass('progress');
-					$('.graph-prices__sort__btn').removeClass('hidden');
-					$('.exch-head').removeClass('open');
-					$('.graph-prices').removeClass('noClose');
-					$('.exch-form__submit').attr("disabled", false);
-					$('.exch-form').removeClass('completed');
-					$('.exch-form__close').removeClass('hidden');
-					$('.exch-form__submit > span').html('CONFIRM');
-					$('.exch-form .range-slider input[type=range]').css('pointer-events', 'all');
+		setTimeout(() => {
+			if ($('.exch-form').hasClass('completed')) {
+				$('.exch-form').removeClass('progress');
+				$('.graph-prices__sort__btn').removeClass('hidden');
+				$('.exch-head').removeClass('open');
+				$('.graph-prices').removeClass('noClose');
+				$('.exch-form__submit').attr("disabled", false);
+				$('.exch-form').removeClass('completed');
+				$('.exch-form__close').removeClass('hidden');
+				$('.exch-form__submit > span').html('CONFIRM');
+				$('.exch-form .range-slider input[type=range]').css('pointer-events', 'all');
 
 
-					$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
-					$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
+				$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
+				$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
 
-					current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
-					//current_exchange_item.css('height', '56px');
+				current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
+				//current_exchange_item.css('height', '56px');
 
-					if (!isSelectedPrevConversion) {
-						// $('.icon-trader').removeClass('hidden');
-						$('.graph-prices__item .progress-label').css('visibility', 'visible');
-						$('.progressbar').addClass('hidden');
-						for (var j = 0; j < progressbar_array.length; j++) {
-							progressbar_array[j].progressbar("value", 0);
-						}
+				if (!isSelectedPrevConversion) {
+					// $('.icon-trader').removeClass('hidden');
+					$('.graph-prices__item .progress-label').css('visibility', 'visible');
+					$('.progressbar').addClass('hidden');
+					for (var j = 0; j < progressbar_array.length; j++) {
+						progressbar_array[j].progressbar("value", 0);
 					}
 				}
-				firstClickAfterExchangeDone = false;
 			}
-		});
+		}, 500);
 	});
 	
 
