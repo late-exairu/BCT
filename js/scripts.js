@@ -134,8 +134,7 @@ $(function () {
 		$(this).parent().addClass('open');
 	});
 
-	$('body, .exch-search .exch-dropdown__hangle').click(function (event) {
-		if ($(this).hasClass('exch-dropdown__hangle')) event.stopPropagation();
+	$('body').click(function (event) {
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
 
 		// $('ul.portfolio-graph-range__list').css('border-bottom', '0px');
@@ -145,8 +144,13 @@ $(function () {
 
 		$('.exch-dropdown .exch-search').addClass('hidden');
 		$('.exch-dropdown .exch-dropdown__current').removeClass('hidden');
-
 	});
+
+	$('.exch-search .exch-dropdown__hangle').click(function (event) {
+		event.stopPropagation();
+		$(this.previousElementSibling).val('').trigger('keyup');
+	});
+
 
 	$('.main-cols__right-top .exch-dropdown').click(function (event) {
 		event.stopPropagation();
@@ -306,7 +310,12 @@ $(function () {
 				$(this).closest('.exch-dropdown').removeClass('open');
 			}
 		} else if (e.which === 13) {
-			dropdown_list.eq(select_item_index).trigger("click");
+			if (select_item_index){
+				dropdown_list.eq(select_item_index).trigger("click");
+			}
+			else{
+				$(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__item:not(.hidden)').eq(0).trigger('click');
+			}
 		}
 	});
 
@@ -367,11 +376,19 @@ $(function () {
 			var positionTop = $('#panel-funds-wallet .basic-table__row[data-currency="' + currencyAbbr + '"]').position().top;
 			var scrolledPosition = $('#panel-funds-wallet .basic-table .basic-table').scrollTop();
 			$('#panel-funds-wallet .basic-table .basic-table').scrollTop(scrolledPosition + positionTop);
+
+			// hide the same element in another dropdown
+			$('.exch-head__get .exch-dropdown__item').removeClass('sameDropdownItem');
+			$('.exch-head__get .exch-dropdown__item[data-currency="' + currencyAbbr + '"]').last().addClass('sameDropdownItem');
 		}
 		// second currency
 		else {
 			$('.exch-form__get input').attr('data-currency', currencyAbbr);
 			$('.exch-form__get .exch-form__curr').html(`<p>` + currencyAbbr + `<span><br>YOU GET</span></p>`);
+
+			// hide the same element in another dropdown
+			$('.exch-head__send .exch-dropdown__item').removeClass('sameDropdownItem');
+			$('.exch-head__send .exch-dropdown__item[data-currency="' + currencyAbbr + '"]').last().addClass('sameDropdownItem');
 		}
 		
 		$(this).closest('.exch-dropdown').removeClass('open');
