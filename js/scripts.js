@@ -91,7 +91,22 @@ $(function () {
 		grid_snap: false
 	});
 
-	$(window).click(function () {
+	$(window).click(function (e) {
+		var eTarget = e.target;
+		if (!$(eTarget).parents('#panel-funds-history').length) {
+			// basic
+			if (!$('body').hasClass('advanced')) {
+				$('.js-tabs-panel').removeClass('active');
+				$('#panel-funds-wallet').addClass('active');
+				drawCircleChart();
+			}
+			//advanced
+			else {
+				$('#tab-funds-wallet').trigger('click');
+				$('.menu-dropdown').removeClass('open');
+			}
+		}
+
 		if ($('ul.graph-info__range__list').hasClass('open')) {
 			$('ul.graph-info__range__list').css('border-bottom', '0px');
 			$('div.graph-info__range').css('border', '0px');
@@ -1690,7 +1705,6 @@ $(function () {
 
 	var dynamicGetValue;
 	var dynamicSendValue;
-	var firstClickAfterExchangeDone;
 
 	// convert/go buttons
 	$('.exch-head__btn, .exch-form__submit').click(function (e) {
@@ -1955,56 +1969,38 @@ $(function () {
 		$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
 		$('.exch-form__submit').attr("disabled", true);
 		updateRecent();
-		firstClickAfterExchangeDone = true;
 
 		$('.exch-form__send .exch-form__label').text('Exchanged');
 
-		$(window).click(function (e) {
-			if (firstClickAfterExchangeDone) {
-				var eTarget = e.target;
-				if (!$(eTarget).parents('#panel-funds-history').length) {
-					// basic
-					if (!$('body').hasClass('advanced')) {
-						$('.js-tabs-panel').removeClass('active');
-						$('#panel-funds-wallet').addClass('active');
-						drawCircleChart();
-					}
-					//advanced
-					else {
-						$('#tab-funds-wallet').trigger('click');
-						$('.menu-dropdown').removeClass('open');
-					}
-				}
-				if ($('.exch-form').hasClass('completed')) {
-					$('.exch-form').removeClass('progress');
-					$('.graph-prices__sort__btn').removeClass('hidden');
-					$('.exch-head').removeClass('open');
-					$('.graph-prices').removeClass('noClose');
-					$('.exch-form__submit').attr("disabled", false);
-					$('.exch-form').removeClass('completed');
-					$('.exch-form__close').removeClass('hidden');
-					$('.exch-form__submit > span').html('CONFIRM');
-					$('.exch-form .range-slider input[type=range]').css('pointer-events', 'all');
+		setTimeout(() => {
+			if ($('.exch-form').hasClass('completed')) {
+				$('.exch-form').removeClass('progress');
+				$('.graph-prices__sort__btn').removeClass('hidden');
+				$('.exch-head').removeClass('open');
+				$('.graph-prices').removeClass('noClose');
+				$('.exch-form__submit').attr("disabled", false);
+				$('.exch-form').removeClass('completed');
+				$('.exch-form__close').removeClass('hidden');
+				$('.exch-form__submit > span').html('CONFIRM');
+				$('.exch-form .range-slider input[type=range]').css('pointer-events', 'all');
 
 
-					$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
-					$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
+				$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
+				$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
 
-					current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
-					//current_exchange_item.css('height', '56px');
+				current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
+				//current_exchange_item.css('height', '56px');
 
-					if (!isSelectedPrevConversion) {
-						// $('.icon-trader').removeClass('hidden');
-						$('.graph-prices__item .progress-label').css('visibility', 'visible');
-						$('.progressbar').addClass('hidden');
-						for (var j = 0; j < progressbar_array.length; j++) {
-							progressbar_array[j].progressbar("value", 0);
-						}
+				if (!isSelectedPrevConversion) {
+					// $('.icon-trader').removeClass('hidden');
+					$('.graph-prices__item .progress-label').css('visibility', 'visible');
+					$('.progressbar').addClass('hidden');
+					for (var j = 0; j < progressbar_array.length; j++) {
+						progressbar_array[j].progressbar("value", 0);
 					}
 				}
-				firstClickAfterExchangeDone = false;
 			}
-		});
+		}, 500);
 	});
 	
 
@@ -2234,6 +2230,20 @@ $(function () {
 		});
 	});
 
+	/* T&C popup */
+	$("#terms-link").click(function(e) {
+		e.preventDefault();
+		// Open this fancybox force
+		$.fancybox.open({
+			src: '#terms-popup',
+			opts: {
+      				beforeClose: function () {
+					//$('.exch-form').removeClass('progress');
+					//$('.exch-head').toggleClass('open');
+				}
+			}
+		});
+	})
 
 	/*---------------------------------------------------*/
 	/* autentificator fancybox */
@@ -2707,6 +2717,7 @@ $(function () {
 
 		if (sendCurrency == getCurrency) {
 			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
+				$(this).addClass('hidden');
 				$(priceItem).html(priceRate + ' <span>' + sendCurrency + '</span>');
 			});
 		} else {
@@ -2720,6 +2731,7 @@ $(function () {
 			});
 
 			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
+				$(this).addClass('hidden');
 				$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + getCurrency + ' = </span>' + (sendCurrency == 'USDT' ? numberWithCommas(rateArray[index].toFixed(2)) : numberWithCommas(rateArray[index].toFixed(5))) + ' <span>' + sendCurrency + '</span>');
 			});
 		}
@@ -2733,6 +2745,7 @@ $(function () {
 		}
 
 		$('.graph-prices__price.get-prices__rate').each(function (index, priceItem) {
+			$(this).removeClass('hidden');
 			$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + sendCurrency + ' = </span>' + numberWithCommas(priceRateBackward) + ' <span>' + getCurrency + '</span>');
 		});
 
@@ -2740,11 +2753,11 @@ $(function () {
 		$('.graph-prices__sort').removeClass('asc');
 		$('.graph-prices__sort').removeClass('desc');
 
-		$('.graph-prices__sort').html('1' + getCurrency + ' ≈ ');
+		$('.graph-prices__sort').html('1' + sendCurrency + ' ≈ ');
 	}
 
 	/** Init price list */
-	updatePriceListItem('USDT', 'BTC');
+	updatePriceListItem('BTC', 'USDT');
 
 	/** Graph exchanges sort */
 	$('.graph-prices__sort').click(function (e) {

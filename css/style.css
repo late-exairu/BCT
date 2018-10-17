@@ -14373,17 +14373,29 @@ button:-moz-focusring {
       fill: var(--clr-accent); }
   .advanced .accounts-diagram-wrap.hover:after {
     opacity: 0.5; }
-  .advanced .accounts-diagram-wrap #circleChartText {
-    width: 118px; }
-    .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
-      width: 30px;
-      height: 25px; }
-    .advanced .accounts-diagram-wrap #circleChartText p.value {
-      font-size: 10px; }
-      .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
-        font-size: 14px; }
-    .advanced .accounts-diagram-wrap #circleChartText p.title {
-      font-size: 10px; }
+  @media only screen and (max-height: 900px) {
+    .advanced .accounts-diagram-wrap #circleChartText {
+      width: 118px; }
+      .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
+        width: 30px;
+        height: 25px;
+        margin-left: 2px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.value {
+        font-size: 10px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span {
+          font-size: 13px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span:first-child {
+          line-height: 9px;
+          letter-spacing: 1px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
+          font-size: 14px;
+          letter-spacing: -1px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span.totalBalanceFraction {
+          line-height: 8px;
+          font-size: 12px;
+          letter-spacing: 1px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.title {
+        font-size: 10px; } }
   @media only screen and (min-height: 900px) {
     .advanced .accounts-diagram-wrap:after {
       width: 190px;
@@ -14394,13 +14406,19 @@ button:-moz-focusring {
         font-size: 16px; }
         .advanced .accounts-diagram-wrap #circleChartText p.value span {
           font-size: 17px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span:first-child {
+          line-height: 8px; }
         .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
-          font-size: 21px; }
+          font-size: 20px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span.totalBalanceFraction {
+          line-height: 8px; }
       .advanced .accounts-diagram-wrap #circleChartText p.title {
-        font-size: 14px; }
+        font-size: 14px;
+        letter-spacing: 1px; }
       .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
         width: 40px;
-        height: 35px; } }
+        height: 35px;
+        margin-right: 3px; } }
 
 .accounts-diagram {
   position: relative;
@@ -15116,6 +15134,10 @@ button:-moz-focusring {
     height: 14px;
     flex: 0 0 14px;
     margin: 0 5px 0 0; }
+  .transaction-popup .terms-link-container {
+    width: 100%;
+    text-align: right;
+    margin-top: 10px; }
 
 .autentificator-popup {
   width: 100%;
@@ -15126,6 +15148,14 @@ button:-moz-focusring {
   width: 100%;
   min-width: 255px;
   max-width: 255px; }
+
+#terms-popup .terms-content {
+  padding: 10px;
+  font-family: open_sans;
+  font-size: 10px;
+  max-width: 870px;
+  max-height: 530px;
+  overflow: auto; }
 
 #send-popup .c-block-head {
   background: var(--clr-back-new); }

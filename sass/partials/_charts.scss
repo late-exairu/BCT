@@ -83,21 +83,36 @@
 			opacity: 0.5;
 		}
 	}
-
-	#circleChartText {
-		width: 118px;
-		.sprite-icon{
-			width: 30px;
-			height: 25px;
-		}
-		p.value{
-			font-size: 10px;
-			span.bigger {
-				font-size: 14px;
+	@media only screen and (max-height: 900px) {
+		#circleChartText {
+			width: 118px;
+			.sprite-icon{
+				width: 30px;
+				height: 25px;
+				margin-left: 2px;
 			}
-		}
-		p.title{
-			font-size: 10px;
+			p.value {
+				span {
+					font-size: 13px;
+				}
+				font-size: 10px;
+				span:first-child {
+					line-height: 9px;
+					letter-spacing: 1px;
+				}
+				span.bigger {
+					font-size: 14px;
+					letter-spacing: -1px;
+				}
+				span.totalBalanceFraction {
+					line-height: 8px;
+					font-size: 12px;
+					letter-spacing: 1px;
+				}
+			}
+			p.title{
+				font-size: 10px;
+			}
 		}
 	}
 
@@ -115,18 +130,28 @@
 					font-size: 17px;
 				}
 
+				span:first-child {
+					line-height: 8px;
+				}
+
 				span.bigger {
-					font-size: 21px;
+					font-size: 20px;
+				}
+
+				span.totalBalanceFraction {
+					line-height: 8px;
 				}
 			}
 
 			p.title {
 				font-size: 14px;
+				letter-spacing: 1px;
 			}
 
 			.sprite-icon {
 				width: 40px;
 				height: 35px;
+				margin-right: 3px;
 			}
 		}
 
