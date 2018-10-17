@@ -2336,6 +2336,20 @@ $(function () {
 		});
 	});
 
+	/* T&C popup */
+	$("#terms-link").click(function(e) {
+		e.preventDefault();
+		// Open this fancybox force
+		$.fancybox.open({
+			src: '#terms-popup',
+			opts: {
+      				beforeClose: function () {
+					//$('.exch-form').removeClass('progress');
+					//$('.exch-head').toggleClass('open');
+				}
+			}
+		});
+	})
 
 	/*---------------------------------------------------*/
 	/* autentificator fancybox */
