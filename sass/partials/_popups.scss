@@ -224,6 +224,17 @@
 			border: 1px solid var(--clr-back-new);
 			height: 46px;
 			border-radius: 4px;
+
+
+			.range-slider {
+				margin-top: 13px;
+				z-index: 1;
+				right: 40px;
+				width: calc(100% - 140px);
+				max-width: 230px;
+				padding: 0 8px;
+				position: absolute;
+			}
 		}
 
 		&__percent {
