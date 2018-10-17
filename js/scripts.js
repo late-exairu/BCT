@@ -48,7 +48,9 @@ $(function () {
 					document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
 				}
 			}
-			document.querySelector('.message-bar').classList.add('hidden');
+			if (document.querySelector('.message-bar')) {
+				document.querySelector('.message-bar').classList.add('hidden');				
+			}
 
 
 			// if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
@@ -1485,7 +1487,7 @@ $(function () {
 	});
 
 	$('[send-fancybox]').click(function (e) {
-		e.stopPropagation();
+		//e.stopPropagation();
 		closeTelegramMenu();
 		var fancies_length = $('.main-cols__right .fancybox-container').length;
 		if (fancies_length > 0) return false;
