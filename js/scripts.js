@@ -2690,6 +2690,7 @@ $(function () {
 
 		if (sendCurrency == getCurrency) {
 			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
+				$(this).addClass('hidden');
 				$(priceItem).html(priceRate + ' <span>' + sendCurrency + '</span>');
 			});
 		} else {
@@ -2703,6 +2704,7 @@ $(function () {
 			});
 
 			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
+				$(this).addClass('hidden');
 				$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + getCurrency + ' = </span>' + (sendCurrency == 'USDT' ? numberWithCommas(rateArray[index].toFixed(2)) : numberWithCommas(rateArray[index].toFixed(5))) + ' <span>' + sendCurrency + '</span>');
 			});
 		}
@@ -2716,6 +2718,7 @@ $(function () {
 		}
 
 		$('.graph-prices__price.get-prices__rate').each(function (index, priceItem) {
+			$(this).removeClass('hidden');
 			$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + sendCurrency + ' = </span>' + numberWithCommas(priceRateBackward) + ' <span>' + getCurrency + '</span>');
 		});
 
@@ -2723,11 +2726,11 @@ $(function () {
 		$('.graph-prices__sort').removeClass('asc');
 		$('.graph-prices__sort').removeClass('desc');
 
-		$('.graph-prices__sort').html('1' + getCurrency + ' ≈ ');
+		$('.graph-prices__sort').html('1' + sendCurrency + ' ≈ ');
 	}
 
 	/** Init price list */
-	updatePriceListItem('USDT', 'BTC');
+	updatePriceListItem('BTC', 'USDT');
 
 	/** Graph exchanges sort */
 	$('.graph-prices__sort').click(function (e) {
