@@ -7602,10 +7602,11 @@ h6 {
     display: flex;
     padding: 0 15px;
     align-items: center;
-    height: 45px;
+    height: 30px;
     font-size: 16px;
-    background: var(--clr-back);
-    color: var(--clr-text);
+    text-transform: uppercase;
+    background: var(--clr-back-new);
+    color: var(--clr-textD);
     margin: 0 0 -1px; }
   .exch-dropdown__list {
     position: absolute;
@@ -7621,7 +7622,7 @@ h6 {
     visibility: hidden;
     transition: all 0.2s;
     background: var(--clr-block);
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
     border-radius: var(--border-radius); }
     .exch-dropdown__list .exch-dropdown__title {
       font-size: 18px; }
@@ -10523,8 +10524,8 @@ body.menubar-in #user-btn:before {
     height: 30px;
     font-size: 16px;
     text-transform: uppercase;
-    background: var(--clr-separator);
-    color: var(--clr-text);
+    background: var(--clr-back-new);
+    color: var(--clr-textD);
     margin: 0 0 -1px; }
   .coin-dropdown__list {
     position: absolute;
