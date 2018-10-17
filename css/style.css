@@ -10520,9 +10520,10 @@ body.menubar-in #user-btn:before {
     display: flex;
     padding: 0 15px;
     align-items: center;
-    height: 45px;
+    height: 30px;
     font-size: 16px;
-    background: var(--clr-back);
+    text-transform: uppercase;
+    background: var(--clr-separator);
     color: var(--clr-text);
     margin: 0 0 -1px; }
   .coin-dropdown__list {
