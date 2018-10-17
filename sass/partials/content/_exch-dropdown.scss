@@ -249,8 +249,10 @@
 		}
 
 		&.current{
-			color: var(--clr-accentD);
+			color: var(--clr-accent);
+			background: var(--clr-accentL);
 		}
+
 		&.select{
 			background: var(--clr-backL);
 		}

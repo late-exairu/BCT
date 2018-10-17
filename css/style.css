@@ -7660,7 +7660,8 @@ h6 {
     .exch-dropdown__item:hover {
       background: var(--clr-backLL); }
     .exch-dropdown__item.current {
-      color: var(--clr-accentD); }
+      color: var(--clr-accent);
+      background: var(--clr-accentL); }
     .exch-dropdown__item.select {
       background: var(--clr-backL); }
   .exch-dropdown__icon {
