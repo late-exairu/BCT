@@ -1686,9 +1686,6 @@ $(function () {
 			var firstValueResult = 0;
 			var secondValueResult = 0;
 
-			var firstValueResult = 0;
-			var secondValueResult = 0;
-
 			graphPricesScrollbar.animate({
 				scrollTop: 0
 			}, "slow");
