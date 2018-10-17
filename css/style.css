@@ -14380,20 +14380,13 @@ button:-moz-focusring {
         width: 30px;
         height: 25px;
         margin-left: 2px; }
-      .advanced .accounts-diagram-wrap #circleChartText p.value {
+      .advanced .accounts-diagram-wrap #circleChartText p.value span:first-child {
+        font-size: 11px;
+        top: -1px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
+        font-size: 13px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.value span.totalBalanceFraction {
         font-size: 10px; }
-        .advanced .accounts-diagram-wrap #circleChartText p.value span {
-          font-size: 13px; }
-        .advanced .accounts-diagram-wrap #circleChartText p.value span:first-child {
-          line-height: 9px;
-          letter-spacing: 1px; }
-        .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
-          font-size: 14px;
-          letter-spacing: -1px; }
-        .advanced .accounts-diagram-wrap #circleChartText p.value span.totalBalanceFraction {
-          line-height: 8px;
-          font-size: 12px;
-          letter-spacing: 1px; }
       .advanced .accounts-diagram-wrap #circleChartText p.title {
         font-size: 10px; } }
   @media only screen and (min-height: 900px) {
@@ -14402,19 +14395,14 @@ button:-moz-focusring {
       height: 190px; }
     .advanced .accounts-diagram-wrap #circleChartText {
       width: 170px; }
-      .advanced .accounts-diagram-wrap #circleChartText p.value {
+      .advanced .accounts-diagram-wrap #circleChartText p.value span {
         font-size: 16px; }
-        .advanced .accounts-diagram-wrap #circleChartText p.value span {
-          font-size: 17px; }
-        .advanced .accounts-diagram-wrap #circleChartText p.value span:first-child {
-          line-height: 8px; }
-        .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
-          font-size: 20px; }
-        .advanced .accounts-diagram-wrap #circleChartText p.value span.totalBalanceFraction {
-          line-height: 8px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
+        font-size: 19px; }
+      .advanced .accounts-diagram-wrap #circleChartText p.value span.totalBalanceFraction {
+        font-size: 15px; }
       .advanced .accounts-diagram-wrap #circleChartText p.title {
-        font-size: 14px;
-        letter-spacing: 1px; }
+        font-size: 15px; }
       .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
         width: 40px;
         height: 35px;
@@ -14442,7 +14430,7 @@ button:-moz-focusring {
     width: 35px;
     height: 32px;
     fill: var(--clr-textD);
-    margin: auto 0; }
+    margin-left: 3px; }
   #circleChartText .wrap {
     text-align: center;
     position: relative;
@@ -14466,7 +14454,7 @@ button:-moz-focusring {
         vertical-align: top; }
       #circleChartText .wrap .value span.bigger {
         top: 0;
-        font-size: 17px;
+        font-size: 15px;
         margin: 0px -3px; }
     #circleChartText .wrap .title {
       font-size: 12px;
@@ -14482,13 +14470,12 @@ button:-moz-focusring {
       #circleChartText .wrap .walletTitle {
         font-size: 27px; }
       #circleChartText .wrap .value span {
-        top: 4px;
         font-size: 19px; }
       #circleChartText .wrap .value span.bigger {
         top: 0;
-        font-size: 25px; }
+        font-size: 23px; }
       #circleChartText .wrap .title {
-        font-size: 16px; } }
+        font-size: 18px; } }
 
 #mainChart {
   padding-top: 0;

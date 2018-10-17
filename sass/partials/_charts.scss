@@ -92,22 +92,15 @@
 				margin-left: 2px;
 			}
 			p.value {
-				span {
-					font-size: 13px;
-				}
-				font-size: 10px;
 				span:first-child {
-					line-height: 9px;
-					letter-spacing: 1px;
+					font-size: 11px;
+					top: -1px;
 				}
 				span.bigger {
-					font-size: 14px;
-					letter-spacing: -1px;
+					font-size: 13px;
 				}
 				span.totalBalanceFraction {
-					line-height: 8px;
-					font-size: 12px;
-					letter-spacing: 1px;
+					font-size: 10px;
 				}
 			}
 			p.title{
@@ -125,36 +118,25 @@
 		#circleChartText {
 			width: 170px;
 			p.value {
-				font-size: 16px;
 				span {
-					font-size: 17px;
+					font-size: 16px;
 				}
-
-				span:first-child {
-					line-height: 8px;
-				}
-
 				span.bigger {
-					font-size: 20px;
+					font-size: 19px;
 				}
-
 				span.totalBalanceFraction {
-					line-height: 8px;
+					font-size: 15px;
 				}
 			}
-
 			p.title {
-				font-size: 14px;
-				letter-spacing: 1px;
+				font-size: 15px;
 			}
-
 			.sprite-icon {
 				width: 40px;
 				height: 35px;
 				margin-right: 3px;
 			}
 		}
-
 	}
 }
 
@@ -182,7 +164,7 @@
 		width: 35px;
 		height: 32px;
 		fill: var(--clr-textD);
-		margin: auto 0;
+		margin-left: 3px;
 	}
 
 	.wrap {
@@ -214,7 +196,7 @@
 
 			span.bigger {
 				top: 0;
-				font-size: 17px;
+				font-size: 15px;
 				margin: 0px -3px;
 			}
 		}
@@ -240,18 +222,17 @@
 
 			.value {
 				span {
-					top: 4px;
 					font-size: 19px;
 				}
 
 				span.bigger {
 					top: 0;
-					font-size: 25px;
+					font-size: 23px;
 				}
 			}
 
 			.title {
-				font-size: 16px;
+				font-size: 18px;
 			}
 		}
 	}
