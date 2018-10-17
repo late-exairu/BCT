@@ -436,7 +436,7 @@ $(function () {
 	/*---------------------------------------------------*/
 	$('.scrollbar-right').scrollbar();
 
-	$('.scrollbar-arrows').scrollbar({
+	$('.graph-prices  .scrollbar-right').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",
 		"showArrows": true,
@@ -468,7 +468,7 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* Scroll up/down event for graph prices */
 	/*---------------------------------------------------*/
-	var graphPricesScrollbar = $('.graph-prices__scroll.scrollbar-arrows');
+	var graphPricesScrollbar = $('.graph-prices .scroll-wrapper > .scroll-content');
 	$(".graph-prices__scrollup__btn").on("click", function () {
 		graphPricesScrollbar.animate({
 			scrollTop: '-=200'

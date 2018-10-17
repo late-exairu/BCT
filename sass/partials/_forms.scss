@@ -225,7 +225,7 @@
 			z-index: -1;
 			border-radius: 4px 0 0 4px;
 			background: var(--clr-block);
-			border: 1px solid var(--clr-separatorW);
+			/*border: 1px solid var(--clr-separatorW);*/
 		}
 
 		&:after{
@@ -234,11 +234,11 @@
 			left: 0;
 			top: 0;
 			bottom: 0;
-			background: #f00;
+			/*background: #f00;*/
 			z-index: -2;
 			border-radius: 5px 0 0 5px;
 			width: calc(200% + 60px);
-			background: linear-gradient(to right, var(--color-one) 0%, var(--color-two) 100%);
+			/*background: linear-gradient(to right, var(--color-one) 0%, var(--color-two) 100%);*/
 		}
 	}
 
@@ -353,15 +353,15 @@
 		width: 100%;
 		height: 100%;
 		text-align: right;
-		padding: 4px 10px 4px 10px;
-		border: 1px solid var(--clr-separatorD);
+		padding: 4px 10px 14px 10px;
+		/*border: 1px solid var(--clr-separatorD);*/
 		border: none;
 		border-radius: var(--border-radius);
 		color: var(--clr-textD);
 		outline: none;
 		background: var(--clr-block);
 		z-index: 1;
-		margin-top: -10px;
+		margin-top: 0;
 	}
 
 	&__sep{
@@ -471,7 +471,7 @@
 		border-radius: var(--border-radius);
 		/*overflow: hidden;*/
 		/*background: url(../img/exch-bg.svg) no-repeat;*/
-		background: #f00;
+		/*background: #f00;*/
 		background: linear-gradient(to bottom, var(--clr-accent) 0%, var(--clr-accentD) 100%);
 
 		&:after{
@@ -1162,7 +1162,7 @@
 			line-height: 1;
 			background: transparent;
 			border-radius: var(--border-radius);
-			background: #f00;
+			/*background: #f00;*/
 			background: linear-gradient(to bottom, var(--clr-accent) 0%, var(--clr-accentD) 100%);
 
 			&:after{
@@ -1514,7 +1514,7 @@
 			line-height: 1;
 			background: transparent;
 			border-radius: var(--border-radius);
-			background: #f00;
+			/*background: #f00;*/
 			background: linear-gradient(to bottom, var(--clr-accent) 0%, var(--clr-accentD) 100%);
 
 			&:after{
@@ -1681,7 +1681,7 @@
 			line-height: 1;
 			background: transparent;
 			border-radius: var(--border-radius);
-			background: #f00;
+			/*background: #f00;*/
 			background: linear-gradient(to bottom, var(--clr-accent) 0%, var(--clr-accentD) 100%);
 
 			&:after{
@@ -1780,7 +1780,7 @@
 			line-height: 1;
 			background: transparent;
 			border-radius: var(--border-radius);
-			background: #f00;
+			/*background: #f00;*/
 			background: linear-gradient(to bottom, var(--clr-accent) 0%, var(--clr-accentD) 100%);
 
 			&:after{
