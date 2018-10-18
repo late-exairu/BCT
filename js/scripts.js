@@ -28,6 +28,9 @@ $(function () {
 				document.querySelector('.chat-head__btns').classList.remove('hidden');
 			}
 			if (document.querySelector('.chat-talk')) {
+				$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').animate({
+					scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
+				}, "rapid");
 				document.querySelector('.chat-talk').classList.remove('hidden');
 			}
 
@@ -392,6 +395,9 @@ $(function () {
 			if ($('#telegramText').hasClass('hidden') && ($(this).index() == 1 || $(this).index() == 2)) {
 				$('.chat-talk').addClass('hidden');
 				$('.chat-talk').eq($(this).index() - 1).removeClass('hidden');
+				$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').animate({
+					scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
+				}, "rapid");
 			}
 			$('.chat-head__name').text(telegramGroupName);
 			$('.exch-form__send > input').attr('data-currency', currencyAbbr);
@@ -494,6 +500,10 @@ $(function () {
 	/* js-scrollbar-outer */
 	/*---------------------------------------------------*/
 	$('.scrollbar-right').scrollbar();
+
+	$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').animate({
+		scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
+	}, "rapid");
 
 	$('.graph-prices  .scrollbar-right').scrollbar({
 		"scrollx": "advanced",
@@ -952,6 +962,9 @@ $(function () {
 		var chatName = $(this).find('.chats-list__name').text();
 		$('.chat-head__name').text(chatName);
 		$('.chat-talk').toggleClass('hidden');
+		$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').animate({
+			scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
+		}, "rapid");
 		closeTelegramMenu();
 
 		// check show or hide input

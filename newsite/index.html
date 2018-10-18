@@ -495,7 +495,7 @@
 										</div>
 									</div><!-- chat-talk__item END -->
 
-									<div class="chat-talk__item ">
+									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar11.jpg" />
 										</div>
@@ -553,7 +553,7 @@
 										22 June
 									</div>
 
-									<div class="chat-talk__item ">
+									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar11.jpg" />
 										</div>
@@ -601,7 +601,7 @@
 										</div>
 									</div><!-- chat-talk__item END -->
 
-									<div class="chat-talk__item ">
+									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar11.jpg" />
 										</div>
@@ -649,7 +649,7 @@
 										</div>
 									</div><!-- chat-talk__item END -->
 
-									<div class="chat-talk__item ">
+									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar11.jpg" />
 										</div>
@@ -803,6 +803,9 @@
 											}
 											if (document.querySelector('.chat-talk')) {
 												document.querySelector('.chat-talk').classList.remove('hidden');
+												$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').animate({
+													scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
+												}, "rapid");
 											}
 										}
 									</script>									
