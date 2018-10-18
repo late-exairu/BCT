@@ -23,7 +23,7 @@ $(function () {
 				document.querySelector('#telegramText').classList.add('hidden');
 
 			if (document.querySelector('.chat-head__back')) {
-				document.querySelector('.chat-head__back').classList.remove('hidden');
+				//document.querySelector('.chat-head__back').classList.remove('hidden');
 				document.querySelector('.chat-head__desc').classList.remove('hidden');
 				document.querySelector('.chat-head__btns').classList.remove('hidden');
 			}
@@ -694,11 +694,11 @@ $(function () {
 		if ($(this).index() == 0) {
 			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
 			$('#telegram').addClass('--short');
-			$('#orderBook').removeClass('hidden');
+			$('#orderBook,.chat-head__back').removeClass('hidden');
 		}
 		else{
 			$('#telegram').removeClass('--short');
-			$('#orderBook').addClass('hidden');
+			$('#orderBook,.chat-head__back').addClass('hidden');
 		}
 
 		// Wallet tab
