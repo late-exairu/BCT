@@ -840,7 +840,7 @@ h6 {
         font-weight: 700; }
     .basic-table__row.recent {
       font-size: calc(var(--font-size) + 3px); }
-  .basic-table__scrollup {
+  .basic-table__scrollup, .basic-table__orders-scrollup {
     font-size: 9px;
     color: var(--clr-backCI);
     border-radius: 5px;
@@ -853,7 +853,7 @@ h6 {
     justify-content: center;
     align-items: center;
     z-index: 2; }
-    .basic-table__scrollup .scroll-up-button {
+    .basic-table__scrollup .scroll-up-button, .basic-table__orders-scrollup .scroll-up-button {
       padding: 0 4px;
       text-align: center;
       line-height: 9px;
@@ -863,10 +863,10 @@ h6 {
       justify-content: center;
       cursor: pointer;
       background: transparent; }
-      .basic-table__scrollup .scroll-up-button .sprite-icon {
+      .basic-table__scrollup .scroll-up-button .sprite-icon, .basic-table__orders-scrollup .scroll-up-button .sprite-icon {
         width: 20px;
         height: 28px; }
-      .basic-table__scrollup .scroll-up-button:hover .sprite-icon {
+      .basic-table__scrollup .scroll-up-button:hover .sprite-icon, .basic-table__orders-scrollup .scroll-up-button:hover .sprite-icon {
         fill: var(--clr-textL); }
   .basic-table__btn {
     min-height: 28px;

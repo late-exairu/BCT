@@ -490,7 +490,7 @@ $(function () {
 		}
 	});
 
-
+	
 	$('.circleDiagramParent .basic-table.scrollbar-right').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",
@@ -499,6 +499,21 @@ $(function () {
 				$('.basic-table__scrollup').show();
 			} else {
 				$('.basic-table__scrollup').hide();
+			}
+		}
+	});
+
+
+	$('#panel-funds-orders .basic-table__body.scrollbar-right').scrollbar({
+		"scrollx": "advanced",
+		"scrolly": "advanced",
+		"showArrows": true,
+		"onScroll": function (y, x) {
+			$('.basic-table__orders-scrollup').show();
+			if (y.scroll > 0) {
+				$('.basic-table__orders-scrollup').show();
+			} else {
+				$('.basic-table__orders-scrollup').hide();
 			}
 		}
 	});
@@ -530,10 +545,16 @@ $(function () {
 			scrollTop: '0'
 		}, "rapid");
 	});
-
+	
 
 	$(".basic-table__scrollup").on("click", function () {
 		$('.circleDiagramParent .basic-table.scrollbar-right.scroll-wrapper > .scroll-content').animate({
+			scrollTop: '0'
+		}, "rapid");
+	});
+
+	$(".basic-table__orders-scrollup").on("click", function () {
+		$('#panel-funds-orders .basic-table__body.scrollbar-right.scroll-wrapper > .scroll-content').animate({
 			scrollTop: '0'
 		}, "rapid");
 	});
