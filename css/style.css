@@ -1547,7 +1547,7 @@ h6 {
     padding: 10px 10px 0 10px;
     overflow: hidden;
     /*flex: 1 1 auto;*/
-    background-color: #e8e8e8;
+    background-color: var(--clr-back);
     border-radius: 5px 5px 5px 5px; }
   .chat-talk__head {
     display: flex; }
@@ -9005,6 +9005,7 @@ Blocks from left bar
   padding: 2px 0;
   background: var(--clr-back);
   z-index: 10;
+  z-index: 100003;
   /*border: 1px solid var(--clr-separator);*/ }
   .left-bar__scroll {
     position: absolute;
@@ -9252,11 +9253,26 @@ Blocks from left bar
 				&:focus{
 					border: 1px solid var(--clr-accent);
 				}*/ }
+    .main-cols__left.col-chats-adv {
+      position: relative;
+      width: 22%;
+      flex: 0 0 22%;
+      min-width: 410px;
+      max-width: 530px;
+      display: none; }
     .main-cols__left.col-tables {
-      width: 32%;
+      width: 36%;
       flex: 0 0 32%;
       min-width: 394px;
       max-width: 540px; }
+    @media only screen and (min-width: 1920px) {
+      .main-cols__left.col-chats-adv {
+        display: flex; }
+      .main-cols__left.col-tables {
+        width: 25%;
+        flex: 0 0 25%;
+        min-width: 460px;
+        max-width: 580px; } }
   .main-cols__left-top {
     display: flex;
     flex: 1 1;
@@ -14862,6 +14878,9 @@ button:-moz-focusring {
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius); }
 
+.advanced #telegramMenu.open {
+  transform: translate(55px, 0); }
+
 #telegramSetting {
   top: 0;
   right: 0px;
@@ -14930,13 +14949,13 @@ button:-moz-focusring {
   z-index: 100001;
   position: absolute;
   touch-action: none;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: var(--clr-back-new);
   -webkit-tap-highlight-color: transparent;
   transition: 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   opacity: 0;
   visibility: hidden; }
   #telegramOverlay.open {
-    opacity: 1;
+    opacity: 0.75;
     visibility: visible; }
 
 #telegramText {
