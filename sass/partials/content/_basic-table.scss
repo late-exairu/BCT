@@ -50,6 +50,16 @@
 		padding: 0;
 		flex: 0 0 auto;
 
+		.smallCurrencyChart {
+			filter: grayscale(100%);
+		}
+
+		&:not(.disabled){
+			.smallCurrencyChart:hover {
+				filter: none;
+			}
+		}
+
 		&:hover{
 			background: var(--clr-backLL);
 			cursor: pointer;
@@ -154,9 +164,6 @@
 			.icon-curr{
 				opacity: 0.25;
 			}
-			.smallCurrencyChart{
-				filter: grayscale(100%);
-			}
 			.smallChartInfo{
 				.smaller{
 					color: var(--clr-icon);
@@ -208,6 +215,45 @@
 
 		&.recent{
 			font-size: calc(var(--font-size) + 3px);
+		}
+	}
+
+	&__scrollup, &__orders-scrollup {
+		font-size: 9px;
+		color: var(--clr-backCI);
+		border-radius: 5px;
+		border: 1px solid;
+
+		position: absolute;
+		right: 14px;
+		top: 85%;
+		background: transparent;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 2;
+
+		.scroll-up-button {
+			padding: 0 4px;
+			text-align: center;
+			line-height: 9px;
+			color: var(--clr-backCI);
+			height: 100%;
+			border: none;
+			justify-content: center;
+			cursor: pointer;
+			background: transparent;
+		
+			.sprite-icon{
+				width: 20px;
+				height: 28px;
+			}
+	
+			&:hover{
+				.sprite-icon{
+					fill: var(--clr-textL);
+				}	
+			}
 		}
 	}
 

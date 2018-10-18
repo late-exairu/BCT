@@ -23,7 +23,6 @@
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -77,7 +76,7 @@
 					<div class="d-flex flex-1-1 flex-h-fix">
 						<div class="c-block__col">
 							<div class="c-block__section chat-head">
-								<button class="chat-head__back">
+								<button class="chat-head__back hidden">
 									<svg class="sprite-icon" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-back-3"></use>
 									</svg>
@@ -88,7 +87,7 @@
 								</svg> -->
 
 								<div class="chat-head__desc hidden">
-									<p class="chat-head__name">Tether Room</p>
+									<p class="chat-head__name">BTC Bitcoin Room</p>
 									<p class="chat-head__info">67 members, 2 online</p>
 								</div>
 
@@ -131,9 +130,7 @@
 
 							<div class="c-block__section flex-1-1 scroll-y scrollbar-right">
 								<div id="telegramText" style="min-width:max-content">
-									In order to be able to save <br>
-									your progress pls log in to <br>
-									Telegram
+									This website uses cookies in order to<br/> offer you the most relevant<br/> information. Please accept cookies for<br/> optimal performance.
 								</div>
 								<div class="chat-talk hidden">
 									<div class="chat-talk__item">
@@ -498,7 +495,7 @@
 										</div>
 									</div><!-- chat-talk__item END -->
 
-									<div class="chat-talk__item ">
+									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar11.jpg" />
 										</div>
@@ -556,7 +553,7 @@
 										22 June
 									</div>
 
-									<div class="chat-talk__item ">
+									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar11.jpg" />
 										</div>
@@ -604,7 +601,7 @@
 										</div>
 									</div><!-- chat-talk__item END -->
 
-									<div class="chat-talk__item ">
+									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar11.jpg" />
 										</div>
@@ -652,7 +649,7 @@
 										</div>
 									</div><!-- chat-talk__item END -->
 
-									<div class="chat-talk__item ">
+									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar11.jpg" />
 										</div>
@@ -766,7 +763,7 @@
 								</button>
 
 								<div class="message-bar__login">
-									<script async src="https://telegram.org/js/telegram-widget.js?4" data-telegram-login="TamsterBot" data-size="large" data-radius="5" data-onauth="onTelegramAuth(user)"></script>
+									<script async src="https://telegram.org/js/telegram-widget.js?4" data-telegram-login="BCTerminalBot" data-size="large" data-radius="5" data-onauth="onTelegramAuth(user)"></script>
 									<script type="text/javascript">
 										function onTelegramAuth(user) {
 											 //alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
@@ -789,7 +786,9 @@
 												avatarAbbr.style.fontSize = '19px';
 												document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
 											}
-
+											if (document.querySelector('.message-bar')) {
+											document.querySelector('.message-bar').classList.add('hidden');
+											}
 											if (document.querySelector('.message-bar__login'))
 												document.querySelector('.message-bar__login').classList.add('hidden');
 											if (document.querySelector('.message-bar__login-demo'))
@@ -804,6 +803,9 @@
 											}
 											if (document.querySelector('.chat-talk')) {
 												document.querySelector('.chat-talk').classList.remove('hidden');
+												$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').animate({
+													scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
+												}, "rapid");
 											}
 										}
 									</script>									
@@ -819,6 +821,46 @@
 					</div><!-- d-flex END -->
 				</div>
 			</div><!-- main-cols__left-top END -->
+
+			<div id="telegramSetting">
+				<div class="c-block__col">
+					<div class="settings-head c-block__section">
+						<button class="chat-head__btn">
+							<svg class="sprite-icon menu-burger" role="img" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#menu-burger"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="settings-list c-block__section scroll-y scrollbar-right outer">
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+
+						<div class="settings-list__item">
+							<span>Settings</span>
+							<div class="toggle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div><!-- main-cols__left END -->
 
 		<div class="main-cols__right">
@@ -829,9 +871,9 @@
 							<div class="exch-dropdown">
 								<div class="exch-dropdown__border">
 									<div class="exch-dropdown__current">
-										<svg class="exch-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-										</svg><p class="exch-dropdown__title"><span>USDT</span><br/> Tether</p>
+										<svg class="exch-dropdown__icon clr-coin-btc" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
+										</svg><p class="exch-dropdown__title"><span>BTC</span><br/> Bitcoin</p>
 
 										<div class="exch-dropdown__hangle">
 											<svg class="sprite-icon" role="img" aria-hidden="true">
@@ -863,23 +905,24 @@
 
 										<div class="exch-dropdown__list-title">Coins in your wallet</div>
 
-										<!-- <div class="exch-dropdown__item" data-name="Bitcoin" data-telegram="BTC Bitcoin Room" data-currency="BTC">
+										<div class="exch-dropdown__item" data-name="Bitcoin" data-telegram="BTC Bitcoin Room" data-currency="BTC">
 											<svg class="exch-dropdown__icon clr-coin-btc" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
 											</svg><p class="exch-dropdown__title"><b>BTC</b> - Bitcoin</p>
 										</div>
-
+										
+										<!--
 										<div class="exch-dropdown__item" data-name="Ethereum" data-telegram="ETH Ethereum Room" data-currency="ETH">
 											<svg class="exch-dropdown__icon clr-coin-eth" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-eth"></use>
 											</svg><p class="exch-dropdown__title"><b>ETH</b> - Ethereum</p>
 										</div> -->
 
-										<div class="exch-dropdown__item current" data-name="Tether" data-telegram="Tether Room" data-currency="USDT">
+										<!-- <div class="exch-dropdown__item current" data-name="Tether" data-telegram="Tether Room" data-currency="USDT">
 											<svg class="exch-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
 											</svg><p class="exch-dropdown__title"><b>USDT</b> - Tether</p>
-										</div>
+										</div> -->
 
 										<div class="exch-dropdown__list-title">All</div>
 
@@ -899,10 +942,10 @@
 							<div class="exch-dropdown">
 								<div class="exch-dropdown__border get">
 									<div class="exch-dropdown__current">
-										<svg class="exch-dropdown__icon clr-coin-btc" role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
+										<svg class="exch-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
 										</svg>
-										<p class="exch-dropdown__title"><span>BTC</span><br /> Bitcoin</p>
+										<p class="exch-dropdown__title"><span>USDT</span><br /> Tether</p>
 
 										<div class="exch-dropdown__hangle">
 											<svg class="sprite-icon" role="img" aria-hidden="true">
@@ -968,15 +1011,15 @@
 					<form class="exch-form">
 						<div class="exch-form__body">
 							<div class="exch-form__send">
-								<svg class="exch-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-								</svg><p class="exch-dropdown__title"><span>USDT</span><br/> You have</p>
+								<svg class="exch-dropdown__icon clr-coin-btc" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
+								</svg><p class="exch-dropdown__title"><span>BTC</span><br/> You have</p>
 
-								<input class="exch-form__input" type="text" placeholder="0.00" name="" value="1.00" data-currency="USDT">
-								<label class="exch-form__percent">13%</label>
-								<!-- <div class="range-slider">
+								<input class="exch-form__input" type="text" placeholder="0.00" name="" value="1.00" data-currency="BTC">
+								<!-- <label class="exch-form__percent">13%</label> -->
+								<div class="range-slider">
 									<input type="range" class="exch-form-slider__control" value="5" min="0" max="5" step="1" name="example_name"/>
-								</div> -->
+								</div>
 								<!-- <div class="exch-form__curr"><p>USDT<span><br>YOU HAVE</span></p></div> -->
 								
 								<!-- <svg class="exch-form__coin clr-coin-btc" role="img" aria-hidden="true">
@@ -991,11 +1034,11 @@
 							</div><!-- exch-form__sep -->
 							
 							<div class="exch-form__get">
-								<svg class="exch-dropdown__icon clr-coin-btc" role="img" aria-hidden="true">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
+								<svg class="exch-dropdown__icon clr-coin-usdt" role="img" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
 								</svg>
-								<p class="exch-dropdown__title"><span>BTC</span><br /> You get</p>
-								<input class="exch-form__input" type="text" placeholder="0.00" name="" value="6,889.19"  data-currency="BTC">
+								<p class="exch-dropdown__title"><span>USDT</span><br /> You get</p>
+								<input class="exch-form__input" type="text" placeholder="0.00" name="" value="6,889.19"  data-currency="USDT">
 								<!-- <div class="exch-form__curr"><P>BTC<span><br>YOU GET</span></P></div> -->
 								
 								<!-- <svg class="exch-form__coin clr-coin-usdt" role="img" aria-hidden="true">
@@ -1054,12 +1097,12 @@
 								<div class="graph-info">
 									<div class="graph-info__item">
 										<p class="graph-info__title">
-											<span>1 USDT </span>
+											<span>1 BTC </span>
 											≈
 											<!-- <svg class="graph-info__switch-arrows" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrows-switch-small"></use>
 											</svg> -->
-											<span> 0.00016 BTC</span>
+											<span> 6,852.52 USDT</span>
 										</p>
 									</div>
 								
@@ -1099,7 +1142,7 @@
 									<div class="graph-info__range">
 										<div class="graph-info__range__current">1Y</div>
 										<ul class="graph-info__range__list">
-											<li class="graph-info__range__item">2H</li>
+											<li class="graph-info__range__item">1H</li>
 											<li class="graph-info__range__item">1D</li>
 											<li class="graph-info__range__item">1W</li>
 											<li class="graph-info__range__item">1M</li>
@@ -1127,7 +1170,7 @@
 
 						<div class="graph-prices__sort__btn">
 							<button class="graph-prices__sort">
-								1BTC = 
+								1BTC ≈ 
 								<!-- <svg class="sprite-icon sort-none" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#sort-none"></use>
 								</svg>
@@ -1157,7 +1200,8 @@
 							</button>
 						</div>
 
-						<div class="graph-prices__scroll scroll-y scrollbar-arrows">
+						<!-- <div class="graph-prices__scroll scroll-y scrollbar-arrows scrollbar-right"> -->
+						<div class="graph-prices__scroll scroll-y scrollbar-right outer">
 							<div class="graph-prices__list">
 								<!-- <div class="graph-prices__current active" data-id="4">
 									<div class="graph-prices__trader ">
@@ -1953,36 +1997,17 @@
 									</div>
 								</div>
 
+								<div class="basic-table__scrollup">
+									<button class="scroll-up-button">
+										<svg class="sprite-icon" role="img" aria-hidden="true"> 
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-up"></use> 
+										</svg>
+									</button>
+								</div>
+
 								<div class="basic-table not-clickable high-height bordered h-100 d-flex-col h-100 scroll-y scrollbar-right outer">
 
-									<div class="basic-table__row" data-currency="USDT">
-										<div class="basic-table__col w-37">
-											<svg class="basic-table__curr icon-curr clr-coin-usdt" role="img" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
-											</svg>
-											<div class="d-flex-col">
-												<span class="bigger"><span class="bold walletUSDT"></span> USDT</span>
-												<span class="smaller">Tether</span>
-											</div>
-										</div>
-										<div class="basic-table__col w-40">
-											<div class="bigger smallCurrencyChart" id="smallChartUSDT"></div>
-											<div class="bigger smallChartInfo d-flex-col"></div>
-											<!-- $1 
-											<span class="smaller clr-blue">+0%</span> -->
-										</div>
-										<div class="basic-table__col w-22">
-											<button class="basic-table__btn fix-width clickable" transaction-fancybox>
-												<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
-												</svg>
-												<span class="bigger">USDT</span>
-											</button>
-										</div>
-									</div>
-									<!-- basic-table__row END -->
-									
-									<div class="basic-table__row disabled" data-currency="BTC">
+									<div class="basic-table__row" data-currency="BTC">
 										<div class="basic-table__col w-37">
 											<svg class="basic-table__curr icon-curr clr-coin-btc" role="img" aria-hidden="true">
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
@@ -2006,6 +2031,33 @@
 											</button>
 										</div>
 									</div>
+									<!-- basic-table__row END -->
+									<div class="basic-table__row disabled" data-currency="USDT">
+										<div class="basic-table__col w-37">
+											<svg class="basic-table__curr icon-curr clr-coin-usdt" role="img" aria-hidden="true">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-usdt"></use>
+											</svg>
+											<div class="d-flex-col">
+												<span class="bigger"><span class="bold walletUSDT"></span> USDT</span>
+												<span class="smaller">Tether</span>
+											</div>
+										</div>
+										<div class="basic-table__col w-40">
+											<div class="bigger smallCurrencyChart" id="smallChartUSDT"></div>
+											<div class="bigger smallChartInfo d-flex-col"></div>
+											<!-- $1 
+																				<span class="smaller clr-blue">+0%</span> -->
+										</div>
+										<div class="basic-table__col w-22">
+											<button class="basic-table__btn fix-width clickable" transaction-fancybox>
+												<svg class="sprite-icon qr-code" role="img" aria-hidden="true">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#qr-code"></use>
+												</svg>
+												<span class="bigger">USDT</span>
+											</button>
+										</div>
+									</div>
+
 									<!-- basic-table__row END -->
 
 									<div class="basic-table__row disabled" data-currency="ETH">
@@ -2142,6 +2194,14 @@
 							</div><!-- scroll-y END -->
 						</div><!-- js-tabs-panel END -->
 						<div class="js-tabs-panel" id="panel-funds-orders">
+							<div class="basic-table__orders-scrollup">
+								<button class="scroll-up-button">
+									<svg class="sprite-icon" role="img" aria-hidden="true"> 
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-up"></use> 
+									</svg>
+								</button>
+							</div>
+
 							<div class="flex-1-1 scroll-y scrollbar-right">
 								<div class="basic-table bordered">
 									<div class="basic-table__row head">
@@ -2482,18 +2542,14 @@
 <div class="basic-popup transaction-popup" id="transaction-popup" style="display: none;">
 	<div class="floating-btn_container">
 			<a id="open-tx-history" class="transaction-popup__floating-btn up">
-				<i class="fas fa-angle-double-up"></i>&nbsp;View History	
+				<span class="tx-currency"></span> History	
 		    </a>
 	</div>
 	<div class="tx-history-basic basic-popup__overlay">
 		<div class="overlay-header">
 				<a id="close-tx-history" class="transaction-popup__floating-btn down">
-						<i class="fas fa-angle-double-down"></i>&nbsp;Close	History
-				</a>
-		
-			<img class="tx-currency-icon" src="img/svg/coin-usdt.svg" />
-			<span class="tx-currency"> USDT</span> 
-			Transaction History<br />
+						<span class="tx-currency"></span> History &#x2716;
+					</a>
 		</div>
 		<div class="flex-1-1 scroll-y scrollbar-right">
 			<div class="basic-table bordered d-flex-col h-100 flex-h-fix">
@@ -2501,160 +2557,160 @@
 				<div class="tx-list-basic basic-table__body h-100 scroll-y scrollbar-right outer">
 				<!-- 										
 					<div class="basic-table__row">
-						<div class="basic-table__col w-20">Just now</div>
+						<div class="basic-table__col w-15 align-center">Just now</div>
 						<div class="basic-table__col w-17">BTC/USDT</div>
 						<div class="basic-table__col w-12">Buy</div>
-						<div class="basic-table__col w-20">7,099.45 USDT</div>
-						<div class="basic-table__col w-20">0.0411 BTC</div>
-						<div class="basic-table__col w-10">FILLED</div>
+						<div class="basic-table__col w-15 align-center">7,099.45 USDT</div>
+						<div class="basic-table__col w-15 align-center">0.0411 BTC</div>
+						<div class="basic-table__col w-15 align-center">FILLED</div>
 					</div>
 				-->
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-20"> Now</div>
-						<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-left"></i></div>
-						<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp;0.0015 from  0x38245...</a>
+						<div class="basic-table__col w-15 align-center"> Now</div>
+						<div class="basic-table__col w-10 align-center"> <i class="fas fa-download"></i></div>
+						<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 0.0015 from 0x38245A092...</a>
 					</div>
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-20"> Oct 13</div>
-						<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-right"></i></div>
-						<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
+						<div class="basic-table__col w-15 align-center"> Oct 13</div>
+						<div class="basic-table__col w-10 align-center"> <i class="fas fa-paper-plane"></i></div>
+						<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamsterGirl</a>
 
 
 					</div>
 
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-20"> Oct 5</div>
+						<div class="basic-table__col w-15 align-center"> Oct 5</div>
 						<div class="basic-table__col w-10 align-center"> <i class="fas fa-exchange-alt"></i></div>
-						<a class="basic-table__col w-70"><span class="tx-currency">BTC</span>&nbsp; 10.5 for USDT 60800.80</a>
+						<a class="basic-table__col w-80"><span class="tx-currency">BTC</span>&nbsp; 10.5 for USDT 60800.80</a>
 
 
 					</div>
 
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-20"> Aug 30</div>
-						<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-left"></i></div>
-						<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 1050 from @ShaunMcD</a>
+						<div class="basic-table__col w-15 align-center"> Aug 30</div>
+						<div class="basic-table__col w-10 align-center"> <i class="fas fa-download"></i></div>
+						<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 1050 from @ShaunMcD</a>
 
 
 					</div>
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-20"> Aug 8</div>
-						<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-right"></i></div>
-						<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
+						<div class="basic-table__col w-15 align-center"> Aug 8</div>
+						<div class="basic-table__col w-10 align-center"> <i class="fas fa-paper-plane"></i></div>
+						<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
 
 
 					</div>
 
 					<div class="basic-table__row">
-						<div class="basic-table__col w-20"> Mar 1</div>
-						<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-left"></i></div>
-						<a class="basic-table__col w-70"><span class="tx-currency">BTC</span>&nbsp; 1.98720 from @Pamela</a>
+						<div class="basic-table__col w-15 align-center"> Mar 1</div>
+						<div class="basic-table__col w-10 align-center"> <i class="fas fa-download"></i></div>
+						<a class="basic-table__col w-80"><span class="tx-currency">BTC</span>&nbsp; 1.98720 from @Pamela</a>
 
 
 					</div>
 					<div class="basic-table__row">
-							<div class="basic-table__col w-20"> Jan 2</div>
-							<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-right"></i></div>
-							<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
+							<div class="basic-table__col w-15 align-center"> Jan 2</div>
+							<div class="basic-table__col w-10 align-center"> <i class="fas fa-paper-plane"></i></div>
+							<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
 
 
 						</div>
 	
 	
 						<div class="basic-table__row">
-							<div class="basic-table__col w-20"> Dec 15</div>
+							<div class="basic-table__col w-15 align-center"> Dec 15</div>
 							<div class="basic-table__col w-10 align-center"> <i class="fas fa-exchange-alt"></i></div>
-							<a class="basic-table__col w-70"><span class="tx-currency">BTC</span>&nbsp; 10.5 for USDT 60800.80</a>
+							<a class="basic-table__col w-80"><span class="tx-currency">BTC</span>&nbsp; 10.5 for USDT 60800.80</a>
 
 
 						</div>
 	
 	
 						<div class="basic-table__row">
-							<div class="basic-table__col w-20"> Nov 8</div>
-							<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-left"></i></div>
-							<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 1050 from @ShaunMcD</a>
+							<div class="basic-table__col w-15 align-center"> Nov 8</div>
+							<div class="basic-table__col w-10 align-center"> <i class="fas fa-download"></i></div>
+							<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 1050 from @ShaunMcD</a>
 
 
 						</div>
 
 						<div class="basic-table__row">
-								<div class="basic-table__col w-20"> Jan 2</div>
-								<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-right"></i></div>
-								<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
+								<div class="basic-table__col w-15 align-center"> Jan 2</div>
+								<div class="basic-table__col w-10 align-center"> <i class="fas fa-paper-plane"></i></div>
+								<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
 	
 	
 							</div>
 		
 		
 							<div class="basic-table__row">
-								<div class="basic-table__col w-20"> Dec 15</div>
+								<div class="basic-table__col w-15 align-center"> Dec 15</div>
 								<div class="basic-table__col w-10 align-center"> <i class="fas fa-exchange-alt"></i></div>
-								<a class="basic-table__col w-70"><span class="tx-currency">BTC</span>&nbsp; 10.5 for USDT 60800.80</a>
+								<a class="basic-table__col w-80"><span class="tx-currency">BTC</span>&nbsp; 10.5 for USDT 60800.80</a>
 	
 	
 							</div>
 		
 		
 							<div class="basic-table__row">
-								<div class="basic-table__col w-20"> Nov 8</div>
-								<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-left"></i></div>
-								<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 1050 from @ShaunMcD</a>
+								<div class="basic-table__col w-15 align-center"> Nov 8</div>
+								<div class="basic-table__col w-10 align-center"> <i class="fas fa-download"></i></div>
+								<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 1050 from @ShaunMcD</a>
 	
 	
 							</div>
 							<div class="basic-table__row">
-									<div class="basic-table__col w-20"> Jan 2</div>
-									<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-right"></i></div>
-									<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
+									<div class="basic-table__col w-15 align-center"> Jan 2</div>
+									<div class="basic-table__col w-10 align-center"> <i class="fas fa-paper-plane"></i></div>
+									<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
 		
 		
 								</div>
 			
 			
 								<div class="basic-table__row">
-									<div class="basic-table__col w-20"> Dec 15</div>
+									<div class="basic-table__col w-15 align-center"> Dec 15</div>
 									<div class="basic-table__col w-10 align-center"> <i class="fas fa-exchange-alt"></i></div>
-									<a class="basic-table__col w-70"><span class="tx-currency">BTC</span>&nbsp; 10.5 for USDT 60800.80</a>
+									<a class="basic-table__col w-80"><span class="tx-currency">BTC</span>&nbsp; 10.5 for USDT 60800.80</a>
 		
 		
 								</div>
 			
 			
 								<div class="basic-table__row">
-									<div class="basic-table__col w-20"> Nov 8</div>
-									<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-left"></i></div>
-									<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 1050 from @ShaunMcD</a>
+									<div class="basic-table__col w-15 align-center"> Nov 8</div>
+									<div class="basic-table__col w-10 align-center"> <i class="fas fa-download"></i></div>
+									<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 1050 from @ShaunMcD</a>
 		
 		
 								</div>
 								<div class="basic-table__row">
-										<div class="basic-table__col w-20"> Jan 2</div>
-										<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-right"></i></div>
-										<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
+										<div class="basic-table__col w-15 align-center"> Jan 2</div>
+										<div class="basic-table__col w-10 align-center"> <i class="fas fa-paper-plane"></i></div>
+										<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 10.5 to @CuteHamster</a>
 			
 			
 									</div>
 				
 				
 									<div class="basic-table__row">
-										<div class="basic-table__col w-20"> Dec 15</div>
+										<div class="basic-table__col w-15 align-center"> Dec 15</div>
 										<div class="basic-table__col w-10 align-center"> <i class="fas fa-exchange-alt"></i></div>
-										<a class="basic-table__col w-70"><span class="tx-currency">BTC</span>&nbsp; 10.5 for USDT 60800.80</a>
+										<a class="basic-table__col w-80"><span class="tx-currency">BTC</span>&nbsp; 10.5 for USDT 60800.80</a>
 			
 			
 									</div>
 				
 				
 									<div class="basic-table__row">
-										<div class="basic-table__col w-20"> Nov 8</div>
-										<div class="basic-table__col w-10 align-center"> <i class="fas fa-long-arrow-alt-left"></i></div>
-										<a class="basic-table__col w-70"> <span class="tx-currency">BTC</span>&nbsp; 1050 from @ShaunMcD</a>
+										<div class="basic-table__col w-15 align-center"> Nov 8</div>
+										<div class="basic-table__col w-10 align-center"> <i class="fas fa-download"></i></div>
+										<a class="basic-table__col w-80"> <span class="tx-currency">BTC</span>&nbsp; 1050 from @ShaunMcD</a>
 			
 			
 									</div>
@@ -2662,9 +2718,9 @@
 	
 	
 									<div class="basic-table__row spacer">
-											<div class="basic-table__col w-20"></div>
+											<div class="basic-table__col w-15 align-center"></div>
 											<div class="basic-table__col w-10 align-center"></div>
-											<a class="basic-table__col w-70"></a>
+											<a class="basic-table__col w-80"></a>
 				
 				
 										</div>
@@ -2704,9 +2760,9 @@
 						</button>
 					</div>
 
-					<div style="width:100%; text-align:right;margin-top:10px">
+					<div class="terms-link-container">
 						<span class="transaction-form__label" style="color: var(--clr-textLL)" onclick="$('#accept-terms').click()">I accept the  
-							<a href="#">Terms</a>
+							<a href="#" id="terms-link">Terms</a>
 						</span>
 	
 						<label class="container">
@@ -2773,7 +2829,11 @@
 						</svg><p class="send-form__dropdown__title"><span>USDT</span><br/> USD Tether</p>
 
 						<input class="send-form__input" type="text" placeholder="0.00" name="" value="1.00" data-currency="USDT">
-						<label class="send-form__percent">13%</label>
+						<!-- <label class="send-form__percent">13%</label> -->
+						<div class="range-slider">
+							<input type="range" class="send-form-slider__control" value="5" min="0" max="5" step="1" name="example_name"/>
+						</div>
+						
 						<div class="send-dropdown__hangle">
 							<svg class="sprite-icon" role="img" aria-hidden="true">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-drop-2"></use>
@@ -2824,7 +2884,155 @@
 			</div>
 		</div>
 	</div>
-	
+
+<!-- Terms and conditions popup -->
+<div class="basic-popup terms-popup" id="terms-popup" style="display: none;">
+	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
+		<div class="d-flex-col flex-1-1 flex-h-fix">
+					<div class="terms-content">
+							<p style="font-size:18px; font-weight:bold">Terms Of Service</p>
+							<p class="agreementConHeader editDate" style="padding:10px 0 0 0;">[Last revised: 15 Oct 2018]</p>
+							<p>This agreement is between you and the service operator, BCT. By using any services made available through the BCT website (<a class="jumpLink" href="https://www.BCT.io" target="_blank">https://www.BCT.io</a>), API, or BCT affiliates, you agree that you have read, understood and accepted all of the terms and conditions contained in this Terms of Use agreement, as well as our Privacy Policy and Consent Form which have incorporated the GDPR regulation. As this is a legally binding contract, please carefully read through this agreement and related notices before using any of our Services. By registering, accessing or using BCT, you have agreed to the terms and conditions as laid out in this User Agreement. Should you disagree to this User Agreement, please proceed to initiate the account lock function (for existing users) and stop the usage of BCT and any of its services.</p>
+							<p>For more information on BCT, you can refer to the company and license information found on the website. If you have questions regarding this agreement, please feel free to contact BCT for clarification via our Customer Support team.</p>
+											
+							<p class="agreementConHeader">Agreement Conditions </p>
+							<p>BCT reserves the right to modify or change the terms and conditions of the agreement at any time and at its sole discretion. BCT will provide notice of these changes by updating the revised Terms of Use on the webpage and changing the “[Last revised: ]” date on this page. Any and all modifications or changes to the Terms of Use will be effective immediately upon being announced on the website or released to users. As such, your continued use of BCT’s services acts as acceptance of the amended agreement and rules.</p>
+							
+							<p class="agreementConHeader">Eligibility</p>
+							<p>By registering to use a BCT Account, you have affirmed that you are at least 18 years old and are an individual, legal person or other organization with full legal capacity to enter into this User Agreement between you and BCT. If you are not, you and your guardian shall undertake all consequences resulting from your actions and BCT shall have the right to cancel or freeze your account in addition to filing claims against you and your guardian for compensation.</p>
+							<p class="agreementConSubHeader">Prohibition of use</p>
+							<p>By accessing and using BCT and any of its services, you acknowledge and declare that you are not on any trade or economic sanctions lists, such as the United Nations Security Council Sanctions List and its equivalent. BCT maintains the right to select its markets and jurisdictions to operate and may restrict or deny its services to certain countries. The content of this Agreement shall not be excluded from the laws of the country under which the user belongs. BCT maintains its stance that prohibited users are not to use or access BCT and any of its services.
+							</p>
+							
+							<p class="agreementConSubHeader">Description of services
+							</p>
+							<p>BCT provides an online digital asset trading platform (crypto to crypto) for products commonly known as cryptographic tokens, digital tokens or cryptographic currency. BCT does not provide fiat trading capabilities on its platform and as such is not subjected to the stringent regulations that come with it. BCT functions as a trading platform provider and is not a buyer or seller in trades made between traders. BCT is also not a market maker. Traders must register and open an account with BCT and deposit digital assets prior to commencement of trading. Traders may request the withdrawal of their digital assets, subject to the limitations as stated in the Terms and Conditions.</p>
+							<p>BCT strives to maintain the accuracy of information posted on its website however it cannot guarantee the accuracy, suitability, reliability, completeness, performance or fitness for purpose of the content through the website, and will not accept liability for any loss or damage that may arise directly or indirectly from the content. Information on BCT website can be subjected to change without notice and is provided for the primary purpose of facilitating users to arrive at independent decisions. BCT does not provide investment or advisory advice and will have no liability for the use or interpretation of information as stated in its website or other communication mediums. All users of BCT must understand that there are risks involved in trading. BCT encourages all users to exercise prudence and trade responsibly within their own means.</p>
+							<p>While BCT emphasises platform security to ensure the continuity and security of its services (announcements will be made in event of downtime/maintenance), it will be non-accountable to Act of God, malicious targeted hacking, terrorist attacks and other unforeseen circumstances. BCT reserves the right to cancel, rollback or block transactions of all type on its platform in event of abnormal transactions. BCT will not ask for any password from its users nor ask users to transfer funds that are not listed on its trading platform. Users are encouraged to exercise prudence in dealing with discounts or promotions that could lead to them getting scammed. While the list is non-exhaustive, you agree that BCT will not be held responsible for any losses arising from the situations stated above. </p>
+							<p>By using BCT and any of its services, you declare that all information to BCT in connection with these Terms are true, accurate and complete.</p>
+							<p class="agreementConSubHeader">BCT Account Registration &amp; Requirements</p>
+							
+							
+							<p class="agreementConHeader">User Identity Verification
+							</p>
+							<p>With registration of an account on BCT, you agree to share personal information requested for the purposes of identity verification. This information is used specifically for the detection of money laundering, terrorist financing, fraud and other financial crimes on the BCT platform. In addition to providing this information, to facilitate compliance with global industry standards for data retention, you agree to permit us to keep a record of such information for the lifetime of your account plus 5 years beyond account closing. You also authorise us to make inquiries, either directly or through third parties, that are deemed necessary to verify your identity or to protect you and/or us against financial crimes such as fraud. 
+							</p>
+							<p>The Identity Verification information we request may include, but is not limited to, your: Name, Email Address, Contact Information, Telephone Number, Username, Government Issued ID. In providing this required information, you confirm that it is accurate and authentic. Post-registration, you must guarantee that the information is truthful, complete and updated in a timely manner with any changes. If there is any reasonable doubt that any information provided by you is wrong, untruthful, outdated or incomplete, BCT shall have the right to send you a notice to demand corrections, remove relevant information directly and, as the case may be, terminate all or part of BCT Service to you. You shall be solely and fully responsible for any loss or expenses incurred during the use of BCT Service if you cannot be reached through the contact information provided. You hereby acknowledge and agree that you have the obligation to keep all information provided up to date if there are any changes.
+							</p>
+							
+							<p class="agreementConHeader">Account Usage Requirements
+							</p>
+							<p>BCT accounts can only be used by the person whose name they are registered under. BCT reserves the right to suspend, freeze or cancel accounts that are used by persons other than the persons whose names they are registered under. Accordingly, BCT will not take legal responsibility for these accounts.
+							</p>
+							
+							<p class="agreementConHeader">Account Security
+							</p>
+							<p>BCT prioritizes maintaining the safety of those user funds entrusted to us and has implemented industry standard protections for our platform. With that said, there are account-level risks that are created by individual user actions. We request that you understand the need to independently take safety precautions to protect your own account and personal information.
+							</p>
+							<p>You shall be solely responsible for the safekeeping of your BCT account and password on your own, and you shall be responsible for all activities under your log-in email, BCT account and password (including but not limited to information disclosure, information posting, consent to or submission of various rules and agreements by clicking on the website, online renewal of agreement, etc.). 
+							</p>
+							<p>
+								You hereby agree that: <br>
+								(a) you will notify BCT immediately if you are aware of any unauthorized use of your BCT account and password by any person or any other violations to the security rules;<br>
+								(b) you will strictly observe the security, authentication, dealing, charging, withdrawal mechanism or procedures of the website/service; and <br>
+								(c) you will log out from the website by taking proper steps at the end of every visit. 
+							</p>
+							<p>BCT will not be responsible for any loss or consequences caused by your failure to comply with the above Account Security provision. 
+							</p>
+							
+							<p class="agreementConHeader">Dispute Resolution
+							</p>
+							<p>BCT reserves the right to resolve issues and disputes at its sole discretion. Some issues include infringement of others’ rights, violation of laws and regulations, abnormal trades and others not explicitly mentioned in the Terms. Users agree to bear the costs arising from the process of dispute resolution.
+							</p>
+							
+							<p class="agreementConHeader">Guidelines for usage of services on BCT
+							</p>
+							<p>You hereby agree to observe the following covenants during your use of services on BCT: <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● All the activities that you carry out during the use of BCT Service will be in compliance with the requirements of applicable laws, regulations, as well as the various guidelines of BCT, <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● will not be in violation of public interests, public ethics or other’s legitimate interests, <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● will not constitute evasion of payable taxes or fees and will not violate this agreement or relevant rules. <br>
+								If you violate the foregoing promises and thereby cause any legal consequence, you shall independently undertake all of the legal liabilities in your own name and indemnify BCT from all actions, claims, or costs arising from such violation.
+								You will not use any data or information displayed on the site for commercial purposes without the prior written consent of BCT.
+								You will use the site in accordance with the Terms of Use and Privacy Policy, without taking acts of unfair competition nor attempting to intervene with the normal operation of BCT. Examples of such malicious acts include, but are not limited to<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● using a device, software or subroutine to interfere with the site<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● overloading network equipments with unreasonable data loading requests<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● executing malicious sales or purchases on the market<br>
+								By accessing the BCT  Service, you agree that BCT shall have the right to unilaterally determine whether you have violated any of the above covenants and take actions to apply relevant rules without receiving your consent or giving prior notice to you. Examples of such actions include, but are not limited to<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● block and close order requests<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● freezing your account<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● reporting the incident to authorities<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● publishing the alleged violations and actions that have been taken<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● deleting any information you published that is in violation
+							</p>
+							<p>If your alleged violation causes any losses to a third party, you shall solely undertake all the legal liabilities in your own name and hold BCT harmless from any loss, fine or extra expenses. If, due to any alleged violation BCT incurs any losses, is claimed by any third party for compensation or suffers any punishment imposed by any administrative authorities, you shall indemnify BCT against any losses and expense caused thereby, including reasonable attorney’s fee.
+							</p>
+							<p class="agreementConHeader">Service fees
+							</p>
+							<p>BCT reserves the rights to levy service fees on users who use its services. It is in the discretion of BCT to adjust the servce fees charged to users using its services.
+							</p>
+							<p class="agreementConHeader">Liability
+							</p>
+							<p class="agreementConHeader">Provision of Service
+							</p>
+							<p>BCT will provide BCT Service at an “as is” and “commercially available” condition, and does not offer any form of warranty with regards to the Service’s reliability, stability, accuracy and completeness of the technology involved. BCT serves merely as a venue of transactions where coin-related information can be acquired and coin-related transactions can be conducted. BCT cannot control the quality, security or legality of the coin involved in any transaction, truthfulness of the transaction information, or capacity of the parties to any transaction to perform their obligations under the rules. You must carefully consider the associated investment risks, legal status and validity of the transaction information and investment decisions prior to your use of the BCT Services provided.
+							</p>
+							<p class="agreementConHeader">Limitation of Liability 
+							</p>
+							<p>You acknowledge and agree, BCT shall not be liable for any of your losses caused by any of the following events, including but not limited to:<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Losses of profits, goodwill, usage or data or any other intangible losses<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Use or failure to use BCT Service<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Unauthorized use of your account or unauthorized alteration of your data by third parties<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Your misunderstanding of BCT Service<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Any other losses related to BCT Service which are not directly attributable to BCT<br>
+							</p>
+							<p>In no event shall BCT be liable for any failure or delay of service resulting from regular network maintenance or external factors such as power failure, natural disaster, service provider-side problems or governmental acts.
+							</p>
+							<p class="agreementConHeader">Indemnification
+							</p>
+							<p>You agree to indemnify and hold harmless BCT, its affiliates, contractors, licensors, and their respective directors, officers, employees and agents from and against any claims and damages (including attorneys’ fees, fines or penalties imposed by any regulatory authority) arising out of your breach or our enforcement of this Agreement. This shall also apply to your violation of any applicable law, regulation, or rights of any third party during your use of the BCT Service. 
+							</p>
+							
+							
+							<p class="agreementConHeader">Termination of Agreement
+							</p>
+							<p>You agree that we have the right to immediately suspend your account (and any accounts beneficially owned by related entities or affiliates), freeze or lock the funds in all such accounts, and suspend your access to BCT if we suspect any such accounts to be in violation of the Terms of Service, Privacy Policy, AML/CTF acts or any applicable laws &amp; regulations. BCT shall have the right to keep and use the transaction data or other information related to such accounts. The above account controls may also be applied in the following cases:<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● The account is subject to a governmental proceeding, criminal investigation or other pending litigation<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● We detect unusual activity in the account<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● We detect unauthorized access to the account<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● We are required to do so by a court order or command by a regulatory/government authority<br>
+								In case of any of the following events, BCT shall have the right to directly terminate this agreement by cancelling your account, and shall have the right to permanently freeze (cancel) the authorizations of your account on BCT and withdraw the corresponding BCT account thereof: <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● after BCT terminates services to you, <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● you allegedly register or register in any other person’s name as BCT user again, directly or indirectly; <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● the main content of user’s information that you have provided is untruthful, inaccurate, outdated or incomplete; <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● when this agreement (including the rules) is amended, you expressly state and notify BCT of your unwillingness to accept the amended service agreement; <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● any other circumstances where BCT deems it should terminate the services. <br>
+								Should the account be terminated, the account &amp; transactional information required for meeting data retention standards will be securely stored for five years. In addition, if a transaction is unfinished during the account termination process, BCT shall have the right to notify your counterparty of the situation at that time.
+							</p>
+							<p class="agreementConHeader">Remaining funds after account termination (normal)
+							</p>
+							<p>Once the account is closed/withdrawn, all remaining balance (which includes charges and liabilities owed to BCT) on the account will be payable at once to BCT. Upon payment of all outstanding charges to BCT (if any), the user will have 5 working days to withdraw all funds from the account.
+							</p>
+							<p class="agreementConHeader">Remaining funds after account termination (fraud/AML/violation of terms)
+							</p>
+							<p>BCT maintains full custody of the funds and user data/information which may be turned over to the authorities in event of account suspension/closure arising from fraud investigations, AML investigations or violation of BCT’s Terms (eg. trading on BCT from a sanctioned country). 
+							</p>
+							<p class="agreementConHeader">Compliance with local laws
+							</p>
+							<p>It is the responsibility of the user to abide by local laws in relation to the legal usage of BCT in their local jurisdiction. Users must also factor, to the extent of their local law all aspects of taxation, the withholding, collection, reporting and remittance to their appropriate tax authorities. All users of BCT and any of its services acknowledge and declare that the source of their funds come from a legitimate manner and are not derived from illegal activities. BCT maintains a stance of cooperation with law enforcement authorities globally and will not hesitate to seize, freeze, terminate the account and funds of users which are flagged out or investigated by legal mandate.
+							</p>
+							<p class="agreementConHeader">Indemnity and disclaimer
+							</p>
+							<p>You agree to indemnify BCT and its entirety of affiliates and hold them harmless from and against all third party claims except from BCT’s breach of these Terms. As mentioned in description of services, BCT strives its best to maintain the data integrity on its site but does not guarantee the information and services provided in its platform. BCT will not be liable for errors arising from the use of its services.
+							</p>
+							<p class="agreementConHeader">Complaints
+							</p>
+							<p>If you have any complaints, feedback or questions, kindly contact our support team and we will in our best efforts try to resolve it for you.
+							</p>
+					</div>
+		</div>
+	</div>
+</div>
+
 <!-- Google authenticator popup to verify transactions (deposit/withdrawal, send to contact) -->
 <div class="basic-popup autentificator-popup" id="autentificator-popup" style="display: none;">
 	<div class="c-block d-flex-col flex-1-1 flex-h-fix">
@@ -2875,7 +3083,9 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Blockchain Terminal</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Blockchain Terminal</p>
+					</div>
 					<p class="chats-list__last">CM | Jayvian: Photo</p>
 				</div>
 
@@ -2891,7 +3101,9 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Pac Man Coin</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Pac Man Coin</p>
+					</div>
 					<p class="chats-list__last">Zain: /start</p>
 				</div>
 
@@ -2907,7 +3119,9 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">VIP CHT ROOM ETH</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">VIP CHT ROOM ETH</p>
+					</div>
 					<p class="chats-list__last">Paul M.: Ok Tnx buddy, i’ll be watch thiss out</p>
 				</div>
 
@@ -2923,18 +3137,19 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Joe Johnson
-						<!--  <a href="joeJonsonWallet">www.btc.io/joejohnson</a> -->
-					</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Joe Johnson</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
 					<p class="chats-list__last">TCHMDMADMT just joined Telegram</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">Sat</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">1</span>
 					</p>
 				</div>
@@ -2946,7 +3161,9 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">The Whale Pool!</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">The Whale Pool!</p>
+					</div>
 					<p class="chats-list__last">Jc: Well said!</p>
 				</div>
 
@@ -2961,18 +3178,19 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Hayk Minasayn
-						<!-- <a href="haykMinasaynWallet">www.btc.io/haykminasayn</a> -->
-					</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Hayk Minasayn</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
 					<p class="chats-list__last">Hayk Minasayn just joined Telegram</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time"></p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">157</span>
 					</p>
 				</div>
@@ -2984,18 +3202,20 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Ran Ner
-						<!-- <a href="ranNerWallet">www.btc.io/ranner</a> -->
-					</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Ran Ner</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">Hey man. Hope you are well. Just...</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">12:48 AM</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">448</span>
 					</p>
 				</div>
@@ -3007,16 +3227,19 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Sylvia Plath</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Sylvia Plath</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
 					<p class="chats-list__last">Mass media about cryto-currencies mining, ICO</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">12:49 AM</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">122</span>
 					</p>
 				</div>
@@ -3028,7 +3251,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">SENSE</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">SENSE</p>
+					</div>
+
 					<p class="chats-list__last">TCHMDMADMT just joined Telegram</p>
 				</div>
 
@@ -3044,16 +3270,19 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Anne Rice</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Anne Rice</p>
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">The best cryto miner now available on Telegram.</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">Fri</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">44</span>
 					</p>
 				</div>
@@ -3065,16 +3294,20 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Jack Kerouac</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Jack Kerouac</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">BLOCKCHAIN STARTUP REVIEWS & REPORTS.</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time"></p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">157</span>
 					</p>
 				</div>
@@ -3086,18 +3319,19 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Anna Peterson
-						<!-- <a href="annaPetersonWallet">www.btc.io/annapeterson</a> -->
-					</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Anna Peterson</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
 					<p class="chats-list__last">Jc: Well said!</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">12:48 AM</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">448</span>
 					</p>
 				</div>
@@ -3109,18 +3343,20 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Sofia Petrosian
-						<!-- <a href="sofiaPetrosianWallet">www.btc.io/sophiapetrosian</a> -->
-					</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Sofia Petrosian</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">Hayk Minasayn just joined Telegram</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">12:49 AM</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">20</span>
 					</p>
 				</div>
@@ -3132,7 +3368,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">DAPs Coin Official</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">DAPs Coin Official</p>
+					</div>
+
 					<p class="chats-list__last">Building the world's first fully-private, all-</p>
 				</div>
 
@@ -3148,7 +3387,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Crypto Airdrops</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Crypto Airdrops</p>
+					</div>
+
 					<p class="chats-list__last">Get access to multiple vetted top crypto & ICO</p>
 				</div>
 
@@ -3163,7 +3405,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Crypto Comes</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Crypto Comes</p>
+					</div>
+
 					<p class="chats-list__last">CroytoComes covers the crypto industry and community.</p>
 				</div>
 
@@ -3179,7 +3424,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Crypto Signals</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Crypto Signals</p>
+					</div>
+
 					<p class="chats-list__last">Crypto signals</p>
 				</div>
 
@@ -3195,7 +3443,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Crypto Dreams</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Crypto Dreams</p>
+					</div>
+
 					<p class="chats-list__last">The official telegram community of Crypto Dreams.</p>
 				</div>
 
@@ -3211,7 +3462,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Cryptocurrency</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Cryptocurrency</p>
+					</div>
+
 					<p class="chats-list__last">New about cryptocurrencies.</p>
 				</div>
 
@@ -3227,16 +3481,20 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Charles Dickens</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Charles Dickens</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">Review ICO projects</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">Fri</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">8</span>
 					</p>
 				</div>
@@ -3248,7 +3506,10 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">CryptoGameblerBot</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">CryptoGameblerBot</p>
+					</div>
+
 					<p class="chats-list__last">CM | Jayvian: Photo</p>
 				</div>
 
@@ -3264,16 +3525,20 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">Stephen King</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">Stephen King</p>
+
+						<button class="chats-list__send" send-fancybox>
+							Send Coins
+						</button>
+					</div>
+
 					<p class="chats-list__last">Zain: /start</p>
 				</div>
 
 				<div class="chats-list__info">
 					<p class="chats-list__time">12:48 AM</p>
 					<p class="chats-list__action">
-						<button class="chats-list__send" send-fancybox>
-							Send Coins
-						</button>
 						<span class="chats-list__comms">448</span>
 					</p>
 				</div>
@@ -3285,7 +3550,9 @@
 				</div>
 
 				<div class="chats-list__desc">
-					<p class="chats-list__name">SSC Adda</p>
+					<div class="chats-list__top">
+						<p class="chats-list__name">SSC Adda</p>
+					</div>
 					<p class="chats-list__last">Paul M.: Ok Tnx buddy, i’ll be watch thiss out</p>
 				</div>
 
@@ -3326,6 +3593,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <script src="js/libs/jquery.mousewheel.min.js"></script>
+<script src="js/libs/minitoggle.js"></script>
 <script src="js/libs/rangeSlider.js"></script>
 <script src="js/libs/placeholderPlugin.js"></script>
 <script src="js/libs/highstock.js"></script>

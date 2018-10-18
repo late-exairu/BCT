@@ -31,7 +31,7 @@
 		.sprite-icon{
 			position: relative;
 			width: 24px;
-			height: 24px;
+			height: 23px;
 			margin: 0 0 0 -4px;
 			fill: var(--clr-accentD);
 		}
@@ -99,7 +99,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		// color: var(--clr-textD);
-		color: rgb(42, 62, 129);
+		color: rgb(250, 159, 50);
 	}
 
 	&__info{

@@ -1,48 +1,6 @@
-// var date50 = new Date(Date.now() - 365 * 24 * 3600 * 1000);
-// var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
-
-// var range_options = [
-// 	{
-// 		label: '2H',
-// 		endpoint: 'histominute',
-// 		aggregate: 1,
-// 		limit: 140,
-// 		interval: 60000
-// 	},
-// 	{
-// 		label: '1D',
-// 		endpoint: 'histominute',
-// 		aggregate: 10,
-// 		limit: 144,
-// 		interval: 600000
-// 	},
-// 	{
-// 		label: '1W',
-// 		endpoint: 'histohour',
-// 		aggregate: 1,
-// 		limit: 160,
-// 		interval: 3600000
-// 	},
-// 	{
-// 		label: '1M',
-// 		endpoint: 'histohour',
-// 		aggregate: 5,
-// 		limit: 149,
-// 		interval: 18000000
-// 	},
-// 	{
-// 		label: '1Y',
-// 		endpoint: 'histoday',
-// 		aggregate: 3,
-// 		limit: 122,
-// 		interval: 259200000
-// 	},
-// ]
-
-
 var range_options = [
 	{
-	 label: '2H',
+	 label: '1H',
 	 endpoint: 'histominute',
 	 aggregate: 1,
 	 limit: 120,
@@ -126,7 +84,6 @@ var mainGraphHighlighted = 1;
 var mainGraphHover = null;
 
 var hightChartUpdateOptions = {
-	//	var mainChartObj = Highcharts.chart('mainChart', {
 	legend: {
 		enabled: false
 	},
@@ -154,13 +111,13 @@ var hightChartUpdateOptions = {
 	plotOptions: {
 		series: {
 			turboThreshold: 10000,
-			pointWidth: 5,//0.5 * $('#mainChart').width() / range_options[parseInt($('.graph-range-slider__control').val())].limit, // fixed A pixel value specifying
+			pointWidth: $('.b-graph #mainChart').width() > 800 ? 5 : 4,
 			pointPadding: 0,
 			pointStart: start_point,
 			pointInterval: range_options[range_index].interval,
 			pointPlacement: 'on',
 			borderWidth: 0,
-			groupPadding: 0,// * 160 / $('#mainChart').width() / range_options[parseInt($('.graph-range-slider__control').val())].limit,
+			groupPadding: 0,
 			lineWidth: 0.6,
 			stickyTracking: false,
 			trackByArea: true,
@@ -189,6 +146,33 @@ var hightChartUpdateOptions = {
 					}
 
 				}
+			},
+
+			dataGrouping: {
+				approximation: function (currentGroup) {
+					var sum = 0;
+					for (var i = 0; i < currentGroup.length; i++) {
+						sum += currentGroup[i]; //don't forget to add the base
+					}
+					var avg = (sum / currentGroup.length);
+
+					return avg;
+				},
+				forced: true,
+				units: [
+					[
+						'minute',
+						[1, 12]
+					],
+					[
+						'hour',
+						[2, 6]
+					],
+					[
+						'day',
+						[3]
+					]
+				],
 			}
 		},
 		areaspline: {
@@ -206,72 +190,8 @@ var hightChartUpdateOptions = {
 			},
 			enableMouseTracking: false,
 			trackByArea: false,
-			events: {
-				mouseOver: function (event) {
-					// if (this.type == 'areaspline') {
-					// 	mainChartObj.series.map(function (graph) {
-					// 		if (graph.type == 'areaspline') {
-					// 			if (graph.options.fillColor.linearGradient.y2 > 5) {
-					// 				graph.update({
-					// 					fillColor: {
-					// 						linearGradient: [0, 0, 0, 1],
-					// 					},
-					// 					color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
-					// 				});
-					// 			}
-					// 		}
-					// 	});
-					// 	// highlight hover graph
-					// 	this.update({
-					// 		fillColor: {
-					// 			linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
-					// 		},
-					// 		color: '#0576B9',
-					// 		lineWidth: this.options.lineWidth,
-					// 	}, );
-					// 	// set id of current graph ( for change theme)
-					// 	mainGraphHover = this.options.id;
-					// }
-				},
-				click: function (event) {
-					//mainGraphHighlighted = this.options.id;
-				},
-				mouseOut: function (event) {
-					// if (this.type == 'areaspline') {
-					// 	// find highlighted chart and remove highlight
-					// 	mainChartObj.series.map(function (graph) {
-					// 		if (graph.type == 'areaspline') {
-					// 			if (graph.options.fillColor.linearGradient.y2 > 5) {
-					// 				graph.update({
-					// 					fillColor: {
-					// 						linearGradient: [0, 0, 0, 1],
-					// 					},
-					// 					color: $('.dark-theme').length ? '#4F6C82' : '#BFC0C0'
-					// 				});
-					// 			}
-					// 			if (graph.options.id == mainGraphHighlighted) {
-					// 				graph.update({
-					// 					fillColor: {
-					// 						linearGradient: [0, 0, 0, $('#mainChart').height() - 100],
-					// 					},
-					// 					color: '#0576B9'
-					// 				});
-					// 			}
-					// 		}
-					// 	});
-					// }
-				},
-			},
 		},
 		column: {
-			events: {
-				mouseOver: function (event) {
-					//console.log('column over',event);
-				},
-				mouseOut: function (event) {
-					//console.log('column out');
-				}
-			},
 			pointPadding: 0,
 			borderWidth: 0,
 			groupPadding: 0
@@ -373,10 +293,6 @@ var hightChartUpdateOptions = {
 				'height': lineForMainChartHeight,
 			});
 
-			// if (this.points[0].point.plotX < 205) {
-			// 	arrowDirection = 'left';
-			// }
-
 			var currency_send = $('.exch-dropdown__current > p > span')[0].innerText;
 			var currency_get = $('.exch-dropdown__current > p > span')[1].innerText;
 			var current_trader = '';
@@ -394,7 +310,6 @@ var hightChartUpdateOptions = {
 			var xPos = point.plotX - (labelWidth / 2) + mainChartMarginLeft;
 			// right side fix
 			if ((point.plotX + (labelWidth / 2) + mainChartMarginLeft + 10) > graphWidth) {
-				// xPos = graphWidth - labelWidth - 10;
 				xPos -= labelWidth / 2 + 10;
 			}
 			// left side fix
@@ -409,7 +324,7 @@ var hightChartUpdateOptions = {
 	},
 	series: [{
 			type: 'areaspline',
-			//data: [0.00014209999999999998, 0.00014365, 0.0001516, 0.00015874999999999998, 0.00015455, 0.00016525, 0.00016544999999999998, 0.00015945, 0.00016865, 0.0001624, 0.0001596, 0.00015735, 0.0001476, 0.0001602, 0.00015405, 0.00016525, 0.00015434999999999998, 0.00015895, 0.0001537, 0.00015005, 0.00014994999999999999, 0.0001496, 0.0001436, 0.00014104999999999999, 0.00014340000000000002, 0.00014380000000000003, 0.00014350000000000002, 0.00013745, 0.000138, 0.00013875, 0.00013769999999999999, 0.0001594, 0.00015095, 0.0001602, 0.00016635, 0.00016125, 0.0001587, 0.00016375, 0.00015925, 0.00014565, 0.00015465, 0.0001496, 0.0001544, 0.0001663, 0.000154, 0.00015690000000000002, 0.00015015, 0.00014365, 0.00015045, 0.00014780000000000001, 0.0001529],
+			//data: [],
 			name: 'Series Spline',
 			lineWidth: 2,
 			color: lineColor,
@@ -453,7 +368,7 @@ var hightChartUpdateOptions = {
 		},
 		{
 			type: 'column',
-			//data: [0.00014209999999999998, 0.00014365, 0.0001516, 0.00015874999999999998, 0.00015455, 0.00016525, 0.00016544999999999998, 0.00015945, 0.00016865, 0.0001624, 0.0001596, 0.00015735, 0.0001476, 0.0001602, 0.00015405, 0.00016525, 0.00015434999999999998, 0.00015895, 0.0001537, 0.00015005, 0.00014994999999999999, 0.0001496, 0.0001436, 0.00014104999999999999, 0.00014340000000000002, 0.00014380000000000003, 0.00014350000000000002, 0.00013745, 0.000138, 0.00013875, 0.00013769999999999999, 0.0001594, 0.00015095, 0.0001602, 0.00016635, 0.00016125, 0.0001587, 0.00016375, 0.00015925, 0.00014565, 0.00015465, 0.0001496, 0.0001544, 0.0001663, 0.000154, 0.00015690000000000002, 0.00015015, 0.00014365, 0.00015045, 0.00014780000000000001, 0.0001529],
+			//data: [],
 			name: 'Series Column',
 			id: 8,
 			enableMouseTracking: false,
@@ -483,7 +398,7 @@ var hightChartUpdateOptions = {
 
 					var gData;
 					switch (current_range) {
-						case '2H':
+						case '1H':
 							gData = gDataTwoHour;
 							break;
 						case '1D':
@@ -511,39 +426,19 @@ var hightChartUpdateOptions = {
 				},
 				forced: true,
 				units: [
-					// [
-					// 	'minute',
-					// 	[1, 10]
-					// ],
-					// [
-					// 	'hour',
-					// 	[1, 5]
-					// ],
-					// [
-					// 	'day',
-					// 	[3]
-					// ],
-					// [
-					// 	'week',
-					// 	[1]
-					// ]
 					[
 						'minute',
-						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+						[1, 12]
 					],
 					[
 						'hour',
-						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+						[2, 6]
 					],
 					[
 						'day',
-						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-					],
-					[
-						'week',
-						[1]
+						[3]
 					]
-				]
+				],
 			},
 		},
 	]
@@ -561,17 +456,6 @@ $('#mainChart .highcharts-series').mouseleave(function () {
 	$('#mainChart').find('.mainTooltip').css("visibility", "visible");
 });
 
-// $(window).resize(function () {
-// 	$('.lineForMainChart').css(
-// 		'left', '-9999px',
-// 	);
-// 	mainChartObj.update({
-// 		chart: {
-// 			marginLeft: 0,
-// 		}
-// 	});
-// });
-
 $(window).resize(
 	throttle(() => {
 		$('.lineForMainChart').css(
@@ -581,12 +465,22 @@ $(window).resize(
 			mainChartObj.update({
 				chart: {
 					marginLeft:  60,
+				},
+				plotOptions: {
+					series: {
+						pointWidth: $('.b-graph #mainChart').width() > 800 ? 5 : 4
+					}
 				}
 			});
 		} else if ($('body').hasClass('advanced')) {
 			mainChartObj.update({
 				chart: {
 					marginLeft: 50,
+				},
+				plotOptions: {
+					series: {
+						pointWidth: $('.b-graph #mainChart').width() > 800 ? 5 : 4
+					}
 				}
 			});
 		}

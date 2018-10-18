@@ -11,7 +11,7 @@
 		position: relative;
 		display: flex;
 		padding: 6px 15px 6px 15px;
-		height: 52px;
+		height: 70px;
 
 		&:hover{
 			cursor: pointer;
@@ -54,21 +54,25 @@
 
 	&__avatar-wrap{
 		position: relative;
-		width: 32px;
-		height: 32px;
+		width: 54px;
+		height: 54px;
 		margin: auto 4px auto 0;
 		flex: 0 0 auto;
 	}
 
 	&__avatar{
 		position: relative;
-		width: 32px;
-		height: 32px;
+		width: 54px;
+		height: 54px;
 		border-radius: 50%;
 		z-index: 2;
 	}
 
 	&__desc{
+		display: flex;
+		flex-direction: column;
+		align-items: left;
+		justify-content: center;
 		position: relative;
 		padding: 3px 10px;
 		overflow: hidden;
@@ -79,9 +83,12 @@
 
 	&__name{
 		font-family: $osans;
-		margin: 1px 0 0;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin: 0;
 		font-weight: 600;
-		font-size: 12px;
+		font-size: 16px;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -90,7 +97,7 @@
 
 	&__last{
 		font-family: $osans;
-		font-size: 12px;
+		font-size: 16px;
 		margin: 2px 0 0;
 		color: var(--clr-textL);
 		white-space: nowrap;
@@ -98,13 +105,19 @@
 		text-overflow: ellipsis;
 	}
 
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
 	&__info{
-		position: relative;
 		display: flex;
 		flex-direction: column;
-		text-align: right;
+		align-items: left;
+		justify-content: center;
 		margin: 0 0 0 auto;
-		padding: 7px 0 5px;
+		padding: 3px 0;
 		flex: 0 0 auto;
 		align-items: flex-end;
 		z-index: 2;
@@ -112,8 +125,8 @@
 
 	&__time{
 		font-family: $osans;
-		margin: 0 0 2px;
-		font-size: 10px;
+		margin: 0 0 7px;
+		font-size: 12px;
 		white-space: nowrap;
 		min-height: 12px;
 		color: var(--clr-textL);
@@ -127,13 +140,14 @@
 		background: var(--clr-textL);
 		color: #fff;
 		display: flex;
-		height: 12px;
+		height: 14px;
 		line-height: 1;
-		padding: 1px 5px;
-		border-radius: 6px;
-		margin: auto 0 0 auto;
+		padding: 0 5px;
+		border-radius: 7px;
+		margin: 0 0 0 auto;
 		justify-content: center;
 		flex: 0 0 auto;
+		font-size: 14px;
 
 		&.accented{
 			background: var(--clr-accent);
@@ -142,10 +156,10 @@
 
 	&__action{
 		display: flex;
-		height: 12px;
-		line-height: 12px;		
-		border-radius: 6px;
-		margin: auto 0 0 auto;
+		height: 14px;
+		line-height: 14px;		
+		border-radius: 7px;
+		margin: 0 0 0 auto;
 		justify-content: center;
 		flex: 0 0 auto;
 	}
@@ -153,23 +167,23 @@
 	&__send{
 		position: relative;
 		font-family: $osans;		
-		height: 12px;		
+		height: 14px;		
 		display: flex;
-		margin-right: 5px;
+		margin-left: 5px;
 		padding: 1px 5px;
-		flex: 1 0 36px;
+		flex: 0 0 36px;
 		align-items: center;
 		color: #fff;
 		cursor: pointer;		
 		text-decoration: none;
-		font-size: 8px;		
+		font-size: 10px;		
 		font-weight: 700;
 		white-space: nowrap;		
 		justify-content: center;
 		border: none;
 		line-height: 1;		
 		background: var(--clr-accent);
-		border-radius: 6px;
+		border-radius: 7px;
 		z-index: 9;
 
 		.sprite-icon{

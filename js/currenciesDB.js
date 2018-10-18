@@ -48,14 +48,14 @@ var ownWallet;
 
 var wallets = {
     ownWallet: {
-        'USDT': 100000.00,
-        'BTC': 0.00,
+        'BTC': 1000.00,
+        'USDT': 0.00,
         'ETH': 0.00,
         'LTC': 0.00,
     },
-    allCurrencies:{
-        'USDT': 0,
+    allCurrencies: {
         'BTC': 0,
+        'USDT': 0,
         'ETH': 0,
         'LTC': 0,
     }
@@ -183,7 +183,7 @@ function updateSmallCharts() {
     for (const key in allCurrenciesWallet) {
         if (counter < 4) {
             switch (chartRange) {
-                case '2H':
+                case '1H':
                     ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&aggregate=3&limit=40';
                     break;
                 case '1D':
@@ -203,6 +203,47 @@ function updateSmallCharts() {
             }
             api_calls.push($.ajax(ajaxUrl));
             key_array.push(key);
+            // draw small Chart 
+            $.ajax({
+                url: ajaxUrl,
+                async: false,
+                success: function (data) {
+                    var graphArr = data.Data.map(s => (s.open + s.close) / 2);
+                    if (!graphArr.length) {
+                        for (let i = 0; i < 25; i++) {
+                            graphArr.push(1);
+                        };
+                    };
+                    var min = Math.min(...graphArr);
+                    var max = Math.max(...graphArr);
+                    var changeInPercent = (-1 + (graphArr[graphArr.length - 1] / graphArr[0])) * 100;
+                    
+                    // green color by default
+                    var classColor = 'clr-green';
+                    var sign = '+';
+                    var lineColor = '#01B067';
+
+                    // red color
+                    if (changeInPercent < 0) {
+                        classColor = 'clr-darkRed';
+                        sign = '-';
+                        lineColor = '#CE2424';
+                    }
+
+                    var smallChartInfoString = '<div>$' + numberWithCommas(currenciesPrice[key].toFixed(2)) + '<br><span class="smaller ' + classColor + '">' + sign + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
+
+                    var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
+                    cloneOptions.series[0].data = graphArr;
+                    cloneOptions.series[0].color = lineColor;
+                    cloneOptions.yAxis.min = min;
+                    cloneOptions.yAxis.max = max;
+                    if ($('#smallChart' + key).length)
+                        Highcharts.chart('smallChart' + key, cloneOptions);
+                    $('#smallChart' + key).parent().find('.smallChartInfo').attr('data-chart-start', graphArr[0]);
+                    $('#smallChart' + key).parent().find('.smallChartInfo').attr('data-chart-end', graphArr[graphArr.length - 1]);
+                    $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
+                },
+            });
         }
         counter++;
     }
@@ -287,8 +328,13 @@ $('.graph-info__range__current').on('responsed', () => {
         if (counter >= 4) {
             var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
             var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo > div').clone();
+            var copyOfDataStart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo').attr('data-chart-start');
+            var copyOfDataEnd = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo').attr('data-chart-end');
             $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallCurrencyChart').html(copyOfChart);
             $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').html(copyOfInfo);
+            $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').attr('data-chart-start', copyOfDataStart);
+            $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').attr('data-chart-end', copyOfDataEnd);
+
         }
         counter++;
     }

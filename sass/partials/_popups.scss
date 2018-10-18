@@ -28,32 +28,22 @@
 
 	&__overlay {
 		position:absolute;
-		top:1000px; 
+		display:none;
+		top:270px;
 		bottom:0; 
 		width: 100%;
 		padding:10px;
-		border: solid 1px var(--clr-separatorD);
 		overflow:hidden;
 		background-color:white; 
 		color:black; 
 		z-index:1;
-		transition: top 500ms;
-		transition-timing-function: ease;
+		transition: display 250px;
 
-		&.open{
-			top:0;
-		}
 
 		.overlay-header {
-			font-size: 17px;
-			font-weight: 700;
 			color: #2a3e81;
 			display:block;
 			line-height:1.1;
-			margin-bottom:15px;
-			img {
-				width:17px; height:17px; margin-right:10px;
-			}
 		}
 
 		.align-center {
@@ -117,8 +107,8 @@
 		border: none;
 		background:white;
 		color: var(--clr-accent);
-		text-decoration:none;
-		font-weight: 700;
+		text-decoration:underline;
+		font-weight: 600;
 		font-size: 13px;
 
 		border: none;
@@ -127,18 +117,25 @@
 	}
 	
 	.down {
+		text-decoration:none;
+		color:var(--clr-text);
+		font-weight: 600;
 		margin-bottom:5px;
 	}
 	.basic-table{
-		border-top: 1px solid var(--clr-separator);
-		font-size: 10px;
+		border-top: none;
+		font-size: 12px;
+		&__col {
+			height:35px !important;
+		}
 	}
 
 	.tx-list-basic {
 		font-size:12px;
+		font-weight:600;
 		a {
-			color: var(--clr-textLL);;
-			text-decoration: underline;
+			color: var(--clr-textL);;
+			text-decoration: none;
 		}
 		
 		a:hover 
@@ -156,6 +153,10 @@
 		flex: 0 0 14px;
 		margin: 0 5px 0 0;
 	}
+
+	.terms-link-container {
+		width:100%; text-align:right;margin-top:10px;
+	}
 }
 
 .autentificator-popup{
@@ -167,6 +168,12 @@
 	width: 100%;
 	min-width: 255px;
 	max-width: 255px;
+}
+
+#terms-popup {
+	.terms-content {
+		padding:10px; font-family:open_sans; font-size:10px;max-width:870px; max-height:530px; overflow:auto;
+	}
 }
 
 #send-popup{
@@ -227,6 +234,17 @@
 			border: 1px solid var(--clr-back-new);
 			height: 46px;
 			border-radius: 4px;
+
+
+			.range-slider {
+				margin-top: 13px;
+				z-index: 1;
+				right: 40px;
+				width: calc(100% - 154px);
+				max-width: 230px;
+				padding: 0 8px;
+				position: absolute;
+			}
 		}
 
 		&__percent {
