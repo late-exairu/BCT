@@ -91,22 +91,7 @@ $(function () {
 		grid_snap: false
 	});
 
-	$(window).click(function (e) {
-		var eTarget = e.target;
-		if (!$(eTarget).parents('#panel-funds-history').length) {
-			// basic
-			if (!$('body').hasClass('advanced')) {
-				$('.js-tabs-panel').removeClass('active');
-				$('#panel-funds-wallet').addClass('active');
-				drawCircleChart();
-			}
-			//advanced
-			else {
-				$('#tab-funds-wallet').trigger('click');
-				$('.menu-dropdown').removeClass('open');
-			}
-		}
-
+	$(window).click(function () {
 		if ($('ul.graph-info__range__list').hasClass('open')) {
 			$('ul.graph-info__range__list').css('border-bottom', '0px');
 			$('div.graph-info__range').css('border', '0px');
@@ -2017,10 +2002,8 @@ $(function () {
 				$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
 
 				current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
-				//current_exchange_item.css('height', '56px');
 
 				if (!isSelectedPrevConversion) {
-					// $('.icon-trader').removeClass('hidden');
 					$('.graph-prices__item .progress-label').css('visibility', 'visible');
 					$('.progressbar').addClass('hidden');
 					for (var j = 0; j < progressbar_array.length; j++) {
@@ -2028,9 +2011,20 @@ $(function () {
 					}
 				}
 			}
+
+			// basic
+			if (!$('body').hasClass('advanced')) {
+				$('.js-tabs-panel').removeClass('active');
+				$('#panel-funds-wallet').addClass('active');
+				drawCircleChart();
+			}
+			//advanced
+			else {
+				$('#tab-funds-wallet').trigger('click');
+				$('.menu-dropdown').removeClass('open');
+			}
 		}, 500);
 	});
-	
 
 	$('.exch-form__close').click(function (e) {
 		clearInterval(dynamicGetValue);
