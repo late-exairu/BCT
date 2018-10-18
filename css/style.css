@@ -9250,6 +9250,7 @@ Blocks from left bar
 					border: 1px solid var(--clr-accent);
 				}*/ }
     .main-cols__left.col-chats-adv {
+      position: relative;
       width: 22%;
       flex: 0 0 22%;
       min-width: 410px;
