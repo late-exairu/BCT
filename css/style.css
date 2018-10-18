@@ -748,6 +748,10 @@ h6 {
     display: flex;
     padding: 0;
     flex: 0 0 auto; }
+    .basic-table__row .smallCurrencyChart {
+      filter: grayscale(100%); }
+    .basic-table__row:not(.disabled) .smallCurrencyChart:hover {
+      filter: none; }
     .basic-table__row:hover {
       background: var(--clr-backLL);
       cursor: pointer; }
