@@ -50,6 +50,16 @@
 		padding: 0;
 		flex: 0 0 auto;
 
+		.smallCurrencyChart {
+			filter: grayscale(100%);
+		}
+
+		&:not(.disabled){
+			.smallCurrencyChart:hover {
+				filter: none;
+			}
+		}
+
 		&:hover{
 			background: var(--clr-backLL);
 			cursor: pointer;
@@ -154,9 +164,6 @@
 			.icon-curr{
 				opacity: 0.25;
 			}
-			// .smallCurrencyChart{
-			// 	filter: grayscale(100%);
-			// }
 			.smallChartInfo{
 				.smaller{
 					color: var(--clr-icon);
