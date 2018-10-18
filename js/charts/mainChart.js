@@ -1,45 +1,3 @@
-// var date50 = new Date(Date.now() - 365 * 24 * 3600 * 1000);
-// var start_point = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
-
-// var range_options = [
-// 	{
-// 		label: '1H',
-// 		endpoint: 'histominute',
-// 		aggregate: 1,
-// 		limit: 140,
-// 		interval: 60000
-// 	},
-// 	{
-// 		label: '1D',
-// 		endpoint: 'histominute',
-// 		aggregate: 10,
-// 		limit: 144,
-// 		interval: 600000
-// 	},
-// 	{
-// 		label: '1W',
-// 		endpoint: 'histohour',
-// 		aggregate: 1,
-// 		limit: 160,
-// 		interval: 3600000
-// 	},
-// 	{
-// 		label: '1M',
-// 		endpoint: 'histohour',
-// 		aggregate: 5,
-// 		limit: 149,
-// 		interval: 18000000
-// 	},
-// 	{
-// 		label: '1Y',
-// 		endpoint: 'histoday',
-// 		aggregate: 3,
-// 		limit: 122,
-// 		interval: 259200000
-// 	},
-// ]
-
-
 var range_options = [
 	{
 	 label: '1H',
@@ -153,7 +111,7 @@ var hightChartUpdateOptions = {
 	plotOptions: {
 		series: {
 			turboThreshold: 10000,
-			pointWidth: 5,
+			pointWidth: $('.b-graph #mainChart').width() > 800 ? 5 : 4,
 			pointPadding: 0,
 			pointStart: start_point,
 			pointInterval: range_options[range_index].interval,
@@ -204,20 +162,15 @@ var hightChartUpdateOptions = {
 				units: [
 					[
 						'minute',
-						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-						31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+						[1, 12]
 					],
 					[
 						'hour',
-						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+						[2, 6]
 					],
 					[
 						'day',
-						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
-					],
-					[
-						'week',
-						[1, 2, 3]
+						[3]
 					]
 				],
 			}
@@ -475,20 +428,15 @@ var hightChartUpdateOptions = {
 				units: [
 					[
 						'minute',
-						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-						31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+						[1, 12]
 					],
 					[
 						'hour',
-						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+						[2, 6]
 					],
 					[
 						'day',
-						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
-					],
-					[
-						'week',
-						[1, 2, 3]
+						[3]
 					]
 				],
 			},
@@ -517,12 +465,22 @@ $(window).resize(
 			mainChartObj.update({
 				chart: {
 					marginLeft:  60,
+				},
+				plotOptions: {
+					series: {
+						pointWidth: $('.b-graph #mainChart').width() > 800 ? 5 : 4
+					}
 				}
 			});
 		} else if ($('body').hasClass('advanced')) {
 			mainChartObj.update({
 				chart: {
 					marginLeft: 50,
+				},
+				plotOptions: {
+					series: {
+						pointWidth: $('.b-graph #mainChart').width() > 800 ? 5 : 4
+					}
 				}
 			});
 		}
