@@ -395,6 +395,14 @@ $(function () {
 			// hide the same element in another dropdown
 			$('.exch-head__get .exch-dropdown__item').removeClass('sameDropdownItem');
 			$('.exch-head__get .exch-dropdown__item[data-currency="' + currencyAbbr + '"]').last().addClass('sameDropdownItem');
+
+			// check wallet
+			if (ownWallet[currencyAbbr]){
+				$('.exch-head__btn').prop('disabled',false);
+			}
+			else{
+				$('.exch-head__btn').prop('disabled', true);
+			}
 		}
 		// second currency
 		else {
