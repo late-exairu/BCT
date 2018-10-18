@@ -693,6 +693,12 @@ $(function () {
 		// Global liquidity
 		if ($(this).index() == 0) {
 			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
+			$('#telegram').addClass('--short');
+			$('#orderBook').removeClass('hidden');
+		}
+		else{
+			$('#telegram').removeClass('--short');
+			$('#orderBook').addClass('hidden');
 		}
 
 		// Wallet tab
