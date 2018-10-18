@@ -48,7 +48,7 @@ function drawCircleChart(e,noAnimation) {
         var currencyColor = $('.exch-dropdown__item[data-currency="' + key + '"] svg').eq(0).css('fill');
         tempArr.push(currencyName);
         tempArr.push(eachPercent[key]);
-        circleChartArr.push(tempArr);
+        if (eachPercent[key] != 0) circleChartArr.push(tempArr);
 
         circleChartTooltipData[currencyName] = {
             price: '$' + eachBalance[key]
