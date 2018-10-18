@@ -79,7 +79,7 @@ $(function () {
 	}
 
 	// updateMainChartSplineNew(null, 'USDT', 'BTC');
-	updateMainChart(null, 'USDT', 'BTC');
+	updateMainChart(null, 'BTC', 'USDT');
 	/* Cubic slider for Orders */
 	var $cubicSlider = $(".js-cubic-slider");
 
