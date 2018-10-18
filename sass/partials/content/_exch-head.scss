@@ -124,7 +124,7 @@
 		font-size: 16px;
 		font-weight: 700;
 		white-space: nowrap;
-		transition: all 0.1s;
+		/*transition: all 0.1s;*/
 		justify-content: center;
 		border: none;
 		line-height: 1;
@@ -145,6 +145,7 @@
 			background: #000;
 			width: 28px;
 			height: 28px;
+			/*transition: all 0.1s;*/
 			border-radius: 5px 3px 5px;
 			transform: rotate(45deg) skew(20deg,20deg) translateY(-50%);
 			background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-accentD) 100%);
@@ -152,6 +153,14 @@
 
 		&:hover{
 			opacity: .9;
+		}
+
+		&[disabled]{
+			background: var(--clr-textLL);
+
+			&:after{
+				background: var(--clr-textLL);
+			}
 		}
 	}
 
