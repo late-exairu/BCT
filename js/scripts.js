@@ -605,7 +605,7 @@ $(function () {
 		if ($('.b-graph').width() - x < 10) {
 			if (!$('.graph-prices').hasClass('open')) {
 				$('.graph-prices').addClass('open');
-				$('#mainChart').css('width', 'calc(100%)');
+				$('#mainChart').css('width', 'calc(100% + 6px)');
 				$('.b-graph__controls').addClass('shifted');
 				$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
 				redrawMainChart();
@@ -614,7 +614,7 @@ $(function () {
 			if ($('.b-graph').width() - x > 300) {
 				if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
 					$('.graph-prices').removeClass('open');
-					$('#mainChart').css('width', 'calc(100% - 12px)');
+					$('#mainChart').css('width', 'calc(100% - 4px)');
 					$('.b-graph__controls').removeClass('shifted');
 					$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
 					redrawMainChart();
@@ -629,13 +629,13 @@ $(function () {
 	$('body').mousemove(function (e) {
 		if ((e.pageY < $('.b-graph').offset().top || e.pageY > $('.b-graph').offset().top + $('.b-graph').height()) && !$('.graph-prices').hasClass('noClose')) {
 			$('.graph-prices').removeClass('open');
-			$('#mainChart').css('width', 'calc(100% - 12px)');
+			$('#mainChart').css('width', 'calc(100% - 4px)');
 			$('.b-graph__controls').removeClass('shifted');
 			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
 			redrawMainChart();
 		} else if (e.pageX > $('.b-graph').offset().left + $('.b-graph').width() && !$('.graph-prices').hasClass('noClose') && !$('.graph-prices').hasClass('open')) {
 			$('.graph-prices').addClass('open');
-			$('#mainChart').css('width', 'calc(100%)');
+			$('#mainChart').css('width', 'calc(100% + 6px)');
 			$('.b-graph__controls').addClass('shifted');
 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
 			redrawMainChart();
@@ -897,7 +897,7 @@ $(function () {
 
 		if ($(this).parents('#panel-funds-history').length) {
 			$('.graph-prices').addClass('open');
-			$('#mainChart').css('width', 'calc(100%)');
+			$('#mainChart').css('width', 'calc(100% + 6px)');
 			$('.b-graph__controls').addClass('shifted');
 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
 			redrawMainChart();
@@ -1299,7 +1299,7 @@ $(function () {
 	$('.graph-prices .graph-prices__controls__btn').click(function () {
 		if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
 			$('.graph-prices').removeClass('open');
-			$('#mainChart').css('width', 'calc(100% - 12px)');
+			$('#mainChart').css('width', 'calc(100% - 4px)');
 			$('.b-graph__controls').removeClass('shifted');
 			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
 			redrawMainChart();
@@ -1313,7 +1313,7 @@ $(function () {
 		if (!$('.graph-prices').hasClass('open')) {
 			$(this).removeClass('open');
 			$('.graph-prices').addClass('open');
-			$('#mainChart').css('width', 'calc(100%)');
+			$('#mainChart').css('width', 'calc(100% + 6px)');
 			$('.b-graph__controls').addClass('shifted');
 			redrawMainChart();
 		}
@@ -1989,7 +1989,7 @@ $(function () {
 
 			$('.graph-prices__item').removeClass('active');
 			$('.graph-prices').addClass('open noClose');
-			$('#mainChart').css('width', 'calc(100% - 12px)');
+			$('#mainChart').css('width', 'calc(100% - 4px)');
 			$('.b-graph__controls').addClass('shifted');
 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
 			redrawMainChart();
