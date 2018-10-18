@@ -9255,15 +9255,39 @@ Blocks from left bar
 				}*/ }
     .main-cols__left.col-chats-adv {
       position: relative;
-      width: 22%;
+      width: 48%;
       flex: 0 0 22%;
-      min-width: 410px;
-      max-width: 530px;
+      min-width: 800px;
+      max-width: 1000px;
       display: none; }
+      .main-cols__left.col-chats-adv.--short {
+        width: 22%;
+        flex: 0 0 22%;
+        min-width: 410px;
+        max-width: 530px; }
+        .main-cols__left.col-chats-adv.--short .c-block__col.--chat-list {
+          top: 0;
+          width: 350px;
+          flex: 1 0 auto;
+          height: calc(100% - var(--gap-size) * 4);
+          display: flex;
+          z-index: 100002;
+          outline: none;
+          position: fixed;
+          overflow-y: auto;
+          background-color: var(--clr-block);
+          transform: translate(calc(-100% - var(--gap-size) * 2), 0px);
+          transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+          margin: calc(var(--gap-size) * 2); }
+          .main-cols__left.col-chats-adv.--short .c-block__col.--chat-list.open {
+            transform: translate(0px, 0px);
+            box-shadow: 7px 6px 11px rgba(0, 0, 0, 0.25);
+            border-top-left-radius: var(--border-radius);
+            border-bottom-left-radius: var(--border-radius); }
     .main-cols__left.col-tables {
       width: 36%;
       flex: 0 0 32%;
-      min-width: 394px;
+      min-width: 410px;
       max-width: 540px; }
     @media only screen and (min-width: 1920px) {
       .main-cols__left.col-chats-adv {
@@ -14858,26 +14882,27 @@ button:-moz-focusring {
     #orders .forms-wrap.current {
       display: flex; }
 
-#telegramMenu {
-  top: 0;
-  width: 350px;
-  flex: 1 0 auto;
-  height: calc(100% - var(--gap-size) * 4);
-  display: flex;
-  z-index: 100002;
-  outline: none;
-  position: fixed;
-  overflow-y: auto;
-  background-color: var(--clr-block);
-  transform: translate(calc(-100% - var(--gap-size) * 2), 0px);
-  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-  margin: calc(var(--gap-size) * 2); }
-  #telegramMenu.open {
-    transform: translate(0px, 0px);
-    box-shadow: 7px 6px 11px rgba(0, 0, 0, 0.25);
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius); }
-
+/*#telegramMenu{
+	top: 0;
+	width: 350px;
+	flex: 1 0 auto;
+	height: calc(100% - var(--gap-size) * 4);
+	display: flex;
+	z-index: 100002;
+	outline: none;
+	position: fixed;
+	overflow-y: auto;
+	background-color: var(--clr-block);
+	transform: translate(calc(-100% - var(--gap-size) * 2), 0px);
+	transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+	margin: calc(var(--gap-size) * 2);
+	&.open{
+		transform: translate(0px, 0px);
+		box-shadow: 7px 6px 11px rgba(0,0,0,.25);
+		border-top-left-radius: var(--border-radius);
+		border-bottom-left-radius: var(--border-radius);
+	}
+}*/
 .advanced #telegramMenu.open {
   transform: translate(55px, 0); }
 
