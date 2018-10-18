@@ -9001,6 +9001,7 @@ Blocks from left bar
   padding: 2px 0;
   background: var(--clr-back);
   z-index: 10;
+  z-index: 100003;
   /*border: 1px solid var(--clr-separator);*/ }
   .left-bar__scroll {
     position: absolute;
@@ -14871,6 +14872,9 @@ button:-moz-focusring {
     box-shadow: 7px 6px 11px rgba(0, 0, 0, 0.25);
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius); }
+
+.advanced #telegramMenu.open {
+  transform: translate(55px, 0); }
 
 #telegramSetting {
   top: 0;
