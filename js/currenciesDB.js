@@ -53,7 +53,7 @@ var wallets = {
         'ETH': 0.00,
         'LTC': 0.00,
     },
-    allCurrencies:{
+    allCurrencies: {
         'BTC': 0,
         'USDT': 0,
         'ETH': 0,
@@ -199,7 +199,7 @@ function updateSmallCharts() {
                     var min = Math.min(...graphArr);
                     var max = Math.max(...graphArr);
                     var changeInPercent = (-1 + (graphArr[graphArr.length - 1] / graphArr[0])) * 100;
-                    
+
                     // green color by default
                     var classColor = 'clr-green';
                     var sign = '+';
@@ -210,7 +210,7 @@ function updateSmallCharts() {
                         sign = '-';
                     }
 
-                    var smallChartInfoString = '<div>$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller ' + classColor + '">' + sign + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
+                    var smallChartInfoString = '<div>$' + numberWithCommas(currenciesPrice[key].toFixed(2)) + '<br><span class="smaller ' + classColor + '">' + sign + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
 
                     var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
                     cloneOptions.series[0].data = graphArr;
@@ -219,6 +219,8 @@ function updateSmallCharts() {
                     cloneOptions.yAxis.max = max;
                     if ($('#smallChart' + key).length)
                         Highcharts.chart('smallChart' + key, cloneOptions);
+                    $('#smallChart' + key).parent().find('.smallChartInfo').attr('data-chart-start', graphArr[0]);
+                    $('#smallChart' + key).parent().find('.smallChartInfo').attr('data-chart-end', graphArr[graphArr.length - 1]);
                     $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
                 },
             });

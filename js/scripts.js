@@ -12,6 +12,7 @@ $(function () {
 			alert("Wrong password. Please ask your manager for a new one")
 		}
 	})
+
 	function setTelegramData() {
 		if (localStorage.getItem('telegramAuth') == 'true' && localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 			if (document.querySelector('.message-bar__login'))
@@ -21,7 +22,7 @@ $(function () {
 			if (document.querySelector('#telegramText'))
 				document.querySelector('#telegramText').classList.add('hidden');
 
-			if (document.querySelector('.chat-head__back')){
+			if (document.querySelector('.chat-head__back')) {
 				document.querySelector('.chat-head__back').classList.remove('hidden');
 				document.querySelector('.chat-head__desc').classList.remove('hidden');
 				document.querySelector('.chat-head__btns').classList.remove('hidden');
@@ -49,7 +50,7 @@ $(function () {
 				}
 			}
 			if (document.querySelector('.message-bar')) {
-				document.querySelector('.message-bar').classList.add('hidden');				
+				document.querySelector('.message-bar').classList.add('hidden');
 			}
 
 
@@ -101,6 +102,38 @@ $(function () {
 		}
 	});
 
+	$('.basic-table__row .smallCurrencyChart').hover(function (e) {
+		if ($(this).parents('.disabled').length == 0) {
+			if ($(this.nextElementSibling).find('> div').length == 2) {
+				$(this.nextElementSibling).find(' > div').last().remove();
+			}
+			var chartStart = $(this.nextElementSibling).attr('data-chart-start');
+			var chartEnd = $(this.nextElementSibling).attr('data-chart-end');
+			var key = $(this).closest('.basic-table__row').attr('data-currency');
+			var changeInDollars = (ownWallet[key] * chartEnd) - (ownWallet[key] * chartStart);
+
+			// green color by default
+			var classColor = 'clr-green';
+			var sign = '+';
+
+			// red color
+			if (changeInDollars < 0) {
+				classColor = 'clr-darkRed';
+				sign = '-';
+			}
+
+			var smallChartInfoStringForHover = '<div class="hidden">$' + numberWithCommas(eachBalance[key].toFixed(2)) + '<br><span class="smaller ' + classColor + '">' + sign + numberWithCommas(Math.abs(changeInDollars.toFixed(2))) + ' $</span></div>';
+			$(this.nextElementSibling).append(smallChartInfoStringForHover);
+			$(this.nextElementSibling).find(' > div').toggleClass('hidden');
+		}
+	}, function () {
+		if ($(this).parents('.disabled').length == 0) {
+			if ($(this.nextElementSibling).find('> div').length == 2) {
+				$(this.nextElementSibling).find(' > div').removeClass('hidden').last().remove();
+			}
+		}
+	});
+
 	/*---------------------------------------------------*/
 	/* js-dropdown */
 	/*---------------------------------------------------*/
@@ -122,9 +155,9 @@ $(function () {
 		$('.global-history-drop span').html($(this).text());
 		$('.global-history-drop .menu-dropdown__item').removeClass('active');
 		$(this).addClass('active');
-		if ($(this).text().trim() == 'All'){
+		if ($(this).text().trim() == 'All') {
 			$('#panel-funds-orders .all').removeClass('hidden');
-		}else{
+		} else {
 			$('#panel-funds-orders .all').addClass('hidden');
 		}
 	});
@@ -195,9 +228,8 @@ $(function () {
 			}
 		});
 		if (counter < 9 && searchString.trim() != '') {
-			$(this).closest('.exch-dropdown').find('.exch-dropdown__list').css('height','auto');
-		}
-		else{
+			$(this).closest('.exch-dropdown').find('.exch-dropdown__list').css('height', 'auto');
+		} else {
 			$(this).closest('.exch-dropdown').find('.exch-dropdown__list').css('height', '400px');
 		}
 
@@ -222,12 +254,11 @@ $(function () {
 		$(".send-popup .send-popup__progressbar").progressbar("value", val + 0.2);
 		if (val < 99.8) {
 			setTimeout(sendFormProgress, 48);
-		}
-		else {
+		} else {
 			$(".send-popup .send-popup__progressbar").trigger('completed')
 		}
 	}
-	
+
 	$('.send-form__btn').click(function () {
 		$(".send-popup .send-popup__progressbar").removeClass('hidden');
 		$(this).addClass('inactive');
@@ -310,10 +341,9 @@ $(function () {
 				$(this).closest('.exch-dropdown').removeClass('open');
 			}
 		} else if (e.which === 13) {
-			if (select_item_index){
+			if (select_item_index) {
 				dropdown_list.eq(select_item_index).trigger("click");
-			}
-			else{
+			} else {
 				$(this).closest('.exch-dropdown').find('.exch-dropdown__list .exch-dropdown__item:not(.hidden)').eq(0).trigger('click');
 			}
 		}
@@ -367,7 +397,7 @@ $(function () {
 			$('.exch-form__send > input').attr('data-currency', currencyAbbr);
 			$('.exch-form__send .exch-form__curr').html(`<p>` + currencyAbbr + `<span><br>YOU HAVE</span></p>`);
 			$('.chat-head__name').css('color', firstColor);
-			
+
 			// change currency in Orders Form
 			$('.order-form__submit.btn-green').html('BUY ' + currencyAbbr);
 			$('.order-form__submit.btn-red').html('SELL ' + currencyAbbr);
@@ -382,10 +412,9 @@ $(function () {
 			$('.exch-head__get .exch-dropdown__item[data-currency="' + currencyAbbr + '"]').last().addClass('sameDropdownItem');
 
 			// check wallet
-			if (ownWallet[currencyAbbr]){
-				$('.exch-head__btn').prop('disabled',false);
-			}
-			else{
+			if (ownWallet[currencyAbbr]) {
+				$('.exch-head__btn').prop('disabled', false);
+			} else {
 				$('.exch-head__btn').prop('disabled', true);
 			}
 		}
@@ -398,7 +427,7 @@ $(function () {
 			$('.exch-head__send .exch-dropdown__item').removeClass('sameDropdownItem');
 			$('.exch-head__send .exch-dropdown__item[data-currency="' + currencyAbbr + '"]').last().addClass('sameDropdownItem');
 		}
-		
+
 		$(this).closest('.exch-dropdown').removeClass('open');
 
 		var getCurrency = $('.exch-form__get > input').attr('data-currency');
@@ -419,7 +448,7 @@ $(function () {
 		}
 		if (param != 'noRedraw')
 			updateMainChart(exchange, sendCurrency, getCurrency);
-			//updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
+		//updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
 
 		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
 
@@ -490,12 +519,13 @@ $(function () {
 		}
 	});
 
-	
+
 	$('.circleDiagramParent .basic-table.scrollbar-right').scrollbar({
 		"scrollx": "advanced",
 		"scrolly": "advanced",
 		"showArrows": true,
-		"onScroll": function (y, x) {if (y.scroll > 0 && y.scroll < y.maxScroll) {
+		"onScroll": function (y, x) {
+			if (y.scroll > 0 && y.scroll < y.maxScroll) {
 				$('.basic-table__scrollup').show();
 			} else {
 				$('.basic-table__scrollup').hide();
@@ -545,7 +575,7 @@ $(function () {
 			scrollTop: '0'
 		}, "rapid");
 	});
-	
+
 
 	$(".basic-table__scrollup").on("click", function () {
 		$('.circleDiagramParent .basic-table.scrollbar-right.scroll-wrapper > .scroll-content').animate({
@@ -558,7 +588,7 @@ $(function () {
 			scrollTop: '0'
 		}, "rapid");
 	});
-	
+
 	/*---------------------------------------------------*/
 	/* js-graph-prices-toggle */
 	/*---------------------------------------------------*/
@@ -603,8 +633,7 @@ $(function () {
 			$('.b-graph__controls').removeClass('shifted');
 			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
 			redrawMainChart();
-		}
-		else if (e.pageX > $('.b-graph').offset().left + $('.b-graph').width() && !$('.graph-prices').hasClass('noClose') && !$('.graph-prices').hasClass('open')) {
+		} else if (e.pageX > $('.b-graph').offset().left + $('.b-graph').width() && !$('.graph-prices').hasClass('noClose') && !$('.graph-prices').hasClass('open')) {
 			$('.graph-prices').addClass('open');
 			$('#mainChart').css('width', 'calc(100%)');
 			$('.b-graph__controls').addClass('shifted');
@@ -647,7 +676,7 @@ $(function () {
 		$(this).addClass('current');
 
 		$('.advanced .js-account-stats .portfolio-nav__title').text($(this).attr('data-name'));
-		
+
 		$('.js-tabs-panel').removeClass('active');
 		$('.js-tabs-panel').eq($(this).index()).addClass('active');
 
@@ -664,7 +693,7 @@ $(function () {
 		// Portfolio tab
 		if ($(this).index() == 2) {
 			if (!portfolioChartObj)
-			portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
+				portfolioChartObj = Highcharts.stockChart('portfolioChartGeneral', portfolioChartOptions);
 		}
 	});
 
@@ -926,10 +955,9 @@ $(function () {
 		closeTelegramMenu();
 
 		// check show or hide input
-		if ($(this).find('.chats-list__send').length){
+		if ($(this).find('.chats-list__send').length) {
 			$('.message-bar').removeClass('hidden');
-		}
-		else{
+		} else {
 			$('.message-bar').addClass('hidden');
 		}
 	});
@@ -964,10 +992,24 @@ $(function () {
 				success: function (data) {
 					var grapArr = [];
 					var columnArr = [];
-					var fakeGraphs = [[], [], [], [], [], []];
-					var fakeGraphdiffs = [[], [], [], [], [], []];
+					var fakeGraphs = [
+						[],
+						[],
+						[],
+						[],
+						[],
+						[]
+					];
+					var fakeGraphdiffs = [
+						[],
+						[],
+						[],
+						[],
+						[],
+						[]
+					];
 
-					var gData; 
+					var gData;
 					var range_index = 4;
 					var isRedraw = false;
 					var current_range = $('.graph-info__range__current').html();
@@ -977,29 +1019,25 @@ $(function () {
 						range_index = 0;
 						if (current_range == '1H') isRedraw = true;
 						console.log('gDataTwoHour');
-					}
-					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
+					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
 						gDataDay = [];
 						gData = gDataDay;
 						range_index = 1;
 						if (current_range == '1D') isRedraw = true;
 						console.log('gDataDay');
-					}
-					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[2].interval) {
+					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[2].interval) {
 						gDataWeek = [];
 						gData = gDataWeek;
 						range_index = 2;
 						if (current_range == '1W') isRedraw = true;
 						console.log('gDataWeek');
-					}
-					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[3].interval) {
+					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[3].interval) {
 						gDataMonth = [];
 						gData = gDataMonth;
 						range_index = 3;
 						if (current_range == '1M') isRedraw = true;
 						console.log('gDataMonth');
-					}
-					else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[4].interval) {
+					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[4].interval) {
 						gDataYear = [];
 						gData = gDataYear;
 						range_index = 4;
@@ -1010,7 +1048,9 @@ $(function () {
 					var prev_value = [null, null, null, null, null, null];
 
 					var initial = (data.Data[0].open + data.Data[0].close) / 2;
-					var max = initial, min =  initial, diff_max = 0;
+					var max = initial,
+						min = initial,
+						diff_max = 0;
 					var random_maxes = [initial, initial, initial, initial, initial, initial];
 					var random_mins = [initial, initial, initial, initial, initial, initial];
 					var random_diff_maxes = [0, 0, 0, 0, 0, 0];
@@ -1067,13 +1107,13 @@ $(function () {
 							gData.push(one_graph);
 						}
 						console.log(gData);
-						if (isRedraw) { 
+						if (isRedraw) {
 
 							mainChartObj.series[0].setData(gData[0].prices);
 							for (var k = 1; k < 6; k++) {
 								mainChartObj.series[k].setData(gData[k].prices);
-							}							
-								
+							}
+
 							updateMainChartSpline(mainGraphHighlighted);
 							updateMainChartPercentChange();
 						}
@@ -1368,14 +1408,13 @@ $(function () {
 		progressbar_current_label.css("width", (val + 0.2) + '%');
 		if (val < 99.8) {
 			setTimeout(currentProgress, 48);
-		}
-		else {
+		} else {
 			progressbar_current.trigger('completed')
 		}
-		
+
 		// bad copy of progress bar
-		if (progressBarsCounter > 1){
-			for(var i = 1; i < progressBarsCounter; i++){
+		if (progressBarsCounter > 1) {
+			for (var i = 1; i < progressBarsCounter; i++) {
 				$('.graph-prices__item').eq(i).find('.progressbar').remove();
 				$('.graph-prices__item').eq(i).append($(progressbar_current).clone().removeClass('hidden'));
 			}
@@ -1408,23 +1447,22 @@ $(function () {
 		var coin_amount = parseFloat(coin_amount_str.replace(",", ""));
 
 		//for later, confirmation
-		window.current_wallet_session =  {
+		window.current_wallet_session = {
 			currency: currencyName,
 			amount: coin_amount_str,
 			deposit_address: '3HZV4FLuvJjoEgsAVbrcLAuWt691s2gSFu',
 			withdraw_address: ''
 		}
 
-		 $('#transaction-popup #transactionFormMinDepositAmount').eq(0).text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
-		 $('#transaction-popup .tx-currency').html(currencyName)
+		$('#transaction-popup #transactionFormMinDepositAmount').eq(0).text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
+		$('#transaction-popup .tx-currency').html(currencyName)
 
 		if (coin_amount > 0) {
 			$('#transaction-popup .transaction-form__input').removeAttr('disabled')
-		}
-		else {
+		} else {
 			$('#transaction-popup .transaction-form__input').attr('disabled', 'disabled')
 		}
-		
+
 		var fancies_length = $('main-cols__right .fancybox-container').length;
 		if (fancies_length < 1) {
 			$.fancybox.open({
@@ -1442,13 +1480,18 @@ $(function () {
 								"position": "absolute"
 							})
 							.css("display", "block");
-						
+
 						$('#transaction-popup .transaction-form__input').keyup(function () {
-							if($(this).val() == '' || $(this).hasClass('inactive')) {
-								$(this).closest('.transaction-form__line').find('.transaction-form__button') .css({'background-color': 'var(--clr-backBT)', 'pointer-events': 'none'});
-							}
-							else {
-								$(this).closest('.transaction-form__line').find('.transaction-form__button') .css({'background-color': 'var(--clr-accent)', 'pointer-events': 'all'});
+							if ($(this).val() == '' || $(this).hasClass('inactive')) {
+								$(this).closest('.transaction-form__line').find('.transaction-form__button').css({
+									'background-color': 'var(--clr-backBT)',
+									'pointer-events': 'none'
+								});
+							} else {
+								$(this).closest('.transaction-form__line').find('.transaction-form__button').css({
+									'background-color': 'var(--clr-accent)',
+									'pointer-events': 'all'
+								});
 							}
 						});
 						$('#transaction-popup .transaction-form__input:last').keyup();
@@ -1466,7 +1509,7 @@ $(function () {
 				}
 			});
 		}
-		
+
 
 		/***** Old transaction pop-up function:
 		
@@ -1557,10 +1600,10 @@ $(function () {
 		closeTelegramMenu();
 		var fancies_length = $('.main-cols__right .fancybox-container').length;
 		if (fancies_length > 0) return false;
-		
+
 		var userName = $(this).parents('.chats-list__item').find('.chats-list__name').text();
 		var imgAttr = $(this).parents('.chats-list__item').find('.chats-list__avatar-wrap img').attr('src');
-		$('#send-popup .avatar').attr('src',imgAttr);
+		$('#send-popup .avatar').attr('src', imgAttr);
 
 		var send_popup_list = '';
 		$('#panel-funds-wallet .basic-table__row:not(.disabled)').each(function (index, item) {
@@ -1572,30 +1615,30 @@ $(function () {
 			var coin_amount = $(item).eq(0).find('span.wallet' + coin_currencyName)[0].innerHTML;
 
 			send_popup_list += `
-				<div class="send-form__dropdown__item ` + current + `" data-name="`+ coin_currencyFullName + `" data-currency="` + coin_currencyName + `" coin-amount="`+ coin_amount + `">`
-					+ coin_svg_html + `
+				<div class="send-form__dropdown__item ` + current + `" data-name="` + coin_currencyFullName + `" data-currency="` + coin_currencyName + `" coin-amount="` + coin_amount + `">` +
+				coin_svg_html + `
 					<p class="send-form__dropdown__title">
-						<span>` 
-						+ coin_currencyName + ` 
+						<span>` +
+				coin_currencyName + ` 
 						</span> - ` + coin_currencyFullName + `
 					</p>
 				</div>`;
 			if (index == 0) {
 				var current_item = coin_svg_html + `
 					<p class="send-form__dropdown__title">
-						<span>` 
-							+ coin_currencyName + ` 
-						</span> - ` 
-						+ coin_currencyFullName + ` 
+						<span>` +
+					coin_currencyName + ` 
+						</span> - ` +
+					coin_currencyFullName + ` 
 					</p>`;
 				var current_item_input = coin_svg_html + `
 					<p class="send-form__dropdown__title">
-						<span>` 
-							+ coin_currencyName + ` 
-						</span> <br> ` 
-						+ coin_currencyFullName + ` 
+						<span>` +
+					coin_currencyName + ` 
+						</span> <br> ` +
+					coin_currencyFullName + ` 
 					</p>`;
-				
+
 				$('#send-popup .c-block-head__title').text('Send ' + coin_currencyName + ' to ' + userName);
 
 				var currSendForm = $('#send-popup .send-form__line');
@@ -1607,13 +1650,13 @@ $(function () {
 				$('#send-popup .send-form__btn span.in-progress').html('SEND ' + coin_currencyFullName);
 				$('#send-popup .send-form__btn span.done').html('Your ' + coin_currencyName + ' was sent');
 
-				
+
 				coin_amount = coin_amount.trim().replace(/,/g, '');
 				$('.range-slider .send-form-slider__control').attr("max", parseFloat(coin_amount) * 100000);
 				$('.range-slider .send-form-slider__control').attr("step", parseInt(coin_amount));
 				$('.range-slider .send-form-slider__control').val(parseFloat(coin_amount) * 100000);
 
-				$('.range-slider .send-form-slider__control').on('input', function () {	
+				$('.range-slider .send-form-slider__control').on('input', function () {
 					var value = this.value / 100000;
 					$('.send-form input.send-form__input').val(numberWithCommas(value.toFixed(2)));
 				});
@@ -1634,10 +1677,10 @@ $(function () {
 
 			var current_item_input = coin_svg_html + `
 			<p class="send-form__dropdown__title">
-				<span>` 
-					+ currencyName + ` 
-				</span> <br> ` 
-				+ currencyFullName + ` 
+				<span>` +
+				currencyName + ` 
+				</span> <br> ` +
+				currencyFullName + ` 
 			</p>`;
 
 			$('#send-popup .send-form__dropdown__list .send-form__dropdown__item').removeClass('current');
@@ -1667,7 +1710,7 @@ $(function () {
 		$(".send-form__btn span.done").addClass('hidden');
 		$(".send-form__btn .send-dropdown__hangle").removeClass('hidden');
 		$(".send-form__btn .send-form__check").addClass('hidden');
-	
+
 		$.fancybox.open({
 			src: '#send-popup',
 			opts: {
@@ -1854,7 +1897,7 @@ $(function () {
 
 			$('.basic-table__message').addClass('hidden');
 			$('#panel-funds-history .basic-table__body .basic-table__body').prepend(newRow);
-			
+
 			/*			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
 			 			if (fancies_length < 1) {
 							$.fancybox.open({
@@ -1928,7 +1971,7 @@ $(function () {
 			$('.range-slider .exch-form-slider__control').attr("step", parseInt(firstValue));
 			$('.range-slider .exch-form-slider__control').val(firstValue * 100000);
 
-			$('.range-slider .exch-form-slider__control').on('input', function () {	
+			$('.range-slider .exch-form-slider__control').on('input', function () {
 				var value = this.value / 100000;
 				$('.exch-form__send > input').val(numberWithCommas(value.toFixed(2)));
 				$('.exch-form__send input.exch-form__input').keyup();
@@ -1938,12 +1981,12 @@ $(function () {
 			$('.exch-form__send > input').val(numberWithCommas(firstValue));
 			$('.exch-form__get > input').val(numberWithCommas(secondValue));
 			isSelectedPrevConversion = false;
-			
+
 			// run dynamic value change
 			startDynamicGetValue();
 
 			currentWallet = ownWallet;
-			
+
 			$('.graph-prices__item').removeClass('active');
 			$('.graph-prices').addClass('open noClose');
 			$('#mainChart').css('width', 'calc(100% - 12px)');
@@ -1966,14 +2009,17 @@ $(function () {
 		var ownWalletValue = ownWallet[sendCurrency];
 		var secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '');
 		var part = firstValue / ownWalletValue;
-		
+
 		switch (true) {
-			case (part > 0.7): progressBarsCounter = 3;
-			break;
-			case (part > 0.4): progressBarsCounter = 2;
-			break;
-			default: progressBarsCounter = 1;
-			break;
+			case (part > 0.7):
+				progressBarsCounter = 3;
+				break;
+			case (part > 0.4):
+				progressBarsCounter = 2;
+				break;
+			default:
+				progressBarsCounter = 1;
+				break;
 		}
 
 		$(".graph-prices__list .graph-prices__item .graph-prices__amount").removeClass('hidden').html(`
@@ -1982,7 +2028,7 @@ $(function () {
 				<span>` + getCurrency + '</span>');
 		$(".graph-prices__list .graph-prices__item .graph-prices__price").addClass('hidden');
 
-		$(".graph-prices__list .graph-prices__item").each(function (index,item) {
+		$(".graph-prices__list .graph-prices__item").each(function (index, item) {
 			if (index < progressBarsCounter) {
 				current_exchange_item = $(item);
 				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-textD)');
@@ -2274,13 +2320,13 @@ $(function () {
 	});
 
 	/* T&C popup */
-	$("#terms-link").click(function(e) {
+	$("#terms-link").click(function (e) {
 		e.preventDefault();
 		// Open this fancybox force
 		$.fancybox.open({
 			src: '#terms-popup',
 			opts: {
-      				beforeClose: function () {
+				beforeClose: function () {
 					//$('.exch-form').removeClass('progress');
 					//$('.exch-head').toggleClass('open');
 				}
@@ -2321,22 +2367,22 @@ $(function () {
 		});
 	});
 
-	$("#open-tx-history").click((e)=> {
+	$("#open-tx-history").click((e) => {
 		$(".basic-popup__overlay").show();
 	})
 
-	$("#close-tx-history").click((e)=> {
+	$("#close-tx-history").click((e) => {
 		$(".basic-popup__overlay").hide();
 	})
 
 	$('.popup-nav-button').click(function (e) {
-		let popupSrcDiv=$(this).attr("data-next-screen");
-		
+		let popupSrcDiv = $(this).attr("data-next-screen");
+
 		$.fancybox.close();
 		e.preventDefault();
 		// Open this fancybox force
 		$.fancybox.open({
-			src: '#'+popupSrcDiv,
+			src: '#' + popupSrcDiv,
 			opts: {
 				afterShow: function (instance, current) {
 					var fancybox_body = $('.fancybox-container')[0];
@@ -2358,12 +2404,11 @@ $(function () {
 							$("#confirm-return-address").html(window.current_wallet_session.withdraw_address)
 							$("#confirm-return-currency").html(window.current_wallet_session.currency)
 
-							console.log("done, data was "+JSON.stringify(window.current_wallet_session))
-						}
-						catch(x) {
+							console.log("done, data was " + JSON.stringify(window.current_wallet_session))
+						} catch (x) {
 							console.log("ERROR populating next screen")
 						}
-				
+
 					}
 				},
 				beforeShow: function () {
@@ -2377,7 +2422,7 @@ $(function () {
 		});
 	});
 
-	$(".copy-deposit-address").click(function(e){
+	$(".copy-deposit-address").click(function (e) {
 		$(this).addClass("clicked")
 		e.preventDefault();
 	})
@@ -2588,7 +2633,7 @@ $(function () {
 		}
 
 		// $('.graph-range-slider__current').html(range_options[index].label);
-		
+
 		mainChartObj.series.forEach(series => {
 			series.update({
 				pointStart: maxDate - interval * limit,
@@ -2673,7 +2718,7 @@ $(function () {
 	var $mainGraphRange = $(".graph-range-slider__control");
 	$mainGraphRange.on('input', function () {
 		// $( this ).css( 'background', 'linear-gradient(to right, var(--clr-time-bar) 0%, var(--clr-time-bar) '+this.value*25 +'%, var(--clr-time-line) ' + this.value*25 + '%, var(--clr-time-line) 100%)' );
-		
+
 		var index = parseInt(this.value);
 		var interval = range_options[index].interval;
 		var gData;
@@ -2696,7 +2741,7 @@ $(function () {
 		}
 
 		$('.graph-range-slider__current').html(range_options[index].label);
-		
+
 		mainChartObj.series.forEach(series => {
 			series.update({
 				pointStart: maxDate - interval * range_options[index].limit,
@@ -2816,13 +2861,12 @@ $(function () {
 			} else { // default state
 				$(this).addClass('asc');
 			}
-	
+
 			var getCurrency = $('.exch-form__get > input').attr('data-currency');
 			var sendCurrency = $('.exch-form__send > input').attr('data-currency');
 			if ($('.graph-prices__price.send-prices__rate').hasClass('hidden')) {
 				$(this).html('1' + getCurrency + ' ≈ ');
-			}
-			else {
+			} else {
 				$(this).html('1' + sendCurrency + ' ≈ ');
 			}
 			$('.graph-prices__price.send-prices__rate').toggleClass('hidden')
@@ -2875,11 +2919,11 @@ $(function () {
 	$('#telegramOverlay').click(closeTelegramMenu);
 
 	function closeTelegramMenu() {
-		$('#telegramOverlay, #telegramMenu, #telegramSetting').removeClass('open');		
+		$('#telegramOverlay, #telegramMenu, #telegramSetting').removeClass('open');
 	}
 
 	$('.chat-head__back').click(function () {
-		$('#telegramOverlay, #telegramMenu').addClass('open');		
+		$('#telegramOverlay, #telegramMenu').addClass('open');
 	});
 
 	$('.chat-head__btn').click(function () {
