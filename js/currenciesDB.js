@@ -229,8 +229,13 @@ function updateSmallCharts() {
         else {
             var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
             var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo > div').clone();
+            var copyOfDataStart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo').attr('data-chart-start');
+            var copyOfDataEnd = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo').attr('data-chart-end');
             $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallCurrencyChart').html(copyOfChart);
             $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').html(copyOfInfo);
+            $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').attr('data-chart-start', copyOfDataStart);
+            $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').attr('data-chart-end', copyOfDataEnd);
+
         }
         counter++;
     }
