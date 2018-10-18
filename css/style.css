@@ -840,6 +840,34 @@ h6 {
         font-weight: 700; }
     .basic-table__row.recent {
       font-size: calc(var(--font-size) + 3px); }
+  .basic-table__scrollup {
+    font-size: 9px;
+    color: var(--clr-backCI);
+    border-radius: 5px;
+    border: 1px solid;
+    position: absolute;
+    right: 14px;
+    top: 85%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; }
+    .basic-table__scrollup .scroll-up-button {
+      padding: 0 4px;
+      text-align: center;
+      line-height: 9px;
+      color: var(--clr-backCI);
+      height: 100%;
+      border: none;
+      justify-content: center;
+      cursor: pointer;
+      background: transparent; }
+      .basic-table__scrollup .scroll-up-button .sprite-icon {
+        width: 20px;
+        height: 28px; }
+      .basic-table__scrollup .scroll-up-button:hover .sprite-icon {
+        fill: var(--clr-textL); }
   .basic-table__btn {
     min-height: 28px;
     border: 1px solid var(--clr-textL);

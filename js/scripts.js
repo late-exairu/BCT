@@ -497,6 +497,19 @@ $(function () {
 		}
 	});
 
+
+	$('.circleDiagramParent .basic-table.scrollbar-right').scrollbar({
+		"scrollx": "advanced",
+		"scrolly": "advanced",
+		"showArrows": true,
+		"onScroll": function (y, x) {if (y.scroll > 0 && y.scroll < y.maxScroll) {
+				$('.basic-table__scrollup').show();
+			} else {
+				$('.basic-table__scrollup').hide();
+			}
+		}
+	});
+
 	$('#user-btn').on('click', function () {
 		$('body').toggleClass('menubar-in');
 	});
@@ -521,6 +534,13 @@ $(function () {
 
 	$(".graph-prices__scrollup").on("click", function () {
 		graphPricesScrollbar.animate({
+			scrollTop: '0'
+		}, "rapid");
+	});
+
+
+	$(".basic-table__scrollup").on("click", function () {
+		$('.circleDiagramParent .basic-table.scrollbar-right.scroll-wrapper > .scroll-content').animate({
 			scrollTop: '0'
 		}, "rapid");
 	});
