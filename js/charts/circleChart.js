@@ -48,7 +48,7 @@ function drawCircleChart(e,noAnimation) {
         var currencyColor = $('.exch-dropdown__item[data-currency="' + key + '"] svg').eq(0).css('fill');
         tempArr.push(currencyName);
         tempArr.push(eachPercent[key]);
-        if (eachPercent[key] != 0) circleChartArr.push(tempArr);
+        if (eachPercent[key] > 0) circleChartArr.push(tempArr);
 
         circleChartTooltipData[currencyName] = {
             price: '$' + eachBalance[key]
@@ -67,8 +67,9 @@ function drawCircleChart(e,noAnimation) {
         title: null,
         plotOptions: {
             pie: {
-                innerSize: '88%',
-                borderWidth: 0,
+                innerSize: '86%',
+                borderColor: 'var(--clr-block)',
+                borderWidth: 2,
                 startAngle: 0,
                 size: pieChartSize,
                 center: [centerX, centerY],
