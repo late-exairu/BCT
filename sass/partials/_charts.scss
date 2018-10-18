@@ -732,16 +732,16 @@
 		border-top-left-radius: var(--border-radius);
 		border-bottom-left-radius: var(--border-radius);
 	}
-}*/
+}
 
 .advanced {
 	#telegramMenu{
 
 		&.open{
-			transform: translate(55px, 0);
+			transform: translate(-20px, 0);
 		}
 	}
-}
+}*/
 
 #telegramSetting{
 	top: 0;
