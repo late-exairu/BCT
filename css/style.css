@@ -14509,7 +14509,7 @@ button:-moz-focusring {
   padding-top: 0;
   padding-left: 0;
   height: 100%;
-  width: calc(100% - 12px); }
+  width: calc(100% - 4px); }
 
 .label {
   z-index: 1 !important; }
