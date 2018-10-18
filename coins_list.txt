@@ -45,7 +45,6 @@ Byteball - GBYTE
 ByteCoin - BCN
 Bytom - BTM
 Cardano - ADA
-Centrality - CENNZ
 ChainLink - LINK
 Cindicator - CND
 Civic - CVC
@@ -154,7 +153,6 @@ MediShares - MDS
 MEDX - MEDX
 Metal - MTL
 Metaverse - ETP
-Metronome - MET2
 MinexCoin - MNX
 Mithril - MITH
 Mixin - XIN
@@ -242,7 +240,6 @@ Stakenet - XSN
 STASIS EURS - EURS
 Status Network Token - SNT
 Steem - STEEM
-Steem Backed Dollars - SBD
 Stellar - XLM
 Storiqa Token - STQ
 Storj - STORJ
@@ -251,9 +248,7 @@ Stratis - STRAT
 Streamr DATAcoin - DATA
 Substratum Network - SUB
 SysCoin - SYS
-TaTaTu - TTU
 TenX - PAY
-Ternio - TERN
 Tether - USDT
 Tezos - XTZ
 THEKEY - TKY
@@ -295,4 +290,3 @@ ZCoin - XZC
 Zeepin - ZPT
 ZenCash - ZEN
 Zilliqa - ZIL
-ZMINE Token - ZMN
