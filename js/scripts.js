@@ -695,10 +695,12 @@ $(function () {
 			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
 			$('#telegram').addClass('--short');
 			$('#orderBook,.chat-head__back').removeClass('hidden');
+			$('.main-cols__left').addClass('advanced-mode');
 		}
 		else{
 			$('#telegram').removeClass('--short');
 			$('#orderBook,.chat-head__back').addClass('hidden');
+			$('.main-cols__left').removeClass('advanced-mode');			
 		}
 
 		// Wallet tab
