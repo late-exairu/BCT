@@ -9291,7 +9291,7 @@ Blocks from left bar
       flex: 0 0 32%;
       min-width: 410px;
       max-width: 540px; }
-    @media only screen and (min-width: 1920px) {
+    @media only screen and (min-width: 1440px) {
       .main-cols__left.col-chats-adv {
         display: flex; }
       .main-cols__left.col-tables {
