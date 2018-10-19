@@ -543,6 +543,19 @@ $(function () {
 		}
 	});
 
+	$('.exch-dropdown__list .scrollbar-right').scrollbar({
+		"scrollx": "advanced",
+		"scrolly": "advanced",
+		"showArrows": true,
+		"onScroll": function (y, x) {
+			if (y.scroll > 0 && y.scroll < y.maxScroll) {
+				$(this.wrapper[0].parentElement).children('.exch-dropdown__scrollup').show();
+			} else {
+				$(this.wrapper[0].parentElement).children('.exch-dropdown__scrollup').hide();
+			}
+		}
+	});
+
 
 	$('#panel-funds-orders .basic-table__body.scrollbar-right').scrollbar({
 		"scrollx": "advanced",
@@ -595,6 +608,12 @@ $(function () {
 
 	$(".basic-table__orders-scrollup").on("click", function () {
 		$('#panel-funds-orders .basic-table__body.scrollbar-right.scroll-wrapper > .scroll-content').animate({
+			scrollTop: '0'
+		}, "rapid");
+	});
+
+	$(".exch-dropdown__scrollup").on("click", function () {
+		$(this).parents('.exch-dropdown__list').find('.scrollbar-right.scroll-wrapper > .scroll-content').animate({
 			scrollTop: '0'
 		}, "rapid");
 	});
