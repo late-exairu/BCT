@@ -985,19 +985,21 @@ $(function () {
 	// });
 
 	$('.chats-list__item').click(function () {
-		var chatName = $(this).find('.chats-list__name').text();
-		$('.chat-head__name').text(chatName);
-		$('.chat-talk').toggleClass('hidden');
-		$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').eq(1).animate({
-			scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
-		}, "rapid");
-		closeTelegramMenu();
+		if (localStorage.getItem('telegramAuth') == 'true'){
+			var chatName = $(this).find('.chats-list__name').text();
+			$('.chat-head__name').text(chatName);
+			$('.chat-talk').toggleClass('hidden');
+			$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').eq(1).animate({
+				scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
+			}, "rapid");
+			closeTelegramMenu();
 
-		// check show or hide input
-		if ($(this).find('.chats-list__send').length) {
-			$('.message-bar').removeClass('hidden');
-		} else {
-			$('.message-bar').addClass('hidden');
+			// check show or hide input
+			if ($(this).find('.chats-list__send').length) {
+				$('.message-bar').removeClass('hidden');
+			} else {
+				$('.message-bar').addClass('hidden');
+			}
 		}
 	});
 
