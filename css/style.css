@@ -15032,7 +15032,8 @@ button:-moz-focusring {
   transform: translate(-50%, -50%);
   text-align: center;
   font-size: 24px;
-  font-weight: 100; }
+  font-weight: 100;
+  width: 100%; }
 
 .sameDropdownItem {
   display: none; }
