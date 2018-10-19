@@ -73,7 +73,6 @@ $(function () {
 		}
 	}
 
-	setTelegramData();
 
 	function getRandomNumber(low, high, isFloat = false) {
 		if (isFloat)
@@ -81,6 +80,40 @@ $(function () {
 		else
 			return Math.floor(Math.random() * (high - low + 1)) + low;
 	}
+
+
+	function setViewMode(mode) {
+		// advanced mode
+		if(mode == 'advanced'){
+			if ($(window).width() > 1900){
+				$('#telegram').addClass('--short');
+				$('#orderBook,.chat-head__back').removeClass('hidden');
+				$('.main-cols__left').addClass('advanced-mode');
+			}
+			else{
+				$('#telegram').addClass('hidden');
+				$('#orderBook').removeClass('hidden');
+			}
+		}
+		// basic mode
+		else{
+			if ($(window).width() > 1900){
+				$('#telegram').removeClass('--short');
+				$('#orderBook,.chat-head__back').addClass('hidden');
+				$('.main-cols__left').removeClass('advanced-mode');
+			}
+			else{
+				$('#telegram').removeClass('hidden').addClass('--short');
+				$('.chat-head__back').removeClass('hidden');
+				$('#orderBook').addClass('hidden');
+				mainChartObj.reflow();
+			}
+		}
+	}
+
+	setTelegramData();
+
+	setViewMode('basic');
 
 	// updateMainChartSplineNew(null, 'USDT', 'BTC');
 	updateMainChart(null, 'BTC', 'USDT');
@@ -711,14 +744,10 @@ $(function () {
 		// Global liquidity
 		if ($(this).index() == 0) {
 			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
-			$('#telegram').addClass('--short');
-			$('#orderBook,.chat-head__back').removeClass('hidden');
-			$('.main-cols__left').addClass('advanced-mode');
+			setViewMode('advanced');
 		}
 		else{
-			$('#telegram').removeClass('--short');
-			$('#orderBook,.chat-head__back').addClass('hidden');
-			$('.main-cols__left').removeClass('advanced-mode');			
+			setViewMode('basic');
 		}
 
 		// Wallet tab
@@ -990,7 +1019,7 @@ $(function () {
 			$('.chat-head__name').text(chatName);
 			$('.chat-talk').toggleClass('hidden');
 			$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').eq(1).animate({
-				scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
+				scrollTop: $('#telegram .chat-talk:not(.hidden').eq(0).height()
 			}, "rapid");
 			closeTelegramMenu();
 
