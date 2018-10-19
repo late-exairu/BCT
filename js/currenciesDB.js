@@ -231,7 +231,7 @@ function updateSmallCharts() {
             }
 
             var smallChartInfoString = '<div>$' + numberWithCommas(currenciesPrice[key_array[i]].toFixed(2)) + '<br><span class="smaller ' + classColor + '">' + sign + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
-            
+
             smallChartObjs[key_array[i]].yAxis[0].setExtremes(min, max);
             smallChartObjs[key_array[i]].series[0].setData(graphArr);
             smallChartObjs[key_array[i]].series[0].update({
@@ -241,16 +241,20 @@ function updateSmallCharts() {
             $('#smallChart' + key_array[i]).parent().find('.smallChartInfo').attr('data-chart-end', graphArr[graphArr.length - 1]);
             $('#smallChart' + key_array[i]).parent().find('.smallChartInfo').html(smallChartInfoString);
         }
+
+        
+        // create copy of existing small charts
+        counter = 0;
+        for (const key in allCurrenciesWallet) {
+            if (counter > 3) {
+                var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
+                var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo > div').clone();
+                $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallCurrencyChart').html(copyOfChart);
+                $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').html(copyOfInfo);
+            }
+            counter++;
+        }
     });
-    //     // create copy of existing small charts
-    //     // else {
-    //     //     var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
-    //     //     var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo > div').clone();
-    //     //     $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallCurrencyChart').html(copyOfChart);
-    //     //     $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').html(copyOfInfo);
-    //     // }
-    //     counter++;
-    // }
 }
 $('.graph-info__range__current').on('responsed', () => {
     var counter = 0;
