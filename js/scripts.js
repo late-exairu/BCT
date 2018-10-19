@@ -718,7 +718,7 @@ $(function () {
 		else{
 			$('#telegram').removeClass('--short');
 			$('#orderBook,.chat-head__back').addClass('hidden');
-			$('.main-cols__left').Class('advanced-mode');			
+			$('.main-cols__left').removeClass('advanced-mode');			
 		}
 
 		// Wallet tab
@@ -985,19 +985,21 @@ $(function () {
 	// });
 
 	$('.chats-list__item').click(function () {
-		var chatName = $(this).find('.chats-list__name').text();
-		$('.chat-head__name').text(chatName);
-		$('.chat-talk').toggleClass('hidden');
-		$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').eq(1).animate({
-			scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
-		}, "rapid");
-		closeTelegramMenu();
+		if (localStorage.getItem('telegramAuth') == 'true'){
+			var chatName = $(this).find('.chats-list__name').text();
+			$('.chat-head__name').text(chatName);
+			$('.chat-talk').toggleClass('hidden');
+			$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').eq(1).animate({
+				scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
+			}, "rapid");
+			closeTelegramMenu();
 
-		// check show or hide input
-		if ($(this).find('.chats-list__send').length) {
-			$('.message-bar').removeClass('hidden');
-		} else {
-			$('.message-bar').addClass('hidden');
+			// check show or hide input
+			if ($(this).find('.chats-list__send').length) {
+				$('.message-bar').removeClass('hidden');
+			} else {
+				$('.message-bar').addClass('hidden');
+			}
 		}
 	});
 
@@ -1057,31 +1059,31 @@ $(function () {
 						gData = gDataTwoHour;
 						range_index = 0;
 						if (current_range == '1H') isRedraw = true;
-						console.log('gDataTwoHour');
+						//console.log('gDataTwoHour');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
 						gDataDay = [];
 						gData = gDataDay;
 						range_index = 1;
 						if (current_range == '1D') isRedraw = true;
-						console.log('gDataDay');
+						//console.log('gDataDay');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[2].interval) {
 						gDataWeek = [];
 						gData = gDataWeek;
 						range_index = 2;
 						if (current_range == '1W') isRedraw = true;
-						console.log('gDataWeek');
+						//console.log('gDataWeek');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[3].interval) {
 						gDataMonth = [];
 						gData = gDataMonth;
 						range_index = 3;
 						if (current_range == '1M') isRedraw = true;
-						console.log('gDataMonth');
+						//console.log('gDataMonth');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[4].interval) {
 						gDataYear = [];
 						gData = gDataYear;
 						range_index = 4;
 						if (current_range == '1Y') isRedraw = true;
-						console.log('gDataYear');
+						//console.log('gDataYear');
 					}
 
 					var prev_value = [null, null, null, null, null, null];
@@ -1145,7 +1147,7 @@ $(function () {
 							}
 							gData.push(one_graph);
 						}
-						console.log(gData);
+						//console.log(gData);
 						if (isRedraw) {
 
 							mainChartObj.series[0].setData(gData[0].prices);
@@ -1810,15 +1812,6 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* first popUp layer close */
 	/*---------------------------------------------------*/
-
-	$('.exch-head__btn').click(function () {
-		// advanced
-		if ($('body').hasClass('advanced')) {
-			$('#tab-funds-history').trigger('click');
-			$('.menu-dropdown').removeClass('open');
-		}
-	});
-
 	var dynamicGetValue;
 	var dynamicSendValue;
 
@@ -1832,7 +1825,7 @@ $(function () {
 		var secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '');
 
 		if ($(this).hasClass('exch-form__submit')) {
-
+			$('.main-cols__right-bottom .portfolio-menu__item').eq(1).trigger('click');
 			$('.exch-form__close').addClass('hidden');
 			// $('.icon-trader').addClass('hidden');
 			// $('.graph-prices__item .progress-label').css('visibility', 'hidden');
@@ -1967,6 +1960,8 @@ $(function () {
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 			$('.exch-form__submit').prop('disabled', false);
+
+			$('.main-cols__right-bottom .portfolio-menu__item').eq(3).trigger('click');
 
 			var send_svg = $('.exch-head__send .exch-dropdown__current > svg').clone();
 			var send_curr = $('.exch-head__send .exch-dropdown__current > p.exch-dropdown__title > span').text();
