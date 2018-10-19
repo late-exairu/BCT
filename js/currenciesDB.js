@@ -164,12 +164,12 @@ function updateWalletData(redrawSmallCharts) {
 function initSmallCharts() {
     var counter = 0;
     for (const key in allCurrenciesWallet) {
-        if (counter < 4) {
+        //if (counter < 4) {
             if ($('#smallChart' + key).length) {
                 var smallChartObj = Highcharts.chart('smallChart' + key, smallCurrencyChartOptions);
                 smallChartObjs[key] = smallChartObj;
             }
-        }
+        //}
         counter++;
     }
 }
@@ -202,8 +202,8 @@ function updateSmallCharts() {
                     break;
             }
             api_calls.push($.ajax(ajaxUrl));
-            key_array.push(key);
         }
+        key_array.push(key);
         counter++;
     }
     $.when(...api_calls).done(function(...response) {
@@ -231,29 +231,33 @@ function updateSmallCharts() {
             }
 
             var smallChartInfoString = '<div>$' + numberWithCommas(currenciesPrice[key_array[i]].toFixed(2)) + '<br><span class="smaller ' + classColor + '">' + sign + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
-
-            smallChartObjs[key_array[i]].yAxis[0].setExtremes(min, max);
-            smallChartObjs[key_array[i]].series[0].setData(graphArr);
-            smallChartObjs[key_array[i]].series[0].update({
-                color: lineColor
-            });
-            $('#smallChart' + key_array[i]).parent().find('.smallChartInfo').attr('data-chart-start', graphArr[0]);
-            $('#smallChart' + key_array[i]).parent().find('.smallChartInfo').attr('data-chart-end', graphArr[graphArr.length - 1]);
-            $('#smallChart' + key_array[i]).parent().find('.smallChartInfo').html(smallChartInfoString);
+            console.log('smallChartObjs', smallChartObjs);
+            for (let k = 0; k < parseInt(counter / 4); k++) {
+                console.log('key_array[4 * k + i]', key_array[4 * k + i]);
+                console.log('smallChartObjs[key_array[4 * k + i]]', smallChartObjs[key_array[4 * k + i]]);
+                smallChartObjs[key_array[4 * k + i]].yAxis[0].setExtremes(min, max);
+                smallChartObjs[key_array[4 * k + i]].series[0].setData(graphArr);
+                smallChartObjs[key_array[4 * k + i]].series[0].update({
+                    color: lineColor
+                });
+                $('#smallChart' + key_array[4 * k + i]).parent().find('.smallChartInfo').attr('data-chart-start', graphArr[0]);
+                $('#smallChart' + key_array[4 * k + i]).parent().find('.smallChartInfo').attr('data-chart-end', graphArr[graphArr.length - 1]);
+                $('#smallChart' + key_array[4 * k + i]).parent().find('.smallChartInfo').html(smallChartInfoString);
+            }
         }
 
         
-        // create copy of existing small charts
-        counter = 0;
-        for (const key in allCurrenciesWallet) {
-            if (counter > 3) {
-                var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
-                var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo > div').clone();
-                $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallCurrencyChart').html(copyOfChart);
-                $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').html(copyOfInfo);
-            }
-            counter++;
-        }
+        // // create copy of existing small charts
+        // counter = 0;
+        // for (const key in allCurrenciesWallet) {
+        //     if (counter > 3) {
+        //         var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
+        //         var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo > div').clone();
+        //         $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallCurrencyChart').html(copyOfChart);
+        //         $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').html(copyOfInfo);
+        //     }
+        //     counter++;
+        // }
     });
 }
 $('.graph-info__range__current').on('responsed', () => {
