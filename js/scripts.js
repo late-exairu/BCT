@@ -1,5 +1,10 @@
 $(function () {
-	$('body').addClass('loaded');
+
+	// add 1 second delay for show all charts and set right view mode
+	setTimeout(() => {
+		$('body').addClass('loaded');
+	}, 1000);
+
 	var svgArrowTemplate = '<svg class="basic-table__arrow-conv" role="img" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#arrow-right-2"></use> </svg>';
 	const minDate = Date.UTC(date50.getFullYear(), date50.getMonth(), date50.getDate());
 	const maxDate = Date.now();
