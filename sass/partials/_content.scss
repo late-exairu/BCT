@@ -180,20 +180,17 @@ body.advanced .fancybox-bg{
 	flex-wrap: wrap;
 	padding: var(--gap-size);
 
+	iframe{
+		border-radius: 0;
+		border: 2px solid var(--clr-separator);
+		border-color: #212D40;
+	}
+
 	&__col{
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 auto;
 		min-width: 32%;
-
-		iframe{
-			width: 100%;
-			height: 100%;
-			display: block;
-			overflow: hidden;
-			border-radius: 0;
-			border: 0 solid var(--clr-separator);
-		}
 	}
 
 	&__title{
