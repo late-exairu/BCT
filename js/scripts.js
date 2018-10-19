@@ -90,6 +90,11 @@ $(function () {
 	function setViewMode(mode) {
 		// advanced mode
 		if(mode == 'advanced'){
+			$('#mainChart, .graph-top').addClass('hidden');
+
+			$('#tradingview_1d00a, .tradingview-widget-container').css('height','100%');
+
+			$('.tradingview-widget-container').removeClass('hidden');
 			if ($(window).width() > 1900){
 				$('#telegram').addClass('--short');
 				$('#orderBook,.chat-head__back').removeClass('hidden');
@@ -102,6 +107,8 @@ $(function () {
 		}
 		// basic mode
 		else{
+			$('#mainChart, .graph-top').removeClass('hidden');
+			$('.tradingview-widget-container').addClass('hidden');
 			if ($(window).width() > 1900){
 				$('#telegram').removeClass('--short');
 				$('#orderBook,.chat-head__back').addClass('hidden');
