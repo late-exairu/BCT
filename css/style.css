@@ -9944,7 +9944,7 @@ body.menubar-in #user-btn:before {
   position: absolute;
   left: 10px;
   top: 10px;
-  bottom: 52px;
+  bottom: 10px;
   display: block;
   padding: 0;
   width: 32px;
@@ -10084,7 +10084,7 @@ body.menubar-in #user-btn:before {
   @media only screen and (min-width: 1920px) {
     .toolbar {
       width: 42px;
-      bottom: 62px; }
+      bottom: 10px; }
       .toolbar__btn {
         width: 42px;
         height: 42px; }
