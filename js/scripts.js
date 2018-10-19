@@ -529,6 +529,18 @@ $(function () {
 		}
 	});
 
+	$('.exch-dropdown__list .scrollbar-right').scrollbar({
+		"scrollx": "advanced",
+		"scrolly": "advanced",
+		"showArrows": true,
+		"onScroll": function (y, x) {
+			if (y.scroll > 0 && y.scroll < y.maxScroll) {
+				$(this.wrapper[0].parentElement).children('.exch-dropdown__scrollup').show();
+			} else {
+				$(this.wrapper[0].parentElement).children('.exch-dropdown__scrollup').hide();
+			}
+		}
+	});
 
 	$('.circleDiagramParent .basic-table.scrollbar-right').scrollbar({
 		"scrollx": "advanced",
@@ -539,19 +551,6 @@ $(function () {
 				$('.basic-table__scrollup').show();
 			} else {
 				$('.basic-table__scrollup').hide();
-			}
-		}
-	});
-
-	$('.exch-dropdown__list .scrollbar-right').scrollbar({
-		"scrollx": "advanced",
-		"scrolly": "advanced",
-		"showArrows": true,
-		"onScroll": function (y, x) {
-			if (y.scroll > 0 && y.scroll < y.maxScroll) {
-				$(this.wrapper[0].parentElement).children('.exch-dropdown__scrollup').show();
-			} else {
-				$(this.wrapper[0].parentElement).children('.exch-dropdown__scrollup').hide();
 			}
 		}
 	});
@@ -611,7 +610,7 @@ $(function () {
 			scrollTop: '0'
 		}, "rapid");
 	});
-
+	
 	$(".exch-dropdown__scrollup").on("click", function () {
 		$(this).parents('.exch-dropdown__list').find('.scrollbar-right.scroll-wrapper > .scroll-content').animate({
 			scrollTop: '0'
