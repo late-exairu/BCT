@@ -15643,18 +15643,15 @@ body.advanced .fancybox-bg {
   height: 100%;
   flex-wrap: wrap;
   padding: var(--gap-size); }
+  .cols-ico iframe {
+    border-radius: 0;
+    border: 2px solid var(--clr-separator);
+    border-color: #212D40; }
   .cols-ico__col {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
     min-width: 32%; }
-    .cols-ico__col iframe {
-      width: 100%;
-      height: 100%;
-      display: block;
-      overflow: hidden;
-      border-radius: 0;
-      border: 0 solid var(--clr-separator); }
   .cols-ico__title {
     padding: 3px 10px;
     background: var(--clr-back);
