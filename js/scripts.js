@@ -1812,15 +1812,6 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* first popUp layer close */
 	/*---------------------------------------------------*/
-
-	$('.exch-head__btn').click(function () {
-		// advanced
-		if ($('body').hasClass('advanced')) {
-			$('#tab-funds-history').trigger('click');
-			$('.menu-dropdown').removeClass('open');
-		}
-	});
-
 	var dynamicGetValue;
 	var dynamicSendValue;
 
@@ -1834,7 +1825,7 @@ $(function () {
 		var secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '');
 
 		if ($(this).hasClass('exch-form__submit')) {
-
+			$('.main-cols__right-bottom .portfolio-menu__item').eq(1).trigger('click');
 			$('.exch-form__close').addClass('hidden');
 			// $('.icon-trader').addClass('hidden');
 			// $('.graph-prices__item .progress-label').css('visibility', 'hidden');
@@ -1969,6 +1960,8 @@ $(function () {
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 			$('.exch-form__submit').prop('disabled', false);
+
+			$('.main-cols__right-bottom .portfolio-menu__item').eq(3).trigger('click');
 
 			var send_svg = $('.exch-head__send .exch-dropdown__current > svg').clone();
 			var send_curr = $('.exch-head__send .exch-dropdown__current > p.exch-dropdown__title > span').text();
