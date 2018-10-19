@@ -203,52 +203,10 @@ function updateSmallCharts() {
             }
             api_calls.push($.ajax(ajaxUrl));
             key_array.push(key);
-            // draw small Chart 
-            // $.ajax({
-            //     url: ajaxUrl,
-            //     async: false,
-            //     success: function (data) {
-            //         var graphArr = data.Data.map(s => (s.open + s.close) / 2);
-            //         if (!graphArr.length) {
-            //             for (let i = 0; i < 25; i++) {
-            //                 graphArr.push(1);
-            //             };
-            //         };
-            //         var min = Math.min(...graphArr);
-            //         var max = Math.max(...graphArr);
-            //         var changeInPercent = (-1 + (graphArr[graphArr.length - 1] / graphArr[0])) * 100;
-                    
-            //         // green color by default
-            //         var classColor = 'clr-green';
-            //         var sign = '+';
-            //         var lineColor = '#01B067';
-
-            //         // red color
-            //         if (changeInPercent < 0) {
-            //             classColor = 'clr-darkRed';
-            //             sign = '-';
-            //             lineColor = '#CE2424';
-            //         }
-
-            //         var smallChartInfoString = '<div>$' + numberWithCommas(currenciesPrice[key].toFixed(2)) + '<br><span class="smaller ' + classColor + '">' + sign + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
-
-            //         var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
-            //         cloneOptions.series[0].data = graphArr;
-            //         cloneOptions.series[0].color = lineColor;
-            //         cloneOptions.yAxis.min = min;
-            //         cloneOptions.yAxis.max = max;
-            //         if ($('#smallChart' + key).length)
-            //             Highcharts.chart('smallChart' + key, cloneOptions);
-            //         $('#smallChart' + key).parent().find('.smallChartInfo').attr('data-chart-start', graphArr[0]);
-            //         $('#smallChart' + key).parent().find('.smallChartInfo').attr('data-chart-end', graphArr[graphArr.length - 1]);
-            //         $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
-            //     },
-            // });
         }
         counter++;
     }
     $.when(...api_calls).done(function(...response) {
-        console.log('response', response);
         for (let i = 0; i < response.length; i++) {
             var graphArr = response[i][0].Data.map(s => (s.open + s.close) / 2);
             if (!graphArr.length) {
@@ -273,14 +231,7 @@ function updateSmallCharts() {
             }
 
             var smallChartInfoString = '<div>$' + numberWithCommas(currenciesPrice[key_array[i]].toFixed(2)) + '<br><span class="smaller ' + classColor + '">' + sign + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
-
-            // var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
-            // cloneOptions.series[0].data = graphArr;
-            // cloneOptions.series[0].color = lineColor;
-            // cloneOptions.yAxis.min = min;
-            // cloneOptions.yAxis.max = max;
-            // if ($('#smallChart' + key).length)
-            //     Highcharts.chart('smallChart' + key, cloneOptions);
+            
             smallChartObjs[key_array[i]].yAxis[0].setExtremes(min, max);
             smallChartObjs[key_array[i]].series[0].setData(graphArr);
             smallChartObjs[key_array[i]].series[0].update({
@@ -291,61 +242,6 @@ function updateSmallCharts() {
             $('#smallChart' + key_array[i]).parent().find('.smallChartInfo').html(smallChartInfoString);
         }
     });
-    //         // draw small Chart 
-    //         $.ajax({
-    //             url: ajaxUrl,
-    //             success: function (data) {
-    //                 console.log('Data', data);
-    //                 var graphArr = data.Data.map(s => (s.open + s.close) / 2);
-    //                 if (!graphArr.length) {
-    //                     for (let i = 0; i < 25; i++) {
-    //                         graphArr.push(1);
-    //                     };
-    //                 };
-    //                 var min = Math.min(...graphArr);
-    //                 var max = Math.max(...graphArr);
-    //                 var changeInPercent = (-1 + (graphArr[graphArr.length - 1] / graphArr[0])) * 100;
-    //                 var smallChartInfoString;
-    //                 var lineColor;
-
-    //                 // blue color
-    //                 if (changeInPercent > 0) {
-    //                     smallChartInfoString = '<div>$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller clr-green">+' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
-    //                     lineColor = '#01B067';
-    //                     gradientColor = {
-    //                         linearGradient: [0, 0, 0, 30],
-    //                         stops: [
-    //                             [0, Highcharts.Color('#01B067').setOpacity(0.2).get('rgba')],
-    //                             [1, Highcharts.Color('#01B067').setOpacity(0).get('rgba')]
-    //                         ]
-    //                     };
-    //                 }
-    //                 // red color
-    //                 else {
-    //                     smallChartInfoString = '<div>$' + currenciesPrice[key].toFixed(2) + '<br><span class="smaller clr-darkRed">-' + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
-    //                     lineColor = '#CE2424';
-    //                 }
-
-    //                 // var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
-    //                 // cloneOptions.series[0].data = graphArr;
-    //                 // cloneOptions.series[0].color = lineColor;
-    //                 // cloneOptions.yAxis.min = min;
-    //                 // cloneOptions.yAxis.max = max;
-    //                 // if ($('#smallChart' + key).length)
-    //                 //     Highcharts.chart('smallChart' + key, cloneOptions);
-
-    //                 smallChartObjs[key].yAxis[0].setExtremes(min, max);
-    //                 smallChartObjs[key].series[0].setData(graphArr);
-    //                 smallChartObjs[key].series[0].update({
-    //                     color: lineColor
-    //                 });
-
-    //                 $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
-    //                 api_calls ++;
-    //                 if (api_calls == 4) $('.graph-info__range__current').trigger('responsed');
-    //             },
-    //         });
-    //     }
     //     // create copy of existing small charts
     //     // else {
     //     //     var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
