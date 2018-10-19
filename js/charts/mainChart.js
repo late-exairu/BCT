@@ -66,11 +66,11 @@ if ($('body').hasClass('advanced')) {
 	lineColor = '#01B067';
 	blueColor = '#01B067';
 	redColor = '#CE2424';
-	mainChartMarginLeft = 50;
+	// mainChartMarginLeft = 50;
 
-	if ($(window).height() > 900) {
-		mainChartMarginLeft += 10;
-	}
+	// if ($(window).height() > 900) {
+	// 	mainChartMarginLeft += 10;
+	// }
 }
 
 // color for highlight graphs on hover
@@ -463,9 +463,6 @@ $(window).resize(
 		);
 		if ($('body').hasClass('advanced') && $(window).height() > 900) {
 			mainChartObj.update({
-				chart: {
-					marginLeft:  60,
-				},
 				plotOptions: {
 					series: {
 						pointWidth: $('.b-graph #mainChart').width() > 800 ? 5 : 4
@@ -474,9 +471,6 @@ $(window).resize(
 			});
 		} else if ($('body').hasClass('advanced')) {
 			mainChartObj.update({
-				chart: {
-					marginLeft: 50,
-				},
 				plotOptions: {
 					series: {
 						pointWidth: $('.b-graph #mainChart').width() > 800 ? 5 : 4

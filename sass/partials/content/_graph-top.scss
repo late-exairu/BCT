@@ -8,7 +8,7 @@
 	--bar-height: 16px;
 	font-family: $osans;
 	position: absolute;
-	left: 53px;
+	left: 10px;
 	top: 10px;
 	right: 5px;
 	background: transparent;
@@ -183,7 +183,7 @@
 	}
 
 	@media only screen and (min-width : 1920px) {
-		left: 65px;
+		//left: 65px;
 		height: 42px;
 
 		&__item{
