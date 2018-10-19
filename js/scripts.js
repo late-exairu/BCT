@@ -718,7 +718,7 @@ $(function () {
 		else{
 			$('#telegram').removeClass('--short');
 			$('#orderBook,.chat-head__back').addClass('hidden');
-			$('.main-cols__left').Class('advanced-mode');			
+			$('.main-cols__left').removeClass('advanced-mode');			
 		}
 
 		// Wallet tab
