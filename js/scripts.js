@@ -1059,31 +1059,31 @@ $(function () {
 						gData = gDataTwoHour;
 						range_index = 0;
 						if (current_range == '1H') isRedraw = true;
-						console.log('gDataTwoHour');
+						//console.log('gDataTwoHour');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
 						gDataDay = [];
 						gData = gDataDay;
 						range_index = 1;
 						if (current_range == '1D') isRedraw = true;
-						console.log('gDataDay');
+						//console.log('gDataDay');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[2].interval) {
 						gDataWeek = [];
 						gData = gDataWeek;
 						range_index = 2;
 						if (current_range == '1W') isRedraw = true;
-						console.log('gDataWeek');
+						//console.log('gDataWeek');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[3].interval) {
 						gDataMonth = [];
 						gData = gDataMonth;
 						range_index = 3;
 						if (current_range == '1M') isRedraw = true;
-						console.log('gDataMonth');
+						//console.log('gDataMonth');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[4].interval) {
 						gDataYear = [];
 						gData = gDataYear;
 						range_index = 4;
 						if (current_range == '1Y') isRedraw = true;
-						console.log('gDataYear');
+						//console.log('gDataYear');
 					}
 
 					var prev_value = [null, null, null, null, null, null];
@@ -1147,7 +1147,7 @@ $(function () {
 							}
 							gData.push(one_graph);
 						}
-						console.log(gData);
+						//console.log(gData);
 						if (isRedraw) {
 
 							mainChartObj.series[0].setData(gData[0].prices);
