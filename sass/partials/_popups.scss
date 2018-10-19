@@ -34,7 +34,7 @@
 		width: 100%;
 		padding:10px;
 		overflow:hidden;
-		background-color:white; 
+		background-color: var(--clr-block); 
 		color:black; 
 		z-index:1;
 		transition: display 250px;
@@ -105,7 +105,7 @@
 		display: block;
 		width: 120px;
 		border: none;
-		background:white;
+		background: var(--clr-block);
 		color: var(--clr-accent);
 		text-decoration:underline;
 		font-weight: 600;
@@ -412,7 +412,7 @@
 			padding: 6px 8px 16px;
 			color: var(--clr-textD);
 			outline: none;
-			background: var(--clr-back);
+			background: var(--clr-block);
 			font-weight: 700;
 	
 			&:focus{

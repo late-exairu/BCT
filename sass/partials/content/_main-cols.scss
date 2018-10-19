@@ -48,17 +48,55 @@
 
 		&.col-chats-adv{
 			position: relative;
-			width: 22%;
+			width: 48%;
 			flex: 0 0 22%;
-			min-width: 410px;
-			max-width: 530px;
+			min-width: 800px;
+			max-width: 1000px;
 			display: none;
+
+			&.--short{
+				width: 20%;
+				flex: 0 0 20%;
+				min-width: 360px;
+				max-width: 530px;
+
+				.c-block__col{
+					border: none;
+
+					&.--chat-list{
+						top: 0;
+						width: 350px;
+						flex: 1 0 auto;
+						height: calc(100% - var(--gap-size) * 4);
+						display: flex;
+						z-index: 100002;
+						outline: none;
+						position: fixed;
+						overflow-y: auto;
+						background-color: var(--clr-block);
+						transform: translateX(calc(-100% - var(--gap-size) * 4));
+						transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+						margin: calc(var(--gap-size) * 2);
+
+						&.open{
+							transform: translate(-20px, 0);
+							box-shadow: 7px 6px 11px rgba(0,0,0,.25);
+							border-top-left-radius: var(--border-radius);
+							border-bottom-left-radius: var(--border-radius);
+						}
+					}
+
+					&.--chat-open{
+						
+					}
+				}
+			}
 		}
 
 		&.col-tables{
 			width: 36%;
 			flex: 0 0 32%;
-			min-width: 394px;
+			min-width: 410px;
 			max-width: 540px;
 		}
 
@@ -70,9 +108,9 @@
 			}
 
 			&.col-tables{
-				width: 25%;
-				flex: 0 0 25%;
-				min-width: 460px;
+				width: 22%;
+				flex: 0 0 22%;
+				min-width: 425px;
 				max-width: 580px;
 			}
 		}
