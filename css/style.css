@@ -7629,6 +7629,34 @@ h6 {
       .exch-dropdown__hangle .sprite-icon.close {
         height: 15px;
         display: none; }
+  .exch-dropdown__scrollup {
+    font-size: 9px;
+    color: var(--clr-backCI);
+    border-radius: 5px;
+    border: 1px solid;
+    position: absolute;
+    right: 14px;
+    bottom: 12px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; }
+    .exch-dropdown__scrollup .scroll-up-button {
+      padding: 0 4px;
+      text-align: center;
+      line-height: 9px;
+      color: var(--clr-backCI);
+      height: 100%;
+      border: none;
+      justify-content: center;
+      cursor: pointer;
+      background: transparent; }
+      .exch-dropdown__scrollup .scroll-up-button .sprite-icon {
+        width: 20px;
+        height: 28px; }
+      .exch-dropdown__scrollup .scroll-up-button:hover .sprite-icon {
+        fill: var(--clr-textL); }
   .exch-dropdown__list-title {
     position: relative;
     display: flex;
