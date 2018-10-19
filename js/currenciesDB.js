@@ -204,57 +204,91 @@ function updateSmallCharts() {
             api_calls.push($.ajax(ajaxUrl));
             key_array.push(key);
             // draw small Chart 
-            $.ajax({
-                url: ajaxUrl,
-                async: false,
-                success: function (data) {
-                    var graphArr = data.Data.map(s => (s.open + s.close) / 2);
-                    if (!graphArr.length) {
-                        for (let i = 0; i < 25; i++) {
-                            graphArr.push(1);
-                        };
-                    };
-                    var min = Math.min(...graphArr);
-                    var max = Math.max(...graphArr);
-                    var changeInPercent = (-1 + (graphArr[graphArr.length - 1] / graphArr[0])) * 100;
+            // $.ajax({
+            //     url: ajaxUrl,
+            //     async: false,
+            //     success: function (data) {
+            //         var graphArr = data.Data.map(s => (s.open + s.close) / 2);
+            //         if (!graphArr.length) {
+            //             for (let i = 0; i < 25; i++) {
+            //                 graphArr.push(1);
+            //             };
+            //         };
+            //         var min = Math.min(...graphArr);
+            //         var max = Math.max(...graphArr);
+            //         var changeInPercent = (-1 + (graphArr[graphArr.length - 1] / graphArr[0])) * 100;
                     
-                    // green color by default
-                    var classColor = 'clr-green';
-                    var sign = '+';
-                    var lineColor = '#01B067';
+            //         // green color by default
+            //         var classColor = 'clr-green';
+            //         var sign = '+';
+            //         var lineColor = '#01B067';
 
-                    // red color
-                    if (changeInPercent < 0) {
-                        classColor = 'clr-darkRed';
-                        sign = '-';
-                        lineColor = '#CE2424';
-                    }
+            //         // red color
+            //         if (changeInPercent < 0) {
+            //             classColor = 'clr-darkRed';
+            //             sign = '-';
+            //             lineColor = '#CE2424';
+            //         }
 
-                    var smallChartInfoString = '<div>$' + numberWithCommas(currenciesPrice[key].toFixed(2)) + '<br><span class="smaller ' + classColor + '">' + sign + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
+            //         var smallChartInfoString = '<div>$' + numberWithCommas(currenciesPrice[key].toFixed(2)) + '<br><span class="smaller ' + classColor + '">' + sign + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
 
-                    var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
-                    cloneOptions.series[0].data = graphArr;
-                    cloneOptions.series[0].color = lineColor;
-                    cloneOptions.yAxis.min = min;
-                    cloneOptions.yAxis.max = max;
-                    if ($('#smallChart' + key).length)
-                        Highcharts.chart('smallChart' + key, cloneOptions);
-                    $('#smallChart' + key).parent().find('.smallChartInfo').attr('data-chart-start', graphArr[0]);
-                    $('#smallChart' + key).parent().find('.smallChartInfo').attr('data-chart-end', graphArr[graphArr.length - 1]);
-                    $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
-                },
-            });
+            //         var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
+            //         cloneOptions.series[0].data = graphArr;
+            //         cloneOptions.series[0].color = lineColor;
+            //         cloneOptions.yAxis.min = min;
+            //         cloneOptions.yAxis.max = max;
+            //         if ($('#smallChart' + key).length)
+            //             Highcharts.chart('smallChart' + key, cloneOptions);
+            //         $('#smallChart' + key).parent().find('.smallChartInfo').attr('data-chart-start', graphArr[0]);
+            //         $('#smallChart' + key).parent().find('.smallChartInfo').attr('data-chart-end', graphArr[graphArr.length - 1]);
+            //         $('#smallChart' + key).parent().find('.smallChartInfo').html(smallChartInfoString);
+            //     },
+            // });
         }
         counter++;
     }
     $.when(...api_calls).done(function(...response) {
-        for (let index = 0; index < response.length; index++) {
-            if (exchangers[index] != expectExchanger) {
-                instance.popper.querySelector('.tippy-content').textContent += exchangers[index] + '\n';
-                length--;
+        console.log('response', response);
+        for (let i = 0; i < response.length; i++) {
+            var graphArr = response[i][0].Data.map(s => (s.open + s.close) / 2);
+            if (!graphArr.length) {
+                for (let i = 0; i < 25; i++) {
+                    graphArr.push(1);
+                };
+            };
+            var min = Math.min(...graphArr);
+            var max = Math.max(...graphArr);
+            var changeInPercent = (-1 + (graphArr[graphArr.length - 1] / graphArr[0])) * 100;
+            
+            // green color by default
+            var classColor = 'clr-green';
+            var sign = '+';
+            var lineColor = '#01B067';
 
-                if (length <= 0) break;
+            // red color
+            if (changeInPercent < 0) {
+                classColor = 'clr-darkRed';
+                sign = '-';
+                lineColor = '#CE2424';
             }
+
+            var smallChartInfoString = '<div>$' + numberWithCommas(currenciesPrice[key_array[i]].toFixed(2)) + '<br><span class="smaller ' + classColor + '">' + sign + Math.abs(changeInPercent.toFixed(2)) + '%</span></div>';
+
+            // var cloneOptions = Object.assign({}, smallCurrencyChartOptions);
+            // cloneOptions.series[0].data = graphArr;
+            // cloneOptions.series[0].color = lineColor;
+            // cloneOptions.yAxis.min = min;
+            // cloneOptions.yAxis.max = max;
+            // if ($('#smallChart' + key).length)
+            //     Highcharts.chart('smallChart' + key, cloneOptions);
+            smallChartObjs[key_array[i]].yAxis[0].setExtremes(min, max);
+            smallChartObjs[key_array[i]].series[0].setData(graphArr);
+            smallChartObjs[key_array[i]].series[0].update({
+                color: lineColor
+            });
+            $('#smallChart' + key_array[i]).parent().find('.smallChartInfo').attr('data-chart-start', graphArr[0]);
+            $('#smallChart' + key_array[i]).parent().find('.smallChartInfo').attr('data-chart-end', graphArr[graphArr.length - 1]);
+            $('#smallChart' + key_array[i]).parent().find('.smallChartInfo').html(smallChartInfoString);
         }
     });
     //         // draw small Chart 
