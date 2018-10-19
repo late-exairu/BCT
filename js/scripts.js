@@ -700,7 +700,7 @@ $(function () {
 		else{
 			$('#telegram').removeClass('--short');
 			$('#orderBook,.chat-head__back').addClass('hidden');
-			$('.main-cols__left').removeClass('advanced-mode');			
+			$('.main-cols__left').Class('advanced-mode');			
 		}
 
 		// Wallet tab
@@ -970,7 +970,7 @@ $(function () {
 		var chatName = $(this).find('.chats-list__name').text();
 		$('.chat-head__name').text(chatName);
 		$('.chat-talk').toggleClass('hidden');
-		$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').animate({
+		$('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').eq(1).animate({
 			scrollTop: $('#telegram .scrollbar-right.scroll-wrapper > .scroll-content').height()
 		}, "rapid");
 		closeTelegramMenu();
