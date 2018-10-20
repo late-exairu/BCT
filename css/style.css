@@ -14442,8 +14442,7 @@ button:-moz-focusring {
   height: calc(100%);
   margin: 0;
   margin-top: 0px;
-  z-index: 101;
-  border-right: 1px solid var(--clr-separator); }
+  z-index: 101; }
   .accounts-diagram-wrap.marged {
     margin: 0 70px 0 0; }
   .accounts-diagram-wrap.hover {
@@ -15036,6 +15035,10 @@ button:-moz-focusring {
 
 .sameDropdownItem {
   display: none; }
+
+#panel-funds-wallet .scroll-wrapper {
+  border-left: 1px solid var(--clr-separator);
+  border-radius: 0; }
 
 /* =================================================================== */
 /* basic-btn
