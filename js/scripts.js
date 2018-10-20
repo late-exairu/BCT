@@ -2451,11 +2451,11 @@ $(function () {
 	});
 
 	$("#open-tx-history").click((e) => {
-		$(".basic-popup__overlay").show();
+		$(".basic-popup__overlay").addClass('open');
 	})
 
 	$("#close-tx-history").click((e) => {
-		$(".basic-popup__overlay").hide();
+		$(".basic-popup__overlay").removeClass('open');
 	})
 
 	$('.popup-nav-button').click(function (e) {

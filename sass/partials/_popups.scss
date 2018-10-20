@@ -28,22 +28,26 @@
 
 	&__overlay {
 		position:absolute;
-		display:none;
-		top:270px;
+		//display:none;
+		bottom: 0px;
 		bottom:0; 
 		width: 100%;
-		padding:10px;
+		height: 0px;
+		padding: 0px;
 		overflow:hidden;
 		background-color: var(--clr-block); 
 		color:black; 
 		z-index:1;
-		transition: display 250px;
+		transition: height 125ms;
 
 
 		.overlay-header {
 			color: #2a3e81;
 			display:block;
 			line-height:1.1;
+		}
+		.scroll-wrapper {
+			height: 56;
 		}
 
 		.align-center {
@@ -53,6 +57,11 @@
 		i {
 			font-size:14px;
 			color: var(--clr-accent)
+		}
+
+		&.open {
+			height: 152%;
+			padding: 10px;
 		}
 	}
 
@@ -91,6 +100,7 @@
 .transaction-popup{
 	max-width: 310px;
 	min-width: 310px;
+	overflow: hidden !important;
 	width: 100%;
 	.floating-btn_container {
 		position:absolute; bottom:6px; left:10px;

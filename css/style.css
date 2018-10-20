@@ -15154,26 +15154,31 @@ button:-moz-focusring {
     border-radius: 0 0 var(--border-radius) var(--border-radius); }
   .basic-popup__overlay {
     position: absolute;
-    display: none;
-    top: 270px;
+    bottom: 0px;
     bottom: 0;
     width: 100%;
-    padding: 10px;
+    height: 0px;
+    padding: 0px;
     overflow: hidden;
     background-color: var(--clr-block);
     color: black;
     z-index: 1;
-    transition: display 250px; }
+    transition: height 125ms; }
     .basic-popup__overlay .overlay-header {
       color: #2a3e81;
       display: block;
       line-height: 1.1; }
+    .basic-popup__overlay .scroll-wrapper {
+      height: 56; }
     .basic-popup__overlay .align-center {
       text-align: center;
       align-items: center; }
     .basic-popup__overlay i {
       font-size: 14px;
       color: var(--clr-accent); }
+    .basic-popup__overlay.open {
+      height: 152%;
+      padding: 10px; }
   .basic-popup.tables {
     width: 520px; }
     .basic-popup.tables .c-block {
@@ -15199,6 +15204,7 @@ button:-moz-focusring {
 .transaction-popup {
   max-width: 310px;
   min-width: 310px;
+  overflow: hidden !important;
   width: 100%; }
   .transaction-popup .floating-btn_container {
     position: absolute;
