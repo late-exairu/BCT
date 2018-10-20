@@ -744,9 +744,9 @@ $(function () {
 	/* ADVANCED account-js-menu */
 	/*---------------------------------------------------*/
 
-	$('.advanced .accounts-diagram-wrap').click(function () {
-		$('.main-cols__right-bottom .portfolio-menu__item').eq(2).trigger('click');
-	});
+	// $('.advanced .accounts-diagram-wrap').click(function () {
+	// 	$('.main-cols__right-bottom .portfolio-menu__item').eq(2).trigger('click');
+	// });
 
 	$('.advanced .js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function (event) {
 		event.stopPropagation();
