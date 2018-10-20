@@ -14909,12 +14909,10 @@ button:-moz-focusring {
         #panel-dashboard-liquidity .liquidityText .centerPart .separator {
           height: 30px; } }
 
-#orders {
+#orders .forms-wrap {
   display: none; }
-  #orders .forms-wrap {
-    display: none; }
-    #orders .forms-wrap.current {
-      display: flex; }
+  #orders .forms-wrap.current {
+    display: flex; }
 
 /*#telegramMenu{
 	top: 0;
