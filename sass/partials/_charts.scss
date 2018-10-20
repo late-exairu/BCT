@@ -744,7 +744,7 @@
 
 #telegramSetting{
 	top: 0;
-	right: 0px;
+	left: 0px;
 	width: 0px;
 	flex: 1 0 auto;
 	height: 100%;
@@ -757,7 +757,8 @@
 	transition: width 225ms;
 	visibility: hidden;
 	&.open{
-		width: 300px;
+	//	width: 300px;
+		width: 50%;
 		box-shadow: 7px 6px 11px rgba(0,0,0,.25);
 		border-top-left-radius: var(--border-radius);
 		border-bottom-left-radius: var(--border-radius);
@@ -813,6 +814,10 @@
 			}
 		}
 	}
+}
+
+.advanced-mode #telegramSetting.open{
+	width: 100%;
 }
 
 #telegramOverlay{
