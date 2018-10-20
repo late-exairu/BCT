@@ -20,12 +20,19 @@ $(function () {
 
 	function setTelegramData() {
 		if (localStorage.getItem('telegramAuth') == 'true' && localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
-			if (document.querySelector('.message-bar__login'))
-				document.querySelector('.message-bar__login').classList.add('hidden');
-			if (document.querySelector('.message-bar__login-demo'))
-				document.querySelector('.message-bar__login-demo').classList.add('hidden');
+			if (document.querySelector('.telegram-login-btn'))
+				document.querySelector('.telegram-login-btn').classList.add('hidden');
+
 			if (document.querySelector('#telegramText'))
 				document.querySelector('#telegramText').classList.add('hidden');
+
+			if (document.querySelector('.chats-search input') && document.querySelector('.chats-search button')){
+				document.querySelector('.chats-search input').classList.remove('hidden');
+				document.querySelector('.chats-search button').classList.remove('hidden');
+			}
+
+			if (document.querySelector('.chats-list'))
+				document.querySelector('.chats-list').classList.remove('hidden');
 
 			if (document.querySelector('.chat-head__back')) {
 				//document.querySelector('.chat-head__back').classList.remove('hidden');
@@ -57,10 +64,6 @@ $(function () {
 					document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
 				}
 			}
-			if (document.querySelector('.message-bar')) {
-				document.querySelector('.message-bar').classList.add('hidden');
-			}
-
 
 			// if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
 			// 	document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
@@ -1037,9 +1040,9 @@ $(function () {
 
 			// check show or hide input
 			if ($(this).find('.chats-list__send').length) {
-				$('.message-bar').removeClass('hidden');
+				$('.message-bar:not(.telegram-login-btn)').removeClass('hidden');
 			} else {
-				$('.message-bar').addClass('hidden');
+				$('.message-bar:not(.telegram-login-btn)').addClass('hidden');
 			}
 		}
 	});
