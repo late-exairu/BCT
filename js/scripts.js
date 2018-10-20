@@ -2109,10 +2109,18 @@ $(function () {
 				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-textD)');
 				$(item).find(".graph-prices__price.send-prices__rate").removeClass('hidden');
 				$(item).find(".graph-prices__price-label").removeClass('hidden');
+				var num_length = parseInt(secondValue / progressBarsCounter).toString().length;
+				var decimal_digits = 2;
+				if (num_length > 7) {
+					decimal_digits = 0;
+				}
+				else {
+					decimal_digits = 7 - num_length;
+				}
 				$(item).find(".graph-prices__amount").html(`
 				<span class="graph-prices__amount-label">
 					Amount: 
-				</span>` + numberWithCommas((secondValue / progressBarsCounter).toFixed(2)) + ' <span>' + getCurrency + '</span>');
+				</span>` + numberWithCommas((secondValue / progressBarsCounter).toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
 			}
 		});
 	}
@@ -2893,21 +2901,37 @@ $(function () {
 
 			$('.graph-prices__price.send-prices__rate').each(function (index, priceItem) {
 				$(this).addClass('hidden');
-				$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + getCurrency + ' = </span>' + (sendCurrency == 'USDT' ? numberWithCommas(rateArray[index].toFixed(2)) : numberWithCommas(rateArray[index].toFixed(5))) + ' <span>' + sendCurrency + '</span>');
+				var num_length = parseInt(rateArray[index]).toString().length;
+				var decimal_digits = 2;
+				if (num_length > 6) {
+					decimal_digits = 0;
+				}
+				else {
+					decimal_digits = 6 - num_length;
+				}
+				$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + getCurrency + ' = </span>' + numberWithCommas(rateArray[index].toFixed(decimal_digits)) + ' <span>' + sendCurrency + '</span>');
 			});
 		}
 
 		var priceRateBackward = 1 / priceRate;
-		if (priceRateBackward > 1) {
-			priceRateBackward = priceRateBackward.toFixed(2);
-			priceRateBackward = numberWithCommas(priceRateBackward);
-		} else {
-			priceRateBackward = priceRateBackward.toFixed(5);
+		var num_length = parseInt(priceRateBackward).toString().length;
+		var decimal_digits = 2;
+		if (num_length > 6) {
+			decimal_digits = 0;
 		}
+		else {
+			decimal_digits = 6 - num_length;
+		}
+		// if (priceRateBackward > 1) {
+		// 	priceRateBackward = priceRateBackward.toFixed(2);
+		// 	priceRateBackward = numberWithCommas(priceRateBackward);
+		// } else {
+		// 	priceRateBackward = priceRateBackward.toFixed(5);
+		// }
 
 		$('.graph-prices__price.get-prices__rate').each(function (index, priceItem) {
 			$(this).removeClass('hidden');
-			$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + sendCurrency + ' = </span>' + numberWithCommas(priceRateBackward) + ' <span>' + getCurrency + '</span>');
+			$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + sendCurrency + ' = </span>' + numberWithCommas(priceRateBackward.toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
 		});
 
 		// init sort icon
