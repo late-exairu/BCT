@@ -28,7 +28,10 @@
    Usage: <button class="square-icon-button"><i class='[fontawesome class names]'></i><button>  */
 
 .square-icon-button {
-	width:40px;height:40px;color:white; background-color: var(--clr-icon);
+	width:40px;
+	height:40px;
+	color:white; 
+	background-color: var(--clr-textLL);
 	&.clicked {
 		background:linear-gradient(180deg,var(--clr-accent) 0,var(--clr-accentD));
 	}
