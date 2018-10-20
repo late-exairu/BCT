@@ -268,15 +268,26 @@
 						<div class="c-block__col --chat-list" id="telegramMenu">
 							<!-- chats list -->
 							<div class="c-block__section chats-search">
-								<input class="chats-search__input" type="" name="" placeholder="Search">
-								<button class="chat-head__btn">
+								<input class="chats-search__input hidden" type="" name="" placeholder="Search">
+								<button class="chat-head__btn hidden">
 									<svg class="sprite-icon menu-burger" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#menu-burger"></use>
 									</svg>
 								</button>
 							</div><!-- chats-search END -->
 
-							<div class="chats-list c-block__section scroll-y scrollbar-right outer">
+							<!-- <div id="telegramText">
+								This website uses cookies in order to<br /> offer you the most relevant<br /> information. Please accept cookies for<br />
+								optimal performance.
+							</div> -->
+
+							<div id="telegramText">
+								In order to be able to save <br>
+								your progress please log <br>
+								into your Telegram account
+							</div>
+
+							<div class="chats-list c-block__section scroll-y scrollbar-right outer hidden">
 								<div class="chats-list__item">
 									<div class="chats-list__avatar-wrap">
 										<img class="chats-list__avatar" src="pic/avatar_1.jpg" height="44" width="44" alt="">
@@ -762,6 +773,69 @@
 									</div>
 								</div><!-- chats-list__item END -->
 							</div><!-- chats-list END -->
+
+							<div class="message-bar telegram-login-btn">
+								<div class="message-bar__login">
+									<script async src="https://telegram.org/js/telegram-widget.js?4" data-telegram-login="BCTerminalBot" data-size="large" data-radius="5" data-onauth="onTelegramAuth(user)"></script>
+									<script type="text/javascript">
+										function onTelegramAuth(user) {
+												//alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
+									
+											localStorage.setItem('telegramAuth','true');
+											localStorage.setItem('telegramFirstName', user.first_name);
+											localStorage.setItem('telegramLastName', user.last_name);
+											
+											if (user.photo_url){
+												document.querySelector('.message-bar__user-pic .user-pic__avatar').setAttribute('src', user.photo_url);
+												localStorage.setItem('telegramPhoto', user.photo_url);
+											}
+											else{
+												document.querySelector('.message-bar__user-pic .user-pic__avatar').classList.add('hidden');
+												var avatarAbbr = document.createElement('div');
+												avatarAbbr.classList.add('user-pic__avatar');
+												avatarAbbr.textContent = localStorage.getItem('telegramFirstName')[0] + localStorage.getItem('telegramLastName')[0];
+												avatarAbbr.style.borderRadius = '50%';
+												avatarAbbr.style.background = '#0088cc';
+												avatarAbbr.style.fontSize = '19px';
+												document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
+											}
+
+											if (document.querySelector('.telegram-login-btn'))
+											document.querySelector('.telegram-login-btn').classList.add('hidden');
+
+											if (document.querySelector('#telegramText'))
+												document.querySelector('#telegramText').classList.add('hidden');
+
+											if (document.querySelector('.chats-search input') && document.querySelector('.chats-search button')){
+											document.querySelector('.chats-search input').classList.remove('hidden');
+											document.querySelector('.chats-search button').classList.remove('hidden');
+											}
+
+											if (document.querySelectorAll('.chats-list').length){
+												for (var i = 0; i < document.querySelectorAll('.chats-list').length; i++){
+													document.querySelectorAll('.chats-list')[i].classList.remove('hidden');
+												}
+											}
+
+											if (document.querySelector('.chat-head__back')) {
+												//document.querySelector('.chat-head__back').classList.remove('hidden');
+												document.querySelector('.chat-head__desc').classList.remove('hidden');
+												document.querySelector('.chat-head__btns').classList.remove('hidden');
+											}
+											if (document.querySelector('.chat-talk')) {
+												document.querySelector('.chat-talk').classList.remove('hidden');
+											}
+										}
+									</script>									
+								</div><!-- message-bar__login END -->
+								<div class="message-bar__login-demo">
+									<svg class="sprite-icon" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#telegram-icon"></use>
+									</svg>
+									<span>Log in with Telegram</span>
+								</div>
+							</div>
+
 						</div><!-- c-block__col END -->
 
 						<div class="c-block__col --chat-open">
@@ -776,7 +850,7 @@
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-btc"></use>
 								</svg> -->
 
-								<div class="chat-head__desc hidden">
+								<div class="chat-head__desc">
 									<p class="chat-head__name">BTC Bitcoin Room</p>
 									<p class="chat-head__info">67 members, 2 online</p>
 								</div>
@@ -819,10 +893,7 @@
 							</div><!-- chat-head END -->
 
 							<div class="c-block__section flex-1-1 scroll-y scrollbar-right">
-								<div id="telegramText">
-									This website uses cookies in order to<br/> offer you the most relevant<br/> information. Please accept cookies for<br/> optimal performance.
-								</div>
-								<div class="chat-talk hidden">
+								<div class="chat-talk">
 									<div class="chat-talk__item">
 										<div class="user-pic">
 											<img class="user-pic__avatar" src="pic/avatar/t_avatar01.png"/>
@@ -1427,7 +1498,7 @@
 								</div>
 							</div><!-- scroll-y END -->
 
-							<div class="message-bar -clr-blue">
+							<div class="message-bar -clr-blue hidden">
 								<!-- <button class="message-bar__btn">
 									<svg class="sprite-icon chats-clip" role="img" aria-hidden="true">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chats-clip"></use>
@@ -1451,58 +1522,6 @@
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chats-mic"></use>
 									</svg>
 								</button>
-
-								<div class="message-bar__login">
-									<script async src="https://telegram.org/js/telegram-widget.js?4" data-telegram-login="BCTerminalBot" data-size="large" data-radius="5" data-onauth="onTelegramAuth(user)"></script>
-									<script type="text/javascript">
-										function onTelegramAuth(user) {
-											 //alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
-								 
-											localStorage.setItem('telegramAuth','true');
-											localStorage.setItem('telegramFirstName', user.first_name);
-											localStorage.setItem('telegramLastName', user.last_name);
-											
-											if (user.photo_url){
-												document.querySelector('.message-bar__user-pic .user-pic__avatar').setAttribute('src', user.photo_url);
-												localStorage.setItem('telegramPhoto', user.photo_url);
-											}
-											else{
-												document.querySelector('.message-bar__user-pic .user-pic__avatar').classList.add('hidden');
-												var avatarAbbr = document.createElement('div');
-												avatarAbbr.classList.add('user-pic__avatar');
-												avatarAbbr.textContent = localStorage.getItem('telegramFirstName')[0] + localStorage.getItem('telegramLastName')[0];
-												avatarAbbr.style.borderRadius = '50%';
-												avatarAbbr.style.background = '#0088cc';
-												avatarAbbr.style.fontSize = '19px';
-												document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
-											}
-											if (document.querySelector('.message-bar')) {
-											document.querySelector('.message-bar').classList.add('hidden');
-											}
-											if (document.querySelector('.message-bar__login'))
-												document.querySelector('.message-bar__login').classList.add('hidden');
-											if (document.querySelector('.message-bar__login-demo'))
-												document.querySelector('.message-bar__login-demo').classList.add('hidden');
-											if (document.querySelector('#telegramText'))
-												document.querySelector('#telegramText').classList.add('hidden');
-
-											if (document.querySelector('.chat-head__back')) {
-												//document.querySelector('.chat-head__back').classList.remove('hidden');
-												document.querySelector('.chat-head__desc').classList.remove('hidden');
-												document.querySelector('.chat-head__btns').classList.remove('hidden');
-											}
-											if (document.querySelector('.chat-talk')) {
-												document.querySelector('.chat-talk').classList.remove('hidden');
-											}
-										}
-									</script>									
-								</div><!-- message-bar__login END -->
-								<div class="message-bar__login-demo">
-									<svg class="sprite-icon" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#telegram-icon"></use>
-									</svg>
-									<span>Log in with Telegram</span>
-								</div>
 							</div><!-- message-bar END -->
 						</div><!-- c-block__col END -->
 					</div><!-- d-flex END -->

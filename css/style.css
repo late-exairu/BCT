@@ -13066,9 +13066,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     .main-cols .order-form {
       padding: 15px 10px; }
       .main-cols .order-form__group {
-        min-height: 160px; }
+        min-height: 183px; }
       .main-cols .order-form__line {
-        margin: 0 0 15px; }
+        margin: 0 0 22px; }
         .main-cols .order-form__line:last-child {
           margin: 0; }
       .main-cols .order-form__input {
@@ -15024,10 +15024,7 @@ button:-moz-focusring {
     visibility: visible; }
 
 #telegramText {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: auto;
   text-align: center;
   font-size: 24px;
   font-weight: 100;
