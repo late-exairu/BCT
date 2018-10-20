@@ -26,9 +26,9 @@ $(function () {
 			if (document.querySelector('#telegramText'))
 				document.querySelector('#telegramText').classList.add('hidden');
 
-			if (document.querySelector('.chats-search input') && document.querySelector('.chats-search button')){
+			if (document.querySelector('.chats-search input')){
 				document.querySelector('.chats-search input').classList.remove('hidden');
-				document.querySelector('.chats-search button').classList.remove('hidden');
+				//document.querySelector('.chats-search button').classList.remove('hidden');
 			}
 
 			if (document.querySelector('.chats-list'))
@@ -3028,8 +3028,14 @@ $(function () {
 		$('#telegramOverlay, #telegramMenu').addClass('open');
 	});
 
-	$('.chat-head__btn').click(function () {
-		$('#telegramOverlay, #telegramSetting').addClass('open');
+	$('#settings').click(function (e) {
+		e.preventDefault();
+		if ($('#telegramOverlay, #telegramSetting').hasClass('open')) {
+			$('#telegramOverlay, #telegramSetting').removeClass('open');
+		}
+		else{
+			$('#telegramOverlay, #telegramSetting').addClass('open');
+		}
 	});
 	$('.toggle').minitoggle();
 
