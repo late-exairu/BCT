@@ -811,8 +811,11 @@
 											document.querySelector('.chats-search button').classList.remove('hidden');
 											}
 
-											if (document.querySelector('.chats-list'))
-											document.querySelector('.chats-list').classList.remove('hidden');
+											if (document.querySelectorAll('.chats-list').length){
+												for (var i = 0; i < document.querySelectorAll('.chats-list').length; i++){
+													document.querySelectorAll('.chats-list')[i].classList.remove('hidden');
+												}
+											}
 
 											if (document.querySelector('.chat-head__back')) {
 												//document.querySelector('.chat-head__back').classList.remove('hidden');
