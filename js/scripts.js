@@ -116,6 +116,7 @@ $(function () {
 				$('#telegram').removeClass('--short');
 				$('#orderBook,.chat-head__back').addClass('hidden');
 				$('.main-cols__left').removeClass('advanced-mode');
+				$('#telegramOverlay').removeClass('open');
 			}
 			else{
 				$('#telegram').removeClass('hidden').addClass('--short');
