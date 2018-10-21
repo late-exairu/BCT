@@ -1642,7 +1642,7 @@ h6 {
   .chats-list__item {
     position: relative;
     display: flex;
-    padding: 6px 15px 6px 15px;
+    padding: 6px 10px 6px 20px;
     height: 70px; }
     .chats-list__item:hover {
       cursor: pointer; }
