@@ -14512,23 +14512,27 @@ button:-moz-focusring {
       .advanced .accounts-diagram-wrap #circleChartText p.title {
         font-size: 10px; } }
   @media only screen and (min-height: 900px) {
-    .advanced .accounts-diagram-wrap:after {
-      width: 190px;
-      height: 190px; }
-    .advanced .accounts-diagram-wrap #circleChartText {
-      width: 170px; }
-      .advanced .accounts-diagram-wrap #circleChartText p.value span {
-        font-size: 16px; }
-      .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
-        font-size: 19px; }
-      .advanced .accounts-diagram-wrap #circleChartText p.value span.totalBalanceFraction {
-        font-size: 15px; }
-      .advanced .accounts-diagram-wrap #circleChartText p.title {
-        font-size: 15px; }
-      .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
-        width: 40px;
-        height: 35px;
-        margin-right: 3px; } }
+    .advanced .accounts-diagram-wrap {
+      height: calc(100% - 62px);
+      margin-top: 62px;
+      border-top: 1px solid var(--clr-separator); }
+      .advanced .accounts-diagram-wrap:after {
+        width: 190px;
+        height: 190px; }
+      .advanced .accounts-diagram-wrap #circleChartText {
+        width: 170px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span {
+          font-size: 16px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span.bigger {
+          font-size: 19px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.value span.totalBalanceFraction {
+          font-size: 15px; }
+        .advanced .accounts-diagram-wrap #circleChartText p.title {
+          font-size: 15px; }
+        .advanced .accounts-diagram-wrap #circleChartText .sprite-icon {
+          width: 40px;
+          height: 35px;
+          margin-right: 3px; } }
 
 .accounts-diagram {
   position: relative;
@@ -15636,7 +15640,7 @@ body.advanced .fancybox-bg {
   width: auto;
   height: 30px;
   background: transparent;
-  z-index: 8;
+  z-index: 1000;
   cursor: pointer;
   border-radius: var(--border-radius);
   display: flex;
@@ -15655,6 +15659,10 @@ body.advanced .fancybox-bg {
     transition: all .2s; }
   .portfolio-drop.open:after {
     transform: rotate(180deg); }
+  @media (min-height: 900px) {
+    .portfolio-drop {
+      top: 10px;
+      left: 20px; } }
 
 .popup-tabs {
   display: flex;
@@ -15734,6 +15742,10 @@ body.advanced .fancybox-bg {
     font-size: 16px;
     font-weight: 700;
     margin: 0; }
+
+.portfolio-drop .menu-dropdown__item {
+  border-radius: 0px;
+  height: 29px; }
 
 /* =================================================================== */
 /* Globals

@@ -87,7 +87,7 @@ body.advanced .fancybox-bg{
 	width: auto;
 	height: 30px;
 	background: transparent;
-	z-index: 8;
+	z-index: 1000;
 	cursor: pointer;
 	border-radius: var(--border-radius);
 	display: flex;
@@ -113,6 +113,10 @@ body.advanced .fancybox-bg{
 		&:after{
 			transform: rotate(180deg);
 		}
+	}
+	@media (min-height:900px) {
+		top: 10px;
+		left: 20px;
 	}
 }
 
@@ -220,4 +224,8 @@ body.advanced .fancybox-bg{
 		font-weight: 700;
 		margin: 0;
 	}
+}
+.portfolio-drop .menu-dropdown__item{
+	border-radius: 0px;
+	height: 29px;
 }

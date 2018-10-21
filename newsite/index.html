@@ -4498,7 +4498,7 @@
 			<div class="main-cols__right-bottom m-top">
 				<div class="c-block d-flex-col flex-1-1 flex-h-fix pos-r js-account-stats pos-r">
 					
-					<div class="portfolio-nav">
+					<!-- <div class="portfolio-nav">
 						<h2 class="portfolio-nav__title">Global Wallet</h2>
 
 						<ul class="portfolio-menu">
@@ -4522,43 +4522,43 @@
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#portfolio-order-open"></use>
 								</svg>
 							</li>
-							<!-- <li class="portfolio-menu__item" id="tab-funds-orders" data-name="Open Orders">
+							<li class="portfolio-menu__item" id="tab-funds-orders" data-name="Open Orders">
 								<svg class="sprite-icon" role="img" aria-hidden="true">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#portfolio-order-open"></use>
 								</svg>
-							</li> -->
+							</li> 
 						</ul>
-					</div>
+					</div> -->
 
-					<!-- 
-						<div class="portfolio-drop js-dropdown-toggle js-dropdown-wrap">
+					 
+					<div class="portfolio-drop js-dropdown-toggle js-dropdown-wrap">
 						<h2 class="c-block-head__title">
-							Global Liquidity
+							Wallet
 						</h2>
 
-						<ul class="menu-dropdown to-top js-dropdown">
-							<li class="menu-dropdown__item js-tabs-tab active" id="tab-dashboard-liquidity">
-								<button class="menu-dropdown__btn">Global Liquidity</button>
+						<ul class="menu-dropdown js-dropdown">
+							<li class="menu-dropdown__item js-tabs-tab active" id="tab-funds-wallet">
+								<button class="menu-dropdown__btn">Wallet</button>
 							</li>
 
-							<li class="menu-dropdown__item js-tabs-tab hidden" id="tab-funds-portfolio">
+							<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-portfolio">
 								<button class="menu-dropdown__btn">Portfolio</button>
 							</li>
 
-							<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-wallet">
-								<button class="menu-dropdown__btn">Global Wallet</button>
-							</li>
-
 							<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-history">
-								<button class="menu-dropdown__btn">Order History</button>
+								<button class="menu-dropdown__btn">History</button>
 							</li>
 
-							<li class="menu-dropdown__item js-tabs-tab" id="tab-funds-orders">
-								<button class="menu-dropdown__btn">Open Orders</button>
+							<li class="menu-dropdown__item js-tabs-tab" id="tab-dashboard-liquidity">
+								<button class="menu-dropdown__btn">Advanced</button>
 							</li>
+
+							<!-- <li class="menu-dropdown__item js-tabs-tab" id="tab-funds-orders">
+								<button class="menu-dropdown__btn">Open Orders</button>
+							</li> -->
 						</ul>
 					</div> 
-				-->
+				
 
 <!-- 					<div class="c-block-head no-bg">
 						<div class="c-block-head__left">
@@ -4579,34 +4579,6 @@
 					</div> -->
 
 					<div class="d-flex flex-1-1 flex-h-fix">
-						<div class="js-tabs-panel" id="panel-dashboard-liquidity">
-							<div id="liquidityChart" style="width: 100%; height: 100%;"></div>
-							<div class="liquidityText">
-								<div class="leftPart">
-									<p>71</p>
-									<span>exchanges</span>
-								</div>
-								<div class="centerPart">
-									<!-- <p>8,221.01</p> -->
-									<div class="zoom-button">
-										<svg role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chart-minus"></use>
-										</svg>
-										<!-- <span>Mid market price</span> -->
-									</div>
-									<div class="separator"></div>
-									<div class="zoom-button">
-										<svg role="img" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chart-plus"></use>
-										</svg>
-									</div>
-								</div>
-								<div class="rightPart">
-									<p>71</p>
-									<span>exchanges</span>
-								</div>
-							</div>
-						</div>
 						<div class="js-tabs-panel active" id="panel-funds-wallet">
 							<div class="circleDiagramParent w-100">
 								<div class="accounts-diagram-wrap">
@@ -4942,6 +4914,34 @@
 									</div><!-- basic-table__body END -->
 								</div><!-- basic-table END -->
 							</div><!-- scroll-y END -->
+						</div>
+						<div class="js-tabs-panel" id="panel-dashboard-liquidity">
+							<div id="liquidityChart" style="width: 100%; height: 100%;"></div>
+							<div class="liquidityText">
+								<div class="leftPart">
+									<p>71</p>
+									<span>exchanges</span>
+								</div>
+								<div class="centerPart">
+									<!-- <p>8,221.01</p> -->
+									<div class="zoom-button">
+										<svg role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chart-minus"></use>
+										</svg>
+										<!-- <span>Mid market price</span> -->
+									</div>
+									<div class="separator"></div>
+									<div class="zoom-button">
+										<svg role="img" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#chart-plus"></use>
+										</svg>
+									</div>
+								</div>
+								<div class="rightPart">
+									<p>71</p>
+									<span>exchanges</span>
+								</div>
+							</div>
 						</div>
 						<div class="js-tabs-panel" id="panel-funds-history">
 							<div class="flex-1-1 scroll-y scrollbar-right">
