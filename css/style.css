@@ -14909,12 +14909,10 @@ button:-moz-focusring {
         #panel-dashboard-liquidity .liquidityText .centerPart .separator {
           height: 30px; } }
 
-#orders {
+#orders .forms-wrap {
   display: none; }
-  #orders .forms-wrap {
-    display: none; }
-    #orders .forms-wrap.current {
-      display: flex; }
+  #orders .forms-wrap.current {
+    display: flex; }
 
 /*#telegramMenu{
 	top: 0;
@@ -14948,7 +14946,7 @@ button:-moz-focusring {
 }*/
 #telegramSetting {
   top: 0;
-  right: 0px;
+  left: 0px;
   width: 0px;
   flex: 1 0 auto;
   height: 100%;
@@ -14961,7 +14959,7 @@ button:-moz-focusring {
   transition: width 225ms;
   visibility: hidden; }
   #telegramSetting.open {
-    width: 300px;
+    width: 50%;
     box-shadow: 7px 6px 11px rgba(0, 0, 0, 0.25);
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
@@ -15005,6 +15003,9 @@ button:-moz-focusring {
       #telegramSetting .settings-list__item div.toggle {
         position: absolute;
         right: 30px; }
+
+.advanced-mode #telegramSetting.open {
+  width: 100%; }
 
 #telegramOverlay {
   top: 0;

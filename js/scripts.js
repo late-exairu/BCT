@@ -26,9 +26,9 @@ $(function () {
 			if (document.querySelector('#telegramText'))
 				document.querySelector('#telegramText').classList.add('hidden');
 
-			if (document.querySelector('.chats-search input') && document.querySelector('.chats-search button')){
+			if (document.querySelector('.chats-search input')){
 				document.querySelector('.chats-search input').classList.remove('hidden');
-				document.querySelector('.chats-search button').classList.remove('hidden');
+				//document.querySelector('.chats-search button').classList.remove('hidden');
 			}
 
 			if (document.querySelector('.chats-list'))
@@ -744,9 +744,9 @@ $(function () {
 	/* ADVANCED account-js-menu */
 	/*---------------------------------------------------*/
 
-	$('.advanced .accounts-diagram-wrap').click(function () {
-		$('.main-cols__right-bottom .portfolio-menu__item').eq(2).trigger('click');
-	});
+	// $('.advanced .accounts-diagram-wrap').click(function () {
+	// 	$('.main-cols__right-bottom .portfolio-menu__item').eq(2).trigger('click');
+	// });
 
 	$('.advanced .js-account-stats .portfolio-menu .portfolio-menu__item').on('click', function (event) {
 		event.stopPropagation();
@@ -1558,8 +1558,18 @@ $(function () {
 					touch: false,
 					afterShow: function (instance, current) {
 						var fancybox_body = $('.fancybox-container')[0];
-						$('.main-cols__right')[0].append(fancybox_body);
-						$('.main-cols__right .fancybox-container')
+					//	$('.main-cols__right')[0].append(fancybox_body);
+						$('.b-graph')[0].append(fancybox_body);
+						// $('.main-cols__right .fancybox-container')
+						// 	.css({
+						// 		"width": "100%",
+						// 		"height": "100%",
+						// 		"display": "block",
+						// 		"position": "absolute"
+						// 	})
+						// 	.css("display", "block");
+
+						$('.b-graph .fancybox-container')
 							.css({
 								"width": "100%",
 								"height": "100%",
@@ -2111,9 +2121,9 @@ $(function () {
 		$(".graph-prices__list .graph-prices__item").each(function (index, item) {
 			if (index < progressBarsCounter) {
 				current_exchange_item = $(item);
-				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-textD)');
 				$(item).find(".graph-prices__price.send-prices__rate").removeClass('hidden');
 				$(item).find(".graph-prices__price-label").removeClass('hidden');
+				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-textD)');
 				var num_length = parseInt(secondValue / progressBarsCounter).toString().length;
 				var decimal_digits = 2;
 				if (num_length > 7) {
@@ -2126,6 +2136,9 @@ $(function () {
 				<span class="graph-prices__amount-label">
 					Amount: 
 				</span>` + numberWithCommas((secondValue / progressBarsCounter).toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
+			}
+			else{
+				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-backCI)');
 			}
 		});
 	}
@@ -3028,8 +3041,14 @@ $(function () {
 		$('#telegramOverlay, #telegramMenu').addClass('open');
 	});
 
-	$('.chat-head__btn').click(function () {
-		$('#telegramOverlay, #telegramSetting').addClass('open');
+	$('#settings').click(function (e) {
+		e.preventDefault();
+		if ($('#telegramOverlay, #telegramSetting').hasClass('open')) {
+			$('#telegramOverlay, #telegramSetting').removeClass('open');
+		}
+		else{
+			$('#telegramOverlay, #telegramSetting').addClass('open');
+		}
 	});
 	$('.toggle').minitoggle();
 

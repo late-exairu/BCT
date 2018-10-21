@@ -82,10 +82,10 @@ function drawCircleChart(e,noAnimation) {
                 },
                 states: {
                     hover: {
-                       // enabled: false
-                       animation:{
-                           duration: 1250
-                       }
+                        enabled: false
+                    //    animation:{
+                    //        duration: 1250
+                    //    }
                     }
                 },
                 events: {
