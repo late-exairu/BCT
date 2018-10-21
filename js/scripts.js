@@ -283,7 +283,7 @@ $(function () {
 		if (counter < 9 && searchString.trim() != '') {
 			$(this).closest('.exch-dropdown').find('.exch-dropdown__list').css('height', 'auto');
 		} else {
-			$(this).closest('.exch-dropdown').find('.exch-dropdown__list').css('height', '400px');
+			$(this).closest('.exch-dropdown').find('.exch-dropdown__list').css('height', '372px');
 		}
 
 	});
