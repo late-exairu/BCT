@@ -116,7 +116,7 @@ function drawCircleChart(e,noAnimation) {
 
                 return '<div class="tooltipCircle">' + svgString[0].outerHTML +
                     '<div class="currency">' + currency + '</div>' +
-                    '<div class="price"><span>' + circleChartTooltipData[currency]['price'] + '</span></div>' +
+                    '<div class="price"><span>' + numberWithCommas(circleChartTooltipData[currency]['price']) + '</span></div>' +
                     '</div>';
             }
         },
