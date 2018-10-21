@@ -1739,7 +1739,7 @@ $(function () {
 
 				var currSendForm = $('#send-popup .send-form__line');
 				currSendForm.find('svg.basic-table__curr, p.send-form__dropdown__title').remove();
-				$(current_item).insertBefore(currSendForm.eq(0).find('div.send-dropdown__hangle'));
+				//$(current_item).insertBefore(currSendForm.eq(0).find('div.send-dropdown__hangle'));
 
 				$(current_item_input).insertBefore(currSendForm.eq(1).find('input.send-form__input'));
 				currSendForm.eq(1).find('input.send-form__input').val(coin_amount);
@@ -1759,7 +1759,8 @@ $(function () {
 			}
 		});
 
-		send_popup_list = `<div class="send-form__dropdown__list-title">COINS IN YOUR WALLET</div>` + send_popup_list;
+		//send_popup_list = `<div class="send-form__dropdown__list-title">COINS IN YOUR WALLET</div>` + send_popup_list;
+		send_popup_list = send_popup_list;
 
 		$('#send-popup .send-form__dropdown__list .send-form__dropdown__scroll').html(send_popup_list);
 
@@ -1786,7 +1787,7 @@ $(function () {
 
 			var currSendForm = $('#send-popup .send-form__line');
 			currSendForm.find('svg.basic-table__curr, p.send-form__dropdown__title').remove();
-			newCurr.insertBefore($(currSendForm).eq(0).find('div.send-dropdown__hangle'));
+			//newCurr.insertBefore($(currSendForm).eq(0).find('div.send-dropdown__hangle'));
 			$(current_item_input).insertBefore($(currSendForm).eq(1).find('input.send-form__input'));
 			currSendForm.eq(1).find('input.send-form__input').val(coin_amount);
 			$('#send-popup .send-form__btn span.in-progress').html('SEND ' + currencyFullName);
