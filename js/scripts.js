@@ -26,8 +26,8 @@ $(function () {
 			if (document.querySelector('#telegramText'))
 				document.querySelector('#telegramText').classList.add('hidden');
 
-			if (document.querySelector('.chats-search input')){
-				document.querySelector('.chats-search input').classList.remove('hidden');
+			if (document.querySelector('.chats-search')){
+				document.querySelector('.chats-search').classList.remove('hidden');
 				//document.querySelector('.chats-search button').classList.remove('hidden');
 			}
 
