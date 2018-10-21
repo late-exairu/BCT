@@ -779,7 +779,7 @@ h6 {
         border-color: var(--clr-icon); }
         .basic-table__row.disabled .basic-table__btn.clickable {
           opacity: 1 !important;
-          border-color: var(--clr-textL);
+          border-color: var(--clr-separator);
           background: var(--clr-block);
           color: var(--clr-text);
           pointer-events: all; }
@@ -874,7 +874,7 @@ h6 {
         fill: var(--clr-textL); }
   .basic-table__btn {
     min-height: 28px;
-    border: 1px solid var(--clr-textL);
+    border: 1px solid var(--clr-separator);
     font-size: 12px;
     border-radius: 3px;
     line-height: 1.2;
