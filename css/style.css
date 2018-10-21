@@ -8492,14 +8492,14 @@ h6 {
     border-radius: 3px;
     border: 1px solid;
     position: absolute;
-    right: 14px;
-    top: 5px;
+    right: 2px;
+    top: 2px;
     height: 14px;
     background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2; }
+    z-index: 10000; }
   .graph-prices__sort {
     padding: 0 2px;
     text-align: center;
