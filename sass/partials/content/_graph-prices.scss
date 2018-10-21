@@ -149,7 +149,7 @@
 		top: 0px;
 		bottom: 0px;
 		width: 10px;
-		background: var(--clr-separator);
+		background: var(--clr-back-new);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -177,7 +177,8 @@
 		top: 0px;
 		bottom: 0px;
 		width: 10px;
-		background: var(--clr-separator);
+		// background: var(--clr-separator);
+		background: var(--clr-back-new);
 		display: flex;
 		justify-content: center;
 		align-items: center;
