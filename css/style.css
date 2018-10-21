@@ -1812,15 +1812,26 @@ h6 {
       fill: var(--clr-icon); }
   .chats-search__input {
     width: 100%;
-    background: var(--clr-back-new);
+    background: var(--clr-backLL);
     border: none;
     height: 32px;
     border-radius: var(--border-radius);
-    padding: 0 15px;
+    padding: 0 15px 0 38px;
     font-size: 12px;
     line-height: 22px;
     color: var(--clr-text);
     margin-right: 5px; }
+    .chats-search__input::placeholder {
+      color: var(--clr-text); }
+  .chats-search__icon {
+    position: absolute;
+    left: 34px;
+    top: 28px;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    fill: var(--clr-textD);
+    z-index: 1; }
 
 /* =================================================================== */
 /* .clr-coin
