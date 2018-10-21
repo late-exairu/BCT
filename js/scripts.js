@@ -1031,7 +1031,7 @@ $(function () {
 	// });
 
 	$('.chats-list__item').click(function () {
-		if (localStorage.getItem('telegramAuth') == 'true'){
+		//if (localStorage.getItem('telegramAuth') == 'true'){
 			var chatName = $(this).find('.chats-list__name').text();
 			$('.chat-head__name').text(chatName);
 			$('.chat-talk').toggleClass('hidden');
@@ -1046,7 +1046,7 @@ $(function () {
 			} else {
 				$('.message-bar:not(.telegram-login-btn)').addClass('hidden');
 			}
-		}
+		//}
 	});
 
 	/*---------------------------------------------------*/

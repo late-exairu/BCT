@@ -9313,6 +9313,8 @@ Blocks from left bar
               box-shadow: 7px 6px 11px rgba(0, 0, 0, 0.25);
               border-top-left-radius: var(--border-radius);
               border-bottom-left-radius: var(--border-radius); }
+      .main-cols__left.col-chats-adv .c-block__col.--chat-open {
+        border: 0; }
     .main-cols__left.col-tables {
       width: 36%;
       flex: 0 0 32%;
