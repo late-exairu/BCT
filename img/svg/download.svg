@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/1999/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 7764 8091.25" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd" data-icon="download">
+<defs>
+<style type="text/css">
+.fil0 {
+    fill: black;
+    fill-rule: nonzero
+}
+</style>
+</defs>
+<g>
+<path class="fil0" d="M3362 0l1040 0c210,0 382,171 382,382l0 1902 900 0c333,0 512,413 267,654l-1802 1773c-74,73 -169,110 -267,110 -100,0 -195,-40 -267,-110l-1785 -1757c-263,-244 -101,-670 250,-670l900 0 0 -1902c0,-211 172,-382 382,-382z"/>
+<path class="fil0" d="M1469 5004l4826 0 0 -1543c0,-92 75,-167 167,-167l1135 0c93,0 167,75 167,167l0 2846c0,92 -74,166 -167,166 -2476,0 -4953,0 -7430,0 -92,0 -167,-74 -167,-166l0 -2846c0,-92 75,-167 167,-167l1135 0c92,0 167,75 167,167l0 1543z"/>
+</g>
+</svg>
