@@ -180,5 +180,14 @@
 		&__item.active {
 			background: rgba(0, 0, 0, 0.1);
 		}
+
+		.menu-dropdown {
+			left: 94%;
+			top: calc(100% + 12px);
+			min-width: 60px;
+			&__item {
+				height: 30px;
+			}
+		}
 	}
 }

@@ -8113,6 +8113,12 @@ h6 {
         background: var(--clr-back-new); }
     .graph-info__range__item.active {
       background: rgba(0, 0, 0, 0.1); }
+    .graph-info__range .menu-dropdown {
+      left: 94%;
+      top: calc(100% + 12px);
+      min-width: 60px; }
+      .graph-info__range .menu-dropdown__item {
+        height: 30px; }
 
 /* =================================================================== */
 /* graph-prices */
