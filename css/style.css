@@ -8068,7 +8068,7 @@ h6 {
       border: 1px solid var(--clr-separatorD);
       border-radius: 3px;
       cursor: pointer;
-      background: var(--clr-back); }
+      color: var(--clr-text); }
       .graph-info__range__current:hover {
         background: var(--clr-back-new); }
     .graph-info__range__current.open:after {
@@ -8077,7 +8077,7 @@ h6 {
       height: 0;
       border-style: solid;
       border-width: 0 5px 6px;
-      border-color: transparent transparent var(--clr-backCI);
+      border-color: transparent transparent var(--clr-text);
       display: block;
       position: absolute;
       margin-top: -10px;
@@ -8088,7 +8088,7 @@ h6 {
       height: 0;
       border-style: solid;
       border-width: 6px 5px 0;
-      border-color: var(--clr-backCI) transparent transparent;
+      border-color: var(--clr-text) transparent transparent;
       display: block;
       position: absolute;
       margin-top: -10px;
