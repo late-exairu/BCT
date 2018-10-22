@@ -207,7 +207,8 @@ $(function () {
 		}
 	});
 
-	$('.global-history-drop .menu-dropdown__item').click(function () {
+	$('.global-history-drop .menu-dropdown__item').click(function (e) {
+		e.stopPropagation();
 		$('.global-history-drop span').html($(this).text());
 		$('.global-history-drop .menu-dropdown__item').removeClass('active');
 		$(this).addClass('active');
@@ -754,7 +755,7 @@ $(function () {
 	// 	$('.main-cols__right-bottom .portfolio-menu__item').eq(2).trigger('click');
 	// });
 
-	$('.advanced .js-account-stats .menu-dropdown .menu-dropdown__item').on('click', function (event) {
+	$('.advanced .js-account-stats .portfolio-drop .menu-dropdown .menu-dropdown__item').on('click', function (event) {
 		event.stopPropagation();
 		$('.js-account-stats .menu-dropdown .menu-dropdown__item').removeClass('active');
 		$(this).addClass('active');

@@ -1051,8 +1051,8 @@ h6 {
       height: 9px;
       margin: 0 auto; }
     .basic-table .sprite-icon.arrow-drop-2 {
-      width: 14px;
-      height: 9px;
+      width: 12px;
+      height: 12px;
       margin: 0 0 0 6px; }
   .basic-table .bigger {
     font-size: calc(var(--font-size) + 2px); }
@@ -15664,22 +15664,14 @@ body.advanced .fancybox-bg {
   display: flex;
   align-items: center;
   justify-content: center; }
-  .portfolio-drop:hover {
-    /*background: var(--clr-block);*/ }
-  .portfolio-drop:after {
-    content: '';
-    width: 0;
-    height: 0;
+  .portfolio-drop svg.sprite-icon.arrow-drop-2 {
+    width: 10px;
+    height: 10px;
+    fill: var(--clr-text);
     margin-left: 5px;
-    border-style: solid;
-    border-width: 6px 4px 0 4px;
-    border-color: var(--clr-textD) transparent transparent transparent;
-    transition: all .2s; }
-  .portfolio-drop.open:after {
-    transform: rotate(180deg); }
+    margin-top: 2px; }
   @media (min-height: 900px) {
     .portfolio-drop {
-      top: 10px;
       left: 20px; } }
 
 .popup-tabs {
@@ -15761,9 +15753,13 @@ body.advanced .fancybox-bg {
     font-weight: 700;
     margin: 0; }
 
-.portfolio-drop .menu-dropdown__item {
+.js-account-stats .menu-dropdown__item {
   border-radius: 0px;
   height: 29px; }
+
+.global-history-drop .menu-dropdown {
+  top: calc(85%);
+  left: 21%; }
 
 /* =================================================================== */
 /* Globals
