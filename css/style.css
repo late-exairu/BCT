@@ -15934,10 +15934,20 @@ body.advanced .fancybox-bg {
   min-width: 7.5%;
   max-width: 7.5%; }
 
+.w-9 {
+  width: 9.5%;
+  min-width: 9.5%;
+  max-width: 9.5%; }
+
 .w-10 {
   width: 10%;
   min-width: 10%;
   max-width: 10%; }
+
+.w-11 {
+  width: 11%;
+  min-width: 11%;
+  max-width: 11%; }
 
 .w-12 {
   width: 12.5%;
