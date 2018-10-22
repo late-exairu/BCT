@@ -1702,6 +1702,7 @@ $(function () {
 		$('#send-popup .avatar').attr('src', imgAttr);
 
 		var send_popup_list = '';
+		var current_coin_amount = '';
 		$('#panel-funds-wallet .basic-table__row:not(.disabled)').each(function (index, item) {
 			var coin_currencyName = $(item).attr('data-currency');
 			var coin_currencyFullName = $('.exch-dropdown__list').eq(0).find('.exch-dropdown__item[data-currency="' + coin_currencyName + '"]').attr('data-name');
@@ -1720,6 +1721,7 @@ $(function () {
 					</p>
 				</div>`;
 			if (index == 0) {
+				current_coin_amount = coin_amount
 				var current_item = coin_svg_html + `
 					<p class="send-form__dropdown__title">
 						<span>` +
@@ -1742,18 +1744,23 @@ $(function () {
 				//$(current_item).insertBefore(currSendForm.eq(0).find('div.send-dropdown__hangle'));
 
 				$(current_item_input).insertBefore(currSendForm.eq(1).find('input.send-form__input'));
-				currSendForm.eq(1).find('input.send-form__input').val(coin_amount);
+				currSendForm.eq(1).find('input.send-form__input').val(current_coin_amount);
 				$('#send-popup .send-form__btn span.in-progress').html('SEND ' + coin_currencyFullName);
 				$('#send-popup .send-form__btn span.done').html('Your ' + coin_currencyName + ' was sent');
 
 
-				coin_amount = coin_amount.trim().replace(/,/g, '');
-				$('.range-slider .send-form-slider__control').attr("max", parseFloat(coin_amount) * 100000);
-				$('.range-slider .send-form-slider__control').attr("step", parseInt(coin_amount));
-				$('.range-slider .send-form-slider__control').val(parseFloat(coin_amount) * 100000);
+				current_coin_amount = current_coin_amount.trim().replace(/,/g, '');
+				$('.range-slider .send-form-slider__control').attr("max", parseFloat(current_coin_amount) * 10);
+				var step = 100;
+				$('.range-slider .send-form-slider__control').attr("step", step);
+				$('.range-slider .send-form-slider__control').val(parseFloat(current_coin_amount) * 10);
 
 				$('.range-slider .send-form-slider__control').on('input', function () {
-					var value = this.value / 100000;
+					var value = this.value / 10;
+					if (parseFloat(current_coin_amount) - value < step / 10) {
+						value = parseFloat(current_coin_amount);
+						$('.range-slider .send-form-slider__control').val(value * 10);
+					}
 					$('.send-form input.send-form__input').val(numberWithCommas(value.toFixed(2)));
 				});
 			}
@@ -1767,7 +1774,7 @@ $(function () {
 		$('#send-popup .send-form__dropdown__list .send-form__dropdown__item').click(function () {
 			var currencyName = $(this).data('currency');
 			var currencyFullName = $(this).data('name');
-			var coin_amount = $(this).attr('coin-amount');
+			current_coin_amount = $(this).attr('coin-amount');
 			var newCurr = $(this).children().clone();
 			var coin_svg_html = $(this).find('svg.basic-table__curr')[0].outerHTML;
 
@@ -1789,16 +1796,17 @@ $(function () {
 			currSendForm.find('svg.basic-table__curr, p.send-form__dropdown__title').remove();
 			//newCurr.insertBefore($(currSendForm).eq(0).find('div.send-dropdown__hangle'));
 			$(current_item_input).insertBefore($(currSendForm).eq(1).find('input.send-form__input'));
-			currSendForm.eq(1).find('input.send-form__input').val(coin_amount);
+			currSendForm.eq(1).find('input.send-form__input').val(current_coin_amount);
 			$('#send-popup .send-form__btn span.in-progress').html('SEND ' + currencyFullName);
 			$('#send-popup .send-form__btn span.done').html('Your ' + currencyName + ' was sent');
 
 			$('.send-form__line.inline, .send-form__dropdown__list').toggleClass('hidden');
 
-			coin_amount = coin_amount.trim().replace(/,/g, '');
-			$('.range-slider .send-form-slider__control').attr("max", parseFloat(coin_amount) * 100000);
-			$('.range-slider .send-form-slider__control').attr("step", parseInt(coin_amount));
-			$('.range-slider .send-form-slider__control').val(parseFloat(coin_amount) * 100000);
+			current_coin_amount = current_coin_amount.trim().replace(/,/g, '');
+			$('.range-slider .send-form-slider__control').attr("max", parseFloat(current_coin_amount) * 10);
+			var step = 100;
+			$('.range-slider .send-form-slider__control').attr("step", step);
+			$('.range-slider .send-form-slider__control').val(parseFloat(current_coin_amount) * 10);
 		});
 
 		$(".send-popup .send-popup__progressbar").progressbar("value", 0);
@@ -1840,7 +1848,7 @@ $(function () {
 	$('.send-form input.send-form__input').keyup(function () {
 		var send_amount = parseFloat($(this).val().trim().replace(/,/g, ''));
 		if (send_amount)
-			$('.range-slider .send-form-slider__control').val(send_amount * 100000);
+			$('.range-slider .send-form-slider__control').val(send_amount * 10);
 	});
 
 	/*---------------------------------------------------*/

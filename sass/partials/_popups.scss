@@ -266,6 +266,11 @@
 			}
 		}
 
+		&__listhead {
+			font-size: 14px;
+			font-weight: 600;
+		}
+
 		&__percent {
 			position: absolute;
 			right: 52px;
@@ -357,7 +362,7 @@
 				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
 				border-radius: var(--border-radius);
 				width: 94%;
-				margin-left: 3%;
+				margin-left: 10px;
 
 				&:before{
 					content: '';
@@ -472,7 +477,7 @@
 				padding: 0 0 0 5px;
 				height: 42px;
 				display: flex;
-				width: calc(100% - 9px);
+				width: calc(100% - 11px);
 				margin: 16px auto 0 0;
 				align-items: center;
 				color: #fff;
