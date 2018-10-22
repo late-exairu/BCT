@@ -2092,6 +2092,12 @@ $(function () {
 			$('#mainChart').css('width', 'calc(100% - 4px)');
 			$('.b-graph__controls').addClass('shifted');
 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
+
+
+			$('.graph-prices__sort').html('1' + getCurrency + ' ≈ ');
+			$('.graph-prices__price.send-prices__rate').removeClass('hidden')
+			$('.graph-prices__price.get-prices__rate').addClass('hidden')
+
 			redrawMainChart();
 
 			updateExchangeValues();
@@ -2207,6 +2213,8 @@ $(function () {
 	$('.exch-form__close').click(function (e) {
 		clearInterval(dynamicGetValue);
 		$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
+		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
+		$('.graph-prices__sort').html('1' + sendCurrency + ' ≈ ');
 		$(".graph-prices__list .graph-prices__item .graph-prices__price.get-prices__rate").removeClass('hidden');
 		$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").addClass('hidden');
 		$(".graph-prices__list .graph-prices__item .graph-prices__price-label").addClass('hidden');
