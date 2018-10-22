@@ -509,6 +509,7 @@ $(function () {
 		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
 
 		var priceRateBackward = 1 / priceRate;
+		var liquidityInfo = priceRateBackward.toFixed(6);
 		if (priceRateBackward > 1) {
 			priceRateBackward = priceRateBackward.toFixed(2);
 			priceRateBackward = numberWithCommas(priceRateBackward);
@@ -520,7 +521,9 @@ $(function () {
 
 		// change the median price
 		$('.median-price').html(priceRateBackward + ' <span>' + getCurrency + '</span>');
-
+		
+		$('.liquidityText .centerPart .centerPart__info p').html(liquidityInfo);
+		
 		priceRateBackward = priceRateBackward.replace(/\,/g, "");
 		// update global tables
 		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row').each(function (i, row) {
