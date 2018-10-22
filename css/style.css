@@ -1051,8 +1051,8 @@ h6 {
       height: 9px;
       margin: 0 auto; }
     .basic-table .sprite-icon.arrow-drop-2 {
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       margin: 0 0 0 6px; }
   .basic-table .bigger {
     font-size: calc(var(--font-size) + 2px); }
@@ -15665,8 +15665,8 @@ body.advanced .fancybox-bg {
   align-items: center;
   justify-content: center; }
   .portfolio-drop svg.sprite-icon.arrow-drop-2 {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     fill: var(--clr-text);
     margin-left: 5px;
     margin-top: 2px; }

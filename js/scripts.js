@@ -757,7 +757,7 @@ $(function () {
 
 	$('.advanced .js-account-stats .portfolio-drop .menu-dropdown .menu-dropdown__item').on('click', function (event) {
 		event.stopPropagation();
-		$('.js-account-stats .menu-dropdown .menu-dropdown__item').removeClass('active');
+		$('.js-account-stats .portfolio-drop .menu-dropdown .menu-dropdown__item').removeClass('active');
 		$(this).addClass('active');
 
 		$('.advanced .js-account-stats .c-block-head__title').text($(this).text());
