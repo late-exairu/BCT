@@ -760,6 +760,12 @@ $(function () {
 		$(this).addClass('active');
 
 		$('.advanced .js-account-stats .c-block-head__title').text($(this).text());
+		if ($(this).children('button').text() == 'Advanced') {
+			$('.advanced .js-account-stats .portfolio-drop').css('top', '2px');
+		}
+		else {
+			$('.advanced .js-account-stats .portfolio-drop').css('top', '14px');
+		}
 
 		$('.js-tabs-panel').removeClass('active');
 		$('.js-tabs-panel').eq($(this).index()).addClass('active');
