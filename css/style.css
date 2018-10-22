@@ -9301,7 +9301,7 @@ Blocks from left bar
       flex: 0 0 22%;
       min-width: 800px;
       max-width: 1000px;
-      display: none; }
+      /*display: none;*/ }
       .main-cols__left.col-chats-adv.--short {
         width: 20%;
         flex: 0 0 20%;
