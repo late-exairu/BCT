@@ -1359,7 +1359,7 @@ h6 {
     align-items: flex-end;
     text-decoration: none;
     height: 100%;
-    padding: 6px 12px 4px;
+    padding: 6px 3.8px 4px;
     color: var(--clr-textL);
     background: transparent;
     border: none;
@@ -13015,8 +13015,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     font-size: 11px;
     padding: 0 36px 0 5px;
     width: 100%;
-    color: var(--clr-textD);
-    border-radius: var(--border-radius); }
+    color: var(--clr-textD); }
     .order-form__input:hover {
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); }
     .order-form__input:focus {
