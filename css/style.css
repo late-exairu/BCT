@@ -14519,8 +14519,7 @@ button:-moz-focusring {
   @media only screen and (min-height: 900px) {
     .advanced .accounts-diagram-wrap {
       height: calc(100% - 62px);
-      margin-top: 62px;
-      border-top: 1px solid var(--clr-separator); }
+      margin-top: 62px; }
       .advanced .accounts-diagram-wrap:after {
         width: 190px;
         height: 190px; }
