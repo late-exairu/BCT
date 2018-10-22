@@ -477,6 +477,8 @@ $(function () {
 			} else {
 				$('.exch-head__btn').prop('disabled', true);
 			}
+
+			closeTelegramMenu();
 		}
 		// second currency
 		else {
