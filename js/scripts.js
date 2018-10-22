@@ -532,14 +532,20 @@ $(function () {
 		
 		priceRateBackward = priceRateBackward.replace(/\,/g, "");
 		// update global tables
+		var minPrice = 1000000;
+		var maxPrice = 0;
 		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(0).find('.basic-table__body .basic-table__row').each(function (i, row) {
 			var rand = (priceRateBackward == 0) ? 0 : getRandomNumber(parseFloat(priceRateBackward), parseFloat(priceRateBackward) * 1.2, true);
 			$(row).children().first().html(priceRateBackward > 1 ? numberWithCommas(rand.toFixed(2)) : rand.toFixed(5));
+			if (rand.toFixed(5) < minPrice) minPrice = priceRateBackward > 1 ? rand.toFixed(2) : rand.toFixed(5);
+			if (rand.toFixed(5) > maxPrice) maxPrice = priceRateBackward > 1 ? rand.toFixed(2) : rand.toFixed(5);
 		});
 
 		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(1).find('.basic-table__row').each(function (i, row) {
 			var rand = getRandomNumber(parseFloat(priceRateBackward) / 2, parseFloat(priceRateBackward), true);
 			$(row).children().first().html(priceRateBackward > 1 ? numberWithCommas(rand.toFixed(2)) : rand.toFixed(5));
+			if (rand.toFixed(5) < minPrice) minPrice = priceRateBackward > 1 ? rand.toFixed(2) : rand.toFixed(5);
+			if (rand.toFixed(5) > maxPrice) maxPrice = priceRateBackward > 1 ? rand.toFixed(2) : rand.toFixed(5);
 		});
 
 		$('.advanced .main-cols__left-top .c-block__col .basic-table').eq(2).find('.basic-table__body .basic-table__body .basic-table__row').each(function (i, row) {
@@ -550,8 +556,11 @@ $(function () {
 				rand = getRandomNumber(parseFloat(priceRateBackward) / 2, parseFloat(priceRateBackward), true);
 			}
 			$(row).children().first().html(priceRateBackward > 1 ? numberWithCommas(rand.toFixed(2)) : rand.toFixed(5));
+			if (rand.toFixed(5) < minPrice) minPrice = priceRateBackward > 1 ? rand.toFixed(2) : rand.toFixed(5);
+			if (rand.toFixed(5) > maxPrice) maxPrice = priceRateBackward > 1 ? rand.toFixed(2) : rand.toFixed(5);
 		});
-
+		$('.forms-wrap').eq(1).find('.order-form .order-form__line').eq(1).find('input').val(minPrice);
+		$('.forms-wrap').eq(1).find('.order-form .order-form__line').eq(4).find('input').val(maxPrice);
 		updatePriceListItem(sendCurrency, getCurrency);
 	});
 
