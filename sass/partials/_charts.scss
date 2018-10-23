@@ -791,6 +791,8 @@
 		display: flex;
 		flex: 0 0 auto;
 		align-items: center;
+		font-size: 16px;
+		font-weight: 600;
 
 		&__menu{
 			width: 27px;
@@ -814,10 +816,10 @@
 		display: flex;
 		flex-direction: column;
 		width: 100% !important;
-		padding: 15px;
+		padding: 12px;
 		&__item {
-			font-size: 16px;
-			font-weight: 600;
+			font-size: 14px;
+			font-weight: 400;
 			color: var(--clr-textD);
 			height: 45px;
 			display: flex;
@@ -827,6 +829,13 @@
 			div.toggle {
 				position: absolute;
 				right: 30px;
+			}
+			span {
+				margin-left: 10px;
+			}
+			svg {
+				width: 16px !important;
+				height: 16px !important;
 			}
 		}
 	}
