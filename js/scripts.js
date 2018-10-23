@@ -1911,7 +1911,13 @@ $(function () {
 
 		var firstValue = $('.exch-form__send > input').val().trim().replace(/,/g, '');
 		var secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '');
-
+		
+		$('.portfolio-drop .menu-dropdown__item').eq(0).trigger('click');
+		$('.portfolio-drop .menu-dropdown').removeClass('open');
+		$('.circleDiagramParent .basic-table.scrollbar-right.scroll-wrapper > .scroll-content').animate({
+			scrollTop: '0'
+		}, "rapid");
+		
 		if ($(this).hasClass('exch-form__submit')) {
 			$('.main-cols__right-bottom .menu-dropdown__item').eq(0).trigger('click');
 			$('.main-cols__right-bottom .menu-dropdown').removeClass('open');
@@ -2049,9 +2055,6 @@ $(function () {
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 			$('.exch-form__submit').prop('disabled', false);
-
-			$('.main-cols__right-bottom .menu-dropdown__item').eq(2).trigger('click');
-			$('.main-cols__right-bottom .menu-dropdown').removeClass('open');
 
 			var send_svg = $('.exch-head__send .exch-dropdown__current > svg').clone();
 			var send_curr = $('.exch-head__send .exch-dropdown__current > p.exch-dropdown__title > span').text();
@@ -2248,18 +2251,6 @@ $(function () {
 		$('.c-block.b-graph__controls').removeClass('shifted');
 		redrawMainChart();
 		$(this).closest('.exch-head').toggleClass('open');
-		// basic
-		if (!$('body').hasClass('advanced')) {
-			$('.js-tabs-panel').removeClass('active');
-			$('#panel-funds-wallet').addClass('active');
-			drawCircleChart();
-			//$('.user-portfolio .user-menu .user-menu__item').eq(2).trigger('click');
-		}
-		//advanced
-		else {
-			$('#tab-funds-wallet').trigger('click');
-			$('.menu-dropdown').removeClass('open');
-		}
 	});
 
 	$('.exch-form input').focus(function () {
