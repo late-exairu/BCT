@@ -9726,7 +9726,7 @@ body.menubar-in #user-btn:before {
     font-weight: 700;
     width: 100%;
     height: 56px;
-    background: linear-gradient(to right, var(--clr-accentD) 0%, var(--clr-accent) 100%);
+    background: linear-gradient(to right, #585C66, #5A5F67);
     pointer-events: none;
     position: absolute;
     z-index: 20;
