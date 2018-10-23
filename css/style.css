@@ -1405,7 +1405,7 @@ h6 {
 		border-radius: 50%;
 	}*/ }
   .chat-head__back {
-    position: relative;
+    position: absolute;
     display: flex;
     width: 40px;
     align-content: center;
@@ -1458,15 +1458,17 @@ h6 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #fa9f32; }
+    color: var(--clr-text);
+    text-align: center; }
   .chat-head__info {
     font-size: 13px;
     line-height: 1.1;
     margin: 0 0 0;
-    color: var(--clr-textLL);
+    color: var(--clr-iconD);
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; }
+    text-overflow: ellipsis;
+    text-align: center; }
   .chat-head__btns {
     display: flex;
     text-align: right;
@@ -1814,7 +1816,7 @@ h6 {
       fill: var(--clr-icon); }
   .chats-search__input {
     width: 100%;
-    background: var(--clr-backLL);
+    background: var(--clr-block);
     border: none;
     height: 32px;
     border-radius: var(--border-radius);
@@ -7747,13 +7749,15 @@ h6 {
     font-weight: 400;
     font-size: 13px;
     letter-spacing: -0.03em;
-    white-space: nowrap; }
+    white-space: nowrap;
+    color: var(--clr-iconD); }
     .exch-dropdown__title span {
       position: relative;
       text-transform: uppercase;
       font-size: 18px;
       font-weight: 700;
-      left: -1px; }
+      left: -1px;
+      color: var(--clr-text); }
   .exch-dropdown .current .btc,
   .exch-dropdown .exch-dropdown__border .btc {
     fill: #f79330; }

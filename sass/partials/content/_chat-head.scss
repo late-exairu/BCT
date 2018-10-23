@@ -15,7 +15,7 @@
 	border-bottom: 1px solid var(--clr-separator);
 
 	&__back{
-		position: relative;
+		position: absolute;
 		display: flex;
 		width: 40px;
 		align-content: center;
@@ -98,18 +98,19 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		// color: var(--clr-textD);
-		color: rgb(250, 159, 50);
+		color: var(--clr-text);
+		text-align: center;
 	}
 
 	&__info{
 		font-size: 13px;
 		line-height: 1.1;
 		margin: 0 0 0;
-		color: var(--clr-textLL);
+		color: var(--clr-iconD);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		text-align: center;
 	}
 
 	&__btns{
