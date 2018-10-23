@@ -130,9 +130,11 @@ var liquidityChartOptions = {
             var TooltipValue = (this.y).toFixed(2);
 
             var lineForPortfolioChartX = this.points[0].point.plotX + $('#liquidityChart').offset().left;
-            var lineForPortfolioChartY = $('#liquidityChart').offset().top + (this.points[0].point.plotY + 20);
-            var lineForPortfolioChartHeight = $('#liquidityChart').height() - (this.points[0].point.plotY + 26);
-            var circleForPortfolioChartY = 20;
+            //var lineForPortfolioChartY = $('#liquidityChart').offset().top + (this.points[0].point.plotY + 20);
+            var lineForPortfolioChartY = $('#liquidityChart').offset().top + 40;
+           // var lineForPortfolioChartHeight = $('#liquidityChart').height() - (this.points[0].point.plotY + 26);
+            var lineForPortfolioChartHeight = $('#liquidityChart').height() - 40;
+            var circleForPortfolioChartY = (this.points[0].point.plotY);
 
             // right side fix
             if (lineForPortfolioChartX > $('#liquidityChart').offset().left + $('#liquidityChart').width()) {
@@ -174,7 +176,8 @@ var liquidityChartOptions = {
             }
             return {
                 x: xPos,
-                y: ((point.plotY - 20) > 20 ) ? point.plotY - 20 : 20
+                //y: ((point.plotY - 20) > 20 ) ? point.plotY - 20 : 20
+                y: 40
             };
         }
     },
