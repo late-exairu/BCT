@@ -1390,6 +1390,7 @@ h6 {
   align-items: center;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   background: var(--clr-block);
+  border-bottom: 1px solid var(--clr-separator);
   /*&__avatar-wrap{
 		position: relative;
 		width: 32px;
@@ -1794,6 +1795,7 @@ h6 {
   height: 56px;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   background: var(--clr-block);
+  border-bottom: 1px solid var(--clr-separator);
   display: flex;
   flex: 0 0 auto;
   align-items: center; }
