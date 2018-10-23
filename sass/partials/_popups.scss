@@ -30,7 +30,6 @@
 		position:absolute;
 		//display:none;
 		bottom: 0px;
-		bottom:0; 
 		width: 100%;
 		height: 0px;
 		padding: 0px;
@@ -46,8 +45,9 @@
 			display:block;
 			line-height:1.1;
 		}
-		.scroll-wrapper {
+		& > .scroll-wrapper {
 			height: 56%;
+			margin-top: 28px;
 		}
 
 		.align-center {
@@ -67,6 +67,16 @@
 		.transaction-form {
 			padding: 0;
 			padding-bottom: 10px;
+		}
+
+		.overlay-cover {
+			position: absolute;
+			bottom: calc(56% - 2px);
+			left: 0px;
+			height: 280px;
+			width: 100%;
+			z-index: 100;
+			background-color: rgba(0, 0, 0, 0.6);
 		}
 	}
 
@@ -109,7 +119,7 @@
 	.c-block {
 		overflow: hidden !important;
 		position: inherit;
-		border-top: 10px solid var(--clr-block);
+		//border-top: 10px solid var(--clr-block);
 	}
 	.floating-btn_container {
 		position:absolute; bottom:6px; left:10px;
@@ -148,6 +158,9 @@
 		color:var(--clr-text);
 		font-weight: 600;
 		margin-bottom:5px;
+		position: absolute;
+		z-index: 1000;
+		background: transparent;
 	}
 	.basic-table{
 		border-top: none;
