@@ -132,7 +132,6 @@ $(function () {
 
 	setViewMode('basic');
 
-	// updateMainChartSplineNew(null, 'USDT', 'BTC');
 	updateMainChart(null, 'BTC', 'USDT');
 	/* Cubic slider for Orders */
 	var $cubicSlider = $(".js-cubic-slider");
@@ -226,12 +225,6 @@ $(function () {
 
 	$('body').click(function (event) {
 		$('.main-cols__right-top .exch-dropdown').removeClass('open');
-
-		// $('ul.portfolio-graph-range__list').css('border-bottom', '0px');
-		// $('div.portfolio-graph-range').css('border', '0px');
-		// $('ul.portfolio-graph-range__list').removeClass('open');
-		// $('div.portfolio-graph-range__current').css('border', 'solid 1px');
-
 		$('.exch-dropdown .exch-search').addClass('hidden');
 		$('.exch-dropdown .exch-dropdown__current').removeClass('hidden');
 	});
@@ -244,10 +237,6 @@ $(function () {
 
 	$('.main-cols__right-top .exch-dropdown').click(function (event) {
 		event.stopPropagation();
-		// $('ul.portfolio-graph-range__list').css('border-bottom', '0px');
-		// $('div.portfolio-graph-range').css('border', '0px');
-		// $('ul.portfolio-graph-range__list').removeClass('open');
-		// $('div.portfolio-graph-range__current').css('border', 'solid 1px');
 	});
 
 

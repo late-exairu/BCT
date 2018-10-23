@@ -14,25 +14,6 @@ var allCurrenciesHtmlSecondColumn = '';
 
 var currenciesPrice = {};
 
-// get prices for all currencies
-// for(var i = 1; i < 6; i++){
-//     var tempArr = allCurrenciesArr.slice((i-1)*60, i *60);
-//     var tempString = '';
-//     tempArr.map(item => {
-//         var coinShort = item.split('-')[1].trim();
-//         tempString += coinShort + ',';
-//     });
-//     $.ajax({
-//         url: 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=' + tempString + '&tsyms=USD',
-//         async: false,
-//         success: function (data) {
-//             for (const key in data) {
-//                 currenciesPrice[key] = data[key]['USD'];
-//             }
-//         },
-//     });
-// }
-
 $.ajax({
     url: 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC,USDT&tsyms=USD',
     async: false,
