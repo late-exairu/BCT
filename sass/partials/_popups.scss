@@ -118,6 +118,14 @@
 			position:absolute; top:6px; left:10px;		
 		}
 	}
+
+	.floating-btn_custodian {
+		position:absolute; bottom:6px; left:80px;
+
+		&.active {
+			position:absolute; top:6px; left:10px;		
+		}
+	}
 	&__floating-btn {
 		font-family: $osans;
 		height: 22px;
@@ -149,7 +157,7 @@
 		}
 	}
 
-	.tx-list-basic {
+	.tx-list-basic, .custodian-list-basic {
 		font-size:12px;
 		font-weight:600;
 		a {

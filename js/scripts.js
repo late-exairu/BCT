@@ -866,7 +866,7 @@ $(function () {
 		// portfolioChart
 		var stylesForPortfolioChart = {
 			chart: {
-				backgroundColor: backColor
+				backgroundColor: backColor,
 			},
 			xAxis: [{
 				gridLineColor: gridColor,
@@ -984,6 +984,7 @@ $(function () {
 	var isSelectedPrevConversion = false;
 
 	$('.basic-table').on('click', '.basic-table__row:not(.head)', function () {
+		if ($(this).parent().find('.transaction-popup')) return;
 		$(this).parent().find('.basic-table__row').removeClass('active');
 		$(this).addClass('active');
 
@@ -1565,7 +1566,7 @@ $(function () {
 		}
 
 		$('#transaction-popup #transactionFormMinDepositAmount').eq(0).text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
-		$('#transaction-popup .tx-currency').html(currencyName)
+		//$('#transaction-popup .tx-currency').html(currencyName)
 
 		if (coin_amount > 0) {
 			$('#transaction-popup .transaction-form__input').removeAttr('disabled')
@@ -2502,11 +2503,19 @@ $(function () {
 	});
 
 	$("#open-tx-history").click((e) => {
-		$(".basic-popup__overlay").addClass('open');
+		$(".tx-history-basic.basic-popup__overlay").addClass('open');
 	})
 
 	$("#close-tx-history").click((e) => {
-		$(".basic-popup__overlay").removeClass('open');
+		$(".tx-history-basic.basic-popup__overlay").removeClass('open');
+	})
+
+	$("#open-tx-custodian").click((e) => {
+		$(".custodian-basic.basic-popup__overlay").addClass('open');
+	})
+
+	$("#close-custodian").click((e) => {
+		$(".custodian-basic.basic-popup__overlay").removeClass('open');
 	})
 
 	$('.popup-nav-button').click(function (e) {

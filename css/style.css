@@ -15264,6 +15264,14 @@ button:-moz-focusring {
       position: absolute;
       top: 6px;
       left: 10px; }
+  .transaction-popup .floating-btn_custodian {
+    position: absolute;
+    bottom: 6px;
+    left: 80px; }
+    .transaction-popup .floating-btn_custodian.active {
+      position: absolute;
+      top: 6px;
+      left: 10px; }
   .transaction-popup__floating-btn {
     font-family: "open_sans", sans-serif;
     height: 22px;
@@ -15288,13 +15296,13 @@ button:-moz-focusring {
     font-size: 12px; }
     .transaction-popup .basic-table__col {
       height: 35px !important; }
-  .transaction-popup .tx-list-basic {
+  .transaction-popup .tx-list-basic, .transaction-popup .custodian-list-basic {
     font-size: 12px;
     font-weight: 600; }
-    .transaction-popup .tx-list-basic a {
+    .transaction-popup .tx-list-basic a, .transaction-popup .custodian-list-basic a {
       color: var(--clr-textL);
       text-decoration: none; }
-    .transaction-popup .tx-list-basic a:hover {
+    .transaction-popup .tx-list-basic a:hover, .transaction-popup .custodian-list-basic a:hover {
       color: #0680ba;
       text-decoration: underline;
       cursor: pointer; }
