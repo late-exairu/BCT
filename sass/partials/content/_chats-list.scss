@@ -37,12 +37,13 @@
 		&:after{
 			content: '';
 			position: absolute;
-			left: 60px;
+			left: 0;
 			bottom: -1px;
-			right: 15px;
+			right: 0;
 			height: 1px;
 			z-index: 0;
 			background: var(--clr-separator);
+			opacity: 0.75;
 		}
 
 		&:last-child{

@@ -13,7 +13,6 @@ Blocks from left bar
 
  	.left-bar{
  		--clr-important: #24425B;
- 		--clr-back: #0C1017;
  	}
  }
 
@@ -25,9 +24,11 @@ Blocks from left bar
 	bottom: 0;
 	width: var(--left-bar-width);
 	padding: 2px 0;
-	background: var(--clr-back);
+	background: var(--clr-block);
 	z-index: 10;
 	z-index: 100003;
+	transform: translateX(-40px);
+	transition: 200ms cubic-bezier(.4,0,.2,1) 0ms;
 	/*border: 1px solid var(--clr-separator);*/
 	
 	&__scroll{
@@ -40,6 +41,41 @@ Blocks from left bar
 		padding: 0;
 		display: flex;
 		flex-direction: column;
+	}
+
+	&__arrow{
+		content: '';
+		width: 15px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background: #f00;
+		background: var(--clr-back);
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.1s;
+		opacity: 1;
+
+		.sprite-icon{
+			transform: rotate(-90deg);
+			width: 15px;
+			height: 9px;
+			fill: var(--clr-separator);
+		}
+	}
+
+	&:hover{
+		transform: translateX(0);
+		box-shadow: 5px 0 7px 0 rgba(0, 0, 0, 0.4);
+
+		.left-bar__arrow{
+			opacity: 0;
+			pointer-events: none;
+		}
 	}
 }
 
@@ -90,6 +126,7 @@ Blocks from left bar
 .nav-bar{
 	width: calc(100% + 1px);
 	margin: 10px 0 0;
+	/*border-bottom: 1px solid var(--clr-separator);*/
 
 	&__item{
 		display: flex;

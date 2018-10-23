@@ -6,7 +6,7 @@
 :root {
   /*----- LAYOUT -----*/
   --left-bar-width:	55px;
-  --gap-size:			10px;
+  --gap-size:			12px;
   --border-radius:	4px;
   /*----- COLORS -----*/
   --clr-text:			#585b5c;
@@ -622,7 +622,7 @@ a {
   position: relative;
   min-height: 100%;
   min-width: 300px;
-  padding: 0 0 0 var(--left-bar-width);
+  padding: 0 0 0 15px;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
@@ -1663,12 +1663,13 @@ h6 {
     .chats-list__item:after {
       content: '';
       position: absolute;
-      left: 60px;
+      left: 0;
       bottom: -1px;
-      right: 15px;
+      right: 0;
       height: 1px;
       z-index: 0;
-      background: var(--clr-separator); }
+      background: var(--clr-separator);
+      opacity: 0.75; }
     .chats-list__item:last-child:after {
       display: none; }
   .chats-list__avatar-wrap {
@@ -9039,8 +9040,7 @@ Blocks from left bar
 
  */
 .dark-theme .left-bar {
-  --clr-important: #24425B;
-  --clr-back: #0C1017; }
+  --clr-important: #24425B; }
 
 .left-bar {
   position: fixed;
@@ -9049,9 +9049,11 @@ Blocks from left bar
   bottom: 0;
   width: var(--left-bar-width);
   padding: 2px 0;
-  background: var(--clr-back);
+  background: var(--clr-block);
   z-index: 10;
   z-index: 100003;
+  transform: translateX(-40px);
+  transition: 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   /*border: 1px solid var(--clr-separator);*/ }
   .left-bar__scroll {
     position: absolute;
@@ -9063,6 +9065,33 @@ Blocks from left bar
     padding: 0;
     display: flex;
     flex-direction: column; }
+  .left-bar__arrow {
+    content: '';
+    width: 15px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #f00;
+    background: var(--clr-back);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
+    opacity: 1; }
+    .left-bar__arrow .sprite-icon {
+      transform: rotate(-90deg);
+      width: 15px;
+      height: 9px;
+      fill: var(--clr-separator); }
+  .left-bar:hover {
+    transform: translateX(0);
+    box-shadow: 5px 0 7px 0 rgba(0, 0, 0, 0.4); }
+    .left-bar:hover .left-bar__arrow {
+      opacity: 0;
+      pointer-events: none; }
 
 .user-btn {
   position: relative;
@@ -9101,7 +9130,8 @@ Blocks from left bar
 
 .nav-bar {
   width: calc(100% + 1px);
-  margin: 10px 0 0; }
+  margin: 10px 0 0;
+  /*border-bottom: 1px solid var(--clr-separator);*/ }
   .nav-bar__item {
     display: flex;
     flex-direction: column;
@@ -9269,7 +9299,7 @@ Blocks from left bar
   position: relative;
   display: flex;
   flex: 1 0 auto;
-  padding: calc(var(--gap-size) * 2);
+  padding: calc(var(--gap-size) + 3px);
   height: 100%;
   width: 100%;
   /*border: 1px solid var(--clr-separator);*/
@@ -9317,7 +9347,7 @@ Blocks from left bar
             top: 0;
             width: 350px;
             flex: 1 0 auto;
-            height: calc(100% - var(--gap-size) * 4);
+            height: calc(100% - var(--gap-size) * 2 - 6px);
             display: flex;
             z-index: 100002;
             outline: none;
@@ -9326,7 +9356,7 @@ Blocks from left bar
             background-color: var(--clr-block);
             transform: translateX(calc(-100% - var(--gap-size) * 4));
             transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-            margin: calc(var(--gap-size) * 2); }
+            margin: calc(var(--gap-size) + 3px) calc(var(--gap-size) + 3px) calc(var(--gap-size) + 3px) calc(var(--gap-size) + 7px); }
             .main-cols__left.col-chats-adv.--short .c-block__col.--chat-list.open {
               transform: translate(-20px, 0);
               box-shadow: 7px 6px 11px rgba(0, 0, 0, 0.25);
@@ -14980,20 +15010,22 @@ button:-moz-focusring {
 }*/
 #telegramSetting {
   top: 0;
-  left: -80px;
-  width: 0px;
+  left: 0;
+  transform: translateX(-100%);
+  width: 300px;
   flex: 1 0 auto;
   height: 100%;
   display: flex;
-  z-index: 100003;
+  z-index: 100001;
   outline: none;
   position: absolute;
   overflow-y: auto;
   background-color: var(--clr-back);
   transition: width 225ms;
-  visibility: hidden; }
+  visibility: hidden;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); }
   #telegramSetting.open {
-    width: 300px;
+    transform: translateX(0);
     padding-left: 28px;
     box-shadow: 7px 6px 11px rgba(0, 0, 0, 0.25);
     border-top-left-radius: var(--border-radius);
