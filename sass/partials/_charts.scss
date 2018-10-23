@@ -770,12 +770,11 @@
 	outline: none;
 	position: absolute;
 	overflow-y: auto;
-	background-color: var(--clr-block);
+	background-color: var(--clr-back);
 	transition: width 225ms;
 	visibility: hidden;
 	&.open{
-	//	width: 300px;
-		width: 50%;
+		width: 300px;
 		box-shadow: 7px 6px 11px rgba(0,0,0,.25);
 		border-top-left-radius: var(--border-radius);
 		border-bottom-left-radius: var(--border-radius);
@@ -787,7 +786,7 @@
 		padding: 10px 20px 10px 20px;
 		height: 56px;
 		border-radius: var(--border-radius) var(--border-radius) 0 0;
-		background: var(--clr-block);
+		background: var(--clr-back);
 		border-bottom: 1px solid var(--clr-separator);
 		display: flex;
 		flex: 0 0 auto;

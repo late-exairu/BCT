@@ -71,7 +71,7 @@
 			right: 0;
 			z-index: -1;
 			border-radius: 4px 2px 2px 4px;
-			background: var(--clr-block);
+			background: var(--clr-back);
 			border: 1px solid var(--clr-block);
 		}
 
@@ -161,7 +161,7 @@
 			position: relative;
 			width: 15px;
 			height: 9px;
-			fill: var(--clr-textLL);
+			fill: var(--clr-textL);
 			transition: all 0.2s;
 
 			&.arrow{ display: block; }

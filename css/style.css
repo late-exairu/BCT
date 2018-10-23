@@ -1389,7 +1389,7 @@ h6 {
   height: 56px;
   align-items: center;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
-  background: var(--clr-block);
+  background: var(--clr-back);
   border-bottom: 1px solid var(--clr-separator);
   /*&__avatar-wrap{
 		position: relative;
@@ -1794,7 +1794,7 @@ h6 {
   padding: 10px 10px 10px 20px;
   height: 56px;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
-  background: var(--clr-block);
+  background: var(--clr-back);
   border-bottom: 1px solid var(--clr-separator);
   display: flex;
   flex: 0 0 auto;
@@ -7572,7 +7572,7 @@ h6 {
       right: 0;
       z-index: -1;
       border-radius: 4px 2px 2px 4px;
-      background: var(--clr-block);
+      background: var(--clr-back);
       border: 1px solid var(--clr-block); }
     .exch-dropdown__border:after {
       content: '';
@@ -7633,7 +7633,7 @@ h6 {
       position: relative;
       width: 15px;
       height: 9px;
-      fill: var(--clr-textLL);
+      fill: var(--clr-textL);
       transition: all 0.2s; }
       .exch-dropdown__hangle .sprite-icon.arrow {
         display: block; }
@@ -14986,11 +14986,11 @@ button:-moz-focusring {
   outline: none;
   position: absolute;
   overflow-y: auto;
-  background-color: var(--clr-block);
+  background-color: var(--clr-back);
   transition: width 225ms;
   visibility: hidden; }
   #telegramSetting.open {
-    width: 50%;
+    width: 300px;
     box-shadow: 7px 6px 11px rgba(0, 0, 0, 0.25);
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
@@ -14999,7 +14999,7 @@ button:-moz-focusring {
     padding: 10px 20px 10px 20px;
     height: 56px;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
-    background: var(--clr-block);
+    background: var(--clr-back);
     border-bottom: 1px solid var(--clr-separator);
     display: flex;
     flex: 0 0 auto;
