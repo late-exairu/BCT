@@ -3070,7 +3070,7 @@ $(function () {
 	/** Graph exchanges sort */
 	$('.graph-prices__sort').click(function (e) {
 
-		if (!$('.exch-form').hasClass('progress')) {
+		if (!$('.exch-form').hasClass('progress') && !$('.exch-head').hasClass('open')) {
 			// chage class name by status
 			if ($(this).hasClass('desc')) { // state 1
 				$(this).removeClass('desc');
