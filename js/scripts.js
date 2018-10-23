@@ -1849,8 +1849,8 @@ $(function () {
 				touch: false,
 				afterShow: function (instance, current) {
 					var fancybox_body = $('.fancybox-container')[0];
-					$('.main-cols__right')[0].append(fancybox_body);
-					$('.main-cols__right .fancybox-container')
+					$('.b-graph')[0].append(fancybox_body);
+					$('.b-graph .fancybox-container')
 						.css({
 							"width": "100%",
 							"height": "100%",
