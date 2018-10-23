@@ -44,6 +44,16 @@
 			color: #2a3e81;
 			display:block;
 			line-height:1.1;
+
+			svg.close {
+				width: 10px;
+				height: 10px;
+				// fill: var(--clr-text);
+				fill: white;
+				position: absolute;
+				right: 15px;
+				bottom: 6px;
+			}
 		}
 		& > .scroll-wrapper {
 			height: 56%;
@@ -71,12 +81,16 @@
 
 		.overlay-cover {
 			position: absolute;
-			bottom: calc(56% - 2px);
+			bottom: calc(56% - 3px);
 			left: 0px;
 			height: 280px;
 			width: 100%;
 			z-index: 100;
 			background-color: rgba(0, 0, 0, 0.6);
+		}
+
+		.basic-table.bordered .basic-table__body {
+			border-top: 0;
 		}
 	}
 
@@ -161,6 +175,9 @@
 		position: absolute;
 		z-index: 1000;
 		background: transparent;
+		width: 100%;
+		margin-left: -10px;
+		padding: 0 15px;
 	}
 	.basic-table{
 		border-top: none;
