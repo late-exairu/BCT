@@ -15276,7 +15276,7 @@ button:-moz-focusring {
     font-family: "open_sans", sans-serif;
     height: 22px;
     display: block;
-    width: 120px;
+    width: 80px;
     border: none;
     background: var(--clr-block);
     color: var(--clr-accent);
