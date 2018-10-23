@@ -1067,8 +1067,10 @@ $(function () {
 			// check show or hide input
 			if ($(this).find('.chats-list__send').length) {
 				$('.message-bar:not(.telegram-login-btn)').removeClass('hidden');
+				$('.chat-head__info').addClass('hidden');
 			} else {
 				$('.message-bar:not(.telegram-login-btn)').addClass('hidden');
+				$('.chat-head__info').removeClass('hidden');
 			}
 		}
 	});
