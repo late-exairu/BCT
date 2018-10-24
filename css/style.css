@@ -1094,22 +1094,26 @@ h6 {
   z-index: 1;
   cursor: pointer;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  transition: all 0.1s; }
-  .btn-table-toggle:after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 6px 6px 6px;
-    border-color: transparent transparent var(--clr-textL) transparent; }
+  transition: all 0.1s;
+  padding: 0; }
+  .btn-table-toggle svg {
+    width: 10px;
+    height: 14px; }
+  .btn-table-toggle svg.arrow-drop-2 {
+    display: none; }
+  .btn-table-toggle svg.arrow-drop-close {
+    display: inline; }
   .btn-table-toggle:hover {
     background: var(--clr-block); }
-  .btn-table-toggle.open:after {
-    transform: translate(-50%, -50%) rotate(180deg); }
+  .btn-table-toggle.open {
+    margin-bottom: -12px;
+    background: transparent; }
+    .btn-table-toggle.open:hover {
+      background: transparent; }
+    .btn-table-toggle.open svg.arrow-drop-2 {
+      display: inline; }
+    .btn-table-toggle.open svg.arrow-drop-close {
+      display: none; }
 
 /* =================================================================== */
 /* btn-switch
