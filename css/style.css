@@ -15389,7 +15389,7 @@ button:-moz-focusring {
       color: var(--clr-accent); }
     .basic-popup__overlay.open {
       height: 152%;
-      padding: 10px; }
+      padding: 10px 0 0; }
     .basic-popup__overlay .transaction-form {
       padding: 0;
       padding-bottom: 10px; }
@@ -15471,7 +15471,6 @@ button:-moz-focusring {
     z-index: 1000;
     background: transparent;
     width: 100%;
-    margin-left: -10px;
     padding: 0 15px; }
   .transaction-popup .basic-table {
     border-top: none;
