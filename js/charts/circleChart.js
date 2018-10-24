@@ -7,18 +7,18 @@ var centerX = null;
 var centerY = null;
 
 // add hover effects for circleChart only when cursor inside the circle
-$('.advanced .accounts-diagram-wrap').mousemove(function (e) {
-    var parentOffset = $('.accounts-diagram').offset();
-    var relX = e.pageX - parentOffset.left - 20;
-    var relY = e.pageY - parentOffset.top - 20;
-    var r = pieChartSize / 2;
-    var InCircle = Math.sqrt((relX - centerX) * (relX - centerX) + (relY - centerY) * (relY - centerY)) < r;
-    if (InCircle) {
-        $(this).addClass('hover');
-    } else {
-        $(this).removeClass('hover');
-    }
-});
+// $('.advanced .accounts-diagram-wrap').mousemove(function (e) {
+//     var parentOffset = $('.accounts-diagram').offset();
+//     var relX = e.pageX - parentOffset.left - 20;
+//     var relY = e.pageY - parentOffset.top - 20;
+//     var r = pieChartSize / 2;
+//     var InCircle = Math.sqrt((relX - centerX) * (relX - centerX) + (relY - centerY) * (relY - centerY)) < r;
+//     if (InCircle) {
+//         $(this).addClass('hover');
+//     } else {
+//         $(this).removeClass('hover');
+//     }
+// });
 
 var circleChartObj = null;
 var circleChartOptions = null;
