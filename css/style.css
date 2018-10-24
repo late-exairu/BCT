@@ -15431,13 +15431,15 @@ button:-moz-focusring {
   font-family: "open_sans", sans-serif;
   width: 350px;
   padding: 13px 10px; }
-  #send-popup .send-form__line:first-child .send-dropdown__hangle {
-    position: absolute;
-    right: 0;
-    background: transparent; }
-    #send-popup .send-form__line:first-child .send-dropdown__hangle svg.sprite-icon {
-      width: 16px;
-      fill: var(--clr-textLL); }
+  #send-popup .send-form__line:first-child {
+    margin-bottom: -1px; }
+    #send-popup .send-form__line:first-child .send-dropdown__hangle {
+      position: absolute;
+      right: 0;
+      background: transparent; }
+      #send-popup .send-form__line:first-child .send-dropdown__hangle svg.sprite-icon {
+        width: 16px;
+        fill: var(--clr-textLL); }
   #send-popup .send-form__line:nth-child(2) .send-form__dropdown__title {
     font-size: 12px; }
   #send-popup .send-form__line {
@@ -15447,7 +15449,7 @@ button:-moz-focusring {
     padding-left: 10px;
     color: var(--clr-textD);
     position: relative;
-    border: 1px solid var(--clr-back-new);
+    border: 1px solid var(--clr-separatorD);
     height: 46px;
     border-radius: 4px; }
     #send-popup .send-form__line .range-slider {
@@ -15489,6 +15491,7 @@ button:-moz-focusring {
     height: 100%;
     padding: 10px 14px;
     background: var(--clr-back-new);
+    border-radius: 4px;
     cursor: pointer; }
     #send-popup .send-form .send-dropdown__hangle svg.sprite-icon {
       width: 16px;
@@ -15536,19 +15539,8 @@ button:-moz-focusring {
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
     border-radius: var(--border-radius);
     width: 94%;
-    margin-left: 10px; }
-    #send-popup .send-form__dropdown__list:before {
-      content: '';
-      position: absolute;
-      right: 14px;
-      height: -8px;
-      top: -7px;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 7px 8px 7px;
-      border-color: transparent transparent var(--clr-back-new) transparent;
-      z-index: 1; }
+    margin-left: 10px;
+    border: 1px solid var(--clr-separator); }
     #send-popup .send-form__dropdown__list:after {
       content: '';
       position: absolute;
@@ -15562,7 +15554,7 @@ button:-moz-focusring {
     padding-left: 10px;
     color: var(--clr-textD);
     position: relative;
-    border-bottom: 1px solid var(--clr-back-new);
+    border-bottom: 1px solid var(--clr-separator);
     height: 46px;
     border-radius: 4px; }
     #send-popup .send-form__dropdown__item:hover {
@@ -15571,6 +15563,8 @@ button:-moz-focusring {
       color: var(--clr-accentD); }
     #send-popup .send-form__dropdown__item.select {
       background: var(--clr-backL); }
+  #send-popup .send-form__dropdown__item:last-child {
+    border-bottom: 0px; }
   #send-popup .send-form svg.basic-table__curr {
     width: 34px;
     height: 34px;

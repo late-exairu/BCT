@@ -262,6 +262,7 @@
 		padding: 13px 10px;
 
 		&__line:first-child {
+			margin-bottom: -1px;
 			.send-dropdown__hangle {
 				position: absolute;
 				right: 0;
@@ -288,7 +289,7 @@
 			padding-left: 10px;
 			color: var(--clr-textD);
 			position: relative;
-			border: 1px solid var(--clr-back-new);
+			border: 1px solid var(--clr-separatorD);
 			height: 46px;
 			border-radius: 4px;
 
@@ -340,6 +341,7 @@
 			height: 100%;
 			padding: 10px 14px;
 			background: var(--clr-back-new);
+			border-radius: 4px;
 			cursor: pointer;
 			svg.sprite-icon {
 				width: 16px;
@@ -401,20 +403,21 @@
 				border-radius: var(--border-radius);
 				width: 94%;
 				margin-left: 10px;
+				border: 1px solid var(--clr-separator);
 
-				&:before{
-					content: '';
-					position: absolute;
-					right: 14px;
-					height: -8px;
-					top: -7px;
-					width: 0;
-					height: 0;
-					border-style: solid;
-					border-width: 0 7px 8px 7px;
-					border-color: transparent transparent var(--clr-back-new) transparent;
-					z-index: 1;
-				}
+				// &:before{
+				// 	content: '';
+				// 	position: absolute;
+				// 	right: 14px;
+				// 	height: -8px;
+				// 	top: -7px;
+				// 	width: 0;
+				// 	height: 0;
+				// 	border-style: solid;
+				// 	border-width: 0 7px 8px 7px;
+				// 	border-color: transparent transparent var(--clr-back-new) transparent;
+				// 	z-index: 1;
+				// }
 
 				&:after{
 					content: '';
@@ -432,7 +435,7 @@
 				padding-left: 10px;
 				color: var(--clr-textD);
 				position: relative;
-				border-bottom: 1px solid var(--clr-back-new);
+				border-bottom: 1px solid var(--clr-separator);
 				height: 46px;
 				border-radius: 4px;
 
@@ -446,6 +449,9 @@
 				&.select{
 					background: var(--clr-backL);
 				}
+			}
+			&__item:last-child {
+				border-bottom: 0px;
 			}
 		}
 
