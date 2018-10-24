@@ -14821,7 +14821,7 @@ button:-moz-focusring {
     color: var(--clr-textD);
     padding: 0 12px;
     text-align: center;
-    border-right: 1px solid; }
+    border-right: 0; }
     #portfolioChartText div.portfolio-graph-info span {
       font-size: 16px;
       vertical-align: top;
@@ -14834,28 +14834,55 @@ button:-moz-focusring {
       color: var(--clr-textD);
       margin-top: 0px;
       margin-bottom: 0; }
-    #portfolioChartText div.portfolio-graph-info:last-child {
-      border-right: 0; }
+    #portfolioChartText div.portfolio-graph-info:first-child {
+      border-right: 1px solid; }
   #portfolioChartText .portfolio-graph-range {
-    color: var(--clr-textD);
+    display: inline-block;
+    z-index: 1;
+    width: 40px;
     font-size: 11px;
+    border-radius: 5px;
     background: transparent;
     font-weight: 600;
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-    min-width: 95px; }
-    #portfolioChartText .portfolio-graph-range .range-slider {
-      pointer-events: all;
-      cursor: pointer;
-      flex: 1;
-      margin: 0; }
-      #portfolioChartText .portfolio-graph-range .range-slider input[type=range] {
-        width: 72px; }
+    margin-left: -5px; }
     #portfolioChartText .portfolio-graph-range__current {
-      padding: 0 3px;
-      color: var(--clr-time-bar); }
+      pointer-events: all;
+      width: 100%;
+      padding: 2px 0 2px 5px;
+      border: 1px solid;
+      border-radius: 5px;
+      cursor: pointer;
+      background: var(--clr-block); }
+      #portfolioChartText .portfolio-graph-range__current:hover {
+        background: rgba(0, 0, 0, 0.05);
+        background: var(--clr-back); }
+      #portfolioChartText .portfolio-graph-range__current svg {
+        width: 8px;
+        height: 8px;
+        fill: var(--clr-text);
+        position: absolute;
+        right: 5px;
+        bottom: 6px; }
+    #portfolioChartText .portfolio-graph-range__list {
+      width: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+      visibility: hidden;
+      background: var(--clr-block);
+      border-radius: 5px 5px 0 0; }
+    #portfolioChartText .portfolio-graph-range__list.open {
+      visibility: visible; }
+    #portfolioChartText .portfolio-graph-range__item {
+      pointer-events: all;
+      width: 100%;
+      display: block !important;
+      padding: 3px 0 3px 5px;
+      cursor: pointer; }
+      #portfolioChartText .portfolio-graph-range__item:hover {
+        background: var(--clr-back); }
+    #portfolioChartText .portfolio-graph-range__item.active {
+      background: var(--clr-back); }
 
 .lineForPortfolioChart {
   position: absolute;
