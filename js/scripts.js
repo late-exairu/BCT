@@ -1852,6 +1852,12 @@ $(function () {
 							"position": "absolute"
 						})
 						.css("display", "block");
+					
+						$(".send-form .send-form__btn.submit").removeClass('inactive');
+						$(".send-form__btn span.done").addClass('hidden');
+						$(".send-form__btn span.in-progress").removeClass('hidden');
+						$(".send-form .send-form__check").addClass('hidden');
+						$(".send-form .send-dropdown__hangle").removeClass('hidden');
 				},
 				beforeShow: function () {
 					$('.fancybox-container').css("display", "none");

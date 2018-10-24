@@ -15439,7 +15439,7 @@ button:-moz-focusring {
       background: transparent; }
       #send-popup .send-form__line:first-child .send-dropdown__hangle svg.sprite-icon {
         width: 16px;
-        fill: var(--clr-textLL); }
+        fill: var(--clr-text); }
   #send-popup .send-form__line:nth-child(2) .send-form__dropdown__title {
     font-size: 12px; }
   #send-popup .send-form__line {
@@ -15456,10 +15456,23 @@ button:-moz-focusring {
       margin-top: 13px;
       z-index: 1;
       right: 40px;
-      width: calc(100% - 154px);
+      width: calc(100% - 156px);
       max-width: 230px;
       padding: 0 8px;
       position: absolute; }
+      #send-popup .send-form__line .range-slider__interval {
+        position: absolute;
+        width: calc(100% - 16px);
+        height: 100%;
+        z-index: -50; }
+        #send-popup .send-form__line .range-slider__interval__item {
+          width: 1px;
+          height: 5px;
+          margin-left: 27px;
+          background: var(--clr-text);
+          display: inline-block; }
+        #send-popup .send-form__line .range-slider__interval__item:first-child {
+          margin-left: 1px; }
   #send-popup .send-form__listhead {
     font-size: 14px;
     font-weight: 600; }
@@ -15490,23 +15503,25 @@ button:-moz-focusring {
   #send-popup .send-form .send-dropdown__hangle {
     height: 100%;
     padding: 10px 14px;
-    background: var(--clr-back-new);
-    border-radius: 4px;
+    background: var(--clr-separator);
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
     cursor: pointer; }
     #send-popup .send-form .send-dropdown__hangle svg.sprite-icon {
       width: 16px;
-      fill: var(--clr-accentD); }
+      fill: var(--clr-block); }
   #send-popup .send-form__check {
     width: 44px;
     height: 100%;
-    padding: 8px 8px; }
+    padding: 10px 10px;
+    background: var(--clr-separator); }
     #send-popup .send-form__check svg.sprite-icon {
       width: 16px;
       fill: var(--clr-accentD);
-      border: 1px solid var(--clr-backBT);
+      border: 2px solid var(--clr-block);
       border-radius: 50%;
-      width: 28px;
-      height: 28px;
+      width: 24px;
+      height: 24px;
       padding: 3px;
       padding-top: 5px; }
   #send-popup .send-form__dropdown__list-title {
