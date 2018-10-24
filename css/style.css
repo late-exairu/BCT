@@ -13829,6 +13829,14 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
         height: 17px;
         display: none;
         fill: #6BBE45; }
+      .transaction-form__button .sprite-icon.check-deposit-address {
+        fill: var(--clr-accentD);
+        border: 2px solid var(--clr-block);
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        padding: 3px;
+        padding-top: 5px; }
     .transaction-form__button.copied .sprite-icon.copy {
       display: none; }
     .transaction-form__button.copied .sprite-icon.copied {

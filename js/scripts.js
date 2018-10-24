@@ -2568,7 +2568,8 @@ $(function () {
 	});
 
 	$(".copy-deposit-address").click(function (e) {
-		$(this).addClass("clicked")
+		$(this).addClass("hidden");
+		$(this.nextElementSibling).removeClass('hidden');
 		e.preventDefault();
 	})
 

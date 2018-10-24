@@ -1093,6 +1093,15 @@
 				display: none;
 				fill: #6BBE45;
 			}
+			&.check-deposit-address{
+				fill: var(--clr-accentD);
+				border: 2px solid var(--clr-block);
+				border-radius: 50%;
+				width: 24px;
+				height: 24px;
+				padding: 3px;
+				padding-top: 5px;
+			}
 		}
 
 		&.copied{
