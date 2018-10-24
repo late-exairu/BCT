@@ -1094,22 +1094,26 @@ h6 {
   z-index: 1;
   cursor: pointer;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  transition: all 0.1s; }
-  .btn-table-toggle:after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 6px 6px 6px;
-    border-color: transparent transparent var(--clr-textL) transparent; }
+  transition: all 0.1s;
+  padding: 0; }
+  .btn-table-toggle svg {
+    width: 10px;
+    height: 14px; }
+  .btn-table-toggle svg.arrow-drop-2 {
+    display: none; }
+  .btn-table-toggle svg.arrow-drop-close {
+    display: inline; }
   .btn-table-toggle:hover {
     background: var(--clr-block); }
-  .btn-table-toggle.open:after {
-    transform: translate(-50%, -50%) rotate(180deg); }
+  .btn-table-toggle.open {
+    margin-bottom: -12px;
+    background: transparent; }
+    .btn-table-toggle.open:hover {
+      background: transparent; }
+    .btn-table-toggle.open svg.arrow-drop-2 {
+      display: inline; }
+    .btn-table-toggle.open svg.arrow-drop-close {
+      display: none; }
 
 /* =================================================================== */
 /* btn-switch
@@ -14809,7 +14813,7 @@ button:-moz-focusring {
     color: var(--clr-textD);
     padding: 0 12px;
     text-align: center;
-    border-right: 1px solid; }
+    border-right: 0; }
     #portfolioChartText div.portfolio-graph-info span {
       font-size: 16px;
       vertical-align: top;
@@ -14822,28 +14826,55 @@ button:-moz-focusring {
       color: var(--clr-textD);
       margin-top: 0px;
       margin-bottom: 0; }
-    #portfolioChartText div.portfolio-graph-info:last-child {
-      border-right: 0; }
+    #portfolioChartText div.portfolio-graph-info:first-child {
+      border-right: 1px solid; }
   #portfolioChartText .portfolio-graph-range {
-    color: var(--clr-textD);
+    display: inline-block;
+    z-index: 1;
+    width: 40px;
     font-size: 11px;
+    border-radius: 5px;
     background: transparent;
     font-weight: 600;
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-    min-width: 95px; }
-    #portfolioChartText .portfolio-graph-range .range-slider {
-      pointer-events: all;
-      cursor: pointer;
-      flex: 1;
-      margin: 0; }
-      #portfolioChartText .portfolio-graph-range .range-slider input[type=range] {
-        width: 72px; }
+    margin-left: -5px; }
     #portfolioChartText .portfolio-graph-range__current {
-      padding: 0 3px;
-      color: var(--clr-time-bar); }
+      pointer-events: all;
+      width: 100%;
+      padding: 2px 0 2px 5px;
+      border: 1px solid;
+      border-radius: 5px;
+      cursor: pointer;
+      background: var(--clr-block); }
+      #portfolioChartText .portfolio-graph-range__current:hover {
+        background: rgba(0, 0, 0, 0.05);
+        background: var(--clr-back); }
+      #portfolioChartText .portfolio-graph-range__current svg {
+        width: 8px;
+        height: 8px;
+        fill: var(--clr-text);
+        position: absolute;
+        right: 5px;
+        bottom: 6px; }
+    #portfolioChartText .portfolio-graph-range__list {
+      width: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+      visibility: hidden;
+      background: var(--clr-block);
+      border-radius: 5px 5px 0 0; }
+    #portfolioChartText .portfolio-graph-range__list.open {
+      visibility: visible; }
+    #portfolioChartText .portfolio-graph-range__item {
+      pointer-events: all;
+      width: 100%;
+      display: block !important;
+      padding: 3px 0 3px 5px;
+      cursor: pointer; }
+      #portfolioChartText .portfolio-graph-range__item:hover {
+        background: var(--clr-back); }
+    #portfolioChartText .portfolio-graph-range__item.active {
+      background: var(--clr-back); }
 
 .lineForPortfolioChart {
   position: absolute;
@@ -15021,7 +15052,7 @@ button:-moz-focusring {
     border-bottom-left-radius: var(--border-radius);
     visibility: visible; }
     #telegramSetting.open > .c-block__col > .settings-list {
-      padding-left: 60px; }
+      padding: 12px 0 12px 60px; }
   #telegramSetting .settings-head {
     padding: 10px 20px 10px 60px;
     height: 56px;
@@ -15032,7 +15063,7 @@ button:-moz-focusring {
     flex: 0 0 auto;
     align-items: center;
     font-size: 16px;
-    font-weight: 600; }
+    font-weight: 700; }
     #telegramSetting .settings-head__menu {
       width: 27px;
       height: 20px;
@@ -15049,21 +15080,20 @@ button:-moz-focusring {
   #telegramSetting .settings-list {
     display: flex;
     flex-direction: column;
-    width: 100% !important;
-    padding: 12px;
-    padding-left: 0; }
+    width: 100% !important; }
     #telegramSetting .settings-list__item {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       color: var(--clr-textD);
-      height: 40px;
+      height: 32px;
       display: flex;
       flex-direction: row;
       width: 100%;
-      cursor: pointer; }
+      cursor: pointer;
+      align-items: center; }
       #telegramSetting .settings-list__item div.toggle {
         position: absolute;
-        right: 30px; }
+        right: 20px; }
       #telegramSetting .settings-list__item span {
         margin-left: 10px; }
       #telegramSetting .settings-list__item svg {
@@ -15140,19 +15170,19 @@ button:-moz-focusring {
 
 .minitoggle {
   position: relative;
-  width: 46px;
-  height: 20px;
+  width: 36px;
+  height: 16px;
   background-color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 10px; }
+  border-radius: 8px; }
 
 .minitoggle .toggle-handle {
   position: absolute;
-  top: 1px;
-  left: 2px;
+  top: 0px;
+  left: 1px;
   z-index: 2;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   background-color: #fff;
   background-image: -webkit-linear-gradient(top, #fff 0, #f2f2f2 100%);
   background-image: linear-gradient(to bottom, #fff 0, #f2f2f2 100%);

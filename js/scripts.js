@@ -2870,49 +2870,48 @@ $(function () {
 	});
 
 
-	// var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
-	// $("div.portfolio-graph-range__current").on("click", function () {
-	// 	if ($('ul.portfolio-graph-range__list').hasClass('open')) {
-	// 		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
-	// 		$('div.portfolio-graph-range').css('border', '0px');
-	// 		$('ul.portfolio-graph-range__list').removeClass('open');
-	// 		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
-	// 	} else {
-	// 		$('ul.portfolio-graph-range__list').addClass('open');
-	// 		$('div.portfolio-graph-range__current').css('border', '0px');
-	// 		$('ul.portfolio-graph-range__list').css('border-bottom', 'solid 1px');
-	// 		$('div.portfolio-graph-range').css('border', 'solid 1px');
-	// 	}
-	// });
-	// $("ul.portfolio-graph-range__list").on("click", "li.portfolio-graph-range__item", function () {
-	// 	allPortfolioOptions.removeClass('active');
-	// 	$(this).addClass('active');
-	// 	$(".portfolio-graph-range__current").html($(this).html());
-	// 	console.log()
+	var allPortfolioOptions = $("ul.portfolio-graph-range__list").children('li.portfolio-graph-range__item');
+	$("div.portfolio-graph-range__current").on("click", function () {
+		if ($('ul.portfolio-graph-range__list').hasClass('open')) {
+			$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+			$('div.portfolio-graph-range').css('border', '0px');
+			$('ul.portfolio-graph-range__list').removeClass('open');
+			$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+		} else {
+			$('ul.portfolio-graph-range__list').addClass('open');
+			$('div.portfolio-graph-range__current').css('border', '0px');
+			$('ul.portfolio-graph-range__list').css('border-bottom', 'solid 1px');
+			$('div.portfolio-graph-range').css('border', 'solid 1px');
+		}
+	});
+	$("ul.portfolio-graph-range__list").on("click", "li.portfolio-graph-range__item", function () {
+		allPortfolioOptions.removeClass('active');
+		$(this).addClass('active');
+		$(".portfolio-graph-range__current span").html($(this).html());
 
-	// 	switch ($(".portfolio-graph-range__current").html()) {
-	// 		case "HOUR":
-	// 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(0, {}, true);
-	// 			break;
-	// 		case "DAY":
-	// 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(1, {}, true);
-	// 			break;
-	// 		case "WEEK":
-	// 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(2, {}, true);
-	// 			break;
-	// 		case "MONTH":
-	// 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(3, {}, true);
-	// 			break;
-	// 		case "YEAR":
-	// 			if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(4, {}, true);
-	// 			break;
-	// 	}
+		switch ($(".portfolio-graph-range__current span").html()) {
+			case "1H":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(0, {}, true);
+				break;
+			case "1D":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(1, {}, true);
+				break;
+			case "1W":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(2, {}, true);
+				break;
+			case "1M":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(3, {}, true);
+				break;
+			case "1Y":
+				if (portfolioChartObj) portfolioChartObj.rangeSelector.clickButton(4, {}, true);
+				break;
+		}
 
-	// 	$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
-	// 	$('div.portfolio-graph-range').css('border', '0px');
-	// 	$('ul.portfolio-graph-range__list').removeClass('open');
-	// 	$('div.portfolio-graph-range__current').css('border', 'solid 1px');
-	// });
+		$('ul.portfolio-graph-range__list').css('border-bottom', '0px');
+		$('div.portfolio-graph-range').css('border', '0px');
+		$('ul.portfolio-graph-range__list').removeClass('open');
+		$('div.portfolio-graph-range__current').css('border', 'solid 1px');
+	});
 
 	/* Portfolio graph range slider for Orders */
 	var $portfolioGraphRange = $(".portfolio-graph-range__control");
