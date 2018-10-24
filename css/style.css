@@ -14498,12 +14498,6 @@ button:-moz-focusring {
   z-index: 101; }
   .accounts-diagram-wrap.marged {
     margin: 0 70px 0 0; }
-  .accounts-diagram-wrap.hover {
-    cursor: pointer; }
-    .accounts-diagram-wrap.hover #circleChartText {
-      color: var(--clr-accentD); }
-    .accounts-diagram-wrap.hover .sprite-icon {
-      fill: var(--clr-accent); }
   @media only screen and (min-height: 900px) {
     .accounts-diagram-wrap {
       flex: 0 0 270px;
@@ -14531,12 +14525,6 @@ button:-moz-focusring {
     background: var(--clr-accentL); }
   .advanced .accounts-diagram-wrap:active:after {
     background: var(--clr-accent); }
-  .advanced .accounts-diagram-wrap.hover #circleChartText {
-    color: var(--clr-accent); }
-    .advanced .accounts-diagram-wrap.hover #circleChartText .sprite-icon {
-      fill: var(--clr-accent); }
-  .advanced .accounts-diagram-wrap.hover:after {
-    opacity: 0.5; }
   @media only screen and (max-height: 900px) {
     .advanced .accounts-diagram-wrap #circleChartText {
       width: 118px; }

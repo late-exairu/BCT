@@ -22,17 +22,17 @@
 		margin: 0 70px 0 0;
 	}
 
-	&.hover {
-		cursor: pointer;
+	// &.hover {
+	// 	cursor: pointer;
 
-		#circleChartText {
-			color: var(--clr-accentD);
-		}
+	// 	#circleChartText {
+	// 		color: var(--clr-accentD);
+	// 	}
 
-		.sprite-icon{
-			fill: var(--clr-accent);
-		}
-	}
+	// 	.sprite-icon{
+	// 		fill: var(--clr-accent);
+	// 	}
+	// }
 
 	@media only screen and (min-height: 900px) {
 		flex: 0 0 270px;
@@ -69,19 +69,20 @@
 		background: var(--clr-accent);
 	}
 
-	&.hover{
-		#circleChartText{
-			color: var(--clr-accent);
+	// &.hover{
+	// 	#circleChartText{
+	// 		color: var(--clr-accent);
 			
-			.sprite-icon{
-				fill: var(--clr-accent);
-			}
-		}
+	// 		.sprite-icon{
+	// 			fill: var(--clr-accent);
+	// 		}
+	// 	}
 
-		&:after {
-			opacity: 0.5;
-		}
-	}
+	// 	&:after {
+	// 		opacity: 0.5;
+	// 	}
+	// }
+	
 	@media only screen and (max-height: 900px) {
 		#circleChartText {
 			width: 118px;
