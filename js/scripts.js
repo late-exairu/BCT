@@ -3144,6 +3144,17 @@ $(function () {
 	$('#telegramOverlay').click(closeTelegramMenu);
 
 	function closeTelegramMenu() {
+		if ($('#telegramOverlay, #telegramSetting').hasClass('open')) {
+			$('.left-bar').css({
+				'transform': 'translateX(-40px)',
+				'box-shadow': '0',
+				'pointer-events': 'all'
+			});
+			$('.left-bar .left-bar__arrow').css({
+				'opacity': '1',
+				'pointer-events': 'all'
+			});
+		}
 		$('#telegramOverlay, #telegramMenu, #telegramSetting').removeClass('open');
 	}
 
@@ -3155,9 +3166,28 @@ $(function () {
 		e.preventDefault();
 		if ($('#telegramOverlay, #telegramSetting').hasClass('open')) {
 			$('#telegramOverlay, #telegramSetting').removeClass('open');
+
+			$('.left-bar').css({
+				'transform': 'translateX(-40px)',
+				'box-shadow': '0',
+				'pointer-events': 'all'
+			});
+			$('.left-bar .left-bar__arrow').css({
+				'opacity': '1',
+				'pointer-events': 'all'
+			});
 		}
 		else{
 			$('#telegramOverlay, #telegramSetting').addClass('open');
+			$('.left-bar').css({
+				'transform': 'translateX(0)',
+				'box-shadow': '1px 0 1px 0 rgba(0, 0, 0, 0.2)',
+				'pointer-events': 'none'
+			});
+			$('.left-bar .left-bar__arrow').css({
+				'opacity': '0',
+				'pointer-events': 'none'
+			});
 		}
 	});
 	$('.toggle').minitoggle();

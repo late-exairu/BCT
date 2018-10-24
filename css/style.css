@@ -9087,11 +9087,13 @@ Blocks from left bar
       height: 9px;
       fill: var(--clr-separator); }
   .left-bar:hover {
-    transform: translateX(0);
-    box-shadow: 5px 0 7px 0 rgba(0, 0, 0, 0.4); }
+    transform: translateX(0) !important;
+    box-shadow: 5px 0 7px 0 rgba(0, 0, 0, 0.4) !important; }
     .left-bar:hover .left-bar__arrow {
-      opacity: 0;
-      pointer-events: none; }
+      opacity: 0 !important;
+      pointer-events: none !important; }
+  .left-bar button, .left-bar a {
+    pointer-events: all !important; }
 
 .user-btn {
   position: relative;
@@ -15010,7 +15012,7 @@ button:-moz-focusring {
 }*/
 #telegramSetting {
   top: 0;
-  left: 0;
+  left: -17px;
   transform: translateX(-100%);
   width: 300px;
   flex: 1 0 auto;
@@ -15020,19 +15022,20 @@ button:-moz-focusring {
   outline: none;
   position: absolute;
   overflow-y: auto;
-  background-color: var(--clr-back);
+  background-color: var(--clr-block);
   transition: width 225ms;
   visibility: hidden;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); }
   #telegramSetting.open {
     transform: translateX(0);
-    padding-left: 28px;
     box-shadow: 7px 6px 11px rgba(0, 0, 0, 0.25);
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
     visibility: visible; }
+    #telegramSetting.open > .c-block__col > .settings-list {
+      padding-left: 60px; }
   #telegramSetting .settings-head {
-    padding: 10px 20px 10px 0px;
+    padding: 10px 20px 10px 60px;
     height: 56px;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     background: var(--clr-back);

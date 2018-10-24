@@ -69,13 +69,16 @@ Blocks from left bar
 	}
 
 	&:hover{
-		transform: translateX(0);
-		box-shadow: 5px 0 7px 0 rgba(0, 0, 0, 0.4);
+		transform: translateX(0) !important;
+		box-shadow: 5px 0 7px 0 rgba(0, 0, 0, 0.4) !important;
 
 		.left-bar__arrow{
-			opacity: 0;
-			pointer-events: none;
+			opacity: 0 !important;
+			pointer-events: none !important;
 		}
+	}
+	button, a {
+		pointer-events: all !important;
 	}
 }
 
