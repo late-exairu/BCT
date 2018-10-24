@@ -7978,7 +7978,8 @@ h6 {
     .exch-head__btn:hover {
       opacity: .9; }
     .exch-head__btn[disabled] {
-      background: var(--clr-textLL); }
+      background: var(--clr-textLL);
+      color: var(--clr-back-new); }
       .exch-head__btn[disabled]:after {
         background: var(--clr-textLL); }
   .exch-head__btn-text {
