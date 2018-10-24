@@ -682,13 +682,33 @@
 		}
 	}
 	.range-slider {
-		margin-top: 16px;
 		z-index: 1;
 		right: 3px;
 		width: calc(100% - 120px);
 		max-width: 230px;
-		padding: 0 8px;
+		margin: 0 8px;
+		margin-top: 16px;
 		position: absolute;
+
+		&__interval {
+			width: calc(100% - 2px);
+			height: 6px;
+			top: 5px;
+			border-left: 1px solid var(--clr-time-line);
+			border-right: 1px solid var(--clr-time-line);
+			position: absolute;
+			z-index: -1;
+			margin-left: 1px;
+
+			&__item {
+				width: 1px;
+				height: 6px;
+				background-color: var(--clr-time-line);
+				margin-left: 23%;
+				margin-bottom: 4px;
+				display: inline-block;
+			}
+		}
 	}
 }
 

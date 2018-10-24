@@ -13526,13 +13526,29 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .exch-form.completed .exch-form__btn-bg {
     fill: var(--clr-textLL); }
   .exch-form .range-slider {
-    margin-top: 16px;
     z-index: 1;
     right: 3px;
     width: calc(100% - 120px);
     max-width: 230px;
-    padding: 0 8px;
+    margin: 0 8px;
+    margin-top: 16px;
     position: absolute; }
+    .exch-form .range-slider__interval {
+      width: calc(100% - 2px);
+      height: 6px;
+      top: 5px;
+      border-left: 1px solid var(--clr-time-line);
+      border-right: 1px solid var(--clr-time-line);
+      position: absolute;
+      z-index: -1;
+      margin-left: 1px; }
+      .exch-form .range-slider__interval__item {
+        width: 1px;
+        height: 6px;
+        background-color: var(--clr-time-line);
+        margin-left: 23%;
+        margin-bottom: 4px;
+        display: inline-block; }
 
 .chat-search {
   padding: 8px 10px 8px 12px;
