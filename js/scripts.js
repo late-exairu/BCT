@@ -1777,7 +1777,7 @@ $(function () {
 				$('.range-slider .send-form-slider__control').val(parseFloat(current_coin_amount) * 10);
 
 				$('.range-slider .send-form-slider__control').on('input', function () {
-					var value = this.value / 10;
+					var value = parseFloat(this.value) / 10;
 					if (parseFloat(current_coin_amount) - value < step / 10) {
 						value = parseFloat(current_coin_amount);
 						$('.range-slider .send-form-slider__control').val(value * 10);
