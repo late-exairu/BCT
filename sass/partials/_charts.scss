@@ -595,6 +595,9 @@
 		&__list.open {
 			visibility: visible;
 		}
+		&__item:first-child {
+			border-radius: 5px 5px 0 0;
+		}
 		&__item {
 			pointer-events: all;	
 			width: 100%;

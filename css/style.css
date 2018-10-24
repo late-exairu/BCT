@@ -14908,6 +14908,8 @@ button:-moz-focusring {
       border-radius: 5px 5px 0 0; }
     #portfolioChartText .portfolio-graph-range__list.open {
       visibility: visible; }
+    #portfolioChartText .portfolio-graph-range__item:first-child {
+      border-radius: 5px 5px 0 0; }
     #portfolioChartText .portfolio-graph-range__item {
       pointer-events: all;
       width: 100%;
