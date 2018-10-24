@@ -1557,7 +1557,7 @@ $(function () {
 		}
 
 		$('#transaction-popup #transactionFormMinDepositAmount').eq(0).text('Minumun Deposit ' + USDT550Equal + ' ' + currencyName);
-		//$('#transaction-popup .tx-currency').html(currencyName)
+		$('#transaction-popup .tx-currency').html(currencyName)
 
 		if (coin_amount > 0) {
 			$('#transaction-popup .transaction-form__input').removeAttr('disabled')
