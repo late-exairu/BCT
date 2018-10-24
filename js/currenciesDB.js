@@ -4,7 +4,7 @@ const numberWithCommas = (x) => {
 }
 
 var read = new XMLHttpRequest();
-read.open('GET', 'coins_list.txt', false);
+read.open('GET', 'coins_list_by_mkCap.txt', false);
 read.send();
 
 var allCurrenciesRaw = read.responseText;
@@ -41,6 +41,8 @@ var wallets = {
         'LTC': 0,
     }
 }
+
+// var allCurrenciesObj = {};
 
 allCurrenciesArr.map(item => {
     var coinTitle = item.split('-')[0].trim();
@@ -80,7 +82,50 @@ allCurrenciesArr.map(item => {
         // add value to all currencies
         wallets['allCurrencies'][coinShort] = 0;
     }
+    //allCurrenciesObj[coinShort] = coinTitle;
 });
+
+// var marketCap = {}
+// var marketCapArr = [];
+// // get market Cap  for all currencies
+// for (var i = 1; i < 6; i++) {
+//     var tempArr = allCurrenciesArr.slice((i - 1) * 60, i * 60);
+//     var tempString = '';
+//     tempArr.map(item => {
+//         var coinShort = item.split('-')[1].trim();
+//         tempString += coinShort + ',';
+//     });
+//     $.ajax({
+//         url: 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=' + tempString + '&tsyms=USD',
+//         async: false,
+//         success: function (data) {
+//             for (const key in data['RAW']) {
+//                 marketCap[key] = data['RAW'][key]['USD']['MKTCAP'];
+//                 marketCapArr.push(data['RAW'][key]['USD']['MKTCAP']);
+//             }
+//         },
+//     });
+// }
+
+// console.log(marketCap);
+// console.log(marketCapArr);
+// marketCapArr.sort(function (a, b) {
+//     return b - a;
+// });
+// console.log(marketCapArr);
+// var coinsListByMKCap = '';
+// marketCapArr.map(item => {
+//     for (const key in marketCap) {
+//         if (marketCap.hasOwnProperty(key)) {
+//             if (marketCap[key] == item) {
+//                 coinsListByMKCap += allCurrenciesObj[key] + ' - ' + key + '\n';
+//                 delete marketCap[key];
+//             }
+//         }
+//     }
+// });
+// console.log(coinsListByMKCap);
+
 
 $('.exch-dropdown__scroll').eq(0).append(allCurrenciesHtmlFirstColumn);
 $('.exch-dropdown__scroll').eq(1).append(allCurrenciesHtmlSecondColumn);
