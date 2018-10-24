@@ -843,7 +843,7 @@
 		visibility: visible;
 
 		> .c-block__col > .settings-list {
-			padding-left: 60px;
+			padding: 12px 0 12px 60px;
 		}
 	}
 
@@ -858,7 +858,7 @@
 		flex: 0 0 auto;
 		align-items: center;
 		font-size: 16px;
-		font-weight: 600;
+		font-weight: 700;
 
 		&__menu{
 			width: 27px;
@@ -882,20 +882,20 @@
 		display: flex;
 		flex-direction: column;
 		width: 100% !important;
-		padding: 12px;
-		padding-left: 0;
 		&__item {
-			font-size: 14px;
-			font-weight: 400;
+			font-size: 16px;
+			font-weight: 300;
 			color: var(--clr-textD);
-			height: 40px;
+			height: 32px;
 			display: flex;
 			flex-direction: row;
 			width: 100%;
 			cursor: pointer;
+			align-items: center;
+
 			div.toggle {
 				position: absolute;
-				right: 30px;
+				right: 20px;
 			}
 			span {
 				margin-left: 10px;

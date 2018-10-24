@@ -15064,7 +15064,7 @@ button:-moz-focusring {
     border-bottom-left-radius: var(--border-radius);
     visibility: visible; }
     #telegramSetting.open > .c-block__col > .settings-list {
-      padding-left: 60px; }
+      padding: 12px 0 12px 60px; }
   #telegramSetting .settings-head {
     padding: 10px 20px 10px 60px;
     height: 56px;
@@ -15075,7 +15075,7 @@ button:-moz-focusring {
     flex: 0 0 auto;
     align-items: center;
     font-size: 16px;
-    font-weight: 600; }
+    font-weight: 700; }
     #telegramSetting .settings-head__menu {
       width: 27px;
       height: 20px;
@@ -15092,21 +15092,20 @@ button:-moz-focusring {
   #telegramSetting .settings-list {
     display: flex;
     flex-direction: column;
-    width: 100% !important;
-    padding: 12px;
-    padding-left: 0; }
+    width: 100% !important; }
     #telegramSetting .settings-list__item {
-      font-size: 14px;
-      font-weight: 400;
+      font-size: 16px;
+      font-weight: 300;
       color: var(--clr-textD);
-      height: 40px;
+      height: 32px;
       display: flex;
       flex-direction: row;
       width: 100%;
-      cursor: pointer; }
+      cursor: pointer;
+      align-items: center; }
       #telegramSetting .settings-list__item div.toggle {
         position: absolute;
-        right: 30px; }
+        right: 20px; }
       #telegramSetting .settings-list__item span {
         margin-left: 10px; }
       #telegramSetting .settings-list__item svg {
@@ -15183,19 +15182,19 @@ button:-moz-focusring {
 
 .minitoggle {
   position: relative;
-  width: 46px;
-  height: 20px;
+  width: 36px;
+  height: 16px;
   background-color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 10px; }
+  border-radius: 8px; }
 
 .minitoggle .toggle-handle {
   position: absolute;
-  top: 1px;
-  left: 2px;
+  top: 0px;
+  left: 1px;
   z-index: 2;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   background-color: #fff;
   background-image: -webkit-linear-gradient(top, #fff 0, #f2f2f2 100%);
   background-image: linear-gradient(to bottom, #fff 0, #f2f2f2 100%);
