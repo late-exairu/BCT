@@ -765,7 +765,7 @@ $(function () {
 			$('.advanced .js-account-stats .portfolio-drop').css('top', '2px');
 		}
 		else {
-			$('.advanced .js-account-stats .portfolio-drop').css('top', '14px');
+			$('.advanced .js-account-stats .portfolio-drop').css('top', '8px');
 		}
 
 		$('.js-tabs-panel').removeClass('active');

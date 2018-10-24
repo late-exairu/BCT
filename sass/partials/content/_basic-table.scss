@@ -258,7 +258,7 @@
 	}
 
 	&__btn{
-		min-height: 28px;
+		min-height: 32px;
 		border: 1px solid var(--clr-separator);
 		font-size: 12px;
 		border-radius: 3px;
@@ -450,13 +450,13 @@
 			&.head{
 
 				.basic-table__col{
-					height: 62px;
+					height: 47px;
 				}
 			}
 		}
 
 		.basic-table__col{
-			height: 62px;
+			height: 47px;
 		}
 	}
 
@@ -536,10 +536,10 @@
 	}
 
 	.icon-curr{
-		width: 38px;
-		height: 38px;
+		width: 36px;
+		height: 36px;
 		margin: 0 10px 0 0;
-		flex: 0 0 38px;
+		flex: 0 0 36px;
 	}
 
 	.sprite-icon{

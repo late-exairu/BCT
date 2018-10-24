@@ -215,10 +215,10 @@
 	}
 
 	&.--bigger{
-		top: calc(100% + 7px);
+		top: calc(100% + 3px);
 		
 		.menu-dropdown__item{
-			height: 39px;
+			height: 47px;
 
 			&.active{
 				display: none;
@@ -231,12 +231,12 @@
 
 		}
 
-		@media only screen and (min-height : 900px) {
+		/*@media only screen and (min-height : 900px) {
 			top: calc(100% + 17px);
 		
 			.menu-dropdown__item{
 				height: 63px;
 			}
-		}
+		}*/
 	}
 }
