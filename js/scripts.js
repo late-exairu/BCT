@@ -2194,7 +2194,7 @@ $(function () {
 				</span>` + numberWithCommas((secondValue / progressBarsCounter).toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
 			}
 			else{
-				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-backCI)');
+				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-iconD)');
 			}
 		});
 	}

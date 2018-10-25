@@ -8496,9 +8496,10 @@ h6 {
     padding: 0 5px 0 0; }
     .graph-prices__price span, .graph-prices__amount span {
       font-size: 10px;
-      font-weight: 400; }
+      font-weight: 400;
+      color: var(--clr-iconD); }
   .graph-prices__amount {
-    color: var(--clr-backCI); }
+    color: var(--clr-iconD); }
   .graph-prices .graph-bar__item {
     width: 250px;
     margin: 0 0 20px 0; }

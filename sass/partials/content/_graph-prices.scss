@@ -480,10 +480,11 @@
 		span {
 			font-size: 10px;
 			font-weight: 400;
+			color: var(--clr-iconD);
 		}
 	}
 	&__amount {
-		color: var(--clr-backCI);
+		color: var(--clr-iconD);
 	}
 
 	.graph-bar__item {
