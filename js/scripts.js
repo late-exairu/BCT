@@ -765,7 +765,7 @@ $(function () {
 			$('.advanced .js-account-stats .portfolio-drop').css('top', '2px');
 		}
 		else {
-			$('.advanced .js-account-stats .portfolio-drop').css('top', '14px');
+			$('.advanced .js-account-stats .portfolio-drop').css('top', '8px');
 		}
 
 		$('.js-tabs-panel').removeClass('active');
@@ -1297,6 +1297,16 @@ $(function () {
 	function updateMainChartPercentChange() {
 		var start = mainChartObj.series[0].processedYData[0];
 		var end = mainChartObj.series[0].processedYData[mainChartObj.series[0].processedYData.length - 1];
+
+		// check start value
+		if (start == 0){
+			for (var i = 0; i < mainChartObj.series[0].processedYData.length; i++){
+				if (mainChartObj.series[0].processedYData[i] != 0){
+					start = mainChartObj.series[0].processedYData[i];
+					break;
+				}
+			}
+		}
 
 		var changeInPercent = (-1 + (end / start)) * 100;
 		// green color
@@ -2568,7 +2578,8 @@ $(function () {
 	});
 
 	$(".copy-deposit-address").click(function (e) {
-		$(this).addClass("clicked")
+		$(this).addClass("hidden");
+		$(this.nextElementSibling).removeClass('hidden');
 		e.preventDefault();
 	})
 

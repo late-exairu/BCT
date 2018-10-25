@@ -37,10 +37,12 @@
 	@media only screen and (min-height: 900px) {
 		flex: 0 0 270px;
 		width: 270px;
+		flex: 0 0 196px;
+		width: 196px;
 
 		#circleChartText .sprite-icon{
-			width: 47px;
-			height: 42px;
+			/*width: 47px;
+			height: 42px;*/
 		}
 	}
 }
@@ -84,7 +86,7 @@
 	// }
 	
 	@media only screen and (max-height: 900px) {
-		#circleChartText {
+		/*#circleChartText {
 			width: 118px;
 			.sprite-icon{
 				width: 30px;
@@ -106,12 +108,12 @@
 			p.title{
 				font-size: 10px;
 			}
-		}
+		}*/
 	}
 
 	@media only screen and (min-height: 900px) {
-		height: calc(100% - 62px);
-		margin-top: 62px;
+		/*height: calc(100% - 45px);
+		margin-top: 45px;
 		//border-top: 1px solid var(--clr-separator);
 		
 		&:after {
@@ -140,7 +142,7 @@
 				height: 35px;
 				margin-right: 3px;
 			}
-		}
+		}*/
 	}
 }
 
@@ -217,7 +219,7 @@
 	}
 
 	@media only screen and (min-height: 900px) {
-		width: 200px;
+		/*width: 200px;
 
 		.wrap {
 			.walletTitle {
@@ -238,7 +240,7 @@
 			.title {
 				font-size: 18px;
 			}
-		}
+		}*/
 	}
 }
 

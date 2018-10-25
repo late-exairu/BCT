@@ -26,7 +26,7 @@
 	width: 100%;
 
 	&__group{
-		min-height: 92px;
+		min-height: 118px;
 		/*display: flex;
 		flex-direction: column;
 		justify-content: space-between;*/
@@ -34,7 +34,7 @@
 
 	&__line{
 		position: relative;
-		margin: 0 0 4px;
+		margin: 0 0 10px;
 		display: flex;
 
 		&:last-child{
@@ -63,7 +63,7 @@
 	}
 
 	&__input{
-		height: 20px;
+		height: 22px;
 		border: 1px solid var(--clr-separatorD);
 		background: var(--clr-block);
 		font-size: 11px;
@@ -107,7 +107,7 @@
 		margin: auto 0 0;
 		display: flex;
 		font-family: $osans;
-		height: 26px;
+		height: 40px;
 		border: none;
 		border-radius: var(--border-radius);
 		outline: none;
@@ -125,7 +125,7 @@
 	}
 
 	.cubic-slider{
-		margin: 5px 0 5px;
+		margin: 10px 0 10px;
 	}
 
 	input[type=number]::-webkit-inner-spin-button, 
@@ -140,7 +140,7 @@
 }
 
 .main-cols{
-	@media only screen and (min-height : 900px) {
+	/*@media only screen and (min-height : 900px) {
 
 		.order-form{
 			padding: 15px 10px;
@@ -169,7 +169,7 @@
 				margin: 12px 0;
 			}
 		}
-	}
+	}*/
 
 	/*@media only screen and (min-width : 1920px) {
 		
@@ -1092,6 +1092,15 @@
 				height: 17px;
 				display: none;
 				fill: #6BBE45;
+			}
+			&.check-deposit-address{
+				fill: var(--clr-accentD);
+				border: 2px solid var(--clr-block);
+				border-radius: 50%;
+				width: 24px;
+				height: 24px;
+				padding: 3px;
+				padding-top: 5px;
 			}
 		}
 
