@@ -16,7 +16,6 @@
 	min-width: 1px;
 	background: var(--clr-separatorD);
 	height: auto;
-	margin: 10px 0;
 }
 
 .order-form{
@@ -61,6 +60,18 @@
 		display: flex;
 		flex: 1 0 60%;
 	}
+	&__input-wrap.market-price{
+		height: 22px;
+		border: 1px solid var(--clr-iconD);
+		font-size: 11px;
+		width: 100%;
+		color: var(--clr-iconD);
+		text-align: center;
+		display: block;
+		span {
+			line-height: 20px;
+		}
+	}
 
 	&__input{
 		height: 22px;
@@ -98,7 +109,7 @@
 		font-size: 11px;
 		padding: 2px 2px;
 		text-align: center;
-		color: var(--clr-textD);
+		color: var(--clr-iconD);
 		margin: 0 0 0 -1px;
 	}
 
