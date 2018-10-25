@@ -1525,8 +1525,8 @@ $(function () {
 		}
 
 		// bad copy of progress bar
-		if (progressBarsCounter > 1) {
-			for (var i = 1; i < progressBarsCounter; i++) {
+		if (progressBarsCounter > 00) {
+			for (var i = 0; i < progressBarsCounter; i++) {
 				$('.graph-prices__item').eq(i).find('.progressbar').remove();
 				$('.graph-prices__item').eq(i).append($(progressbar_current).clone().removeClass('hidden'));
 			}
@@ -2155,6 +2155,7 @@ $(function () {
 		var ownWalletValue = ownWallet[sendCurrency];
 		var secondValue = $('.exch-form__get > input').val().trim().replace(/,/g, '');
 		var part = firstValue / ownWalletValue;
+		var progressExchangers = '';
 
 		switch (true) {
 			case (part > 0.7):
@@ -2174,7 +2175,8 @@ $(function () {
 				<span>` + getCurrency + '</span>');
 		$(".graph-prices__list .graph-prices__item .graph-prices__price").addClass('hidden');
 
-		$(".graph-prices__list .graph-prices__item").each(function (index, item) {
+		$(".graph-prices__scroll.fixed .graph-prices__list").html('');
+		$(".graph-prices__scroll.scroll-wrapper .graph-prices__list .graph-prices__item").each(function (index, item) {
 			if (index < progressBarsCounter) {
 				current_exchange_item = $(item);
 				$(item).find(".graph-prices__price.send-prices__rate").removeClass('hidden');
@@ -2194,11 +2196,14 @@ $(function () {
 				// </span>` + numberWithCommas((secondValue / progressBarsCounter).toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
 				$(item).find(".graph-prices__amount").html(`
 					Amount: ` + numberWithCommas((secondValue / progressBarsCounter).toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
+				progressExchangers += $(item).clone().css('display', 'block')[0].outerHTML;
+				$(item).hide();
 			}
 			else{
 				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-iconD)');
 			}
 		});
+		$(".graph-prices__scroll.fixed .graph-prices__list").html(progressExchangers);
 	}
 
 	progressbar_current.on('completed', function () {
@@ -2207,6 +2212,8 @@ $(function () {
 		$('exch-form__progress__value').html('0%');
 		$('#panel-funds-history .basic-table__body .basic-table__row').eq(0).find('.basic-table__col').eq(0).html('Just now');
 		$('.exch-form__submit').attr("disabled", true);
+		$(".graph-prices__scroll.fixed .graph-prices__list").html('');
+		$(".graph-prices__scroll.scroll-wrapper .graph-prices__list .graph-prices__item").show();
 		updateRecent();
 
 		$('.exch-form__send .exch-form__label').text('Exchanged');
@@ -2254,6 +2261,8 @@ $(function () {
 
 	$('.exch-form__close').click(function (e) {
 		clearInterval(dynamicGetValue);
+		$(".graph-prices__scroll.fixed .graph-prices__list").html('');
+		$(".graph-prices__scroll.scroll-wrapper .graph-prices__list .graph-prices__item").show();
 		$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
 		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
 		$('.graph-prices__sort').html('1' + sendCurrency + ' ≈ ');
