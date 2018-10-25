@@ -973,7 +973,8 @@ $(function () {
 	var isSelectedPrevConversion = false;
 
 	$('.basic-table').on('click', '.basic-table__row:not(.head)', function () {
-		if ($(this).parent().find('.transaction-popup')) return;
+
+		// if ($(this).parent().find('.transaction-popup')) return;
 		$(this).parent().find('.basic-table__row').removeClass('active');
 		$(this).addClass('active');
 
