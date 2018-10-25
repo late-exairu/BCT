@@ -1525,7 +1525,7 @@ $(function () {
 		}
 
 		// bad copy of progress bar
-		if (progressBarsCounter > 00) {
+		if (progressBarsCounter > 0) {
 			for (var i = 0; i < progressBarsCounter; i++) {
 				$('.graph-prices__item').eq(i).find('.progressbar').remove();
 				$('.graph-prices__item').eq(i).append($(progressbar_current).clone().removeClass('hidden'));
@@ -2201,6 +2201,7 @@ $(function () {
 			}
 			else{
 				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-iconD)');
+				$(item).show();
 			}
 		});
 		$(".graph-prices__scroll.fixed .graph-prices__list").html(progressExchangers);
