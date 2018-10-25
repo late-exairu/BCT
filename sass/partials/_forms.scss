@@ -262,8 +262,8 @@
 			right: 0px;
 			z-index: -1;
 			border-radius: 4px 0 0 4px;
-			background: var(--clr-block);
-			/*border: 1px solid var(--clr-separatorW);*/
+			background: var(--clr-back);
+			/*border: 1px solid var(--clr-separator);*/
 		}
 
 		&:after{
@@ -397,7 +397,7 @@
 		border-radius: var(--border-radius);
 		color: var(--clr-textD);
 		outline: none;
-		background: var(--clr-block);
+		background: var(--clr-back);
 		z-index: 1;
 		margin-top: 0;
 	}
@@ -668,9 +668,14 @@
 		
 		.exch-form__send,
 		.exch-form__get{
-			&:after{
-				background: transparent;
+			&:before{
+				background: var(--clr-back-new);
+				border: 1px solid var(--clr-separator);
 			}
+		}
+
+		.exch-form__input{
+			background: var(--clr-back-new);
 		}
 
 		.exch-form__btn-bg{
@@ -678,6 +683,10 @@
 		}
 		.exch-dropdown__title {
 			color: var(--clr-textLL);
+
+			span{
+				color: var(--clr-textLL);
+			}
 		}
 		.exch-dropdown__icon {
 			opacity: .25;

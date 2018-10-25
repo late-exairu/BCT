@@ -13272,8 +13272,8 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       right: 0px;
       z-index: -1;
       border-radius: 4px 0 0 4px;
-      background: var(--clr-block);
-      /*border: 1px solid var(--clr-separatorW);*/ }
+      background: var(--clr-back);
+      /*border: 1px solid var(--clr-separator);*/ }
     .exch-form__get:after, .exch-form__send:after {
       content: '';
       position: absolute;
@@ -13382,7 +13382,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     border-radius: var(--border-radius);
     color: var(--clr-textD);
     outline: none;
-    background: var(--clr-block);
+    background: var(--clr-back);
     z-index: 1;
     margin-top: 0; }
   .exch-form__sep {
@@ -13539,13 +13539,18 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .exch-form.progress .exch-form__curr {
     color: var(--clr-block);
     background: var(--clr-textLL); }
-  .exch-form.progress .exch-form__send:after,
-  .exch-form.progress .exch-form__get:after {
-    background: transparent; }
+  .exch-form.progress .exch-form__send:before,
+  .exch-form.progress .exch-form__get:before {
+    background: var(--clr-back-new);
+    border: 1px solid var(--clr-separator); }
+  .exch-form.progress .exch-form__input {
+    background: var(--clr-back-new); }
   .exch-form.progress .exch-form__btn-bg {
     fill: var(--clr-block); }
   .exch-form.progress .exch-dropdown__title {
     color: var(--clr-textLL); }
+    .exch-form.progress .exch-dropdown__title span {
+      color: var(--clr-textLL); }
   .exch-form.progress .exch-dropdown__icon {
     opacity: .25; }
   .exch-form.completed .exch-form__submit {
