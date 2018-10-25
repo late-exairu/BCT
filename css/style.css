@@ -13917,7 +13917,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     border: none;
     border-radius: var(--border-radius);
     background: var(--clr-backBT);
-    color: #fff;
+    color: var(--clr-back-new);
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -13938,7 +13938,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
       width: calc(100% - 9px);
       margin: 16px auto 0 0;
       align-items: center;
-      color: #fff;
+      color: var(--clr-back-new);
       cursor: pointer;
       text-decoration: none;
       font-size: 16px;
@@ -14278,7 +14278,7 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   height: 32px;
   background: var(--clr-separatorD);
   border-radius: 3px;
-  color: #fff;
+  color: var(--clr-back-new);
   margin: 0 0 0 8px;
   cursor: pointer;
   transition: all .1s; }
@@ -14304,11 +14304,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   border: none;
   border-radius: var(--border-radius);
   background: var(--clr-backBT);
-  color: #fff;
+  color: var(--clr-back-new);
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-weight: 300;
+  font-weight: 700;
   font-size: 18px;
   border: none;
   cursor: pointer;
@@ -14325,11 +14325,11 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     width: calc(100% - 6px);
     margin: 0 auto 0 0;
     align-items: center;
-    color: #fff;
+    color: var(--clr-back-new);
     cursor: pointer;
     text-decoration: none;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 700;
     white-space: nowrap;
     transition: all 0.1s;
     justify-content: center;
