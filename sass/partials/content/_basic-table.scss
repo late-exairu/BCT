@@ -51,7 +51,7 @@
 		flex: 0 0 auto;
 
 		.smallCurrencyChart {
-			filter: grayscale(100%);
+			filter: grayscale(100%) brightness(100);
 		}
 
 		&:not(.disabled){
