@@ -8311,8 +8311,8 @@ h6 {
     border-radius: 5px;
     border: 1px solid;
     position: absolute;
-    right: 14px;
-    top: 92%;
+    right: 12px;
+    bottom: 12px;
     background: transparent;
     display: flex;
     justify-content: center;
@@ -8329,8 +8329,8 @@ h6 {
       cursor: pointer;
       background: transparent; }
       .graph-prices__scrollup .scroll-up-button .sprite-icon {
-        width: 20px;
-        height: 28px; }
+        width: 15px;
+        height: 21px; }
       .graph-prices__scrollup .scroll-up-button:hover .sprite-icon {
         fill: var(--clr-textL); }
   .graph-prices__scrollup__btn, .graph-prices__scrolldown__btn {
