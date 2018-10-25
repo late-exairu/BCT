@@ -762,7 +762,7 @@ $(function () {
 
 		$('.advanced .js-account-stats .c-block-head__title').text($(this).text());
 		if ($(this).children('button').text() == 'Advanced') {
-			$('.advanced .js-account-stats .portfolio-drop').css('top', '2px');
+			$('.advanced .js-account-stats .portfolio-drop').css('top', '6px');
 		}
 		else {
 			$('.advanced .js-account-stats .portfolio-drop').css('top', '8px');
