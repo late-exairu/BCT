@@ -445,7 +445,7 @@ $(function () {
 			$('.chat-head__name').text(telegramGroupName);
 			$('.exch-form__send > input').attr('data-currency', currencyAbbr);
 			$('.exch-form__send .exch-form__curr').html(`<p>` + currencyAbbr + `<span><br>YOU HAVE</span></p>`);
-			$('.chat-head__name').css('color', firstColor);
+			//$('.chat-head__name').css('color', firstColor);
 
 			// change currency in Orders Form
 			$('.order-form__submit.btn-green').html('BUY ' + currencyAbbr);
