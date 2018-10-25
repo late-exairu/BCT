@@ -51,25 +51,25 @@
 	height: calc(100% - 45px);
 	margin-top: 45px;
 
-	&:after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		width: 125px;
-		height: 125px;
-		background: transparent;
-		border-radius: 50%;
-		z-index: 0;
-		opacity: 0.1;
-		transition: all 0.2s;
-		transform: translate(-50%, -50%);
-		background: var(--clr-accentL);
-	}
+	// &:after {
+	// 	content: '';
+	// 	position: absolute;
+	// 	left: 50%;
+	// 	top: 50%;
+	// 	width: 125px;
+	// 	height: 125px;
+	// 	background: transparent;
+	// 	border-radius: 50%;
+	// 	z-index: 0;
+	// 	opacity: 0.1;
+	// 	transition: all 0.2s;
+	// 	transform: translate(-50%, -50%);
+	// 	background: var(--clr-accentL);
+	// }
 
-	&:active:after {
-		background: var(--clr-accent);
-	}
+	// &:active:after {
+	// 	background: var(--clr-accent);
+	// }
 
 	// &.hover{
 	// 	#circleChartText{
