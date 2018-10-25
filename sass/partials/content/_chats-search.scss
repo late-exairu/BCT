@@ -6,7 +6,7 @@
 
 .chats-search{
 	padding: 10px 10px 10px 20px;
-	height: 56px;
+	height: 60px;
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
 	background: var(--clr-back);
 	display: flex;
@@ -34,7 +34,7 @@
 		width: 100%;
 		background: var(--clr-block);
 		border: none;
-		height: 32px;
+		height: 30px;
 		border-radius: var(--border-radius);
 		padding: 0 15px 0 38px;
 		font-size: 12px;
@@ -50,7 +50,7 @@
 	&__icon{
 		position: absolute;
 		left: 34px;
-		top: 28px;
+		top: 30px;
 		transform: translateY(-50%);
 		width: 15px;
 		height: 15px;

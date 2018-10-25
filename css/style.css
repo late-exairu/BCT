@@ -1392,7 +1392,7 @@ h6 {
   position: relative;
   display: flex;
   padding: 4px 10px 4px 12px;
-  height: 56px;
+  height: 60px;
   align-items: center;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   background: var(--clr-back);
@@ -1800,7 +1800,7 @@ h6 {
 /* =================================================================== */
 .chats-search {
   padding: 10px 10px 10px 20px;
-  height: 56px;
+  height: 60px;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   background: var(--clr-back);
   display: flex;
@@ -1823,7 +1823,7 @@ h6 {
     width: 100%;
     background: var(--clr-block);
     border: none;
-    height: 32px;
+    height: 30px;
     border-radius: var(--border-radius);
     padding: 0 15px 0 38px;
     font-size: 12px;
@@ -1835,7 +1835,7 @@ h6 {
   .chats-search__icon {
     position: absolute;
     left: 34px;
-    top: 28px;
+    top: 30px;
     transform: translateY(-50%);
     width: 15px;
     height: 15px;
@@ -7580,7 +7580,7 @@ h6 {
       z-index: -1;
       border-radius: 4px 2px 2px 4px;
       background: var(--clr-back);
-      border: 1px solid var(--clr-block); }
+      border: 1px solid var(--clr-back); }
     .exch-dropdown__border:after {
       content: '';
       position: absolute;
@@ -7847,7 +7847,7 @@ h6 {
 /* exch-head */
 /* =================================================================== */
 .exch-head {
-  --exch-head-height: 53px;
+  --exch-head-height: 58px;
   --color-one: var(--clr-separatorD);
   --color-two: var(--clr-separatorD);
   --color-one: #ee9100;
@@ -7897,7 +7897,7 @@ h6 {
     display: flex;
     flex: 1 1;
     padding: 0;
-    height: 55px;
+    height: 60px;
     /*background: var(--color-one);*/
     padding: 0; }
   .exch-head__get {
@@ -7966,13 +7966,13 @@ h6 {
     .exch-head__btn:after {
       content: "";
       position: absolute;
-      top: 49%;
+      top: 50%;
       right: -6px;
       bottom: 0;
       width: 10px;
       background: #000;
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 34px;
       /*transition: all 0.1s;*/
       border-radius: 5px 3px 5px;
       transform: rotate(45deg) skew(20deg, 20deg) translateY(-50%);
@@ -8177,7 +8177,7 @@ h6 {
   right: 0px;
   bottom: 0px;
   padding: 0;
-  width: 182px;
+  width: 184px;
   background: var(--clr-block);
   transition: all .2s;
   /*border: 1px solid var(--clr-separator);*/
@@ -8255,7 +8255,7 @@ h6 {
     position: absolute;
     top: 0px;
     bottom: 0px;
-    width: 10px;
+    width: 12px;
     background: var(--clr-back-new);
     display: flex;
     justify-content: center;
@@ -13465,13 +13465,13 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     .exch-form__submit:after {
       content: "";
       position: absolute;
-      top: 49%;
+      top: 50%;
       right: -6px;
       bottom: 0;
       width: 10px;
       background: #000;
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 34px;
       border-radius: 5px 3px 5px;
       transform: rotate(45deg) skew(20deg, 20deg) translateY(-50%);
       background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-accentD) 100%); }

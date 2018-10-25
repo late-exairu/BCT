@@ -515,13 +515,13 @@
 		&:after{
 			content: "";
 			position: absolute;
-			top: 49%;
+			top: 50%;
 			right: -6px;
 			bottom: 0;
 			width: 10px;
 			background: #000;
-			width: 28px;
-			height: 28px;
+			width: 32px;
+			height: 34px;
 			border-radius: 5px 3px 5px;
 			transform: rotate(45deg) skew(20deg,20deg) translateY(-50%);
 			background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-accentD) 100%);
