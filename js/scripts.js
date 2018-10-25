@@ -2188,10 +2188,12 @@ $(function () {
 				else {
 					decimal_digits = 7 - num_length;
 				}
+				// $(item).find(".graph-prices__amount").html(`
+				// <span class="graph-prices__amount-label">
+				// 	Amount: 
+				// </span>` + numberWithCommas((secondValue / progressBarsCounter).toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
 				$(item).find(".graph-prices__amount").html(`
-				<span class="graph-prices__amount-label">
-					Amount: 
-				</span>` + numberWithCommas((secondValue / progressBarsCounter).toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
+					Amount: ` + numberWithCommas((secondValue / progressBarsCounter).toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
 			}
 			else{
 				$(item).find(".graph-prices__amount").removeClass('hidden').css('color', 'var(--clr-iconD)');
@@ -3053,7 +3055,7 @@ $(function () {
 				else {
 					decimal_digits = 6 - num_length;
 				}
-				$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + getCurrency + ' = </span>' + numberWithCommas(rateArray[index].toFixed(decimal_digits)) + ' <span>' + sendCurrency + '</span>');
+				$(priceItem).html('1<span class="graph-prices__price-label hidden"> ' + getCurrency + ' = </span>' + numberWithCommas(rateArray[index].toFixed(decimal_digits)) + ' <span>' + sendCurrency + '</span>');
 			});
 		}
 
@@ -3075,7 +3077,7 @@ $(function () {
 
 		$('.graph-prices__price.get-prices__rate').each(function (index, priceItem) {
 			$(this).removeClass('hidden');
-			$(priceItem).html('<span class="graph-prices__price-label hidden">1 ' + sendCurrency + ' = </span>' + numberWithCommas(priceRateBackward.toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
+			$(priceItem).html('1<span class="graph-prices__price-label hidden"> ' + sendCurrency + ' = </span>' + numberWithCommas(priceRateBackward.toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
 		});
 
 		// init sort icon
