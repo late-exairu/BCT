@@ -14596,22 +14596,6 @@ button:-moz-focusring {
 .advanced .accounts-diagram-wrap {
   height: calc(100% - 45px);
   margin-top: 45px; }
-  .advanced .accounts-diagram-wrap:after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 125px;
-    height: 125px;
-    background: transparent;
-    border-radius: 50%;
-    z-index: 0;
-    opacity: 0.1;
-    transition: all 0.2s;
-    transform: translate(-50%, -50%);
-    background: var(--clr-accentL); }
-  .advanced .accounts-diagram-wrap:active:after {
-    background: var(--clr-accent); }
   @media only screen and (max-height: 900px) {
     .advanced .accounts-diagram-wrap {
       /*#circleChartText {
