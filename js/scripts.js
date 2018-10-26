@@ -133,6 +133,7 @@ $(function () {
 	setViewMode('basic');
 
 	updateMainChart(null, 'BTC', 'USDT');
+
 	/* Cubic slider for Orders */
 	var $cubicSlider = $(".js-cubic-slider");
 
@@ -783,6 +784,7 @@ $(function () {
 		if ($(this).index() == 3) {
 			liquidityChartObj = Highcharts.chart('liquidityChart', liquidityChartOptions);
 			setViewMode('advanced');
+			calculateHeightOfFirstTable();
 		} else {
 			setViewMode('basic');
 		}
