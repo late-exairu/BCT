@@ -2233,7 +2233,7 @@ $(function () {
 				$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
 				$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
 
-				current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
+				$(".graph-prices__list .graph-prices__item .graph-prices__price-label").addClass('hidden');
 
 				if (!isSelectedPrevConversion) {
 					$('.graph-prices__item .progress-label').css('visibility', 'visible');
