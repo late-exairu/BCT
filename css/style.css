@@ -595,7 +595,8 @@ body {
   width: 100%;
   background: var(--clr-back-new);
   color: var(--clr-text);
-  line-height: 1.32; }
+  line-height: 1.32;
+  overflow: hidden; }
 
 a {
   color: #0680ba;
