@@ -8065,7 +8065,7 @@ h6 {
   .graph-info__range {
     display: table;
     z-index: 1;
-    width: 43px;
+    width: 40px;
     height: fit-content;
     font-size: 11px;
     border-radius: 3px;
@@ -8094,7 +8094,7 @@ h6 {
       display: block;
       position: absolute;
       margin-top: -10px;
-      margin-left: 23px; }
+      margin-left: 19px; }
     .graph-info__range__current:not(.open):after {
       content: "";
       width: 0;
@@ -8105,7 +8105,7 @@ h6 {
       display: block;
       position: absolute;
       margin-top: -10px;
-      margin-left: 23px; }
+      margin-left: 19px; }
     .graph-info__range__list {
       width: 100%;
       display: block;
