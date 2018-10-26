@@ -29,14 +29,14 @@
 		position: relative;
 		padding: 0 8px;
 		margin: 0 0 0 1px;
-		border-left: 1px solid var(--clr-lineP);
+		border-left: 1px solid var(--clr-separator);
 
 		&:first-child{
 			padding-left: 0;
 			border: none;
 		}
 		&:nth-child(3) {
-			border-right: 1px solid var(--clr-lineP);
+			border-right: 1px solid var(--clr-separator);
 		}
 
 		&.inline{
@@ -68,8 +68,8 @@
 		min-width: 46px;
 		padding: 0;
 		margin: 0;
-		span.vol {
-			color: var(--clr-backCI);
+		span {
+			color: var(--clr-iconD);
 		}
 	}
 	
@@ -84,7 +84,7 @@
 	&__range {
 		display: table;
 		z-index: 1;
-		width: 43px;
+		width: 40px;
 		height: fit-content;
 		font-size: 11px;
 		border-radius: 3px;
@@ -112,46 +112,14 @@
 			&:hover {
 				background: var(--clr-back-new);
 			}
-			// &:after {
-			// 	content: "";
-			// 	width: 0;
-			// 	height: 0;
-			// 	border-style: solid;
-			// 	border-width: 0 4px 6px;
-			// 	border-color: transparent transparent var(--clr-backCI);
-			// 	display: block;
-			// 	position: absolute;
-			// 	margin-top: -10px;
-			// 	margin-left: 20px;
-			// }
 		}
-		&__current.open {
-			&:after {
-				content: "";
-				width: 0;
-				height: 0;
-				border-style: solid;
-				border-width: 0 5px 6px;
-				border-color: transparent transparent var(--clr-text);
-				display: block;
-				position: absolute;
-				margin-top: -10px;
-				margin-left: 23px;
-			}
-		}
-		&__current:not(.open) {
-			&:after {
-				content: "";
-				width: 0;
-				height: 0;
-				border-style: solid;
-				border-width: 6px 5px 0;
-				border-color: var(--clr-text) transparent transparent;
-				display: block;
-				position: absolute;
-				margin-top: -10px;
-				margin-left: 23px;
-			}
+		svg.sprite-icon.arrow-drop-2 {			
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			top: 4px;
+			right: 13px;
+			fill: var(--clr-text);
 		}
 
 		&__list {

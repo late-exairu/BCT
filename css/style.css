@@ -595,7 +595,8 @@ body {
   width: 100%;
   background: var(--clr-back-new);
   color: var(--clr-text);
-  line-height: 1.32; }
+  line-height: 1.32;
+  overflow: hidden; }
 
 a {
   color: #0680ba;
@@ -1278,7 +1279,7 @@ h6 {
 /* c-block-head */
 /* =================================================================== */
 .c-block-head {
-  min-height: 55px;
+  min-height: 60px;
   padding: 4px 10px 3px 12px;
   display: flex;
   justify-content: space-between;
@@ -7906,7 +7907,7 @@ h6 {
     border-radius: 0 var(--border-radius) var(--border-radius) 0; }
   .exch-head__switch {
     width: 38px;
-    height: 55px;
+    height: 60px;
     display: flex;
     flex: 0 0 38px;
     flex-direction: column;
@@ -8027,12 +8028,12 @@ h6 {
     position: relative;
     padding: 0 8px;
     margin: 0 0 0 1px;
-    border-left: 1px solid var(--clr-lineP); }
+    border-left: 1px solid var(--clr-separator); }
     .graph-info__item:first-child {
       padding-left: 0;
       border: none; }
     .graph-info__item:nth-child(3) {
-      border-right: 1px solid var(--clr-lineP); }
+      border-right: 1px solid var(--clr-separator); }
     .graph-info__item.inline {
       display: flex; }
       .graph-info__item.inline .gbar-info__nums {
@@ -8053,8 +8054,8 @@ h6 {
     min-width: 46px;
     padding: 0;
     margin: 0; }
-    .graph-info__title span.vol {
-      color: var(--clr-backCI); }
+    .graph-info__title span {
+      color: var(--clr-iconD); }
   .graph-info__nums {
     font-size: 12px;
     line-height: 1;
@@ -8064,7 +8065,7 @@ h6 {
   .graph-info__range {
     display: table;
     z-index: 1;
-    width: 43px;
+    width: 40px;
     height: fit-content;
     font-size: 11px;
     border-radius: 3px;
@@ -8083,28 +8084,13 @@ h6 {
       color: var(--clr-text); }
       .graph-info__range__current:hover {
         background: var(--clr-back-new); }
-    .graph-info__range__current.open:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 5px 6px;
-      border-color: transparent transparent var(--clr-text);
-      display: block;
+    .graph-info__range svg.sprite-icon.arrow-drop-2 {
+      width: 10px;
+      height: 10px;
       position: absolute;
-      margin-top: -10px;
-      margin-left: 23px; }
-    .graph-info__range__current:not(.open):after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 6px 5px 0;
-      border-color: var(--clr-text) transparent transparent;
-      display: block;
-      position: absolute;
-      margin-top: -10px;
-      margin-left: 23px; }
+      top: 4px;
+      right: 13px;
+      fill: var(--clr-text); }
     .graph-info__range__list {
       width: 100%;
       display: block;
@@ -8502,6 +8488,8 @@ h6 {
       color: var(--clr-iconD); }
   .graph-prices__amount {
     color: var(--clr-iconD); }
+  .graph-prices__price span.unit {
+    color: var(--clr-text); }
   .graph-prices .graph-bar__item {
     width: 250px;
     margin: 0 0 20px 0; }
@@ -9321,7 +9309,8 @@ Blocks from left bar
     display: flex;
     flex: 0 0 33%;
     flex-direction: column;
-    min-height: 0; }
+    min-height: 0;
+    overflow: hidden; }
     .main-cols__left.col-chats {
       /*width: 33%;
 			flex: 0 0 33%;

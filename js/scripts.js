@@ -511,10 +511,7 @@ $(function () {
 		} else {
 			priceRateBackward = priceRateBackward.toFixed(5);
 		}
-		$('.graph-info__title').first().find('span:first').html('1 ' + sendCurrency);
-		$('.graph-info__title').first().find('span:last').html(' ' + priceRateBackward + ' ' + getCurrency);
-
-		// change the median price
+		$('.graph-info__title').first().html(`1 <span> ` + sendCurrency + ` </span> ≈ ` + priceRateBackward + ` <span> ` + getCurrency + `</span>`);
 		$('.median-price').html(priceRateBackward + ' <span>' + getCurrency + '</span>');
 		
 		$('.liquidityText .centerPart .centerPart__info p').html(liquidityInfo);
@@ -2236,7 +2233,7 @@ $(function () {
 				$(".graph-prices__list .graph-prices__item .graph-prices__amount").addClass('hidden');
 				$(".graph-prices__list .graph-prices__item .graph-prices__price.send-prices__rate").removeClass('hidden');
 
-				current_exchange_item.find(".graph-prices__price-label").addClass('hidden');
+				$(".graph-prices__list .graph-prices__item .graph-prices__price-label").addClass('hidden');
 
 				if (!isSelectedPrevConversion) {
 					$('.graph-prices__item .progress-label').css('visibility', 'visible');

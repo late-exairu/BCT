@@ -486,6 +486,9 @@
 	&__amount {
 		color: var(--clr-iconD);
 	}
+	&__price span.unit {
+		color: var(--clr-text);
+	}
 
 	.graph-bar__item {
 		width: 250px;
