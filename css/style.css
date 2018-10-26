@@ -8488,6 +8488,8 @@ h6 {
       color: var(--clr-iconD); }
   .graph-prices__amount {
     color: var(--clr-iconD); }
+  .graph-prices__price span.unit {
+    color: var(--clr-text); }
   .graph-prices .graph-bar__item {
     width: 250px;
     margin: 0 0 20px 0; }
