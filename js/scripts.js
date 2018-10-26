@@ -3063,7 +3063,7 @@ $(function () {
 				else {
 					decimal_digits = 6 - num_length;
 				}
-				$(priceItem).html('<span class="graph-prices__price-label hidden"> ' + getCurrency + ' = </span>' + numberWithCommas(rateArray[index].toFixed(decimal_digits)) + ' <span>' + sendCurrency + '</span>');
+				$(priceItem).html('<span class="graph-prices__price-label unit hidden">1</span><span class="graph-prices__price-label hidden"> ' + getCurrency + ' = </span>' + numberWithCommas(rateArray[index].toFixed(decimal_digits)) + ' <span>' + sendCurrency + '</span>');
 			});
 		}
 
@@ -3085,7 +3085,7 @@ $(function () {
 
 		$('.graph-prices__price.get-prices__rate').each(function (index, priceItem) {
 			$(this).removeClass('hidden');
-			$(priceItem).html('<span class="graph-prices__price-label hidden"> ' + sendCurrency + ' = </span>' + numberWithCommas(priceRateBackward.toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
+			$(priceItem).html('<span class="graph-prices__price-label unit hidden">1</span><span class="graph-prices__price-label hidden"> ' + sendCurrency + ' = </span>' + numberWithCommas(priceRateBackward.toFixed(decimal_digits)) + ' <span>' + getCurrency + '</span>');
 		});
 
 		// init sort icon
