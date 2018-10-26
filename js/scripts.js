@@ -710,7 +710,7 @@ $(function () {
 
 
 	$('body').mousemove(function (e) {
-		if ((e.pageY < $('.b-graph').offset().top || e.pageY > $('.b-graph').offset().top + $('.b-graph').height()) && !$('.graph-prices').hasClass('noClose')) {
+		if ((e.pageY < $('.b-graph').offset().top || e.pageY > $('.b-graph').offset().top + $('.b-graph').height()) && !$('.graph-prices').hasClass('noClose') && !$('.graph-prices').hasClass('noCloseHover')) {
 			$('.graph-prices').removeClass('open');
 			$('#mainChart').css('width', 'calc(100% - 4px)');
 			$('.b-graph__controls').removeClass('shifted');
@@ -1916,6 +1916,22 @@ $(function () {
 	var dynamicGetValue;
 	var dynamicSendValue;
 
+	$('.exch-head__btn').hover(function () {
+		$('.graph-prices').addClass('open noCloseHover');
+		$('#mainChart').css('width', 'calc(100% - 4px)');
+		$('.b-graph__controls').addClass('shifted');
+		$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
+		redrawMainChart();
+	},function () {
+		if (!$('.graph-prices').hasClass('noClose')){
+			$('.graph-prices').removeClass('open noCloseHover');
+			$('#mainChart').css('width', 'calc(100% - 4px)');
+			$('.b-graph__controls').removeClass('shifted');
+			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
+			redrawMainChart();
+		}
+	});
+
 	// convert/go buttons
 	$('.exch-head__btn, .exch-form__submit').click(function (e) {
 		e.preventDefault();
@@ -2129,22 +2145,12 @@ $(function () {
 
 			$('.graph-prices__item').removeClass('active');
 			$('.graph-prices').addClass('open noClose');
-			$('#mainChart').css('width', 'calc(100% - 4px)');
-			$('.b-graph__controls').addClass('shifted');
-			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
-
-
 			$('.graph-prices__sort').html('1' + getCurrency + ' ≈ ');
 			$('.graph-prices__price.send-prices__rate').removeClass('hidden')
 			$('.graph-prices__price.get-prices__rate').addClass('hidden')
-
 			redrawMainChart();
-
 			updateExchangeValues();
 
-			//updateWalletData();
-			//drawCircleChart();
-			//$('.user-portfolio-close').addClass('hidden');
 		}
 	});
 
@@ -2602,11 +2608,13 @@ $(function () {
 	/* Tippy Tooltip */
 	/*---------------------------------------------------*/
 
-	tippy('.tippy-convert', {
+	tippy('.tippy-convert, .exch-form__close, .tippy-done', {
 		html: '#ttpConvert', // DIRECT ELEMENT option
 		arrow: true,
 		animation: 'fade',
-		theme: 'bct'
+		theme: 'bct',
+		placement: 'left',
+		zIndex: 900000
 	})
 
 	tippy('.tippy-convert-advanced', {
