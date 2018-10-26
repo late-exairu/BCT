@@ -1,8 +1,8 @@
 const numberWithCommas = (x) => {
-    if (x)
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    // if (x)
+    //     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return Number(x).toLocaleString('en-US', { style: 'decimal', maximumFractionDigits : 8, minimumFractionDigits : 0 });
 }
-
 var read = new XMLHttpRequest();
 read.open('GET', 'coins_list_by_mkCap.txt', false);
 read.send();
