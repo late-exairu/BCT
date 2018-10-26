@@ -781,27 +781,6 @@
 	}
 }
 
-#orders {
-	//display: none;
-
-	.forms-wrap {
-		display: none;
-
-		&.current {
-			display: flex;
-		}
-	}
-	.forms-wrap:nth-child(3) .order-form {
-		padding-top: 2px;
-		&__line {
-			margin: 3px 0 4px 0;
-		}
-		.cubic-slider {
-			margin-top: 5px;
-		}
-	}
-}
-
 /*#telegramMenu{
 	top: 0;
 	width: 350px;

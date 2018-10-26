@@ -130,9 +130,9 @@
 
 	&__left-bottom{
 		display: flex;
-		flex: 0 0 219px;
+		flex: 0 0 239px;
 		flex-direction: column;
-		min-height: 219px;
+		min-height: 239px;
 	}
 
 	&__right{
@@ -155,9 +155,9 @@
 
 	&__right-bottom{
 		display: flex;
-		flex: 0 0 219px;
+		flex: 0 0 239px;
 		flex-direction: column;
-		min-height: 219px;
+		min-height: 239px;
 	}
 
 	&.advanced{
@@ -173,16 +173,16 @@
 		
 		&__left-bottom,
 		&__right-bottom{
-			flex: 0 0 219px;
-			min-height: 219px;
+			flex: 0 0 239px;
+			min-height: 239px;
 		}
 
 		&.advanced{
 
 			.main-cols__left-bottom,
 			.main-cols__right-bottom{
-				flex: 0 0 219px;
-				min-height: 219px;
+				flex: 0 0 239px;
+				min-height: 239px;
 			}
 		}
 	}

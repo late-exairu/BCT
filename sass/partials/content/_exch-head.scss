@@ -5,7 +5,7 @@
 
 
 .exch-head{
-	--exch-head-height: 53px;
+	--exch-head-height: 58px;
 	--color-one: var(--clr-separatorD);
 	--color-two: var(--clr-separatorD);
 	--color-one: #ee9100;
@@ -30,7 +30,7 @@
 		display: flex;
 		flex: 1 1;
 		padding: 0;
-		height: 55px;
+		height: 60px;
 		/*background: var(--color-one);*/
 		padding: 0;
 	}
@@ -138,13 +138,13 @@
 		&:after{
 			content: "";
 			position: absolute;
-			top: 49%;
+			top: 50%;
 			right: -6px;
 			bottom: 0;
 			width: 10px;
 			background: #000;
-			width: 28px;
-			height: 28px;
+			width: 32px;
+			height: 34px;
 			/*transition: all 0.1s;*/
 			border-radius: 5px 3px 5px;
 			transform: rotate(45deg) skew(20deg,20deg) translateY(-50%);
