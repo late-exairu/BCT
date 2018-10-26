@@ -8290,9 +8290,11 @@ h6 {
     height: 11px;
     margin: 0 0 0 4px; }
   .graph-prices__scroll {
-    width: 182px;
+    width: 184px;
     margin: 0;
     padding-left: 10px; }
+  .graph-prices__scroll.fixed {
+    background: var(--clr-back-new); }
   .graph-prices__scrollup {
     font-size: 9px;
     color: var(--clr-backCI);

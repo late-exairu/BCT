@@ -1525,8 +1525,8 @@ $(function () {
 		// bad copy of progress bar
 		if (progressBarsCounter > 0) {
 			for (var i = 0; i < progressBarsCounter; i++) {
-				$('.graph-prices__item').eq(i).find('.progressbar').remove();
-				$('.graph-prices__item').eq(i).append($(progressbar_current).clone().removeClass('hidden'));
+				$('.graph-prices__scroll.fixed .graph-prices__item').eq(i).find('.progressbar').remove();
+				$('.graph-prices__scroll.fixed .graph-prices__item').eq(i).append($(progressbar_current).clone().removeClass('hidden'));
 			}
 		}
 
@@ -2213,6 +2213,8 @@ $(function () {
 		$('.exch-form__submit').attr("disabled", true);
 		$(".graph-prices__scroll.fixed .graph-prices__list").html('');
 		$(".graph-prices__scroll.scroll-wrapper .graph-prices__list .graph-prices__item").show();
+		progressbar_current.addClass('hidden');
+		progressbar_current.progressbar("value", 0);
 		updateRecent();
 
 		$('.exch-form__send .exch-form__label').text('Exchanged');
@@ -2605,13 +2607,6 @@ $(function () {
 		theme: 'bct'
 	})
 
-	// tippy('.tippy-done', {
-	// 	html: '#ttpDone', // DIRECT ELEMENT option
-	// 	arrow: true,
-	// 	animation: 'fade',
-	// 	theme: 'bct'
-	// })
-
 	tippy('.tippy-convert-advanced', {
 		html: '#ttpConvert', // DIRECT ELEMENT option
 		arrow: true,
@@ -2952,8 +2947,6 @@ $(function () {
 	/* main graph range slider for Orders */
 	var $mainGraphRange = $(".graph-range-slider__control");
 	$mainGraphRange.on('input', function () {
-		// $( this ).css( 'background', 'linear-gradient(to right, var(--clr-time-bar) 0%, var(--clr-time-bar) '+this.value*25 +'%, var(--clr-time-line) ' + this.value*25 + '%, var(--clr-time-line) 100%)' );
-
 		var index = parseInt(this.value);
 		var interval = range_options[index].interval;
 		var gData;
@@ -3076,12 +3069,6 @@ $(function () {
 		else {
 			decimal_digits = 6 - num_length;
 		}
-		// if (priceRateBackward > 1) {
-		// 	priceRateBackward = priceRateBackward.toFixed(2);
-		// 	priceRateBackward = numberWithCommas(priceRateBackward);
-		// } else {
-		// 	priceRateBackward = priceRateBackward.toFixed(5);
-		// }
 
 		$('.graph-prices__price.get-prices__rate').each(function (index, priceItem) {
 			$(this).removeClass('hidden');
@@ -3123,21 +3110,6 @@ $(function () {
 			$('.graph-prices__price.send-prices__rate').toggleClass('hidden')
 			$('.graph-prices__price.get-prices__rate').toggleClass('hidden')
 		}
-
-		// // sort items
-		// var list = $('.graph-prices__list');
-		// var items = list.children();
-
-		// var order = $(this).hasClass('asc');
-		// items.sort(function(a, b){
-		// 	var priceA = $(a).find('.graph-prices__price').clone().children().remove().end().text().trim();			
-		// 	var priceB = $(b).find('.graph-prices__price').clone().children().remove().end().text().trim();
-		// 	return order ? (parseFloat(priceA) - parseFloat(priceB)) : (parseFloat(priceB) - parseFloat(priceA));
-		// });
-		// list.append(items);
-
-		// // update progressbar array
-		// updateProgressBar();
 
 		e.preventDefault();
 	});

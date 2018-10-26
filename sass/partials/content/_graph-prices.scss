@@ -212,9 +212,13 @@
 	}
 
 	&__scroll {
-		width: 182px;
+		width: 184px;
 		margin: 0;
 		padding-left: 10px;
+	}
+
+	&__scroll.fixed {
+		background: var(--clr-back-new);
 	}
 
 	&__scrollup {
