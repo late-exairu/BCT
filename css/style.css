@@ -8028,12 +8028,12 @@ h6 {
     position: relative;
     padding: 0 8px;
     margin: 0 0 0 1px;
-    border-left: 1px solid var(--clr-lineP); }
+    border-left: 1px solid var(--clr-separator); }
     .graph-info__item:first-child {
       padding-left: 0;
       border: none; }
     .graph-info__item:nth-child(3) {
-      border-right: 1px solid var(--clr-lineP); }
+      border-right: 1px solid var(--clr-separator); }
     .graph-info__item.inline {
       display: flex; }
       .graph-info__item.inline .gbar-info__nums {
@@ -8054,8 +8054,8 @@ h6 {
     min-width: 46px;
     padding: 0;
     margin: 0; }
-    .graph-info__title span.vol {
-      color: var(--clr-backCI); }
+    .graph-info__title span {
+      color: var(--clr-iconD); }
   .graph-info__nums {
     font-size: 12px;
     line-height: 1;

@@ -511,8 +511,7 @@ $(function () {
 		} else {
 			priceRateBackward = priceRateBackward.toFixed(5);
 		}
-		$('.graph-info__title').first().find('span:first').html('1 ' + sendCurrency);
-		$('.graph-info__title').first().find('span:last').html(' ' + priceRateBackward + ' ' + getCurrency);
+		$('.graph-info__title').first().html(`1 <span> ` + sendCurrency + ` </span> ≈ <span> ` + priceRateBackward + ` </span> ` + getCurrency);
 
 		// change the median price
 		$('.median-price').html(priceRateBackward + ' <span>' + getCurrency + '</span>');

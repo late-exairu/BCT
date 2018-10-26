@@ -29,14 +29,14 @@
 		position: relative;
 		padding: 0 8px;
 		margin: 0 0 0 1px;
-		border-left: 1px solid var(--clr-lineP);
+		border-left: 1px solid var(--clr-separator);
 
 		&:first-child{
 			padding-left: 0;
 			border: none;
 		}
 		&:nth-child(3) {
-			border-right: 1px solid var(--clr-lineP);
+			border-right: 1px solid var(--clr-separator);
 		}
 
 		&.inline{
@@ -68,8 +68,8 @@
 		min-width: 46px;
 		padding: 0;
 		margin: 0;
-		span.vol {
-			color: var(--clr-backCI);
+		span {
+			color: var(--clr-iconD);
 		}
 	}
 	
