@@ -9321,7 +9321,8 @@ Blocks from left bar
     display: flex;
     flex: 0 0 33%;
     flex-direction: column;
-    min-height: 0; }
+    min-height: 0;
+    overflow: hidden; }
     .main-cols__left.col-chats {
       /*width: 33%;
 			flex: 0 0 33%;
