@@ -683,46 +683,68 @@ $(function () {
 		redrawMainChart();
 	});
 
-	$('.b-graph .c-block').mousemove(function (e) {
-		var x = e.pageX - $('.b-graph').offset().left;
-		if ($('.b-graph').width() - x < 10) {
-			if (!$('.graph-prices').hasClass('open')) {
-				$('.graph-prices').addClass('open');
-				$('#mainChart').css('width', 'calc(100% + 6px)');
-				$('.b-graph__controls').addClass('shifted');
-				$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
-				redrawMainChart();
-			}
-		} else {
-			if ($('.b-graph').width() - x > 300) {
-				if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
-					$('.graph-prices').removeClass('open');
-					$('#mainChart').css('width', 'calc(100% - 4px)');
-					$('.b-graph__controls').removeClass('shifted');
-					$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
-					redrawMainChart();
-					// reset prices scroll
-					$('.scrollbar-arrows').scrollTop(0);
-				}
-			}
-		}
-	});
-
-
-	$('body').mousemove(function (e) {
-		if ((e.pageY < $('.b-graph').offset().top || e.pageY > $('.b-graph').offset().top + $('.b-graph').height()) && !$('.graph-prices').hasClass('noClose')) {
-			$('.graph-prices').removeClass('open');
-			$('#mainChart').css('width', 'calc(100% - 4px)');
-			$('.b-graph__controls').removeClass('shifted');
-			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
-			redrawMainChart();
-		} else if (e.pageX > $('.b-graph').offset().left + $('.b-graph').width() && !$('.graph-prices').hasClass('noClose') && !$('.graph-prices').hasClass('open')) {
+	$('.exch-head__btn').mouseover(function () {
+		if (!$('.graph-prices').hasClass('open')) {
 			$('.graph-prices').addClass('open');
 			$('#mainChart').css('width', 'calc(100% + 6px)');
 			$('.b-graph__controls').addClass('shifted');
 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
 			redrawMainChart();
 		}
+	});
+
+	// $('.b-graph .c-block').mousemove(function (e) {
+	// 	var x = e.pageX - $('.b-graph').offset().left;
+	// 	if ($('.b-graph').width() - x < 10) {
+	// 		if (!$('.graph-prices').hasClass('open')) {
+	// 			$('.graph-prices').addClass('open');
+	// 			$('#mainChart').css('width', 'calc(100% + 6px)');
+	// 			$('.b-graph__controls').addClass('shifted');
+	// 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
+	// 			redrawMainChart();
+	// 		}
+	// 	} else {
+	// 		if ($('.b-graph').width() - x > 300) {
+	// 			if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
+	// 				$('.graph-prices').removeClass('open');
+	// 				$('#mainChart').css('width', 'calc(100% - 4px)');
+	// 				$('.b-graph__controls').removeClass('shifted');
+	// 				$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
+	// 				redrawMainChart();
+	// 				// reset prices scroll
+	// 				$('.scrollbar-arrows').scrollTop(0);
+	// 			}
+	// 		}
+	// 	}
+	// });
+
+	$('body').mousemove(function (e) {
+		var x = e.pageX - $('.b-graph').offset().left;
+		if ($('.b-graph').width() - x > 220) {
+			if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
+				$('.graph-prices').removeClass('open');
+				$('#mainChart').css('width', 'calc(100% - 4px)');
+				$('.b-graph__controls').removeClass('shifted');
+				$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
+				redrawMainChart();
+				// reset prices scroll
+				$('.scrollbar-arrows').scrollTop(0);
+			}
+		}
+		if ((e.pageY > $('.b-graph').offset().top + $('.b-graph').height()) && !$('.graph-prices').hasClass('noClose')) {
+			$('.graph-prices').removeClass('open');
+			$('#mainChart').css('width', 'calc(100% - 4px)');
+			$('.b-graph__controls').removeClass('shifted');
+			$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
+			redrawMainChart();
+		} 
+		// else if (e.pageX > $('.b-graph').offset().left + $('.b-graph').width() && !$('.graph-prices').hasClass('noClose') && !$('.graph-prices').hasClass('open')) {
+		// 	$('.graph-prices').addClass('open');
+		// 	$('#mainChart').css('width', 'calc(100% + 6px)');
+		// 	$('.b-graph__controls').addClass('shifted');
+		// 	$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
+		// 	redrawMainChart();
+		// }
 	});
 
 	/*---------------------------------------------------*/
