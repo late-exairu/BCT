@@ -14911,6 +14911,8 @@ button:-moz-focusring {
   display: flex;
   height: 100%;
   /*border-bottom: 1px solid var(--clr-separator);*/ }
+  .circleDiagramParent .scrollbar-right .scroll-element .scroll-bar {
+    opacity: 1; }
 
 #portfolioChartText {
   pointer-events: none;
