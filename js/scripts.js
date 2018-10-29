@@ -1734,6 +1734,17 @@ $(function () {
 		$.fancybox.close();
 	});
 
+	$('.send-form__input').keyup(function () {
+		var currency = $('.send-form__dropdown__title span').eq(0).text().trim();
+		var value = +$(this).val().replace(/,/g, '');
+		if (value < 0){
+			$(this).val(0);
+		}
+		if (value > ownWallet[currency]){
+			$(this).val(numberWithCommas(ownWallet[currency]));
+		}
+	});
+
 	$('[send-fancybox]').click(function (e) {
 		//e.stopPropagation();
 		closeTelegramMenu();
@@ -2310,7 +2321,7 @@ $(function () {
 		$(this).val(newValue);
 	});
 
-	$('.exch-form input.exch-form__input').keydown(function (e) {
+	$('.exch-form input.exch-form__input , .send-form__input').keydown(function (e) {
 		var key = e.charCode || e.keyCode || 0;
 		// allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
 		// home, end, period, and numpad decimal
