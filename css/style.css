@@ -11500,7 +11500,7 @@ body.compensate-for-scrollbar {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   width: 100%;
-  z-index: 99992; }
+  z-index: 100010; }
 
 .fancybox-container * {
   box-sizing: border-box; }
@@ -15836,7 +15836,8 @@ body.advanced .fancybox-bg {
   padding: 0;
   border-radius: 50%;
   background: var(--clr-accent);
-  color: #fff; }
+  color: #fff;
+  z-index: 10000; }
   .fancybox-close-small svg {
     margin: -3px 0 0 -3px;
     width: 26px;
