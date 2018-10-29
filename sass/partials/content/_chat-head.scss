@@ -4,7 +4,7 @@
 /* =================================================================== */
 
 
-.chat-head{
+.chat-head {
 	position: relative;
 	display: flex;
 	padding: 4px 10px 4px 12px;
@@ -13,10 +13,9 @@
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
 	background: var(--clr-back);
 
-	&__back{
+	&__back {
 		position: absolute;
 		display: flex;
-		width: 40px;
 		align-content: center;
 		justify-content: center;
 		height: 40px;
@@ -26,23 +25,26 @@
 		cursor: pointer;
 		border: none;
 		background: transparent;
+		color: var(--clr-text);
+		font-weight: 600;
 
 		.sprite-icon{
 			position: relative;
-			width: 24px;
-			height: 23px;
+			width: 20px;
+			height: 15px;
 			margin: 0 0 0 -4px;
-			fill: var(--clr-accentD);
+			fill: var(--clr-text);
 		}
 
 		&:hover{
-			.sprite-icon{
+			color: var(--clr-accent);
+			.sprite-icon {
 				fill: var(--clr-accent);
 			}
 		}
 	}
 
-	&__menu{
+	&__menu {
 		width: 27px;
 		height: 20px;
 		margin: auto 20px auto 0;
