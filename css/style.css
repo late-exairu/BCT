@@ -9052,7 +9052,7 @@ Blocks from left bar
   padding: 2px 0;
   background: var(--clr-block);
   z-index: 10;
-  z-index: 100003;
+  z-index: 100005;
   transform: translateX(-40px);
   transition: 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   /*border: 1px solid var(--clr-separator);*/ }
@@ -15136,7 +15136,7 @@ button:-moz-focusring {
   flex: 1 0 auto;
   height: 100%;
   display: flex;
-  z-index: 100001;
+  z-index: 100003;
   outline: none;
   position: absolute;
   overflow-y: auto;
