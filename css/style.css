@@ -13074,10 +13074,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     flex: 1 0 60%; }
   .order-form__input-wrap.market-price {
     height: 22px;
-    border: 1px solid var(--clr-iconD);
+    border: 1px solid var(--clr-separatorD);
     font-size: 11px;
     width: 100%;
-    color: var(--clr-iconD);
+    color: var(--clr-separatorD);
     text-align: center;
     display: block; }
     .order-form__input-wrap.market-price span {
