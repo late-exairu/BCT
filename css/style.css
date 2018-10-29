@@ -1413,7 +1413,6 @@ h6 {
   .chat-head__back {
     position: absolute;
     display: flex;
-    width: 40px;
     align-content: center;
     justify-content: center;
     height: 40px;
@@ -1422,15 +1421,19 @@ h6 {
     border-radius: 50%;
     cursor: pointer;
     border: none;
-    background: transparent; }
+    background: transparent;
+    color: var(--clr-text);
+    font-weight: 600; }
     .chat-head__back .sprite-icon {
       position: relative;
-      width: 24px;
-      height: 23px;
+      width: 20px;
+      height: 15px;
       margin: 0 0 0 -4px;
-      fill: var(--clr-accentD); }
-    .chat-head__back:hover .sprite-icon {
-      fill: var(--clr-accent); }
+      fill: var(--clr-text); }
+    .chat-head__back:hover {
+      color: var(--clr-accent); }
+      .chat-head__back:hover .sprite-icon {
+        fill: var(--clr-accent); }
   .chat-head__menu {
     width: 27px;
     height: 20px;
