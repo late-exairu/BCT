@@ -86,23 +86,23 @@
 		}
 	}
 
-	&.to-left{
-		left: -20px;
-		right: auto;
-		transform: translate(0, 0);
+	// &.to-left{
+	// 	left: -20px;
+	// 	right: auto;
+	// 	transform: translate(0, 0);
 
-		&:before{
-			left: auto;
-			right: 30px;
-			transform: translateX(0);
-		}
+	// 	&:before{
+	// 		left: auto;
+	// 		right: 30px;
+	// 		transform: translateX(0);
+	// 	}
 
-		&:after{
-			left: auto;
-			right: 31px;
-			transform: translateX(0);
-		}
-	}
+	// 	&:after{
+	// 		left: auto;
+	// 		right: 31px;
+	// 		transform: translateX(0);
+	// 	}
+	// }
 
 	&.to-top{
 		top: auto;

@@ -101,7 +101,29 @@ body.advanced .fancybox-bg{
 		margin-left: 5px;
 		margin-top: 2px;
 	}
-
+	.menu-dropdown {
+		left: 40px;
+		top: 100%;
+		border: 0;
+		&__item {
+			background: #141824;
+			height: 30px !important;
+			border-radius: 0;
+			&:hover{
+				background: #1A2940;
+			}
+			&:first-child {
+				border-radius: 0;
+				border: 0;
+			}
+			&.active {
+				display: block !important;
+			}
+		}
+		&__btn {
+			padding: 5px 12px;
+		}
+	}
 	// &:hover{
 	// 	background: var(--clr-block);
 	// }

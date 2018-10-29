@@ -9490,18 +9490,6 @@ Blocks from left bar
       left: auto;
       right: 31px;
       transform: translateX(0); }
-  .menu-dropdown.to-left {
-    left: -20px;
-    right: auto;
-    transform: translate(0, 0); }
-    .menu-dropdown.to-left:before {
-      left: auto;
-      right: 30px;
-      transform: translateX(0); }
-    .menu-dropdown.to-left:after {
-      left: auto;
-      right: 31px;
-      transform: translateX(0); }
   .menu-dropdown.to-top {
     top: auto;
     bottom: calc(100% + 10px);
@@ -15888,6 +15876,23 @@ body.advanced .fancybox-bg {
     fill: var(--clr-text);
     margin-left: 5px;
     margin-top: 2px; }
+  .portfolio-drop .menu-dropdown {
+    left: 40px;
+    top: 100%;
+    border: 0; }
+    .portfolio-drop .menu-dropdown__item {
+      background: #141824;
+      height: 30px !important;
+      border-radius: 0; }
+      .portfolio-drop .menu-dropdown__item:hover {
+        background: #1A2940; }
+      .portfolio-drop .menu-dropdown__item:first-child {
+        border-radius: 0;
+        border: 0; }
+      .portfolio-drop .menu-dropdown__item.active {
+        display: block !important; }
+    .portfolio-drop .menu-dropdown__btn {
+      padding: 5px 12px; }
   @media (min-height: 900px) {
     .portfolio-drop {
       left: 20px; } }
