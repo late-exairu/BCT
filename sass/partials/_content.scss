@@ -112,7 +112,7 @@ body.advanced .fancybox-bg{
 			&:hover{
 				background:  var(--clr-back);
 			}
-			&:first-child {
+			&:first-child, &:last-child {
 				border-radius: 0;
 				border: 0;
 			}
@@ -265,12 +265,13 @@ body.advanced .fancybox-bg{
 		background: #141824;
 		height: 26px !important;
 		border-radius: 0;
+		border: 0;
+		border-bottom: 1px solid var(--clr-separator);
 		&:hover{
 			background:  var(--clr-back);
 		}
-		&:first-child {
+		&:first-child, &:last-child {
 			border-radius: 0;
-			border: 0;
 		}
 	}
 	&__btn {
