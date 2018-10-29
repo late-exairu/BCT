@@ -51,7 +51,7 @@ function drawCircleChart(e,noAnimation) {
         if (eachPercent[key] > 0) circleChartArr.push(tempArr);
 
         circleChartTooltipData[currencyName] = {
-            price: '$' + eachBalance[key]
+            price: eachBalance[key]
         }
         circleChartColors.push(currencyColor);
     }
@@ -116,7 +116,7 @@ function drawCircleChart(e,noAnimation) {
 
                 return '<div class="tooltipCircle">' + svgString[0].outerHTML +
                     '<div class="currency">' + currency + '</div>' +
-                    '<div class="price"><span>' + numberWithCommas(circleChartTooltipData[currency]['price']) + '</span></div>' +
+                    '<div class="price"><span>$' + numberWithCommas(circleChartTooltipData[currency]['price']) + '</span></div>' +
                     '</div>';
             }
         },
