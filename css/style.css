@@ -15885,7 +15885,7 @@ body.advanced .fancybox-bg {
       height: 30px !important;
       border-radius: 0; }
       .portfolio-drop .menu-dropdown__item:hover {
-        background: #1A2940; }
+        background: var(--clr-back); }
       .portfolio-drop .menu-dropdown__item:first-child {
         border-radius: 0;
         border: 0; }
@@ -15977,8 +15977,23 @@ body.advanced .fancybox-bg {
     margin: 0; }
 
 .global-history-drop .menu-dropdown {
-  top: calc(85%);
-  left: 21%; }
+  left: 28px;
+  top: 80%;
+  min-width: 54px;
+  border: 0; }
+  .global-history-drop .menu-dropdown__item {
+    background: #141824;
+    height: 26px !important;
+    border-radius: 0; }
+    .global-history-drop .menu-dropdown__item:hover {
+      background: var(--clr-back); }
+    .global-history-drop .menu-dropdown__item:first-child {
+      border-radius: 0;
+      border: 0; }
+  .global-history-drop .menu-dropdown__btn {
+    padding: 5px 10px;
+    font-size: var(--font-size);
+    font-weight: 700; }
 
 /* =================================================================== */
 /* Globals
