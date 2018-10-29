@@ -15889,9 +15889,11 @@ body.advanced .fancybox-bg {
       border-radius: 0; }
       .portfolio-drop .menu-dropdown__item:hover {
         background: var(--clr-back); }
-      .portfolio-drop .menu-dropdown__item:first-child, .portfolio-drop .menu-dropdown__item:last-child {
+      .portfolio-drop .menu-dropdown__item:first-child {
         border-radius: 0;
         border: 0; }
+      .portfolio-drop .menu-dropdown__item:last-child {
+        border-radius: 0; }
       .portfolio-drop .menu-dropdown__item.active {
         display: block !important; }
     .portfolio-drop .menu-dropdown__btn {
