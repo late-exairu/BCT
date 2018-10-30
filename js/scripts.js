@@ -937,22 +937,22 @@ $(function () {
 
 	$('.basic-table').on('click', '.basic-table__row:not(.head)', function () {
 
-		// if ($(this).parent().find('.transaction-popup')) return;
-		$(this).parent().find('.basic-table__row').removeClass('active');
-		$(this).addClass('active');
-
 		var price = $(this)[0].children[0].innerText;
 		price = price.replace(/,/g, '');
 		var amount = $(this)[0].children[1].innerText;
 
 		// show order form
 		if ($(this).parents('#orderBook').length) {
+			$('#orderBook .basic-table__row').removeClass('active');
 			$('#orders').css('display', 'flex');
 			$('.btn-table-toggle').addClass('open');
 			calculateHeightOfFirstTable();
 			$('#orders .forms-wrap .order-form__input.amount').val(amount);
 			$('#orders .forms-wrap .order-form__input.price').val(price);
 		}
+
+		$(this).parent().find('.basic-table__row').removeClass('active');
+		$(this).addClass('active');
 
 		if ($(this).parents('#panel-funds-history').length) {
 			$('.graph-prices').addClass('open');
