@@ -1125,9 +1125,9 @@
 		border: none;
 
 		.sprite-icon{
-			width: 10px;
-			height: 10px;
-			fill: var(--clr-text);
+			width: 24px;
+			height: 24px;
+			fill: var(--clr-block);
 			transition: all .1s;
 
 			&.copy{
@@ -1141,7 +1141,7 @@
 				fill: #6BBE45;
 			}
 			&.check-deposit-address{
-				fill: var(--clr-accentD);
+				fill: var(--clr-accent);
 				border: 2px solid var(--clr-block);
 				border-radius: 50%;
 				width: 24px;
@@ -1149,6 +1149,11 @@
 				padding: 3px;
 				padding-top: 5px;
 			}
+		}
+		&.popup-nav-button .sprite-icon { 
+			width: 22px;
+			height: 22px;
+			margin-left: 2px;
 		}
 
 		&.copied{
