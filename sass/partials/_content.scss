@@ -45,6 +45,7 @@ body.advanced .fancybox-bg{
 	border-radius: 50%;
 	background: var(--clr-accent);
 	color: #fff;
+    z-index: 10000;
 
 	svg{
 		margin: -3px 0 0 -3px;

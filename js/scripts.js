@@ -28,14 +28,12 @@ $(function () {
 
 			if (document.querySelector('.chats-search')){
 				document.querySelector('.chats-search').classList.remove('hidden');
-				//document.querySelector('.chats-search button').classList.remove('hidden');
 			}
 
 			if (document.querySelector('.chats-list'))
 				document.querySelector('.chats-list').classList.remove('hidden');
 
 			if (document.querySelector('.chat-head__back')) {
-				//document.querySelector('.chat-head__back').classList.remove('hidden');
 				document.querySelector('.chat-head__desc').classList.remove('hidden');
 				document.querySelector('.chat-head__btns').classList.remove('hidden');
 			}
@@ -48,12 +46,10 @@ $(function () {
 
 			if (localStorage.getItem('telegramPhoto')) {
 				if (document.querySelector('.message-bar__user-pic .user-pic__avatar')) {
-					//document.querySelector('.user-portfolio .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
 					document.querySelector('.message-bar__user-pic .user-pic__avatar').setAttribute('src', localStorage.getItem('telegramPhoto'));
 				}
 			} else {
 				if (document.querySelector('.message-bar__user-pic')) {
-					//document.querySelector('.user-portfolio .user-pic__avatar').classList.add('hidden');
 					document.querySelector('.message-bar__user-pic .user-pic__avatar').classList.add('hidden');
 					var avatarAbbr = document.createElement('div');
 					avatarAbbr.classList.add('user-pic__avatar');
@@ -64,9 +60,6 @@ $(function () {
 					document.querySelector('.message-bar__user-pic').appendChild(avatarAbbr);
 				}
 			}
-
-			// if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName') && document.querySelector('.user-portfolio .user-portfolio__name'))
-			// 	document.querySelector('.user-portfolio .user-portfolio__name').textContent = localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName');
 
 			if (localStorage.getItem('telegramFirstName') && localStorage.getItem('telegramLastName')) {
 				$('button[title="USERNAME"]').attr('title', localStorage.getItem('telegramFirstName') + ' ' + localStorage.getItem('telegramLastName'));
@@ -446,7 +439,6 @@ $(function () {
 			$('.chat-head__name').text(telegramGroupName);
 			$('.exch-form__send > input').attr('data-currency', currencyAbbr);
 			$('.exch-form__send .exch-form__curr').html(`<p>` + currencyAbbr + `<span><br>YOU HAVE</span></p>`);
-			//$('.chat-head__name').css('color', firstColor);
 
 			// change currency in Orders Form
 			$('.order-form__submit.btn-green').html('BUY ' + currencyAbbr);
@@ -500,7 +492,6 @@ $(function () {
 		}
 		if (param != 'noRedraw')
 			updateMainChart(exchange, sendCurrency, getCurrency);
-		//updateMainChartSplineNew(exchange, sendCurrency, getCurrency);
 
 		var priceRate = currenciesPrice[getCurrency] / currenciesPrice[sendCurrency];
 
@@ -1237,75 +1228,6 @@ $(function () {
 		}
 	}
 
-
-	// function updateMainChartSplineNew(exchange, sendCurrency, getCurrency) {
-	// 	$.ajax({
-	// 		url: `https://min-api.cryptocompare.com/data/histoday?fsym=${sendCurrency}&tsym=${getCurrency}&limit=365`,
-	// 		success: function (data) {
-	// 			var grapArr = [];
-	// 			var columnArr = [];
-	// 			var fakeGraphs = [[], [], [], [], [], []];
-
-	// 			// create data for every hour
-	// 			data.Data.map(s => {
-	// 				var value = (s.open + s.close) / 2;
-
-	// 				var tempVarForFakeArrays = [0,0,0,0,0,0];
-
-	// 				for (var k = 0; k < 6; k++) {
-	// 					var randomPercent8 = (Math.random() * (0.92 - 1.08) + 1.08);
-	// 					var valueForFake = value * randomPercent8;
-	// 					tempVarForFakeArrays[k] = valueForFake;
-	// 				}
-
-	// 				for (var i = 0; i < 24; i++) {
-	// 					var randomPercent3 = (Math.random() * (0.97 - 1.03) + 1.03);
-	// 					var valueForAdd = value * randomPercent3;
-	// 					var previuosValue = grapArr[grapArr.length - 1];
-	// 					if (!previuosValue) {
-	// 						previuosValue = valueForAdd + (valueForAdd * randomPercent3);
-	// 					}
-	// 					var difference = valueForAdd - previuosValue;
-	// 					grapArr.push(valueForAdd);
-	// 					columnArr.push(difference);
-
-	// 					for (var l = 0; l < 6; l++) {
-	// 						randomPercent3 = (Math.random() * (0.97 - 1.03) + 1.03);
-	// 						var valueForAddFake = tempVarForFakeArrays[l] * randomPercent3;
-	// 						fakeGraphs[l].push(valueForAddFake);
-	// 					}
-	// 				}
-	// 			});
-
-	// 			if (!grapArr.length) {
-	// 				for (let i = 0; i < 366; i++) {
-	// 					grapArr.push(1);
-	// 				};
-	// 			};
-	// 			mainChartObj.series[0].setData(grapArr);
-
-	// 			for (var k = 0; k < 6; k++) {
-	// 				mainChartObj.series[k+1].setData(fakeGraphs[k]);
-	// 			}
-
-	// 			if ($('body').hasClass('advanced'))
-	// 				mainChartObj.series[7].setData(columnArr);
-	// 			mainChartObj.series[mainGraphHighlighted - 1].update({
-	// 				fillColor: {
-	// 					linearGradient: [0, 0, 0, $('#mainChart').height() - 50],
-	// 					stops: gradientColor
-	// 				},
-	// 				color: mainChartFirstColor,
-	// 				lineWidth: 3,
-	// 				enableMouseTracking: true,
-	// 				trackByArea: true,
-	// 				zIndex: 10
-	// 			});
-	// 			updateMainChartPercentChange();
-	// 		},
-	// 	});
-	// }
-
 	function updateMainChartPercentChange() {
 		var start = mainChartObj.series[0].processedYData[0];
 		var end = mainChartObj.series[0].processedYData[mainChartObj.series[0].processedYData.length - 1];
@@ -1732,6 +1654,17 @@ $(function () {
 
 	$('.js-fancybox-close').click(function () {
 		$.fancybox.close();
+	});
+
+	$('.send-form__input').keyup(function () {
+		var currency = $('.send-form__dropdown__title span').eq(0).text().trim();
+		var value = +$(this).val().replace(/,/g, '');
+		if (value < 0){
+			$(this).val(0);
+		}
+		if (value > ownWallet[currency]){
+			$(this).val(numberWithCommas(ownWallet[currency]));
+		}
 	});
 
 	$('[send-fancybox]').click(function (e) {
@@ -2310,7 +2243,7 @@ $(function () {
 		$(this).val(newValue);
 	});
 
-	$('.exch-form input.exch-form__input').keydown(function (e) {
+	$('.exch-form input.exch-form__input , .send-form__input').keydown(function (e) {
 		var key = e.charCode || e.keyCode || 0;
 		// allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
 		// home, end, period, and numpad decimal

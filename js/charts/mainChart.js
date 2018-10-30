@@ -47,9 +47,7 @@ var gDataTwoHour = new Array(),
 	gDataWeek = new Array(),
 	gDataMonth = new Array(),
 	gDataYear = new Array()
-
 // ======================
-
 
 function redrawMainChart() {
 	mainChartObj.reflow();
@@ -57,21 +55,10 @@ function redrawMainChart() {
 
 // var mainChartMarginLeft = 0;
 var mainChartSpacingTop = 90;
-var lineColor = '#00A9F7';
-var blueColor = '#00A9F7';
+var lineColor = '#01B067';
+var blueColor = '#01B067';
 var redColor = '#CE2424';
 var mainChartMarginLeft = 0;
-
-if ($('body').hasClass('advanced')) {
-	lineColor = '#01B067';
-	blueColor = '#01B067';
-	redColor = '#CE2424';
-	// mainChartMarginLeft = 50;
-
-	// if ($(window).height() > 900) {
-	// 	mainChartMarginLeft += 10;
-	// }
-}
 
 // color for highlight graphs on hover
 var gradientColor = [
@@ -144,7 +131,6 @@ var hightChartUpdateOptions = {
 					halo: {
 						opacity: 0
 					}
-
 				}
 			},
 
