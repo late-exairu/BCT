@@ -1982,6 +1982,7 @@ $(function () {
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 			$('.exch-form__submit').prop('disabled', false);
+			$('.graph-prices__scroll.fixed').css('display','block');
 
 			var send_svg = $('.exch-head__send .exch-dropdown__current > svg').clone();
 			var send_curr = $('.exch-head__send .exch-dropdown__current > p.exch-dropdown__title > span').text();

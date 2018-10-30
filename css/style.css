@@ -8297,7 +8297,8 @@ h6 {
     margin: 0;
     padding-left: 10px; }
   .graph-prices__scroll.fixed {
-    background: var(--clr-back-new); }
+    background: var(--clr-back-new);
+    display: none; }
   .graph-prices__scrollup {
     font-size: 9px;
     color: var(--clr-backCI);
