@@ -164,7 +164,7 @@
 .graph-range__current:after, .icon-trader.binance:after, .icon-trader.bitebtc:after, .icon-trader.bitfinex:after, .icon-trader.bitflyer:after, .icon-trader.bithumb:after, .icon-trader.bitstamp:after, .icon-trader.bittrex:after, .icon-trader.cexio:after, .icon-trader.coinbase:after, .icon-trader.coinone:after, .icon-trader.cryptopia:after, .icon-trader.exmo:after, .icon-trader.exx:after, .icon-trader.gateio:after, .icon-trader.gemini:after, .icon-trader.hitbtc:after, .icon-trader.houbi:after, .icon-trader.indodax:after, .icon-trader.itbit:after, .icon-trader.korbit:after, .icon-trader.kraken:after, .icon-trader.kucoin:after, .icon-trader.liqui:after, .icon-trader.livecoin:after, .icon-trader.localbitcoins:after, .icon-trader.poloniex:after, .icon-trader.quoine:after, .icon-trader.upbit:after, .icon-trader.vaultoro:after, .icon-trader.yobit:after {
   display: inline-block;
   background-image: url("../img/sprite.svg");
-  background-size: 1012.0625em 994.875em; }
+  background-size: 1015.5625em 998.5em; }
 
 /* =================================================================== */
 /* Functions
@@ -8806,131 +8806,131 @@ h6 {
   .icon-trader.binance:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -909.0625em -901.125em; }
+    background-position: -912.5625em -904.75em; }
   .icon-trader.bitebtc:after {
     width: 1.25em;
     height: 0.5875em;
-    background-position: -913.5em -906.0625em; }
+    background-position: -917em -909.6875em; }
   .icon-trader.bitfinex:after {
     width: 1.25em;
     height: 1.2125em;
-    background-position: -916em -907.9375em; }
+    background-position: -919.5em -911.5625em; }
   .icon-trader.bitflyer:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -917.25em -909.1875em; }
+    background-position: -920.75em -912.8125em; }
   .icon-trader.bitflyer:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -917.25em -909.1875em; }
+    background-position: -920.75em -912.8125em; }
   .icon-trader.bithumb:after {
     width: 0.95em;
     height: 1.25em;
-    background-position: -918.5em -910.4375em; }
+    background-position: -922em -914.0625em; }
   .icon-trader.bitstamp:after {
     width: 0.81875em;
     height: 1.25em;
-    background-position: -923.0625em -915.3125em; }
+    background-position: -926.5625em -918.9375em; }
   .icon-trader.bittrex:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -923.9375em -916.5625em; }
+    background-position: -927.4375em -920.1875em; }
   .icon-trader.cexio:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -937.0625em -926.0625em; }
+    background-position: -940.5625em -929.6875em; }
   .icon-trader.coinbase:after {
     width: 0.56875em;
     height: 1.1875em;
-    background-position: -938.3125em -927.3125em; }
+    background-position: -941.8125em -930.9375em; }
   .icon-trader.coinone:after {
     width: 1.1625em;
     height: 1.1875em;
-    background-position: -944.375em -933.9375em; }
+    background-position: -947.875em -937.5625em; }
   .icon-trader.coinone:after {
     width: 1.1625em;
     height: 1.1875em;
-    background-position: -944.375em -933.9375em; }
+    background-position: -947.875em -937.5625em; }
   .icon-trader.cryptopia:after {
     width: 1.25em;
     height: 1.2375em;
-    background-position: -950.4375em -940.125em; }
+    background-position: -953.9375em -943.75em; }
   .icon-trader.exmo:after {
     width: 1.25em;
     height: 0.525em;
-    background-position: -953.9375em -943em; }
+    background-position: -957.4375em -946.625em; }
   .icon-trader.exx:after {
     width: 1.25em;
     height: 0.56875em;
-    background-position: -955.1875em -943.5625em; }
+    background-position: -958.6875em -947.1875em; }
   .icon-trader.gateio:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -958.9375em -946.6875em; }
+    background-position: -962.4375em -950.3125em; }
   .icon-trader.gemini:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -960.1875em -947.9375em; }
+    background-position: -963.6875em -951.5625em; }
   .icon-trader.hitbtc:after {
     width: 1.25em;
     height: 1.16875em;
-    background-position: -962.6875em -950.4375em; }
+    background-position: -966.1875em -954.0625em; }
   .icon-trader.houbi:after {
     width: 0.8125em;
     height: 1.25em;
-    background-position: -963.9375em -951.625em; }
+    background-position: -967.4375em -955.25em; }
   .icon-trader.indodax:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -967.25em -954.75em; }
+    background-position: -970.75em -958.375em; }
   .icon-trader.itbit:after {
     width: 0.875em;
     height: 1.25em;
-    background-position: -968.5em -956em; }
+    background-position: -972em -959.625em; }
   .icon-trader.korbit:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -969.375em -957.25em; }
+    background-position: -972.875em -960.875em; }
   .icon-trader.kraken:after {
     width: 1.25em;
     height: 0.98125em;
-    background-position: -970.625em -958.5em; }
+    background-position: -974.125em -962.125em; }
   .icon-trader.kucoin:after {
     width: 1.15em;
     height: 1.25em;
-    background-position: -971.875em -959.5em; }
+    background-position: -975.375em -963.125em; }
   .icon-trader.liqui:after {
     width: 1.25em;
     height: 1.16875em;
-    background-position: -974.3125em -962em; }
+    background-position: -977.8125em -965.625em; }
   .icon-trader.livecoin:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -975.5625em -963.1875em; }
+    background-position: -979.0625em -966.8125em; }
   .icon-trader.localbitcoins:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -976.8125em -964.4375em; }
+    background-position: -980.3125em -968.0625em; }
   .icon-trader.poloniex:after {
     width: 1.25em;
     height: 0.875em;
-    background-position: -982.9375em -970.125em; }
+    background-position: -986.4375em -973.75em; }
   .icon-trader.quoine:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -985.4375em -972.25em; }
+    background-position: -988.9375em -975.875em; }
   .icon-trader.upbit:after {
     width: 1.25em;
     height: 0.55625em;
-    background-position: -992.9375em -978.9375em; }
+    background-position: -996.4375em -982.5625em; }
   .icon-trader.vaultoro:after {
     width: 1.25em;
     height: 1.25em;
-    background-position: -994.1875em -979.5em; }
+    background-position: -997.6875em -983.125em; }
   .icon-trader.yobit:after {
     width: 1.25em;
     height: 0.8125em;
-    background-position: -997.9375em -982.4375em; }
+    background-position: -1001.4375em -986.0625em; }
 
 /* =================================================================== */
 /* labeled-dropdown
@@ -13848,9 +13848,10 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     border-left: 1px solid var(--clr-separatorD);
     border: none; }
     .transaction-form__button .sprite-icon {
-      width: 10px;
-      height: 10px;
-      fill: var(--clr-text);
+      width: 25px;
+      height: 25px;
+      fill: var(--clr-block);
+      margin: 2px 0 0 2px;
       transition: all .1s; }
       .transaction-form__button .sprite-icon.copy {
         display: block; }
@@ -13867,6 +13868,9 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
         height: 24px;
         padding: 3px;
         padding-top: 5px; }
+    .transaction-form__button.popup-nav-button .sprite-icon {
+      width: 23px;
+      height: 23px; }
     .transaction-form__button.copied .sprite-icon.copy {
       display: none; }
     .transaction-form__button.copied .sprite-icon.copied {
