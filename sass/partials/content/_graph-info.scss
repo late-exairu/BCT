@@ -82,6 +82,7 @@
 	}
 	
 	&__range {
+		position: relative;
 		display: table;
 		z-index: 1;
 		width: 40px;
@@ -118,7 +119,7 @@
 			height: 10px;
 			position: absolute;
 			top: 4px;
-			right: 13px;
+			right: 4px;
 			fill: var(--clr-text);
 		}
 
@@ -145,16 +146,30 @@
 				background: var(--clr-back-new);
 			}
 		}
+
 		&__item.active {
 			background: rgba(0, 0, 0, 0.1);
 		}
 
 		.menu-dropdown {
-			left: 94%;
-			top: calc(100% + 12px);
-			min-width: 60px;
+			left: 50%;
+			top: calc(100% - 1px);
+			min-width: 40px;
+			border: 1px solid var(--clr-text);
+			border-radius: 3px;
+
 			&__item {
-				height: 30px;
+				height: 18px;
+				border-color: var(--clr-text);
+			}
+
+			&__btn{
+				pointer-events: all;
+				width: 100%;
+				padding: 1px 0 1px 5px;
+				border-radius: 3px;
+				cursor: pointer;
+				color: var(--clr-text);
 			}
 		}
 	}
