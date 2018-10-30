@@ -1125,10 +1125,9 @@
 		border: none;
 
 		.sprite-icon{
-			width: 25px;
-			height: 25px;
+			width: 24px;
+			height: 24px;
 			fill: var(--clr-block);
-			margin: 2px 0 0 2px;
 			transition: all .1s;
 
 			&.copy{
@@ -1152,8 +1151,9 @@
 			}
 		}
 		&.popup-nav-button .sprite-icon { 
-			width: 23px;
-			height: 23px;
+			width: 22px;
+			height: 22px;
+			margin-left: 2px;
 		}
 
 		&.copied{
