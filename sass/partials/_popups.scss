@@ -64,10 +64,6 @@
 			text-align:center;
 			align-items:center;
 		}
-		i {
-			font-size:14px;
-			color: var(--clr-accent)
-		}
 
 		&.open {
 			height: 152%;
@@ -183,6 +179,9 @@
 		font-size: 12px;
 		&__col {
 			height:35px !important;
+		}
+		.sprite-icon {
+			fill: var(--clr-accent);
 		}
 	}
 
