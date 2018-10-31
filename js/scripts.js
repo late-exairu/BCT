@@ -3010,8 +3010,7 @@ $(function () {
 		});
 
 		// init sort icon
-		$('.graph-prices__sort').removeClass('asc');
-		$('.graph-prices__sort').removeClass('desc');
+		$('.graph-prices__sort').removeClass('asc desc');
 
 		$('.graph-prices__sort').html('1' + sendCurrency + ' ≈ ');
 	}
