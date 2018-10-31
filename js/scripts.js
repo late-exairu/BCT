@@ -1477,7 +1477,7 @@ $(function () {
 									"position": "absolute"
 								})
 								.css("display", "block");
-								
+
 								tippy('[data="tippy"]', {
 									arrow: true,
 									animation: 'fade',
@@ -2364,6 +2364,32 @@ $(function () {
 			calculatedHeight += $('.calculated-height-js .basic-table__row.head')[0].getBoundingClientRect().height;
 		$('.calculated-height-js').css('min-height', calculatedHeight);
 		$('.calculated-height-js').css('max-height', calculatedHeight);
+
+		if ($('.advanced .js-account-stats .portfolio-drop .c-block-head__title')[0].innerText == 'Advanced') {
+			if ($(window).width() > 1900){
+				$('#telegram').removeClass('hidden').addClass('--short');
+				$('#orderBook,.chat-head__back').removeClass('hidden');
+				$('.main-cols__left').addClass('advanced-mode');
+				$('#telegramMenu').removeClass('open');
+			}
+			else{
+				$('#telegram').addClass('hidden');
+				$('#orderBook').removeClass('hidden');
+			}
+		}
+		else {
+			if ($(window).width() > 1900){
+				$('#telegram').removeClass('--short');
+				$('#orderBook,.chat-head__back').addClass('hidden');
+				$('.main-cols__left').removeClass('advanced-mode');
+				$('#telegramOverlay').removeClass('open');
+			}
+			else{
+				$('#telegram').removeClass('hidden').addClass('--short');
+				$('.chat-head__back').removeClass('hidden');
+				$('#orderBook').addClass('hidden');
+			}
+		}
 	}
 	calculateHeightOfFirstTable();
 	$(window).resize(calculateHeightOfFirstTable);
