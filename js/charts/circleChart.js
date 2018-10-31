@@ -139,8 +139,8 @@ function drawCircleChart(e,noAnimation) {
                 return {
                     // x: xPos,
                     // y: 10 + mainChartSpacingTop - 50
-                    x: point.plotX,
-                    y: point.plotY
+                    x: point.plotX + 10,
+                    y: point.plotY - labelHeight / 2
                 };
             }
         },

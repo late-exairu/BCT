@@ -14805,7 +14805,8 @@ button:-moz-focusring {
     font-family: "open_sans", sans-serif;
     padding: 5px 10px 5px 10px;
     min-width: 148px;
-    background-color: var(--clr-back);
+    background-color: var(--clr-block);
+    border: 1px solid var(--clr-separatorD);
     display: flex;
     line-height: 20px;
     font-weight: 700;
