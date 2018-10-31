@@ -461,6 +461,8 @@ $(function () {
 			}
 
 			closeTelegramMenu();
+			// refresh chats
+			$('.chat-talk').toggleClass('hidden');
 		}
 		// second currency
 		else {
