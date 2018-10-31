@@ -323,35 +323,36 @@
 		display: flex;
 		line-height: 20px;
 		font-weight: 700;
+		font-size: 13px;
 		// background: linear-gradient(to bottom, #10B89A 0%,#03B068 100%);
 
-		.currency {
+		.amount {
 			font-weight: 700;
-			font-size: 13px;
-			border-right: 2px solid var(--clr-textD);
-			// border-right: 2px solid var(--clr-block);
-			padding-right: 5px;
 			padding-left: 5px;
 			margin: 0;
 			display: block;
 			color: var(--clr-textD);
-			// color: var(--clr-block);
+			line-height: 20px;
+		}
+
+		.currency {
+			font-weight: 500;
+			padding-left: 4px;
+			margin: 0;
+			display: block;
+			color: var(--clr-textD);
 			line-height: 20px;
 		}
 
 		.price {
-			font-weight: 700;
-			padding-left: 5px;
-			font-size: 13px;
+			font-weight: 500;
+			padding-left: 4px;
 			line-height: 20px;
 			color: var(--clr-textD);
-			// color: var(--clr-block);
 
 			span {
-				font-size: 13px;
 				line-height: 20px;
-				// color: var(--clr-block);
-				/*font-weight: 600;*/
+				font-size: 13px;
 			}
 		}
 	}

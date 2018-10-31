@@ -14806,27 +14806,30 @@ button:-moz-focusring {
     /*border: 1px solid var(--clr-separatorD);*/
     display: flex;
     line-height: 20px;
-    font-weight: 700; }
-    .highcharts-tooltip div.tooltipCircle .currency {
+    font-weight: 700;
+    font-size: 13px; }
+    .highcharts-tooltip div.tooltipCircle .amount {
       font-weight: 700;
-      font-size: 13px;
-      border-right: 2px solid var(--clr-textD);
-      padding-right: 5px;
       padding-left: 5px;
       margin: 0;
       display: block;
       color: var(--clr-textD);
       line-height: 20px; }
+    .highcharts-tooltip div.tooltipCircle .currency {
+      font-weight: 500;
+      padding-left: 4px;
+      margin: 0;
+      display: block;
+      color: var(--clr-textD);
+      line-height: 20px; }
     .highcharts-tooltip div.tooltipCircle .price {
-      font-weight: 700;
-      padding-left: 5px;
-      font-size: 13px;
+      font-weight: 500;
+      padding-left: 4px;
       line-height: 20px;
       color: var(--clr-textD); }
       .highcharts-tooltip div.tooltipCircle .price span {
-        font-size: 13px;
         line-height: 20px;
-        /*font-weight: 600;*/ }
+        font-size: 13px; }
   .highcharts-tooltip div.liquidityTooltip {
     font-family: "open_sans", sans-serif; }
   .highcharts-tooltip span svg {
