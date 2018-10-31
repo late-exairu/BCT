@@ -3164,6 +3164,8 @@ $(function () {
 				'</div >';
 			$('#panel-funds-orders .basic-table__body .basic-table__body').prepend(newRow);
 			$(this).find('.order-form__input').val('');
+			$('.portfolio-drop .menu-dropdown__item').eq(2).trigger('click');
+			$('.portfolio-drop .menu-dropdown').removeClass('open');
 		}
 	});
 
