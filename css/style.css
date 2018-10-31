@@ -15719,8 +15719,6 @@ button:-moz-focusring {
     outline: none;
     background: var(--clr-block);
     font-weight: 700; }
-    #send-popup .send-form__input:focus {
-      background: var(--clr-back); }
     #send-popup .send-form__input::placeholder {
       color: var(--clr-textLL); }
     #send-popup .send-form__input.with-copy {

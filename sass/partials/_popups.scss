@@ -501,10 +501,6 @@
 			background: var(--clr-block);
 			font-weight: 700;
 	
-			&:focus{
-				background: var(--clr-back);
-			}
-	
 			&::placeholder{
 				color: var(--clr-textLL);
 			}
