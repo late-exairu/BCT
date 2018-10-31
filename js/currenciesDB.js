@@ -15,7 +15,7 @@ var allCurrenciesHtmlSecondColumn = '';
 var currenciesPrice = {};
 
 $.ajax({
-    url: 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC,USDT&tsyms=USD',
+    url: 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC,USDT,XRP&tsyms=USD',
     async: false,
     success: function (data) {
         for (const key in data) {
@@ -190,7 +190,7 @@ function updateWalletData(redrawSmallCharts) {
 function initSmallCharts() {
     var counter = 0;
     for (const key in allCurrenciesWallet) {
-        if (counter < 4) {
+        if (counter < 5) {
             if ($('#smallChart' + key).length) {
                 var smallChartObj = Highcharts.chart('smallChart' + key, smallCurrencyChartOptions);
                 smallChartObjs[key] = smallChartObj;
@@ -207,7 +207,7 @@ function updateSmallCharts() {
     var key_array = new Array();
     var counter = 0;
     for (const key in allCurrenciesWallet) {
-        if (counter < 4) {
+        if (counter < 5) {
             switch (chartRange) {
                 case '1H':
                     ajaxUrl = 'https://min-api.cryptocompare.com/data/histominute?fsym=' + key + '&tsym=USD&aggregate=3&limit=40';
@@ -272,9 +272,9 @@ function updateSmallCharts() {
         // create copy of existing small charts
         counter = 0;
         for (const key in allCurrenciesWallet) {
-            if (counter > 3) {
-                var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
-                var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo > div').clone();
+            if (counter > 4) {
+                var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 5).find('.smallCurrencyChart > div').clone();
+                var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 5).find('.smallChartInfo > div').clone();
                 $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallCurrencyChart').html(copyOfChart);
                 $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').html(copyOfInfo);
             }
@@ -285,11 +285,11 @@ function updateSmallCharts() {
 $('.graph-info__range__current').on('responsed', () => {
     var counter = 0;
     for (const key in allCurrenciesWallet) {
-        if (counter >= 4) {
-            var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallCurrencyChart > div').clone();
-            var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo > div').clone();
-            var copyOfDataStart = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo').attr('data-chart-start');
-            var copyOfDataEnd = $('#panel-funds-wallet .basic-table__row').eq(counter % 4).find('.smallChartInfo').attr('data-chart-end');
+        if (counter >= 5) {
+            var copyOfChart = $('#panel-funds-wallet .basic-table__row').eq(counter % 5).find('.smallCurrencyChart > div').clone();
+            var copyOfInfo = $('#panel-funds-wallet .basic-table__row').eq(counter % 5).find('.smallChartInfo > div').clone();
+            var copyOfDataStart = $('#panel-funds-wallet .basic-table__row').eq(counter % 5).find('.smallChartInfo').attr('data-chart-start');
+            var copyOfDataEnd = $('#panel-funds-wallet .basic-table__row').eq(counter % 5).find('.smallChartInfo').attr('data-chart-end');
             $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallCurrencyChart').html(copyOfChart);
             $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').html(copyOfInfo);
             $('#panel-funds-wallet .basic-table__row').eq(counter).find('.smallChartInfo').attr('data-chart-start', copyOfDataStart);

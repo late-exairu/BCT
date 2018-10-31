@@ -478,13 +478,11 @@ $(function () {
 		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
 		var exchange = $('.graph-prices .graph-prices__list .graph-prices__item.active .graph-prices__trader').text().trim();
 
-		if ($('body').hasClass('advanced')) {
-			// change the global table header
-			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(0).html('Price (' + getCurrency + ')');
-			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(4).html('Price (' + getCurrency + ')');
-			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(1).html('Amount (' + sendCurrency + ')');
-			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(5).html('Amount (' + sendCurrency + ')');
-		}
+		// change the global table header
+		$('.global-order').find('.basic-table__row.head .basic-table__col').eq(0).html('Price (' + getCurrency + ')');
+		$('.global-order').find('.basic-table__row.head .basic-table__col').eq(4).html('Price (' + getCurrency + ')');
+		$('.global-order').find('.basic-table__row.head .basic-table__col').eq(1).html('Amount (' + sendCurrency + ')');
+		$('.global-order').find('.basic-table__row.head .basic-table__col').eq(5).html('Amount (' + sendCurrency + ')');
 
 		if (sendCurrency == getCurrency) {
 			$('.exch-head__get .exch-dropdown__item:not([data-currency="' + sendCurrency + '"])').eq(0).trigger('click', param);
@@ -674,31 +672,6 @@ $(function () {
 		redrawMainChart();
 	});
 
-	// $('.b-graph .c-block').mousemove(function (e) {
-	// 	var x = e.pageX - $('.b-graph').offset().left;
-	// 	if ($('.b-graph').width() - x < 10) {
-	// 		if (!$('.graph-prices').hasClass('open')) {
-	// 			$('.graph-prices').addClass('open');
-	// 			$('#mainChart').css('width', 'calc(100% + 6px)');
-	// 			$('.b-graph__controls').addClass('shifted');
-	// 			$('.b-graph__controls .graph-prices__controls__btn__open').removeClass('open');
-	// 			redrawMainChart();
-	// 		}
-	// 	} else {
-	// 		if ($('.b-graph').width() - x > 300) {
-	// 			if ($('.graph-prices').hasClass('open') && !$('.graph-prices').hasClass('noClose')) {
-	// 				$('.graph-prices').removeClass('open');
-	// 				$('#mainChart').css('width', 'calc(100% - 4px)');
-	// 				$('.b-graph__controls').removeClass('shifted');
-	// 				$('.b-graph__controls .graph-prices__controls__btn__open').addClass('open');
-	// 				redrawMainChart();
-	// 				// reset prices scroll
-	// 				$('.scrollbar-arrows').scrollTop(0);
-	// 			}
-	// 		}
-	// 	}
-	// });
-
 	$('body').mousemove(function (e) {
 		var x = e.pageX - $('.b-graph').offset().left;
 		if ($('.b-graph').width() - x > 220) {
@@ -751,10 +724,6 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* ADVANCED account-js-menu */
 	/*---------------------------------------------------*/
-
-	// $('.advanced .accounts-diagram-wrap').click(function () {
-	// 	$('.main-cols__right-bottom .portfolio-menu__item').eq(2).trigger('click');
-	// });
 
 	$('.advanced .js-account-stats .portfolio-drop .menu-dropdown .menu-dropdown__item').on('click', function (event) {
 		event.stopPropagation();
@@ -823,16 +792,6 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* functions for change theme */
 	/*---------------------------------------------------*/
-
-	// $('#switch-theme').change(function () {
-	// 	var darkTheme = $('#switch-theme:checked').length;
-	// 	if (darkTheme) {
-	// 		$('body').addClass('dark-theme');
-	// 	} else {
-	// 		$('body').removeClass('dark-theme');
-	// 	}
-	// 	changeTheme();
-	// });
 
 	function changeTheme() {
 		if ($('body').hasClass('dark-theme')) {
@@ -976,22 +935,22 @@ $(function () {
 
 	$('.basic-table').on('click', '.basic-table__row:not(.head)', function () {
 
-		// if ($(this).parent().find('.transaction-popup')) return;
-		$(this).parent().find('.basic-table__row').removeClass('active');
-		$(this).addClass('active');
-
 		var price = $(this)[0].children[0].innerText;
 		price = price.replace(/,/g, '');
 		var amount = $(this)[0].children[1].innerText;
 
 		// show order form
 		if ($(this).parents('#orderBook').length) {
+			$('#orderBook .basic-table__row').removeClass('active');
 			$('#orders').css('display', 'flex');
 			$('.btn-table-toggle').addClass('open');
 			calculateHeightOfFirstTable();
 			$('#orders .forms-wrap .order-form__input.amount').val(amount);
 			$('#orders .forms-wrap .order-form__input.price').val(price);
 		}
+
+		$(this).parent().find('.basic-table__row').removeClass('active');
+		$(this).addClass('active');
 
 		if ($(this).parents('#panel-funds-history').length) {
 			$('.graph-prices').addClass('open');
@@ -1041,10 +1000,6 @@ $(function () {
 	/*---------------------------------------------------*/
 	/* chat events */
 	/*---------------------------------------------------*/
-
-	// $('.chat-head__back').click(function () {
-	// 	$('.main-cols__left-top .d-flex .c-block__col').toggleClass('hidden');
-	// });
 
 	$('.chats-list__item').click(function () {
 		if (localStorage.getItem('telegramAuth') == 'true'){
@@ -1123,31 +1078,26 @@ $(function () {
 						gData = gDataTwoHour;
 						range_index = 0;
 						if (current_range == '1H') isRedraw = true;
-						//console.log('gDataTwoHour');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[1].interval) {
 						gDataDay = [];
 						gData = gDataDay;
 						range_index = 1;
 						if (current_range == '1D') isRedraw = true;
-						//console.log('gDataDay');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[2].interval) {
 						gDataWeek = [];
 						gData = gDataWeek;
 						range_index = 2;
 						if (current_range == '1W') isRedraw = true;
-						//console.log('gDataWeek');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[3].interval) {
 						gDataMonth = [];
 						gData = gDataMonth;
 						range_index = 3;
 						if (current_range == '1M') isRedraw = true;
-						//console.log('gDataMonth');
 					} else if ((data.TimeTo - data.TimeFrom) * 1000 / data.Data.length <= 1.2 * range_options[4].interval) {
 						gDataYear = [];
 						gData = gDataYear;
 						range_index = 4;
 						if (current_range == '1Y') isRedraw = true;
-						//console.log('gDataYear');
 					}
 
 					var prev_value = [null, null, null, null, null, null];
@@ -1211,7 +1161,6 @@ $(function () {
 							}
 							gData.push(one_graph);
 						}
-						//console.log(gData);
 						if (isRedraw) {
 
 							mainChartObj.series[0].setData(gData[0].prices);
@@ -2031,6 +1980,7 @@ $(function () {
 		} else {
 			$(this).closest('.exch-head').toggleClass('open');
 			$('.exch-form__submit').prop('disabled', false);
+			$('.graph-prices__scroll.fixed').css('display','block');
 
 			var send_svg = $('.exch-head__send .exch-dropdown__current > svg').clone();
 			var send_curr = $('.exch-head__send .exch-dropdown__current > p.exch-dropdown__title > span').text();
@@ -2518,7 +2468,7 @@ $(function () {
 						})
 						.css("display", "block");
 					if (popupSrcDiv == "confirm-withdrawal-request") {
-						console.log("populating next screen for demo!")
+						//console.log("populating next screen for demo!")
 						try {
 							window.current_wallet_session.withdraw_address = $("#withdrawal-address").val()
 
@@ -2526,9 +2476,9 @@ $(function () {
 							$("#confirm-return-address").html(window.current_wallet_session.withdraw_address)
 							$("#confirm-return-currency").html(window.current_wallet_session.currency)
 
-							console.log("done, data was " + JSON.stringify(window.current_wallet_session))
+							//console.log("done, data was " + JSON.stringify(window.current_wallet_session))
 						} catch (x) {
-							console.log("ERROR populating next screen")
+							//console.log("ERROR populating next screen")
 						}
 
 					}
@@ -2536,10 +2486,6 @@ $(function () {
 				beforeShow: function () {
 					$('.fancybox-container').css("display", "none");
 				},
-				beforeClose: function () {
-					//$('.exch-form').removeClass('progress');
-					//$('.exch-head').toggleClass('open');
-				}
 			}
 		});
 	});
@@ -3147,5 +3093,7 @@ $(function () {
 	});
 	$('.toggle').minitoggle();
 
+	// update global order book and recent trades
+	$('.exch-dropdown__item[data-currency="BTC"]').eq(0).trigger('click');
 
 });

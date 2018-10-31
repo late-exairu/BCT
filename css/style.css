@@ -8066,6 +8066,7 @@ h6 {
     padding: 0;
     margin: 0; }
   .graph-info__range {
+    position: relative;
     display: table;
     z-index: 1;
     width: 40px;
@@ -8092,7 +8093,7 @@ h6 {
       height: 10px;
       position: absolute;
       top: 4px;
-      right: 13px;
+      right: 4px;
       fill: var(--clr-text); }
     .graph-info__range__list {
       width: 100%;
@@ -8115,11 +8116,21 @@ h6 {
     .graph-info__range__item.active {
       background: rgba(0, 0, 0, 0.1); }
     .graph-info__range .menu-dropdown {
-      left: 94%;
-      top: calc(100% + 12px);
-      min-width: 60px; }
+      left: 50%;
+      top: calc(100% - 1px);
+      min-width: 40px;
+      border: 1px solid var(--clr-text);
+      border-radius: 3px; }
       .graph-info__range .menu-dropdown__item {
-        height: 30px; }
+        height: 18px;
+        border-color: var(--clr-text); }
+      .graph-info__range .menu-dropdown__btn {
+        pointer-events: all;
+        width: 100%;
+        padding: 1px 0 1px 5px;
+        border-radius: 3px;
+        cursor: pointer;
+        color: var(--clr-text); }
 
 /* =================================================================== */
 /* graph-prices */
@@ -8297,7 +8308,8 @@ h6 {
     margin: 0;
     padding-left: 10px; }
   .graph-prices__scroll.fixed {
-    background: var(--clr-back-new); }
+    background: var(--clr-back-new);
+    display: none; }
   .graph-prices__scrollup {
     font-size: 9px;
     color: var(--clr-backCI);
