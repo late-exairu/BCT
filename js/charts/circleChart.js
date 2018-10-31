@@ -118,28 +118,31 @@ function drawCircleChart(e,noAnimation) {
                     }
                 });
 
-                return '<div class="tooltipCircle">' + svgString[0].outerHTML +
+                return '<div class="tooltipCircle arrow_box left">' + svgString[0].outerHTML +
                     '<div class="amount">' + currency_amount + '</div>' +
                     '<div class="currency">' + currency_name + '</div>' +
                     '<div class="price"><span>($' + numberWithCommas(circleChartTooltipData[currency]['price']) + ')</span></div>' +
                     '</div>';
             },
-            // positioner: function (labelWidth, labelHeight, point, ) {
-            //     var graphWidth = $(mainChartObj.container).width();
-            //     var xPos = point.plotX - (labelWidth / 2) + mainChartMarginLeft;
-            //     // right side fix
-            //     if ((point.plotX + (labelWidth / 2) + mainChartMarginLeft + 10) > graphWidth) {
-            //         xPos -= labelWidth / 2 + 10;
-            //     }
-            //     // left side fix
-            //     else if (point.plotX < 100) {
-            //         xPos += labelWidth / 2 + 10;
-            //     }
-            //     return {
-            //         x: xPos,
-            //         y: 10 + mainChartSpacingTop - 50
-            //     };
-            // }
+            positioner: function (labelWidth, labelHeight, point) {
+                console.log(labelWidth, labelHeight, point);
+                // var graphWidth = $(mainChartObj.container).width();
+                // var xPos = point.plotX - (labelWidth / 2) + mainChartMarginLeft;
+                // // right side fix
+                // if ((point.plotX + (labelWidth / 2) + mainChartMarginLeft + 10) > graphWidth) {
+                //     xPos -= labelWidth / 2 + 10;
+                // }
+                // // left side fix
+                // else if (point.plotX < 100) {
+                //     xPos += labelWidth / 2 + 10;
+                // }
+                return {
+                    // x: xPos,
+                    // y: 10 + mainChartSpacingTop - 50
+                    x: point.plotX,
+                    y: point.plotY
+                };
+            }
         },
         series: [{
             name: 'Percent',

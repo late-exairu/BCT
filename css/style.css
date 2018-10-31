@@ -14674,6 +14674,8 @@ button:-moz-focusring {
   height: 100%;
   width: 100%;
   z-index: 2; }
+  .accounts-diagram .highcharts-container {
+    overflow: visible !important; }
 
 #circleChartText {
   display: flex;
@@ -14799,22 +14801,23 @@ button:-moz-focusring {
     .highcharts-tooltip div.tooltip.blackColor {
       color: var(--clr-textD); }
   .highcharts-tooltip div.tooltipCircle {
+    z-index: 10008;
     font-family: "open_sans", sans-serif;
     padding: 5px 10px 5px 10px;
     min-width: 148px;
     background-color: var(--clr-back);
-    /*border: 1px solid var(--clr-separatorD);*/
     display: flex;
     line-height: 20px;
     font-weight: 700;
-    font-size: 13px; }
+    font-size: 14px; }
     .highcharts-tooltip div.tooltipCircle .amount {
       font-weight: 700;
       padding-left: 5px;
       margin: 0;
       display: block;
       color: var(--clr-textD);
-      line-height: 20px; }
+      line-height: 20px;
+      font-size: 13px; }
     .highcharts-tooltip div.tooltipCircle .currency {
       font-weight: 500;
       padding-left: 4px;
@@ -14828,8 +14831,9 @@ button:-moz-focusring {
       line-height: 20px;
       color: var(--clr-textD); }
       .highcharts-tooltip div.tooltipCircle .price span {
-        line-height: 20px;
-        font-size: 13px; }
+        line-height: 20px; }
+    .highcharts-tooltip div.tooltipCircle.arrow_box.left:after {
+      border-right-color: var(--clr-separatorD); }
   .highcharts-tooltip div.liquidityTooltip {
     font-family: "open_sans", sans-serif; }
   .highcharts-tooltip span svg {
