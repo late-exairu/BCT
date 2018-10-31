@@ -1951,24 +1951,8 @@ $(function () {
 
 			$('.exch-form').addClass('progress');
 			$('.graph-prices__sort__btn').addClass('hidden');
-			//$('#panel-funds-orders .basic-table__body .basic-table__row').removeClass('active recent');
 			$('.exch-form .range-slider input[type=range]').css('pointer-events', 'none');
-
-			// var newRow = '<div class="basic-table__row active recent">' +
-			// 	'<div class="basic-table__col w-17"> Just now</div>' +
-			// 	'<div class="basic-table__col w-10">Houbi</div>' +
-			// 	'<div class="basic-table__col w-10">' + sendCurrency + ' ' + getCurrency + '</div>' +
-			// 	'<div class="basic-table__col w-9">Mkt</div>' +
-			// 	'<div class="basic-table__col w-9">Buy</div>' +
-			// 	'<div class="basic-table__col w-10">' + firstValue + ' ' + sendCurrency + '</div>' +
-			// 	'<div class="basic-table__col w-11">1.5000 BTC</div>' +
-			// 	'<div class="basic-table__col w-12">0.5000 BTC</div>' +
-			// 	'<div class="basic-table__col w-10"><button class="basic-table__btn">Cancel</button></div>' +
-			// 	'</div >';
-
 			$('.basic-table__message').addClass('hidden');
-			//$('#panel-funds-orders .basic-table__body .basic-table__body').prepend(newRow);
-
 			/*			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
 			 			if (fancies_length < 1) {
 							$.fancybox.open({
@@ -3140,5 +3124,45 @@ $(function () {
 
 	// update global order book and recent trades
 	$('.exch-dropdown__item[data-currency="BTC"]').eq(0).trigger('click');
+
+
+	$('.order-form').submit(function (e) {
+		e.preventDefault();
+
+		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
+		var getCurrency = $('.exch-form__get > input').attr('data-currency');
+
+		var amount = $(this).find('.order-form__input.amount').val() || 0;
+		var price = $(this).find('.order-form__input.price').val() || 0;
+		var total = $(this).find('.order-form__input').eq(2).val() || 0;
+
+		var orderFormType;
+		var buyOrSell = $(this).index() ? 'Sell' : 'Buy';
+
+		switch ($(this).parents('.forms-wrap').index()) {
+			case 0: orderFormType = 'Lmt'; break;
+			case 1: orderFormType = 'Mkt'; break;
+			case 2: orderFormType = 'Stp'; break;
+			default:
+				break;
+		}
+
+		if (amount){
+			$('#panel-funds-orders .basic-table__body .basic-table__row').removeClass('active recent');
+			var newRow = '<div class="basic-table__row active recent">' +
+				'<div class="basic-table__col w-17"> Just now</div>' +
+				'<div class="basic-table__col w-10">Houbi</div>' +
+				'<div class="basic-table__col w-10">' + sendCurrency + ' ' + getCurrency + '</div>' +
+				'<div class="basic-table__col w-9">' + orderFormType + '</div>' +
+				'<div class="basic-table__col w-9">' + buyOrSell + '</div>' +
+				'<div class="basic-table__col w-10">' + price + ' ' + sendCurrency + '</div>' +
+				'<div class="basic-table__col w-11">' + amount + ' ' + sendCurrency + '</div>' +
+				'<div class="basic-table__col w-12">' + total + ' ' + sendCurrency + '</div>' +
+				'<div class="basic-table__col w-10"><button class="basic-table__btn">Cancel</button></div>' +
+				'</div >';
+			$('#panel-funds-orders .basic-table__body .basic-table__body').prepend(newRow);
+			$(this).find('.order-form__input').val('');
+		}
+	});
 
 });
