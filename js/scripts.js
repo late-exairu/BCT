@@ -478,13 +478,11 @@ $(function () {
 		var sendCurrency = $('.exch-form__send > input').attr('data-currency');
 		var exchange = $('.graph-prices .graph-prices__list .graph-prices__item.active .graph-prices__trader').text().trim();
 
-		if ($('body').hasClass('advanced')) {
-			// change the global table header
-			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(0).html('Price (' + getCurrency + ')');
-			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(4).html('Price (' + getCurrency + ')');
-			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(1).html('Amount (' + sendCurrency + ')');
-			$('.global-order').find('.basic-table__row.head .basic-table__col').eq(5).html('Amount (' + sendCurrency + ')');
-		}
+		// change the global table header
+		$('.global-order').find('.basic-table__row.head .basic-table__col').eq(0).html('Price (' + getCurrency + ')');
+		$('.global-order').find('.basic-table__row.head .basic-table__col').eq(4).html('Price (' + getCurrency + ')');
+		$('.global-order').find('.basic-table__row.head .basic-table__col').eq(1).html('Amount (' + sendCurrency + ')');
+		$('.global-order').find('.basic-table__row.head .basic-table__col').eq(5).html('Amount (' + sendCurrency + ')');
 
 		if (sendCurrency == getCurrency) {
 			$('.exch-head__get .exch-dropdown__item:not([data-currency="' + sendCurrency + '"])').eq(0).trigger('click', param);
@@ -3095,5 +3093,7 @@ $(function () {
 	});
 	$('.toggle').minitoggle();
 
+	// update global order book and recent trades
+	$('.exch-dropdown__item[data-currency="BTC"]').eq(0).trigger('click');
 
 });
