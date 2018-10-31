@@ -107,18 +107,39 @@ function drawCircleChart(e,noAnimation) {
             formatter: function () {
                 var currency = this.key;
                 var svgString = '';
+                var currency_name = '';
+                var currency_amount = '';
                 $('#panel-funds-wallet .basic-table__row').each(function () {
                     if ($(this).find('.basic-table__col').text().indexOf(currency) != -1) {
                         svgString = $(this).find('.basic-table__col svg').clone();
+                        currency_amount = $(this).find('.basic-table__col:first-child .d-flex-col > span > span')[0].innerHTML;
+                        currency_name = $('.exch-dropdown__item[data-name="' + currency + '"]').eq(0).attr('data-currency');
                         return false;
                     }
                 });
 
                 return '<div class="tooltipCircle">' + svgString[0].outerHTML +
-                    '<div class="currency">' + currency + '</div>' +
-                    '<div class="price"><span>$' + numberWithCommas(circleChartTooltipData[currency]['price']) + '</span></div>' +
+                    '<div class="amount">' + currency_amount + '</div>' +
+                    '<div class="currency">' + currency_name + '</div>' +
+                    '<div class="price"><span>($' + numberWithCommas(circleChartTooltipData[currency]['price']) + ')</span></div>' +
                     '</div>';
-            }
+            },
+            // positioner: function (labelWidth, labelHeight, point, ) {
+            //     var graphWidth = $(mainChartObj.container).width();
+            //     var xPos = point.plotX - (labelWidth / 2) + mainChartMarginLeft;
+            //     // right side fix
+            //     if ((point.plotX + (labelWidth / 2) + mainChartMarginLeft + 10) > graphWidth) {
+            //         xPos -= labelWidth / 2 + 10;
+            //     }
+            //     // left side fix
+            //     else if (point.plotX < 100) {
+            //         xPos += labelWidth / 2 + 10;
+            //     }
+            //     return {
+            //         x: xPos,
+            //         y: 10 + mainChartSpacingTop - 50
+            //     };
+            // }
         },
         series: [{
             name: 'Percent',
