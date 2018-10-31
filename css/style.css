@@ -14801,9 +14801,8 @@ button:-moz-focusring {
     .highcharts-tooltip div.tooltip.blackColor {
       color: var(--clr-textD); }
   .highcharts-tooltip div.tooltipCircle {
-    z-index: 10008;
     font-family: "open_sans", sans-serif;
-    padding: 5px 10px 5px 10px;
+    padding: 4px 8px;
     min-width: 148px;
     background-color: var(--clr-block);
     border: 1px solid var(--clr-separatorD);

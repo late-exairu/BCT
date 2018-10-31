@@ -125,20 +125,7 @@ function drawCircleChart(e,noAnimation) {
                     '</div>';
             },
             positioner: function (labelWidth, labelHeight, point) {
-                console.log(labelWidth, labelHeight, point);
-                // var graphWidth = $(mainChartObj.container).width();
-                // var xPos = point.plotX - (labelWidth / 2) + mainChartMarginLeft;
-                // // right side fix
-                // if ((point.plotX + (labelWidth / 2) + mainChartMarginLeft + 10) > graphWidth) {
-                //     xPos -= labelWidth / 2 + 10;
-                // }
-                // // left side fix
-                // else if (point.plotX < 100) {
-                //     xPos += labelWidth / 2 + 10;
-                // }
                 return {
-                    // x: xPos,
-                    // y: 10 + mainChartSpacingTop - 50
                     x: point.plotX + 10,
                     y: point.plotY - labelHeight / 2
                 };
