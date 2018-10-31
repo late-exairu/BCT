@@ -14586,11 +14586,6 @@ button:-moz-focusring {
 .highcharts-credits {
   display: none; }
 
-.smallCurrencyChart {
-  width: 120px;
-  height: 40px;
-  margin-right: 10px; }
-
 .accounts-diagram-wrap {
   position: relative;
   flex: 0 0 196px;
@@ -14923,6 +14918,25 @@ button:-moz-focusring {
   /*border-bottom: 1px solid var(--clr-separator);*/ }
   .circleDiagramParent .scrollbar-right .scroll-element .scroll-bar {
     opacity: 1; }
+  .circleDiagramParent .basic-table__row .basic-table__col:first-child {
+    padding-left: 4%; }
+  .circleDiagramParent .basic-table__row .basic-table__col:nth-child(2) {
+    justify-content: center; }
+    .circleDiagramParent .basic-table__row .basic-table__col:nth-child(2) .smallCurrencyChart {
+      width: 100px;
+      height: 40px;
+      margin-right: 7%; }
+      @media only screen and (min-width: 1240px) {
+        .circleDiagramParent .basic-table__row .basic-table__col:nth-child(2) .smallCurrencyChart {
+          width: 170px; } }
+      @media only screen and (min-width: 1440px) {
+        .circleDiagramParent .basic-table__row .basic-table__col:nth-child(2) .smallCurrencyChart {
+          width: 220px; } }
+    .circleDiagramParent .basic-table__row .basic-table__col:nth-child(2) .smallChartInfo.bigger {
+      width: 100px; }
+  .circleDiagramParent .basic-table__row .basic-table__col:last-child {
+    justify-content: flex-end;
+    padding-right: 6%; }
 
 #portfolioChartText {
   pointer-events: none;

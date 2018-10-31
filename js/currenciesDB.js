@@ -66,17 +66,17 @@ allCurrenciesArr.map(item => {
     // add row to wallet
     if (!$('#panel-funds-wallet .basic-table__row[data-currency="' + coinShort + '"]').length) {
         var newRow = '<div class="basic-table__row disabled" data-currency="' + coinShort + '">' +
-            '<div class="basic-table__col w-37">' +
+            '<div class="basic-table__col w-25">' +
             '<svg class="basic-table__curr icon-curr clr-coin-ltc" role="img" aria-hidden="true">' +
             '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#coin-' + coinLowerCaseShort + '"></use>' +
             '</svg>' +
             '<div class="d-flex-col">' +
             '<span class="bigger"><span class="bold wallet' + coinShort + '"></span> ' + coinShort + ' </span><span class="smaller">' + coinTitle + '</span>' +
             '</div></div>' +
-            '<div class="basic-table__col w-40">' +
+            '<div class="basic-table__col w-50">' +
             '<div class="smallCurrencyChart" id="smallChart' + coinShort + '"></div>' +
             '<div class="bigger smallChartInfo d-flex-col"></div></div>' +
-            '<div class="basic-table__col w-22"><button class="basic-table__btn fix-width clickable" transaction-fancybox><span class="bigger">' + coinShort + '</span></button></div>' +
+            '<div class="basic-table__col w-25"><button class="basic-table__btn fix-width clickable" transaction-fancybox><span class="bigger">' + coinShort + '</span></button></div>' +
             '</div>';
         $('#panel-funds-wallet .basic-table').append(newRow);
         // add value to all currencies

@@ -2,11 +2,6 @@
 	display: none;
 }
 
-.smallCurrencyChart{
-	width:120px;
-	height:40px;
-	margin-right: 10px;
-}
 
 .accounts-diagram-wrap {
 	position: relative;
@@ -480,6 +475,38 @@
 	/*border-bottom: 1px solid var(--clr-separator);*/
 	.scrollbar-right .scroll-element .scroll-bar {
 		opacity: 1;
+	}
+
+	.basic-table__row {
+		.basic-table__col {
+			&:first-child {
+				padding-left: 4%;
+			}
+			&:nth-child(2) {
+				justify-content: center;
+				.smallCurrencyChart{
+					width: 100px;
+					height: 40px;
+					margin-right: 7%;
+					@media only screen and (min-width: 1240px) {
+						width: 170px;
+					}
+					@media only screen and (min-width: 1440px) {
+						width: 220px;
+					}
+				}
+				.smallChartInfo.bigger {
+					width: 100px;
+				}
+			}
+			&:last-child {
+				justify-content: flex-end;
+				padding-right: 6%;
+				// .basic-table__btn {
+    			// 	margin-right: 18%;
+				// }
+			}
+		}
 	}
 }
 
