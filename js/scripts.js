@@ -1477,6 +1477,24 @@ $(function () {
 									"position": "absolute"
 								})
 								.css("display", "block");
+								
+								tippy('[data="tippy"]', {
+									arrow: true,
+									animation: 'fade',
+									placement: 'right',
+									theme: 'bct',
+									allowTitleHTML: true,
+									popperOptions: {
+										modifiers: {
+											preventOverflow: {
+												enabled: false
+											},
+											hide: {
+												enabled: false
+											}
+										}
+									}
+								});
 						}
 						// show in chart
 						else{

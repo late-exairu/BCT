@@ -10370,6 +10370,9 @@ body.menubar-in #user-btn:before {
 .basic-table .tippy-tooltip .tippy-content {
   white-space: pre-line; }
 
+.tippy-popper {
+  z-index: 100011 !important; }
+
 .tippy-popper[x-placement^=right] .tippy-tooltip.bct-theme .tippy-arrow {
   border-right: 7px solid var(--clr-separator); }
 
