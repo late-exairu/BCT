@@ -1951,23 +1951,23 @@ $(function () {
 
 			$('.exch-form').addClass('progress');
 			$('.graph-prices__sort__btn').addClass('hidden');
-			$('#panel-funds-orders .basic-table__body .basic-table__row').removeClass('active recent');
+			//$('#panel-funds-orders .basic-table__body .basic-table__row').removeClass('active recent');
 			$('.exch-form .range-slider input[type=range]').css('pointer-events', 'none');
 
-			var newRow = '<div class="basic-table__row active recent">' +
-				'<div class="basic-table__col w-17"> Just now</div>' +
-				'<div class="basic-table__col w-10">Houbi</div>' +
-				'<div class="basic-table__col w-10">' + sendCurrency + ' ' + getCurrency + '</div>' +
-				'<div class="basic-table__col w-9">Mkt</div>' +
-				'<div class="basic-table__col w-9">Buy</div>' +
-				'<div class="basic-table__col w-10">' + firstValue + ' ' + sendCurrency + '</div>' +
-				'<div class="basic-table__col w-11">1.5000 BTC</div>' +
-				'<div class="basic-table__col w-12">0.5000 BTC</div>' +
-				'<div class="basic-table__col w-10"><button class="basic-table__btn">Cancel</button></div>' +
-				'</div >';
+			// var newRow = '<div class="basic-table__row active recent">' +
+			// 	'<div class="basic-table__col w-17"> Just now</div>' +
+			// 	'<div class="basic-table__col w-10">Houbi</div>' +
+			// 	'<div class="basic-table__col w-10">' + sendCurrency + ' ' + getCurrency + '</div>' +
+			// 	'<div class="basic-table__col w-9">Mkt</div>' +
+			// 	'<div class="basic-table__col w-9">Buy</div>' +
+			// 	'<div class="basic-table__col w-10">' + firstValue + ' ' + sendCurrency + '</div>' +
+			// 	'<div class="basic-table__col w-11">1.5000 BTC</div>' +
+			// 	'<div class="basic-table__col w-12">0.5000 BTC</div>' +
+			// 	'<div class="basic-table__col w-10"><button class="basic-table__btn">Cancel</button></div>' +
+			// 	'</div >';
 
 			$('.basic-table__message').addClass('hidden');
-			$('#panel-funds-orders .basic-table__body .basic-table__body').prepend(newRow);
+			//$('#panel-funds-orders .basic-table__body .basic-table__body').prepend(newRow);
 
 			/*			var fancies_length = $('.b-graph .c-block .fancybox-container').length;
 			 			if (fancies_length < 1) {
