@@ -14928,10 +14928,13 @@ button:-moz-focusring {
       margin-right: 7%; }
       @media only screen and (min-width: 1240px) {
         .circleDiagramParent .basic-table__row .basic-table__col:nth-child(2) .smallCurrencyChart {
-          width: 170px; } }
+          width: 160px; } }
       @media only screen and (min-width: 1440px) {
         .circleDiagramParent .basic-table__row .basic-table__col:nth-child(2) .smallCurrencyChart {
-          width: 220px; } }
+          width: 270px; } }
+      @media only screen and (min-width: 1900px) {
+        .circleDiagramParent .basic-table__row .basic-table__col:nth-child(2) .smallCurrencyChart {
+          width: 200px; } }
     .circleDiagramParent .basic-table__row .basic-table__col:nth-child(2) .smallChartInfo.bigger {
       width: 100px; }
   .circleDiagramParent .basic-table__row .basic-table__col:last-child {

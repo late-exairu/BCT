@@ -60,16 +60,16 @@
 			}
 		}
 
-		&:hover{
+		&:hover {
 			background: var(--clr-backLL);
 			cursor: pointer;
 		}
 
-		&:first-child{
+		&:first-child {
 			border: none;
 		}
 
-		&.active{
+		&.active {
 			background: var(--clr-backA);
 			color: var(--clr-accent);
 
@@ -82,7 +82,7 @@
 			}
 		}
 
-		&.disabled{
+		&.disabled {
 			opacity: 1;
 			pointer-events: none;
 			color: var(--clr-icon);
@@ -96,35 +96,35 @@
 				opacity: 0.5;
 			}
 
-			.basic-table__curr{
+			.basic-table__curr {
 				fill: var(--clr-icon);
 			}
 
-			.basic-table__btn{
+			.basic-table__btn {
 				color: var(--clr-icon);
 				border-color: var(--clr-icon);
 
-				&.clickable{
+				&.clickable {
 					opacity: 1 !important;
 					border-color: var(--clr-separator);
 				    background: var(--clr-block);
 				    color: var(--clr-text);
 					pointer-events: all;
 
-					.sprite-icon{
+					.sprite-icon {
 						fill: var(--clr-textL);
 					}
 				}
 
-				.sprite-icon{
+				.sprite-icon {
 					fill: var(--clr-icon);
 				}
 
-				&:hover{
+				&:hover {
 					color: var(--clr-accent);
 					box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
 
-					.sprite-icon{
+					.sprite-icon {
 						fill: var(--clr-accent);
 					}
 				}
@@ -135,7 +135,7 @@
 					box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
 					background: var(--clr-accentL);
 
-					.sprite-icon{
+					.sprite-icon {
 						fill: var(--clr-accent);
 					}
 				}
