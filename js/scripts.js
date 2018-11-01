@@ -461,6 +461,8 @@ $(function () {
 			}
 
 			closeTelegramMenu();
+			// refresh chats
+			$('.chat-talk').toggleClass('hidden');
 		}
 		// second currency
 		else {
@@ -3008,8 +3010,7 @@ $(function () {
 		});
 
 		// init sort icon
-		$('.graph-prices__sort').removeClass('asc');
-		$('.graph-prices__sort').removeClass('desc');
+		$('.graph-prices__sort').removeClass('asc desc');
 
 		$('.graph-prices__sort').html('1' + sendCurrency + ' ≈ ');
 	}
@@ -3162,6 +3163,8 @@ $(function () {
 				'</div >';
 			$('#panel-funds-orders .basic-table__body .basic-table__body').prepend(newRow);
 			$(this).find('.order-form__input').val('');
+			$('.portfolio-drop .menu-dropdown__item').eq(2).trigger('click');
+			$('.portfolio-drop .menu-dropdown').removeClass('open');
 		}
 	});
 
