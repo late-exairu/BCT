@@ -45,6 +45,7 @@
 			color: #2a3e81;
 			display:block;
 			line-height:1.1;
+			height: 17%;
 
 			svg.close {
 				width: 10px;
@@ -53,12 +54,11 @@
 				fill: white;
 				position: absolute;
 				right: 15px;
-				bottom: 6px;
+				bottom: 12px;
 			}
 		}
 		& > .scroll-wrapper {
-			height: 92%;
-			margin-top: 25px;
+			height: 83%;
 			background-color: var(--clr-block); 
 		}
 
@@ -68,7 +68,7 @@
 		}
 
 		&.open {
-			height: 90%;
+			height: 100%;
 			padding: 10px 0 0;
 		}
 
@@ -175,6 +175,8 @@
 		background: transparent;
 		width: 100%;
 		padding: 0 15px;
+		height: 17%;
+		line-height: 9;
 	}
 	.basic-table{
 		border-top: none;
@@ -221,7 +223,7 @@
 		height: 100%;
 		width: 100%;
 		z-index: 100;
-		background-color: rgba(0, 0, 0, 0.7);
+		background-color: rgba(0, 0, 0, 0.8);
 	}
 }
 
