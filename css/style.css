@@ -15399,9 +15399,9 @@ button:-moz-focusring {
     height: 0px;
     padding: 0px;
     overflow: hidden;
-    background-color: var(--clr-block);
+    background-color: transparent;
     color: black;
-    z-index: 1;
+    z-index: 10000;
     transition: height 125ms; }
     .basic-popup__overlay .overlay-header {
       color: #2a3e81;
@@ -15415,13 +15415,14 @@ button:-moz-focusring {
         right: 15px;
         bottom: 6px; }
     .basic-popup__overlay > .scroll-wrapper {
-      height: 56%;
-      margin-top: 28px; }
+      height: 92%;
+      margin-top: 25px;
+      background-color: var(--clr-block); }
     .basic-popup__overlay .align-center {
       text-align: center;
       align-items: center; }
     .basic-popup__overlay.open {
-      height: 152%;
+      height: 90%;
       padding: 10px 0 0; }
     .basic-popup__overlay .transaction-form {
       padding: 0;
@@ -15531,6 +15532,13 @@ button:-moz-focusring {
     width: 100%;
     text-align: right;
     margin-top: 10px; }
+  .transaction-popup .overlay-cover {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7); }
 
 .autentificator-popup {
   width: 100%;

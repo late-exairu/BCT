@@ -34,9 +34,10 @@
 		height: 0px;
 		padding: 0px;
 		overflow:hidden;
-		background-color: var(--clr-block); 
+		background-color: transparent;
+		// background-color: var(--clr-block); 
 		color:black; 
-		z-index:1;
+		z-index: 10000;
 		transition: height 125ms;
 
 
@@ -56,8 +57,9 @@
 			}
 		}
 		& > .scroll-wrapper {
-			height: 56%;
-			margin-top: 28px;
+			height: 92%;
+			margin-top: 25px;
+			background-color: var(--clr-block); 
 		}
 
 		.align-center {
@@ -66,7 +68,7 @@
 		}
 
 		&.open {
-			height: 152%;
+			height: 90%;
 			padding: 10px 0 0;
 		}
 
@@ -211,6 +213,15 @@
 
 	.terms-link-container {
 		width:100%; text-align:right;margin-top:10px;
+	}
+	
+	.overlay-cover {
+		position: absolute;
+		left: 0px;
+		height: 100%;
+		width: 100%;
+		z-index: 100;
+		background-color: rgba(0, 0, 0, 0.7);
 	}
 }
 

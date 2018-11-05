@@ -2463,18 +2463,22 @@ $(function () {
 	});
 
 	$("#open-tx-history").click((e) => {
+		$("#transaction-popup .overlay-cover").removeClass('hidden');
 		$(".tx-history-basic.basic-popup__overlay").addClass('open');
 	})
 
 	$("#close-tx-history").click((e) => {
+		$("#transaction-popup .overlay-cover").addClass('hidden');
 		$(".tx-history-basic.basic-popup__overlay").removeClass('open');
 	})
 
 	$("#open-tx-custodian").click((e) => {
+		$("#transaction-popup .overlay-cover").removeClass('hidden');
 		$(".custodian-basic.basic-popup__overlay").addClass('open');
 	})
 
 	$("#close-custodian").click((e) => {
+		$("#transaction-popup .overlay-cover").addClass('hidden');
 		$(".custodian-basic.basic-popup__overlay").removeClass('open');
 	})
 
