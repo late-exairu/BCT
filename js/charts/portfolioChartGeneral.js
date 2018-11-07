@@ -167,6 +167,18 @@ var portfolioChartOptions = {
                 lineForPortfolioChartX = -9999;
             }
 
+			if (this.points[0].point.plotX < 100) {
+				arrowClasses = 'arrow_box left';
+				lineForPortfolioChartY -= 26;
+				lineForPortfolioChartHeight += 26;
+				circleForPortfolioChartY += 26;
+			} else if (this.points[0].point.plotX + 82 + 10 > $('#portfolioChartGeneral').width()) {
+				arrowClasses = 'arrow_box right';
+				lineForPortfolioChartY -= 26;
+				lineForPortfolioChartHeight += 26;
+				circleForPortfolioChartY += 26;
+			}
+
             $('.lineForPortfolioChart').css({
                 'left': lineForPortfolioChartX,
                 'top': lineForPortfolioChartY,
@@ -180,28 +192,24 @@ var portfolioChartOptions = {
                 'height': lineForPortfolioChartHeight,
             });
 
-            if (this.points[0].point.plotX < 100 || this.points[0].point.plotX > $('#portfolioChartGeneral').width() - 100) {
-                arrowClasses = '';
-            }
-
             return '<div class="tooltip font10 '+ arrowClasses + '">' +
                 '<div class="textCenter font12 bold">$' + TooltipValue + '</div>' + '<span class="bold">' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year + '</span>' +
                 '</div>';
         },
         positioner: function (labelWidth, labelHeight, point, ) {
-            var graphWidth = $(portfolioChartObj.container).width();
-            var xPos = point.plotX - (labelWidth / 2);
-            // right side fix
-            if ((point.plotX + labelWidth / 2) > graphWidth) {
-                xPos = graphWidth - labelWidth - 12;
-            }
-            // left side fix
-            else if (point.plotX < 100) {
-                xPos = 12;
-            }
-            return {
-                x: xPos,
-                y: 10
+			var graphWidth = $(portfolioChartObj.container).width();
+			var xPos = point.plotX - (labelWidth / 2);
+			// right side fix
+			if ((point.plotX + (labelWidth / 2) + 10) > graphWidth) {
+				xPos -= labelWidth / 2 + 10;
+			}
+			// left side fix
+			else if (point.plotX < 100) {
+				xPos += labelWidth / 2 + 10;
+			}
+			return {
+				x: xPos,
+				y: 10
             };
         }
     },

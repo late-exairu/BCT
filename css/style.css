@@ -14840,7 +14840,7 @@ button:-moz-focusring {
 
 #portfolioChartGeneral .arrow_box.bottom:after {
   bottom: 100%;
-  border-top-color: var(--clr-iconD);
+  border-top-color: var(--clr-back-tooltip);
   top: calc(100% + 7px);
   left: calc(50% - 7px); }
 

@@ -443,7 +443,7 @@
 #portfolioChartGeneral {
 	.arrow_box.bottom:after {
 		bottom: 100%;
-		border-top-color: var(--clr-iconD);
+		border-top-color: var(--clr-back-tooltip);
 		top: calc(100% + 7px);
 		left: calc(50% - 7px);
 	}
@@ -697,7 +697,6 @@
 	}
 
 	.line {
-		// background: linear-gradient(to bottom, rgba(80, 85, 91, 0.8), rgba(80, 85, 91, 0.1), rgba(80, 85, 91, 0));
 		background: linear-gradient(180deg, #3c4147, rgba(44, 49, 55, .4), rgba(44, 49, 55, .0));
 		width: 1px;
 		height: 1px;
