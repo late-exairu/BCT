@@ -15000,12 +15000,12 @@ button:-moz-focusring {
     width: 11px;
     height: 11px;
     background: white;
-    border: 1.2px solid var(--clr-line);
+    border: 1.2px solid var(--clr-back-tooltip);
     border-radius: 50%;
     transform: translateX(-50%) translateY(-50%);
     z-index: 1; }
   .lineForPortfolioChart .line {
-    background: linear-gradient(to bottom, rgba(191, 192, 192, 0.8), rgba(191, 192, 192, 0.1), rgba(191, 192, 192, 0));
+    background: linear-gradient(180deg, #3c4147, rgba(44, 49, 55, 0.4), rgba(44, 49, 55, 0));
     width: 1px;
     height: 1px;
     margin-top: -6px; }
