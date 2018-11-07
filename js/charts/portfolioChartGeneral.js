@@ -184,8 +184,8 @@ var portfolioChartOptions = {
                 arrowClasses = '';
             }
 
-            return '<div class="tooltip blackColor font10 '+ arrowClasses + '">' +
-                '<div class="textCenter font12 bold">' + TooltipValue + ' <span class="light">USD</span></div>' + '<span class="bold">' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year + '</span>' +
+            return '<div class="tooltip font10 '+ arrowClasses + '">' +
+                '<div class="textCenter font12 bold">$' + TooltipValue + '</div>' + '<span class="bold">' + dayName + ', ' + month + ' ' + date.getDate() + ',' + year + '</span>' +
                 '</div>';
         },
         positioner: function (labelWidth, labelHeight, point, ) {

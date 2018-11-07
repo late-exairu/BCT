@@ -440,6 +440,31 @@
 	border-right-color: var(--clr-back-tooltip);
 	// border-right-color: #10b381;
 }
+#portfolioChartGeneral {
+	.arrow_box.bottom:after {
+		bottom: 100%;
+		border-top-color: var(--clr-iconD);
+		top: calc(100% + 7px);
+		left: calc(50% - 7px);
+	}
+	div.tooltip, div.tooltipCircle {
+		font-family: $osans;
+		opacity: 1;
+		padding: 2px 5px;
+		z-index: 9999 !important;
+		font-size: 11px;
+		border-radius: 3px;
+		line-height: 20px;
+		background-color: var(--clr-back-block);
+		color: var(--clr-textL);
+		box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+		border: 1px solid var(--clr-iconD);
+
+		span {
+			color: var(--clr-iconD);
+		}
+	}
+}
 
 .arrow_box.bottom:after {
 	bottom: 100%;
