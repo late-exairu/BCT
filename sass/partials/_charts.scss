@@ -440,7 +440,7 @@
 	border-right-color: var(--clr-back-tooltip);
 	// border-right-color: #10b381;
 }
-#portfolioChartGeneral {
+#portfolioChartGeneral, #liquidityChart {
 	.arrow_box.bottom:after {
 		bottom: 100%;
 		border-top-color: var(--clr-back-tooltip);
@@ -465,7 +465,11 @@
 		}
 	}
 }
-
+#liquidityChart {
+	div.font12 {
+		margin-bottom: 0;
+	}
+}
 .arrow_box.bottom:after {
 	bottom: 100%;
 	border-top-color: var(--clr-back-tooltip);

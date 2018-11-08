@@ -159,9 +159,9 @@ var liquidityChartOptions = {
             }
 
             return '<div class="tooltip font10 liquidityTooltip ' + arrowClasses + '">' +
-                "<div class='font12 textCenter bold'>$" + TooltipValue + '</div> <div class="gray">' +
-                dayName + ', ' + month + ' ' + date.getDate() +', ' +year +
-                '</div></div>';
+                "<div class='font12 textCenter bold'>$" + TooltipValue + '</div></div>';// <div class="gray">' +
+                // dayName + ', ' + month + ' ' + date.getDate() +', ' +year +
+                // '</div></div>';
         },
         positioner: function (labelWidth, labelHeight, point ) {
             var graphWidth = $(liquidityChartObj.container).width();
