@@ -8261,10 +8261,7 @@ h6 {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    cursor: pointer;
-    /*border: solid 2px var(--clr-block);
-		border-top-left-radius: var(--border-radius);
-		border-bottom-left-radius: var(--border-radius);*/ }
+    cursor: pointer; }
     .graph-prices__controls__btn:after {
       content: "";
       width: 0;
@@ -14548,72 +14545,11 @@ button:-moz-focusring {
       flex: 0 0 270px;
       width: 270px;
       flex: 0 0 196px;
-      width: 196px; }
-      .accounts-diagram-wrap #circleChartText .sprite-icon {
-        /*width: 47px;
-			height: 42px;*/ } }
+      width: 196px; } }
 
 .advanced .accounts-diagram-wrap {
   height: calc(100% - 45px);
   margin-top: 45px; }
-  @media only screen and (max-height: 900px) {
-    .advanced .accounts-diagram-wrap {
-      /*#circleChartText {
-			width: 118px;
-			.sprite-icon{
-				width: 30px;
-				height: 25px;
-				margin-left: 2px;
-			}
-			p.value {
-				span:first-child {
-					font-size: 11px;
-					top: -1px;
-				}
-				span.bigger {
-					font-size: 13px;
-				}
-				span.totalBalanceFraction {
-					font-size: 10px;
-				}
-			}
-			p.title{
-				font-size: 10px;
-			}
-		}*/ } }
-  @media only screen and (min-height: 900px) {
-    .advanced .accounts-diagram-wrap {
-      /*height: calc(100% - 45px);
-		margin-top: 45px;
-		//border-top: 1px solid var(--clr-separator);
-		
-		&:after {
-			width: 190px;
-			height: 190px;
-		}
-
-		#circleChartText {
-			width: 170px;
-			p.value {
-				span {
-					font-size: 16px;
-				}
-				span.bigger {
-					font-size: 19px;
-				}
-				span.totalBalanceFraction {
-					font-size: 15px;
-				}
-			}
-			p.title {
-				font-size: 15px;
-			}
-			.sprite-icon {
-				width: 40px;
-				height: 35px;
-				margin-right: 3px;
-			}
-		}*/ } }
 
 .accounts-diagram {
   position: relative;
@@ -14894,8 +14830,7 @@ button:-moz-focusring {
 
 .circleDiagramParent {
   display: flex;
-  height: 100%;
-  /*border-bottom: 1px solid var(--clr-separator);*/ }
+  height: 100%; }
   .circleDiagramParent .scrollbar-right .scroll-element .scroll-bar {
     opacity: 1; }
   .circleDiagramParent .basic-table__row .basic-table__col:first-child {

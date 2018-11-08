@@ -17,128 +17,17 @@
 		margin: 0 70px 0 0;
 	}
 
-	// &.hover {
-	// 	cursor: pointer;
-
-	// 	#circleChartText {
-	// 		color: var(--clr-accentD);
-	// 	}
-
-	// 	.sprite-icon{
-	// 		fill: var(--clr-accent);
-	// 	}
-	// }
-
 	@media only screen and (min-height: 900px) {
 		flex: 0 0 270px;
 		width: 270px;
 		flex: 0 0 196px;
 		width: 196px;
-
-		#circleChartText .sprite-icon{
-			/*width: 47px;
-			height: 42px;*/
-		}
 	}
 }
 
 .advanced .accounts-diagram-wrap {
 	height: calc(100% - 45px);
 	margin-top: 45px;
-
-	// &:after {
-	// 	content: '';
-	// 	position: absolute;
-	// 	left: 50%;
-	// 	top: 50%;
-	// 	width: 125px;
-	// 	height: 125px;
-	// 	background: transparent;
-	// 	border-radius: 50%;
-	// 	z-index: 0;
-	// 	opacity: 0.1;
-	// 	transition: all 0.2s;
-	// 	transform: translate(-50%, -50%);
-	// 	background: var(--clr-accentL);
-	// }
-
-	// &:active:after {
-	// 	background: var(--clr-accent);
-	// }
-
-	// &.hover{
-	// 	#circleChartText{
-	// 		color: var(--clr-accent);
-			
-	// 		.sprite-icon{
-	// 			fill: var(--clr-accent);
-	// 		}
-	// 	}
-
-	// 	&:after {
-	// 		opacity: 0.5;
-	// 	}
-	// }
-	
-	@media only screen and (max-height: 900px) {
-		/*#circleChartText {
-			width: 118px;
-			.sprite-icon{
-				width: 30px;
-				height: 25px;
-				margin-left: 2px;
-			}
-			p.value {
-				span:first-child {
-					font-size: 11px;
-					top: -1px;
-				}
-				span.bigger {
-					font-size: 13px;
-				}
-				span.totalBalanceFraction {
-					font-size: 10px;
-				}
-			}
-			p.title{
-				font-size: 10px;
-			}
-		}*/
-	}
-
-	@media only screen and (min-height: 900px) {
-		/*height: calc(100% - 45px);
-		margin-top: 45px;
-		//border-top: 1px solid var(--clr-separator);
-		
-		&:after {
-			width: 190px;
-			height: 190px;
-		}
-
-		#circleChartText {
-			width: 170px;
-			p.value {
-				span {
-					font-size: 16px;
-				}
-				span.bigger {
-					font-size: 19px;
-				}
-				span.totalBalanceFraction {
-					font-size: 15px;
-				}
-			}
-			p.title {
-				font-size: 15px;
-			}
-			.sprite-icon {
-				width: 40px;
-				height: 35px;
-				margin-right: 3px;
-			}
-		}*/
-	}
 }
 
 .accounts-diagram {
@@ -259,7 +148,6 @@
 
 .highcharts-tooltip {
 	z-index: 9998 !important;
-	// margin-left: -2.041%;
 
 	div.tooltip,
 	div.tooltipCircle {
@@ -281,9 +169,7 @@
 
 	div.tooltip {
 		color: var(--clr-text-tooltip);
-		// color: var(--clr-back);
 		font-weight: 600;
-		// background: linear-gradient(to bottom, #10B89A 0%,#03B068 100%);
 
 		.textCenter {
 			text-align: center;
@@ -295,7 +181,6 @@
 
 			span {
 				color: var(--clr-text-tooltip);
-				// color: var(--clr-back);
 			}
 
 			.currencies {
@@ -327,7 +212,6 @@
 		line-height: 20px;
 		font-weight: 700;
 		font-size: 14px;
-		// background: linear-gradient(to bottom, #10B89A 0%,#03B068 100%);
 
 		.amount {
 			font-weight: 700;
@@ -432,13 +316,11 @@
 .arrow_box.right:after {
 	left: 100%;
 	border-left-color: var(--clr-back-tooltip);
-	// border-left-color: #10b381;
 }
 
 .arrow_box.left:after {
 	right: 100%;
 	border-right-color: var(--clr-back-tooltip);
-	// border-right-color: #10b381;
 }
 #portfolioChartGeneral, #liquidityChart {
 	.arrow_box.bottom:after {
@@ -476,7 +358,6 @@
 .arrow_box.bottom:after {
 	bottom: 100%;
 	border-top-color: var(--clr-back-tooltip);
-	// border-top-color: #10b381;
 	top: calc(100% + 7px);
 	left: calc(50% - 7px);
 }
@@ -500,7 +381,6 @@
 	
 	.line {
 		background: linear-gradient(to bottom, rgba(44, 49, 55, 1), rgba(44, 49, 55, 0.4));
-		// background: var(--clr-line);
 		width: 1px;
 		height: 1px;
 		margin-top: -6px;
@@ -511,7 +391,6 @@
 .circleDiagramParent {
 	display: flex;
 	height: 100%;
-	/*border-bottom: 1px solid var(--clr-separator);*/
 	.scrollbar-right .scroll-element .scroll-bar {
 		opacity: 1;
 	}
@@ -557,7 +436,6 @@
 
 	div.portfolio-graph-info {
 		display: inline-block;
-		// color: #00AAF8; 
 		color: var(--clr-textD);
 		padding: 0 12px;
 		text-align: center;
@@ -583,45 +461,8 @@
 
 		&:first-child {
 			border-right: 1px solid;
-		// 	color: var(--clr-accent);
-		// 	padding: 0;
-		// 	vertical-align: bottom;
-
-		// 	span {
-		// 		font-size: 13px;
-		// 		line-height: inherit;
-
-		// 	}
 		 }
 	}
-
-	// .portfolio-graph-range {
-	// 	color: var(--clr-textD);
-	// 	font-size: 11px;
-	// 	background: transparent;
-	// 	font-weight: 600;
-	// 	margin-top: 5px;
-	// 	display: flex;
-	// 	align-items: center;
-	// 	z-index: 1;
-	// 	min-width: 95px;
-
-	// 	.range-slider {
-	// 		pointer-events: all;
-	// 		cursor: pointer;
-	// 		flex: 1;
-	// 		margin: 0;
-
-	// 		input[type=range] {
-	// 			width: 72px;
-	// 		}
-	// 	}
-
-	// 	&__current {
-	// 		padding: 0 3px;
-	// 		color: var(--clr-time-bar);
-	// 	}
-	// }
 
 	.portfolio-graph-range {
 		display: inline-block;
@@ -675,7 +516,6 @@
 			display: block !important;
 			padding: 3px 0 3px 5px;
 			cursor: pointer;
-			//height: 20px;
 			&:hover {
 				background: var(--clr-back);
 			}
@@ -980,7 +820,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 100001; // very good practise 
+	z-index: 100001;
 	position: absolute;
 	touch-action: none;
 	background-color: var(--clr-back-new);
@@ -996,10 +836,6 @@
 }
 
 #telegramText{
-	// position: absolute;
-	// top: 50%;
-	// left: 50%;
-	// transform: translate(-50%, -50%);
 	text-align: center;
 	font-size: 24px;
 	font-weight: 100;
@@ -1010,12 +846,6 @@
     padding-top: 36vh;
 	margin-bottom: auto;
 }
-
-// .telegram-login-btn{
-// 	position: absolute;
-// 	width: 100%;
-// 	bottom: 0;
-// }
 
 .sameDropdownItem{
 	display: none;

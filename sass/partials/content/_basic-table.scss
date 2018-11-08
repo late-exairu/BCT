@@ -635,19 +635,6 @@
 		display: inline;		
 	}
 
-	// &:after{
-	// 	content:'';
-	// 	position: absolute;
-	// 	left: 50%;
-	// 	top: 50%;
-	// 	transform: translate(-50%, -50%);
-	// 	width: 0;
-	// 	height: 0;
-	// 	border-style: solid;
-	// 	border-width: 0 6px 6px 6px;
-	// 	border-color: transparent transparent var(--clr-textL) transparent;
-	// }
-
 	&:hover{
 		background: var(--clr-block);
 	}
@@ -655,9 +642,6 @@
 	&.open{
 		margin-bottom: -12px;
 		background: transparent;
-		// &:after{
-		// 	transform: translate(-50%, -50%) rotate(180deg);
-		// }
 		&:hover{
 			background: transparent;
 		}
