@@ -131,16 +131,28 @@ var liquidityChartOptions = {
 
             var lineForPortfolioChartX = this.points[0].point.plotX + $('#liquidityChart').offset().left;
             //var lineForPortfolioChartY = $('#liquidityChart').offset().top + (this.points[0].point.plotY + 20);
-            var lineForPortfolioChartY = $('#liquidityChart').offset().top + 40;
+            var lineForPortfolioChartY = $('#liquidityChart').offset().top + 55;
            // var lineForPortfolioChartHeight = $('#liquidityChart').height() - (this.points[0].point.plotY + 26);
-            var lineForPortfolioChartHeight = $('#liquidityChart').height() - 40;
-            var circleForPortfolioChartY = (this.points[0].point.plotY);
+            var lineForPortfolioChartHeight = $('#liquidityChart').height() - 55;
+            var circleForPortfolioChartY = (this.points[0].point.plotY) - 15;
 
             // right side fix
             if (lineForPortfolioChartX > $('#liquidityChart').offset().left + $('#liquidityChart').width()) {
                 lineForPortfolioChartX = -9999;
             }
 
+			if (this.points[0].point.plotX < 50) {
+				arrowClasses = 'arrow_box left';
+				lineForPortfolioChartY -= 23;
+				lineForPortfolioChartHeight += 23;
+				circleForPortfolioChartY += 23;
+			} else if (this.points[0].point.plotX + 50 > $('#liquidityChart').width()) {
+				arrowClasses = 'arrow_box right';
+				lineForPortfolioChartY -= 23;
+				lineForPortfolioChartHeight += 23;
+				circleForPortfolioChartY += 23;
+            }
+            
             $('.lineForPortfolioChart').css({
                 'left': lineForPortfolioChartX,
                 'top': lineForPortfolioChartY,
@@ -154,10 +166,6 @@ var liquidityChartOptions = {
                 'height': lineForPortfolioChartHeight,
             });
 
-            if (this.points[0].point.plotX < 100 || this.points[0].point.plotX > $('#liquidityChart').width() - 100) {
-                arrowClasses = '';
-            }
-
             return '<div class="tooltip font10 liquidityTooltip ' + arrowClasses + '">' +
                 "<div class='font12 textCenter bold'>$" + TooltipValue + '</div></div>';// <div class="gray">' +
                 // dayName + ', ' + month + ' ' + date.getDate() +', ' +year +
@@ -166,18 +174,17 @@ var liquidityChartOptions = {
         positioner: function (labelWidth, labelHeight, point ) {
             var graphWidth = $(liquidityChartObj.container).width();
             var xPos = point.plotX - (labelWidth / 2);
-            // right side fix
-            if ((point.plotX + labelWidth / 2) > graphWidth) {
-                xPos = graphWidth - labelWidth - 12;
-            }
-            // left side fix
-            else if (point.plotX < 100) {
-                xPos = 12;
-            }
-            return {
-                x: xPos,
-                //y: ((point.plotY - 20) > 20 ) ? point.plotY - 20 : 20
-                y: 40
+			// right side fix
+			if ((point.plotX + 50) > graphWidth) {
+				xPos -= labelWidth / 2 + 10;
+			}
+			// left side fix
+			else if (point.plotX < 50) {
+				xPos += labelWidth / 2 + 10;
+			}
+			return {
+				x: xPos,
+                y: 25
             };
         }
     },
